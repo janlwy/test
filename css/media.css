@@ -1,0 +1,870 @@
+/**************** Variables globales des couleures du changement de thème********************/
+:root {
+    --clair: #f5f5f5;
+    --silver: #cccccc;
+    --gris: #808080;
+    --grisDark: #464242;
+    --sombre: #182020;
+    --vertSombre: #2f4f4f;
+    --bleuArgent: #747492;
+    --orange: #ffb764;
+    --marine: #3633ff;
+    --violet: #942494;
+}
+
+/************************* Mise en forme globale du fond *********************************/
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html, footer {
+    font-size: 11px;
+}
+
+body { 
+    /* min-height: 100vh; */ /* hauteur totale du viewport */
+    width: 85%;
+    margin: auto;
+    color: var(--fontcolor);
+    background: var(--bodyBg);
+}
+
+header h1 {
+    margin: 2px 0 5px;
+}
+
+.clair-theme {
+    --bodyBg: var(--clair);
+    --fontcolor: var(--sombre);
+    --btnBackGround: var(--gris);
+    --btnFontColor: var(--sombre);
+    --cardShadow: inset -7px 6px 11px 0 var(--sombre); /*Box shadow: X Y flou/blur ètalement/spread*/
+    --titreColor: var(--clair);
+    --titreShadow: 2px 2px 10px var(--sombre);
+    --colorH2H5:var(--sombre);
+    --pShadow: var(--gris);
+    --footerShadow: 0 -2px 4px 1px var(--sombre);
+    --cardIcons: var(--clair);
+    --globale: var(--vertSombre);
+    --navBg:linear-gradient(to left,
+            #2f4f4f,
+            #778899,
+            #a9a9a9,
+            #778899,
+            #2f4f4f);
+    --active: var(--vertSombre);
+}
+
+.sombre-theme {
+    --bodyBg: var(--grisDark);
+    --fontcolor: var(--clair);
+    --btnBackGround: var(--gris);
+    --btnFontColor: var(--orange);
+    --cardShadow: -7px 6px 11px 0 var(--sombre);
+    --titreColor: var(--grisDark);
+    --titreShadow: 2px 2px 10px var(--silver);
+    --colorH2H5: var(--clair);
+    --pShadow: #f5f5f586;
+    --footerShadow: 0 -2px 7px 2px var(--sombre);
+    --cardIcons: var(--sombre);
+    --globale: #bd2121;
+    --navBg: linear-gradient(to left,
+            #747492,
+            #b5b3d6,
+            #d4d4e7,
+            #b5b3d6,
+            #747492);
+    --active: var(--bleuArgent);
+}
+
+article, aside {
+    background-color: white;
+    /* padding: 1%; */
+}
+
+a {
+    text-decoration: none;
+    color: #1a6fe6;
+}
+
+i { /* Change le curseur de la souris en pointeur au survol */
+    cursor: pointer;
+}
+
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-24 { font-size: 24px; }
+
+.btnBase {
+    border: none;
+    color: #f5f5f5;
+    padding: 10px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+/* couleur de fond des boutons + hover */
+.vert {background-color: #008000;}.vert:hover {background-color: #46a049;}.blue {background-color: #2b2bff;}.blue:hover {background: #628fb4;}.orange {background-color: #ffa500;}.orange:hover {background: #9e763a;}.rouge {background-color: #ff0000;}.rouge:hover {background: #96413b;}.gris{background-color: #808080;color: #000000;}.gris:hover {background: #a8a4a4;}
+
+.boutonTheme {
+    cursor: pointer;
+    float: right;
+    order: 1;
+    /*position: absolute;*/
+    /*top: 1.5%;
+    right: 3%;*/
+    height: 62px;
+    width: 62px;
+    border-radius: 10px;
+    box-shadow: -2px 3px 10px 1px #807f7fc4;
+    background-color: var(--btnBackGround);
+    text-align: center !important;
+}
+
+.boutonTheme:active {
+    background-color: var(--btnBackGround);
+    transform: translateZ(-10px);
+}
+
+header .material-icons { /* icon de changement de thème */
+    color: var(--btnFontColor);
+}
+
+/***************************** police de caractère ****************************/
+
+h1, h2, h5 {
+    font-family: 'Noto Sans Display', sans-serif;
+    text-align: center;
+    color: #200f0f;
+}
+
+h1 {
+    font-size: 5rem;
+    color: var(--titreColor);
+    text-shadow: var(--titreShadow);
+}
+
+h2, h5 {
+    font-size: 3rem;
+    color: var(--colorH2H5);
+}
+
+.formFont {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #000; 
+    font-size: medium;
+}
+
+p, input {
+    font-family: 'Noto Sans Display', sans-serif;
+    color: var(--fontcolor);
+}
+
+input::placeholder { /*police pesudo-element*/
+    color: #daa88b;
+    text-align: center;
+}
+
+.txtfootr {
+    padding: 20px 20px 0 0;
+    text-align: right;
+    text-shadow: 2px 5px 5px var(--pShadow);
+    font-size: medium;
+    font-weight: 100;
+}
+
+/************************************ bouton accueil 3D *********************************/
+
+.sectionBouton3d {
+    margin-top: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clic3d {
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+}
+
+.ombre3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 103%;
+    border-radius: 12px;
+    background: #00000035;
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.bord3d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            #52001b 0%,
+            #910332 15%,
+            #910332 90%,
+            #52001b 100%);
+}
+
+.bouton3d {
+    display: block;
+    position: relative;
+    padding: 18px 50px;
+    border-radius: 12px;
+    font-size: 3rem;
+    color: white;
+    background: #f0003c;
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.clic3d:hover {
+    filter: brightness(110%);
+}
+
+.clic3d:hover .bouton3d {
+    transform: translateY(-6px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.clic3d:active .bouton3d {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.clic3d:hover .ombre3d {
+    transform: translateY(10px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.clic3d:active .ombre3d {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.clic3d:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/************************************ Modal loging *********************************/
+/* Bordered form */
+/* form {
+    border: 3px solid #f5f5f5;
+} */
+
+/* Center the avatar image inside this container */
+.closeContainer {
+    margin: 20px;
+    position: relative;
+}
+
+/* Full-width inputs */
+.inputModal {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #a8a4a4;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+.modalButton {
+    background-color: #04AA6D;
+    color: #f5f5f5;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Add a hover effect for buttons */
+.modalButton:hover {
+    opacity: 0.8;
+}
+
+/* Add padding to containers */
+.formContainer {
+    padding: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1;    /* Sit on top */
+    left: 20;
+    top: 0;
+    width: 100%;    /* Full width */
+    height: 100%;    /* Full height */
+    overflow: auto;    /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8);    /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modalContenu {
+    background-color: #f5f5f5;
+    margin: 5px auto;    /* 15% from the top and centered */
+    border: 2px solid #5c5959;
+    width: 80%;    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {    /* Position it in the top right corner outside of the modal */
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* Close button on hover */
+.close:hover, .close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.anime {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)}to {-webkit-transform: scale(1)}
+}
+@keyframes animatezoom {
+    from {transform: scale(0)}to {transform: scale(1)}
+}
+
+/**************************************** nav bar *************************************/
+
+nav {
+    background: var(--navBg);
+    border-radius: 20px;
+    margin: auto 0 auto 7px;
+    perspective: 1000px;
+}
+
+.menunav {
+    overflow: hidden;
+    /* background-color: #333; */
+}
+
+.menunav a {
+    float: left;
+    display: block;
+    text-align: center;
+    font-size: 27px;
+    text-transform: uppercase;
+    color: var(--cardIcons);
+    padding: 14px 16px;
+}
+
+.menunav a:hover {
+    background-color: #ebe2d4;
+    color: #000000;
+}
+
+.boutonright {
+    float: right;
+}
+
+.menunav .boutonTheme {
+    float: right;
+    order: 2;
+}
+
+.menunav a.sortie {
+    float: right;
+    order: 1;
+}
+
+.menunav a.active {
+    background-color: var(--active);
+}
+
+.menunav .active.barefut {
+    color: #f5f5f5;
+}
+
+.menunav .material-icons {
+    color: #f5f5f5;
+}
+
+.menunav .menuicon {
+    display: none;
+}
+
+/***************************************** search box  ***************************/
+
+.searchBox {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    background: #174c96;
+    height: 70px;
+    border-radius: 40px;
+}
+
+.searchBox:hover>.searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover>.searchButton {
+    background: white;
+    color: #5c09f5;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #445164;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 20px;
+    transition: 0.4s;
+    line-height: 70px;
+    width: 0px;
+}
+
+/************************************ Grid view - cartes **********************************/
+.row {
+    position: relative;
+    top: 150px;
+    box-sizing: border-box;
+    /* margin: 0 -10px 0 10px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.row:after {
+    content: "";
+    display: flex;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 23%;
+    margin: auto; /********** GAP_GAP_GAP ************/
+}
+
+.card {
+    box-shadow: var(--cardShadow);
+    padding: 15px;
+    height: 350px;
+    background-color: var(--globale);
+    position: relative;
+}
+
+.card:hover {
+    background-color: #d47373;
+}
+
+.card i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    font-size: 190px;
+    color: var(--cardIcons);
+}
+
+.titrecarte {
+    color: var(--cardIcons);
+}
+
+/*************************** monEspace et Formulaire de gestion du profile ****************************/
+
+#msg { /* message de saisie de champ obligatoire */
+    color: rgb(255, 0, 0);
+    font-size: larger;
+    font-weight:900;
+}
+
+.inputMonEspace {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4d4848;
+    border-radius: 5px;
+    resize: vertical;
+}
+
+label {
+    padding: 9px 0;
+    display: inline-block;
+}
+
+.monEspace {
+    margin: auto 0 auto 7px;
+}
+
+.br { /* espacement entre les boutons extensible */
+    display: block;
+    margin-bottom: 1em;
+}
+
+button.btnBase.blue, button.btnBase.vert {
+    margin-left: 5px;
+}
+
+/* collabel et colinput font reference à un affichage en "colonnes" ecran>600px */
+.collabel {
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.colinput {
+    float: left;
+    width: 65%;
+    margin-top: 10px;
+}
+
+.rowEspace:after { /* Clear floats - colonnes du formulaire (labels-inputs) */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/************************************ Tableaux CRUD ***************************************/
+
+thead, tfoot {
+    background-color: #75b3ce;
+    color: #000000;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    /* border: 1px solid #886780; */
+    margin-top: 30px;
+}
+
+th, td {
+    border: 1px solid #46443a;
+    padding: 16px;
+}
+
+th, td.action { /* td.action spécifié dans la fonction fetchAllMusics dans appCRUD.js */
+    text-align: center;
+}
+
+tr:nth-child(even) { /* alternance de couleurs entre les lignes du tableau */
+    background-color: #a39d9d;
+}
+
+.tabloList {
+    text-align: start;
+    padding-left: 20px;
+}
+
+/************************************ collapse ***************************************/
+.collapsible {
+    background-color: var(--active);
+    color: #f5f5f5;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 25px;
+    border-radius: 15px 15px 0 0;
+}
+
+.activeCollapse, .collapsible:hover {
+    background-color: var(--violet);
+}
+
+.collapsible:after {
+    content: '\2B9F';
+    color: #f5f5f5;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.activeCollapse:after {
+    content: "\2B9D";
+}
+
+.contentCollapse {
+    padding: 1px; /* Xpx débordement bas pour révéler la pliure */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #c0bcad;
+    border-bottom: 6px solid #000dc7;
+    border-radius: 0 0 10px 10px;
+}
+
+/************************************ Le Pied... ***************************************/
+footer {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 40px 0 0 0;
+}
+
+.socle {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    /* background-color: #7eaa19; */
+    /* border-radius: 0 0 20px 20px; */
+}
+
+/******************************* breakpoints - @media queries ***************************/
+
+/******************** Small  (smartphone - moins de 600px) */
+@media (max-width: 600px) {
+    body {
+        width: 98%;
+        margin: 0 0 220px 0;
+    }
+    nav .boutonTheme {
+        display: none;
+    }
+    .menunav a:not(:first-child) {
+        display: none;
+    }
+    .menunav a.menuicon {
+        float: right;
+        display: block;
+    }
+    .menunav.break {
+        position: relative;
+    }
+    .menunav.break .menuicon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menunav.break a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .menunav a.barefut {
+        display: none;
+    }
+    .searchBox:hover>.searchInput {
+        width: 150px;
+        padding: 0 6px;
+    }
+    .column {
+        width: 43%;
+        display: block;
+        margin-bottom: 20px;
+    }
+    .card {
+        height: 160px;
+        border-radius: 15px;
+    }
+    .card i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+    }
+    .titrecarte {
+        display: none;
+    }
+    .collabel, .colinput { /* Formulaire Mon Espace -Responsive- passage de 2 colonnes à width:100% */
+        width: 93%;
+        margin-top: 0;
+    }
+    .socle {
+        background-color: #919094;
+        height: 70px;
+        box-shadow: var(--footerShadow);
+    }
+    .socleRadiusUp {
+        display: none;
+    }
+    footer { /* fixer le footer au bas de l'écran pour tabbar */
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: 70px;
+        margin: 0;
+    }
+    .txtfootr {
+        display: none;
+    }
+    .icon-bar, a.navlabel {
+        color: #000000;
+        display: flex;
+        overflow-x: auto;
+        padding: 5px;
+    }
+    .navlabel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+        min-width: 50px;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+    }
+    .icon-bar .material-icons {
+        font-size: 28px;
+    }
+    .iconeTheme {
+        color: var(--btnFontColor);
+    }
+}
+
+/******************** Medium  (tablette) */
+@media (min-width: 601px) and (max-width: 999px) {
+    .menunav a:not(:first-child) {
+        display: none;
+    }
+    .menunav a.menuicon {
+        float: right;
+        display: block;
+    }
+    .menunav.break {
+        position: relative;
+    }
+    .menunav.break .menuicon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menunav.break a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .column {
+        width: 43%;
+        display: block;
+        margin: 10px;
+    }
+    .card {
+        height: 280px;
+        width: 280px;
+        padding-top: 12%;
+    }
+    .titrecarte {
+        display: block;
+        margin: auto;
+    }
+    .c1 {border-radius: 70px 70px 0 70px; margin: 0 15px 0 0;}
+    .c2 {border-radius: 70px 70px 70px 0; margin: 0 0 0 15px;}
+    .c3 {border-radius: 70px 0 70px 70px; margin: 0 15px 0 0;}
+    .c4 {border-radius: 0 70px 70px 70px; margin: 0 0 0 15px;}
+}
+
+/******************** Large  (ordi portable et desktop, entre 1000px et 2000px) */
+@media (min-width: 1000px) {
+    .column {
+        width: 22%;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .card {
+        height: 280px;
+        width: 250px;
+        border-radius: 70px 6%;
+    }            
+    .card i {
+        font-size: 150px;
+        padding: 15px;
+    }
+}
+
+/******************** Extra large  (écran de 2000px et plus) */
+@media (min-width: 2000px) {
+    .column {
+        width: 43%/* 830px */;
+        display: block;
+        margin-bottom: 15px;
+    }
+    .card {
+        display: flex;
+        height: 330px;
+        width: auto;
+        border-radius: 70px;
+    }
+    .card i {
+        font-size: 180px;
+        margin: auto 30px;
+    }
+    .titrecarte {
+        display: block;
+        margin: auto 80px;
+        font-size: 100px;
+    }
+}
+
+/******************** Bricoles diverses et variées */
+@media (min-width: 601px) { 
+    footer { /* position du footer sur vues autres que mobile */
+        top: 165px;
+    }
+
+    .playerFooter { /* masquer le footer sur la vue des players */
+        display: none;
+    }
+
+    .icon-bar {
+        display: none;
+    }
+}
+
+

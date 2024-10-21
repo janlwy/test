@@ -1,0 +1,121 @@
+/**************************************** onglet Musiques ****************************/
+
+/* Using flex with the column direction to align items in a vertical direction */
+.player {
+    /* height: 70vh; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: #b8191e; */
+    /* border: 5px solid #b8242469; */
+    border-radius: 3%;
+    margin: auto 0 auto 7px;
+}
+
+.details {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.track-art {
+    margin: 25px;
+    height: 250px;
+    width: 250px;
+    background-image: URL("/ressources/images/m.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+/* Changing the font sizes to suitable ones */
+.now-playing {
+    font-size: 1.5rem;
+}
+
+.track-name {
+    font-size: 2.8rem;
+}
+
+.track-artist {
+    font-size: 2.5rem;
+}
+
+/* Using flex with the row direction to
+align items in a horizontal direction */
+.buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playpause-track, .prev-track, .next-track {
+    padding: 25px;
+    opacity: 1.0;
+
+    /* Smoothly transition the opacity */
+    transition: opacity .2s;
+}
+
+/* Change the opacity when mouse is hovered */
+.playpause-track:hover, .prev-track:hover, .next-track:hover {
+    opacity: 0.2;
+}
+
+/* Define the slider width so that it scales properly */
+.slider_container {
+    width: 75%;
+    max-width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: var(--btnFontColor);
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 9px;
+    height: 15px;
+    background: var(--marine);
+    cursor: pointer;
+    border-radius: 39%;
+}
+
+/* Change the opacity when mouse is hovered */
+.seek_slider:hover, .volume_slider:hover {
+    opacity: 0.5;
+}
+
+.material-icons.md-48 { font-size: 48px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-24 { font-size: 24px; }
+
+.seek_slider {
+    width: 60%;
+}
+
+.volume_slider {
+    width: 30%;
+}
+
+.current-time, .total-duration {
+    padding: 10px;
+    font-size: medium;
+}

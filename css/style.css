@@ -1,0 +1,154 @@
+*{
+	box-sizing:border-box;
+	font-family:calibri;
+}
+.lab30{
+	display:block;
+	float:left;
+	width:30%;
+	font-weight:bold;
+	margin-top:5px;
+}
+.input-form{
+	min-height:50px;
+	border-radius:3px;
+	padding:0 3px;
+}
+.auto{margin:0 auto;
+}
+.border{
+	border:1px solid blue;
+}
+.border-radius{
+	border-radius:5px;
+}
+.hidden{display:none !important;}
+
+.w05{width:05%;}
+.w10{width:10%;}
+.w20{width:20%;}
+.w30{width:30%;}
+.w40{width:40%;}
+.w50{width:50%;}
+.w60{width:60%;}
+.w70{width:70%;}
+.w80{width:80%;}
+.w90{width:90%;}
+.w100{width:100%;}
+.left{text-align:left;}
+.center{text-align:center;}
+.right{text-align:right;}
+.gris{background-color:grey;}
+.vert{background-color:green;}
+.rouge{background-color:red;}
+.fond-blue{background-color:blue;}
+.fond-gris{background-color:grey; /*!important;  color:black !important; */}
+.bouton-action{
+	display:block;
+	height:40px;
+	height:50px;
+	background:navy;
+	color:white;
+	border-radius:5px;
+	margin-right:20px;
+	padding-top:20px;
+	text-align:center;
+}
+a{
+	text-decoration:none;
+}
+li{
+	list-style-type:none;
+}
+.flex{
+	display:flex;
+}
+.space-around{
+	justify-content:space-around;
+}
+.bouton a{
+	color:white;
+}
+.bouton{
+	display:block;
+	width:150px;
+	height:35px;
+	background:navy;
+	color:white;
+	border-radius:5px;
+	margin-right:20px;
+	padding-top:20px;
+	text-align:center;
+}
+.boutontable{
+	display:inline-block;
+	/*width:50px;*/
+	height:50%;
+	/*background:dodgerblue;*/
+	color:white;
+	border-radius:8px;
+	margin-right:8px;
+	padding-top:10px;
+	text-align:center;
+	font-size:10px;
+	
+}
+.niveau1 a{
+	color:black;
+	text-align:left;
+}
+.niveau1{
+	border:2px solid rgb(223, 220, 37);
+	text-align: left;
+	display:none;
+	/*position:absolute;*/
+	/*top:100px;*/
+	padding-left:0;
+	background-color: gold;
+}
+.niveau1 li:hover a{
+	background:#e0d03d;
+	display:block;
+	width:100%;
+	border-radius:3px;
+	font-size:2em;
+}
+.niveau0 li:hover {
+	background:gold;
+	display:block;
+	min-height:100%;
+	border-radius:3px;
+	padding:10px 0;
+	/*font-size:2em;*/
+}
+.niveau0 li:hover .niveau1{
+	display:block;
+}
+.niveau0{
+	display:flex;
+}
+header,footer{
+	min-height:150px;
+}
+main{
+	min-height:500px;
+}
+header,footer,main{
+	width: 100%;
+	/*border:1px solid blue;*/
+}
+aside{
+	width:14%;
+	background:rgb(240, 240, 215);
+	min-height:490px;
+}
+section{
+	width:70%;
+	border:2px solid grey;
+	min-height:490px;
+}
+main{
+	display:flex;
+	justify-content:space-around;
+	padding:0;
+}
