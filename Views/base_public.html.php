@@ -29,6 +29,7 @@ if (isset($file) && isset($datas)) {
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
+		<?php if (!isset($datas['hideNav']) || !$datas['hideNav']): ?>
 		<nav class="menunav" id="myMenunav">
 			<a href="/" class="active">
 				<i class="material-icons">home</i>
@@ -45,6 +46,7 @@ if (isset($file) && isset($datas)) {
 				<i class="material-icons">menu</i>
 			</a>
 		</nav>
+		<?php endif; ?>
 		<section>
 			<?php if (isset($content)) {
 				echo $content;
