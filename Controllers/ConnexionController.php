@@ -48,6 +48,7 @@ class ConnexionController
 					'SELECT * FROM users WHERE id=:pseudo AND md5=:mdp';
 					$req = $connexion->prepare($sql);
 					$req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
+					$req->bindValue(':mdp', $_POST['mdp'], PDO::PARAM_STR);
 					$req->execute();
 					$user = $req->fetch(PDO::FETCH_ASSOC);
 
