@@ -5,7 +5,7 @@ class ConnexionController
 	public function index()
 	{
 		// Rediriger vers le formulaire de connexion
-		header('Location: /Views/connect/connectForm.php');
+		header('Location: /?url=connexion/connect');
 		exit();
 	}
 
