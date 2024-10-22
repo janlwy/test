@@ -7,7 +7,7 @@ class ConnexionController
 		// Rediriger vers le formulaire de connexion
 		// Assurez-vous que la redirection ne boucle pas
 		if (!isset($_SESSION['pseudo'])) {
-			header('Location: index.php?url=connexion/connect');
+			header('Location: /?url=connexion/connect');
 			exit();
 		}
 		exit();
@@ -49,7 +49,7 @@ class ConnexionController
 
 						// Rediriger l'utilisateur vers le formulaire de connexion avec un message d'erreur
 						$_SESSION['erreur'] = $erreur;
-						header('Location: index.php?url=connexion/connect'); 
+						header('Location: /?url=connexion/connect'); 
 						exit();
 					}
 				} catch (PDOException $e) {
