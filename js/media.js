@@ -55,7 +55,7 @@ function myFunction() {
 }
 
 // Ouvrir la modale de connexion --------------------------------------
-var modal = document.getElementById('log');
+const modal = document.getElementById('log');
 
 // Fermeture de la modale ---------------------------------------------
 window.onclick = function (event) {
