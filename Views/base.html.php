@@ -21,7 +21,7 @@ session_start();
 <body class="clair-theme" id="themeBody">
 	<header>
 		<!-- Base HTML -->
-		<h1>Média Box</h1>
+		<h1>Média Box - Base HTML</h1>
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
