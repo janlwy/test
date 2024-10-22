@@ -16,7 +16,7 @@ class ConnexionController
 			generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 		} else {
 			// Rediriger vers la page principale si l'utilisateur est déjà connecté
-			header('Location: /?url=mediabox/index');
+			header('Location: ?url=mediabox/index');
 			exit();
 		}
 	}
@@ -54,7 +54,7 @@ class ConnexionController
 					if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
 						session_start();
 						$_SESSION['pseudo'] = $_POST['pseudo'];
-						header('Location: /?url=mediabox/index');
+						header('Location: ?url=mediabox/index');
 						exit();
 					} else {
 						$erreur = 'Login ou mot de passe non reconnu !';
@@ -63,7 +63,7 @@ class ConnexionController
 
 						// Rediriger l'utilisateur vers le formulaire de connexion avec un message d'erreur
 						$_SESSION['erreur'] = $erreur;
-						header('Location: /?url=connexion/connect'); 
+						header('Location: ?url=connexion/connect'); 
 						exit();
 					}
 				} catch (PDOException $e) {
@@ -72,7 +72,7 @@ class ConnexionController
 
 					// Afficher un message d'erreur générique à l'utilisateur
 					$_SESSION['erreur'] = "Une erreur est survenue lors de la connexion.";
-					header('Location: /?url=connexion/connect'); // Rediriger vers le formulaire de connexion
+					header('Location: ?url=connexion/connect'); // Rediriger vers le formulaire de connexion
 					exit();
 				}
 			}
