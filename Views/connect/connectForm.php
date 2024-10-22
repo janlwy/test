@@ -1,8 +1,6 @@
-
-
 <!-- <div id="log" class="modal"> -->
 
-<form class="modalContenu Anime formFont" method="POST" action="connexion.php">
+<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
 
 	<!--div class="closeContainer">
 				<span onclick="document.getElementById('log').style.display='none'" class="close" title="Fermer">&times;</span>
