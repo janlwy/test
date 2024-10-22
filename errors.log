@@ -1,0 +1,586 @@
+2024-10-22 22:55:03 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 22:55:03 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 22:55:04 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 22:55:04 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 22:55:08 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 22:55:08 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 22:55:15 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 22:55:15 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:04:01 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:04:01 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:04:01 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:04:01 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:04:10 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:04:10 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:04:10 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:04:10 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:06:07 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:06:07 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:06:07 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:06:07 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:06:44 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:06:44 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:06:44 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:06:44 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:08:11 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:08:11 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:08:11 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:08:11 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:08:42 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:08:42 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:08:42 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:08:42 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:09:35 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:09:35 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:09:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:09:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:12:53 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:12:53 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:12:53 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:12:53 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:12:57 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:12:57 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:12:57 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:12:57 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:12:58 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:12:58 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:12:58 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:12:58 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:13:08 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:13:08 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:13:08 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:13:08 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:15:15 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:15:15 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:15:15 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:15:15 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:15:20 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:15:20 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:15:20 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:15:20 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:09 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:09 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:09 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:09 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:11 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:11 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:11 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:11 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:26 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:26 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:26 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:26 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:28 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:28 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:28 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:28 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:28 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:28 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:28 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:28 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:28 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:28 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:28 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:28 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:49 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:49 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:50 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:50 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:50 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:50 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:51 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:51 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:51 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:16:51 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:16:51 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:16:51 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:16:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:17:04 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:17:04 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:17:04 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:17:04 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:17:05 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:17:05 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:17:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:17:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:17:06 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:17:06 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:17:06 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:17:06 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:22:12 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:22:12 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:22:12 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:22:12 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:22:19 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:22:19 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:22:19 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:22:19 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:22:25 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:22:25 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:22:25 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:22:25 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:22:30 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:22:30 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:22:30 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:22:30 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:22:34 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:22:34 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:22:34 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:22:34 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:25:54 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:25:54 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:25:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:25:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:28:57 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:28:57 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:28:57 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:28:57 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:29:05 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:29:05 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:29:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:29:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:29:06 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:29:06 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:29:06 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:29:06 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:29:07 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:29:07 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:29:07 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:29:07 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:29:13 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:29:13 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:29:13 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:29:13 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:31:56 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:31:56 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:31:56 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:31:56 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:31:58 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:31:58 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:31:58 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:31:58 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:32:02 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:32:02 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:32:02 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:32:02 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:32:07 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:32:07 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:32:07 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:32:07 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:33:05 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:33:05 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:33:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:33:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:33:06 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:33:06 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:33:06 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:33:06 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:33:08 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:33:08 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:33:08 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:33:08 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:34:53 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:34:53 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:34:53 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:34:53 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:35:17 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:35:17 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:35:17 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:35:17 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:35:34 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:35:34 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:35:34 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:35:34 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:37:28 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:37:28 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:37:28 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:37:28 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:37:30 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:37:30 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:37:30 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:37:30 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:37:33 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:37:33 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:37:33 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:37:33 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:40:47 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:40:47 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:40:47 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:40:47 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:40:49 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:40:49 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:40:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:40:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:40:50 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:40:50 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:40:50 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:40:50 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:44:57 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:44:57 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:44:57 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:44:57 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:44:59 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:44:59 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:44:59 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:44:59 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:44:59 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:44:59 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:44:59 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:44:59 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:44:59 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:44:59 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:44:59 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:44:59 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:45:00 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:45:00 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:45:00 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:45:00 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:45:00 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:45:00 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:45:00 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:45:00 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:35 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:35 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:35 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:35 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:36 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:36 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:36 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:36 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:36 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:36 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:36 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:36 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:36 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:36 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:36 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:36 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:37 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:37 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:37 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:37 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:37 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:37 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:37 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:37 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:38 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:38 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:38 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:38 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:47:38 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:47:38 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:47:38 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:47:38 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:49:27 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:49:27 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:49:27 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:49:27 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:50:03 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:50:03 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:50:03 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:50:03 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:50:26 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:50:26 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:50:26 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:50:26 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:50:34 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:50:34 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:50:34 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:50:34 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:51:28 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:51:28 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:51:28 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:51:28 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:51:37 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:51:37 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:51:37 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:51:37 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:51:45 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:51:45 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:51:45 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:51:45 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:51:54 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:51:54 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:51:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:51:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:52:09 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:52:09 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:52:09 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:52:09 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:52:15 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:52:15 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:52:15 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:52:15 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:52:29 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:52:29 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:52:29 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:52:29 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:52:31 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:52:31 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:52:31 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:52:31 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:52:32 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:52:32 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:52:32 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:52:32 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:54:59 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:54:59 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:54:59 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:54:59 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:55:05 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:55:05 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:55:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:55:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:56:54 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:56:54 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:56:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:56:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:56:56 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:56:56 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:57:19 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:57:19 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:04 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:04 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:05 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:05 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:14 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-22 23:58:14 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-22 23:58:14 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-22 23:58:17 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:17 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:20 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:22 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:58:22 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:58:22 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:58:22 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:58:26 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-22 23:58:26 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-22 23:58:26 - [error] - Début de la méthode index dans AccueilController
+2024-10-22 23:58:26 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-22 23:58:27 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:27 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:58:47 - [error] - Tentative de chargement du contrôleur : ConnectController et de la méthode : createUserForm
+2024-10-22 23:58:50 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:58:50 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:15 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:15 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:15 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:15 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:20 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:36 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:36 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:37 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:37 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-22 23:59:39 - [error] - Tentative de chargement du contrôleur : ConnectController et de la méthode : createUserForm
+2024-10-22 23:59:43 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-22 23:59:43 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:01:45 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:01:45 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:01:46 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:01:46 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:01:50 - [error] - Tentative de chargement du contrôleur : ConnectController et de la méthode : createUserForm
+2024-10-23 00:01:52 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:01:52 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:02:00 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:02:00 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:02:00 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 00:02:00 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:02:00 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:28 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:04:28 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:30 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:04:30 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:31 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:04:31 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:33 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:04:33 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:04:41 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:04:41 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:41 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 00:04:41 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:04:41 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:04:46 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:04:46 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:04:48 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:04:48 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:04:49 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:04:49 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:04:51 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:04:51 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:04:51 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:04:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:04:54 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:04:54 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:04:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:04:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:04:56 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:04:56 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:05:05 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:05:05 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:05:05 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 00:05:05 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:05:05 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:09:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:09:35 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:12:04 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:12:04 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:12:06 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:12:06 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:12:08 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:12:08 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:12:14 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:12:14 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:12:15 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:12:15 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:12:28 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:12:28 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:12:39 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:12:39 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:15:24 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:15:24 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:15:34 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:15:34 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:15:35 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:15:35 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:15:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:15:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:15:37 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:15:37 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:15:45 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : connect
+2024-10-23 00:16:18 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:16:18 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:16:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:16:21 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:16:30 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 00:16:30 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 00:16:30 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:16:30 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:17:21 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 00:17:21 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 00:17:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:17:21 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:33 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:18:33 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:34 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:18:34 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:37 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:18:37 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:38 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:18:38 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:39 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:18:39 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:18:39 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:18:39 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:18:41 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:18:41 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:18:50 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 00:18:50 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 00:20:38 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 00:20:38 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 00:20:38 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:20:38 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:20:51 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 00:20:51 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 00:20:51 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:20:51 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:24:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:24:35 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:24:37 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:24:37 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:24:38 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:24:38 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:24:40 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:24:40 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:24:40 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:24:40 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:24:42 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:24:42 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:24:52 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:24:52 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:24:52 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 00:24:52 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:24:52 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:30:05 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:30:05 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:30:07 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:30:07 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:30:08 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:30:08 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:30:12 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:30:12 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:30:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:30:21 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:30:21 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 00:30:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:30:21 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:33:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:33:20 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:33:22 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:33:22 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:33:24 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:33:24 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:33:33 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:33:33 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:33:33 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-23 00:33:33 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:33:33 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:34:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:34:20 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:36:09 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:36:09 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:36:10 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:36:10 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:36:10 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:36:10 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:36:13 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:36:13 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:36:13 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:36:13 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:36:14 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:36:14 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:36:14 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:36:14 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:36:14 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 00:36:14 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 00:36:14 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 00:36:14 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 00:36:18 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:36:18 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:36:31 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:36:31 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:36:31 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-23 00:36:31 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:36:31 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:39:49 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:39:49 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:39:50 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:39:50 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:39:50 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:39:50 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:39:52 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:39:52 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:39:54 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:39:54 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:40:04 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:40:04 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:40:04 - [error] - Erreur PDO : SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+2024-10-23 00:40:04 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:40:04 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:45:17 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:45:17 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:45:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 00:45:20 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 00:45:30 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:45:30 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 00:45:30 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-23 00:45:30 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 00:45:30 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController

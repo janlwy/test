@@ -17,7 +17,7 @@ class AccueilController
 		} else {
 			// Rediriger vers la page de médiabox si l'utilisateur est connecté
 			logError("Utilisateur connecté, redirection vers mediabox");
-			header('Location: /?url=mediabox/index');
+			header('Location: ?url=mediabox/index');
 			exit();
 		}
 	}

@@ -2,11 +2,11 @@
 
 function charger($class)
 {
-	$fileModels = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Models" . DIRECTORY_SEPARATOR . "$class.php";
-	$fileControllers = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Controllers" . DIRECTORY_SEPARATOR . "$class.php";
-	$fileViews = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Views" . DIRECTORY_SEPARATOR . "$class.php";
-	$fileRessources = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Ressources" . DIRECTORY_SEPARATOR . "$class.php";
-	$fileFonctions = __DIR__ . DIRECTORY_SEPARATOR . ".." . DIRECTORY_SEPARATOR . "Fonctions" . DIRECTORY_SEPARATOR . "$class.php";
+	$fileModels = "./Models/$class.php";
+	$fileControllers = "./Controllers/$class.php";
+	$fileViews = "./Views/$class.php";
+	$fileRessources = "./Ressources/$class.php";
+	$fileFonctions = "./Fonctions/$class.php";
 	$files = array($fileModels, $fileControllers, $fileViews, $fileRessources, $fileFonctions);
 	foreach ($files as $file) {
 		if (file_exists($file)) {

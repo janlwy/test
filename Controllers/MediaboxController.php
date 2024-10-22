@@ -15,7 +15,7 @@ class MediaboxController
             generate("Views/main/mediabox.php", $datas, "Views/base.html.php");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-            header('Location: /?url=connexion/index');
+            header('Location: ?url=connexion/index');
             exit();
         }
     }
