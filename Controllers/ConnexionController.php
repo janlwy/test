@@ -2,6 +2,13 @@
 
 class ConnexionController
 {
+	public function index()
+	{
+		// Rediriger vers le formulaire de connexion
+		header('Location: /Views/connect/connectForm.php');
+		exit();
+	}
+
 	public function connect()
 	{
 		// Informations de connexion à la base de données
