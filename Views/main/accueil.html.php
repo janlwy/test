@@ -7,8 +7,8 @@
 
 <!-- bouton effet 3D (incluant une modale (formulaire 	de    connexion)) -->
 <section class="sectionBouton3d">
-	<a href="javascript:void(0);">
-		<button type="button" class="clic3d" onclick="document.getElementById('log').style.display='block'">
+	<a href="/?url=connexion/index">
+		<button type="button" class="clic3d">
 			<div class="ombre3d"></div>
 			<div class="bord3d"></div>
 			<span class="bouton3d">
