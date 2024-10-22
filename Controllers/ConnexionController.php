@@ -10,7 +10,9 @@ class ConnexionController
 			header('Location: /?url=connexion/connect');
 			exit();
 		}
-		exit();
+		// Afficher le formulaire de connexion
+		$datas = [];
+		generate("Views/connect/connectForm.php", $datas, "Views/base_public.html.php");
 	}
 
 	public function connect()
