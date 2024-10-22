@@ -20,8 +20,16 @@ class Router
 		$actionName = isset($controllerAction[1]) ? $controllerAction[1] : 'index'; // méthode par défaut si non spécifiée
 
 		require_once "Controllers/$controllerName.php";
-		$controller = new $controllerName(); // Instancier sans argument
-		$controller->$actionName(); // Appeler la méthode connect()
+		if (class_exists($controllerName)) {
+			$controller = new $controllerName(); // Instancier sans argument
+			if (method_exists($controller, $actionName)) {
+				$controller->$actionName(); // Appeler la méthode spécifiée
+			} else {
+				echo "La méthode $actionName n'existe pas dans le contrôleur $controllerName.";
+			}
+		} else {
+			echo "Le contrôleur $controllerName n'existe pas.";
+		}
 
 	}
 }
