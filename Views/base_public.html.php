@@ -1,7 +1,7 @@
 <?php
 // Démarrer la session au début du fichier
 if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+	session_start();
 }
 /*
 if (isset($file) && isset($datas)) {
@@ -19,13 +19,14 @@ if (isset($file) && isset($datas)) {
 	<title>MédiaBox</title>
 	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
 </head>
-<link rel="stylesheet" href="/css/media.css" type="text/css">
+<link rel="stylesheet" href="css/media.css" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 <body class="clair-theme" id="themeBody">
 	<header>
 		<h1>Média Box</h1>
+		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
 		<nav class="menunav" id="myMenunav">
@@ -37,7 +38,6 @@ if (isset($file) && isset($datas)) {
 			<a href="#">Vidéos</a>
 			<a href="#">Photos</a>
 			<a href="#">Paroles</a>
-			<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 			<a href="deconnexion.php" class="sortie boutonright">
 				<i class="material-icons">logout</i>
 			</a>
@@ -46,7 +46,11 @@ if (isset($file) && isset($datas)) {
 			</a>
 		</nav>
 		<section>
-			<?php if (isset($content)) { echo $content; } else { echo "Contenu non disponible."; } ?>
+			<?php if (isset($content)) {
+				echo $content;
+			} else {
+				echo "Contenu non disponible.";
+			} ?>
 		</section>
 	</main>
 	<footer>
@@ -61,7 +65,7 @@ if (isset($file) && isset($datas)) {
 			</div>
 		</div>
 	</footer>
-	<script src="/js/media.js"></script>
+	<script src="js/media.js"></script>
 </body>
 
 </html>
