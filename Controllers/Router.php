@@ -9,7 +9,7 @@ class Router
 			$urls = explode('/', $url);
 			$class = $urls[0];
 		} else if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/connexion') !== false) {
-			$class = 'Connexion@index';
+			$class = 'Connexion@connect';
 		} else {
 			$url = '';
 			$class = 'Accueil';
