@@ -31,6 +31,15 @@ class ConnexionController
 			logError("Session déjà démarrée");
 		}
 		$datas = [];
+		logError("Génération du formulaire de connexion");
+		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+		if (session_status() === PHP_SESSION_NONE) {
+			logError("Session non démarrée, démarrage de la session");
+			session_start();
+		} else {
+			logError("Session déjà démarrée");
+		}
+		$datas = [];
 		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 	}
 	
