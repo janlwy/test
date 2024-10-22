@@ -21,7 +21,11 @@ class ConnexionController
 		}
 	}
 
-	public function connect()
+	public function connectForm()
+	{
+		$datas = [];
+		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+	}
 	{
 		$datas = [];
 		// On vérifie que le visiteur a correctement saisi puis envoyé le formulaire
