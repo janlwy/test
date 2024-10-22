@@ -2,10 +2,6 @@
 // Démarrer la session au début du fichier
 session_start();
 
-if (!isset($_SESSION['pseudo'])) {
-	header('Location: connectForm.php'); // Rediriger vers une page de connexion
-	exit();
-}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -28,16 +24,18 @@ if (!isset($_SESSION['pseudo'])) {
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
+		<?php if (isset($_SESSION['pseudo'])): ?>
 		<nav class="menunav" id="myMenunav">
-			<a href="/" class="active"><i class="material-icons">home</i></a> </head>
+			<a href="/" class="active"><i class="material-icons">home</i></a>
 			<a href="#" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
 			<a href="#">Musique</a>
 			<a href="#">Vidéos</a>
 			<a href="#">Photos</a>
 			<a href="#">Paroles</a>
-			<a href="deconnexion.php" class="sortie boutonright"><i class="material-icons">logout</i></a> </head>
+			<a href="deconnexion.php" class="sortie boutonright"><i class="material-icons">logout</i></a>
 			<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
 		</nav>
+		<?php endif; ?>
 		<section>
 			<?= $content ?>
 		</section>

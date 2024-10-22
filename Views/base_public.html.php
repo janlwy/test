@@ -29,7 +29,7 @@ if (isset($file) && isset($datas)) {
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
-		<?php if (!isset($datas['hideNav']) || !$datas['hideNav']): ?>
+		<?php if (isset($_SESSION['pseudo'])): ?>
 		<nav class="menunav" id="myMenunav">
 			<a href="/" class="active">
 				<i class="material-icons">home</i>
