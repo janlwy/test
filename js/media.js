@@ -55,14 +55,14 @@ function myFunction() {
 }
 
 // Ouvrir la modale de connexion --------------------------------------
-const modal = document.getElementById('log');
+//const modal = document.getElementById('log');
 
 // Fermeture de la modale ---------------------------------------------
-window.onclick = function (event) {
+/*window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-}
+}*/
 
 // Collapse dans Mon Espace de gestion----------------------------------------
 var collap = document.getElementsByClassName("collapsible");

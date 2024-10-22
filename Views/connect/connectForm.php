@@ -1,10 +1,6 @@
-<div id="log" class="modal">
+<div>
 
 <form class="modalContenu Anime formFont" method="POST" action="/?url=connexion/connect">
-
-	<!--div class="closeContainer">
-				<span onclick="document.getElementById('log').style.display='none'" class="close" title="Fermer">&times;</span>
-			</div-->
 
 	<div class="formContainer">
 		<h2>Connexion à votre compte</h2>
