@@ -1,7 +1,8 @@
 <?php
 // Démarrer la session au début du fichier
-session_start();
-
+if (session_status() === PHP_SESSION_NONE) {
+	session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -20,8 +21,7 @@ session_start();
 
 <body class="clair-theme" id="themeBody">
 	<header>
-		<!-- Base HTML -->
-		<h1>Média Box - Base HTML</h1>
+		<h1>Média Box - Base Combined HTML</h1>
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
@@ -38,7 +38,13 @@ session_start();
 		</nav>
 		<?php endif; ?>
 		<section>
-			<?= $content ?>
+			<?php
+				if (isset($content)) {
+					echo $content;
+				} else {
+					echo "Contenu non disponible.";
+				}
+			?>
 		</section>
 	</main>
 	<footer>

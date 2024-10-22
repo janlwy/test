@@ -23,7 +23,7 @@ function printr($tableaux)
 	//die;
 }
 
-function generate($file, $datas, $layout = "Views/base_public.html.php")
+function generate($file, $datas, $layout = "Views/base.html.php")
 {
 	$content = generateFile($file, $datas);
 	echo generateFile($layout, array('content' => $content)); // Afficher le contenu généré
