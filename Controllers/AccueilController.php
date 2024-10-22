@@ -8,12 +8,14 @@ class AccueilController
 			session_start();
 		}
 
-		if (isset($_SESSION['pseudo'])) {
-			header('Location: /?url=mediabox/index');
-			exit();
-		} else {
+		// Afficher la page d'accueil si l'utilisateur n'est pas connecté
+		if (!isset($_SESSION['pseudo'])) {
 			$datas = ['hideNav' => true]; // Masquer le menu de navigation
 			generate("Views/main/accueil.html.php", $datas, "Views/base.html.php");
+		} else {
+			// Rediriger vers la page de médiabox si l'utilisateur est connecté
+			header('Location: /?url=mediabox/index');
+			exit();
 		}
 	}
 }
