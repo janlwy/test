@@ -2,11 +2,11 @@
 
 function charger($class)
 {
-	$fileModels = "Models/$class.php";
-	$fileControllers = "Controllers/$class.php";
-	$fileViews = "Views/$class.php";
-	$fileRessources = "Ressources/$class.php";
-	$fileFonctions = "Fonctions/$class.php";
+	$fileModels = __DIR__ . "/../Models/$class.php";
+	$fileControllers = __DIR__ . "/../Controllers/$class.php";
+	$fileViews = __DIR__ . "/../Views/$class.php";
+	$fileRessources = __DIR__ . "/../Ressources/$class.php";
+	$fileFonctions = __DIR__ . "/../Fonctions/$class.php";
 	$files = array($fileModels, $fileControllers, $fileViews, $fileRessources, $fileFonctions);
 	foreach ($files as $file) {
 		if (file_exists($file)) {
