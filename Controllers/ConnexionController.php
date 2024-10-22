@@ -4,15 +4,20 @@ class ConnexionController
 {
 	public function index()
 	{
-		// Rediriger vers le formulaire de connexion
-		// Assurez-vous que la redirection ne boucle pas
+		// Démarrer la session si elle n'est pas déjà démarrée
+		if (session_status() === PHP_SESSION_NONE) {
+			session_start();
+		}
+
+		// Afficher le formulaire de connexion si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {
-			header('Location: /?url=connexion/connect');
+			$datas = [];
+			generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+		} else {
+			// Rediriger vers la page d'accueil si l'utilisateur est déjà connecté
+			header('Location: /?url=mediabox/index');
 			exit();
 		}
-		// Afficher le formulaire de connexion
-		$datas = [];
-		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 	}
 
 	public function connect()
