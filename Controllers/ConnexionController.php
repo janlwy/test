@@ -10,12 +10,12 @@ class ConnexionController
 			session_start();
 		}
 
-		// Afficher le formulaire de connexion si l'utilisateur n'est pas connecté
+		// Afficher l'accueil si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {
 			$datas = [];
-			generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+			generate("Views/main/accueil.html.php", $datas, "Views/base.html.php");
 		} else {
-			// Rediriger vers la page d'accueil si l'utilisateur est déjà connecté
+			// Rediriger vers la page principale si l'utilisateur est déjà connecté
 			header('Location: /?url=mediabox/index');
 			exit();
 		}
