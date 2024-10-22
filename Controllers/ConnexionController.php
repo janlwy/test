@@ -45,11 +45,9 @@ class ConnexionController
 
 					//Requête préparée pour éviter les injections SQL
 					$sql =
-					'SELECT count(*) FROM users WHERE id=:pseudo AND md5=:mdp';
+					'SELECT * FROM users WHERE pseudo=:pseudo';
 					$req = $connexion->prepare($sql);
 					$req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
-					$req->bindValue(
-					':mdp', md5($_POST['mdp']), PDO::PARAM_STR);
 					$req->execute();
 					$user = $req->fetch(PDO::FETCH_ASSOC);
 
