@@ -1,6 +1,6 @@
 <div>
 
-	<form class="modalContenu Anime formFont" method="POST" action="?url=mediabox/index">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
 
 		<div class="formContainer">
 			<h2>Connexion à votre compte</h2>
