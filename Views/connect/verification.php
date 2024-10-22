@@ -32,10 +32,10 @@ if (isset($_POST['creation']) && $_POST['creation'] == 'Creation') {
             $data = $req->fetch(PDO::FETCH_NUM);
             // Si aucun autre login identique existe, on inscrit ce nouveau login
             if ($data[0] == 0) {
-               $sql = 'INSERT INTO users (id, md5) VALUES( :pseudo, :mdp1)';
+               $sql = 'INSERT INTO users (id, mdp) VALUES( :pseudo, :mdp1)';
                $req = $connexion->prepare($sql);
                $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
-               $req->bindValue(':mdp1', md5($_POST['mdp1']), PDO::PARAM_STR);
+               $req->bindValue(':mdp1', password_hash($_POST['mdp1'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                $req->execute();
                $erreur = 'inscription reussie !';
                echo $erreur;
