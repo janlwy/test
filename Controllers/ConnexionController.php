@@ -25,6 +25,8 @@ class ConnexionController
 	{
 		$datas = [];
 		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+	}
+	
 	public function connect()
 	{
 		$datas = [];
