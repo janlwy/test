@@ -1,13 +1,10 @@
 <?php
-	class AccueilController{
-		
-		public function __construct($url){
-			
-			$file="Views/main/accueil.html.php";
-			$data=array();
-			generate($file,$data);
-			
-		}
+class AccueilController
+{
+	public function index()
+	{
+		$datas = [];
+		generate("Views/main/accueil.html.php", $datas, "Views/base_public.html.php");
 	}
-
+}
 ?>
