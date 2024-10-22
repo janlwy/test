@@ -13,7 +13,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<meta name="author" content="Jean-Louis Marsillon">
 	<meta name="description" content="Mon projet CDA">
 	<title>MédiaBox</title>
-	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/Ressources/favicon/favicon.ico">
 </head>
 <link rel="stylesheet" href="/css/media.css" type="text/css">
 <link rel="stylesheet" href="/css/mediamusic.css" type="text/css">
