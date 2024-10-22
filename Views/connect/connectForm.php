@@ -1,4 +1,4 @@
-<!-- <div id="log" class="modal"> -->
+<div id="log" class="modal">
 
 <form class="modalContenu Anime formFont" method="POST" action="/?url=connexion/connect">
 
@@ -31,4 +31,4 @@
 
 </form>
 
-<!-- </div> -->
+</div>
