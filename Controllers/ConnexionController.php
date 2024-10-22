@@ -15,8 +15,8 @@ class ConnexionController
 			if ((isset($_POST['pseudo']) && !empty($_POST['pseudo'])) && (isset($_POST['mdp']) && !empty($_POST['mdp']))) {
 				// On se connecte à la bdd avec PDO
 				try {
-					$connexion = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-					$connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					$manager = new Manager();
+					$connexion = $manager->getConnexion();
 
 					//Requête préparée pour éviter les injections SQL
 					$sql = 'SELECT * FROM users WHERE id=:pseudo';

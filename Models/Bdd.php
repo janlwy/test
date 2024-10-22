@@ -1,12 +1,18 @@
 <?php
 
-class Operation
+class Bdd
 {
-	public function connecter()
-	{
-		$dsn = "mysql:host=localhost;dbname=cda_projet;charset=utf8";
-		$connexion = new PDO($dsn, 'root', '');
-		return $connexion;
-	}
+    public static function getConnexion()
+    {
+        $dsn = "mysql:host=localhost;dbname=cda_projet;charset=utf8";
+        try {
+            $connexion = new PDO($dsn, 'root', '');
+            $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $connexion;
+        } catch (PDOException $e) {
+            logError("Erreur de connexion à la base de données : " . $e->getMessage());
+            die("Erreur de connexion à la base de données.");
+        }
+    }
 }
 ?>

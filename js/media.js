@@ -5,7 +5,7 @@ window.onload = () => {
     let boutonTheme = document.getElementById("boutonTheme");
 
     // renvoi les elements stockés en local au chargement de la page
-    if (localStorage.className, localStorage.textContent != null){
+    if (localStorage.className && localStorage.textContent != null){
         themeBody.className = `${localStorage.className}`;
         boutonTheme.textContent = `${localStorage.textContent}`;
     }else{ 
@@ -29,7 +29,7 @@ const switchMobile = document.querySelector('.iconeTheme');
     const className = document.body.className;
     const iconeTheme = document.getElementsByClassName("iconeTheme");
     /* localStorage stocke la classe et l'icone du theme actif pour persitance*/
-    if (localStorage.className == "clair-theme", localStorage.textContent == "dark_mode") {
+    if (localStorage.className == "clair-theme" && localStorage.textContent == "dark_mode") {
         localStorage.className = "sombre-theme";
         localStorage.textContent = "light_mode";
     }else{

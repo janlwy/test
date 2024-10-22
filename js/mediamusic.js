@@ -116,7 +116,7 @@ function seekTo() {
     // Calculate the seek position by the
     // percentage of the seek slider
     // and get the relative duration to the track
-    seekto = curr_track.duration * (seek_slider.value / 100);
+    let seekto = curr_track.duration * (seek_slider.value / 100);
 
     // Set the current track position to the calculated seek position
     curr_track.currentTime = seekto;
