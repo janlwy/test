@@ -14,18 +14,17 @@ class ConnexionController
 		$datas = [];
 		$datas = [];
 		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+		} else {
+			// Afficher le formulaire de connexion si aucune donnée n'est soumise
+			generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+		}
 	}
 
 	public function connect()
 	{
-		// Informations de connexion à la base de données
-		$host = "localhost";
-		$dbname = "cda_projet";
-		$username = "root";
-		$password = "";
-
+		$datas = [];
 		// On vérifie que le visiteur a correctement saisi puis envoyé le formulaire
-		if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
+		if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 			if ((isset($_POST['pseudo']) && !empty($_POST['pseudo'])) && (isset($_POST['mdp']) && !empty($_POST['mdp']))) {
 				// On se connecte à la bdd avec PDO
 				try {
