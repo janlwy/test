@@ -5,7 +5,7 @@ class ConnexionController
 	public function index()
 	{
 		// Rediriger vers le formulaire de connexion
-		header('Location: /cdaProjet024/Views/connect/connectForm.php');
+		header('Location: /cdaProjet024/?url=connexion/connect');
 		exit();
 	}
 
@@ -45,7 +45,7 @@ class ConnexionController
 
 						// Rediriger l'utilisateur vers le formulaire de connexion avec un message d'erreur
 						$_SESSION['erreur'] = $erreur;
-						header('Location: /cdaProjet024/Views/connect/connectForm.php'); 
+						header('Location: /cdaProjet024/?url=connexion/connect'); 
 						exit();
 					}
 				} catch (PDOException $e) {
