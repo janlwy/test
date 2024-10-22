@@ -44,7 +44,8 @@ class ConnexionController
 					$connexion = $manager->getConnexion();
 
 					//Requête préparée pour éviter les injections SQL
-					$sql = 'SELECT * FROM users WHERE votre_nom_de_colonne=:pseudo';
+					$sql =
+					'SELECT * FROM users WHERE id=:pseudo AND md5=:mdp';
 					$req = $connexion->prepare($sql);
 					$req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
 					$req->execute();
