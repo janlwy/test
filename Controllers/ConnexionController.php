@@ -5,7 +5,11 @@ class ConnexionController
 	public function index()
 	{
 		// Rediriger vers le formulaire de connexion
-		header('Location: index.php?url=connexion/connect');
+		// Assurez-vous que la redirection ne boucle pas
+		if (!isset($_SESSION['pseudo'])) {
+			header('Location: index.php?url=connexion/connect');
+			exit();
+		}
 		exit();
 	}
 
