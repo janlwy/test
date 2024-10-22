@@ -8,8 +8,8 @@ class Router
 			$url = $_GET['url'];
 			$urls = explode('/', $url);
 			$class = $urls[0];
-		} else if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/connexion') !== false) {
-			$class = 'Connexion@index';
+		} else if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], '/connexion/connect') !== false) {
+			$class = 'Connexion@connect';
 		} else {
 			$url = '';
 			$class = 'Accueil';
