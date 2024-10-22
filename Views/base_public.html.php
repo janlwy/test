@@ -49,11 +49,13 @@ if (isset($file) && isset($datas)) {
 		</nav>
 		<?php endif; ?>
 		<section>
-			<?php if (isset($content)) {
-				echo $content;
-			} else {
-				echo "Contenu non disponible.";
-			} ?>
+			<?php
+				if (isset($content)) {
+					echo $content;
+				} else {
+					echo "Contenu non disponible.";
+				}
+			?>
 		</section>
 	</main>
 	<footer>
