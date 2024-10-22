@@ -1,6 +1,8 @@
 <?php
 // Démarrer la session au début du fichier
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 /*
 if (isset($file) && isset($datas)) {
 	$content = generateFile($file, $datas);
