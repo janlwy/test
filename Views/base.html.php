@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <body class="clair-theme" id="themeBody">
 	<header>
-		<h1>Média Box - Base Combined HTML</h1>
+		<h1>Média Box</h1>
 		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="no"></button>
 	</header>
 	<main>
