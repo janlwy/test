@@ -19,7 +19,7 @@ class Router
 		$controllerName = $controllerAction[0] . "Controller";
 		$actionName = isset($controllerAction[1]) ? $controllerAction[1] : 'index'; // méthode par défaut si non spécifiée
 
-		require_once __DIR__ . "/$controllerName.php";
+		require_once __DIR__ . "/../Controllers/$controllerName.php";
 		if (class_exists($controllerName)) {
 			$controller = new $controllerName(); // Instancier sans argument
 			if (method_exists($controller, $actionName)) {
