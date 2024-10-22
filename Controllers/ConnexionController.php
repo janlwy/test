@@ -40,7 +40,7 @@ class ConnexionController
 					if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
 						session_start();
 						$_SESSION['pseudo'] = $_POST['pseudo'];
-						header('Location: ./Views/main/mediabox.php');
+						header('Location: /?url=mediabox/index');
 						exit();
 					} else {
 						$erreur = 'Login ou mot de passe non reconnu !';
