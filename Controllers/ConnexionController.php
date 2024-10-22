@@ -60,7 +60,7 @@ class ConnexionController
 
 					// Afficher un message d'erreur générique à l'utilisateur
 					$_SESSION['erreur'] = "Une erreur est survenue lors de la connexion.";
-					header('Location: connectForm.php'); // Rediriger vers le formulaire de connexion
+					header('Location: /?url=connexion/connect'); // Rediriger vers le formulaire de connexion
 					exit();
 				}
 			}

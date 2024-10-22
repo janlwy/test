@@ -33,7 +33,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			<a href="#">Vidéos</a>
 			<a href="#">Photos</a>
 			<a href="#">Paroles</a>
-			<a href="deconnexion.php" class="sortie boutonright"><i class="material-icons">logout</i></a>
+			<a href="/?url=connexion/deconnexion" class="sortie boutonright"><i class="material-icons">logout</i></a>
 			<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
 		</nav>
 		<?php endif; ?>
