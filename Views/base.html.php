@@ -13,13 +13,13 @@ if (session_status() === PHP_SESSION_NONE) {
 	<meta name="author" content="Jean-Louis Marsillon">
 	<meta name="description" content="Mon projet CDA">
 	<title>MédiaBox</title>
-	<link rel="icon" type="image/x-icon" href="/Ressources/favicon/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/Ressources/favicon/favicon.ico">
 </head>
-<link rel="stylesheet" href="/css/media.css" type="text/css">
-<link rel="stylesheet" href="/css/mediamusic.css" type="text/css">
-<link rel="stylesheet" href="/css/mediavideo.css" type="text/css">
-<link rel="stylesheet" href="/css/mono.css" type="text/css">
-<link rel="stylesheet" href="/css/style.css" type="text/css">
+<link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/css/media.css" type="text/css">
+<link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/css/mediamusic.css" type="text/css">
+<link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/css/mediavideo.css" type="text/css">
+<link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/css/mono.css" type="text/css">
+<link rel="stylesheet" href="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/css/style.css" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -63,10 +63,10 @@ if (session_status() === PHP_SESSION_NONE) {
 			</div>
 		</div>
 	</footer>
-	<script src="/js/media.js"></script>
-	<script src="/js/appCRUD.js"></script>
-	<script src="/js/mediavideo.js"></script>
-	<script src="/js/mediamusic.js"></script>
+	<script src="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/js/media.js"></script>
+	<script src="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/js/appCRUD.js"></script>
+	<script src="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/js/mediavideo.js"></script>
+	<script src="<?php echo $_SERVER['DOCUMENT_ROOT']; ?>/js/mediamusic.js"></script>
 </body>
 
 </html>
