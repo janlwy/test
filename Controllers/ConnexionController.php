@@ -12,7 +12,7 @@ class ConnexionController
 		}
 		// Afficher le formulaire de connexion
 		$datas = [];
-		generate("Views/connect/connectForm.php", $datas, "Views/base_public.html.php");
+		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 	}
 
 	public function connect()
