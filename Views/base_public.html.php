@@ -17,9 +17,9 @@ if (isset($file) && isset($datas)) {
 	<meta name="author" content="Jean-Louis Marsillon">
 	<meta name="description" content="Mon projet CDA">
 	<title>MédiaBox</title>
-	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
+	<link rel="icon" type="image/x-icon" href="/cdaProjet024/Ressources/favicon/favicon.ico">
 </head>
-<link rel="stylesheet" href="css/media.css" type="text/css">
+<link rel="stylesheet" href="/cdaProjet024/css/media.css" type="text/css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -65,7 +65,7 @@ if (isset($file) && isset($datas)) {
 			</div>
 		</div>
 	</footer>
-	<script src="js/media.js"></script>
+	<script src="/cdaProjet024/js/media.js"></script>
 </body>
 
 </html>
