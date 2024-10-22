@@ -23,6 +23,7 @@ class ConnexionController
 
 	public function connectForm()
 	{
+		logError("Début de la méthode connectForm dans ConnexionController");
 		$datas = [];
 		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 	}
