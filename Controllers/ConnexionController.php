@@ -25,22 +25,11 @@ class ConnexionController
 	{
 		logError("Début de la méthode connectForm dans ConnexionController");
 		if (session_status() === PHP_SESSION_NONE) {
-			logError("Session non démarrée, démarrage de la session");
 			session_start();
-		} else {
-			logError("Session déjà démarrée");
+			logError("Session démarrée");
 		}
-		$datas = [];
 		logError("Génération du formulaire de connexion");
-		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
-		if (session_status() === PHP_SESSION_NONE) {
-			logError("Session non démarrée, démarrage de la session");
-			session_start();
-		} else {
-			logError("Session déjà démarrée");
-		}
-		$datas = [];
-		generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
+		generate("Views/connect/connectForm.php", [], "Views/base.html.php");
 	}
 	
 	public function connect()
@@ -55,7 +44,7 @@ class ConnexionController
 					$connexion = $manager->getConnexion();
 
 					//Requête préparée pour éviter les injections SQL
-					$sql = 'SELECT * FROM users WHERE id=:pseudo';
+					$sql = 'SELECT * FROM users WHERE pseudo=:pseudo';
 					$req = $connexion->prepare($sql);
 					$req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
 					$req->execute();
