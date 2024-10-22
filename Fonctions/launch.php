@@ -26,7 +26,7 @@ function printr($tableaux)
 function generate($file, $datas, $layout = "Views/base_public.html.php")
 {
 	$content = generateFile($file, $datas);
-	return generateFile($layout, array('content' => $content)); // Retourner le contenu généré
+	echo generateFile($layout, array('content' => $content)); // Afficher le contenu généré
 }
 
 function generateFile($file, $datas)

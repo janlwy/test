@@ -44,7 +44,7 @@ if (isset($file) && isset($datas)) {
 			</a>
 		</nav>
 		<section>
-			<?php if (isset($content)) echo $content; ?>
+			<?php if (isset($content)) { echo $content; } else { echo "Contenu non disponible."; } ?>
 		</section>
 	</main>
 	<footer>
