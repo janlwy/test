@@ -4,7 +4,7 @@ class Router
 {
     public function __construct()
     {
-        $url = isset($_GET['url']) ? $_GET['url'] : 'accueil/index';
+        $url = isset($_GET['url']) ? $_GET['url'] : 'mediabox/index';
         $urls = explode('/', $url);
         $controllerName = ucfirst($urls[0]) . "Controller";
         $actionName = isset($urls[1]) ? $urls[1] : 'index';
