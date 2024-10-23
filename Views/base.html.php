@@ -16,7 +16,6 @@ if (session_status() === PHP_SESSION_NONE) {
 	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
 </head>
 <link rel="stylesheet" href="css/media.css" type="text/css">
-<link rel="stylesheet" href="css/style.css" type="text/css">
 <link rel="stylesheet" href="css/mediamusic.css" type="text/css">
 <link rel="stylesheet" href="css/mediavideo.css" type="text/css">
 <link rel="stylesheet" href="css/mono.css" type="text/css">
