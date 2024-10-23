@@ -39,13 +39,13 @@
             </button>
         </div> -->
 
-        <div class="player">
+        <div class="player-video">
             <video controls>
                 <source src="/ressources/videos/sintel-short.mp4" type="video/mp4">
                 <source src="/ressources/videos/sintel-short.webm" type="video/webm">
                 <!-- fallback content here -->
             </video>
-            <div class="controls">
+            <div class="controls-video">
                 <button type="button" class="play" data-icon="P" aria-label="play pause toggle"></button>
                 <button type="button" class="stop" data-icon="S" aria-label="stop"></button>
                 <div class="timer">

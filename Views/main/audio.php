@@ -5,9 +5,9 @@
             <i class="material-icons">search</i>
         </button> -->
     </div>
-    <div class="player">
+    <div class="player-audio">
         <!-- Section pour afficher les détails -->
-        <div class="details">
+        <div class="details-audio">
             <div class="now-playing">Piste x de y</div>
             <div class="track-art"></div>
             <div class="track-name">Nom de la piste</div>
@@ -15,7 +15,7 @@
         </div>
 
         <!-- Section pour afficher les boutons de contrôle -->
-        <div class="buttons">
+        <div class="buttons-audio">
             <div class="prev-track" onclick="prevTrack()">
                 <i class="material-icons md-36">skip_previous</i>
             </div>
@@ -28,7 +28,7 @@
         </div>
 
         <!-- Section pour afficher le curseur de recherche -->
-        <div class="slider_container">
+        <div class="slider_container-audio">
             <div class="current-time">00:00</div>
             <input type="range" aria-label="nolabel" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
             <div class="total-duration">00:00</div>
