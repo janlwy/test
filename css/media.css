@@ -354,7 +354,7 @@ input::placeholder { /*police pesudo-element*/
 .modalContenu {
     background-color: #f5f5f5;
     margin: 5px auto;    /* 15% from the top and centered */
-    border: 2px solid #5c5959;
+    border: none;
     width: 80%;    /* Could be more or less, depending on screen size */
 }
 

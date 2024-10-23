@@ -1,5 +1,4 @@
 <div>
-
 	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create">
 
 		<div class="formContainer">
@@ -8,28 +7,30 @@
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
-					<?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+					<?php echo $_SESSION['erreur'];
+					unset($_SESSION['erreur']); ?>
 				</div>
 			<?php endif; ?>
 
 			<label for="pseudo"><b>Nom d'utilisateur</b></label>
-			<input class="inputModal" type="text" name="pseudo" id="pseudo" value="" required>
+			<input class="inputModal" type="text" placeholder="Entrer votre nom" name="pseudo" id="pseudo" value="" required>
 
 			<label for="mdp1"><b>Mot de passe</b></label>
-			<input class="inputModal" type="password" name="mdp1" id="mdp1" value="" required>
+			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp1" id="mdp1" value="" required>
 
 			<label for="mdp2"><b>Répéter le mot de passe</b></label>
-			<input class="inputModal" type="password" name="mdp2" id="mdp2" value="" required>
+			<input class="inputModal" type="password" placeholder="Répétez le mot de passe" name="mdp2" id="mdp2" value="" required>
+			<br>
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
-			<button type="submit" class="modalButton" name="creation" value="Creation">Création de compte</button>
-		</div>
+			<button type="submit" class="validButton modalButton" name="creation" value="Creation">Création de compte</button>
 
-		<div class="formContainer signin">
-			<p>Vous avez déjà un compte ? <a href="?url=connexion/index">Connexion à mon compte</a>.</p>
-		</div>
+			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
 
+			<div class="formContainer signin">
+				<p>Vous avez déjà un compte ? <a href="?url=connexion/index"> Me connecter à mon compte</a>.</p>
+			</div>
+		</div>
 	</form>
-
 </div>

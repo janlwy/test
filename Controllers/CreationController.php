@@ -29,7 +29,7 @@ class CreationController
                 
                 // Si les variables existent, on vérifie que les deux mots de passe sont identiques
                 if ($_POST['mdp1'] != $_POST['mdp2']) {
-                    $erreur = 'Les 2 password sont differents.';
+                    $erreur = 'Les 2 mots de passe sont differents.';
                     $_SESSION['erreur'] = $erreur;
                     header('Location: ?url=creation/createUserForm');
                     exit();
@@ -66,7 +66,7 @@ class CreationController
                         }
                     } catch (PDOException $e) {
                         $_SESSION['erreur'] = "Erreur de connexion : " . $e->getMessage();
-                        header('Location: ?url=connect/createUserForm');
+                        header('Location: ?url=creation/createUserForm');
                         exit();
                     }
                 }
@@ -75,7 +75,7 @@ class CreationController
             else {
                 $erreur = 'Echec de l\'inscription !<br/>Au moins un des champs est vide !';
                 $_SESSION['erreur'] = $erreur;
-                header('Location: ?url=connect/createUserForm');
+                header('Location: ?url=creation/createUserForm');
                 exit();
             }
         }
