@@ -528,12 +528,6 @@ nav {
     box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
-@media (min-width: 1200px) {
-    .formCentered {
-        width: 66.67%; /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
-    }
-}
-
 #msg { /* message de saisie de champ obligatoire */
     color: rgb(255, 0, 0);
     font-size: larger;
@@ -840,6 +834,10 @@ footer {
         font-size: 150px;
         padding: 15px;
     }
+    .formCentered {
+        width: 66.67%;
+        /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
+    }
 }
 
 /******************** Extra large  (écran de 2000px et plus) */
@@ -863,6 +861,10 @@ footer {
         display: block;
         margin: auto 80px;
         font-size: 100px;
+    }
+    .formCentered {
+        width: 66.67%;
+        /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
     }
 }
 
