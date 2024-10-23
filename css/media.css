@@ -663,7 +663,7 @@ tr:nth-child(even) { /* alternance de couleurs entre les lignes du tableau */
 
 .contentCollapse {
     padding: 1px; /* Xpx débordement bas pour révéler la pliure */
-    max-height: 0;
+    max-height: 1000px; /* Ajuster cette valeur selon la hauteur nécessaire */
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     background-color: #c0bcad;
