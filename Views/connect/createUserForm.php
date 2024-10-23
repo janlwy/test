@@ -22,7 +22,7 @@
 		</div>
 
 		<div class="formContainer signin">
-			<p>Vous avez déjâ un compte ? <a href="?url=connexion/index">Connexion à mon compte</a>.</p>
+			<p>Vous avez déjà un compte ? <a href="?url=connexion/index">Connexion à mon compte</a>.</p>
 		</div>
 
 	</form>

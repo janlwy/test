@@ -59,7 +59,7 @@ class CreationController
                         else {
                             $erreur = 'Echec de l\'inscription !<br/>Un membre possède déjà ce pseudo !';
                             $_SESSION['erreur'] = $erreur;
-                            header('Location: ?url=connect/createUserForm');
+                            header('Location: ?url=creation/createUserForm');
                             exit();
                         }
                     } catch (PDOException $e) {
