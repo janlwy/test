@@ -101,7 +101,13 @@ const contentForm = document.getElementById("contentMusic");
 
 document.getElementById("form-add").addEventListener("click", function () {
     displayForm();
+    refreshFormSection();
 });
+
+function refreshFormSection() {
+    const formSection = document.getElementById("formCrud");
+    formSection.innerHTML = formSection.innerHTML; // Recharger le contenu du formulaire
+}
 
 function displayForm() {
     formCreate.style.display = "block";
