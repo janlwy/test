@@ -1,8 +1,8 @@
 'use strict';
 
 window.onload = () => {
-    let themeBody = document.getElementById("themeBody");
-    let boutonTheme = document.getElementById("boutonTheme");
+    const themeBody = document.getElementById("themeBody");
+    const boutonTheme = document.getElementById("boutonTheme");
 
     // renvoi les elements stockés en local au chargement de la page
     if (localStorage.className && localStorage.textContent != null){
