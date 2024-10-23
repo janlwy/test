@@ -158,13 +158,14 @@ h3 {
     color: var(--colorH2H5);
 }
 
-p, input {
+p {
     font-family: 'Noto Sans Display', sans-serif;
     color: var(--fontcolor);
+    font-size: medium;
 }
 
 input::placeholder { /*police pesudo-element*/
-    color: #daa88b;
+    color: #7f8f83;
     text-align: center;
 }
 
@@ -176,6 +177,12 @@ input::placeholder { /*police pesudo-element*/
     font-weight: 100;
 }
 
+.error-message {
+    color: red; 
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
 /************************************ bouton accueil 3D *********************************/
 
 .sectionBouton3d {
