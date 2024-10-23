@@ -99,6 +99,7 @@ i { /* Change le curseur de la souris en pointeur au survol */
 
 .btnBase {
     border: none;
+    border-radius: 8px;
     color: #f5f5f5;
     padding: 10px 10px;
     font-size: 14px;
@@ -116,9 +117,10 @@ i { /* Change le curseur de la souris en pointeur au survol */
     top: 3%;
     right: 3%;
     height: 32px;
-    width: 60px;
-    border-radius: 5px;
-    box-shadow: -1px 2px 5px 0px #807f7fc4; /* Réduction du bord noir */
+    width: 40px;
+    border-radius: 20px;
+    border-width: 0;
+    box-shadow: -2px 3px 10px 1px #807f7fc4; 
     background-color: var(--btnBackGround);
     text-align: center !important;
 }
@@ -284,16 +286,29 @@ input::placeholder { /*police pesudo-element*/
     margin: 8px auto;
     display: block;
     border: 1px solid #a8a4a4;
+    border-radius: 13px;
     box-sizing: border-box;
 }
 
 /* Set a style for all buttons */
-.modalButton {
+.validButton {
     background-color: #04AA6D;
     color: #f5f5f5;
     padding: 14px 20px;
     margin: 8px auto;
     border: none;
+    border-radius: 13px;
+    cursor: pointer;
+    width: 40%;
+    display: block;
+}
+.cancelButton {
+    background-color: #e93a3a;
+    color: #f5f5f5;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    border-radius: 13px;
     cursor: pointer;
     width: 40%;
     display: block;

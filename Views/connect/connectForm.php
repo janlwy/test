@@ -1,6 +1,6 @@
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+<div>
 
-	<form class="formFont" method="POST" action="?url=connexion/connect" style="width: 100%; max-width: 400px;">
+	<form class="formFont" method="POST" action="?url=connexion/connect">
 
 
 		<div class="formContainer">
@@ -17,7 +17,8 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
-			<button type="submit" class="modalButton" name="connexion" value="Connexion">Connexion</button>
+			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
+			<a href="?url=accueil/index"><button type="button" class="cancelButton modalButton" name="Annuler" value="Annuler">Annuler</button></a>
 		</div>
 
 		<div class="formContainer signin">
