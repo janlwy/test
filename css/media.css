@@ -528,6 +528,12 @@ nav {
     box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
+@media (min-width: 1200px) {
+    .formCentered {
+        width: 66.67%; /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
+    }
+}
+
 #msg { /* message de saisie de champ obligatoire */
     color: rgb(255, 0, 0);
     font-size: larger;
