@@ -280,7 +280,7 @@ input::placeholder { /*police pesudo-element*/
 
 /* Full-width inputs */
 .inputModal {
-    width: 90%; /* Ajuste la largeur à 90% pour s'adapter au formulaire */
+    width: 90%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
