@@ -1,4 +1,4 @@
-<div class="section">
+<div class="section formCentered">
 
 	<form class="formFont formCentered" method="POST" action="?url=connexion/connect">
 
