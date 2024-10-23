@@ -1,6 +1,6 @@
-<div>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
 
-	<form class="formFont" method="POST" action="?url=connexion/connect">
+	<form class="formFont" method="POST" action="?url=connexion/connect" style="width: 100%; max-width: 400px;">
 
 
 		<div class="formContainer">
