@@ -123,6 +123,7 @@ i { /* Change le curseur de la souris en pointeur au survol */
    /* box-shadow: -2px 3px 10px 1px #807f7fc4; */
     background-color: var(--btnBackGround);
     text-align: center !important;
+    font-size: 24px; /* Ajustez la taille de la police ici */
 }
 
 .boutonTheme:active {
