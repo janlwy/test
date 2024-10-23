@@ -1,6 +1,6 @@
 <div class="section">
 
-	<form class=" Anime formFont" method="POST" action="?url=connexion/connect">
+	<form class="Anime formFont formCentered" method="POST" action="?url=connexion/connect">
 
 
 		<div class="formContainer">
