@@ -12,32 +12,32 @@
         <div class="column">
             <a href="#">
                 <article class="card c1">
-                    <i class="material-icons" alt="Musique">headphones</i>
-                    <h2 class="titrecarte">Musiques</h2>
+                    <i class="material-icons" alt="Audio">headphones</i>
+                    <h2 class="titrecarte">Audio</h2>
                 </article>
             </a>
         </div>
         <div class="column">
             <a href="#">
                 <article class="card c2">
-                    <i class="material-icons" alt="Vidéos">live_tv</i>
-                    <h2 class="titrecarte">Vidéos</h2>
+                    <i class="material-icons" alt="Vidéo">live_tv</i>
+                    <h2 class="titrecarte">Vidéo</h2>
                 </article>
             </a>
         </div>
         <div class="column">
             <a href="#">
                 <article class="card c3">
-                    <i class="material-icons" alt="Photos">photo_camera_back</i>
-                    <h2 class="titrecarte">Photos</h2>
+                    <i class="material-icons" alt="Photo">photo_camera_back</i>
+                    <h2 class="titrecarte">Photo</h2>
                 </article>
             </a>
         </div>
         <div class="column">
             <a href="#">
                 <article class="card c4">
-                    <i class="material-icons" alt="Paroles">auto_stories</i>
-                    <h2 class="titrecarte">Paroles</h2>
+                    <i class="material-icons" alt="Texte">auto_stories</i>
+                    <h2 class="titrecarte">Texte</h2>
                 </article>
             </a>
         </div>

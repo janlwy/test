@@ -1,6 +1,6 @@
 <div>
 	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
-		<div class="formContainer">
+		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
 			<hr>

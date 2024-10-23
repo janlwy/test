@@ -352,7 +352,7 @@ input::placeholder { /*police pesudo-element*/
 
 /* Modal Content/Box */
 .modalContenu {
-    background-color: #f5f5f5;
+    background-color: var(--bodyBg);
     margin: 5px auto;    /* 15% from the top and centered */
     border: none;
     width: 80%;    /* Could be more or less, depending on screen size */
@@ -411,8 +411,8 @@ nav {
 }
 
 .menunav a:hover {
-    background-color: #ebe2d4;
-    color: #000000;
+    background-color: #b4ab9c67;
+    color: #880909a4;
 }
 
 .boutonright {

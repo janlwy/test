@@ -31,10 +31,10 @@ if (session_status() === PHP_SESSION_NONE) {
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active"><i class="material-icons">home</i></a>
 				<a href="#" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-				<a href="#">Musique</a>
-				<a href="#">Vidéos</a>
-				<a href="#">Photos</a>
-				<a href="#">Paroles</a>
+				<a href="#">Audio</a>
+				<a href="#">Vidéo</a>
+				<a href="#">Photo</a>
+				<a href="#">Texte</a>
 				<a href="?url=deconnexion/index" class="sortie boutonright"><i class="material-icons">logout</i></a>
 				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
 			</nav>
@@ -49,18 +49,27 @@ if (session_status() === PHP_SESSION_NONE) {
 			?>
 		</section>
 	</main>
-	<footer>
+
+	<footer class="playerFooter">
 		<div class="socle">
 			<div class="icon-bar">
-				<a href="/mediabox.html" class="navlabel"><i class="material-icons">home</i>
-					<span>Accueil</span> </a>
-				<a href="/compte.html" class="navlabel"><i class="material-icons">face_6</i>
-					<span>Profile</span> </a>
+				<a href="/media/box.html" class="navlabel"><i class="material-icons">home</i>
+					<span>Accueil</span>
+				</a>
+				<a href="/media/medias/compte.html" class="navlabel"><i class="material-icons">face_6</i>
+					<span>Profile</span>
+				</a>
 				<a href="#" class="navlabel"><i class="iconeTheme material-icons">brightness_4</i>
-					<span>Thème</span> </a>
+					<span>Thème</span>
+				</a>
+				<a href="/inbox.html" class="navlabel"><i class="material-icons">logout</i>
+					<span>Quitter</span>
+				</a>
 			</div>
+			<p class="txtfootr">Copyright © 2023 par moimême. All rights reversed.</p>
 		</div>
 	</footer>
+
 	<script src="js/media.js"></script>
 	<script src="js/appCRUD.js"></script>
 	<script src="js/mediavideo.js"></script>
