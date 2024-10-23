@@ -8,7 +8,7 @@
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
-				<div class="error-message">
+				<div class="error-message" style="color: red; font-weight: bold;">
 					<?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
 				</div>
 			<?php endif; ?>
