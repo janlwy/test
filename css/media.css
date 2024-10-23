@@ -675,7 +675,7 @@ footer {
         margin: 0 0 220px 0;
     }
     .boutonTheme {
-        display: none;
+        display: none !important;
     }
     .menunav a:not(:first-child) {
         display: none;
