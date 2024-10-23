@@ -534,7 +534,7 @@ nav {
 
 label {
     padding: 9px 0;
-    display: inline-block;
+    display: block; /* Assure que le label occupe toute la largeur disponible */
 }
 
 .monEspace {
