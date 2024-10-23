@@ -1,6 +1,6 @@
-<div class="formCentered">
+<div>
 
-	<form class="formFont formCentered" method="POST" action="?url=connexion/connect">
+	<form class="formFont" method="POST" action="?url=connexion/connect">
 
 
 		<div class="formContainer">
