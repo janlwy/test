@@ -13,8 +13,6 @@
 			<label for="mdp"><b>Mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Entrer votre mot de passe" name="mdp" id="mdp" required>
 
-			<!-- <label for="repMdp"><b>Répéter le mot de passe</b></label>
-				<input class="inputModal" type="password" placeholder="Repeter le mot de passe" name="repeat" id="repMdp" required> -->
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>

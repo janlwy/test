@@ -29,24 +29,24 @@ if (session_status() === PHP_SESSION_NONE) {
 	</header>
 	<main>
 		<?php if (isset($_SESSION['pseudo'])): ?>
-		<nav class="menunav" id="myMenunav">
-			<a href="/" class="active"><i class="material-icons">home</i></a>
-			<a href="#" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-			<a href="#">Musique</a>
-			<a href="#">Vidéos</a>
-			<a href="#">Photos</a>
-			<a href="#">Paroles</a>
-			<a href="?url=connexion/deconnexion" class="sortie boutonright"><i class="material-icons">logout</i></a>
-			<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
-		</nav>
+			<nav class="menunav" id="myMenunav">
+				<a href="?url=mediabox/index" class="active"><i class="material-icons">home</i></a>
+				<a href="#" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
+				<a href="#">Musique</a>
+				<a href="#">Vidéos</a>
+				<a href="#">Photos</a>
+				<a href="#">Paroles</a>
+				<a href="?url=deconnexion/index" class="sortie boutonright"><i class="material-icons">logout</i></a>
+				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
+			</nav>
 		<?php endif; ?>
 		<section>
 			<?php
-				if (isset($content)) {
-					echo $content;
-				} else {
-					echo "Contenu non disponible.";
-				}
+			if (isset($content)) {
+				echo $content;
+			} else {
+				echo "Contenu non disponible.";
+			}
 			?>
 		</section>
 	</main>

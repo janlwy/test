@@ -584,3 +584,149 @@
 2024-10-23 00:45:30 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
 2024-10-23 00:45:30 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
 2024-10-23 00:45:30 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 01:08:07 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 01:08:07 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 01:08:09 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 01:08:09 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 01:08:13 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 01:08:13 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 01:08:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 01:08:21 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 01:08:21 - [error] - Erreur PDO : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+2024-10-23 01:08:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 01:08:21 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 01:09:46 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 01:09:46 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 01:09:48 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 01:09:48 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 01:09:57 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 01:09:57 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 01:09:57 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 01:09:57 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:16:49 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:16:49 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:00 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : deconnexion
+2024-10-23 11:17:06 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:06 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:09 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:09 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:30 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:30 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:43 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:17:43 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:17:43 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:43 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:44 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:17:44 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:17:44 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:17:44 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-23 11:17:44 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:44 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:17:57 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:17:57 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:17:57 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:17:57 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-23 11:17:57 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:17:57 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:20:40 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:20:40 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:20:43 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:20:43 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:20:50 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:20:50 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:20:50 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:20:50 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-23 11:20:50 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:20:50 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:20:55 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:20:55 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:28:14 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:28:14 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:28:14 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:28:14 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:28:20 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : deconnexion
+2024-10-23 11:28:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : deconnexion
+2024-10-23 11:28:39 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:28:39 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:28:42 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:28:42 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:40:07 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:40:07 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:40:19 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : deconnexion
+2024-10-23 11:40:23 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:40:23 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:42:15 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:42:15 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:42:20 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-23 11:42:20 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-23 11:42:20 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:42:20 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:42:20 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:42:20 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:42:28 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:42:28 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:42:28 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:42:28 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:42:33 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:42:33 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:42:33 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:42:33 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:42:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:42:35 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:42:42 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:42:42 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:42:42 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:42:42 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:42:46 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:42:46 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:42:52 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:42:52 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:42:52 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:42:52 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:42:56 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:42:56 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:43:13 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 11:43:13 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 11:43:13 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-23 11:43:13 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 11:43:13 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 11:43:24 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:43:24 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:43:26 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:43:26 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:43:29 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:43:29 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:43:29 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:43:29 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:43:31 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:43:31 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:43:41 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-23 11:43:41 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-23 11:43:41 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:43:41 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:43:48 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:43:48 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:44:00 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-23 11:44:00 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-23 11:44:00 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:44:00 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:44:00 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:44:00 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:44:03 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:44:03 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:44:03 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:44:03 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:44:07 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-23 11:44:07 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-23 11:44:07 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:44:07 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:44:08 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:44:08 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:44:10 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:44:10 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:44:10 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:44:10 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:44:14 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:44:14 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:44:14 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:44:14 - [error] - Utilisateur non connecté, affichage de l'accueil
