@@ -3,7 +3,8 @@
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">
         <button type="button" class="searchButton" href="#">
             <i class="material-icons">search</i>
-        </button> -->
+        </button>
+    </div> -->
     <div class="player-audio">
         <!-- Section pour afficher les détails -->
         <div class="details-audio">
