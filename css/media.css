@@ -44,7 +44,7 @@ header h1 {
     --titreColor: var(--clair);
     --titreShadow: 2px 2px 10px var(--sombre);
     --colorH2H5:var(--sombre);
-    --pShadow: var(--gris);
+    --pShadow: var(--sombre);
     --footerShadow: 0 -2px 4px 1px var(--sombre);
     --cardIcons: var(--clair);
     --globale: var(--vertSombre);
@@ -66,7 +66,7 @@ header h1 {
     --titreColor: var(--grisDark);
     --titreShadow: 2px 2px 10px var(--silver);
     --colorH2H5: var(--clair);
-    --pShadow: #f5f5f586;
+    --pShadow: #f5f5f593;
     --footerShadow: 0 -2px 7px 2px var(--sombre);
     --cardIcons: var(--sombre);
     --globale: #bd2121;
@@ -840,6 +840,9 @@ footer {
     .c2 {border-radius: 70px 70px 70px 0; margin: 0 0 0 15px;}
     .c3 {border-radius: 70px 0 70px 70px; margin: 0 15px 0 0;}
     .c4 {border-radius: 0 70px 70px 70px; margin: 0 0 0 15px;}
+    .txtfootr {
+        display: none;
+    }
 }
 
 /******************** Large  (ordi portable et desktop, entre 1000px et 2000px) */

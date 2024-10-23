@@ -50,23 +50,23 @@ if (session_status() === PHP_SESSION_NONE) {
 		</section>
 	</main>
 
-	<footer class="playerFooter">
+	<footer class="">
 		<div class="socle">
 			<div class="icon-bar">
-				<a href="/media/box.html" class="navlabel"><i class="material-icons">home</i>
+				<a href="?url=mediabox/index" class="navlabel"><i class="material-icons">home</i>
 					<span>Accueil</span>
 				</a>
-				<a href="/media/medias/compte.html" class="navlabel"><i class="material-icons">face_6</i>
+				<a href="#" class="navlabel"><i class="material-icons">face_6</i>
 					<span>Profile</span>
 				</a>
 				<a href="#" class="navlabel"><i class="iconeTheme material-icons">brightness_4</i>
 					<span>Thème</span>
 				</a>
-				<a href="/inbox.html" class="navlabel"><i class="material-icons">logout</i>
+				<a href="?url=deconnexion/index" class="navlabel"><i class="material-icons">logout</i>
 					<span>Quitter</span>
 				</a>
 			</div>
-			<p class="txtfootr">Copyright © 2023 par moimême. All rights reversed.</p>
+			<p class="txtfootr">Copyright © 2024 par moimême. All rights reversed.</p>
 		</div>
 	</footer>
 
@@ -74,6 +74,7 @@ if (session_status() === PHP_SESSION_NONE) {
 	<script src="js/appCRUD.js"></script>
 	<script src="js/mediavideo.js"></script>
 	<script src="js/mediamusic.js"></script>
+	<noscript>Vous devez activer javascript pour une expérience complête de ce site</noscript>
 </body>
 
 </html>
