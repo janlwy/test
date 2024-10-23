@@ -65,18 +65,20 @@ function myFunction() {
 }*/
 
 // Collapse dans Mon Espace de gestion----------------------------------------
-var collap = document.getElementsByClassName("collapsible");
-var i;
+function toggleCollapse(button) {
+    button.classList.toggle("activeCollapse");
+    var content = button.nextElementSibling;
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+    }
+}
 
-for (i = 0; i < collap.length; i++) {
+var collap = document.getElementsByClassName("collapsible");
+for (var i = 0; i < collap.length; i++) {
     collap[i].addEventListener("click", function () {
-        this.classList.toggle("activeCollapse");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
-        }
+        toggleCollapse(this);
     });
 }
 
