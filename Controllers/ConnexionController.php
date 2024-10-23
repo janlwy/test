@@ -63,7 +63,7 @@ class ConnexionController
 
 						// Rediriger l'utilisateur vers le formulaire de connexion avec un message d'erreur
 						$_SESSION['erreur'] = $erreur;
-						header('Location: ?url=connexion/connect'); 
+						header('Location: ?url=connexion/index'); 
 						exit();
 					}
 				} catch (PDOException $e) {
