@@ -5,7 +5,7 @@
 
     <button type="button" class="collapsible">Musiques</button>
     <div class="contentCollapse"><span class="br"></span>
-        <button type="button" class="btnBase blueid="form-add">Édition</button>
+        <button type="button" class="btnBase blue" id="form-add">Édition</button>
 
         <form id="formCrud" class="formFont">
 
@@ -15,7 +15,7 @@
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="titleclass="inputMonEspace"/>
+                    <input type="text" name="title" id="title" class="inputMonEspace"/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -23,7 +23,7 @@
                     <label for="artist">Artiste</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="artiste" id="artistclass="inputMonEspace"/>
+                    <input type="text" name="artiste" id="artist" class="inputMonEspace"/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -31,7 +31,7 @@
                     <label for="image">Pochette</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="image" id="imageclass="inputMonEspace"/>
+                    <input type="text" name="image" id="image" class="inputMonEspace"/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -39,14 +39,14 @@
                     <label for="path">Source</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="path" id="pathclass="inputMonEspace"/>
+                    <input type="text" name="path" id="path" class="inputMonEspace"/>
                 </div>
             </div>
             <input type="hidden" name="hide" id="hidden"/>
             <div id="msg"></div>
             <hr>
-            <button type="submit"  class="btnBase vertid="formsave">Exécuter</button>
-            <button type="button" class="btnBase grisid="formcancel">Annuler</button>
+            <button type="submit"  class="btnBase vert" id="formsave">Exécuter</button>
+            <button type="button" class="btnBase gris" id="formcancel">Annuler</button>
         </form><span class="br"></span><hr>
 
         <div class="formFont" id="contentMusic">
@@ -55,7 +55,7 @@
                     <label for="search">Recherche</label>
                 </div>
                 <div class="colinput">
-                    <input type="search" class="inputMonEspaceplaceholder="Rechercher par titre"/>
+                    <input type="search" class="inputMonEspace" placeholder="Rechercher par titre"/>
                 </div>
             </div>
             <table>
