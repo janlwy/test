@@ -1,6 +1,7 @@
 <div class="section">
 
-	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
+	<form class=" Anime formFont" method="POST" action="?url=connexion/connect">
+
 
 		<div class="formContainer">
 			<h2>Connexion à votre compte</h2>
