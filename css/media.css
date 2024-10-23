@@ -38,7 +38,7 @@ header h1 {
 .clair-theme {
     --bodyBg: var(--clair);
     --fontcolor: var(--sombre);
-    --btnBackGround: var(--gris);
+    --btnBackGround: var(--clair);
     --btnFontColor: var(--sombre);
     --cardShadow: inset -7px 6px 11px 0 var(--sombre); /*Box shadow: X Y flou/blur ètalement/spread*/
     --titreColor: var(--clair);
@@ -60,7 +60,7 @@ header h1 {
 .sombre-theme {
     --bodyBg: var(--grisDark);
     --fontcolor: var(--clair);
-    --btnBackGround: var(--gris);
+    --btnBackGround: var(--grisDark);
     --btnFontColor: var(--orange);
     --cardShadow: -7px 6px 11px 0 var(--sombre);
     --titreColor: var(--grisDark);
@@ -115,8 +115,8 @@ i { /* Change le curseur de la souris en pointeur au survol */
     position: absolute;
     top: 3%;
     right: 3%;
-    height: 62px;
-    width: 62px;
+    height: 32px;
+    width: 60px;
     border-radius: 10px;
     box-shadow: -2px 3px 10px 1px #807f7fc4;
     background-color: var(--btnBackGround);
