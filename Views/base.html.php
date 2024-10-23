@@ -30,8 +30,8 @@ if (session_status() === PHP_SESSION_NONE) {
 		<?php if (isset($_SESSION['pseudo'])): ?>
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active"><i class="material-icons">home</i></a>
-				<a href="#" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-				<a href="#">Audio</a>
+				<a href="?url=compte/index" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
+				<a href="?url=audio/index">Audio</a>
 				<a href="#">Vidéo</a>
 				<a href="#">Photo</a>
 				<a href="#">Texte</a>
