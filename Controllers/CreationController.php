@@ -20,7 +20,7 @@ class CreationController
                 if ($_POST['mdp1'] != $_POST['mdp2']) {
                     $erreur = 'Les 2 password sont differents.';
                     $_SESSION['erreur'] = $erreur;
-                    header('Location: ?url=connect/createUserForm');
+                    header('Location: ?url=creation/createUserForm');
                     exit();
                 } else {
                     // Si les deux mots de passe sont identiques, on se connecte à la bdd avec PDO

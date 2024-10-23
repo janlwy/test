@@ -1,6 +1,6 @@
 <div>
 
-	<form class="modalContenu Anime formFont" method="POST" action="?url=verification/create">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>

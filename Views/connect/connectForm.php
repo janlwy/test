@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="formContainer signin">
-			<p>Vous n'avez pas de compte ? <a href="?url=creation/create">Création de compte</a>.</p>
+			<p>Vous n'avez pas de compte ? <a href="?url=creation/createUserForm">Création de compte</a>.</p>
 		</div>
 
 	</form>
