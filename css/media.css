@@ -112,9 +112,9 @@ i { /* Change le curseur de la souris en pointeur au survol */
     cursor: pointer;
     float: right;
     order: 1;
-    /*position: absolute;*/
-    /*top: 1.5%;
-    right: 3%;*/
+    position: absolute;
+    top: 3%;
+    right: 3%;
     height: 62px;
     width: 62px;
     border-radius: 10px;
@@ -151,7 +151,12 @@ h2, h5 {
     color: var(--colorH2H5);
 }
 
-h3, p, input {
+h3 {
+    font-size: 1.5rem;
+    color: var(--colorH2H5);
+}
+
+p, input {
     font-family: 'Noto Sans Display', sans-serif;
     color: var(--fontcolor);
 }
@@ -290,7 +295,7 @@ input::placeholder { /*police pesudo-element*/
     margin: 8px 0;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 40%;
 }
 
 /* Add a hover effect for buttons */
@@ -669,7 +674,7 @@ footer {
         width: 98%;
         margin: 0 0 220px 0;
     }
-    nav .boutonTheme {
+    .boutonTheme {
         display: none;
     }
     .menunav a:not(:first-child) {
