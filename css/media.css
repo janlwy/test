@@ -521,9 +521,22 @@ nav {
 /*************************** monEspace et Formulaire de gestion du profile ****************************/
 
 .formCentered {
-    width: 66.67%; /* Deux tiers de la largeur de l'écran */
+    width: 90%; /* Par défaut, 90% de la largeur de l'écran */
+    max-width: 600px; /* Limite la largeur maximale */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     display: block; /* Assure que le formulaire est un bloc */
+}
+
+@media (min-width: 768px) {
+    .formCentered {
+        width: 70%; /* Réduit la largeur à 70% pour les écrans moyens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .formCentered {
+        width: 50%; /* Réduit la largeur à 50% pour les grands écrans */
+    }
 }
 
 #msg { /* message de saisie de champ obligatoire */
