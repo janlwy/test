@@ -11,7 +11,7 @@
 
             <div class="rowEspace">
                 <div class="collabel"> 
-            <!-- collabel et colinput font reference à uaffichage en "colone" ecran > 600px -->
+            <!-- collabel et colinput font reference à un affichage en "colone" ecran > 600px -->
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
