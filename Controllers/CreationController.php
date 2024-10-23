@@ -52,7 +52,9 @@ class CreationController
                             $req->bindValue(':mdp1', password_hash($_POST['mdp1'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                             $req->execute();
                             $_SESSION['message'] = 'Inscription réussie !';
-                            header('Location: ?url=connexion/connect');
+                            session_start();
+                            $_SESSION['pseudo'] = $_POST['pseudo'];
+                            header('Location: ?url=mediabox/index');
                             exit();
                         }
                         // Sinon on n'inscrit pas ce login
