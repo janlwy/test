@@ -7,13 +7,11 @@
 
 <!-- bouton effet 3D (incluant une modale (formulaire 	de    connexion)) -->
 <section class="sectionBouton3d">
-	<a href="?url=connexion/index">
-		<button type="button" class="clic3d">
-			<div class="ombre3d"></div>
-			<div class="bord3d"></div>
-			<span class="bouton3d">
-				Commencer !
-			</span>
-		</button>
+	<a href="?url=connexion/index" class="clic3d">
+		<div class="ombre3d"></div>
+		<div class="bord3d"></div>
+		<span class="bouton3d">
+			Commencer !
+		</span>
 	</a>
 </section>
