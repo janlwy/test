@@ -151,13 +151,7 @@ h2, h5 {
     color: var(--colorH2H5);
 }
 
-.formFont {
-    font-family: 'Noto Sans Display', sans-serif;
-    color: var(--fontcolor); 
-    font-size: medium;
-}
-
-p, input {
+h3, p, input {
     font-family: 'Noto Sans Display', sans-serif;
     color: var(--fontcolor);
 }
@@ -521,11 +515,7 @@ nav {
 /*************************** monEspace et Formulaire de gestion du profile ****************************/
 
 .formCentered {
-    width: 60%; /* 60% de la largeur de l'écran pour toutes les tailles */
-    max-width: 100%; /* Assure que le formulaire ne dépasse pas la largeur de l'écran */
-    margin: 0 auto; /* Centre le formulaire horizontalement */
-    display: block; /* Assure que le formulaire est un bloc */
-    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+    width: 90%;
 }
 
 #msg { /* message de saisie de champ obligatoire */
@@ -834,10 +824,9 @@ footer {
         font-size: 150px;
         padding: 15px;
     }
-    .formCentered {
-        width: 66.67%;
-        /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
-    }
+   /* .formCentered {
+        width: 80%;
+    }*/
 }
 
 /******************** Extra large  (écran de 2000px et plus) */
@@ -862,10 +851,9 @@ footer {
         margin: auto 80px;
         font-size: 100px;
     }
-    .formCentered {
-        width: 66.67%;
-        /* Limite la largeur à deux tiers de l'espace disponible sur les grands écrans */
-    }
+    /*.formCentered {
+        width: 80%;
+    }*/
 }
 
 /******************** Bricoles diverses et variées */
