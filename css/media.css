@@ -521,7 +521,7 @@ nav {
 /*************************** monEspace et Formulaire de gestion du profile ****************************/
 
 .formCentered {
-    width: 66.67%; /* Deux tiers de la largeur de l'écran */
+    width: 60%;
     margin: 0 auto; /* Centre le formulaire horizontalement */
 }
 
