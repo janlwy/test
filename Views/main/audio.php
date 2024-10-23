@@ -4,7 +4,6 @@
         <button type="button" class="searchButton" href="#">
             <i class="material-icons">search</i>
         </button> -->
-    </div>
     <div class="player-audio">
         <!-- Section pour afficher les détails -->
         <div class="details-audio">
