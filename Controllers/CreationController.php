@@ -2,6 +2,17 @@
 
 class CreationController
 {
+    public function createUserForm()
+    {
+        // Démarrer la session si elle n'est pas déjà démarrée
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Afficher le formulaire de création d'utilisateur
+        generate("Views/connect/createUserForm.php", [], "Views/base.html.php");
+    }
+
     public function create()
     {
         // Informations de connexion à la base de données
