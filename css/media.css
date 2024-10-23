@@ -301,6 +301,7 @@ input::placeholder { /*police pesudo-element*/
     cursor: pointer;
     width: 40%;
     display: block;
+    font-size: 16px; /* Ajustez la taille de la police ici */
 }
 .cancelButton {
     background-color: #e93a3a;
