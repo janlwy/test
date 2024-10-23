@@ -75,14 +75,12 @@ function toggleCollapse(button) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var collap = document.getElementsByClassName("collapsible");
-    for (var i = 0; i < collap.length; i++) {
-        collap[i].addEventListener("click", function () {
-            toggleCollapse(this);
-        });
-    }
-});
+var collap = document.getElementsByClassName("collapsible");
+for (var i = 0; i < collap.length; i++) {
+    collap[i].addEventListener("click", function () {
+        toggleCollapse(this);
+    });
+}
 
 // Masquage menu navigation
 if (window.location.pathname === '/index.php' || window.location.pathname === '/ConnectForm.php') {
