@@ -38,7 +38,6 @@
             </button>
         </div> -->
         
-        <>
 
         <footer class="playerFooter">
             <div class="socle">
