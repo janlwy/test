@@ -1,16 +1,14 @@
-<span class="br"></span>
-
 <div class="player">
 
-    <!-- Define the section for displaying details -->
+    <!-- Section pour afficher les détails -->
     <div class="details">
         <div class="now-playing">Piste x de y</div>
         <div class="track-art"></div>
-        <div class="track-name">Track Name</div>
-        <div class="track-artist">Track Artist</div>
+        <div class="track-name">Nom de la piste</div>
+        <div class="track-artist">Artiste de la piste</div>
     </div>
 
-    <!-- Define the section for displaying track buttons -->
+    <!-- Section pour afficher les boutons de contrôle -->
     <div class="buttons">
         <div class="prev-track" onclick="prevTrack()">
             <i class="material-icons md-36">skip_previous</i>
@@ -23,14 +21,14 @@
         </div>
     </div>
 
-    <!-- Define the section for displaying the seek slider-->
+    <!-- Section pour afficher le curseur de recherche -->
     <div class="slider_container">
         <div class="current-time">00:00</div>
         <input type="range" aria-label="nolabel" min="1" max="100" value="0" class="seek_slider" onchange="seekTo()">
         <div class="total-duration">00:00</div>
     </div>
 
-    <!-- Define the section for displaying the volume slider-->
+    <!-- Section pour afficher le curseur de volume -->
     <div class="slider_container">
         <i class="material-icons md-24">volume_down</i>
         <input type="range" aria-label="nolabel" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
