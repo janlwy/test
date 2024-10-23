@@ -456,6 +456,10 @@ nav {
     border-radius: 40px;
 }
 
+.details {
+    margin-top: 20px; /* Ajoute un espacement en haut pour éviter le chevauchement */
+}
+
 .searchBox:hover>.searchInput {
     width: 240px;
     padding: 0 6px;
