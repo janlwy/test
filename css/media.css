@@ -313,7 +313,9 @@ input::placeholder { /*police pesudo-element*/
     border-radius: 13px;
     cursor: pointer;
     width: 35%;
-    display: block;
+    display: flex;
+    text-align: center;
+    font-size: 16px; /* Ajustez la taille de la police ici */
 }
 
 /* Add a hover effect for buttons */
