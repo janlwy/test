@@ -497,23 +497,17 @@ nav {
     position: relative;
     top: 150px;
     box-sizing: border-box;
-    /* margin: 0 -10px 0 10px; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-.row:after {
-    content: "";
-    display: flex;
-    clear: both;
+    gap: 20px; /* Ajout d'un espace entre les colonnes */
 }
 
 .column {
-    float: left;
-    width: 23%;
-    margin: auto; /********** GAP_GAP_GAP ************/
+    flex: 1 1 200px; /* Permet aux colonnes de s'adapter à l'espace disponible */
+    max-width: 300px; /* Limite la largeur maximale des colonnes */
+    margin: 10px; /* Ajoute un espace autour des colonnes */
 }
 
 .card {
