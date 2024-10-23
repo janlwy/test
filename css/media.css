@@ -522,8 +522,10 @@ nav {
 
 .formCentered {
     width: 60%; /* 60% de la largeur de l'écran pour toutes les tailles */
+    max-width: 100%; /* Assure que le formulaire ne dépasse pas la largeur de l'écran */
     margin: 0 auto; /* Centre le formulaire horizontalement */
     display: block; /* Assure que le formulaire est un bloc */
+    box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 }
 
 #msg { /* message de saisie de champ obligatoire */
