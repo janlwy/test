@@ -7,6 +7,11 @@
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
 			<hr>
+			<?php if (isset($_SESSION['erreur'])): ?>
+				<div class="error-message">
+					<?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+				</div>
+			<?php endif; ?>
 
 			<label for="pseudo"><b>Nom d'utilisateur</b></label>
 			<input class="inputModal" type="text" placeholder="Entrer un pseudonyme" name="pseudo" id="pseudo" required>

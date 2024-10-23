@@ -6,6 +6,11 @@
 			<h2>Création de votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour créer votre profil.</h3>
 			<hr>
+			<?php if (isset($_SESSION['erreur'])): ?>
+				<div class="error-message">
+					<?php echo $_SESSION['erreur']; unset($_SESSION['erreur']); ?>
+				</div>
+			<?php endif; ?>
 
 			<label for="pseudo"><b>Nom d'utilisateur</b></label>
 			<input class="inputModal" type="text" name="pseudo" id="pseudo" value="" required>
