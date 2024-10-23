@@ -730,3 +730,19 @@
 2024-10-23 11:44:14 - [error] - Appel de la méthode index dans le contrôleur AccueilController
 2024-10-23 11:44:14 - [error] - Début de la méthode index dans AccueilController
 2024-10-23 11:44:14 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:53:19 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:53:19 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:53:19 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:53:19 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:53:22 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-23 11:53:22 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-23 11:53:22 - [error] - Début de la méthode index dans AccueilController
+2024-10-23 11:53:22 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-23 11:53:25 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:53:25 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:54:41 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:54:41 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:55:21 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:55:21 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-23 11:55:40 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-23 11:55:40 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
