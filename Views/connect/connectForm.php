@@ -18,7 +18,9 @@
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
-			<a href="?url=accueil/index"><button type="button" class="cancelButton modalButton" name="Annuler" value="Annuler">Annuler</button></a>
+
+			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
+			
 		</div>
 
 		<div class="formContainer signin">

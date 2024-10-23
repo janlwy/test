@@ -25,14 +25,14 @@ if (isset($_POST['creation']) && $_POST['creation'] == 'Creation') {
             $connexion = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
             $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // On parcourt la bdd et on range les éventuels login identiques existants dans un tableau
-            $sql = 'SELECT count(*) FROM users WHERE id=:pseudo';
+            $sql = 'SELECT count(*) FROM users WHERE pseudo=:pseudo';
             $req = $connexion->prepare($sql);
             $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
             $req->execute();
             $data = $req->fetch(PDO::FETCH_NUM);
             // Si aucun autre login identique existe, on inscrit ce nouveau login
             if ($data[0] == 0) {
-               $sql = 'INSERT INTO users (id, mdp) VALUES( :pseudo, :mdp1)';
+               $sql = 'INSERT INTO users (pseudo, mdp) VALUES( :pseudo, :mdp1)';
                $req = $connexion->prepare($sql);
                $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
                $req->bindValue(':mdp1', password_hash($_POST['mdp1'], PASSWORD_DEFAULT), PDO::PARAM_STR);

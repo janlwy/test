@@ -24,7 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <body class="clair-theme" id="themeBody">
 	<header>
 		<h1>Média Box</h1>
-		<button type="button" id="boutonTheme" class="boutonTheme material-icons" title="boutonTheme"></button>
+		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="boutonTheme"></button>
 	</header>
 	<main>
 		<?php if (isset($_SESSION['pseudo'])): ?>
