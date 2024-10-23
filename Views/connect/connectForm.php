@@ -1,4 +1,4 @@
-<div>
+<div class="section">
 
 	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
 
