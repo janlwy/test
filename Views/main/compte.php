@@ -3,9 +3,9 @@
 
 <section class="monEspace">
 
-    <button type="button" class="collapsible">Musiques</button>
+    <button type="button" class="collapsible" onclick="toggleCollapse(this)">Musiques</button>
     <div class="contentCollapse"><span class="br"></span>
-        <button type="button" class="btnBase blue" id="form-add" onclick="toggleCollapse(this)">Édition</button>
+        <button type="button" class="btnBase blue" id="form-add">Édition</button>
 
         <form id="formCrud" class="formFont">
 
