@@ -836,9 +836,9 @@ footer {
     .c4 {border-radius: 0 70px 70px 70px; margin: 0 0 0 15px;}
     .txtfootr {
         display: none;
-        height: 0; /* Supprime l'espace réservé */
-        margin: 0; /* Supprime les marges */
-        padding: 0; /* Supprime le padding */
+        height: 0 !important; /* Supprime l'espace réservé */
+        margin: 0 !important; /* Supprime les marges */
+        padding: 0 !important; /* Supprime le padding */
     }
 }
 
