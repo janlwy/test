@@ -116,11 +116,11 @@ i { /* Change le curseur de la souris en pointeur au survol */
     position: absolute;
     top: 3%;
     right: 3%;
-    height: 32px;
+    height: 40px;
     width: 40px;
     border-radius: 20px;
     border-width: 0;
-    box-shadow: -2px 3px 10px 1px #807f7fc4; 
+   /* box-shadow: -2px 3px 10px 1px #807f7fc4; */
     background-color: var(--btnBackGround);
     text-align: center !important;
 }
