@@ -23,10 +23,10 @@ function printr($tableaux)
 	//die;
 }
 
-function generate($file, $datas, $layout = "Views/base.html.php")
+function generate($file, $datas, $layout = "Views/base.html.php", $pageTitle = "Média Box")
 {
 	$content = generateFile($file, $datas);
-	echo generateFile($layout, array('content' => $content)); // Afficher le contenu généré
+	echo generateFile($layout, array('content' => $content, 'pageTitle' => $pageTitle)); // Afficher le contenu généré
 }
 
 function generateFile($file, $datas)
