@@ -117,8 +117,8 @@ i { /* Change le curseur de la souris en pointeur au survol */
     right: 3%;
     height: 32px;
     width: 60px;
-    border-radius: 5px; /* Réduction de la bordure */
-    box-shadow: -2px 3px 10px 1px #807f7fc4;
+    border-radius: 5px;
+    box-shadow: -1px 2px 5px 0px #807f7fc4; /* Réduction du bord noir */
     background-color: var(--btnBackGround);
     text-align: center !important;
 }
