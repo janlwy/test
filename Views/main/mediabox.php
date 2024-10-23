@@ -17,7 +17,7 @@
             </a>
         </div>
         <div class="column">
-            <a href="#">
+            <a href="?url=video/index">
                 <article class="card c2">
                     <i class="material-icons" alt="Vidéo">live_tv</i>
                     <h2 class="titrecarte">Vidéo</h2>
@@ -25,7 +25,7 @@
             </a>
         </div>
         <div class="column">
-            <a href="#">
+            <a href="?url=photo/index">
                 <article class="card c3">
                     <i class="material-icons" alt="Photo">photo_camera_back</i>
                     <h2 class="titrecarte">Photo</h2>
@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="column">
-            <a href="#">
+            <a href="?url=texte/index">
                 <article class="card c4">
                     <i class="material-icons" alt="Texte">auto_stories</i>
                     <h2 class="titrecarte">Texte</h2>

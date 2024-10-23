@@ -32,9 +32,9 @@ if (session_status() === PHP_SESSION_NONE) {
 				<a href="?url=mediabox/index" class="active"><i class="material-icons">home</i></a>
 				<a href="?url=compte/index" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
 				<a href="?url=audio/index">Audio</a>
-				<a href="#">Vidéo</a>
-				<a href="#">Photo</a>
-				<a href="#">Texte</a>
+				<a href="?url=video/index">Vidéo</a>
+				<a href="?url=photo/index">Photo</a>
+				<a href="?url=texte/index">Texte</a>
 				<a href="?url=deconnexion/index" class="sortie boutonright"><i class="material-icons">logout</i></a>
 				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
 			</nav>
@@ -56,7 +56,7 @@ if (session_status() === PHP_SESSION_NONE) {
 				<a href="?url=mediabox/index" class="navlabel"><i class="material-icons">home</i>
 					<span>Accueil</span>
 				</a>
-				<a href="#" class="navlabel"><i class="material-icons">face_6</i>
+				<a href="?url=compte/index" class="navlabel"><i class="material-icons">face_6</i>
 					<span>Profile</span>
 				</a>
 				<a href="#" class="navlabel"><i class="iconeTheme material-icons">brightness_4</i>

@@ -79,7 +79,7 @@
    
     <button type="button" class="collapsible">Vidéos</button>
     <div class="contentCollapse"><span class="br"></span>
-        <button type="button" class="btnBase blueid="VideoAdd">Ajouter une Vidéo</button>
+        <button type="button" class="btnBase blue" id="VideoAdd">Ajouter une Vidéo</button>
         <div class="formFont" id="contentVideo">
         </div><span class="br"></span>
     </div>
@@ -87,7 +87,7 @@
 
     <button type="button" class="collapsible">Photos</button>
     <div class="contentCollapse"><span class="br"></span>
-        <button type="button" class="btnBase blueid="PhotoAdd">Ajouter une Photo</button>
+        <button type="button" class="btnBase blue" id="PhotoAdd">Ajouter une Photo</button>
         <div class="formFont" id="contentPhoto">
         </div>
     </div>
@@ -95,7 +95,7 @@
 
     <button type="button" class="collapsible">Textes</button>
     <div class="contentCollapse"><span class="br"></span>
-        <button type="button" class="btnBase blueid="texteAdd">Ajouter un texte</button>
+        <button type="button" class="btnBase blue" id="texteAdd">Ajouter un texte</button>
         <div class="formFont" id="contentTexte">
         </div>
     </div>
