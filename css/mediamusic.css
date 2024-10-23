@@ -18,7 +18,7 @@
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20px; /* Réduit l'espacement en haut pour éviter le chevauchement */
+    margin-top: 40px; /* Augmente l'espacement en haut pour améliorer l'alignement */
 }
 
 .track-art {
