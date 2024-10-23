@@ -1,5 +1,5 @@
 <section>
-<!--     <div class="searchBox">
+    <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">
         <button type="button" class="searchButton" href="#">
             <i class="material-icons">search</i>
@@ -35,7 +35,7 @@
         </div>
 
         <!-- Section pour afficher le curseur de volume -->
-        <div class="slider_container">
+        <div class="slider_container-audio">
             <i class="material-icons md-24">volume_down</i>
             <input type="range" aria-label="nolabel" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
             <i class="material-icons md-24">volume_up</i>

@@ -29,7 +29,7 @@ class ConnexionController
 			logError("Session démarrée");
 		}
 		logError("Génération du formulaire de connexion");
-		generate("Views/connect/connectForm.php", [], "Views/base.html.php");
+		generate("Views/connect/connectForm.php", [],"Views/base.html.php");
 	}
 	
 	public function connect()

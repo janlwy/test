@@ -1,4 +1,3 @@
-
 <section>
     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">
@@ -10,7 +9,7 @@
     <!--CARTES-->
     <div class="row">
         <div class="column">
-            <a href="#">
+            <a href="?url=audio/index">
                 <article class="card c1">
                     <i class="material-icons" alt="Audio">headphones</i>
                     <h2 class="titrecarte">Audio</h2>
@@ -43,4 +42,3 @@
         </div>
     </div>
 </section>
-
