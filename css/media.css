@@ -279,8 +279,8 @@ input::placeholder { /*police pesudo-element*/
 
 /* Full-width inputs */
 .inputModal {
-    width: 90%;
-    padding: 12px 20px;
+    width: 80%;
+    padding: 12px 10px;
     margin: 8px 0;
     display: inline-block;
     border: 1px solid #a8a4a4;
