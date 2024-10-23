@@ -16,7 +16,7 @@ video {
     border-radius: 20px;
 }
 
-.player-video {
+.player-video-video {
     width: 98%;
     height: 30vh;
     display: flex;
@@ -28,7 +28,7 @@ video {
     margin: auto 0 auto 7px;
 }
 
-.controls-video {
+.controls-video-video {
     visibility: hidden;
     opacity: 0.99;
     width: 90%;
