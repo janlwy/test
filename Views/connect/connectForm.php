@@ -20,11 +20,11 @@
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
-			
+
 		</div>
 
 		<div class="formContainer signin">
-			<p>Vous n'avez pas de compte ? <a href="?url=connect/createUserForm">Création de compte</a>.</p>
+			<p>Vous n'avez pas de compte ? <a href="?url=creation/create">Création de compte</a>.</p>
 		</div>
 
 	</form>
