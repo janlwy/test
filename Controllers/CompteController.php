@@ -32,24 +32,28 @@ class CompteController
             // Vérifier que le formulaire a été soumis
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Récupérer les données du formulaire
-                $title = $_POST['title'];
-                $artist = $_POST['artiste']; // Correction du nom du champ
-                $image = $_POST['image'];
-                $path = $_POST['path'];
+                if (isset($_POST['title'], $_POST['artiste'], $_POST['image'], $_POST['path'])) {
+                    $title = $_POST['title'];
+                    $artist = $_POST['artiste'];
+                    $image = $_POST['image'];
+                    $path = $_POST['path'];
 
-                // Connexion à la base de données
-                $manager = new Manager();
-                $connexion = $manager->getConnexion();
+                    // Connexion à la base de données
+                    $manager = new Manager();
+                    $connexion = $manager->getConnexion();
 
-                // Insérer les données dans la base de données
-                $sql = 'INSERT INTO musics (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
-                $req = $connexion->prepare($sql);
-                $req->bindValue(':title', $title, PDO::PARAM_STR);
-                $req->bindValue(':artist', $artist, PDO::PARAM_STR);
-                $req->bindValue(':image', $image, PDO::PARAM_STR);
-                $req->bindValue(':path', $path, PDO::PARAM_STR);
-                $req->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-                $req->execute();
+                    // Insérer les données dans la base de données
+                    $sql = 'INSERT INTO musics (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
+                    $req = $connexion->prepare($sql);
+                    $req->bindValue(':title', $title, PDO::PARAM_STR);
+                    $req->bindValue(':artist', $artist, PDO::PARAM_STR);
+                    $req->bindValue(':image', $image, PDO::PARAM_STR);
+                    $req->bindValue(':path', $path, PDO::PARAM_STR);
+                    $req->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+                    $req->execute();
+                } else {
+                    logError("Données du formulaire manquantes");
+                }
 
                 // Rediriger vers la page de gestion des médias
                 header('Location: ?url=compte/index');
