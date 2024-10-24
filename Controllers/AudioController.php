@@ -19,6 +19,26 @@ class AudioController
             exit();
         }
     }
+
+    public function list()
+    {
+        // Démarrer la session si elle n'est pas déjà démarrée
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Vérifier si l'utilisateur est connecté
+        if (isset($_SESSION['pseudo'])) {
+            $manager = new Manager();
+            $audios = $manager->readTableAll('audio');
+            $datas = ['audios' => $audios];
+            generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Enregistrements Audio");
+        } else {
+            // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
+            header('Location: ?url=connexion/index');
+            exit();
+        }
+    }
 }
 
 ?>
