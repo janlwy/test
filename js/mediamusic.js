@@ -87,14 +87,14 @@ function resetValues() {
 
 // Ensure the DOM is fully loaded before attaching event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#audio-list li').forEach(li => {
-        li.addEventListener('click', function() {
+    document.querySelectorAll('#audio-table tr').forEach(tr => {
+        tr.addEventListener('click', function() {
             this.classList.toggle('selected');
         });
     });
 
     document.getElementById('play-selected').addEventListener('click', function() {
-        const selectedAudio = document.querySelector('#audio-list li.selected');
+        const selectedAudio = document.querySelector('#audio-table tr.selected');
         if (selectedAudio) {
             const audioId = selectedAudio.dataset.id;
             const audioData = track_list.find(track => track.id == audioId);
