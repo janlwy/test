@@ -133,9 +133,16 @@ align items in a horizontal direction */
     white-space: nowrap;
     width: 23px;
 }
-
+.title-column {
+    white-space: nowrap;
+    width: 250px;
+}
+.artist-column {
+    white-space: nowrap;
+    width: 183px;
+}
 .image-column {
-    width: auto; /* Ajuste automatiquement la largeur de la colonne à celle de l'image */
+    width: auto;
     margin: 0; 
     padding: 0; 
     border: none; 
@@ -145,8 +152,8 @@ align items in a horizontal direction */
 }
 
 .photoAudio {
-    width: 100px; /* Définit une largeur fixe */
-    height: 100px; /* Définit une hauteur fixe */
+    width: 180px; /* Définit une largeur fixe */
+    height: 159px; /* Définit une hauteur fixe */
     object-fit: cover; /* Assure que l'image garde son ratio tout en remplissant l'espace */
 }
 

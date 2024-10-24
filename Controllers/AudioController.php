@@ -43,8 +43,8 @@ class AudioController
             $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<tr>";
-            $list .= "<td>$title</td>";
-            $list .= "<td>$artist</td>";
+            $list .= "<td class='title-column'>$title</td>";
+            $list .= "<td class='artist-column'>$artist</td>";
             $list .= "<td class='image-column'><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></td>";
             $list .= "<td class='action-buttons'><div class='button-group'>$afficher $modifier $supprimer</div></td>";
             $list .= "</tr>";
