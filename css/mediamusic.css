@@ -135,7 +135,7 @@ align items in a horizontal direction */
 }
 
 .image-column {
-    width: 200px;
+    max-width: 200px; /* Limite la largeur maximale de la colonne */
     margin: 0; 
     padding: 0; 
     border: none; 
