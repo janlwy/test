@@ -2,19 +2,19 @@
 
 // Lecteur audio -----------------------------------------------------------------
 // and assign them to a variable
-const now_playing = document.querySelector(".now-playing-audio");
-const track_art = document.querySelector(".track-art-audio");
-const track_name = document.querySelector(".track-name-audio");
-const track_artist = document.querySelector(".track-artist-audio");
+const now_playing = document.querySelector(".now-playing");
+const track_art = document.querySelector(".track-art");
+const track_name = document.querySelector(".track-name");
+const track_artist = document.querySelector(".track-artist");
 
-const playpause_btn = document.querySelector(".playpause-track-audio");
-const next_btn = document.querySelector(".next-track-audio");
-const prev_btn = document.querySelector(".prev-track-audio");
+const playpause_btn = document.querySelector(".playpause-track");
+const next_btn = document.querySelector(".next-track");
+const prev_btn = document.querySelector(".prev-track");
 
-const seek_slider = document.querySelector(".seek_slider-audio");
-const volume_slider = document.querySelector(".volume_slider-audio");
-const curr_time = document.querySelector(".current-time-audio");
-const total_duration = document.querySelector(".total-duration-audio");
+const seek_slider = document.querySelector(".seek_slider");
+const volume_slider = document.querySelector(".volume_slider");
+const curr_time = document.querySelector(".current-time");
+const total_duration = document.querySelector(".total-duration");
 
 // Specify globally used values
 let track_index = 0;
@@ -86,19 +86,25 @@ function resetValues() {
 
 // Ensure the DOM is fully loaded before attaching event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('play-selected').addEventListener('click', function() {
-        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected')).map(li => li.dataset.id);
-        if (selectedAudios.length > 0) {
-            window.location.href = `?url=audio/index&ids=${selectedAudios.join(',')}`;
-        } else {
-            alert('Veuillez sélectionner au moins un enregistrement audio.');
-        }
-    });
-
     document.querySelectorAll('#audio-list li').forEach(li => {
         li.addEventListener('click', function() {
             this.classList.toggle('selected');
         });
+    });
+
+    document.getElementById('play-selected').addEventListener('click', function() {
+        const selectedAudio = document.querySelector('#audio-list li.selected');
+        if (selectedAudio) {
+            const audioId = selectedAudio.dataset.id;
+            const audioData = track_list.find(track => track.id == audioId);
+            if (audioData) {
+                track_index = track_list.indexOf(audioData);
+                loadTrack(track_index);
+                playTrack();
+            }
+        } else {
+            alert('Veuillez sélectionner un enregistrement audio.');
+        }
     });
 });
 
