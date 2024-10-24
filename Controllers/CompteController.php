@@ -42,12 +42,13 @@ class CompteController
                 $connexion = $manager->getConnexion();
 
                 // Insérer les données dans la base de données
-                $sql = 'INSERT INTO musics (title, artist, image, path) VALUES (:title, :artist, :image, :path)';
+                $sql = 'INSERT INTO musics (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':title', $title, PDO::PARAM_STR);
                 $req->bindValue(':artist', $artist, PDO::PARAM_STR);
                 $req->bindValue(':image', $image, PDO::PARAM_STR);
                 $req->bindValue(':path', $path, PDO::PARAM_STR);
+                $req->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
                 $req->execute();
 
                 // Rediriger vers la page de gestion des médias
