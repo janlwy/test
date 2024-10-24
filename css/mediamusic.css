@@ -145,8 +145,9 @@ align items in a horizontal direction */
 }
 
 .photoAudio {
-    max-width: 50%; 
-    height: auto; /* Maintient le ratio de l'image */
+    width: 100px; /* Définit une largeur fixe */
+    height: 100px; /* Définit une hauteur fixe */
+    object-fit: cover; /* Assure que l'image garde son ratio tout en remplissant l'espace */
 }
 
 #audio-list li {
