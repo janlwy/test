@@ -32,7 +32,7 @@ class AudioController
             $manager = new Manager();
             $audios = $manager->readTableAll('audio');
             $datas = ['audios' => $audios];
-            generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Enregistrements Audio");
+            generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
