@@ -45,7 +45,7 @@ class AudioController
             $list .= "<tr>";
             $list .= "<td>$title</td>";
             $list .= "<td>$artist</td>";
-            $list .= "<td><img class='photoAudio' src='img/$image' width='48%' alt=''></td>";
+            $list .= "<td><img class='photoAudio' src='Ressources/images/$image' width='48%' alt=''></td>";
             $list .= "<td class='flex'>$afficher $modifier $supprimer</td>";
             $list .= "</tr>";
         }
