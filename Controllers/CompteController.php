@@ -43,7 +43,7 @@ class CompteController
                     $connexion = $manager->getConnexion();
 
                     // Insérer les données dans la base de données
-                    $sql = 'INSERT INTO musics (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
+                    $sql = 'INSERT INTO audio (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
                     $req = $connexion->prepare($sql);
                     $req->bindValue(':title', $title, PDO::PARAM_STR);
                     $req->bindValue(':artist', $artist, PDO::PARAM_STR);

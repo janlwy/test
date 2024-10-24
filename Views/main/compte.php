@@ -31,7 +31,7 @@
                     <label for="image">Pochette</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="image" id="image" class="inputMonEspace"/>
+                    <input type="file" name="image" id="image" class="inputMonEspace"/>
                 </div>
             </div>
             <div class="rowEspace">
