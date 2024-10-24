@@ -1,12 +1,9 @@
-namespace ExoPOO
+public interface ITransportPassagers
 {
-    public interface ITransportPassagers
-    {
-        void TransporterPassagers();
-    }
+    void TransporterPassagers();
+}
 
-    public interface ITransportMarchandises
-    {
-        void TransporterMarchandises();
-    }
+public interface ITransportMarchandises
+{
+    void TransporterMarchandises();
 }
