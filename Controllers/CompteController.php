@@ -18,7 +18,7 @@ class CompteController
             header('Location: ?url=connexion/index');
             exit();
         }
-    }
+}
     public function addMusic()
     {
         // Démarrer la session si elle n'est pas déjà démarrée
