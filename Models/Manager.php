@@ -9,7 +9,7 @@
                 logError("Connexion réussie à la base de données.");
             } catch (PDOException $e) {
 				logError("Erreur de connexion à la base de données : " . $e->getMessage());
-				die("Erreur de connexion à la base de données.");
+				exit("Erreur de connexion à la base de données.");
 			}
 			return $bdd;
 		}

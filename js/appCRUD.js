@@ -15,10 +15,10 @@ formCreate.addEventListener("submit", (event) => {
 
 let formValidation = () => {
     if (titleInput.value === "" || artistInput.value === "" || imageInput.value === "" || pathInput.value === "") {
-        console.log("Échec");
+        console.error("Échec de la validation du formulaire");
         msg.innerHTML = "Merci de bien compléter tous les champs !";
     } else {
-        console.log("Validé");
+        console.log("Validation réussie");
         msg.innerHTML = "";
         acceptData();
         hideForm();
