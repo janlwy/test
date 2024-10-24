@@ -39,7 +39,7 @@
                     <label for="path">Source</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="path" id="path" class="inputMonEspace" required/>
+                    <input type="file" name="path" id="path" class="inputMonEspace" required/>
                 </div>
             </div>
             <input type="hidden" name="hide" id="hidden"/>
