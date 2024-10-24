@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Manager.php';
+
 class Audio
 {
     private $id;

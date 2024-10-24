@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Manager.php';
+
 class User
 {
     private $id;
