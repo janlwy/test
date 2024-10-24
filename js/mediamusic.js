@@ -24,8 +24,33 @@ let updateTimer;
 // Create the audio element for the player
 let curr_track = document.createElement('audio');
 
-// Define the list of tracks that have to be played
-let track_list = JSON.parse(localStorage.getItem("playlist")) || [];
+let track_list = [];
+document.addEventListener('DOMContentLoaded', function() {
+    // Assuming `audios` is a global variable set in the PHP view
+    if (typeof audios !== 'undefined') {
+        track_list = audios.map(audio => ({
+            path: audio.path,
+            image: audio.image,
+            title: audio.title,
+            artist: audio.artist
+        }));
+    }
+
+    document.getElementById('play-selected').addEventListener('click', function() {
+        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected')).map(li => li.dataset.id);
+        if (selectedAudios.length > 0) {
+            window.location.href = `?url=audio/index&ids=${selectedAudios.join(',')}`;
+        } else {
+            alert('Veuillez sélectionner au moins un enregistrement audio.');
+        }
+    });
+
+    document.querySelectorAll('#audio-list li').forEach(li => {
+        li.addEventListener('click', function() {
+            this.classList.toggle('selected');
+        });
+    });
+});
 
 function loadTrack(track_index) {
     // Clear the previous seek timer
