@@ -3,7 +3,7 @@
 	require_once 'Bdd.php';
 
 	class Manager {
-	    protected function getConnexion() {
+	    public function getConnexion() {
 	        return Bdd::getConnexion();
 	    }
 		public function readTableAll($table){
