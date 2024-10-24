@@ -5,12 +5,16 @@ class User
     private $id;
     private $name;
     private $email;
+    private $password;
+    private $created_at;
 
     public function __construct($data)
     {
         $this->id = $data['id'] ?? null;
         $this->name = $data['name'] ?? '';
         $this->email = $data['email'] ?? '';
+        $this->password = $data['password'] ?? '';
+        $this->created_at = $data['created_at'] ?? null;
     }
 
     public function getId()
@@ -28,20 +32,28 @@ class User
         return $this->email;
     }
 
-    public function save()
+    public function getPassword()
+    {
+        return $this->password;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->created_at;
+    }
     {
         $manager = new Manager();
         $connexion = $manager->getConnexion();
         if ($this->id) {
             // Update existing user
-            $sql = "UPDATE users SET name = :name, email = :email WHERE id = :id";
+            $sql = "UPDATE users SET name = :name, email = :email, password = :password WHERE id = :id";
             $stmt = $connexion->prepare($sql);
-            $stmt->execute(['name' => $this->name, 'email' => $this->email, 'id' => $this->id]);
+            $stmt->execute(['name' => $this->name, 'email' => $this->email, 'password' => $this->password, 'id' => $this->id]);
         } else {
             // Insert new user
-            $sql = "INSERT INTO users (name, email) VALUES (:name, :email)";
+            $sql = "INSERT INTO users (name, email, password, created_at) VALUES (:name, :email, :password, NOW())";
             $stmt = $connexion->prepare($sql);
-            $stmt->execute(['name' => $this->name, 'email' => $this->email]);
+            $stmt->execute(['name' => $this->name, 'email' => $this->email, 'password' => $this->password]);
             $this->id = $connexion->lastInsertId();
         }
     }
