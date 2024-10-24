@@ -41,8 +41,6 @@ class User
     {
         return $this->created_at;
     }
-        $manager = new Manager();
-        $connexion = $manager->getConnexion();
         if ($this->id) {
             // Update existing user
             $sql = "UPDATE users SET name = :name, email = :email, password = :password WHERE id = :id";
