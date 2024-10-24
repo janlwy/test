@@ -145,7 +145,7 @@ align items in a horizontal direction */
 }
 
 .photoAudio {
-    max-width: 100%; 
+    max-width: 50%; 
     height: auto; /* Maintient le ratio de l'image */
 }
 
