@@ -9,7 +9,7 @@
     <!--CARTES-->
     <div class="row">
         <div class="column">
-            <a href="?url=audio/index">
+            <a href="?url=audio/list">
                 <article class="card c1">
                     <i class="material-icons" alt="Audio">headphones</i>
                     <h2 class="titrecarte">Audio</h2>
