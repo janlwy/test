@@ -136,14 +136,14 @@ align items in a horizontal direction */
 
 .image-column {
     width: 200px;
+    margin: 1px; /* Supprime les marges */
+    padding: 1px; /* Supprime les espacements internes */
+    border: none; /* Supprime les bordures */
 }
 
 .photoAudio {
     max-width: 100%; 
     height: auto; /* Maintient le ratio de l'image */
-    margin: 0; /* Supprime les marges */
-    padding: 0; /* Supprime les espacements internes */
-    border: none; /* Supprime les bordures */
 }
 
 #audio-list li {
