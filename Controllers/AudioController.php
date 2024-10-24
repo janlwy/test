@@ -25,13 +25,13 @@ class AudioController
         $manager = new Manager();
         $audios = $manager->readTableAll('audio');
         $list = "<br>";
-        $list .= "<a href='index.php?url=audio/insert' class='bouton'>Ajouter</a>";
-        $list .= "<table class='w100' border=1 style='border-collapse:collapse;'>";
+        $list .= "<a href='index.php?url=audio/insert' class='btnBase gris'>Ajouter</a>";
+        $list .= "<table class='' border=1 style='border-collapse:collapse;'>";
         $list .= "<tr class='fond-blue'>";
-        $list .= "<th class='w10'>TITRE</th>";
-        $list .= "<th class='w10'>ARTISTE</th>";
-        $list .= "<th class='w10'>IMAGE</th>";
-        $list .= "<th class='w20'>ACTIONS</th>";
+        $list .= "<th class=''>TITRE</th>";
+        $list .= "<th class=''>ARTISTE</th>";
+        $list .= "<th class=''>IMAGE</th>";
+        $list .= "<th class=''>ACTIONS</th>";
         $list .= "</tr>";
         foreach ($audios as $audio) {
             $id = $audio['id'];
@@ -39,9 +39,9 @@ class AudioController
             $artist = $audio['artist'];
             $image = $audio['image'];
             $path = $audio['path'];
-            $afficher = "<a class='boutontable w40 gris' href='index.php?url=audio/show/$id'>Afficher</a>";
-            $modifier = "<a class='boutontable w40 vert' href='index.php?url=audio/update/$id'>Modifier</a>";
-            $supprimer = "<a class='boutontable w40 rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
+            $afficher = "<a class='btnBase blue' href='index.php?url=audio/show/$id'>Afficher</a>";
+            $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
+            $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<tr>";
             $list .= "<td>$title</td>";
             $list .= "<td>$artist</td>";
