@@ -27,6 +27,7 @@ class CompteController
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Récupérer les données du formulaire
                 if ($this->isFormDataValid()) {
+                    logError("Données du formulaire reçues : " . json_encode($_POST));
                     $title = $_POST['title'];
                     $artist = $_POST['artiste'];
                     $image = $_POST['image'];
@@ -77,7 +78,11 @@ class CompteController
         $req->bindValue(':image', $image, PDO::PARAM_STR);
         $req->bindValue(':path', $path, PDO::PARAM_STR);
         $req->bindValue(':user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-        $req->execute();
+        if ($req->execute()) {
+            logError("Données insérées avec succès dans la base de données.");
+        } else {
+            logError("Échec de l'insertion des données dans la base de données.");
+        }
     }
 
     private function redirectToLogin()
