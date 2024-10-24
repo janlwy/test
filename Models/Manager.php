@@ -1,9 +1,7 @@
 <?php
 
 	class Manager{
-		
-		
-		/*public function readTableAll($table){
+		public function readTableAll($table){
 			$connexion=$this->getConnexion();
 			$sql="select * from $table";
 			$query=$connexion->query($sql); //execute moi cette SQL
@@ -91,8 +89,6 @@
 			$resultat=array("Suppression okay");
 			return $resultat;
 		}
-
-*/
 	}
 
 ?>
