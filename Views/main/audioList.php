@@ -1,6 +1,11 @@
  <section>
      <span class="br"></span>
      <?php echo $audioList; ?>
+     <ul id="audio-list">
+         <?php foreach ($audios as $audio): ?>
+             <li data-id="<?php echo $audio['id']; ?>"><?php echo $audio['title']; ?> - <?php echo $audio['artist']; ?></li>
+         <?php endforeach; ?>
+     </ul>
      <script>
          var audios = <?php echo json_encode($audios); ?>;
      </script>
