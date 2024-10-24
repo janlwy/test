@@ -3,17 +3,17 @@
 class User
 {
     private $id;
-    private $name;
-    private $email;
-    private $password;
+    private $pseudo;
+    //private $email;
+    private $mdp;
     private $created_at;
 
     public function __construct($data)
     {
         $this->id = $data['id'] ?? null;
-        $this->name = $data['name'] ?? '';
-        $this->email = $data['email'] ?? '';
-        $this->password = $data['password'] ?? '';
+        $this->pseudo = $data['pseudo'] ?? '';
+        //$this->email = $data['email'] ?? '';
+        $this->mdp = $data['mdp'] ?? '';
         $this->created_at = $data['created_at'] ?? null;
     }
 
@@ -22,19 +22,19 @@ class User
         return $this->id;
     }
 
-    public function getName()
+    public function getPseudo()
     {
-        return $this->name;
+        return $this->pseudo;
     }
 
-    public function getEmail()
+    /*public function getEmail()
     {
         return $this->email;
-    }
+    }*/
 
-    public function getPassword()
+    public function getMdp()
     {
-        return $this->password;
+        return $this->mdp;
     }
 
     public function getCreatedAt()
@@ -48,14 +48,14 @@ class User
         $connexion = $manager->getConnexion();
         if ($this->id) {
             // Update existing user
-            $sql = "UPDATE users SET name = :name, email = :email, password = :password WHERE id = :id";
+            $sql = "UPDATE users SET pseudo = :pseudo, mdp = :mdp WHERE id = :id";
             $stmt = $connexion->prepare($sql);
-            $stmt->execute(['name' => $this->name, 'email' => $this->email, 'password' => $this->password, 'id' => $this->id]);
+            $stmt->execute(['pseudo' => $this->pseudo, 'mdp' => $this->mdp, 'id' => $this->id]);
         } else {
             // Insert new user
-            $sql = "INSERT INTO users (name, email, password, created_at) VALUES (:name, :email, :password, NOW())";
+            $sql = "INSERT INTO users (pseudo, mdp, created_at) VALUES (:pseudo, :mdp, NOW())";
             $stmt = $connexion->prepare($sql);
-            $stmt->execute(['name' => $this->name, 'email' => $this->email, 'password' => $this->password]);
+            $stmt->execute(['pseudo' => $this->pseudo, 'mdp' => $this->mdp]);
             $this->id = $connexion->lastInsertId();
         }
     }
