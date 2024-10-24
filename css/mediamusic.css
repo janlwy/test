@@ -139,8 +139,8 @@ align items in a horizontal direction */
 }
 
 .photoAudio {
-    max-width: 100%; /* Assure que l'image ne dépasse pas la taille de la colonne */
-    height: 50%; /* Maintient le ratio de l'image */
+    max-width: 25%; /* Réduit la taille de l'image à 25% de sa largeur d'origine */
+    height: auto; /* Maintient le ratio de l'image */
 }
 
 #audio-list li {
