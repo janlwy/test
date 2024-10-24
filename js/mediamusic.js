@@ -89,7 +89,15 @@ function resetValues() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('#audio-table tr').forEach(tr => {
         tr.addEventListener('click', function() {
-            this.classList.toggle('selected');
+            document.querySelectorAll('#audio-table tr').forEach(row => row.classList.remove('selected'));
+            this.classList.add('selected');
+            const audioId = this.dataset.id;
+            const audioData = track_list.find(track => track.id == audioId);
+            if (audioData) {
+                track_index = track_list.indexOf(audioData);
+                loadTrack(track_index);
+                playTrack();
+            }
         });
     });
 
