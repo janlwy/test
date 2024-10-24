@@ -1,6 +1,11 @@
 <?php
 
-	class Manager{
+	require_once 'Bdd.php';
+
+	class Manager {
+	    protected function getConnexion() {
+	        return Bdd::getConnexion();
+	    }
 		public function readTableAll($table){
 			$connexion=$this->getConnexion();
 			$sql="select * from $table";
