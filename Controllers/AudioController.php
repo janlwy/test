@@ -32,7 +32,6 @@ class AudioController
         $manager = new Manager();
         $audios = $manager->readTableAll('audio');
         $list = "<br>";
-        $list .= "<a href='index.php?url=audio/insert' class='btnBase gris'>Ajouter</a>";
         $list .= "<table class='' border=1 style='border-collapse:collapse;'>";
         $list .= "<tr class='fond-blue'>";
         $list .= "<th class=''>TITRE</th>";
