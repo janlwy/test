@@ -31,7 +31,7 @@ class AudioController
         $list .= "<th class=''>TITRE</th>";
         $list .= "<th class=''>ARTISTE</th>";
         $list .= "<th class=''>IMAGE</th>";
-        $list .= "<th class=''>ACTIONS</th>";
+        $list .= "<th class='' style='white-space: nowrap;'>ACTIONS</th>";
         $list .= "</tr>";
         foreach ($audios as $audio) {
             $id = $audio['id'];
