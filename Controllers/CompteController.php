@@ -33,7 +33,7 @@ class CompteController
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 // Récupérer les données du formulaire
                 $title = $_POST['title'];
-                $artist = $_POST['artist'];
+                $artist = $_POST['artiste']; // Correction du nom du champ
                 $image = $_POST['image'];
                 $path = $_POST['path'];
 
@@ -42,7 +42,7 @@ class CompteController
                 $connexion = $manager->getConnexion();
 
                 // Insérer les données dans la base de données
-                $sql = 'INSERT INTO audio (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
+                $sql = 'INSERT INTO musics (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':title', $title, PDO::PARAM_STR);
                 $req->bindValue(':artist', $artist, PDO::PARAM_STR);
