@@ -125,7 +125,13 @@ align items in a horizontal direction */
 }
 .actions-column {
     white-space: nowrap;
+    width: 23px;
 }
+
+.photoAudio {
+     
+     width: 50%;
+ }
 
 #audio-list li {
     cursor: pointer;
