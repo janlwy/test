@@ -30,7 +30,8 @@ class User
 
     public function save()
     {
-        $connexion = Bdd::getConnexion();
+        $manager = new Manager();
+        $connexion = $manager->getConnexion();
         if ($this->id) {
             // Update existing user
             $sql = "UPDATE users SET name = :name, email = :email WHERE id = :id";
@@ -47,7 +48,8 @@ class User
 
     public static function find($id)
     {
-        $connexion = Bdd::getConnexion();
+        $manager = new Manager();
+        $connexion = $manager->getConnexion();
         $sql = "SELECT * FROM users WHERE id = :id";
         $stmt = $connexion->prepare($sql);
         $stmt->execute(['id' => $id]);
