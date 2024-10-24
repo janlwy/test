@@ -11,20 +11,3 @@
     </ul>
     <button id="play-selected">Lire la sélection</button>
 </section>
-
-<script>
-    document.getElementById('play-selected').addEventListener('click', function() {
-        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected')).map(li => li.dataset.id);
-        if (selectedAudios.length > 0) {
-            window.location.href = `?url=audio/index&ids=${selectedAudios.join(',')}`;
-        } else {
-            alert('Veuillez sélectionner au moins un enregistrement audio.');
-        }
-    });
-
-    document.querySelectorAll('#audio-list li').forEach(li => {
-        li.addEventListener('click', function() {
-            this.classList.toggle('selected');
-        });
-    });
-</script>
