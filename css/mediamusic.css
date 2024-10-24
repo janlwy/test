@@ -136,12 +136,12 @@ align items in a horizontal direction */
 
 .image-column {
     width: 200px;
-    margin: 1px; /* Supprime les marges */
-    padding: 1px; /* Supprime les espacements internes */
-    border: none; /* Supprime les bordures */
+    margin: 0; 
+    padding: 0; 
+    border: none; 
+    justify-content: center; 
+    align-items: center; 
     display: flex;
-    justify-content: center; /* Centre horizontalement */
-    align-items: center; /* Centre verticalement */
 }
 
 .photoAudio {
