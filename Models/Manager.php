@@ -2,17 +2,6 @@
 
 	class Manager{
 		
-		public function getConnexion(){
-			$dsn= "mysql:host=localhost;dbname=cda_projet;charset=utf8";
-			try{
-				$bdd=new PDO($dsn,'root','');
-                logError("Connexion réussie à la base de données.");
-            } catch (PDOException $e) {
-				logError("Erreur de connexion à la base de données : " . $e->getMessage());
-				exit("Erreur de connexion à la base de données.");
-			}
-			return $bdd;
-		}
 		
 		/*public function readTableAll($table){
 			$connexion=$this->getConnexion();

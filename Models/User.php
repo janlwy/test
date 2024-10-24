@@ -44,8 +44,7 @@ class User
 
     public function save()
     {
-        $manager = new Manager();
-        $connexion = $manager->getConnexion();
+        $connexion = Bdd::getConnexion();
         if ($this->id) {
             // Update existing user
             $sql = "UPDATE users SET pseudo = :pseudo, mdp = :mdp WHERE id = :id";
