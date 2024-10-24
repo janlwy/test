@@ -66,7 +66,8 @@ class AudioController
             $audios = $manager->readTableAll('audio');
             $audioList = $this->listeAudio();
             $datas = [
-                'audioList' => $audioList
+                'audioList' => $audioList,
+                'audios' => $audios
             ];
             generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
