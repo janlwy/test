@@ -7,7 +7,7 @@
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="form-add">Édition</button>
 
-        <form id="formCrud" class="formFont">
+        <form id="formCrud" class="formFont" method="POST" action="?url=compte/addMusic">
 
             <div class="rowEspace">
                 <div class="collabel"> 
