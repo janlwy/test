@@ -6,7 +6,8 @@
 			$dsn= "mysql:host=localhost;dbname=cda_projet;charset=utf8";
 			try{
 				$bdd=new PDO($dsn,'root','');
-			} catch (PDOException $e) {
+                logError("Connexion réussie à la base de données.");
+            } catch (PDOException $e) {
 				logError("Erreur de connexion à la base de données : " . $e->getMessage());
 				die("Erreur de connexion à la base de données.");
 			}
