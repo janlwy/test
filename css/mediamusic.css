@@ -134,10 +134,14 @@ align items in a horizontal direction */
     width: 23px;
 }
 
+.image-column {
+    width: auto; /* Permet à la colonne de s'adapter à la taille de l'image */
+}
+
 .photoAudio {
-     
-     width: 50%;
- }
+    max-width: 100%; /* Assure que l'image ne dépasse pas la taille de la colonne */
+    height: auto; /* Maintient le ratio de l'image */
+}
 
 #audio-list li {
     cursor: pointer;
