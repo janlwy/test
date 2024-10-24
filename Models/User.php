@@ -41,7 +41,6 @@ class User
     {
         return $this->created_at;
     }
-    {
         $manager = new Manager();
         $connexion = $manager->getConnexion();
         if ($this->id) {
