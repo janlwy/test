@@ -24,19 +24,19 @@ if (session_status() === PHP_SESSION_NONE) {
 <body class="clair-theme" id="themeBody">
 	<header>
 		<h1><?php echo isset($pageTitle) ? $pageTitle : 'Média Box'; ?></h1>
-		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="boutonTheme"></button>
+		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
 		<?php if (isset($_SESSION['pseudo'])): ?>
 			<nav class="menunav" id="myMenunav">
-				<a href="?url=mediabox/index" class="active"><i class="material-icons">home</i></a>
-				<a href="?url=compte/index" class="active"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-				<a href="?url=audio/index">Audio</a>
-				<a href="?url=video/index">Vidéo</a>
-				<a href="?url=photo/index">Photo</a>
-				<a href="?url=texte/index">Texte</a>
-				<a href="?url=deconnexion/index" class="sortie boutonright"><i class="material-icons">logout</i></a>
-				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()"><i class="material-icons">menu</i></a>
+				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
+				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
+				<a href="?url=audio/index" aria-label="Audio">Audio</a>
+				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
+				<a href="?url=photo/index" aria-label="Photo">Photo</a>
+				<a href="?url=texte/index" aria-label="Texte">Texte</a>
+				<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
+				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
 			</nav>
 		<?php endif; ?>
 		<section>
