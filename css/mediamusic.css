@@ -141,6 +141,9 @@ align items in a horizontal direction */
 .photoAudio {
     max-width: 100%; 
     height: auto; /* Maintient le ratio de l'image */
+    margin: 0; /* Supprime les marges */
+    padding: 0; /* Supprime les espacements internes */
+    border: none; /* Supprime les bordures */
 }
 
 #audio-list li {
