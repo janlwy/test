@@ -31,7 +31,7 @@ if (session_status() === PHP_SESSION_NONE) {
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-				<a href="?url=audio/index" aria-label="Audio">Audio</a>
+				<a href="?url=audio/list" aria-label="Audio">Audio</a>
 				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
 				<a href="?url=photo/index" aria-label="Photo">Photo</a>
 				<a href="?url=texte/index" aria-label="Texte">Texte</a>

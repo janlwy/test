@@ -26,7 +26,6 @@ let curr_track = document.createElement('audio');
 
 let track_list = [];
 document.addEventListener('DOMContentLoaded', function() {
-    // Assuming `audios` is a global variable set in the PHP view
     if (typeof audios !== 'undefined') {
         track_list = audios.map(audio => ({
             path: audio.path,
