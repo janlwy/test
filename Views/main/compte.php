@@ -15,7 +15,7 @@
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="title" class="inputMonEspace"/>
+                    <input type="text" name="title" id="title" class="inputMonEspace" required/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -23,7 +23,7 @@
                     <label for="artist">Artiste</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="artiste" id="artist" class="inputMonEspace"/>
+                    <input type="text" name="artiste" id="artist" class="inputMonEspace" required/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -31,7 +31,7 @@
                     <label for="image">Pochette</label>
                 </div>
                 <div class="colinput">
-                    <input type="file" name="image" id="image" class="inputMonEspace"/>
+                    <input type="file" name="image" id="image" class="inputMonEspace" required/>
                 </div>
             </div>
             <div class="rowEspace">
@@ -39,7 +39,7 @@
                     <label for="path">Source</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="path" id="path" class="inputMonEspace"/>
+                    <input type="text" name="path" id="path" class="inputMonEspace" required/>
                 </div>
             </div>
             <input type="hidden" name="hide" id="hidden"/>
