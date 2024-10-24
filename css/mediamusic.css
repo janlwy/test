@@ -119,3 +119,10 @@ align items in a horizontal direction */
     padding: 10px;
     font-size: medium;
 }
+#audio-list li.selected {
+    background-color: #d3d3d3; /* Changez la couleur de fond pour indiquer la sélection */
+    cursor: pointer;
+}
+#audio-list li {
+    cursor: pointer;
+}
