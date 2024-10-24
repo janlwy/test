@@ -123,6 +123,12 @@ align items in a horizontal direction */
     background-color: #d3d3d3; /* Changez la couleur de fond pour indiquer la sélection */
     cursor: pointer;
 }
+.action-buttons .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espace entre les boutons */
+}
+
 .actions-column {
     white-space: nowrap;
     width: 23px;
