@@ -28,11 +28,9 @@ class AudioController
         $list .= "<a href='index.php?url=audio/insert' class='bouton'>Ajouter</a>";
         $list .= "<table class='w100' border=1 style='border-collapse:collapse;'>";
         $list .= "<tr class='fond-blue'>";
-        $list .= "<th class='w05'>ID</th>";
         $list .= "<th class='w10'>TITRE</th>";
         $list .= "<th class='w10'>ARTISTE</th>";
         $list .= "<th class='w10'>IMAGE</th>";
-        $list .= "<th class='w30'>CHEMIN</th>";
         $list .= "<th class='w20'>ACTIONS</th>";
         $list .= "</tr>";
         foreach ($audios as $audio) {
@@ -45,11 +43,9 @@ class AudioController
             $modifier = "<a class='boutontable w40 vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='boutontable w40 rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<tr>";
-            $list .= "<td>$id</td>";
             $list .= "<td>$title</td>";
             $list .= "<td>$artist</td>";
             $list .= "<td><img class='photoAudio' src='img/$image' width='48%' alt=''></td>";
-            $list .= "<td>$path</td>";
             $list .= "<td class='flex'>$afficher $modifier $supprimer</td>";
             $list .= "</tr>";
         }
