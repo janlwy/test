@@ -135,11 +135,11 @@ align items in a horizontal direction */
 }
 
 .image-column {
-    width: auto; /* Permet à la colonne de s'adapter à la taille de l'image */
+    width: 200px;
 }
 
 .photoAudio {
-    max-width: 25%; /* Réduit la taille de l'image à 25% de sa largeur d'origine */
+    max-width: 100%; 
     height: auto; /* Maintient le ratio de l'image */
 }
 
