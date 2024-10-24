@@ -8,8 +8,10 @@
     --vertSombre: #2f4f4f;
     --bleuArgent: #747492;
     --orange: #ffb764;
-    --marine: #3633ff;
+    --marine: #000080;
     --violet: #942494;
+    --gainsboro: #dcdcdcce;
+    --dimGray: #696969;
 }
 
 /************************* Mise en forme globale du fond *********************************/
@@ -55,6 +57,7 @@ header h1 {
             #778899,
             #2f4f4f);
     --active: var(--vertSombre);
+    --collapsForm: var(--gainsboro);
 }
 
 .sombre-theme {
@@ -77,6 +80,7 @@ header h1 {
             #b5b3d6,
             #747492);
     --active: var(--bleuArgent);
+    --collapsForm: var(--dimGray);
 }
 
 article, aside {
@@ -601,7 +605,7 @@ button.btnBase.blue, button.btnBase.vert {
 /************************************ Tableaux CRUD ***************************************/
 
 thead, tfoot {
-    background-color: #75b3ce;
+    background-color: #218dbb;
     color: #000000;
 }
 
@@ -646,7 +650,7 @@ tr:nth-child(even) { /* alternance de couleurs entre les lignes du tableau */
 }
 
 .activeCollapse, .collapsible:hover {
-    background-color: var(--violet);
+    background-color: var(--marine);
 }
 
 .collapsible:after {
@@ -663,10 +667,10 @@ tr:nth-child(even) { /* alternance de couleurs entre les lignes du tableau */
 
 .contentCollapse {
     padding: 1px; /* Xpx débordement bas pour révéler la pliure */
-    max-height: 1000px; /* Ajuster cette valeur selon la hauteur nécessaire */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #c0bcad;
+    background-color: var(--collapsForm);
     border-bottom: 6px solid #000dc7;
     border-radius: 0 0 10px 10px;
 }
