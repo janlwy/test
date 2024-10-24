@@ -28,6 +28,7 @@ let track_list = [];
 document.addEventListener('DOMContentLoaded', function() {
     if (typeof audios !== 'undefined') {
         track_list = audios.map(audio => ({
+            id: audio.id,
             path: audio.path,
             image: audio.image,
             title: audio.title,

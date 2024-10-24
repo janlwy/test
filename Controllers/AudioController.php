@@ -31,7 +31,15 @@ class AudioController
         if (isset($_SESSION['pseudo'])) {
             $manager = new Manager();
             $audios = $manager->readTableAll('audio');
-            $datas = ['audios' => $audios];
+            $datas = ['audios' => array_map(function($audio) {
+                return [
+                    'id' => $audio['id'],
+                    'title' => $audio['title'],
+                    'artist' => $audio['artist'],
+                    'image' => $audio['image'],
+                    'path' => $audio['path']
+                ];
+            }, $audios)];
             generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
