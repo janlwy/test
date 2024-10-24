@@ -139,6 +139,9 @@ align items in a horizontal direction */
     margin: 1px; /* Supprime les marges */
     padding: 1px; /* Supprime les espacements internes */
     border: none; /* Supprime les bordures */
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
 }
 
 .photoAudio {
