@@ -607,10 +607,10 @@ button.btnBase.blue, button.btnBase.vert {
 .audio-item {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--silver);
-    padding-bottom: 10px;
+    padding: 10px 0;
 }
 
 .photoAudio {
@@ -624,7 +624,7 @@ button.btnBase.blue, button.btnBase.vert {
 .audio-details {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     flex-grow: 1;
 }
 
@@ -643,6 +643,7 @@ button.btnBase.blue, button.btnBase.vert {
 .button-group {
     display: flex;
     gap: 10px;
+    align-items: center;
 }
 
 
