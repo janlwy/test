@@ -114,8 +114,17 @@ class AudioController
                 $imagePath = 'Ressources/images/pochettes/' . basename($image['name']);
                 $audioPath = 'Ressources/audio/' . basename($path['name']);
 
-                if (move_uploaded_file($image['tmp_name'], $imagePath) && move_uploaded_file($path['tmp_name'], $audioPath)) {
-                    logError("Fichiers téléchargés avec succès");
+                logError("Tentative de déplacement de l'image vers : $imagePath");
+                logError("Tentative de déplacement de l'audio vers : $audioPath");
+
+                if (move_uploaded_file($image['tmp_name'], $imagePath)) {
+                    logError("Image déplacée avec succès");
+                } else {
+                    logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
+                }
+
+                if (move_uploaded_file($path['tmp_name'], $audioPath)) {
+                    logError("Audio déplacé avec succès");
                     // Insérer les données dans la base de données
                     $manager = new Manager();
                     $data = [
