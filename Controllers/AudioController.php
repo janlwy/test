@@ -31,31 +31,21 @@ class AudioController
     {
         $manager = new Manager();
         $audios = $manager->readTableAll('audio');
-        $list = "<br>";
-        $list .= "<table class='' border=1 style='border-collapse:collapse;'>";
-        $list .= "<tr class='fond-blue'>";
-        $list .= "<th class=''>TITRE</th>";
-        $list .= "<th class=''>ARTISTE</th>";
-        $list .= "<th class=''>IMAGE</th>";
-        $list .= "<th class='actions-column'>ACTIONS</th>";
-        $list .= "</tr>";
+        $list = "<br><dl>";
         foreach ($audios as $audio) {
             $id = $audio['id'];
-            $title = $audio['title'];
-            $artist = $audio['artist'];
-            $image = $audio['image'];
-            $path = $audio['path'];
+            $title = htmlspecialchars($audio['title'], ENT_QUOTES, 'UTF-8');
+            $artist = htmlspecialchars($audio['artist'], ENT_QUOTES, 'UTF-8');
+            $image = htmlspecialchars($audio['image'], ENT_QUOTES, 'UTF-8');
             $afficher = "<a class='btnBase blue' href='index.php?url=audio/show/$id'>Afficher</a>";
             $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
-            $list .= "<tr data-id='$id'>";
-            $list .= "<td class='title-column'>$title</td>";
-            $list .= "<td class='artist-column'>$artist</td>";
-            $list .= "<td class='image-column'><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></td>";
-            $list .= "<td class='action-buttons'><div class='button-group'>$afficher $modifier $supprimer</div></td>";
-            $list .= "</tr>";
+            $list .= "<dt>Titre de l'audio</dt><dd>$title</dd>";
+            $list .= "<dt>Artiste</dt><dd>$artist</dd>";
+            $list .= "<dt>Image de l'album</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
+            $list .= "<dt>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
-        $list .= "</table><br><br>";
+        $list .= "</dl><br><br>";
         return $list;
     }
 
