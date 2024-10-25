@@ -52,7 +52,6 @@ class CreationController
                             $req->bindValue(':mdp1', password_hash($_POST['mdp1'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                             $req->execute();
                             $_SESSION['message'] = 'Inscription réussie !';
-                            session_start();
                             $_SESSION['pseudo'] = $_POST['pseudo'];
                             $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
                             header('Location: ?url=mediabox/index');
