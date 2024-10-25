@@ -127,11 +127,20 @@ class AudioController
                     logError("Audio déplacé avec succès");
                     // Insérer les données dans la base de données
                     $manager = new Manager();
+                    $userId = $_SESSION['user_id'] ?? null;
+                    if ($userId === null) {
+                        logError("Erreur : user_id est null");
+                        $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+                        header('Location: ?url=compte/index');
+                        exit();
+                    }
+
                     $data = [
                         'title' => $title,
                         'artist' => $artist,
                         'image' => basename($image['name']),
-                        'path' => basename($path['name'])
+                        'path' => basename($path['name']),
+                        'user_id' => $userId
                     ];
                     $manager->insertTable('audio', $data);
 
