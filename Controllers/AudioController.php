@@ -8,8 +8,6 @@ class AudioController
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
-    }
-}
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
@@ -19,7 +17,7 @@ class AudioController
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
             exit();
-    }
+        }
     }
 
     public function listeAudio()
@@ -48,33 +46,35 @@ class AudioController
             $list .= "<div class='audio-details'>";
             $list .= "<h4>$title</h4>";
             $list .= "<p>$artist</p>";
-            
+
             $list .= "<div class='button-group'>$afficher $modifier $supprimer</div>";
             $list .= "</div></div>";
-    }
+        }
         $list .= "</dl><br><br>";
         return $list;
     }
 
-    public function addMusic()
+    public function list()
     {
         // Démarrer la session si elle n'est pas déjà démarrée
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-    }
+        }
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
-            // Logique pour ajouter la musique
-            // ...
-
-            // Rediriger vers la liste des audios après l'ajout
-            header('Location: ?url=audio/listeAudio');
-            exit();
+            $manager = new Manager();
+            $audios = $manager->readTableAll('audio');
+            $audioList = $this->listeAudio();
+            $datas = [
+                'audioList' => $audioList,
+                'audios' => $audios
+            ];
+            generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
             exit();
         }
+    }
 }
-

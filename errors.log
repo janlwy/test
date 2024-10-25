@@ -364,3 +364,137 @@
 2024-10-25 17:53:04 - [error] - Appel de la méthode index dans le contrôleur CompteController
 2024-10-25 17:53:06 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-10-25 17:53:06 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 17:57:14 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 17:57:14 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 17:57:15 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:57:15 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:57:20 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : update
+2024-10-25 17:57:22 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:57:22 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:57:24 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : insert
+2024-10-25 17:57:26 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:57:26 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:57:39 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : insert
+2024-10-25 17:57:42 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:57:42 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:58:31 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:58:31 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:58:32 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:58:32 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:58:34 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : addMusic
+2024-10-25 17:58:34 - [error] - Appel de la méthode addMusic dans le contrôleur CompteController
+2024-10-25 17:58:45 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : addMusic
+2024-10-25 17:58:45 - [error] - Appel de la méthode addMusic dans le contrôleur CompteController
+2024-10-25 17:59:03 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:59:03 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:59:06 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 17:59:06 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 17:59:07 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:59:07 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 17:59:10 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : addMusic
+2024-10-25 17:59:10 - [error] - Appel de la méthode addMusic dans le contrôleur CompteController
+2024-10-25 17:59:14 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 17:59:14 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:43 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:43 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:56 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:56 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:56 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:56 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:03:57 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:03:57 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:06:52 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:06:52 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:06:53 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:06:53 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:06:53 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:06:53 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:06:56 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:06:56 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:07:20 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:07:20 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:07:21 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:07:21 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:07:37 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:07:37 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:08:22 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:08:22 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:08:26 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:08:26 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:13:56 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:13:56 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:13:57 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:13:57 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:14:26 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-25 18:19:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-25 18:19:19 - [error] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-25 18:19:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : listeAudio
+2024-10-25 18:19:19 - [error] - Appel de la méthode listeAudio dans le contrôleur AudioController
+2024-10-25 18:19:23 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:19:23 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:19:25 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:19:25 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:19:26 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:24:18 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:24:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:24:21 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:21 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:23 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:23 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:23 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:23 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:25 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:25 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:27 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:27 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:28 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:28 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:24:29 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:24:32 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:24:33 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:24:33 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:25:40 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:25:40 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:25:42 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:25:42 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:25:44 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:25:44 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:25:48 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:25:48 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:25:58 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:25:58 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:25:59 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:25:59 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:26:01 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:26:01 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:26:52 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 18:26:52 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 18:26:53 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:26:53 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:26:56 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : delete
+2024-10-25 18:26:59 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:26:59 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:00 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:00 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:01 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:01 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:03 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 18:27:03 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 18:27:07 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:07 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:09 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:09 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:09 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:09 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 18:27:11 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 18:27:11 - [error] - Appel de la méthode list dans le contrôleur AudioController
