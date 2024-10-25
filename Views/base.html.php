@@ -27,7 +27,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
-		<?php if (isset($_SESSION['pseudo']) && isset($_SESSION['user_id']) && !in_array($_GET['url'], ['accueil/index', 'creation/createUserForm', 'connexion/connectForm'])): ?>
+		<?php if (isset($_SESSION['pseudo']) && isset($_SESSION['user_id'])): ?>
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
