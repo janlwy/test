@@ -6,10 +6,17 @@
 	    public function getConnexion() {
 	        return Bdd::getConnexion();
 	    }
-		public function readTableAll($table){
+		public function readTableAll($table, $userId = null){
 			$connexion=$this->getConnexion();
 			$sql="select * from $table";
-			$query=$connexion->query($sql); //execute moi cette SQL
+			if ($userId !== null) {
+				$sql .= " where user_id = :user_id";
+			}
+			$query=$connexion->prepare($sql);
+			if ($userId !== null) {
+				$query->bindValue(':user_id', $userId, PDO::PARAM_INT);
+			}
+			$query->execute();
 			$resultat=$query->fetchAll();
 			return $resultat;
 		}
