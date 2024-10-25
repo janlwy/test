@@ -13,7 +13,7 @@
             });
         </script>
 
-        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic" enctype="multipart/form-data">
+        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic">
 
             <div class="rowEspace">
                 <div class="collabel">
@@ -53,16 +53,6 @@
             <div id="msg"></div>
             <hr>
             <button type="button" class="btnBase vert" id="formsave">Exécuter</button>
-            <script>
-                document.getElementById('formsave').addEventListener('click', function(event) {
-                    if (confirm("Voulez-vous être redirigé vers la liste audio après l'ajout ?")) {
-                        document.getElementById('formCrud').submit();
-                        window.location.href = '?url=audio/list';
-                    } else {
-                        document.getElementById('formCrud').submit();
-                    }
-                });
-            </script>
             <button type="button" class="btnBase gris" id="formcancel">Annuler</button>
         </form><span class="br"></span>
         <hr>
