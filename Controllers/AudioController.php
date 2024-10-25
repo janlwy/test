@@ -7,6 +7,8 @@ class AudioController
         // Démarrer la session si elle n'est pas déjà démarrée
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
+        } else {
+            $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
         }
 
         // Vérifier si l'utilisateur est connecté
@@ -121,8 +123,6 @@ class AudioController
                     logError("Image déplacée avec succès");
                 } else {
                     logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
-                } else {
-                    logError("Erreur lors du déplacement des fichiers");
                     $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
                 }
 
