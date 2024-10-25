@@ -1,21 +1,20 @@
-
 <h2>Gestion des médias</h2>
 
 <section class="monEspace">
 
     <button type="button" class="collapsible">Musiques</button>
-    <div class="contentCollapse">
+    <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="form-add">Édition</button>
 
         <form id="formCrud" class="formFont" method="POST" action="?url=compte/addMusic">
 
             <div class="rowEspace">
-                <div class="collabel"> 
-            <!-- collabel et colinput font reference à un affichage en "colone" ecran > 600px -->
+                <div class="collabel">
+                    <!-- collabel et colinput font reference à un affichage en "colone" ecran > 600px -->
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="title" class="inputMonEspace" required/>
+                    <input type="text" name="title" id="title" class="inputMonEspace" required />
                 </div>
             </div>
             <div class="rowEspace">
@@ -23,7 +22,7 @@
                     <label for="artist">Artiste</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="artiste" id="artist" class="inputMonEspace" required/>
+                    <input type="text" name="artiste" id="artist" class="inputMonEspace" required />
                 </div>
             </div>
             <div class="rowEspace">
@@ -31,7 +30,7 @@
                     <label for="image">Pochette</label>
                 </div>
                 <div class="colinput">
-                    <input type="file" name="image" id="image" class="inputMonEspace" required/>
+                    <input type="file" name="image" id="image" class="inputMonEspace" required />
                 </div>
             </div>
             <div class="rowEspace">
@@ -39,45 +38,32 @@
                     <label for="path">Source</label>
                 </div>
                 <div class="colinput">
-                    <input type="file" name="path" id="path" class="inputMonEspace" required/>
+                    <input type="file" name="path" id="path" class="inputMonEspace" required />
                 </div>
             </div>
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
-            <input type="hidden" name="hide" id="hidden"/>
+            <input type="hidden" name="hide" id="hidden" />
             <div id="msg"></div>
             <hr>
-            <button type="submit"  class="btnBase vert" id="formsave">Exécuter</button>
+            <button type="submit" class="btnBase vert" id="formsave">Exécuter</button>
             <button type="button" class="btnBase gris" id="formcancel">Annuler</button>
-        </form><span class="br"></span><hr>
+        </form><span class="br"></span>
+        <hr>
 
         <div class="formFont" id="contentMusic">
-            <div class="rowEspace">
+            <!-- <div class="rowEspace">
                 <div class="collabel">
                     <label for="search">Recherche</label>
                 </div>
                 <div class="colinput">
                     <input type="search" class="inputMonEspace" placeholder="Rechercher par titre"/>
                 </div>
-            </div>
-            <table>
-                <thead>
-                    <tr>
-                        <th scope="col">Titre</th>
-                        <th scope="col">Artiste</th>
-                        <th scope="col" hidden>Pochette</th>
-                        <th scope="col" hidden>Source</th>
-                        <th scope="col">Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+            </div> -->
             <span class="br"></span>
         </div>
-
     </div>
     <span class="br"></span>
-   
+
     <button type="button" class="collapsible">Vidéos</button>
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="VideoAdd">Ajouter une Vidéo</button>
