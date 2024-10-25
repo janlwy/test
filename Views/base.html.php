@@ -27,18 +27,16 @@ if (session_status() === PHP_SESSION_NONE) {
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
-		<?php if (isset($_SESSION['pseudo']) && isset($_SESSION['user_id'])): ?>
-			<nav class="menunav" id="myMenunav">
-				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
-				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'])); ?> </a>
-				<a href="?url=audio/list" aria-label="Audio">Audio</a>
-				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
-				<a href="?url=photo/index" aria-label="Photo">Photo</a>
-				<a href="?url=texte/index" aria-label="Texte">Texte</a>
-				<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
-				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
-			</nav>
-		<?php endif; ?>
+		<nav class="menunav" id="myMenunav">
+			<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
+			<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
+			<a href="?url=audio/list" aria-label="Audio">Audio</a>
+			<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
+			<a href="?url=photo/index" aria-label="Photo">Photo</a>
+			<a href="?url=texte/index" aria-label="Texte">Texte</a>
+			<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
+			<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
+		</nav>
 		<section>
 			<?php
 			if (isset($content)) {
