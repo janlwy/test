@@ -67,7 +67,7 @@ class AudioController
             // ...
 
             // Rediriger vers la liste des audios après l'ajout
-            header('Location: ?url=audio/list');
+            header('Location: ?url=audio/listeAudio');
             exit();
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
