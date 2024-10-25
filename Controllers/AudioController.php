@@ -41,13 +41,12 @@ class AudioController
             $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<div class='audio-item'>";
-            $list .= "<dt style='display:none;'>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
+            $list .= "<img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'>";
             $list .= "<div class='audio-details'>";
-            $list .= "<dt style='display:none;'>Titre de l'audio</dt><dd>$title</dd>";
-            $list .= "<dt style='display:none;'>*>Artiste</dt><dd>$artist</dd>";
+            $list .= "<h4>$title</h4>";
+            $list .= "<p>$artist</p>";
+            $list .= "<div class='button-group'>$afficher $modifier $supprimer</div>";
             $list .= "</div></div>";
-            
-            $list .= "<dt style='display:none;'>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
         $list .= "</dl><br><br>";
         return $list;
