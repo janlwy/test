@@ -71,8 +71,15 @@ class AudioController
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
+            $userId = $_SESSION['user_id'] ?? null;
+            if ($userId === null) {
+                $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+                header('Location: ?url=connexion/index');
+                exit();
+            }
+
             $manager = new Manager();
-            $audios = $manager->readTableAll('audio');
+            $audios = $manager->readTableAll('audio', $userId);
             $audioList = $this->listeAudio();
             $datas = [
                 'audioList' => $audioList,
