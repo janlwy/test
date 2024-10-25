@@ -43,11 +43,11 @@ class AudioController
             $list .= "<div class='audio-item'>";
             $list .= "<dt style='display:none;'>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
             $list .= "<div class='audio-details'>";
-            $list .= "<dt style='display:none;'>>Titre de l'audio</dt><dd>$title</dd>";
-            $list .= "<dt style='display:none;'>>Artiste</dt><dd>$artist</dd>";
+            $list .= "<dt style='display:none;'>Titre de l'audio</dt><dd>$title</dd>";
+            $list .= "<dt style='display:none;'>*>Artiste</dt><dd>$artist</dd>";
             $list .= "</div></div>";
             
-            $list .= "<dt>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
+            $list .= "<dt style='display:none;'>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
         $list .= "</dl><br><br>";
         return $list;

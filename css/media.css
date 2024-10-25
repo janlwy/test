@@ -602,7 +602,7 @@ button.btnBase.blue, button.btnBase.vert {
     clear: both;
 }
 
-/************************************ Tableaux CRUD ***************************************/
+/************************************ Liste de définitions - CRUD ***************************************/
 
 .audio-item {
     display: flex;
@@ -619,40 +619,10 @@ button.btnBase.blue, button.btnBase.vert {
 .audio-details dd {
     margin: 0;
     padding: 5px 0;
-    font-size: 1rem;
+    font-size: 2rem;
     color: var(--fontcolor);
 }
 
-thead, tfoot {
-    background-color: #218dbb;
-    color: #000000;
-}
-
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    /* border: 1px solid #886780; */
-    margin-top: 30px;
-}
-
-th, td {
-    border: 1px solid #46443a;
-    padding: 16px;
-}
-
-th, td.action { /* td.action spécifié dans la fonction fetchAllMusics dans appCRUD.js */
-    text-align: center;
-}
-
-tr:nth-child(even) { /* alternance de couleurs entre les lignes du tableau */
-    background-color: #a39d9d;
-}
-
-.tabloList {
-    text-align: start;
-    padding-left: 20px;
-}
 
 /************************************ collapse ***************************************/
 .collapsible {
