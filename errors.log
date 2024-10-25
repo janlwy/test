@@ -1,0 +1,38 @@
+2024-10-25 14:40:07 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 14:40:07 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 14:40:14 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 14:40:14 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 14:46:55 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 14:46:55 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 14:47:48 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : insert
+2024-10-25 14:47:50 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 14:47:50 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 14:47:51 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 14:47:51 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 14:47:58 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:47:58 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:52:42 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:52:42 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:56:43 - [error] - Erreur CSRF : jeton invalide.
+2024-10-25 14:56:52 - [error] - Erreur CSRF : jeton invalide.
+2024-10-25 14:56:56 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:56:56 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:57:19 - [error] - Erreur CSRF : jeton invalide.
+2024-10-25 14:57:22 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:57:22 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:57:38 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:57:38 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:58:13 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : addMusic
+2024-10-25 14:58:13 - [error] - Appel de la méthode addMusic dans le contrôleur CompteController
+2024-10-25 14:58:13 - [error] - Données du formulaire reçues : {"title":"Test1","artiste":"Test1","image":"Alicia3.webp","path":"Alicia Keys - 03. When It_s All Over.m4a","csrf_token":"69c69cdb144960dd608cb738c908835218814e0cfd9c6a0898326a644c570de6","hide":""}
+2024-10-25 14:58:13 - [error] - Données insérées avec succès dans la base de données.
+2024-10-25 14:58:13 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 14:58:13 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 14:58:18 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 14:58:18 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 14:58:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 14:58:19 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 15:02:17 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 15:02:17 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 15:10:04 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 15:10:04 - [error] - Appel de la méthode list dans le contrôleur AudioController
