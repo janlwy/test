@@ -5,6 +5,13 @@
     <button type="button" class="collapsible">Musiques</button>
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="form-add">Édition</button>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                if (window.location.hash === '#form-add') {
+                    document.querySelector('.collapsible').click();
+                }
+            });
+        </script>
 
         <form id="formCrud" class="formFont" method="POST" action="?url=compte/addMusic">
 
