@@ -42,7 +42,7 @@ class AudioController
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<dt>Titre de l'audio</dt><dd>$title</dd>";
             $list .= "<dt>Artiste</dt><dd>$artist</dd>";
-            $list .= "<dt>Image de l'album</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
+            $list .= "<dt>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
             $list .= "<dt>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
         $list .= "</dl><br><br>";
