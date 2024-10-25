@@ -92,10 +92,10 @@ class AudioController
             exit();
         }
 
-        logError("Début de la méthode addMusic");
+        logInfo("Début de la méthode addMusic");
         // Vérifier que la requête est bien de type POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            logError("Requête POST reçue");
+            logInfo("Requête POST reçue");
             // Vérifier la validité du token CSRF
             if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
                 logError("Erreur CSRF : jeton invalide.");
@@ -106,7 +106,7 @@ class AudioController
 
             // Vérifier que les champs requis sont présents
             if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
-                logError("Champs requis présents");
+                logInfo("Champs requis présents");
                 $title = $_POST['title'];
                 $artist = $_POST['artiste'];
                 $image = $_FILES['image'];
@@ -116,18 +116,18 @@ class AudioController
                 $imagePath = 'Ressources/images/pochettes/' . basename($image['name']);
                 $audioPath = 'Ressources/audio/' . basename($path['name']);
 
-                logError("Tentative de déplacement de l'image vers : $imagePath");
-                logError("Tentative de déplacement de l'audio vers : $audioPath");
+                logInfo("Tentative de déplacement de l'image vers : $imagePath");
+                logInfo("Tentative de déplacement de l'audio vers : $audioPath");
 
                 if (move_uploaded_file($image['tmp_name'], $imagePath)) {
-                    logError("Image déplacée avec succès");
+                    logInfo("Image déplacée avec succès");
                 } else {
                     logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
                     $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
                 }
 
                 if (move_uploaded_file($path['tmp_name'], $audioPath)) {
-                    logError("Audio déplacé avec succès");
+                    logInfo("Audio déplacé avec succès");
                     // Insérer les données dans la base de données
                     $manager = new Manager();
                     $userId = $_SESSION['user_id'] ?? null;
@@ -147,7 +147,7 @@ class AudioController
                     ];
                     $manager->insertTable('audio', $data);
 
-                    logError("Musique ajoutée avec succès dans la base de données");
+                    logInfo("Musique ajoutée avec succès dans la base de données");
                     $_SESSION['message'] = "Musique ajoutée avec succès.";
                     $_SESSION['message'] = "Musique ajoutée avec succès.";
                     header('Location: ?url=audio/list');
