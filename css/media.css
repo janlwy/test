@@ -616,6 +616,13 @@ button.btnBase.blue, button.btnBase.vert {
     flex-direction: column;
 }
 
+.audio-details dd {
+    margin: 0;
+    padding: 5px 0;
+    font-size: 1rem;
+    color: var(--fontcolor);
+}
+
 thead, tfoot {
     background-color: #218dbb;
     color: #000000;
