@@ -17,7 +17,7 @@ class AudioController
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
             exit();
-        }
+    }
     }
 
     public function listeAudio()
