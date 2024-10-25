@@ -49,7 +49,7 @@ class AudioController
             
             $list .= "<div class='button-group'>$afficher $modifier $supprimer</div>";
             $list .= "</div></div>";
-        }
+    }
         $list .= "</dl><br><br>";
         return $list;
     }
