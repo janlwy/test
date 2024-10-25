@@ -37,7 +37,7 @@ class AudioController
             $title = htmlspecialchars($audio['title'], ENT_QUOTES, 'UTF-8');
             $artist = htmlspecialchars($audio['artist'], ENT_QUOTES, 'UTF-8');
             $image = htmlspecialchars($audio['image'], ENT_QUOTES, 'UTF-8');
-            $afficher = "<a class='btnBase blue' href='index.php?url=audio/show/$id'>Afficher</a>";
+            $afficher = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
             $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
             $list .= "<div class='audio-item'>";
