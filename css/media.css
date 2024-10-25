@@ -604,6 +604,15 @@ button.btnBase.blue, button.btnBase.vert {
 
 /************************************ Tableaux CRUD ***************************************/
 
+.audio-item {
+    display: flex;
+    align-items: center;
+}
+
+.audio-details {
+    margin-left: 10px;
+}
+
 thead, tfoot {
     background-color: #218dbb;
     color: #000000;
