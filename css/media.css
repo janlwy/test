@@ -573,8 +573,11 @@ label {
     margin: auto 0 auto 7px;
 }
 
-.br { /* espacement entre les boutons extensible */
-    display: block;
+.audio-section {
+    margin-bottom: 1em;
+}
+
+.contentCollapse {
     margin-bottom: 1em;
 }
 

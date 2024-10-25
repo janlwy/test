@@ -4,7 +4,7 @@
 <section class="monEspace">
 
     <button type="button" class="collapsible">Musiques</button>
-    <div class="contentCollapse"><span class="br"></span>
+    <div class="contentCollapse">
         <button type="button" class="btnBase blue" id="form-add">Édition</button>
 
         <form id="formCrud" class="formFont" method="POST" action="?url=compte/addMusic">

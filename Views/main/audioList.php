@@ -1,5 +1,4 @@
-<section>
-    <span class="br"></span>
+<section class="audio-section">
     <a href='index.php?url=audio/insert' class="btnBase gris">Ajouter</a>
     <?php echo $audioList; ?>
     <script>
