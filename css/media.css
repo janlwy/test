@@ -607,10 +607,13 @@ button.btnBase.blue, button.btnBase.vert {
 .audio-item {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 
 .audio-details {
-    margin-left: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 thead, tfoot {
