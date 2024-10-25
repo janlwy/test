@@ -125,13 +125,14 @@ class AudioController
                     header('Location: ?url=audio/list');
                     exit();
                 } else {
-                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers.";
+                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
                 }
             } else {
-                $_SESSION['erreur'] = "Tous les champs sont requis.";
+                $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
             }
         }
 
+        $_SESSION['erreur'] = "Erreur inattendue lors de l'ajout de la musique.";
         header('Location: ?url=compte/index');
         exit();
     }
