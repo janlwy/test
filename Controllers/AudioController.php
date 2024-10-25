@@ -25,7 +25,13 @@ class AudioController
     public function listeAudio()
     {
         $manager = new Manager();
-        $audios = $manager->readTableAll('audio');
+        $userId = $_SESSION['user_id'] ?? null;
+        if ($userId === null) {
+            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+            header('Location: ?url=connexion/index');
+            exit();
+        }
+        $audios = $manager->readTableAll('audio', $userId);
         return $this->generateAudioTable($audios);
     }
 
