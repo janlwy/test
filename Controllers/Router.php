@@ -9,7 +9,9 @@ class Router
         $controllerName = ucfirst($urls[0]) . "Controller";
         $actionName = isset($urls[1]) ? $urls[1] : 'index';
 
-        session_start();
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
         if (!isset($_SESSION['csrf_token'])) {
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         }
