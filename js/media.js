@@ -84,3 +84,16 @@ for (i = 0; i < collap.length; i++) {
 if (window.location.pathname === '/index.php' || window.location.pathname === '/ConnectForm.php') {
     document.getElementById('myMenunav').style.display = 'none';
 }
+
+fetchAllMusics(playlist);
+// Fonction Recherche
+document
+    .querySelectorAll("input[type=search]")[0]
+    .addEventListener("input", search);
+
+function search() {
+    const filteredData = playlist.filter(playlist =>
+        playlist.title.toLowerCase().includes(this.value.toLowerCase())
+    );
+    fetchAllMusics(filteredData);
+}
