@@ -77,4 +77,62 @@ class AudioController
             exit();
         }
     }
+    public function addMusic()
+    {
+        // Démarrer la session si elle n'est pas déjà démarrée
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+
+        // Vérifier si l'utilisateur est connecté
+        if (!isset($_SESSION['pseudo'])) {
+            header('Location: ?url=connexion/index');
+            exit();
+        }
+
+        // Vérifier que la requête est bien de type POST
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérifier la validité du token CSRF
+            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+                $_SESSION['erreur'] = "Erreur CSRF : jeton invalide.";
+                header('Location: ?url=compte/index');
+                exit();
+            }
+
+            // Vérifier que les champs requis sont présents
+            if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
+                $title = $_POST['title'];
+                $artist = $_POST['artiste'];
+                $image = $_FILES['image'];
+                $path = $_FILES['path'];
+
+                // Valider et déplacer les fichiers uploadés
+                $imagePath = 'Ressources/images/pochettes/' . basename($image['name']);
+                $audioPath = 'Ressources/audio/' . basename($path['name']);
+
+                if (move_uploaded_file($image['tmp_name'], $imagePath) && move_uploaded_file($path['tmp_name'], $audioPath)) {
+                    // Insérer les données dans la base de données
+                    $manager = new Manager();
+                    $data = [
+                        'title' => $title,
+                        'artist' => $artist,
+                        'image' => basename($image['name']),
+                        'path' => basename($path['name'])
+                    ];
+                    $manager->insertTable('audio', $data);
+
+                    $_SESSION['message'] = "Musique ajoutée avec succès.";
+                    header('Location: ?url=audio/list');
+                    exit();
+                } else {
+                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers.";
+                }
+            } else {
+                $_SESSION['erreur'] = "Tous les champs sont requis.";
+            }
+        }
+
+        header('Location: ?url=compte/index');
+        exit();
+    }
 }
