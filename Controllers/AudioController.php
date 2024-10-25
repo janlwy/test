@@ -90,10 +90,13 @@ class AudioController
             exit();
         }
 
+        logError("Début de la méthode addMusic");
         // Vérifier que la requête est bien de type POST
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            logError("Requête POST reçue");
             // Vérifier la validité du token CSRF
             if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+                logError("Erreur CSRF : jeton invalide.");
                 $_SESSION['erreur'] = "Erreur CSRF : jeton invalide.";
                 header('Location: ?url=compte/index');
                 exit();
@@ -101,6 +104,7 @@ class AudioController
 
             // Vérifier que les champs requis sont présents
             if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
+                logError("Champs requis présents");
                 $title = $_POST['title'];
                 $artist = $_POST['artiste'];
                 $image = $_FILES['image'];
@@ -111,6 +115,7 @@ class AudioController
                 $audioPath = 'Ressources/audio/' . basename($path['name']);
 
                 if (move_uploaded_file($image['tmp_name'], $imagePath) && move_uploaded_file($path['tmp_name'], $audioPath)) {
+                    logError("Fichiers téléchargés avec succès");
                     // Insérer les données dans la base de données
                     $manager = new Manager();
                     $data = [
@@ -121,11 +126,14 @@ class AudioController
                     ];
                     $manager->insertTable('audio', $data);
 
+                    logError("Musique ajoutée avec succès dans la base de données");
                     $_SESSION['message'] = "Musique ajoutée avec succès.";
                     header('Location: ?url=audio/list');
                     exit();
                 } else {
                     $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
+                } else {
+                    logError("Erreur lors du déplacement des fichiers");
                 }
             } else {
                 $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
