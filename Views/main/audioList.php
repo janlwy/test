@@ -1,4 +1,4 @@
-<section class="audio-section">
+<section class="audio-section dl">
     <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';">Ajouter</button>
     <?php echo $audioList; ?>
     <script>

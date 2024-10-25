@@ -547,6 +547,9 @@ nav {
 
 /*************************** monEspace et Formulaire de gestion du profile ****************************/
 
+.dl {
+    margin: auto 0 auto 7px;
+}
 .formCentered {
     width: 90%;
 }
