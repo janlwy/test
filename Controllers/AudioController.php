@@ -121,6 +121,9 @@ class AudioController
                     logError("Image déplacée avec succès");
                 } else {
                     logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
+                } else {
+                    logError("Erreur lors du déplacement des fichiers");
+                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
                 }
 
                 if (move_uploaded_file($path['tmp_name'], $audioPath)) {
@@ -145,6 +148,7 @@ class AudioController
                     $manager->insertTable('audio', $data);
 
                     logError("Musique ajoutée avec succès dans la base de données");
+                    $_SESSION['message'] = "Musique ajoutée avec succès.";
                     $_SESSION['message'] = "Musique ajoutée avec succès.";
                     header('Location: ?url=audio/list');
                     exit();
