@@ -1,5 +1,5 @@
 <section class="audio-section">
-    <a href='?url=compte/addMusic' class="btnBase theme">Ajouter</a>
+    <button type="button" class="btnBase theme" onclick="document.getElementById('form-add').click();">Ajouter</button>
     <?php echo $audioList; ?>
     <script>
         var audios = <?php echo json_encode($audios); ?>;
