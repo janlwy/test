@@ -13,7 +13,7 @@
             });
         </script>
 
-        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic">
+        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic" enctype="multipart/form-data">
 
             <div class="rowEspace">
                 <div class="collabel">
