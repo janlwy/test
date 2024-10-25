@@ -40,9 +40,11 @@ class AudioController
             $afficher = "<a class='btnBase blue' href='index.php?url=audio/show/$id'>Afficher</a>";
             $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
             $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
+
+            $list .= "<dt>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
             $list .= "<dt>Titre de l'audio</dt><dd>$title</dd>";
             $list .= "<dt>Artiste</dt><dd>$artist</dd>";
-            $list .= "<dt>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
+            
             $list .= "<dt>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
         $list .= "</dl><br><br>";
