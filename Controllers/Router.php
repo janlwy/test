@@ -9,6 +9,13 @@ class Router
         $controllerName = ucfirst($urls[0]) . "Controller";
         $actionName = isset($urls[1]) ? $urls[1] : 'index';
 
+        session_start();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+                die("Erreur CSRF : jeton invalide.");
+            }
+        }
+
         logError("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
         $controllerPath = __DIR__ . "/../Controllers/$controllerName.php";
         if (file_exists($controllerPath)) {
