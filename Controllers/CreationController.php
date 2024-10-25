@@ -54,6 +54,8 @@ class CreationController
                             $_SESSION['message'] = 'Inscription réussie !';
                             $_SESSION['pseudo'] = $_POST['pseudo'];
                             $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
+                            $_SESSION['pseudo'] = $_POST['pseudo'];
+                            $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
                             header('Location: ?url=mediabox/index');
                             exit();
                         }
