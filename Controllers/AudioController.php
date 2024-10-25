@@ -131,9 +131,8 @@ class AudioController
                     header('Location: ?url=audio/list');
                     exit();
                 } else {
-                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
-                } else {
                     logError("Erreur lors du déplacement des fichiers");
+                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
                 }
             } else {
                 $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
