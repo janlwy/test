@@ -48,4 +48,11 @@ function logError($message, $level = 'error')
 	$logMessage = date('Y-m-d H:i:s') . " - [$level] - $message\n";
 	file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
+
+function logInfo($message)
+{
+	$logFile = 'errors.log'; // Nom du fichier de log
+	$logMessage = date('Y-m-d H:i:s') . " - [info] - $message\n";
+	file_put_contents($logFile, $logMessage, FILE_APPEND);
+}
 ?>
