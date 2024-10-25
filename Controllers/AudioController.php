@@ -31,7 +31,7 @@ class AudioController
     {
         $manager = new Manager();
         $audios = $manager->readTableAll('audio');
-        $list = "<br><br><dl>";
+        $list = "<br><br><dl class='dl'>";
         foreach ($audios as $audio) {
             $id = $audio['id'];
             $title = htmlspecialchars($audio['title'], ENT_QUOTES, 'UTF-8');
