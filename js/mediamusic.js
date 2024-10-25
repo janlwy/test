@@ -85,38 +85,6 @@ function resetValues() {
     seek_slider.value = 0;
 }
 
-// Ensure the DOM is fully loaded before attaching event listeners
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('#audio-table tr').forEach(tr => {
-        tr.addEventListener('click', function() {
-            document.querySelectorAll('#audio-table tr').forEach(row => row.classList.remove('selected'));
-            this.classList.add('selected');
-            const audioId = this.dataset.id;
-            const audioData = track_list.find(track => track.id == audioId);
-            if (audioData) {
-                track_index = track_list.indexOf(audioData);
-                loadTrack(track_index);
-                playTrack();
-            }
-        });
-    });
-
-    document.getElementById('play-selected').addEventListener('click', function() {
-        const selectedAudio = document.querySelector('#audio-table tr.selected');
-        if (selectedAudio) {
-            const audioId = selectedAudio.dataset.id;
-            const audioData = track_list.find(track => track.id == audioId);
-            if (audioData) {
-                track_index = track_list.indexOf(audioData);
-                loadTrack(track_index);
-                playTrack();
-            }
-        } else {
-            alert('Veuillez sélectionner un enregistrement audio.');
-        }
-    });
-});
-
 // Load the first track in the tracklist
 loadTrack(track_index);
 
