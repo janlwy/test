@@ -43,7 +43,7 @@ class AudioController
 
             $list .= "<dt>Titre de l'audio</dt><dd>$title</dd>";
             $list .= "<dt>Artiste</dt><dd>$artist</dd>";
-            
+            $list .= "<dt style='display:none;'>Cover</dt><dd><img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'></dd>";
             $list .= "<dt>Actions</dt><dd><div class='button-group'>$afficher $modifier $supprimer</div></dd>";
         }
         $list .= "</dl><br><br>";
