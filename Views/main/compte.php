@@ -13,7 +13,7 @@
             });
         </script>
 
-        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic">
+        <form id="formCrud" class="formFont" method="POST" action="?url=audio/addMusic" enctype="multipart/form-data">
 
             <div class="rowEspace">
                 <div class="collabel">
@@ -52,7 +52,7 @@
             <input type="hidden" name="hide" id="hidden" />
             <div id="msg"></div>
             <hr>
-            <button type="button" class="btnBase vert" id="formsave">Exécuter</button>
+            <button type="submit" class="btnBase vert" id="formsave">Exécuter</button>
             <button type="button" class="btnBase gris" id="formcancel">Annuler</button>
         </form><span class="br"></span>
         <hr>
