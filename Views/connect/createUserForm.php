@@ -8,7 +8,7 @@
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
-					<?php echo $_SESSION['erreur'];
+					<?php echo htmlspecialchars($_SESSION['erreur'], ENT_QUOTES, 'UTF-8');
 					unset($_SESSION['erreur']); ?>
 				</div>
 			<?php endif; ?>
