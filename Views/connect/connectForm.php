@@ -3,6 +3,7 @@
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
+			<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
