@@ -676,3 +676,303 @@
 2024-10-25 23:08:34 - [error] - Appel de la méthode list dans le contrôleur AudioController
 2024-10-25 23:08:47 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-10-25 23:08:47 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:44:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-25 23:44:19 - [error] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-25 23:44:19 - [error] - Début de la méthode addMusic
+2024-10-25 23:44:19 - [error] - Requête POST reçue
+2024-10-25 23:44:19 - [error] - Champs requis présents
+2024-10-25 23:44:19 - [error] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/androidify.png
+2024-10-25 23:44:19 - [error] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 02. Brand New Me.m4a
+2024-10-25 23:44:19 - [error] - Image déplacée avec succès
+2024-10-25 23:44:19 - [error] - Audio déplacé avec succès
+2024-10-25 23:44:19 - [error] - Musique ajoutée avec succès dans la base de données
+2024-10-25 23:44:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:44:19 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:47:19 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : update
+2024-10-25 23:47:22 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:47:22 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:50:13 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:50:13 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:50:16 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:50:16 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:50:20 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 23:50:20 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:51:26 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-25 23:51:26 - [error] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-25 23:51:26 - [error] - Début de la méthode addMusic
+2024-10-25 23:51:26 - [error] - Requête POST reçue
+2024-10-25 23:51:26 - [error] - Champs requis présents
+2024-10-25 23:51:26 - [error] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia.webp
+2024-10-25 23:51:26 - [error] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 02. Brand New Me.m4a
+2024-10-25 23:51:26 - [error] - Image déplacée avec succès
+2024-10-25 23:51:26 - [error] - Audio déplacé avec succès
+2024-10-25 23:51:26 - [error] - Erreur : user_id est null
+2024-10-25 23:51:26 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 23:51:26 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:51:41 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 23:51:41 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:51:44 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 23:51:44 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:51:45 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-25 23:51:45 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-25 23:51:54 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 23:51:54 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 23:51:56 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:51:56 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:52:00 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:52:00 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:52:02 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:52:02 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:05 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:05 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:07 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:07 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:09 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:09 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:10 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:10 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:11 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:11 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:11 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:11 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:12 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:57:12 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:57:19 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-25 23:57:19 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-25 23:57:19 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-25 23:57:19 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-25 23:57:19 - [error] - Début de la méthode index dans AccueilController
+2024-10-25 23:57:19 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-25 23:57:26 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-25 23:57:26 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-25 23:57:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-25 23:57:35 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-25 23:57:35 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-25 23:57:35 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-25 23:57:35 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-25 23:58:06 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-25 23:58:06 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-25 23:58:06 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 23:58:06 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 23:58:11 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:58:11 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:58:23 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:58:23 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:58:34 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-25 23:58:34 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-25 23:58:34 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-25 23:58:34 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-25 23:58:34 - [error] - Début de la méthode index dans AccueilController
+2024-10-25 23:58:34 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-25 23:58:36 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-25 23:58:36 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-25 23:58:45 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-25 23:58:45 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-25 23:58:45 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 23:58:45 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 23:58:47 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:58:47 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:59:23 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-25 23:59:23 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-25 23:59:23 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-25 23:59:23 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-25 23:59:23 - [error] - Début de la méthode index dans AccueilController
+2024-10-25 23:59:23 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-25 23:59:25 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-25 23:59:25 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-25 23:59:40 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-25 23:59:40 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-25 23:59:40 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-25 23:59:40 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-25 23:59:42 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-25 23:59:42 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-25 23:59:55 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-25 23:59:55 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-25 23:59:55 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-25 23:59:55 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-25 23:59:55 - [error] - Début de la méthode index dans AccueilController
+2024-10-25 23:59:55 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-25 23:59:57 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-25 23:59:57 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-25 23:59:59 - [error] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-25 23:59:59 - [error] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 00:00:27 - [error] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 00:00:27 - [error] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 00:00:27 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:00:27 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:00:47 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:00:47 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:01:00 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:01:00 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:01:47 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 00:01:47 - [error] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 00:01:47 - [error] - Début de la méthode addMusic
+2024-10-26 00:01:47 - [error] - Requête POST reçue
+2024-10-26 00:01:47 - [error] - Champs requis présents
+2024-10-26 00:01:47 - [error] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia.webp
+2024-10-26 00:01:47 - [error] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 01. De Novo Adagio (Intro).m4a
+2024-10-26 00:01:47 - [error] - Image déplacée avec succès
+2024-10-26 00:01:47 - [error] - Audio déplacé avec succès
+2024-10-26 00:01:47 - [error] - Musique ajoutée avec succès dans la base de données
+2024-10-26 00:01:47 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:01:47 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:05:04 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:05:04 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:05:05 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:05:05 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:09:36 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:09:37 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:09:39 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:09:39 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:09:59 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:09:59 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:10:33 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 00:10:33 - [error] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 00:10:33 - [error] - Début de la méthode addMusic
+2024-10-26 00:10:33 - [error] - Requête POST reçue
+2024-10-26 00:10:33 - [error] - Champs requis présents
+2024-10-26 00:10:33 - [error] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/androidify.png
+2024-10-26 00:10:33 - [error] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 03. When It_s All Over.m4a
+2024-10-26 00:10:33 - [error] - Image déplacée avec succès
+2024-10-26 00:10:33 - [error] - Audio déplacé avec succès
+2024-10-26 00:10:33 - [error] - Musique ajoutée avec succès dans la base de données
+2024-10-26 00:10:33 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:10:33 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:15:36 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:15:36 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:15:40 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:15:40 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:15:43 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:15:43 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:15:50 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:15:50 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:15:52 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:15:52 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:15:55 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:15:55 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:16:03 - [error] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:16:03 - [error] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:16:18 - [error] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 00:16:18 - [error] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 00:16:18 - [error] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 00:16:18 - [error] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 00:16:18 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 00:16:18 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 00:16:26 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 00:16:26 - [error] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 00:16:59 - [error] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 00:16:59 - [error] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 00:16:59 - [error] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:16:59 - [error] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:17:06 - [error] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:17:06 - [error] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:18:28 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:18:28 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:18:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:18:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:18:35 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:18:35 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:18:41 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:18:41 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:19:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 00:19:17 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 00:19:17 - [info] - Début de la méthode addMusic
+2024-10-26 00:19:17 - [info] - Requête POST reçue
+2024-10-26 00:19:17 - [info] - Champs requis présents
+2024-10-26 00:19:17 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia2.webp
+2024-10-26 00:19:17 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 02. Brand New Me.m4a
+2024-10-26 00:19:17 - [info] - Image déplacée avec succès
+2024-10-26 00:19:17 - [info] - Audio déplacé avec succès
+2024-10-26 00:19:17 - [error] - Erreur : user_id est null
+2024-10-26 00:19:17 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:19:17 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:20:16 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 00:20:16 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 00:20:16 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 00:20:16 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 00:20:16 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 00:20:16 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 00:20:18 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 00:20:18 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 00:20:27 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 00:20:27 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 00:20:27 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:20:27 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:20:30 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:20:30 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:20:33 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:20:33 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:20:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 00:20:59 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 00:20:59 - [info] - Début de la méthode addMusic
+2024-10-26 00:20:59 - [info] - Requête POST reçue
+2024-10-26 00:20:59 - [info] - Champs requis présents
+2024-10-26 00:20:59 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia2.webp
+2024-10-26 00:20:59 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 02. Brand New Me.m4a
+2024-10-26 00:20:59 - [info] - Image déplacée avec succès
+2024-10-26 00:20:59 - [info] - Audio déplacé avec succès
+2024-10-26 00:20:59 - [error] - Erreur : user_id est null
+2024-10-26 00:20:59 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:20:59 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:23:04 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 00:23:04 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 00:23:04 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 00:23:04 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 00:23:04 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 00:23:04 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 00:23:06 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 00:23:06 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 00:23:43 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 00:23:43 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 00:24:01 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 00:24:01 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 00:24:01 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 00:24:01 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 00:24:43 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:24:43 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:24:46 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:24:46 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:25:23 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 00:25:23 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 00:25:23 - [info] - Début de la méthode addMusic
+2024-10-26 00:25:23 - [info] - Requête POST reçue
+2024-10-26 00:25:23 - [info] - Champs requis présents
+2024-10-26 00:25:24 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia2.webp
+2024-10-26 00:25:24 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 02. Brand New Me.m4a
+2024-10-26 00:25:24 - [info] - Image déplacée avec succès
+2024-10-26 00:25:24 - [info] - Audio déplacé avec succès
+2024-10-26 00:25:24 - [info] - Musique ajoutée avec succès dans la base de données
+2024-10-26 00:25:24 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:25:24 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:27:02 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 00:27:02 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 00:28:24 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:28:24 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:32:37 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:32:37 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:32:41 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:32:41 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:32:45 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:32:45 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:32:51 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:32:51 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:39:18 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:39:18 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:40:15 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:40:15 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:40:36 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:40:36 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:48:18 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:48:18 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:51:44 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:51:44 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:52:19 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:52:19 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:52:22 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:52:22 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:52:26 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:52:26 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:52:27 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:52:27 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 00:52:28 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 00:52:28 - [info] - Appel de la méthode index dans le contrôleur CompteController

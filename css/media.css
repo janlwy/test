@@ -99,6 +99,10 @@ i { /* Change le curseur de la souris en pointeur au survol */
     cursor: pointer;
 }
 
+.invisibleTxt {
+    color: var(--collapsForm);
+}
+
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-24 { font-size: 24px; }
@@ -106,14 +110,13 @@ i { /* Change le curseur de la souris en pointeur au survol */
 .btnBase {
     border: none;
     border-radius: 8px;
-    color: #f5f5f5;
     padding: 10px 10px;
     font-size: 14px;
     cursor: pointer;
     border-radius: 10px;
 }
 /* couleur de fond des boutons + hover */
-.vert {background-color: #008000;}.vert:hover {background-color: #46a049;}.blue {background-color: #2b2bff;}.blue:hover {background: #628fb4;}.orange {background-color: #ffa500;}.orange:hover {background: #9e763a;}.rouge {background-color: #ff0000;}.rouge:hover {background: #96413b;}.gris{background-color: #808080;color: #000000;}.gris:hover {background: #a8a4a4;}.theme {background-color: var(--btntheme);}
+.vert {background-color: #008000;}.vert:hover {background-color: #46a049;}.blue {background-color: #2b2bff;}.blue:hover {background: #628fb4;}.orange {background-color: #ffa500;}.orange:hover {background: #9e763a;}.rouge {background-color: #ff0000;}.rouge:hover {background: #96413b;}.gris{background-color: #808080;color: #000000;}.gris:hover {background: #a8a4a4;}.theme {background-color: var(--btntheme);}.invisible {background-color: var(--collapsForm);}
 
 .boutonTheme {
     cursor: pointer;
