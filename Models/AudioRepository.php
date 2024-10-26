@@ -1,6 +1,6 @@
 <?php
 
-class AudioRepository {
+class AudioRepository implements IRepository {
     private $manager;
     
     public function __construct() {
@@ -12,33 +12,57 @@ class AudioRepository {
         return $data ? new Audio($data) : null;
     }
     
-    public function findAllByUser(int $userId): array {
-        $results = $this->manager->readTableAll('audio', $userId);
-        $audios = [];
-        foreach ($results as $data) {
-            $audios[] = new Audio($data);
-        }
-        return $audios;
+    public function findAll(): array {
+        return $this->findAllByUser(null);
     }
     
-    public function save(Audio $audio): void {
+    public function findAllByUser(int $userId): array {
+        try {
+            $results = $this->manager->readTableAll('audio', $userId);
+            $audios = [];
+            foreach ($results as $data) {
+                $audios[] = new Audio($data);
+            }
+            return $audios;
+        } catch (Exception $e) {
+            logError("Erreur lors de la récupération des audios: " . $e->getMessage());
+            return [];
+        }
+    }
+    
+    public function save($entity): void {
+        if (!$entity instanceof Audio) {
+            throw new InvalidArgumentException("L'entité doit être de type Audio");
+        }
+        
         $data = [
-            'title' => $audio->getTitle(),
-            'artist' => $audio->getArtist(),
-            'image' => $audio->getImage(),
-            'path' => $audio->getPath()
+            'title' => $entity->getTitle(),
+            'artist' => $entity->getArtist(),
+            'image' => $entity->getImage(),
+            'path' => $entity->getPath(),
+            'user_id' => $entity->getUserId()
         ];
         
-        if ($audio->getId()) {
-            $this->manager->updateTable('audio', $data, $audio->getId());
-        } else {
-            $data['created_at'] = date('Y-m-d H:i:s');
-            $result = $this->manager->insertTable('audio', $data);
-            $audio->hydrate(['id' => $result['id']]);
+        try {
+            if ($entity->getId()) {
+                $this->manager->updateTable('audio', $data, $entity->getId());
+            } else {
+                $data['created_at'] = date('Y-m-d H:i:s');
+                $result = $this->manager->insertTable('audio', $data);
+                $entity->hydrate(['id' => $result['id']]);
+            }
+        } catch (Exception $e) {
+            logError("Erreur lors de la sauvegarde de l'audio: " . $e->getMessage());
+            throw $e;
         }
     }
     
     public function delete(int $id): void {
-        $this->manager->deleteTable('audio', $id);
+        try {
+            $this->manager->deleteTable('audio', $id);
+        } catch (Exception $e) {
+            logError("Erreur lors de la suppression de l'audio: " . $e->getMessage());
+            throw $e;
+        }
     }
 }
