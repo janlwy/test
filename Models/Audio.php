@@ -30,7 +30,7 @@ class Audio extends AbstractModel
         $this->path = $path;
     }
 
-    public function setCreatedAt($created_at)
+    public function setCreatedAt($created_at): void
     {
         $this->created_at = $created_at;
     }
