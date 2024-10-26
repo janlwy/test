@@ -10,14 +10,14 @@ class AudioController
         }
 
         // Vérifier si l'utilisateur est connecté
-        if (isset($_SESSION['pseudo'])) {
-            $datas = [];
-            generate("Views/main/audio.php", $datas, "Views/base.html.php", "Audio");
-        } else {
+        if (!isset($_SESSION['pseudo'])) {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
             exit();
         }
+
+        $datas = [];
+        generate("Views/main/audio.php", $datas, "Views/base.html.php", "Audio");
     }
 
     public function listeAudio()
@@ -30,7 +30,11 @@ class AudioController
             exit();
         }
         $audios = $manager->readTableAll('audio', $userId);
-        $_SESSION['audios'] = $audios; // Stocker les audios dans la session
+        if ($audios) {
+            $_SESSION['audios'] = $audios; // Stocker les audios dans la session
+        } else {
+            $_SESSION['audios'] = [];
+        }
         return $this->generateAudioTable($audios);
     }
 
@@ -112,11 +116,13 @@ class AudioController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             logInfo("Requête POST reçue");
             // Vérifier la validité du token CSRF
-            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-                logError("Erreur CSRF : jeton invalide.");
-                $_SESSION['erreur'] = "Erreur CSRF : jeton invalide.";
-                header('Location: ?url=compte/index');
-                exit();
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+                    logError("Erreur CSRF : jeton invalide.");
+                    $_SESSION['erreur'] = "Erreur CSRF : jeton invalide.";
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
             }
 
             // Vérifier que les champs requis sont présents
