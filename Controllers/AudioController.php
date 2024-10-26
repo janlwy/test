@@ -86,7 +86,7 @@ class AudioController
 
             $manager = new Manager();
             $audios = $manager->readTableAll('audio', $userId);
-            $audioList = $this->listeAudio();
+            $audioList = $this->generateAudioTable($audios);
             $datas = [
                 'audioList' => $audioList,
                 'audios' => $audios
