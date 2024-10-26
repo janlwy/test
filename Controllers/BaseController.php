@@ -2,20 +2,24 @@
 
 abstract class BaseController implements IController {
     protected $repository;
+    protected $session;
+    
+    public function __construct() {
+        $this->session = SessionManager::getInstance();
+        $this->session->startSession();
+    }
+    
     protected function checkAuth() {
-        startSessionIfNeeded();
-        
-        if (!isset($_SESSION['pseudo'])) {
-            header('Location: ?url=connexion/index');
-            exit();
+        if (!$this->session->isAuthenticated()) {
+            $this->redirect('connexion/index');
         }
     }
 
     protected function checkCSRF() {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
                 logError("Erreur CSRF : jeton invalide.");
-                $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer.";
+                $this->session->set('erreur', "Erreur de sécurité. Veuillez réessayer.");
                 header('Location: ' . $_SERVER['HTTP_REFERER']);
                 exit();
             }
