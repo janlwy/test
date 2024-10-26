@@ -85,12 +85,45 @@ class SessionManager {
     
     public function regenerateToken(): string {
         $token = bin2hex(random_bytes(32));
+        $timestamp = time();
         $this->set('csrf_token', $token);
+        $this->set('csrf_token_time', $timestamp);
         return $token;
     }
     
     public function validateToken(?string $token): bool {
-        return $token && $this->has('csrf_token') && hash_equals($this->get('csrf_token'), $token);
+        if (!$token || !$this->has('csrf_token') || !$this->has('csrf_token_time')) {
+            return false;
+        }
+        
+        $tokenAge = time() - $this->get('csrf_token_time');
+        if ($tokenAge > 3600) { // Token expire après 1 heure
+            return false;
+        }
+        
+        return hash_equals($this->get('csrf_token'), $token);
+    }
+    
+    public function validateFileUpload(array $file, array $allowedTypes, int $maxSize = 5242880): array {
+        $errors = [];
+        
+        if ($file['error'] !== UPLOAD_ERR_OK) {
+            $errors[] = 'Erreur lors du téléchargement du fichier.';
+            return $errors;
+        }
+        
+        if ($file['size'] > $maxSize) {
+            $errors[] = 'Le fichier est trop volumineux.';
+        }
+        
+        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->file($file['tmp_name']);
+        
+        if (!in_array($mimeType, $allowedTypes)) {
+            $errors[] = 'Type de fichier non autorisé.';
+        }
+        
+        return $errors;
     }
     
     public function isAuthenticated(): bool {

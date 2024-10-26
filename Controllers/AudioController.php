@@ -88,16 +88,8 @@ class AudioController extends BaseController
     }
     public function addMusic()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        // Vérifier si l'utilisateur est connecté
-        if (!isset($_SESSION['pseudo'])) {
-            header('Location: ?url=connexion/index');
-            exit();
-        }
+        $this->checkAuth();
+        $this->checkCSRF();
 
         logInfo("Début de la méthode addMusic");
         // Vérifier que la requête est bien de type POST
@@ -116,8 +108,30 @@ class AudioController extends BaseController
             // Vérifier que les champs requis sont présents
             if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
                 logInfo("Champs requis présents");
-                $title = $_POST['title'];
-                $artist = $_POST['artiste'];
+                
+                // Validation des données
+                $title = filter_var(trim($_POST['title']), FILTER_SANITIZE_STRING);
+                $artist = filter_var(trim($_POST['artiste']), FILTER_SANITIZE_STRING);
+                
+                if (empty($title) || empty($artist)) {
+                    $_SESSION['erreur'] = "Les champs titre et artiste sont requis.";
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
+                
+                // Validation des fichiers
+                $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
+                $allowedAudioTypes = ['audio/mpeg', 'audio/mp4', 'audio/wav'];
+                
+                $imageErrors = $this->session->validateFileUpload($_FILES['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
+                $audioErrors = $this->session->validateFileUpload($_FILES['path'], $allowedAudioTypes, 10 * 1024 * 1024); // 10MB
+                
+                if (!empty($imageErrors) || !empty($audioErrors)) {
+                    $_SESSION['erreur'] = implode("\n", array_merge($imageErrors, $audioErrors));
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
+                
                 $image = $_FILES['image'];
                 $path = $_FILES['path'];
 
