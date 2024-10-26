@@ -21,38 +21,23 @@ if (session_status() === PHP_SESSION_NONE) {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<body class="clair-theme <?php echo isset($hideMenuNav) && $hideMenuNav ? 'hide-menunav' : ''; ?>" id="themeBody">
+<body class="clair-theme" id="themeBody">
 	<header>
 		<h1><?php echo isset($pageTitle) ? $pageTitle : 'Média Box'; ?></h1>
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
-		<?php
-		$hideMenuNavPages = [
-		    'Views/main/accueil.html.php',
-		    'Views/connect/connectForm.php',
-		    'Views/connect/createUserForm.php'
-		];
-		?>
-		<?php
-		$hideMenuNavPages = [
-		    'Views/main/accueil.html.php',
-		    'Views/connect/connectForm.php',
-		    'Views/connect/createUserForm.php'
-		];
-		?>
 		<?php if (!isset($datas['hideNav']) || !$datas['hideNav']): ?>
-		<nav class="menunav" id="myMenunav">
-		<?php endif; ?>
-			<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
-			<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
-			<a href="?url=audio/list" aria-label="Audio">Audio</a>
-			<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
-			<a href="?url=photo/index" aria-label="Photo">Photo</a>
-			<a href="?url=texte/index" aria-label="Texte">Texte</a>
-			<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
-			<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
-		</nav>
+			<nav class="menunav" id="myMenunav">
+				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
+				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
+				<a href="?url=audio/list" aria-label="Audio">Audio</a>
+				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
+				<a href="?url=photo/index" aria-label="Photo">Photo</a>
+				<a href="?url=texte/index" aria-label="Texte">Texte</a>
+				<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
+				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
+			</nav><?php endif; ?>
 		<section>
 			<?php
 			if (isset($content)) {
