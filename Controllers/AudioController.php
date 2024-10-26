@@ -42,10 +42,10 @@ class AudioController extends BaseController implements IController
         } else {
             $list = "<br><br><dl class='dl'>";
             foreach ($audios as $audio) {
-                $id = $audio['id'];
-                $title = htmlspecialchars($audio['title'], ENT_QUOTES, 'UTF-8');
-                $artist = htmlspecialchars($audio['artist'], ENT_QUOTES, 'UTF-8');
-                $image = htmlspecialchars($audio['image'], ENT_QUOTES, 'UTF-8');
+                $id = $audio->getId();
+                $title = htmlspecialchars($audio->getTitle(), ENT_QUOTES, 'UTF-8');
+                $artist = htmlspecialchars($audio->getArtist(), ENT_QUOTES, 'UTF-8');
+                $image = htmlspecialchars($audio->getImage(), ENT_QUOTES, 'UTF-8');
                 $afficher = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
                 $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
                 $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
@@ -78,12 +78,12 @@ class AudioController extends BaseController implements IController
         if (!empty($search) || !empty($filter)) {
             $audios = array_filter($audios, function($audio) use ($search, $filter) {
                 $matchSearch = empty($search) || 
-                    stripos($audio['title'], $search) !== false || 
-                    stripos($audio['artist'], $search) !== false;
+                    stripos($audio->getTitle(), $search) !== false || 
+                    stripos($audio->getArtist(), $search) !== false;
                     
                 $matchFilter = empty($filter) || 
-                    ($filter === 'title' && !empty($audio['title'])) ||
-                    ($filter === 'artist' && !empty($audio['artist']));
+                    ($filter === 'title' && !empty($audio->getTitle())) ||
+                    ($filter === 'artist' && !empty($audio->getArtist()));
                     
                 return $matchSearch && $matchFilter;
             });
