@@ -61,8 +61,6 @@ class CreationController
                             $req->bindValue(':mdp1', password_hash($_POST['mdp1'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                             $req->execute();
                             $_SESSION['message'] = 'Inscription réussie !';
-                            $_SESSION['pseudo'] = $_POST['pseudo'];
-                            $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
                             // Créer un cookie de session
                             setcookie('session_id', session_id(), time() + (86400 * 30), "/"); // Expire dans 30 jours
                             $_SESSION['pseudo'] = $_POST['pseudo'];

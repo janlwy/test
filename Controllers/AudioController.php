@@ -170,7 +170,6 @@ class AudioController
 
                     logInfo("Musique ajoutée avec succès dans la base de données");
                     $_SESSION['message'] = "Musique ajoutée avec succès.";
-                    $_SESSION['message'] = "Musique ajoutée avec succès.";
                     header('Location: ?url=audio/list');
                     exit();
                 } else {
