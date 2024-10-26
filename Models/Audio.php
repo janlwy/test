@@ -21,7 +21,30 @@ class Audio
         $this->created_at = $data['created_at'] ?? null;
     }
 
-    public function getId()
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    public function setArtist($artist)
+    {
+        $this->artist = $artist;
+    }
+
+    public function setImage($image)
+    {
+        $this->image = $image;
+    }
+
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
     {
         return $this->id;
     }

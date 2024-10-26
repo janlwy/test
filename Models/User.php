@@ -19,7 +19,20 @@ class User
         $this->created_at = $data['created_at'] ?? null;
     }
 
-    public function getId()
+    public function setPseudo($pseudo)
+    {
+        $this->pseudo = $pseudo;
+    }
+
+    public function setMdp($mdp)
+    {
+        $this->mdp = $mdp;
+    }
+
+    public function setCreatedAt($created_at)
+    {
+        $this->created_at = $created_at;
+    }
     {
         return $this->id;
     }
