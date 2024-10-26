@@ -21,7 +21,11 @@
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="title" class="inputMonEspace" required />
+                    <input type="text" name="title" id="title" class="inputMonEspace" 
+                           required
+                           pattern="[A-Za-z0-9\s\-_\.]{2,100}"
+                           title="Le titre doit contenir entre 2 et 100 caractères alphanumériques"
+                           maxlength="100" />
                 </div>
             </div>
             <div class="rowEspace">

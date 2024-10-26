@@ -121,7 +121,24 @@ class AudioController extends BaseController
                 
                 // Validation des fichiers
                 $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
-                $allowedAudioTypes = ['audio/mpeg', 'audio/mp4', 'audio/wav'];
+                $allowedAudioTypes = ['audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-m4a'];
+                
+                // Vérification supplémentaire du type MIME réel
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $imageMimeType = $finfo->file($_FILES['image']['tmp_name']);
+                $audioMimeType = $finfo->file($_FILES['path']['tmp_name']);
+                
+                if (!in_array($imageMimeType, $allowedImageTypes)) {
+                    $_SESSION['erreur'] = "Type de fichier image non autorisé.";
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
+                
+                if (!in_array($audioMimeType, $allowedAudioTypes)) {
+                    $_SESSION['erreur'] = "Type de fichier audio non autorisé.";
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
                 
                 $imageErrors = $this->session->validateFileUpload($_FILES['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
                 $audioErrors = $this->session->validateFileUpload($_FILES['path'], $allowedAudioTypes, 10 * 1024 * 1024); // 10MB

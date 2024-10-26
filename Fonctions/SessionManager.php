@@ -105,6 +105,17 @@ class SessionManager {
     }
     
     public function validateFileUpload(array $file, array $allowedTypes, int $maxSize = 5242880): array {
+        if (!isset($file['tmp_name']) || !is_uploaded_file($file['tmp_name'])) {
+            return ['Fichier invalide ou upload incomplet.'];
+        }
+        
+        // Vérification anti-virus si disponible
+        if (function_exists('clamav_scan_file')) {
+            $scan_result = clamav_scan_file($file['tmp_name']);
+            if ($scan_result !== true) {
+                return ['Le fichier pourrait contenir un virus.'];
+            }
+        }
         $errors = [];
         
         if ($file['error'] !== UPLOAD_ERR_OK) {
