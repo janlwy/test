@@ -1,6 +1,6 @@
 <?php $hideNav = true; 
 <h5>
-	<img src="Ressources/images/startPic.png" alt="Logo" class="logo">
+	<img src="Ressources/images/startPic.png" alt="Logo" class="logo" style="display: block; margin: 0 auto; width: 25%;">
 	<br>
 	Une application de prise de notes
 </h5>
