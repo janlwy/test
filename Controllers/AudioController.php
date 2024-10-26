@@ -77,13 +77,34 @@ class AudioController extends BaseController
         $this->checkAuth();
         
         $userId = $_SESSION['user_id'];
+        $search = $_GET['search'] ?? '';
+        $filter = $_GET['filter'] ?? '';
+        
         $audios = $this->audioRepository->findAllByUser($userId);
+        
+        // Filtrer les résultats
+        if (!empty($search) || !empty($filter)) {
+            $audios = array_filter($audios, function($audio) use ($search, $filter) {
+                $matchSearch = empty($search) || 
+                    stripos($audio['title'], $search) !== false || 
+                    stripos($audio['artist'], $search) !== false;
+                    
+                $matchFilter = empty($filter) || 
+                    ($filter === 'title' && !empty($audio['title'])) ||
+                    ($filter === 'artist' && !empty($audio['artist']));
+                    
+                return $matchSearch && $matchFilter;
+            });
+        }
+        
         $audioList = $this->generateAudioTable($audios);
         $datas = [
             'audioList' => $audioList,
-            'audios' => $audios
+            'audios' => $audios,
+            'search' => $search,
+            'filter' => $filter
         ];
-        // Assurez-vous que la vue est générée même si la liste est vide
+        
         generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
     }
     public function addMusic()
