@@ -27,7 +27,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
-		<?php if (!isset($datas['hideNav']) || !$datas['hideNav']): ?>
+		<?php if (shouldDisplayNav($datas)): ?>
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
