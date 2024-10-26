@@ -14,6 +14,10 @@
     --dimGray: #696969;
 }
 
+.hide-menunav .menunav {
+    display: none;
+}
+
 /************************* Mise en forme globale du fond *********************************/
 
 html, body {

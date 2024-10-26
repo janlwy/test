@@ -1,7 +1,4 @@
 
-<style>
-    .menunav { display: none; }
-</style>
 <h5>
 	Donnez vie à votre bibliothèque avec vos contenus favoris.
 	<br><br>
