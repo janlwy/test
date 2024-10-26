@@ -1,4 +1,5 @@
 <?php $hideNav = true; ?>
+<?php include 'Views/base.html.php'; ?>
 <h5>
 	<img src="Ressources/images/startPic.png" alt="Logo" class="logo">
 	<br>
