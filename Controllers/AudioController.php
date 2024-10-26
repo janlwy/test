@@ -2,17 +2,16 @@
 
 class AudioController extends BaseController implements IController
 {
+    private $audioRepository;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->audioRepository = new AudioRepository();
+    }
+
     public function index()
     {
-        startSessionIfNeeded();
-
-        // Vérifier si l'utilisateur est connecté
-        if (!isset($_SESSION['pseudo'])) {
-            // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-            header('Location: ?url=connexion/index');
-            exit();
-        }
-
+        $this->checkAuth();
         $datas = [];
         generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Audio");
     }
@@ -63,13 +62,6 @@ class AudioController extends BaseController implements IController
             $list .= "</dl><br><br>";
         }
         return $list;
-    }
-
-    private $audioRepository;
-    
-    public function __construct() {
-        parent::__construct();
-        $this->audioRepository = new AudioRepository();
     }
 
     public function list()
