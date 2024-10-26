@@ -976,3 +976,1633 @@
 2024-10-26 00:52:27 - [info] - Appel de la méthode index dans le contrôleur CompteController
 2024-10-26 00:52:28 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-10-26 00:52:28 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 01:06:00 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:06:00 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:06:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:06:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:06:09 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:06:09 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:06:11 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:06:11 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:06:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:06:17 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:06:22 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:06:22 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:06:24 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:06:24 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:07:04 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 01:07:04 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 01:07:04 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:07:04 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:07:04 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:07:04 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 01:07:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:07:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:07:26 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 01:07:26 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 01:07:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:07:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:07:40 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:07:40 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:07:40 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:07:40 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:07:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:07:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:07:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:07:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:07:47 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:07:47 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:07:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:07:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:07:52 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 01:07:52 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 01:07:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:07:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:07:58 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:07:58 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:07:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:07:58 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:07:58 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:07:58 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:08:14 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 01:08:14 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 01:08:14 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:08:14 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:08:14 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:08:14 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 01:08:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:08:16 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:08:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 01:08:25 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 01:08:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:08:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:08:28 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:08:28 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:08:28 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:08:28 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:08:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:08:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:27 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:27 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:30 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:12:30 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:12:30 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:12:30 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:12:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:33 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:12:33 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:12:33 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:12:33 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:12:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:41 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:12:41 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:12:41 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:12:41 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:12:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:12:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:12:47 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 01:12:47 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 01:12:47 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:12:47 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:12:47 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:12:47 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 01:12:51 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:12:51 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:12:51 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:12:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 01:12:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:12:53 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:13:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 01:13:02 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 01:13:02 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:02 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:10 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:13:10 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:13:10 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:13:10 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:13:10 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:10 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:13 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:13:13 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:13:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:13:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:13:13 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:16 - [info] - Tentative de chargement du contrôleur : TexteController et de la méthode : index
+2024-10-26 01:13:16 - [info] - Appel de la méthode index dans le contrôleur TexteController
+2024-10-26 01:13:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:22 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-10-26 01:13:22 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-10-26 01:13:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:28 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:13:28 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:13:28 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:13:28 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:13:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:13:30 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:13:30 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:13:30 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:13:30 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:13:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:13:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:19:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:19:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:00 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:00 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:15 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:20:16 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:20:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:20:16 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:20:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:20:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:20:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:20:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:20:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:21 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:20:21 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:20:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:20:21 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:20:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:22 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 01:20:22 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 01:20:27 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 01:20:27 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 01:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:31 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:31 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:20:39 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:20:39 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:20:39 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:20:39 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:20:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:20:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:26:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:26:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:26:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:26:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:06 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:06 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:10 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:27:10 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:27:10 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:27:10 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:27:10 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:10 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:13 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 01:27:13 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 01:27:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:27 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:27 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:27:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:27:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:46 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:46 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:28:52 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:28:52 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:10 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:10 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:21 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-10-26 01:29:21 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-10-26 01:29:36 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-10-26 01:29:36 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-10-26 01:29:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:39 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:29:39 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:29:39 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:29:39 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-26 01:29:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:42 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:29:42 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:29:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:44 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:29:44 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:29:44 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:29:44 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-26 01:29:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:46 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:46 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:47 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 01:29:47 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 01:29:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:52 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:29:52 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:29:52 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:52 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:53 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:29:53 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:29:53 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:29:53 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-26 01:29:53 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:53 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:55 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:29:55 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:29:55 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:29:55 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:29:55 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:55 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:29:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:29:57 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 01:29:57 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 01:30:12 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:30:12 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:30:12 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:30:12 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:30:12 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:12 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:30:14 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 01:30:14 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 01:30:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:30:17 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:30:17 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:30:17 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:30:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:30:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:30:21 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 01:30:21 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 01:30:27 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:30:27 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:30:27 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:30:27 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-26 01:30:27 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:27 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:30:33 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 01:30:33 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 01:30:40 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:30:40 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:30:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:30:43 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 01:30:43 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 01:30:48 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:30:48 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:30:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:30:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:33:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:33:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:33:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:33:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:33:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:33:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:33:56 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:33:56 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:33:56 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:33:56 - [error] - Utilisateur connecté, redirection vers mediabox
+2024-10-26 01:33:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:33:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:01 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:01 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:08 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:43:08 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:43:08 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:43:08 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:43:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:11 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:43:11 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:43:11 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:43:11 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:43:11 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:11 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:15 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:15 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:43:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:43:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:45:12 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:45:12 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:48:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:48:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:48:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:48:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:49:01 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:49:01 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:49:03 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:49:03 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:51:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:51:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:51:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:51:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:53:27 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 01:53:27 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 01:53:27 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:53:27 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:53:27 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:53:27 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 01:53:41 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:53:41 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:53:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 01:53:53 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 01:53:53 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:53:53 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:54:03 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 01:54:03 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 01:54:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 01:54:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 01:54:03 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:54:03 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:59:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 01:59:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 01:59:57 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 01:59:57 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 01:59:57 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 01:59:57 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 01:59:57 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 01:59:57 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:00:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:00:08 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:00:08 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:00:18 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:00:18 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:00:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:00:49 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:00:49 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:00:49 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:00:49 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:00:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:00:53 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:00:53 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:00:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:00:53 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:00:53 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:53 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:00:55 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 02:00:55 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 02:00:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:00:59 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:00:59 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:01:11 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:01:11 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:01:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 02:01:57 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 02:01:57 - [info] - Début de la méthode addMusic
+2024-10-26 02:01:57 - [info] - Requête POST reçue
+2024-10-26 02:01:57 - [info] - Champs requis présents
+2024-10-26 02:01:57 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia.webp
+2024-10-26 02:01:57 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 01. De Novo Adagio (Intro).m4a
+2024-10-26 02:01:57 - [info] - Image déplacée avec succès
+2024-10-26 02:01:57 - [info] - Audio déplacé avec succès
+2024-10-26 02:01:57 - [error] - Erreur : user_id est null
+2024-10-26 02:01:57 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:01:57 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:03:14 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:03:14 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:03:14 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:03:14 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:03:15 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:03:15 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:03:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:03:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:03:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:03:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:03:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:03:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:03:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:03:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:03:20 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:03:20 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:03:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:03:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:03:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:03:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:31 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:31 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:39 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:07:39 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:07:39 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:07:39 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:07:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:42 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:07:42 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:07:42 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:07:42 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:07:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:07:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:07:47 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:07:47 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:07:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:07:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:07:51 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:07:51 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:07:51 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:07:51 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:07:51 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:07:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:07:55 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:07:55 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:08:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:08:04 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:08:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:08:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:08:09 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:08:09 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:08:09 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:08:09 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:08:09 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:08:09 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:08:12 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:08:12 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:08:12 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:08:12 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:08:12 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:08:12 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:12:55 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:12:55 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:12:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:12:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:12:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:12:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:12:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:12:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:12:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:12:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:12:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:12:59 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:12:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:12:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:12:59 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:12:59 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:13:00 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:13:00 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:13:00 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:13:00 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:13:00 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:13:00 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:13:01 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:13:01 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:13:01 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:13:01 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:13:01 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:13:01 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:13:02 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:13:02 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:13:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:13:02 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:13:02 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:13:02 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:15 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:15 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:18 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:18 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:21 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:21 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:23 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:23 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:24 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:24 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:26 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:26 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:15:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:15:58 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:15:58 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:15:58 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:16:03 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 02:16:03 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 02:16:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:16:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:16:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:16:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:16:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:16:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:41 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:17:41 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:17:41 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:17:41 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:17:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:17:43 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:17:43 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:17:43 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:17:43 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:17:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:17:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:15 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:15 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:30 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:30 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:31 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:31 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:31 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:31 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:35 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:20:35 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:20:35 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:20:35 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:20:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:36 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:20:36 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:20:36 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:20:36 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:20:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:37 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:20:37 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:20:37 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:20:37 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:20:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:39 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-10-26 02:20:39 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-10-26 02:20:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:47 - [info] - Tentative de chargement du contrôleur : TexteController et de la méthode : index
+2024-10-26 02:20:47 - [info] - Appel de la méthode index dans le contrôleur TexteController
+2024-10-26 02:20:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:50 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-10-26 02:20:50 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-10-26 02:20:52 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:52 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:53 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 02:20:53 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 02:20:55 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:55 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:20:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:20:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:20:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:20:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:20:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:20:59 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:20:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:20:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:20:59 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:20:59 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:48 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:22:48 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:22:48 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:22:48 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:22:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:50 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:22:50 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:22:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:22:50 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:22:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:22:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:22:53 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:22:53 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:22:53 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:22:53 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:22:53 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:22:53 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:22:55 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:22:55 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:22:58 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 02:22:58 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 02:23:33 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 02:23:33 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 02:23:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:23:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:23:38 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:23:38 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:23:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:23:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:25:09 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:25:09 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:25:09 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:25:09 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:25:09 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:25:09 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:25:10 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:25:10 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:25:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:25:20 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:25:20 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-26 02:25:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:25:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:25:31 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:25:31 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:25:31 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:25:31 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:25:36 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:25:36 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:25:36 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:25:36 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:25:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:25:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:25:39 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:25:39 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:25:39 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:25:39 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:25:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:25:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:26:13 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:26:13 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:26:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:26:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:26:13 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:26:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:26:16 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:26:16 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:26:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:26:16 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:26:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:26:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:26:21 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:26:21 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:26:21 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:26:21 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:26:21 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:26:21 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:26:29 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:26:29 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:26:29 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:26:29 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:26:29 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:26:29 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:26:30 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:26:30 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:26:40 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:26:40 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:26:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:26:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:26:42 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:26:42 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:26:42 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:26:42 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:26:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:26:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:26:43 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:26:43 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:26:43 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:26:43 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:26:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:26:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:32:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:32:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:32:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:32:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:32:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:32:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:34:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:34:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:34:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:34:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:34:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:34:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:34:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:34:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:34:52 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:34:52 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:07 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:07 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:10 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:10 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:10 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:10 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:10 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:10 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:12 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:12 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:12 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:12 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:12 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:12 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:14 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:14 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:14 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:14 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:14 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:14 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:23 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:35:23 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:35:23 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:35:23 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:35:23 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:35:23 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:35:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:33 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:35:33 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:35:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:41 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:41 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:41 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:41 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:45 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:45 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:45 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:45 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:47 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:47 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:35:54 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:35:54 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:35:54 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:35:54 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:35:54 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:35:54 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:37:17 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:37:17 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:37:17 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:37:17 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:37:17 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:37:17 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:46 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:46 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:46 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:46 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:47 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:47 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:47 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:47 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:48 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:48 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:48 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:48 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:48 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:48 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:48 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:48 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:49 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:49 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:49 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:49 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:49 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:49 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:41:49 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:41:49 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:41:49 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:41:49 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:42:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:42:02 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:42:35 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:42:35 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:42:35 - [error] - Erreur de connexion : Login ou mot de passe non reconnu !
+2024-10-26 02:42:35 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:42:35 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:42:38 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 02:42:38 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 02:42:50 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 02:42:50 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 02:42:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:42:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:42:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:42:59 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:43:39 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:43:39 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:43:39 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:43:39 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:43:39 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:43:39 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:43:41 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:43:41 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:43:43 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 02:43:43 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 02:43:54 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 02:43:54 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 02:43:54 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:43:54 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:43:59 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:43:59 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:43:59 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:43:59 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:43:59 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:43:59 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:44:01 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:44:01 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:44:03 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 02:44:03 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 02:44:15 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 02:44:15 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 02:44:15 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:44:15 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:44:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:44:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:44:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:44:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:44:21 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:44:21 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:44:24 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:44:24 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:45:08 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:45:08 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:45:11 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 02:45:11 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 02:45:50 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 02:45:50 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 02:45:50 - [info] - Début de la méthode addMusic
+2024-10-26 02:45:50 - [info] - Requête POST reçue
+2024-10-26 02:45:50 - [info] - Champs requis présents
+2024-10-26 02:45:50 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia.webp
+2024-10-26 02:45:50 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 01. De Novo Adagio (Intro).m4a
+2024-10-26 02:45:50 - [info] - Image déplacée avec succès
+2024-10-26 02:45:50 - [info] - Audio déplacé avec succès
+2024-10-26 02:45:50 - [info] - Musique ajoutée avec succès dans la base de données
+2024-10-26 02:45:50 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:45:50 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:21 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:21 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:23 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:23 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:24 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:24 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:25 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:25 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:26 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:26 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:34 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:34 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:47:36 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:47:36 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:03 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:48:03 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:48:03 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:48:03 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:48:03 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:48:03 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:48:05 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:05 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:48:16 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:48:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:17 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:17 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:17 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:20 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:20 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:22 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:22 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:22 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:22 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:25 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:25 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:27 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:27 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:27 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:27 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:27 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:27 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:48:29 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:48:29 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:48:29 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:48:29 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:48:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:48:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:03 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:49:03 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:49:03 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:49:03 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:49:03 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:49:03 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:49:05 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:05 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:12 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:49:12 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:49:12 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:12 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:14 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-10-26 02:49:14 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-10-26 02:49:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:17 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:17 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:17 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:20 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:20 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:21 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:21 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:21 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:21 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:21 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:26 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:49:26 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:49:26 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:49:26 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:49:26 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:49:26 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:49:36 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:36 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:45 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:49:45 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:49:46 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:46 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:48 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:48 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:48 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:48 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:50 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:49:50 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:49:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:50 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:49:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:49:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:49:54 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 02:49:54 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 02:49:54 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 02:49:54 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 02:49:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 02:49:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 02:49:56 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:49:56 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:50:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 02:50:02 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 02:50:02 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:02 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:04 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:50:04 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:50:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:50:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:50:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:07 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:50:07 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:50:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:50:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:50:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:10 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:10 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:11 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:11 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:13 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:50:13 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:50:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:50:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:50:13 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 02:50:16 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 02:50:16 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 02:50:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 02:50:16 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 02:50:16 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 02:50:16 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:32 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:32 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:33 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:33 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:37 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:37 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:05:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:05:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:06:17 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:06:17 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:17 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:06:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:06:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:20 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:06:20 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:06:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:33 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 03:06:33 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 03:06:33 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:06:33 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:06:33 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:06:33 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:06:35 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:35 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:43 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 03:06:43 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 03:06:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:46 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:46 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:06:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:06:47 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:47 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:06:49 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:06:49 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:06:49 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:06:49 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:06:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:06:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:07:06 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:07:06 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:07:06 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:07:06 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:07:06 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:07:06 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:07:08 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:07:08 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:07:08 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:07:08 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:07:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:07:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:32 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:32 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:34 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:36 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:13:36 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:13:36 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:13:36 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:13:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:39 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:39 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:48 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:13:48 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:13:48 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:13:48 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:13:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:49 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:13:49 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:13:49 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:13:49 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:13:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:13:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:13:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:13:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:13:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:13:51 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:13:51 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:53 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:14:53 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:14:56 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 03:14:56 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 03:14:56 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:14:56 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:14:56 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:14:56 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:14:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:14:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:15:04 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:15:04 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 03:15:18 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 03:15:18 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 03:15:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:15:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:15:27 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:15:27 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:15:33 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 03:15:33 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 03:16:46 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : addMusic
+2024-10-26 03:16:46 - [info] - Appel de la méthode addMusic dans le contrôleur AudioController
+2024-10-26 03:16:46 - [info] - Début de la méthode addMusic
+2024-10-26 03:16:46 - [info] - Requête POST reçue
+2024-10-26 03:16:46 - [info] - Champs requis présents
+2024-10-26 03:16:46 - [info] - Tentative de déplacement de l'image vers : Ressources/images/pochettes/Alicia.webp
+2024-10-26 03:16:46 - [info] - Tentative de déplacement de l'audio vers : Ressources/audio/Alicia Keys - 01. De Novo Adagio (Intro).m4a
+2024-10-26 03:16:46 - [info] - Image déplacée avec succès
+2024-10-26 03:16:46 - [info] - Audio déplacé avec succès
+2024-10-26 03:16:46 - [info] - Musique ajoutée avec succès dans la base de données
+2024-10-26 03:16:46 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:16:46 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:16:54 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 03:16:54 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 03:16:54 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:16:54 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:16:54 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:16:54 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:16:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:16:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:17:00 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:17:00 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 03:19:01 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:19:01 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 03:19:15 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : create
+2024-10-26 03:19:15 - [info] - Appel de la méthode create dans le contrôleur CreationController
+2024-10-26 03:19:15 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:19:15 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:19:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:19:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:19:29 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 03:19:29 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 03:19:29 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:19:29 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:19:29 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:19:29 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:20:05 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:05 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-10-26 03:20:13 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-10-26 03:20:13 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:19 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:19 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:22 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:22 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:22 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:22 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:25 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:25 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:25 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:25 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:36 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:36 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:36 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:36 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:41 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:41 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:44 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:44 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:44 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:44 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:46 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-26 03:20:46 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-26 03:20:46 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:20:46 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:20:46 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:20:46 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:20:52 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-10-26 03:20:52 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-10-26 03:20:52 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:20:52 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:20:52 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:20:52 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:22:34 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:22:34 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:22:34 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:22:34 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:22:35 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:22:35 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:22:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:22:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:22:35 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:22:35 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:22:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:22:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:22:35 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:22:35 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:22:35 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:22:35 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:22:46 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:22:46 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:22:48 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:22:48 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 03:23:03 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 03:23:03 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-26 03:23:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:23:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:26:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:26:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:27:04 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:27:04 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-10-26 03:27:06 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:27:06 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:27:06 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:27:06 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:01 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:01 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:01 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:01 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:01 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:01 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:01 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:01 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:05 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:05 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:05 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:05 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:05 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:05 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:06 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:06 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:06 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:06 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:14 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:14 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:14 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:14 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:15 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:15 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:15 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:15 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:16 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-10-26 03:30:16 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-10-26 03:30:16 - [error] - Début de la méthode index dans AccueilController
+2024-10-26 03:30:16 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-10-26 03:30:18 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-10-26 03:30:18 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-10-26 03:30:21 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-10-26 03:30:21 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
