@@ -17,7 +17,7 @@ class AudioController
         }
 
         $datas = [];
-        generate("Views/main/audio.php", $datas, "Views/base.html.php", "Audio");
+        generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Audio");
     }
 
     public function listeAudio()

@@ -51,7 +51,8 @@ class ConnexionController
 					// Vérification du mot de passe avec password_verify()
 					if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
 						$_SESSION['pseudo'] = $_POST['pseudo'];
-						header('Location: ?url=mediabox/index');
+						$_SESSION['user_id'] = $user['id'];
+						header('Location: ?url=audio/list');
 						exit();
 					} else {
 						$erreur = 'Login ou mot de passe non reconnu !';
