@@ -95,6 +95,7 @@ class AudioController
                 'audioList' => $audioList,
                 'audios' => $audios
             ];
+            // Assurez-vous que la vue est générée même si la liste est vide
             generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
