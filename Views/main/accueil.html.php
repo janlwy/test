@@ -1,5 +1,5 @@
 <h5 style="text-align: center;">
-	<img src="Ressources/images/startPic.png" alt="Logo" style="display: block; margin: 0 auto;">
+	<img src="Ressources/images/startPic.png" alt="Logo" style="display: block; margin: 0 auto; width: 25%;">
 	<br>
 	Une application de prise de notes
 </h5>
