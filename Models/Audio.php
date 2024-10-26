@@ -35,7 +35,7 @@ class Audio extends AbstractModel
         $this->created_at = $created_at;
     }
 
-    public function getId()
+    public function getId(): ?int
     {
         return $this->id;
     }
