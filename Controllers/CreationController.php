@@ -5,10 +5,9 @@ class CreationController
     public function createUserForm()
     {
         startSessionIfNeeded();
-            if (isset($_SESSION['pseudo'])) {
-                header('Location: ?url=mediabox/index');
-                exit();
-            }
+        if (isset($_SESSION['pseudo'])) {
+            header('Location: ?url=mediabox/index');
+            exit();
         }
 
         // Afficher le formulaire de création d'utilisateur
