@@ -81,22 +81,22 @@ class AudioController
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
-            $userId = $_SESSION['user_id'] ?? null;
-            if ($userId === null) {
+            if (isset($_SESSION['user_id'])) {
+                $userId = $_SESSION['user_id'];
+                $manager = new Manager();
+                $audios = $manager->readTableAll('audio', $userId);
+                $audioList = $this->generateAudioTable($audios);
+                $datas = [
+                    'audioList' => $audioList,
+                    'audios' => $audios
+                ];
+                // Assurez-vous que la vue est générée même si la liste est vide
+                generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
+            } else {
                 $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
                 header('Location: ?url=connexion/index');
                 exit();
             }
-
-            $manager = new Manager();
-            $audios = $manager->readTableAll('audio', $userId);
-            $audioList = $this->generateAudioTable($audios);
-            $datas = [
-                'audioList' => $audioList,
-                'audios' => $audios
-            ];
-            // Assurez-vous que la vue est générée même si la liste est vide
-            generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             header('Location: ?url=connexion/index');
