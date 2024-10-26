@@ -50,7 +50,7 @@ if (session_status() === PHP_SESSION_NONE) {
 		</section>
 	</main>
 
-	<footer class="">
+	<footer>
 		<div class="socle">
 			<div class="icon-bar">
 				<a href="?url=mediabox/index" class="navlabel"><i class="material-icons">home</i>
