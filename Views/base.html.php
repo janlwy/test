@@ -21,7 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-<body class="clair-theme hide-menunav" id="themeBody">
+<body class="clair-theme <?php echo isset($hideMenuNav) && $hideMenuNav ? 'hide-menunav' : ''; ?>" id="themeBody">
 	<header>
 		<h1><?php echo isset($pageTitle) ? $pageTitle : 'Média Box'; ?></h1>
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
