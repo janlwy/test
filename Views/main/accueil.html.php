@@ -1,5 +1,6 @@
-<h5 style="text-align: center;">
-	<img src="Ressources/images/startPic.png" alt="Logo" style="display: block; margin: 0 auto; width: 25%;">
+<?php $hideNav = true; 
+<h5>
+	<img src="Ressources/images/startPic.png" alt="Logo" class="logo">
 	<br>
 	Une application de prise de notes
 </h5>
@@ -14,3 +15,6 @@
 		</span>
 	</a>
 </section>
+$content = ob_get_clean(); 
+include 'accueil.html.php';
+?>
