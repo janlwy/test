@@ -200,7 +200,7 @@ input::placeholder { /*police pesudo-element*/
 /************************************ bouton accueil 3D *********************************/
 
 .sectionBouton3d {
-    margin-top: 15%;
+    margin-top: 3%;
     display: flex;
     align-items: center;
     justify-content: center;

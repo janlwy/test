@@ -1,10 +1,10 @@
 <h5>
-	Donnez vie à votre bibliothèque avec vos contenus favoris.
-	<br><br>
-	Bienvenu dans la Média Box.
+	LOGO
+	<br>
+	Une application de prise de notes
 </h5>
 
-<!-- bouton effet 3D (incluant une modale (formulaire 	de    connexion)) -->
+<!-- bouton effet 3D -->
 <section class="sectionBouton3d">
 	<a href="?url=connexion/index" class="clic3d">
 		<div class="ombre3d"></div>
