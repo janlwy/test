@@ -7,8 +7,6 @@ class AudioController
         // Démarrer la session si elle n'est pas déjà démarrée
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
-        } else {
-            $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
         }
 
         // Vérifier si l'utilisateur est connecté
@@ -32,6 +30,7 @@ class AudioController
             exit();
         }
         $audios = $manager->readTableAll('audio', $userId);
+        $_SESSION['audios'] = $audios; // Stocker les audios dans la session
         return $this->generateAudioTable($audios);
     }
 
