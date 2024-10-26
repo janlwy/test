@@ -36,10 +36,6 @@ if (session_status() === PHP_SESSION_NONE) {
 				<a href="?url=photo/index" aria-label="Photo">Photo</a>
 			</nav>
 		<?php endif; ?>
-				<a href="?url=texte/index" aria-label="Texte">Texte</a>
-				<a href="?url=deconnexion/index" class="sortie boutonright" aria-label="Déconnexion"><i class="material-icons">logout</i></a>
-				<a href="javascript:void(0);" class="menuicon" onclick="myFunction()" aria-label="Menu"><i class="material-icons">menu</i></a>
-			</nav><?php endif; ?>
 		<section>
 			<?php
 			if (isset($content)) {
