@@ -1,4 +1,5 @@
 
+<?php $datas['hideNav'] = true; ?>
 <div>
 	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
 		<div class="formContainer ">

@@ -1,4 +1,5 @@
 
+<?php $datas['hideNav'] = true; ?>
 <h5>
 	Donnez vie à votre bibliothèque avec vos contenus favoris.
 	<br><br>

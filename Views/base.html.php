@@ -41,7 +41,9 @@ if (session_status() === PHP_SESSION_NONE) {
 		    'Views/connect/createUserForm.php'
 		];
 		?>
-		<nav class="menunav" id="myMenunav" <?php echo in_array($file, $hideMenuNavPages) ? 'style="display: none;"' : ''; ?>>
+		<?php if (!isset($datas['hideNav']) || !$datas['hideNav']): ?>
+		<nav class="menunav" id="myMenunav">
+		<?php endif; ?>
 			<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
 			<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
 			<a href="?url=audio/list" aria-label="Audio">Audio</a>
