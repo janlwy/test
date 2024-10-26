@@ -6,4 +6,8 @@ interface IRepository {
     public function findAllByUser(int $userId): array;
     public function save($entity): void;
     public function delete(int $id): void;
+    public function beginTransaction(): void;
+    public function commit(): void;
+    public function rollback(): void;
+    public function count(): int;
 }

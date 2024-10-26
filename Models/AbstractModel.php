@@ -43,10 +43,22 @@ abstract class AbstractModel {
     }
     
     public function toArray(): array {
-        return [
-            'id' => $this->getId(),
-            'created_at' => $this->getCreatedAt(),
-            'user_id' => $this->getUserId()
-        ];
+        $reflect = new ReflectionClass($this);
+        $props = $reflect->getProperties(ReflectionProperty::IS_PROTECTED | ReflectionProperty::IS_PRIVATE);
+        
+        $array = [];
+        foreach ($props as $prop) {
+            $prop->setAccessible(true);
+            $array[$prop->getName()] = $prop->getValue($this);
+        }
+        return $array;
+    }
+    
+    public function validate(): array {
+        return []; // Les classes enfants peuvent surcharger cette méthode
+    }
+    
+    public function isValid(): bool {
+        return empty($this->validate());
     }
 }

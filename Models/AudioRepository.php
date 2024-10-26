@@ -59,10 +59,35 @@ class AudioRepository implements IRepository {
     
     public function delete(int $id): void {
         try {
+            $this->beginTransaction();
+            $audio = $this->findById($id);
+            if (!$audio) {
+                throw new Exception("Audio non trouvé");
+            }
             $this->manager->deleteTable('audio', $id);
+            $this->commit();
         } catch (Exception $e) {
+            $this->rollback();
             logError("Erreur lors de la suppression de l'audio: " . $e->getMessage());
             throw $e;
         }
+    }
+    
+    public function beginTransaction(): void {
+        $this->manager->getConnexion()->beginTransaction();
+    }
+    
+    public function commit(): void {
+        $this->manager->getConnexion()->commit();
+    }
+    
+    public function rollback(): void {
+        $this->manager->getConnexion()->rollBack();
+    }
+    
+    public function count(): int {
+        $connection = $this->manager->getConnexion();
+        $stmt = $connection->query("SELECT COUNT(*) FROM audio");
+        return (int) $stmt->fetchColumn();
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
-abstract class BaseController {
+abstract class BaseController implements IController {
+    protected $repository;
     protected function checkAuth() {
         startSessionIfNeeded();
         
