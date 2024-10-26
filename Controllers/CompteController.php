@@ -9,7 +9,7 @@ class CompteController
 
         // Vérifier si l'utilisateur est connecté
         if ($this->isUserLoggedIn()) {
-            $datas = ['hideNav' => true];
+            $datas = [];
             generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon calepin");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
