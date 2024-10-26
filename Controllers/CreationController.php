@@ -6,17 +6,10 @@ class CreationController
     {
         // Démarrer la session si elle n'est pas déjà démarrée
         if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        // Démarrer la session si elle n'est pas déjà démarrée
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        // Vérifier si un cookie de session existe
-        if (isset($_COOKIE['session_id'])) {
-            session_id($_COOKIE['session_id']);
+            // Vérifier si un cookie de session existe
+            if (isset($_COOKIE['session_id'])) {
+                session_id($_COOKIE['session_id']);
+            }
             session_start();
             if (isset($_SESSION['pseudo'])) {
                 header('Location: ?url=mediabox/index');
