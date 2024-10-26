@@ -45,6 +45,8 @@ class Audio
     {
         $this->created_at = $created_at;
     }
+
+    public function getId()
     {
         return $this->id;
     }

@@ -33,6 +33,8 @@ class User
     {
         $this->created_at = $created_at;
     }
+
+    public function getId()
     {
         return $this->id;
     }
