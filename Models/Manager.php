@@ -4,7 +4,12 @@
 
 	class Manager {
 	    public function getConnexion() {
-	        return Bdd::getConnexion();
+	        try {
+	            return Bdd::getConnexion();
+	        } catch (PDOException $e) {
+	            logError("Reconnecting due to lost connection: " . $e->getMessage());
+	            return Bdd::getConnexion(); // Attempt to reconnect
+	        }
 	    }
 		public function readTableAll($table, $userId = null){
 			$connexion=$this->getConnexion();
