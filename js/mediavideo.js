@@ -4,14 +4,14 @@
 const media = document.querySelector('video');
 const controls = document.querySelector('.controls-video');
 
-const play = document.querySelector('.play-video');
-const stop = document.querySelector('.stop-video');
-const rwd = document.querySelector('.rwd-video');
-const fwd = document.querySelector('.fwd-video');
+const play = document.querySelector('.play');
+const stop = document.querySelector('.stop');
+const rwd = document.querySelector('.rwd');
+const fwd = document.querySelector('.fwd');
 
-const timerWrapper = document.querySelector('.timer-video');
-const timer = document.querySelector('.timer-video span');
-const timerBar = document.querySelector('.timer-video div');
+const timerWrapper = document.querySelector('.timer');
+const timer = document.querySelector('.timer span');
+const timerBar = document.querySelector('.timer div');
 
 media.removeAttribute('controls');
 controls.style.visibility = 'visible';

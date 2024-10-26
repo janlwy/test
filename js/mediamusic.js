@@ -25,7 +25,7 @@ let updateTimer;
 let curr_track = document.createElement('audio');
 
 let track_list = [];
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     if (typeof audios !== 'undefined') {
         track_list = audios.map(audio => ({
             id: audio.id,
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }));
     }
 
-    document.getElementById('play-selected').addEventListener('click', function() {
+    document.getElementById('play-selected').addEventListener('click', () => {
         const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected')).map(li => li.dataset.id);
         if (selectedAudios.length > 0) {
             window.location.href = `?url=audio/index&ids=${selectedAudios.join(',')}`;
@@ -46,8 +46,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     document.querySelectorAll('#audio-list li').forEach(li => {
-        li.addEventListener('click', function() {
-            this.classList.toggle('selected');
+        li.addEventListener('click', () => {
+            li.classList.toggle('selected');
         });
     });
 });

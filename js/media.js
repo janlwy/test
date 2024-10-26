@@ -1,21 +1,21 @@
 'use strict';
 
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const themeBody = document.getElementById("themeBody");
     const boutonTheme = document.getElementById("boutonTheme");
 
     // renvoi les elements stockés en local au chargement de la page
-    if (localStorage.className && localStorage.textContent != null){
-        themeBody.className = `${localStorage.className}`;
-        boutonTheme.textContent = `${localStorage.textContent}`;
-    }else{ 
+    if (localStorage.className && localStorage.textContent != null) {
+        themeBody.className = localStorage.className;
+        boutonTheme.textContent = localStorage.textContent;
+    } else {
         // affiche le theme par defaut, et le stocke dans localStorage
-        themeBody.className = `clair-theme`;
+        themeBody.className = "clair-theme";
         localStorage.className = "clair-theme";
-        boutonTheme.textContent = `dark_mode`;
+        boutonTheme.textContent = "dark_mode";
         localStorage.textContent = "dark_mode";
     }
-}
+});
 
 // Changer le thème ---- Sombre-Clair -----------------------------------
 const switcher = document.querySelector('.boutonTheme');
