@@ -468,48 +468,54 @@ nav {
 /***************************************** search box  ***************************/
 
 .searchBox {
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    background: #174c96;
-    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--color-bg-search);
+    height: 40px;
     border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    gap: 8px;
 }
 
 .searchBox:hover>.searchInput {
     width: 240px;
-    padding: 0 6px;
+    padding: 0 8px;
 }
 
 .searchBox:hover>.searchButton {
     background: white;
-    color: #5c09f5;
+    color: var(--color-primary);
 }
 
 .searchButton {
     color: white;
-    float: right;
-    width: 70px;
-    height: 70px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
-    background: #445164;
+    background: var(--color-bg-button);
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
 }
 
 .searchInput {
     border: none;
     background: none;
     outline: none;
-    float: left;
-    padding: 0;
-    color: white;
-    font-size: 20px;
+    padding: 0 8px;
+    color: var(--color-text);
+    font-size: 16px;
     transition: 0.4s;
-    line-height: 70px;
-    width: 0px;
+    line-height: 36px;
+    width: 240px;
+    flex: 1;
 }
 
 /************************************ Grid view - cartes **********************************/
