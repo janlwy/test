@@ -2,7 +2,7 @@
 
 class PhotoController extends BaseController implements IController
 {
-    private $repository;
+    protected $repository;
     
     public function __construct() {
         parent::__construct();
