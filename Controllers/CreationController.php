@@ -18,8 +18,8 @@ class CreationController
         }
 
         // Afficher le formulaire de création d'utilisateur
-        $datas = ['hideNav' => true];
-        generate("Views/connect/createUserForm.php", $datas, "Views/base.html.php");
+        $datas = [];
+        generate("Views/connect/createUserForm.php", $datas, "Views/base.html.php", "Calepin", true);
     }
 
     public function create()

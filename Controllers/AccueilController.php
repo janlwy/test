@@ -10,8 +10,8 @@ class AccueilController
 		// Afficher la page d'accueil si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {
 			logError("Utilisateur non connecté, affichage de l'accueil");
-			$datas = ['hideNav' => true]; // Masquer le menu de navigation
-			generate("Views/main/accueil.html.php", $datas,"Views/base.html.php", "Calepin 2.5");
+			$datas = []; // Masquer le menu de navigation
+			generate("Views/main/accueil.html.php", $datas,"Views/base.html.php", "Calepin 2.5", true);
 		} else {
 			// Rediriger vers la page de médiabox si l'utilisateur est connecté
 			logError("Utilisateur connecté, redirection vers mediabox");

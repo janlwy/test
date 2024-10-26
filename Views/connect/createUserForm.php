@@ -1,4 +1,4 @@
-<?php $datas['hideNav'] = true; ?>
+
 <div>
 	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create">
 

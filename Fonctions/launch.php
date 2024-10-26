@@ -23,10 +23,12 @@ function printr($tableaux)
 	//die;
 }
 
-function generate($file, $datas, $layout = "Views/base.html.php", $pageTitle = "Calepin")
+function generate($file, $datas, $layout = "Views/base.html.php", $pageTitle = "Calepin", $hideNav = false)
 {
 	$content = generateFile($file, $datas);
-	echo generateFile($layout, array('content' => $content, 'pageTitle' => $pageTitle)); // Afficher le contenu généré
+	// Ajouter hideNav au tableau $datas
+	$datas['hideNav'] = $hideNav;
+	echo generateFile($layout, array('content' => $content, 'pageTitle' => $pageTitle, 'datas' => $datas));
 }
 
 function generateFile($file, $datas)

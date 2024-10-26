@@ -199,6 +199,12 @@ input::placeholder { /*police pesudo-element*/
 }
 /************************************ bouton accueil 3D *********************************/
 
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 48%;
+}
+
 .sectionBouton3d {
     margin-top: 3%;
     display: flex;
