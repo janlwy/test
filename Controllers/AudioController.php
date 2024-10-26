@@ -16,7 +16,7 @@ class AudioController
             exit();
         }
 
-        $datas = [];
+        $datas = ['hideNav' => true];
         generate("Views/main/audio.php", $datas, "Views/base.html.php", "Audio");
     }
 
