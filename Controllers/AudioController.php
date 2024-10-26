@@ -23,12 +23,13 @@ class AudioController
     public function listeAudio()
     {
         $manager = new Manager();
-        $userId = $_SESSION['user_id'] ?? null;
-        if ($userId === null) {
+        if (!isset($_SESSION['user_id'])) {
+            logError("Erreur : user_id est null");
             $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
             header('Location: ?url=connexion/index');
             exit();
         }
+        $userId = $_SESSION['user_id'];
         $audios = $manager->readTableAll('audio', $userId);
         if ($audios) {
             $_SESSION['audios'] = $audios; // Stocker les audios dans la session
