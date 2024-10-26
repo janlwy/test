@@ -9,6 +9,16 @@ class CreationController
             session_start();
         }
 
+        // Vérifier si un cookie de session existe
+        if (isset($_COOKIE['session_id'])) {
+            session_id($_COOKIE['session_id']);
+            session_start();
+            if (isset($_SESSION['pseudo'])) {
+                header('Location: ?url=mediabox/index');
+                exit();
+            }
+        }
+
         // Afficher le formulaire de création d'utilisateur
         generate("Views/connect/createUserForm.php", [], "Views/base.html.php");
     }
@@ -54,6 +64,8 @@ class CreationController
                             $_SESSION['message'] = 'Inscription réussie !';
                             $_SESSION['pseudo'] = $_POST['pseudo'];
                             $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
+                            // Créer un cookie de session
+                            setcookie('session_id', session_id(), time() + (86400 * 30), "/"); // Expire dans 30 jours
                             $_SESSION['pseudo'] = $_POST['pseudo'];
                             $_SESSION['user_id'] = $connexion->lastInsertId(); // Récupérer l'ID de l'utilisateur
                             header('Location: ?url=mediabox/index');
