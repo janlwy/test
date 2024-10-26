@@ -18,13 +18,22 @@
 			<input class="inputModal" type="text" placeholder="Entrer votre nom" name="pseudo" id="pseudo" value="" required
                    pattern="[a-zA-Z0-9_-]{3,20}" 
                    title="3 à 20 caractères alphanumériques, tirets et underscores autorisés"
-                   maxlength="20">
+                   maxlength="20"
+                   autocomplete="username">
 
 			<label for="mdp1"><b>Mot de passe</b></label>
-			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp1" id="mdp1" value="" required>
+			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp1" id="mdp1" value="" required
+                   pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
+                   title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
+                   maxlength="72"
+                   autocomplete="new-password">
 
 			<label for="mdp2"><b>Répéter le mot de passe</b></label>
-			<input class="inputModal" type="password" placeholder="Répétez le mot de passe" name="mdp2" id="mdp2" value="" required>
+			<input class="inputModal" type="password" placeholder="Répétez le mot de passe" name="mdp2" id="mdp2" value="" required
+                   pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
+                   title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
+                   maxlength="72"
+                   autocomplete="new-password">
 			<br>
 			<hr>
 
