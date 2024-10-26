@@ -11,7 +11,7 @@ class TexteController
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
-            $datas = ['hideNav' => true];
+            $datas = [];
             generate("Views/main/texte.php", $datas,"Views/base.html.php", "Texte");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
