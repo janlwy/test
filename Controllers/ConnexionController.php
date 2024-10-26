@@ -12,7 +12,7 @@ class ConnexionController
 
 		// Afficher l'accueil si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {
-			$datas = [];
+			$datas = ['hideNav' => true];
 			generate("Views/connect/connectForm.php", $datas, "Views/base.html.php");
 		} else {
 			// Rediriger vers la page principale si l'utilisateur est déjà connecté
