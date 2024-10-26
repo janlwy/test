@@ -10,9 +10,7 @@ class Router
         $actionName = isset($urls[1]) ? $urls[1] : 'index';
 
 
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        startSessionIfNeeded();
         if (!isset($_SESSION['csrf_token'])) {
             $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
         }

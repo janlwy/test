@@ -4,13 +4,7 @@ class CreationController
 {
     public function createUserForm()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        if (session_status() === PHP_SESSION_NONE) {
-            // Vérifier si un cookie de session existe
-            if (isset($_COOKIE['session_id'])) {
-                session_id($_COOKIE['session_id']);
-            }
-            session_start();
+        startSessionIfNeeded();
             if (isset($_SESSION['pseudo'])) {
                 header('Location: ?url=mediabox/index');
                 exit();

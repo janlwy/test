@@ -1,13 +1,10 @@
 <?php
 
-class AudioController
+class AudioController extends BaseController
 {
     public function index()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
+        startSessionIfNeeded();
 
         // Vérifier si l'utilisateur est connecté
         if (!isset($_SESSION['pseudo'])) {

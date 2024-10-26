@@ -22,10 +22,8 @@ class ConnexionController
 	public function connectForm()
 	{
 		logError("Début de la méthode connectForm dans ConnexionController");
-		if (session_status() === PHP_SESSION_NONE) {
-			session_start();
-			logError("Session démarrée");
-		}
+		startSessionIfNeeded();
+		logError("Session démarrée");
 		logError("Génération du formulaire de connexion");
 		generate("Views/connect/connectForm.php", [],"Views/base.html.php");
 	}
