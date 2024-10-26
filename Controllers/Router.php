@@ -9,11 +9,6 @@ class Router
         $controllerName = ucfirst($urls[0]) . "Controller";
         $actionName = isset($urls[1]) ? $urls[1] : 'index';
 
-        if ($controllerName === 'AudioController' && $actionName === 'list') {
-            $controller = new AudioController();
-            $controller->list();
-            return;
-        }
 
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
