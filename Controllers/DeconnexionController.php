@@ -7,9 +7,8 @@ class DeconnexionController
         // Démarrer la session si elle n'est pas déjà démarrée
         startSessionIfNeeded();
 
-        // Détruire la session pour déconnecter l'utilisateur
-        session_unset();
-        session_destroy();
+        // Utiliser la fonction destroySession pour nettoyer proprement la session
+        destroySession();
 
         // Rediriger vers la page d'accueil
         header('Location: ?url=accueil/index');
