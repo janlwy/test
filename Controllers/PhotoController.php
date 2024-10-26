@@ -11,7 +11,7 @@ class PhotoController
 
         // Vérifier si l'utilisateur est connecté
         if (isset($_SESSION['pseudo'])) {
-            $datas = [];
+            $datas = ['hideNav' => true];
             generate("Views/main/photo.php", $datas,"Views/base.html.php", "Photo");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
