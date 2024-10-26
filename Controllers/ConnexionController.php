@@ -6,9 +6,7 @@ class ConnexionController
 	{
 
 		// Démarrer la session si elle n'est pas déjà démarrée
-		if (session_status() === PHP_SESSION_NONE) {
-			session_start();
-		}
+		startSessionIfNeeded();
 
 		// Afficher l'accueil si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {

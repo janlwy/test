@@ -5,9 +5,7 @@ class AccueilController
 	{
 		logError("Début de la méthode index dans AccueilController");
 		// Démarrer la session si elle n'est pas déjà démarrée
-		if (session_status() === PHP_SESSION_NONE) {
-			session_start();
-		}
+		startSessionIfNeeded();
 
 		// Afficher la page d'accueil si l'utilisateur n'est pas connecté
 		if (!isset($_SESSION['pseudo'])) {

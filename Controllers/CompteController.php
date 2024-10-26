@@ -5,7 +5,7 @@ class CompteController
     public function index()
     {
         // Démarrer la session si elle n'est pas déjà démarrée
-        $this->startSession();
+        startSessionIfNeeded();
 
         // Vérifier si l'utilisateur est connecté
         if ($this->isUserLoggedIn()) {

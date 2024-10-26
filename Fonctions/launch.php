@@ -58,3 +58,13 @@ function logInfo($message)
 function shouldDisplayNav($datas) {
     return !isset($datas['hideNav']) || !$datas['hideNav'];
 }
+
+function startSessionIfNeeded() {
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+}
+
+function isUserLoggedIn() {
+    return isset($_SESSION['pseudo']);
+}
