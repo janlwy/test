@@ -1,5 +1,4 @@
 
-<body class="clair-theme hide-menunav" id="themeBody">
 <h5>
 	Donnez vie à votre bibliothèque avec vos contenus favoris.
 	<br><br>
