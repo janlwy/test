@@ -60,7 +60,7 @@ class Audio extends AbstractModel
         return $this->path;
     }
 
-    public function getCreatedAt()
+    public function getCreatedAt(): ?string
     {
         return $this->created_at;
     }
