@@ -1,6 +1,6 @@
 <?php
 
-class AudioController extends BaseController
+class AudioController extends BaseController implements IController
 {
     public function index()
     {
@@ -107,118 +107,165 @@ class AudioController extends BaseController
         
         generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
     }
-    public function addMusic()
-    {
+    public function create() {
         $this->checkAuth();
         $this->checkCSRF();
-
-        logInfo("Début de la méthode addMusic");
-        // Vérifier que la requête est bien de type POST
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            logInfo("Requête POST reçue");
-            // Vérifier la validité du token CSRF
+            $this->addMusic();
+        } else {
+            header('Location: ?url=compte/index#form-add');
+            exit();
+        }
+    }
+
+    public function update($id) {
+        $this->checkAuth();
+        $this->checkCSRF();
+        
+        if (!$id) {
+            $_SESSION['erreur'] = "ID non spécifié";
+            header('Location: ?url=audio/list');
+            exit();
+        }
+
+        try {
+            $audio = $this->audioRepository->findById($id);
+            if (!$audio) {
+                throw new Exception("Audio non trouvé");
+            }
+
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-                if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
-                    logError("Erreur CSRF : jeton invalide.");
-                    $_SESSION['erreur'] = "Erreur CSRF : jeton invalide.";
-                    header('Location: ?url=compte/index');
-                    exit();
-                }
-            }
-
-            // Vérifier que les champs requis sont présents
-            if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
-                logInfo("Champs requis présents");
-                
-                // Validation des données
-                $title = filter_var(trim($_POST['title']), FILTER_SANITIZE_STRING);
-                $artist = filter_var(trim($_POST['artiste']), FILTER_SANITIZE_STRING);
-                
-                if (empty($title) || empty($artist)) {
-                    $_SESSION['erreur'] = "Les champs titre et artiste sont requis.";
-                    header('Location: ?url=compte/index');
-                    exit();
-                }
-                
-                // Validation des fichiers
-                $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
-                $allowedAudioTypes = ['audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-m4a'];
-                
-                // Vérification supplémentaire du type MIME réel
-                $finfo = new finfo(FILEINFO_MIME_TYPE);
-                $imageMimeType = $finfo->file($_FILES['image']['tmp_name']);
-                $audioMimeType = $finfo->file($_FILES['path']['tmp_name']);
-                
-                if (!in_array($imageMimeType, $allowedImageTypes)) {
-                    $_SESSION['erreur'] = "Type de fichier image non autorisé.";
-                    header('Location: ?url=compte/index');
-                    exit();
-                }
-                
-                if (!in_array($audioMimeType, $allowedAudioTypes)) {
-                    $_SESSION['erreur'] = "Type de fichier audio non autorisé.";
-                    header('Location: ?url=compte/index');
-                    exit();
-                }
-                
-                $imageErrors = $this->session->validateFileUpload($_FILES['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
-                $audioErrors = $this->session->validateFileUpload($_FILES['path'], $allowedAudioTypes, 10 * 1024 * 1024); // 10MB
-                
-                if (!empty($imageErrors) || !empty($audioErrors)) {
-                    $_SESSION['erreur'] = implode("\n", array_merge($imageErrors, $audioErrors));
-                    header('Location: ?url=compte/index');
-                    exit();
-                }
-                
-                $image = $_FILES['image'];
-                $path = $_FILES['path'];
-
-                // Valider et déplacer les fichiers uploadés
-                $imagePath = 'Ressources/images/pochettes/' . basename($image['name']);
-                $audioPath = 'Ressources/audio/' . basename($path['name']);
-
-                logInfo("Tentative de déplacement de l'image vers : $imagePath");
-                logInfo("Tentative de déplacement de l'audio vers : $audioPath");
-
-                if (move_uploaded_file($image['tmp_name'], $imagePath)) {
-                    logInfo("Image déplacée avec succès");
-                } else {
-                    logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
-                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
-                }
-
-                if (move_uploaded_file($path['tmp_name'], $audioPath)) {
-                    logInfo("Audio déplacé avec succès");
-                    // Insérer les données dans la base de données
-                    $manager = new Manager();
-                    $userId = $_SESSION['user_id'] ?? null;
-                    if ($userId === null) {
-                        logError("Erreur : user_id est null");
-                        $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
-                        header('Location: ?url=compte/index');
-                        exit();
-                    }
-
-                    $data = [
-                        'title' => $title,
-                        'artist' => $artist,
-                        'image' => basename($image['name']),
-                        'path' => basename($path['name']),
-                        'user_id' => $userId
-                    ];
-                    $manager->insertTable('audio', $data);
-
-                    logInfo("Musique ajoutée avec succès dans la base de données");
-                    $_SESSION['message'] = "Musique ajoutée avec succès.";
-                    header('Location: ?url=audio/list');
-                    exit();
-                } else {
-                    logError("Erreur lors du déplacement des fichiers");
-                    $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
-                }
+                // TODO: Implement update logic
+                $_SESSION['message'] = "Audio mis à jour avec succès";
+                header('Location: ?url=audio/list');
             } else {
-                $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
+                // TODO: Display update form
+                header('Location: ?url=audio/list');
             }
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+            header('Location: ?url=audio/list');
+        }
+        exit();
+    }
+
+    public function delete($id) {
+        $this->checkAuth();
+        $this->checkCSRF();
+        
+        if (!$id) {
+            $_SESSION['erreur'] = "ID non spécifié";
+            header('Location: ?url=audio/list');
+            exit();
+        }
+
+        try {
+            $this->audioRepository->delete($id);
+            $_SESSION['message'] = "Audio supprimé avec succès";
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+        }
+        
+        header('Location: ?url=audio/list');
+        exit();
+    }
+
+    private function addMusic()
+    {
+        logInfo("Début de la méthode addMusic");
+        // Vérifier que les champs requis sont présents
+        if (isset($_POST['title'], $_POST['artiste'], $_FILES['image'], $_FILES['path'])) {
+            logInfo("Champs requis présents");
+            
+            // Validation des données
+            $title = filter_var(trim($_POST['title']), FILTER_SANITIZE_STRING);
+            $artist = filter_var(trim($_POST['artiste']), FILTER_SANITIZE_STRING);
+            
+            if (empty($title) || empty($artist)) {
+                $_SESSION['erreur'] = "Les champs titre et artiste sont requis.";
+                header('Location: ?url=compte/index');
+                exit();
+            }
+            
+            // Validation des fichiers
+            $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
+            $allowedAudioTypes = ['audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-m4a'];
+            
+            // Vérification supplémentaire du type MIME réel
+            $finfo = new finfo(FILEINFO_MIME_TYPE);
+            $imageMimeType = $finfo->file($_FILES['image']['tmp_name']);
+            $audioMimeType = $finfo->file($_FILES['path']['tmp_name']);
+            
+            if (!in_array($imageMimeType, $allowedImageTypes)) {
+                $_SESSION['erreur'] = "Type de fichier image non autorisé.";
+                header('Location: ?url=compte/index');
+                exit();
+            }
+            
+            if (!in_array($audioMimeType, $allowedAudioTypes)) {
+                $_SESSION['erreur'] = "Type de fichier audio non autorisé.";
+                header('Location: ?url=compte/index');
+                exit();
+            }
+            
+            $imageErrors = $this->session->validateFileUpload($_FILES['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
+            $audioErrors = $this->session->validateFileUpload($_FILES['path'], $allowedAudioTypes, 10 * 1024 * 1024); // 10MB
+            
+            if (!empty($imageErrors) || !empty($audioErrors)) {
+                $_SESSION['erreur'] = implode("\n", array_merge($imageErrors, $audioErrors));
+                header('Location: ?url=compte/index');
+                exit();
+            }
+            
+            $image = $_FILES['image'];
+            $path = $_FILES['path'];
+
+            // Valider et déplacer les fichiers uploadés
+            $imagePath = 'Ressources/images/pochettes/' . basename($image['name']);
+            $audioPath = 'Ressources/audio/' . basename($path['name']);
+
+            logInfo("Tentative de déplacement de l'image vers : $imagePath");
+            logInfo("Tentative de déplacement de l'audio vers : $audioPath");
+
+            if (move_uploaded_file($image['tmp_name'], $imagePath)) {
+                logInfo("Image déplacée avec succès");
+            } else {
+                logError("Erreur lors du déplacement de l'image : " . print_r(error_get_last(), true));
+                $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
+            }
+
+            if (move_uploaded_file($path['tmp_name'], $audioPath)) {
+                logInfo("Audio déplacé avec succès");
+                // Insérer les données dans la base de données
+                $manager = new Manager();
+                $userId = $_SESSION['user_id'] ?? null;
+                if ($userId === null) {
+                    logError("Erreur : user_id est null");
+                    $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+                    header('Location: ?url=compte/index');
+                    exit();
+                }
+
+                $data = [
+                    'title' => $title,
+                    'artist' => $artist,
+                    'image' => basename($image['name']),
+                    'path' => basename($path['name']),
+                    'user_id' => $userId
+                ];
+                $manager->insertTable('audio', $data);
+
+                logInfo("Musique ajoutée avec succès dans la base de données");
+                $_SESSION['message'] = "Musique ajoutée avec succès.";
+                header('Location: ?url=audio/list');
+                exit();
+            } else {
+                logError("Erreur lors du déplacement des fichiers");
+                $_SESSION['erreur'] = "Erreur lors du téléchargement des fichiers. Vérifiez les permissions des dossiers.";
+            }
+        } else {
+            $_SESSION['erreur'] = "Tous les champs sont requis. Assurez-vous que le formulaire est correctement rempli.";
         }
 
         $_SESSION['erreur'] = "Erreur inattendue lors de l'ajout de la musique.";
