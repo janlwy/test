@@ -37,14 +37,6 @@ class AudioController
 
     public function generateAudioTable($audios)
     {
-        $userId = $_SESSION['user_id'] ?? null;
-        if ($userId === null) {
-            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
-            header('Location: ?url=connexion/index');
-            exit();
-        }
-        $manager = new Manager();
-        $audios = $manager->readTableAll('audio', $userId);
         if (empty($audios)) {
             $list = "<p>Aucun enregistrement audio trouvé.</p>";
         } else {
