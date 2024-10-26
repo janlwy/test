@@ -65,29 +65,19 @@ class AudioController extends BaseController
         return $list;
     }
 
+    private $audioRepository;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->audioRepository = new AudioRepository();
+    }
+
     public function list()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
-        }
-
-        // Vérifier si l'utilisateur est connecté
-        if (!isset($_SESSION['pseudo'])) {
-            // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
-            header('Location: ?url=connexion/index');
-            exit();
-        }
-
-        $userId = $_SESSION['user_id'] ?? null;
-        if ($userId === null) {
-            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
-            header('Location: ?url=connexion/index');
-            exit();
-        }
-
-        $manager = new Manager();
-        $audios = $manager->readTableAll('audio', $userId);
+        $this->checkAuth();
+        
+        $userId = $_SESSION['user_id'];
+        $audios = $this->audioRepository->findAllByUser($userId);
         $audioList = $this->generateAudioTable($audios);
         $datas = [
             'audioList' => $audioList,

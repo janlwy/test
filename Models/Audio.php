@@ -1,25 +1,14 @@
 <?php
 
+require_once 'AbstractModel.php';
 require_once 'Manager.php';
 
-class Audio
+class Audio extends AbstractModel
 {
-    private $id;
     private $title;
     private $artist;
     private $image;
     private $path;
-    private $created_at;
-
-    public function __construct($data)
-    {
-        $this->id = $data['id'] ?? null;
-        $this->title = $data['title'] ?? '';
-        $this->artist = $data['artist'] ?? '';
-        $this->image = $data['image'] ?? '';
-        $this->path = $data['path'] ?? '';
-        $this->created_at = $data['created_at'] ?? null;
-    }
 
     public function setTitle($title)
     {
