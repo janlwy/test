@@ -5240,3 +5240,13 @@
 2024-10-26 16:54:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
 2024-10-26 16:54:14 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-10-26 16:54:14 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 16:55:17 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 16:55:17 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 16:55:52 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 16:55:52 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 16:56:52 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 16:56:52 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 16:57:07 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-26 16:57:07 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-26 16:57:09 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-26 16:57:09 - [info] - Appel de la méthode index dans le contrôleur MediaboxController

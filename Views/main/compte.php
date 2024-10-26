@@ -4,7 +4,7 @@
 
     <button type="button" class="collapsible">Musiques</button>
     <div class="contentCollapse">
-        <button type="button" class="btnBase invisible invisibleTxt" id="form-add">Édition</button>
+        <button type="button" class="btnBase invisible invisibleTxt" id="form-add"> </button>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 if (window.location.hash === '#form-add') {
