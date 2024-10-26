@@ -15,7 +15,10 @@
 			<?php endif; ?>
 
 			<label for="pseudo"><b>Nom d'utilisateur</b></label>
-			<input class="inputModal" type="text" placeholder="Entrer votre nom" name="pseudo" id="pseudo" value="" required>
+			<input class="inputModal" type="text" placeholder="Entrer votre nom" name="pseudo" id="pseudo" value="" required
+                   pattern="[a-zA-Z0-9_-]{3,20}" 
+                   title="3 à 20 caractères alphanumériques, tirets et underscores autorisés"
+                   maxlength="20">
 
 			<label for="mdp1"><b>Mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp1" id="mdp1" value="" required>
