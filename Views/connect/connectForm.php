@@ -1,3 +1,4 @@
+<body class="clair-theme hide-menunav" id="themeBody">
 <div>
 	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
 		<div class="formContainer ">
