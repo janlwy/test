@@ -1,6 +1,7 @@
 <section class="audio-section dl">
     <div class="search-container searchBox">
-        <form method="GET" action="?url=audio/list" class="search-form">
+        <form method="GET" class="search-form">
+            <input type="hidden" name="url" value="audio/list">
             <input type="text" name="search"
                 value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                 placeholder="Rechercher par titre ou artiste"
