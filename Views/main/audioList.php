@@ -13,9 +13,7 @@
             </select>
 
             <button type="submit" class="searchButton">
-                <img src="Ressources/images/searchBoutonInactif.png" alt="Rechercher" 
-                     onmouseover="this.src='Ressources/images/searchBoutonActif.png'" 
-                     onmouseout="this.src='Ressources/images/searchBoutonInactif.png'">
+                <i class="material-icons">search</i>
             </button>
         </form>
     </div>
