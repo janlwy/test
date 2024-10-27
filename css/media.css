@@ -769,6 +769,21 @@ footer {
         width: 98%;
         margin: 0 0 220px 0;
     }
+    .searchBox {
+        width: 90%;
+        margin: 10px auto;
+        transform: none;
+        left: auto;
+    }
+    .search-form {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .searchInput {
+        width: calc(100% - 100px);
+        min-width: 150px;
+    }
     .boutonTheme {
         display: none !important;
     }
@@ -870,6 +885,10 @@ footer {
 @media (min-width: 601px) and (max-width: 999px) {
     .menunav a:not(:first-child) {
         display: none;
+    }
+    .searchBox {
+        width: 80%;
+        max-width: 500px;
     }
     .menunav a.menuicon {
         float: right;
