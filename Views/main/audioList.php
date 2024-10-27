@@ -5,13 +5,6 @@
             <input class="searchInput" type="text" name="search"
                 value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
                 placeholder="Rechercher par titre ou artiste">
-
-            <select name="filter" class="filter-select">
-                <option value="">Tous</option>
-                <option value="title" <?php echo ($_GET['filter'] ?? '') === 'title' ? 'selected' : ''; ?>>Titres</option>
-                <option value="artist" <?php echo ($_GET['filter'] ?? '') === 'artist' ? 'selected' : ''; ?>>Artistes</option>
-            </select>
-
             <button type="submit" class="searchButton">
                 <i class="material-icons">search</i>
             </button>

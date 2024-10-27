@@ -75,17 +75,10 @@ class AudioController extends BaseController implements IController
         $audios = $this->audioRepository->findAllByUser($userId);
         
         // Filtrer les résultats
-        if (!empty($search) || !empty($filter)) {
-            $audios = array_filter($audios, function($audio) use ($search, $filter) {
-                $matchSearch = empty($search) || 
-                    stripos($audio->getTitle(), $search) !== false || 
-                    stripos($audio->getArtist(), $search) !== false;
-                    
-                $matchFilter = empty($filter) || 
-                    ($filter === 'title' && !empty($audio->getTitle())) ||
-                    ($filter === 'artist' && !empty($audio->getArtist()));
-                    
-                return $matchSearch && $matchFilter;
+        if (!empty($search)) {
+            $audios = array_filter($audios, function($audio) use ($search) {
+                return stripos($audio->getTitle(), $search) !== false || 
+                       stripos($audio->getArtist(), $search) !== false;
             });
         }
         
