@@ -1,6 +1,36 @@
 'use strict';
 
+// Fonctions pour la recherche audio
+function clearSearch() {
+    document.querySelector('.searchInput').value = '';
+    document.querySelector('.search-form').submit();
+}
+
+// Validation du formulaire de création de compte
+function validatePasswordMatch() {
+    const mdp1 = document.getElementById('mdp1');
+    const mdp2 = document.getElementById('mdp2');
+    if (mdp1.value !== mdp2.value) {
+        mdp2.setCustomValidity('Les mots de passe ne correspondent pas');
+    } else {
+        mdp2.setCustomValidity('');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Gestion de l'affichage du bouton clear dans la recherche
+    const searchInput = document.querySelector('.searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            document.querySelector('.clearButton').style.display = this.value ? 'block' : 'none';
+            
+            // Mise à jour du champ caché
+            const searchHidden = document.getElementById('search-hidden');
+            if (searchHidden) {
+                searchHidden.value = this.value;
+            }
+        });
+    }
     const themeBody = document.getElementById("themeBody");
     const boutonTheme = document.getElementById("boutonTheme");
 

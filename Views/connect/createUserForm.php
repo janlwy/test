@@ -36,17 +36,6 @@
                    autocomplete="new-password"
                    oninput="validatePasswordMatch()">
 
-			<script>
-			function validatePasswordMatch() {
-				const mdp1 = document.getElementById('mdp1');
-				const mdp2 = document.getElementById('mdp2');
-				if (mdp1.value !== mdp2.value) {
-					mdp2.setCustomValidity('Les mots de passe ne correspondent pas');
-				} else {
-					mdp2.setCustomValidity('');
-				}
-			}
-			</script>
 			<br>
 			<hr>
 

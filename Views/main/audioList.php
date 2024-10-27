@@ -15,23 +15,6 @@
         </form>
     </div>
 
-    <script>
-        function clearSearch() {
-            document.querySelector('.searchInput').value = '';
-            document.querySelector('.search-form').submit();
-        }
-
-        // Afficher/masquer le bouton clear
-        document.querySelector('.searchInput').addEventListener('input', function() {
-            document.querySelector('.clearButton').style.display = this.value ? 'block' : 'none';
-        });
-    </script>
-
-    <script>
-        document.querySelector('.searchInput').addEventListener('input', function(e) {
-            document.getElementById('search-hidden').value = e.target.value;
-        });
-    </script>
 
     <?php if (isset($_SESSION['message'])): ?>
         <div class="success-message">
