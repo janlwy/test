@@ -104,7 +104,7 @@ class AudioController extends BaseController implements IController
         $this->checkCSRF();
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->addMusic();
+            $this->addMusic($_POST, $_FILES);
         } else {
             header('Location: ?url=compte/index#form-add');
             exit();
@@ -163,7 +163,7 @@ class AudioController extends BaseController implements IController
         exit();
     }
 
-    private function addMusic()
+    private function addMusic($post, $files)
     {
         logInfo("Début de la méthode addMusic");
         // Vérifier que les champs requis sont présents
