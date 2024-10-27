@@ -256,7 +256,7 @@ input::placeholder { /*police pesudo-element*/
     padding: 18px 50px;
     border-radius: 12px;
     font-size: 3rem;
-    color: white;
+    color: #ffffff;
     background: #f0003c;
     will-change: transform;
     transform: translateY(-4px);

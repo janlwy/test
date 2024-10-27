@@ -3,7 +3,8 @@
         <input type="hidden" name="url" value="audio/list">
         <input class="searchInput" type="text" name="search" 
             value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-            placeholder="Rechercher par titre ou artiste">
+            placeholder="Rechercher par titre ou artiste"
+            oninput="if(this.value === '') document.querySelector('form').submit();">
         <button type="submit" class="searchButton" onclick="document.querySelector('form').submit();">
             <i class="material-icons">search</i>
         </button>
