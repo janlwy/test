@@ -483,24 +483,25 @@ nav {
     height: 40px;
     border-radius: 40px;
     padding: 10px;
+    width: 40px;
+    transition: width 0.4s ease;
 }
 
 .searchInput {
-    width: 40px;
+    width: 0;
     padding: 0;
     border: none;
     background: none;
     outline: none;
-    float: left;
     color: var(--fontcolor);
     font-size: 16px;
-    transition: 0.4s;
     line-height: 40px;
+    transition: width 0.4s ease, padding 0.4s ease;
 }
 
 .searchInput:focus {
     width: 240px;
-    padding: 0 6px;
+    padding: 0 40px 0 6px;
 }
 
 .search-form:focus-within {
@@ -513,7 +514,7 @@ nav {
 
 .searchInput:not(:placeholder-shown) {
     width: 240px;
-    padding: 0 6px;
+    padding: 0 40px 0 6px;
 }
 
 .searchButton {
