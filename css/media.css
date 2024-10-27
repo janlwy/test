@@ -471,51 +471,49 @@ nav {
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--color-bg-search);
+    background: #2f3640;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
     margin: 10px;
-    gap: 8px;
 }
 
-.searchBox:hover>.searchInput {
+.searchBox:hover > .searchInput {
     width: 240px;
-    padding: 0 8px;
+    padding: 0 6px;
 }
 
-.searchBox:hover>.searchButton {
+.searchBox:hover > .searchButton {
     background: white;
-    color: var(--color-primary);
+    color: #2f3640;
 }
 
 .searchButton {
     color: white;
-    width: 36px;
-    height: 36px;
+    float: right;
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
-    background: var(--color-bg-button);
+    background: #2f3640;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.4s;
     border: none;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
 }
 
 .searchInput {
     border: none;
     background: none;
     outline: none;
-    padding: 0 8px;
-    color: var(--color-text);
+    float: left;
+    padding: 0;
+    color: white;
     font-size: 16px;
     transition: 0.4s;
-    line-height: 36px;
-    width: 240px;
-    flex: 1;
+    line-height: 40px;
+    width: 0px;
 }
 
 /************************************ Grid view - cartes **********************************/
