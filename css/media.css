@@ -474,6 +474,8 @@ nav {
     align-items: center;
     margin: 20px auto;
     max-width: 600px;
+    width: 100%;
+    text-align: center;
 }
 
 .search-form {
