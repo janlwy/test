@@ -87,7 +87,8 @@ class AudioController extends BaseController implements IController
             'audioList' => $audioList,
             'audios' => $audios,
             'search' => $search,
-            'filter' => $filter
+            'filter' => $filter,
+            'session' => $this->session
         ];
         
         generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
