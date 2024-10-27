@@ -33,7 +33,20 @@
                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
                    title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
                    maxlength="72"
-                   autocomplete="new-password">
+                   autocomplete="new-password"
+                   oninput="validatePasswordMatch()">
+
+			<script>
+			function validatePasswordMatch() {
+				const mdp1 = document.getElementById('mdp1');
+				const mdp2 = document.getElementById('mdp2');
+				if (mdp1.value !== mdp2.value) {
+					mdp2.setCustomValidity('Les mots de passe ne correspondent pas');
+				} else {
+					mdp2.setCustomValidity('');
+				}
+			}
+			</script>
 			<br>
 			<hr>
 

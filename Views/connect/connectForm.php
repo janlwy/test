@@ -18,9 +18,10 @@
 
 			<label for="mdp"><b>Mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp" id="mdp" required
-                   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                   title="Au moins 8 caractères, incluant au moins une lettre et un chiffre"
-                   maxlength="72">
+                   pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
+                   title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
+                   maxlength="72"
+                   autocomplete="current-password">
 
 			<br>
 			<hr>

@@ -46,6 +46,13 @@ class ConnexionController
 					$req->execute();
 					$user = $req->fetch(PDO::FETCH_ASSOC);
 
+					// Vérification du format du mot de passe
+					if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $_POST['mdp'])) {
+						$_SESSION['erreur'] = 'Format du mot de passe invalide';
+						header('Location: ?url=connexion/index');
+						exit();
+					}
+
 					// Vérification du mot de passe avec password_verify()
 					if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
 						$_SESSION['pseudo'] = $_POST['pseudo'];
