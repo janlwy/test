@@ -171,8 +171,8 @@ class AudioController extends BaseController implements IController
             logInfo("Champs requis présents");
             
             // Validation des données
-            $title = filter_var(trim($_POST['title']), FILTER_SANITIZE_STRING);
-            $artist = filter_var(trim($_POST['artiste']), FILTER_SANITIZE_STRING);
+            $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
+            $artist = htmlspecialchars(trim($_POST['artiste']), ENT_QUOTES, 'UTF-8');
             
             if (empty($title) || empty($artist)) {
                 $_SESSION['erreur'] = "Les champs titre et artiste sont requis.";
