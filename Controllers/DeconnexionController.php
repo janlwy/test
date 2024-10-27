@@ -1,14 +1,11 @@
 <?php
 
-class DeconnexionController
+class DeconnexionController extends BaseController
 {
     public function index()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        startSessionIfNeeded();
-
-        // Utiliser la fonction destroySession pour nettoyer proprement la session
-        destroySession();
+        // Nettoyer proprement la session
+        $this->session->destroySession();
 
         // Rediriger vers la page d'accueil
         header('Location: ?url=accueil/index');
