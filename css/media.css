@@ -547,7 +547,6 @@ nav {
 /************************************ Grid view - cartes **********************************/
 .row {
     position: relative;
-    top: 150px;
     box-sizing: border-box;
     display: flex;
     align-items: center;
