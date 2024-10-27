@@ -1,18 +1,31 @@
 <section class="audio-section dl">
     <div class="searchBox">
-        <input type="hidden" name="url" value="audio/list">
-        <input class="searchInput" type="text" name="search" 
-            value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-            placeholder="Rechercher par titre ou artiste"
-            oninput="if(this.value === '') document.querySelector('form').submit();">
-        <button type="submit" class="searchButton" onclick="document.querySelector('form').submit();">
-            <i class="material-icons">search</i>
-        </button>
-        <form method="GET" class="search-form" style="display:none;">
+        <form method="GET" class="search-form">
             <input type="hidden" name="url" value="audio/list">
-            <input type="hidden" name="search" id="search-hidden">
+            <input class="searchInput" type="text" name="search" 
+                value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+                placeholder="Rechercher par titre ou artiste"
+                onkeydown="if(event.key === 'Enter') this.form.submit();">
+            <button type="button" class="clearButton" onclick="clearSearch()" style="display: <?php echo isset($_GET['search']) && $_GET['search'] !== '' ? 'block' : 'none'; ?>">
+                <i class="material-icons">close</i>
+            </button>
+            <button type="submit" class="searchButton">
+                <i class="material-icons">search</i>
+            </button>
         </form>
     </div>
+
+    <script>
+        function clearSearch() {
+            document.querySelector('.searchInput').value = '';
+            document.querySelector('.search-form').submit();
+        }
+
+        // Afficher/masquer le bouton clear
+        document.querySelector('.searchInput').addEventListener('input', function() {
+            document.querySelector('.clearButton').style.display = this.value ? 'block' : 'none';
+        });
+    </script>
 
     <script>
         document.querySelector('.searchInput').addEventListener('input', function(e) {
