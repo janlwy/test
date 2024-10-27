@@ -772,8 +772,9 @@ footer {
     .searchBox {
         width: 90%;
         margin: 10px auto;
-        transform: none;
-        left: auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .search-form {
         flex-direction: row;
@@ -889,6 +890,9 @@ footer {
     .searchBox {
         width: 80%;
         max-width: 500px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
     }
     .menunav a.menuicon {
         float: right;
