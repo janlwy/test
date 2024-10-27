@@ -1,13 +1,12 @@
 <section class="audio-section dl">
-    <div class="search-container searchBox">
-        <form method="GET" class="search-form">
+    <div class="searchBox">
+        <form method="GET">
             <input type="hidden" name="url" value="audio/list">
-            <input type="text" name="search"
+            <input class="searchInput" type="text" name="search"
                 value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                placeholder="Rechercher par titre ou artiste"
-                class="searchInput">
+                placeholder="Rechercher par titre ou artiste">
 
-            <select name="filter" class="filter-select">
+            <select name="filter" style="margin-right: 10px;">
                 <option value="">Tous</option>
                 <option value="title" <?php echo ($_GET['filter'] ?? '') === 'title' ? 'selected' : ''; ?>>Titres</option>
                 <option value="artist" <?php echo ($_GET['filter'] ?? '') === 'artist' ? 'selected' : ''; ?>>Artistes</option>
