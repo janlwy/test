@@ -37,17 +37,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.getElementById('play-selected').addEventListener('click', () => {
-        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected')).map(li => li.dataset.id);
+        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected'));
         if (selectedAudios.length > 0) {
-            window.location.href = `?url=audio/index&ids=${selectedAudios.join(',')}`;
+            // Filtrer track_list pour ne garder que les audios sélectionnés
+            track_list = track_list.filter(track => 
+                selectedAudios.some(selected => selected.dataset.id === track.id.toString())
+            );
+            // Réinitialiser l'index et démarrer la lecture
+            track_index = 0;
+            loadTrack(track_index);
+            playTrack();
         } else {
             alert('Veuillez sélectionner au moins un enregistrement audio.');
         }
     });
 
     document.querySelectorAll('#audio-list li').forEach(li => {
-        li.addEventListener('click', () => {
-            li.classList.toggle('selected');
+        li.addEventListener('click', (e) => {
+            if (e.ctrlKey) {
+                // Ctrl+clic pour la sélection multiple
+                li.classList.toggle('selected');
+            } else {
+                // Clic simple pour lecture directe
+                const audioId = li.dataset.id;
+                const audioIndex = track_list.findIndex(track => track.id.toString() === audioId);
+                if (audioIndex !== -1) {
+                    track_index = audioIndex;
+                    loadTrack(track_index);
+                    playTrack();
+                }
+            }
         });
     });
 });
