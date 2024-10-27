@@ -471,6 +471,7 @@ nav {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 20px auto;
     max-width: 600px;
 }
@@ -484,37 +485,40 @@ nav {
     border-radius: 40px;
     padding: 10px;
     width: 40px;
-    transition: width 0.4s ease;
+    transition: all 0.6s ease;
 }
 
 .searchInput {
-    width: 0;
-    padding: 0;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0 45px 0 15px;
     border: none;
     background: none;
     outline: none;
     color: var(--fontcolor);
     font-size: 16px;
-    line-height: 40px;
-    transition: width 0.4s ease, padding 0.4s ease;
+    transition: all 0.6s ease;
+    opacity: 0;
 }
 
-.searchInput:focus {
-    width: 240px;
-    padding: 0 40px 0 6px;
-}
-
+.search-form:hover,
 .search-form:focus-within {
     width: 300px;
 }
 
-.search-form:has(.searchInput:not(:placeholder-shown)) {
-    width: 300px;
+.search-form:hover .searchInput,
+.search-form:focus-within .searchInput {
+    opacity: 1;
 }
 
 .searchInput:not(:placeholder-shown) {
-    width: 240px;
-    padding: 0 40px 0 6px;
+    opacity: 1;
+}
+
+.search-form:has(.searchInput:not(:placeholder-shown)) {
+    width: 300px;
 }
 
 .searchButton {
