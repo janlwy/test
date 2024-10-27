@@ -1,6 +1,6 @@
 <?php
 
-abstract class BaseController implements IController {
+abstract class BaseController implements IBaseController {
     protected $repository;
     protected $session;
     
