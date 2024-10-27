@@ -1,15 +1,23 @@
 <section class="audio-section dl">
     <div class="searchBox">
-        <form method="GET" class="search-form">
+        <input type="hidden" name="url" value="audio/list">
+        <input class="searchInput" type="text" name="search" 
+            value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
+            placeholder="Rechercher par titre ou artiste">
+        <button type="submit" class="searchButton" onclick="document.querySelector('form').submit();">
+            <i class="material-icons">search</i>
+        </button>
+        <form method="GET" class="search-form" style="display:none;">
             <input type="hidden" name="url" value="audio/list">
-            <input class="searchInput" type="text" name="search"
-                value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                placeholder="Rechercher par titre ou artiste">
-            <button type="submit" class="searchButton">
-                <i class="material-icons">search</i>
-            </button>
+            <input type="hidden" name="search" id="search-hidden">
         </form>
     </div>
+
+    <script>
+        document.querySelector('.searchInput').addEventListener('input', function(e) {
+            document.getElementById('search-hidden').value = e.target.value;
+        });
+    </script>
 
     <?php if (isset($_SESSION['message'])): ?>
         <div class="success-message">
