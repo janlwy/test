@@ -492,7 +492,7 @@ nav {
     flex: 1;
     height: 40px;
     padding: 0 15px;
-    border: 2px solid #2f3640;
+    border: 2px solid var(--btntheme);
     border-radius: 20px;
     outline: none;
     color: var(--fontcolor);
@@ -511,7 +511,7 @@ nav {
     width: 40px;
     border: none;
     border-radius: 50%;
-    background: #2f3640;
+    background: var(--btntheme);
     color: white;
     cursor: pointer;
     display: flex;
@@ -563,9 +563,9 @@ nav {
 
 .card {
     box-shadow: var(--cardShadow);
-    padding: 15px;
-    height: 350px;
-    background-color: var(--globale);
+    padding: 10px;
+    height: 300px;
+    background-color: var(--btntheme);
     position: relative;
 }
 
