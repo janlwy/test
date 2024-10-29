@@ -289,7 +289,7 @@ class AudioController extends BaseController implements IController
                 if (file_exists($imagePath)) {
                     unlink($imagePath);
                 }
-                throw new Exception("Erreur lors du téléchargement de l'audio");
+                throw new Exception("Le fichier est trop volumineux. La taille maximale est de 5MB pour les images et 50MB pour les fichiers audio.");
             }
 
             // Insérer dans la base de données
