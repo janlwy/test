@@ -38,12 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }));
     }
 
+    // Gestionnaire pour le bouton "Lire la sélection"
     document.getElementById('play-selected').addEventListener('click', () => {
-        const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected'));
-        if (selectedAudios.length > 0) {
-            const selectedTracks = track_list.filter(track => 
-                selectedAudios.some(selected => selected.dataset.id === track.id.toString())
-            );
+        const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+        if (selectedCheckboxes.length > 0) {
+            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+                const audioId = checkbox.getAttribute('data-audio-id');
+                return track_list.find(track => track.id.toString() === audioId);
+            });
             localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
             window.location.href = '?url=audio/player';
         } else {
@@ -51,21 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.querySelectorAll('#audio-list li').forEach(li => {
-        li.addEventListener('click', (e) => {
-            if (e.ctrlKey) {
-                // Ctrl+clic pour la sélection multiple
-                li.classList.toggle('selected');
-            } else {
-                // Clic simple pour lecture directe
-                const audioId = li.dataset.id;
-                const audioIndex = track_list.findIndex(track => track.id.toString() === audioId);
-                if (audioIndex !== -1) {
-                    const selectedTracks = [track_list[audioIndex]];
-                    localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
-                    window.location.href = '?url=audio/player';
+    // Gestionnaire pour les checkboxes
+    document.querySelectorAll('.select-audio').forEach(checkbox => {
+        checkbox.addEventListener('change', (e) => {
+            const audioItem = e.target.closest('.audio-item');
+            if (audioItem) {
+                if (e.target.checked) {
+                    audioItem.classList.add('selected');
+                } else {
+                    audioItem.classList.remove('selected');
                 }
             }
+        });
+
+        // Empêcher la propagation du clic sur la checkbox
+        checkbox.addEventListener('click', (e) => {
+            e.stopPropagation();
         });
     });
 });

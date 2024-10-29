@@ -666,6 +666,18 @@ button.btnBase.blue, button.btnBase.vert {
     margin-bottom: 20px;
     border-bottom: 1px solid var(--silver);
     padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.audio-item.selected {
+    background-color: rgba(var(--btntheme), 0.1);
+}
+
+.select-audio {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
 
 .photoAudio {
