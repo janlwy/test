@@ -188,12 +188,14 @@ class AudioController extends BaseController implements IController
             // Validation des fichiers
             $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
             $allowedAudioTypes = [
+                // Types audio standards
                 'audio/mpeg' => 'mp3',
                 'audio/mp4' => 'm4a',
                 'audio/wav' => 'wav',
                 'audio/x-m4a' => 'm4a',
                 'audio/aac' => 'aac',
                 'audio/ogg' => 'ogg',
+                // Types alternatifs pour M4A
                 'video/mp4' => 'm4a',
                 'video/x-m4v' => 'm4a',
                 'application/mp4' => 'm4a'
