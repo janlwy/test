@@ -95,10 +95,17 @@ class AudioController extends BaseController implements IController
     }
     public function create() {
         $this->checkAuth();
-        $this->checkCSRF();
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->addMusic($_POST, $_FILES);
+            try {
+                $this->checkCSRF();
+                $this->addMusic($_POST, $_FILES);
+            } catch (Exception $e) {
+                logError("Erreur CSRF : " . $e->getMessage());
+                $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer.";
+                header('Location: ?url=compte/index#form-add');
+                exit();
+            }
         } else {
             header('Location: ?url=compte/index#form-add');
             exit();
