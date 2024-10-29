@@ -45,6 +45,7 @@ function playSelectedTracks() {
     if (selectedTracks.length > 0) {
         localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
         window.location.href = '?url=audio/player';
+        return false; // Empêche tout comportement par défaut supplémentaire
     } else {
         alert('Erreur lors de la sélection des pistes audio.');
     }

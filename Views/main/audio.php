@@ -1,4 +1,8 @@
 <section>
+    <div id="audioData" 
+         data-audios='<?php echo htmlspecialchars(json_encode($audios), ENT_QUOTES, 'UTF-8'); ?>'
+         style="display: none;">
+    </div>
     <div id="player-container" class="player-container">
     <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">

@@ -155,9 +155,15 @@ class AudioController extends BaseController implements IController
 
     public function player() {
         $this->checkAuth();
+        
+        // Récupérer la liste des audios de la session
+        $audios = $_SESSION['audios'] ?? [];
+        
         $datas = [
-            'pageTitle' => "Lecteur Audio"
+            'pageTitle' => "Lecteur Audio",
+            'audios' => $audios
         ];
+        
         generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
     }
 
