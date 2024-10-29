@@ -38,5 +38,7 @@
          data-audios='<?php echo htmlspecialchars(json_encode($audios), ENT_QUOTES, 'UTF-8'); ?>'
          style="display: none;">
     </div>
-    <button id="play-selected" class="btnBase orange">Lire la sélection</button>
+    <div class="button-container">
+        <button id="play-selected" class="btnBase orange" onclick="playSelectedTracks()">Lire la sélection</button>
+    </div>
 </section>
