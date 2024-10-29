@@ -1,4 +1,6 @@
-<h2>Gestion des médias</h2>
+<?php $pageTitle = "Gestion des médias"; ?>
+
+<h2><?php echo $pageTitle; ?></h2>
 
 <section class="monEspace">
 
