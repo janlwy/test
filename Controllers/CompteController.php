@@ -8,6 +8,38 @@ class CompteController extends BaseController implements IController
         parent::__construct();
         $this->session = SessionManager::getInstance();
     }
+
+    public function list()
+    {
+        $this->checkAuth();
+        // Pour l'instant, redirige vers index car la liste n'est pas implémentée
+        header('Location: ?url=compte/index');
+        exit();
+    }
+
+    public function create()
+    {
+        $this->checkAuth();
+        // Pour l'instant, redirige vers index car la création n'est pas implémentée
+        header('Location: ?url=compte/index');
+        exit();
+    }
+
+    public function update($id = null)
+    {
+        $this->checkAuth();
+        // Pour l'instant, redirige vers index car la mise à jour n'est pas implémentée
+        header('Location: ?url=compte/index');
+        exit();
+    }
+
+    public function delete($id = null)
+    {
+        $this->checkAuth();
+        // Pour l'instant, redirige vers index car la suppression n'est pas implémentée
+        header('Location: ?url=compte/index');
+        exit();
+    }
     public function index()
     {
         // Démarrer la session si elle n'est pas déjà démarrée
