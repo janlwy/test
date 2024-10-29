@@ -214,9 +214,14 @@ class AudioController extends BaseController implements IController
             }
             
             if (!array_key_exists($audioMimeType, $allowedAudioTypes)) {
-                logError("Type de fichier audio non autorisé : " . $audioMimeType);
-                throw new Exception("Type de fichier audio non autorisé. Type détecté : " . $audioMimeType 
-                    . ". Types autorisés : " . implode(', ', array_keys($allowedAudioTypes)));
+                $errorMsg = sprintf(
+                    "Type de fichier audio non autorisé.\nType détecté : %s\nExtension : %s\nTypes autorisés : %s",
+                    $audioMimeType,
+                    pathinfo($files['path']['name'], PATHINFO_EXTENSION),
+                    implode(', ', array_keys($allowedAudioTypes))
+                );
+                logError($errorMsg);
+                throw new Exception($errorMsg);
             }
             
             // Vérification supplémentaire de l'extension
