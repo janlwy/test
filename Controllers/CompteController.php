@@ -1,7 +1,13 @@
 <?php
 
-class CompteController
+class CompteController extends BaseController implements IController
 {
+    protected $session;
+
+    public function __construct() {
+        parent::__construct();
+        $this->session = SessionManager::getInstance();
+    }
     public function index()
     {
         // Démarrer la session si elle n'est pas déjà démarrée
