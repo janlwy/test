@@ -75,6 +75,13 @@ const switchMobile = document.querySelector('.iconeTheme');
 
 
 // Menu de la navbar ---------------------------------------------------
+// Gestion de l'ouverture automatique du formulaire d'ajout audio
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#form-add') {
+        document.querySelector('.collapsible').click();
+    }
+});
+
 function myFunction() {
     var x = document.getElementById("myMenunav");
     if (x.className === "menunav") {
