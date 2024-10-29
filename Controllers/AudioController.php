@@ -156,8 +156,23 @@ class AudioController extends BaseController implements IController
     public function player() {
         $this->checkAuth();
         
-        // Récupérer la liste des audios de la session
-        $audios = $_SESSION['audios'] ?? [];
+        $manager = new Manager();
+        $userId = $_SESSION['user_id'] ?? null;
+        
+        if ($userId === null) {
+            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+            header('Location: ?url=connexion/index');
+            exit();
+        }
+        
+        // Récupérer tous les audios de l'utilisateur
+        $audios = $manager->readTableAll('audio', $userId);
+        
+        // Ajouter les chemins complets pour les fichiers
+        foreach ($audios as &$audio) {
+            $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
+            $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
+        }
         
         $datas = [
             'pageTitle' => "Lecteur Audio",

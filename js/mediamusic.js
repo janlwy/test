@@ -54,14 +54,22 @@ function playSelectedTracks() {
 document.addEventListener('DOMContentLoaded', () => {
     const audioDataElement = document.getElementById('audioData');
     if (audioDataElement) {
-        const audios = JSON.parse(audioDataElement.dataset.audios);
-        track_list = audios.map(audio => ({
-            id: audio.id,
-            path: audio.fullPath,
-            image: audio.fullImage,
-            title: audio.title,
-            artist: audio.artist
-        }));
+        try {
+            const selectedTracks = localStorage.getItem('selectedTracks');
+            if (selectedTracks) {
+                track_list = JSON.parse(selectedTracks);
+                console.log('Pistes chargées:', track_list);
+                if (track_list.length > 0) {
+                    loadTrack(0);
+                }
+                // Nettoyer le localStorage après le chargement
+                localStorage.removeItem('selectedTracks');
+            } else {
+                console.log('Aucune piste sélectionnée trouvée');
+            }
+        } catch (error) {
+            console.error('Erreur lors du chargement des pistes:', error);
+        }
     }
 
     // Gestionnaire pour les checkboxes
