@@ -202,13 +202,25 @@ class AudioController extends BaseController implements IController
             $imageMimeType = $finfo->file($files['image']['tmp_name']);
             $audioMimeType = $finfo->file($files['path']['tmp_name']);
             
+            logInfo("Type MIME de l'image : " . $imageMimeType);
+            logInfo("Type MIME de l'audio : " . $audioMimeType);
+            
             if (!in_array($imageMimeType, $allowedImageTypes)) {
-                throw new Exception("Type de fichier image non autorisé. Type détecté : " . $imageMimeType);
+                throw new Exception("Type de fichier image non autorisé. Type détecté : " . $imageMimeType 
+                    . ". Types autorisés : " . implode(', ', $allowedImageTypes));
             }
             
             if (!array_key_exists($audioMimeType, $allowedAudioTypes)) {
                 throw new Exception("Type de fichier audio non autorisé. Type détecté : " . $audioMimeType 
                     . ". Types autorisés : " . implode(', ', array_keys($allowedAudioTypes)));
+            }
+            
+            // Vérification supplémentaire de l'extension
+            $audioExtension = strtolower(pathinfo($files['path']['name'], PATHINFO_EXTENSION));
+            $expectedExtension = $allowedAudioTypes[$audioMimeType];
+            
+            if ($audioExtension !== $expectedExtension) {
+                throw new Exception("L'extension du fichier ($audioExtension) ne correspond pas au type MIME détecté ($audioMimeType)");
             }
             
             $imageErrors = $this->session->validateFileUpload($files['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
