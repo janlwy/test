@@ -187,12 +187,19 @@ class AudioController extends BaseController implements IController
             
             // Validation des fichiers
             $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
-            $allowedAudioExtensions = ['mp3', 'm4a', 'wav', 'aac', 'ogg'];
-            $allowedAudioMimeTypes = [
-                'audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-m4a',
-                'audio/aac', 'audio/ogg', 'video/mp4', 'video/x-m4v',
-                'application/mp4'
+            $allowedAudioTypes = [
+                'audio/mpeg' => 'mp3',
+                'audio/mp4' => 'm4a',
+                'audio/wav' => 'wav',
+                'audio/x-m4a' => 'm4a',
+                'audio/aac' => 'aac',
+                'audio/ogg' => 'ogg',
+                'video/mp4' => 'm4a',
+                'video/x-m4v' => 'm4a',
+                'application/mp4' => 'm4a'
             ];
+            $allowedAudioExtensions = array_values($allowedAudioTypes);
+            $allowedAudioMimeTypes = array_keys($allowedAudioTypes);
             
             // Vérification du type MIME
             $finfo = new finfo(FILEINFO_MIME_TYPE);
@@ -233,7 +240,7 @@ class AudioController extends BaseController implements IController
             }
             
             $imageErrors = $this->session->validateFileUpload($files['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
-            $audioErrors = $this->session->validateFileUpload($files['path'], $allowedAudioTypes, 10 * 1024 * 1024); // 10MB
+            $audioErrors = $this->session->validateFileUpload($files['path'], $allowedAudioMimeTypes, 10 * 1024 * 1024); // 10MB
             
             if (!empty($imageErrors) || !empty($audioErrors)) {
                 throw new Exception(implode("\n", array_merge($imageErrors, $audioErrors)));
@@ -242,7 +249,7 @@ class AudioController extends BaseController implements IController
             // Générer des noms de fichiers uniques
             $imageExt = pathinfo($files['image']['name'], PATHINFO_EXTENSION);
             $uniqueImage = uniqid() . '.' . $imageExt;
-            $uniqueAudio = uniqid() . '.' . $allowedAudioTypes[$audioMimeType];
+            $uniqueAudio = uniqid() . '.' . ($allowedAudioTypes[$audioMimeType] ?? 'mp3');
             
             // Chemins de destination
             $imagePath = 'Ressources/images/pochettes/' . $uniqueImage;
