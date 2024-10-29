@@ -194,7 +194,9 @@ class AudioController extends BaseController implements IController
                 'audio/x-m4a' => 'm4a',
                 'audio/aac' => 'aac',
                 'audio/ogg' => 'ogg',
-                'video/mp4' => 'm4a'  // Certains fichiers audio MP4 sont détectés comme video/mp4
+                'video/mp4' => 'm4a',  // Certains fichiers audio MP4 sont détectés comme video/mp4
+                'video/x-m4v' => 'm4a', // Variante possible pour les M4A
+                'application/mp4' => 'm4a' // Autre variante possible
             ];
             
             // Vérification supplémentaire du type MIME réel
