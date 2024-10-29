@@ -1,5 +1,5 @@
 <section>
-    <div id="audioData" style="display: none;"></div>
+    <div id="audioData" style="display: none;" data-user-id="<?php echo htmlspecialchars($userId); ?>"></div>
     <div id="player-container" class="player-container">
     <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">

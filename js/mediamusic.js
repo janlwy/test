@@ -34,12 +34,24 @@ function playSelectedTracks() {
     }
 
     const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-        const audioId = checkbox.getAttribute('data-audio-id');
-        const audioItem = track_list.find(track => track.id.toString() === audioId);
+        const audioItem = checkbox.closest('.audio-item');
         if (!audioItem) {
-            console.error('Audio non trouvé pour ID:', audioId);
+            console.error('Element audio-item non trouvé');
+            return null;
         }
-        return audioItem;
+        
+        const title = audioItem.querySelector('h4').textContent;
+        const artist = audioItem.querySelector('p').textContent;
+        const image = audioItem.querySelector('.photoAudio').src;
+        const id = checkbox.getAttribute('data-audio-id');
+        
+        return {
+            id: id,
+            title: title,
+            artist: artist,
+            image: image,
+            path: `Ressources/audio/${id}.mp3` // Ajustez le chemin selon votre structure
+        };
     }).filter(Boolean);
 
     if (selectedTracks.length > 0) {

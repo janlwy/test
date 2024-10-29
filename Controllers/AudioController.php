@@ -165,18 +165,10 @@ class AudioController extends BaseController implements IController
             exit();
         }
         
-        // Récupérer tous les audios de l'utilisateur
-        $audios = $manager->readTableAll('audio', $userId);
-        
-        // Ajouter les chemins complets pour les fichiers
-        foreach ($audios as &$audio) {
-            $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
-            $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
-        }
-        
+        // Les pistes sélectionnées seront gérées côté client via localStorage
         $datas = [
             'pageTitle' => "Lecteur Audio",
-            'audios' => $audios
+            'userId' => $userId
         ];
         
         generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
