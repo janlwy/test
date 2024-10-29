@@ -98,7 +98,11 @@ class AudioController extends BaseController implements IController
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             try {
-                $this->checkCSRF();
+                if (!$this->session->has('csrf_token') || 
+                    !isset($_POST['csrf_token']) ||
+                    !hash_equals($this->session->get('csrf_token'), $_POST['csrf_token'])) {
+                    throw new Exception("jeton invalide.");
+                }
                 $this->addMusic($_POST, $_FILES);
             } catch (Exception $e) {
                 logError("Erreur CSRF : " . $e->getMessage());

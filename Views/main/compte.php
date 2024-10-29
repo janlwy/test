@@ -52,7 +52,7 @@
                     <input type="file" name="path" id="path" class="inputMonEspace" required />
                 </div>
             </div>
-            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+            <input type="hidden" name="csrf_token" value="<?php echo $session->regenerateToken(); ?>">
             <input type="hidden" name="hide" id="hidden" />
             <div id="msg"></div>
             <hr>
