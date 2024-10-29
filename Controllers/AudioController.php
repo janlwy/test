@@ -255,8 +255,8 @@ class AudioController extends BaseController implements IController
                 throw new Exception($errorMsg);
             }
             
-            $imageErrors = $this->session->validateFileUpload($files['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
-            $audioErrors = $this->session->validateFileUpload($files['path'], $allowedAudioMimeTypes, 10 * 1024 * 1024); // 10MB
+            $imageErrors = $this->session->validateFileUpload($files['image'], $allowedImageTypes, 5 * 1024 * 1024); // 5MB
+            $audioErrors = $this->session->validateFileUpload($files['path'], $allowedAudioMimeTypes, 50 * 1024 * 1024); // 50MB
             
             if (!empty($imageErrors) || !empty($audioErrors)) {
                 throw new Exception(implode("\n", array_merge($imageErrors, $audioErrors)));
