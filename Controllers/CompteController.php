@@ -9,8 +9,11 @@ class CompteController
 
         // Vérifier si l'utilisateur est connecté
         if ($this->isUserLoggedIn()) {
-            $datas = [];
-            generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon calepin");
+            $datas = [
+                'session' => $this->session,
+                'pageTitle' => "Gestion des médias"
+            ];
+            generate("Views/main/compte.php", $datas, "Views/base.html.php", "Gestion des médias");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             $this->redirectToLogin();
