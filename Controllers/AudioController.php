@@ -74,6 +74,12 @@ class AudioController extends BaseController implements IController
         
         $audios = $this->audioRepository->findAllByUser($userId);
         
+        // Ajouter les chemins complets pour les fichiers audio
+        foreach ($audios as $audio) {
+            $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
+            $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
+        }
+        
         // Filtrer les résultats
         if (!empty($search)) {
             $audios = array_filter($audios, function($audio) use ($search) {
@@ -145,6 +151,14 @@ class AudioController extends BaseController implements IController
             header('Location: ?url=audio/list');
         }
         exit();
+    }
+
+    public function player() {
+        $this->checkAuth();
+        $datas = [
+            'pageTitle' => "Lecteur Audio"
+        ];
+        generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
     }
 
     public function delete($id) {

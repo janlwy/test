@@ -33,9 +33,10 @@
     <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';">Ajouter</button>
 
     <?php echo $audioList; ?>
-
-    <script>
-        var audios = <?php echo json_encode($audios); ?>;
-    </script>
+    
+    <div id="audioData" 
+         data-audios='<?php echo htmlspecialchars(json_encode($audios), ENT_QUOTES, 'UTF-8'); ?>'
+         style="display: none;">
+    </div>
     <button id="play-selected" class="btnBase orange">Lire la sélection</button>
 </section>

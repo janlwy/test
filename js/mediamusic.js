@@ -26,11 +26,13 @@ let curr_track = document.createElement('audio');
 
 let track_list = [];
 document.addEventListener('DOMContentLoaded', () => {
-    if (typeof audios !== 'undefined') {
+    const audioDataElement = document.getElementById('audioData');
+    if (audioDataElement) {
+        const audios = JSON.parse(audioDataElement.dataset.audios);
         track_list = audios.map(audio => ({
             id: audio.id,
-            path: audio.path,
-            image: audio.image,
+            path: audio.fullPath,
+            image: audio.fullImage,
             title: audio.title,
             artist: audio.artist
         }));
@@ -39,14 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('play-selected').addEventListener('click', () => {
         const selectedAudios = Array.from(document.querySelectorAll('#audio-list li.selected'));
         if (selectedAudios.length > 0) {
-            // Filtrer track_list pour ne garder que les audios sélectionnés
-            track_list = track_list.filter(track => 
+            const selectedTracks = track_list.filter(track => 
                 selectedAudios.some(selected => selected.dataset.id === track.id.toString())
             );
-            // Réinitialiser l'index et démarrer la lecture
-            track_index = 0;
-            loadTrack(track_index);
-            playTrack();
+            localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
+            window.location.href = '?url=audio/player';
         } else {
             alert('Veuillez sélectionner au moins un enregistrement audio.');
         }
@@ -62,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const audioId = li.dataset.id;
                 const audioIndex = track_list.findIndex(track => track.id.toString() === audioId);
                 if (audioIndex !== -1) {
-                    track_index = audioIndex;
-                    loadTrack(track_index);
-                    playTrack();
+                    const selectedTracks = [track_list[audioIndex]];
+                    localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
+                    window.location.href = '?url=audio/player';
                 }
             }
         });
