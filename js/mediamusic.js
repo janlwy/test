@@ -25,6 +25,31 @@ let updateTimer;
 let curr_track = document.createElement('audio');
 
 let track_list = [];
+// Fonction globale pour jouer les pistes sélectionnées
+function playSelectedTracks() {
+    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    if (selectedCheckboxes.length === 0) {
+        alert('Veuillez sélectionner au moins un enregistrement audio.');
+        return;
+    }
+
+    const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+        const audioId = checkbox.getAttribute('data-audio-id');
+        const audioItem = track_list.find(track => track.id.toString() === audioId);
+        if (!audioItem) {
+            console.error('Audio non trouvé pour ID:', audioId);
+        }
+        return audioItem;
+    }).filter(Boolean);
+
+    if (selectedTracks.length > 0) {
+        localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
+        window.location.href = '?url=audio/player';
+    } else {
+        alert('Erreur lors de la sélection des pistes audio.');
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const audioDataElement = document.getElementById('audioData');
     if (audioDataElement) {
@@ -36,30 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
             title: audio.title,
             artist: audio.artist
         }));
-    }
-
-    function playSelectedTracks() {
-        const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
-        if (selectedCheckboxes.length === 0) {
-            alert('Veuillez sélectionner au moins un enregistrement audio.');
-            return;
-        }
-
-        const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-            const audioId = checkbox.getAttribute('data-audio-id');
-            const audioItem = track_list.find(track => track.id.toString() === audioId);
-            if (!audioItem) {
-                console.error('Audio non trouvé pour ID:', audioId);
-            }
-            return audioItem;
-        }).filter(Boolean);
-
-        if (selectedTracks.length > 0) {
-            localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
-            window.location.href = '?url=audio/player';
-        } else {
-            alert('Erreur lors de la sélection des pistes audio.');
-        }
     }
 
     // Gestionnaire pour les checkboxes

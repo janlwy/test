@@ -39,6 +39,6 @@
          style="display: none;">
     </div>
     <div class="button-container">
-        <button id="play-selected" class="btnBase orange" onclick="playSelectedTracks()">Lire la sélection</button>
+        <button type="button" id="play-selected" class="btnBase orange" onclick="playSelectedTracks()">Lire la sélection</button>
     </div>
 </section>
