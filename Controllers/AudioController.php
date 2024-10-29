@@ -46,7 +46,7 @@ class AudioController extends BaseController implements IController
                 $title = htmlspecialchars($audio->getTitle(), ENT_QUOTES, 'UTF-8');
                 $artist = htmlspecialchars($audio->getArtist(), ENT_QUOTES, 'UTF-8');
                 $image = htmlspecialchars($audio->getImage(), ENT_QUOTES, 'UTF-8');
-                $afficher = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
+                $selectionligne = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
                 $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
                 $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
                 $list .= "<div class='audio-item'>";
@@ -56,7 +56,7 @@ class AudioController extends BaseController implements IController
                 $list .= "<h4>$title</h4>";
                 $list .= "<p>$artist</p>";
 
-                $list .= "<div class='button-group'>$afficher $modifier $supprimer</div>";
+                $list .= "<div class='button-group'>$selectionligne $modifier $supprimer</div>";
                 $list .= "</div></div>";
             }
             $list .= "</dl><br><br>";
