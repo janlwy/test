@@ -30,10 +30,7 @@
         <?php unset($_SESSION['erreur']); ?>
     <?php endif; ?>
 
-    <form method="POST" action="?url=audio/create" enctype="multipart/form-data">
-        <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-        <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';">Ajouter</button>
-    </form>
+    <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';">Ajouter</button>
 
     <?php echo $audioList; ?>
 
