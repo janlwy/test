@@ -187,19 +187,14 @@ class AudioController extends BaseController implements IController
             
             // Validation des fichiers
             $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
-            $allowedAudioTypes = [
-                'audio/mpeg' => 'mp3',
-                'audio/mp4' => 'm4a',
-                'audio/wav' => 'wav',
-                'audio/x-m4a' => 'm4a',
-                'audio/aac' => 'aac',
-                'audio/ogg' => 'ogg',
-                'video/mp4' => 'm4a',  // Certains fichiers audio MP4 sont détectés comme video/mp4
-                'video/x-m4v' => 'm4a', // Variante possible pour les M4A
-                'application/mp4' => 'm4a' // Autre variante possible
+            $allowedAudioExtensions = ['mp3', 'm4a', 'wav', 'aac', 'ogg'];
+            $allowedAudioMimeTypes = [
+                'audio/mpeg', 'audio/mp4', 'audio/wav', 'audio/x-m4a',
+                'audio/aac', 'audio/ogg', 'video/mp4', 'video/x-m4v',
+                'application/mp4'
             ];
             
-            // Vérification supplémentaire du type MIME réel
+            // Vérification du type MIME
             $finfo = new finfo(FILEINFO_MIME_TYPE);
             $imageMimeType = $finfo->file($files['image']['tmp_name']);
             $audioMimeType = $finfo->file($files['path']['tmp_name']);
@@ -207,29 +202,34 @@ class AudioController extends BaseController implements IController
             logInfo("Type MIME de l'image : " . $imageMimeType);
             logInfo("Type MIME de l'audio : " . $audioMimeType);
             
+            // Validation de l'image
             if (!in_array($imageMimeType, $allowedImageTypes)) {
                 logError("Type de fichier image non autorisé : " . $imageMimeType);
                 throw new Exception("Type de fichier image non autorisé. Type détecté : " . $imageMimeType 
                     . ". Types autorisés : " . implode(', ', $allowedImageTypes));
             }
             
-            if (!array_key_exists($audioMimeType, $allowedAudioTypes)) {
+            // Validation de l'audio : d'abord vérifier l'extension
+            $audioExtension = strtolower(pathinfo($files['path']['name'], PATHINFO_EXTENSION));
+            if (!in_array($audioExtension, $allowedAudioExtensions)) {
                 $errorMsg = sprintf(
-                    "Type de fichier audio non autorisé.\nType détecté : %s\nExtension : %s\nTypes autorisés : %s",
-                    $audioMimeType,
-                    pathinfo($files['path']['name'], PATHINFO_EXTENSION),
-                    implode(', ', array_keys($allowedAudioTypes))
+                    "Extension de fichier audio non autorisée.\nExtension : %s\nExtensions autorisées : %s",
+                    $audioExtension,
+                    implode(', ', $allowedAudioExtensions)
                 );
                 logError($errorMsg);
                 throw new Exception($errorMsg);
             }
             
-            // Vérification supplémentaire de l'extension
-            $audioExtension = strtolower(pathinfo($files['path']['name'], PATHINFO_EXTENSION));
-            $expectedExtension = $allowedAudioTypes[$audioMimeType];
-            
-            if ($audioExtension !== $expectedExtension) {
-                throw new Exception("L'extension du fichier ($audioExtension) ne correspond pas au type MIME détecté ($audioMimeType)");
+            // Ensuite vérifier le type MIME
+            if (!in_array($audioMimeType, $allowedAudioMimeTypes)) {
+                $errorMsg = sprintf(
+                    "Type MIME audio non autorisé.\nType détecté : %s\nTypes autorisés : %s",
+                    $audioMimeType,
+                    implode(', ', $allowedAudioMimeTypes)
+                );
+                logError($errorMsg);
+                throw new Exception($errorMsg);
             }
             
             $imageErrors = $this->session->validateFileUpload($files['image'], $allowedImageTypes, 2 * 1024 * 1024); // 2MB
