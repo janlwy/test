@@ -5,14 +5,6 @@
     <button type="button" class="collapsible">Musiques</button>
     <div class="contentCollapse">
         <button type="button" class="btnBase invisible invisibleTxt" id="form-add"> </button>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                if (window.location.hash === '#form-add') {
-                    document.querySelector('.collapsible').click();
-                }
-            });
-        </script>
-
         <form id="formCrud" class="formFont" method="POST" action="?url=audio/create" enctype="multipart/form-data">
             <div class="rowEspace">
                 <div class="collabel">
