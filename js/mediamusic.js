@@ -45,12 +45,16 @@ function playSelectedTracks() {
         const image = audioItem.querySelector('.photoAudio').src;
         const id = checkbox.getAttribute('data-audio-id');
         
+        // Récupérer l'extension du fichier audio depuis les données du serveur
+        const audioData = JSON.parse(document.getElementById('audioData').getAttribute('data-audios'));
+        const audioInfo = audioData.find(audio => audio.id === parseInt(id));
+        
         return {
             id: id,
             title: title,
             artist: artist,
             image: image,
-            path: `Ressources/audio/${id}` // Le chemin sans extension, elle sera récupérée depuis la base de données
+            path: `Ressources/audio/${audioInfo.path}` // Utilise le chemin complet avec l'extension
         };
     }).filter(Boolean);
 
