@@ -35,7 +35,9 @@
     <?php echo $audioList; ?>
     
     <div id="audioData" 
-         data-audios='<?php echo htmlspecialchars(json_encode($audios), ENT_QUOTES, 'UTF-8'); ?>'
+         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function($audio) { 
+             return $audio->jsonData;
+         }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'
          style="display: none;">
     </div>
     <div class="button-container">

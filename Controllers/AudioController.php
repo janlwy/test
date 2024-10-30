@@ -74,10 +74,20 @@ class AudioController extends BaseController implements IController
         
         $audios = $this->audioRepository->findAllByUser($userId);
         
-        // Ajouter les chemins complets pour les fichiers audio
+        // Préparer les données complètes pour chaque audio
         foreach ($audios as $audio) {
             $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
             $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
+            // Ajouter les données complètes pour le data-audios
+            $audio->jsonData = [
+                'id' => $audio->getId(),
+                'title' => $audio->getTitle(),
+                'artist' => $audio->getArtist(),
+                'path' => $audio->getPath(),
+                'fullPath' => $audio->fullPath,
+                'image' => $audio->getImage(),
+                'fullImage' => $audio->fullImage
+            ];
         }
         
         // Filtrer les résultats
