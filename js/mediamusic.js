@@ -86,13 +86,13 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const selectedTracks = localStorage.getItem('selectedTracks');
             if (selectedTracks) {
-                track_list = JSON.parse(selectedTracks);
+                // Ne pas effacer la sélection précédente si elle existe déjà
+                const currentTracks = track_list.length > 0 ? track_list : JSON.parse(selectedTracks);
+                track_list = currentTracks;
                 console.log('Pistes chargées:', track_list);
-                if (track_list.length > 0) {
-                    loadTrack(0);
+                if (track_list.length > 0 && !isPlaying) {
+                    loadTrack(track_index || 0);
                 }
-                // Nettoyer le localStorage après le chargement
-                localStorage.removeItem('selectedTracks');
             } else {
                 console.log('Aucune piste sélectionnée trouvée');
             }
@@ -158,7 +158,15 @@ function loadTrack(track_index) {
 
     // Move to the next track if the current finishes playing
     // using the 'ended' event
-    curr_track.addEventListener("ended", nextTrack);
+    curr_track.addEventListener("ended", () => {
+        nextTrack();
+        // Si c'était la dernière piste
+        if (track_index === 0) {
+            // Nettoyer le localStorage seulement quand toutes les pistes ont été lues
+            localStorage.removeItem('selectedTracks');
+            track_list = [];
+        }
+    });
 }
 
 // Function to reset all values to their default
