@@ -50,11 +50,24 @@ function playSelectedTracks() {
             title: title,
             artist: artist,
             image: image,
-            path: `Ressources/audio/${id}.mp3` // Ajustez le chemin selon votre structure
+            path: `Ressources/audio/${id}` // On utilise l'ID sans extension pour récupérer le fichier tel qu'il est stocké
         };
     }).filter(Boolean);
 
     if (selectedTracks.length > 0) {
+        // Vérifier que les chemins des fichiers sont corrects
+        selectedTracks.forEach(track => {
+            console.log('Piste sélectionnée:', track);
+            // Tenter de charger le fichier pour vérifier son existence
+            fetch(track.path)
+                .then(response => {
+                    if (!response.ok) {
+                        console.error('Erreur de chargement pour:', track.path);
+                    }
+                })
+                .catch(error => console.error('Erreur réseau:', error));
+        });
+        
         localStorage.setItem('selectedTracks', JSON.stringify(selectedTracks));
         window.location.href = '?url=audio/player';
         return false; // Empêche tout comportement par défaut supplémentaire
@@ -110,7 +123,21 @@ function loadTrack(track_index) {
     resetValues();
 
     // Load a new track
-    curr_track.src = track_list[track_index].path;
+    const trackPath = track_list[track_index].path;
+    console.log('Chargement de la piste:', trackPath);
+    curr_track.src = trackPath;
+    
+    // Ajouter des gestionnaires d'événements pour déboguer
+    curr_track.addEventListener('error', (e) => {
+        console.error('Erreur de chargement audio:', e);
+        console.error('Code erreur:', curr_track.error.code);
+        console.error('Message erreur:', curr_track.error.message);
+    });
+    
+    curr_track.addEventListener('loadeddata', () => {
+        console.log('Piste audio chargée avec succès');
+    });
+    
     curr_track.load();
 
     // Update details of the track
