@@ -51,7 +51,7 @@ class CompteController extends BaseController implements IController
                 'session' => $this->session,
                 'pageTitle' => "Gestion des médias"
             ];
-            generate("Views/main/compte.php", $datas, "Views/base.html.php", "Gestion des médias");
+            generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon compte");
         } else {
             // Rediriger vers la page de connexion si l'utilisateur n'est pas connecté
             $this->redirectToLogin();

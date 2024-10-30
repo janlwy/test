@@ -46,8 +46,8 @@ class AudioController extends BaseController implements IController
                 $artist = htmlspecialchars($audio->getArtist(), ENT_QUOTES, 'UTF-8');
                 $image = htmlspecialchars($audio->getImage(), ENT_QUOTES, 'UTF-8');
                 $selectionligne = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
-                $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'>Modifier</a>";
-                $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'>Supprimer</a>";
+                $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'><i class='material-icons'>update</i></a>";
+                $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'><i class='material-icons'>delete</i></a>";
                 $list .= "<div class='audio-item'>";
 
                 $list .= "<img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'>";
@@ -106,7 +106,7 @@ class AudioController extends BaseController implements IController
             'session' => $this->session
         ];
         
-        generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste des Audio");
+        generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste Audio");
     }
     public function create() {
         $this->checkAuth();

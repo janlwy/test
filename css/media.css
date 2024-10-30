@@ -110,6 +110,7 @@ i { /* Change le curseur de la souris en pointeur au survol */
 .material-icons.md-48 { font-size: 48px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-24 { font-size: 24px; }
+.material-icons.md-16 { font-size: 16px; }
 
 .btnBase {
     border: none;
@@ -137,6 +138,10 @@ i { /* Change le curseur de la souris en pointeur au survol */
    /* box-shadow: -2px 3px 10px 1px #807f7fc4; */
     background-color: var(--btnBackGround);
     text-align: center !important;
+}
+
+.iconColor {
+    color: var(--cardIcons);
 }
 
 .boutonTheme:active {
@@ -431,8 +436,8 @@ nav {
 }
 
 .menunav a:hover {
-    background-color: #b4ab9c67;
-    color: #880909a4;
+    background-color: #9cabb485;
+    color: var(--fontcolor);
 }
 
 .boutonright {
@@ -458,7 +463,8 @@ nav {
 }
 
 .menunav .material-icons {
-    color: #f5f5f5;
+    
+    color: var(--cardIcons);
 }
 
 .menunav .menuicon {
@@ -713,6 +719,13 @@ button.btnBase.blue, button.btnBase.vert {
     align-items: center;
 }
 
+.boutonAligne {
+    display: flex;
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 /************************************ collapse ***************************************/
 .collapsible {
