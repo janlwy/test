@@ -50,7 +50,7 @@ function playSelectedTracks() {
             title: title,
             artist: artist,
             image: image,
-            path: `Ressources/audio/${id}.mp3` // Ajouter l'extension .mp3 pour le fichier audio
+            path: `Ressources/audio/${id}` // Le chemin sans extension, elle sera récupérée depuis la base de données
         };
     }).filter(Boolean);
 

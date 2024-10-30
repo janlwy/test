@@ -278,7 +278,7 @@ class AudioController extends BaseController implements IController
             // Générer des noms de fichiers uniques
             $imageExt = pathinfo($files['image']['name'], PATHINFO_EXTENSION);
             $uniqueImage = uniqid() . '.' . $imageExt;
-            $uniqueAudio = uniqid() . '.' . ($allowedAudioTypes[$audioMimeType] ?? 'mp3');
+            $uniqueAudio = uniqid() . '.' . $audioExtension;
             
             // Chemins de destination
             $imagePath = 'Ressources/images/pochettes/' . $uniqueImage;
