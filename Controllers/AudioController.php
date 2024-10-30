@@ -18,21 +18,20 @@ class AudioController extends BaseController implements IController
 
     public function listeAudio()
     {
-        $manager = new Manager();
-        $userId = $_SESSION['user_id'] ?? null;
-        if ($userId === null) {
-            logError("Erreur : user_id est null");
-            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+        try {
+            $manager = new Manager();
+            $userId = $_SESSION['user_id'] ?? null;
+            if ($userId === null) {
+                throw new Exception("Utilisateur non identifié");
+            }
+            $audios = $manager->readTableAll('audio', $userId);
+            return $this->generateAudioTable($audios ?: []);
+        } catch (Exception $e) {
+            logError("Erreur dans listeAudio: " . $e->getMessage());
+            $_SESSION['erreur'] = $e->getMessage();
             header('Location: ?url=connexion/index');
             exit();
         }
-        $audios = $manager->readTableAll('audio', $userId);
-        if ($audios) {
-            $_SESSION['audios'] = $audios; // Stocker les audios dans la session
-        } else {
-            $_SESSION['audios'] = [];
-        }
-        return $this->generateAudioTable($audios);
     }
 
     public function generateAudioTable($audios)
