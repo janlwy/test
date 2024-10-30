@@ -10,7 +10,7 @@
     <div class="player-audio">
         <!-- Section pour afficher les détails -->
         <div class="details-audio">
-            <div class="now-playing">Piste x de y</div>
+            <div class="now-playing">Piste 0 de 0</div>
             <div class="track-art"></div>
             <div class="track-name">Nom de la piste</div>
             <div class="track-artist">Artiste de la piste</div>

@@ -122,15 +122,21 @@ if (window.location.pathname === '/index.php' || window.location.pathname === '/
     document.getElementById('myMenunav').style.display = 'none';
 }
 
-fetchAllMusics(playlist);
-// Fonction Recherche
+// Fonction Recherche 
 document
     .querySelectorAll("input[type=search]")[0]
-    .addEventListener("input", search);
-
-function search() {
-    const filteredData = playlist.filter(playlist =>
-        playlist.title.toLowerCase().includes(this.value.toLowerCase())
-    );
-    fetchAllMusics(filteredData);
-}
+    .addEventListener("input", function(e) {
+        const searchValue = e.target.value.toLowerCase();
+        const audioItems = document.querySelectorAll('.audio-item');
+        
+        audioItems.forEach(item => {
+            const title = item.querySelector('h4').textContent.toLowerCase();
+            const artist = item.querySelector('p').textContent.toLowerCase();
+            
+            if (title.includes(searchValue) || artist.includes(searchValue)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });

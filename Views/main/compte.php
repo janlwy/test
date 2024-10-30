@@ -2,7 +2,7 @@
 
 <section class="monEspace">
 
-    <button type="button" class="collapsible">Musiques</button>
+    <button type="button" class="collapsible">Audio</button>
     <div class="contentCollapse">
         <button type="button" class="btnBase invisible invisibleTxt" id="form-add"> </button>
         <form id="formCrud" class="formFont" method="POST" action="?url=audio/create" enctype="multipart/form-data">
@@ -73,7 +73,7 @@
     </div>
     <span class="br"></span>
 
-    <button type="button" class="collapsible">Vidéos</button>
+    <button type="button" class="collapsible">Vidéo</button>
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="VideoAdd">Ajouter une Vidéo</button>
         <div class="formFont" id="contentVideo">
@@ -81,7 +81,7 @@
     </div>
     <span class="br"></span>
 
-    <button type="button" class="collapsible">Photos</button>
+    <button type="button" class="collapsible">Photo</button>
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="PhotoAdd">Ajouter une Photo</button>
         <div class="formFont" id="contentPhoto">
@@ -89,7 +89,7 @@
     </div>
     <span class="br"></span>
 
-    <button type="button" class="collapsible">Textes</button>
+    <button type="button" class="collapsible">Texte</button>
     <div class="contentCollapse"><span class="br"></span>
         <button type="button" class="btnBase blue" id="texteAdd">Ajouter un texte</button>
         <div class="formFont" id="contentTexte">

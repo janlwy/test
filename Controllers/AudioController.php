@@ -331,7 +331,7 @@ class AudioController extends BaseController implements IController
             $manager = new Manager();
             $manager->insertTable('audio', $data);
 
-            $_SESSION['message'] = "Musique ajoutée avec succès";
+            $_SESSION['message'] = "Audio ajoutée avec succès";
             header('Location: ?url=audio/list');
             exit();
 
