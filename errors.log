@@ -769,3 +769,45 @@
 2024-10-31 00:34:51 - [info] - Appel de la méthode player dans le contrôleur AudioController
 2024-10-31 00:35:09 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
 2024-10-31 00:35:09 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 00:59:15 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 00:59:15 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 00:59:17 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 00:59:17 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 00:59:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-31 00:59:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-31 00:59:24 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 00:59:24 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 00:59:35 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 00:59:35 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:02:18 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-31 01:02:18 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-31 01:02:24 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 01:02:24 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 01:03:38 - [error] - Erreur CSRF : jeton invalide.
+2024-10-31 01:03:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:03:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:03:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:03:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:05:06 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 01:05:06 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 01:05:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-31 01:05:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-31 01:05:10 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:05:10 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:05:14 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 01:05:14 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 01:05:53 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:05:53 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:05:55 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 01:05:55 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 01:07:41 - [error] - Erreur CSRF : jeton invalide.
+2024-10-31 01:07:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:07:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:07:54 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:07:54 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:19:45 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 01:19:45 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 01:19:50 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 01:19:50 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 01:19:52 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 01:19:52 - [info] - Appel de la méthode index dans le contrôleur CompteController
