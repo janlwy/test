@@ -73,7 +73,6 @@ if (session_status() === PHP_SESSION_NONE) {
 	<script src="js/media.js"></script>
 	<script src="js/mediavideo.js"></script>
 	<script src="js/mediamusic.js"></script>
-	<script src="js/audioRecorder.js"></script>
 	<noscript>Vous devez activer javascript pour une expérience complête de ce site</noscript>
 </body>
 

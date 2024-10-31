@@ -46,14 +46,8 @@
                 </div>
                 <div class="colinput">
                     <input type="file" name="path" id="path" class="inputMonEspace"
+                        required
                         accept="audio/mpeg,audio/mp4,audio/wav,audio/x-m4a,audio/aac,audio/ogg,video/mp4,video/x-m4v,application/mp4" />
-                    <div class="recorder-container">
-                        <button type="button" id="recordButton" class="btnBase theme" onclick="toggleRecording()">
-                            <i class="material-icons">mic</i>
-                        </button>
-                        <canvas id="visualizer" width="200" height="50"></canvas>
-                        <div id="audioEditor"></div>
-                    </div>
                 </div>
             </div>
             <input type="hidden" name="csrf_token" value="<?php echo $session->regenerateToken(); ?>">
