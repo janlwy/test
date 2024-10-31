@@ -811,3 +811,27 @@
 2024-10-31 01:19:50 - [info] - Appel de la méthode list dans le contrôleur AudioController
 2024-10-31 01:19:52 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-10-31 01:19:52 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 09:52:28 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 09:52:28 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 09:52:36 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-10-31 09:52:36 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-10-31 09:52:40 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 09:52:40 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 09:52:44 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 09:52:44 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 09:52:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 09:52:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 09:52:58 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 09:52:58 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 09:55:30 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 09:55:30 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 09:55:49 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-10-31 09:55:49 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-10-31 09:55:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 09:55:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-10-31 09:55:54 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 09:55:54 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 09:56:33 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-10-31 09:56:33 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-10-31 09:56:43 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-10-31 09:56:43 - [info] - Appel de la méthode list dans le contrôleur AudioController

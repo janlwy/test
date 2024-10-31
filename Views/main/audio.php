@@ -42,10 +42,11 @@
                 <input type="range" aria-label="nolabel" min="1" max="100" value="99" class="volume_slider" onchange="setVolume()">
                 <i class="material-icons md-24">volume_up</i>
             </div>
-        </div><br><hr><br>
+        </div><br>
+        <hr><br>
         <div class="boutonAligne">
-            <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">library_add</i></button>
             <button type="button" class="btnBase theme" onclick="window.location.href='?url=audio/list';"><i class="iconColor material-icons md-36">undo</i></button>
+            <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">library_add</i></button>
             <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">mic</i></button>
         </div>
 </section>
