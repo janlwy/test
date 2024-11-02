@@ -14,7 +14,7 @@
                     <input type="text" name="title" id="title" class="inputMonEspace" 
                         value="<?php echo isset($audio) ? htmlspecialchars($audio->getTitle()) : ''; ?>"
                         <?php if (!isset($audio)): ?>required<?php endif; ?>
-                        pattern="[A-Za-z0-9\s\-_\.]{2,100}"
+                        pattern="[A-Za-zÀ-ÿ0-9\s\-_\.']{2,100}"
                         title="Le titre doit contenir entre 2 et 100 caractères alphanumériques"
                         maxlength="100" />
                 </div>
@@ -27,7 +27,7 @@
                     <input type="text" name="artiste" id="artist" class="inputMonEspace"
                         value="<?php echo isset($audio) ? htmlspecialchars($audio->getArtist()) : ''; ?>"
                         required
-                        pattern="[A-Za-z0-9\s\-_\.]{2,100}"
+                        pattern="[A-Za-zÀ-ÿ0-9\s\-_\.']{2,100}"
                         title="Le nom de l'artiste doit contenir entre 2 et 100 caractères alphanumériques"
                         maxlength="100" />
                 </div>
