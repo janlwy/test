@@ -46,7 +46,7 @@ class AudioController extends BaseController implements IController
                 $artist = htmlspecialchars($audio->getArtist(), ENT_QUOTES, 'UTF-8');
                 $image = htmlspecialchars($audio->getImage(), ENT_QUOTES, 'UTF-8');
                 $selectionligne = "<input type='checkbox' class='select-audio' data-audio-id='$id'>";
-                $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id'><i class='material-icons'>update</i></a>";
+                $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id#form-add'><i class='material-icons'>update</i></a>";
                 $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'><i class='material-icons'>delete</i></a>";
                 $list .= "<div class='audio-item'>";
 
@@ -159,6 +159,12 @@ class AudioController extends BaseController implements IController
                     'formAction' => "?url=audio/update/$id"
                 ];
                 generate("Views/main/compte.php", $datas, "Views/base.html.php", "Modifier un audio");
+                echo "<script>document.addEventListener('DOMContentLoaded', function() {
+                    var audioCollapsible = document.querySelector('.collapsible');
+                    if (audioCollapsible) {
+                        audioCollapsible.click();
+                    }
+                });</script>";
             }
         } catch (Exception $e) {
             $_SESSION['erreur'] = $e->getMessage();
