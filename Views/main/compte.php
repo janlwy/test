@@ -12,7 +12,7 @@
                 </div>
                 <div class="colinput">
                     <input type="text" name="title" id="title" class="inputMonEspace" 
-                        value="<?php echo isset($audio) ? htmlspecialchars($audio->getTitle()) : ''; ?>"
+                        value="<?php echo isset($audio) ? html_entity_decode($audio->getTitle(), ENT_QUOTES, 'UTF-8') : ''; ?>"
                         <?php if (!isset($audio)): ?>required<?php endif; ?>
                         pattern="[A-Za-zÀ-ÿ0-9\s\-_\.']{2,100}"
                         title="Le titre doit contenir entre 2 et 100 caractères alphanumériques"
@@ -25,7 +25,7 @@
                 </div>
                 <div class="colinput">
                     <input type="text" name="artiste" id="artist" class="inputMonEspace"
-                        value="<?php echo isset($audio) ? htmlspecialchars($audio->getArtist()) : ''; ?>"
+                        value="<?php echo isset($audio) ? html_entity_decode($audio->getArtist(), ENT_QUOTES, 'UTF-8') : ''; ?>"
                         required
                         pattern="[A-Za-zÀ-ÿ0-9\s\-_\.']{2,100}"
                         title="Le nom de l'artiste doit contenir entre 2 et 100 caractères alphanumériques"

@@ -150,8 +150,8 @@ class AudioController extends BaseController implements IController
                 $this->checkCSRF();
                 
                 // Validation des données
-                $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
-                $artist = htmlspecialchars(trim($_POST['artiste']), ENT_QUOTES, 'UTF-8');
+                $title = trim($_POST['title']);
+                $artist = trim($_POST['artiste']);
                 
                 if (empty($title) || empty($artist)) {
                     throw new Exception("Les champs titre et artiste sont requis");
