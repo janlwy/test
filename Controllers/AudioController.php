@@ -148,9 +148,53 @@ class AudioController extends BaseController implements IController
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $this->checkCSRF();
-                // TODO: Implement update logic
+                
+                // Validation des données
+                $title = htmlspecialchars(trim($_POST['title']), ENT_QUOTES, 'UTF-8');
+                $artist = htmlspecialchars(trim($_POST['artiste']), ENT_QUOTES, 'UTF-8');
+                
+                if (empty($title) || empty($artist)) {
+                    throw new Exception("Les champs titre et artiste sont requis");
+                }
+
+                $data = [
+                    'title' => $title,
+                    'artist' => $artist,
+                    'id' => $id
+                ];
+
+                // Gestion de l'image si une nouvelle est uploadée
+                if (isset($_FILES['image']) && $_FILES['image']['size'] > 0) {
+                    $allowedImageTypes = ['image/jpeg', 'image/png', 'image/webp'];
+                    $imageErrors = $this->session->validateFileUpload($_FILES['image'], $allowedImageTypes, 5 * 1024 * 1024);
+                    
+                    if (!empty($imageErrors)) {
+                        throw new Exception(implode("\n", $imageErrors));
+                    }
+
+                    $imageExt = pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION);
+                    $uniqueImage = uniqid() . '.' . $imageExt;
+                    $imagePath = 'Ressources/images/pochettes/' . $uniqueImage;
+
+                    if (move_uploaded_file($_FILES['image']['tmp_name'], $imagePath)) {
+                        // Supprimer l'ancienne image
+                        $oldImage = 'Ressources/images/pochettes/' . $audio->getImage();
+                        if (file_exists($oldImage)) {
+                            unlink($oldImage);
+                        }
+                        $data['image'] = $uniqueImage;
+                    } else {
+                        throw new Exception("Erreur lors du téléchargement de l'image");
+                    }
+                }
+
+                // Mise à jour dans la base de données
+                $manager = new Manager();
+                $manager->updateTable('audio', $data, $id);
+
                 $_SESSION['message'] = "Audio mis à jour avec succès";
                 header('Location: ?url=audio/list');
+                exit();
             } else {
                 $datas = [
                     'pageTitle' => 'Modifier un audio',
