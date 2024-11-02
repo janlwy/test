@@ -20,21 +20,25 @@
 
 /************************* Mise en forme globale du fond *********************************/
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-html, footer {
+html {
+    height: 100%;
     font-size: 11px;
 }
 
-body { 
-    /* min-height: 100vh; */ /* hauteur totale du viewport */
+body {
+    min-height: 100%;
     width: 85%;
-    margin: auto;
+    margin: 0 auto;
+    padding: 0;
     color: var(--fontcolor);
     background: var(--bodyBg);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    margin-bottom: 20px;
 }
 
 header h1 {
@@ -786,7 +790,8 @@ footer {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin: 40px 0 0 0;
+    margin: 0;
+    flex-shrink: 0;
 }
 
 .socle {
