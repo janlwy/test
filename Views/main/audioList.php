@@ -32,8 +32,8 @@
     <br><br>
     <div class="boutonAligne">
         <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">library_add</i><span class="spanIconText">Ajouter</span></button>
-        <button type="button" class="btnBase theme" onclick="window.location.href='?url=audio/player';"><i class="iconColor material-icons md-36">radio</i></button>
-        <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">mic</i></button>
+        <button type="button" class="btnBase theme" onclick="window.location.href='?url=audio/player';"><i class="iconColor material-icons md-36">radio</i><span class="spanIconText">Player</span></button>
+        <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">mic</i><span class="spanIconText">Record</span></button>
     </div>
 
     <?php echo $audioList; ?>
