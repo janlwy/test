@@ -726,6 +726,20 @@ button.btnBase.blue, button.btnBase.vert {
     justify-content: center;
 }
 
+.spanIconText {
+    margin-left: 8px;
+    font-size: 16px;
+    line-height: 36px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.btnBase {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /************************************ collapse ***************************************/
 .collapsible {
