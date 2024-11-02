@@ -133,7 +133,6 @@ class AudioController extends BaseController implements IController
 
     public function update($id) {
         $this->checkAuth();
-        $this->checkCSRF();
         
         if (!$id) {
             $_SESSION['erreur'] = "ID non spécifié";
@@ -148,12 +147,18 @@ class AudioController extends BaseController implements IController
             }
 
             if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $this->checkCSRF();
                 // TODO: Implement update logic
                 $_SESSION['message'] = "Audio mis à jour avec succès";
                 header('Location: ?url=audio/list');
             } else {
-                // TODO: Display update form
-                header('Location: ?url=audio/list');
+                $datas = [
+                    'pageTitle' => 'Modifier un audio',
+                    'audio' => $audio,
+                    'session' => $this->session,
+                    'formAction' => "?url=audio/update/$id"
+                ];
+                generate("Views/main/compte.php", $datas, "Views/base.html.php", "Modifier un audio");
             }
         } catch (Exception $e) {
             $_SESSION['erreur'] = $e->getMessage();

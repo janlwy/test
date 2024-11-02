@@ -5,14 +5,15 @@
     <button type="button" class="collapsible">Audio</button>
     <div class="contentCollapse">
         <button type="button" class="btnBase invisible invisibleTxt" id="form-add"> </button>
-        <form id="formCrud" class="formFont" method="POST" action="?url=audio/create" enctype="multipart/form-data">
+        <form id="formCrud" class="formFont" method="POST" action="<?php echo $formAction ?? '?url=audio/create'; ?>" enctype="multipart/form-data">
             <div class="rowEspace">
                 <div class="collabel">
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="title" class="inputMonEspace"
-                        required
+                    <input type="text" name="title" id="title" class="inputMonEspace" 
+                        value="<?php echo isset($audio) ? htmlspecialchars($audio->getTitle()) : ''; ?>"
+                        <?php if (!isset($audio)): ?>required<?php endif; ?>
                         pattern="[A-Za-z0-9\s\-_\.]{2,100}"
                         title="Le titre doit contenir entre 2 et 100 caractères alphanumériques"
                         maxlength="100" />
@@ -24,6 +25,7 @@
                 </div>
                 <div class="colinput">
                     <input type="text" name="artiste" id="artist" class="inputMonEspace"
+                        value="<?php echo isset($audio) ? htmlspecialchars($audio->getArtist()) : ''; ?>"
                         required
                         pattern="[A-Za-z0-9\s\-_\.]{2,100}"
                         title="Le nom de l'artiste doit contenir entre 2 et 100 caractères alphanumériques"
