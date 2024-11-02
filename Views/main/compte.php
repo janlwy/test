@@ -37,9 +37,16 @@
                     <label for="image">Pochette</label>
                 </div>
                 <div class="colinput">
+                    <?php if (isset($audio)): ?>
+                        <img src="Ressources/images/pochettes/<?php echo htmlspecialchars($audio->getImage()); ?>" 
+                             alt="Pochette actuelle" style="max-width: 100px; margin-bottom: 10px;"><br>
+                    <?php endif; ?>
                     <input type="file" name="image" id="image" class="inputMonEspace"
-                        required
+                        <?php echo !isset($audio) ? 'required' : ''; ?>
                         accept="image/jpeg,image/png,image/webp" />
+                    <?php if (isset($audio)): ?>
+                        <input type="hidden" name="current_image" value="<?php echo htmlspecialchars($audio->getImage()); ?>">
+                    <?php endif; ?>
                 </div>
             </div>
             <div class="rowEspace">
@@ -47,9 +54,14 @@
                     <label for="path">Fichier Audio</label>
                 </div>
                 <div class="colinput">
-                    <input type="file" name="path" id="path" class="inputMonEspace"
-                        required
-                        accept="audio/mpeg,audio/mp4,audio/wav,audio/x-m4a,audio/aac,audio/ogg,video/mp4,video/x-m4v,application/mp4" />
+                    <?php if (isset($audio)): ?>
+                        <input type="text" class="inputMonEspace" value="<?php echo htmlspecialchars($audio->getPath()); ?>" disabled style="background-color: #f0f0f0;">
+                        <input type="hidden" name="path" value="<?php echo htmlspecialchars($audio->getPath()); ?>">
+                    <?php else: ?>
+                        <input type="file" name="path" id="path" class="inputMonEspace"
+                            required
+                            accept="audio/mpeg,audio/mp4,audio/wav,audio/x-m4a,audio/aac,audio/ogg,video/mp4,video/x-m4v,application/mp4" />
+                    <?php endif; ?>
                 </div>
             </div>
             <input type="hidden" name="csrf_token" value="<?php echo $session->regenerateToken(); ?>">
