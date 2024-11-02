@@ -29,7 +29,9 @@ class Router
                 $controller = new $controllerName();
                 if (method_exists($controller, $actionName)) {
                     logInfo("Appel de la méthode $actionName dans le contrôleur $controllerName");
-                    $controller->$actionName();
+                    // Pass any additional URL parameters to the method
+                    $params = array_slice($urls, 2);
+                    call_user_func_array([$controller, $actionName], $params);
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     echo "La méthode $actionName n'existe pas dans le contrôleur $controllerName.";
