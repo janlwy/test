@@ -162,7 +162,12 @@ class AudioController extends BaseController implements IController
                 echo "<script>document.addEventListener('DOMContentLoaded', function() {
                     var audioCollapsible = document.querySelector('.collapsible');
                     if (audioCollapsible) {
-                        audioCollapsible.click();
+                        audioCollapsible.classList.add('activeCollapse');
+                        var content = audioCollapsible.nextElementSibling;
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        setTimeout(function() {
+                            document.querySelector('#form-add').scrollIntoView({ behavior: 'smooth' });
+                        }, 100);
                     }
                 });</script>";
             }
