@@ -28,7 +28,10 @@ function generate($file, $datas, $layout = "Views/base.html.php", $pageTitle = "
 	$content = generateFile($file, $datas);
 	// Ajouter hideNav au tableau $datas
 	$datas['hideNav'] = $hideNav;
-	echo generateFile($layout, array('content' => $content, 'pageTitle' => $pageTitle, 'datas' => $datas));
+	if (!isset($datas['session'])) {
+		$datas['session'] = SessionManager::getInstance();
+	}
+	echo generateFile($layout, array('content' => $content, 'pageTitle' => $pageTitle, 'datas' => $datas, 'session' => $datas['session']));
 }
 
 function generateFile($file, $datas)

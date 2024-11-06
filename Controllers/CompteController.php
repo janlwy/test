@@ -48,7 +48,7 @@ class CompteController extends BaseController implements IController
             'session' => $this->session,
             'pageTitle' => "Gestion des médias"
         ];
-        generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon compte");
+        generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon compte", false);
     }
 
     public function addMusic()
