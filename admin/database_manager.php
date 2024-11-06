@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $datas['message'] = $message;
 $datas['error'] = $error;
-$datas['isAdmin'] = true;
 $pageTitle = 'Gestionnaire de Base de Données - Administration';
 
 ob_start();

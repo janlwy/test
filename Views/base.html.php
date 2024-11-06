@@ -26,7 +26,6 @@ if (session_status() === PHP_SESSION_NONE) {
 		<h1><?php echo isset($pageTitle) ? $pageTitle : 'Média Box'; ?></h1>
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
-	<?php require_once __DIR__ . '/../Fonctions/Utils.php'; ?>
 	<main>
 		<?php if (shouldDisplayNav($datas)): ?>
 			<nav class="menunav" id="myMenunav">
