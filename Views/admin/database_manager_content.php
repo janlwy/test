@@ -136,6 +136,13 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     </form>
 </div>
 
+<div class="rowEspace" style="margin-top: 20px; text-align: center;">
+    <a href="?url=mediabox/index" class="btnBase rouge" style="text-decoration: none; display: inline-block;">
+        <i class="material-icons">exit_to_app</i>
+        <span class="spanIconText">Quitter l'administration</span>
+    </a>
+</div>
+
 <style>
 .formContainer {
     margin-bottom: 30px;
