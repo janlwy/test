@@ -273,5 +273,18 @@
                 throw new DatabaseException("Erreur lors de la modification de la colonne", 0, $e);
             }
         }
+
+        public function findUserByPseudo(string $pseudo) {
+            try {
+                $connexion = $this->getConnexion();
+                $sql = "SELECT * FROM users WHERE pseudo = :pseudo";
+                $stmt = $connexion->prepare($sql);
+                $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+                $stmt->execute();
+                return $stmt->fetch(PDO::FETCH_ASSOC);
+            } catch (PDOException $e) {
+                throw new DatabaseException("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
+            }
+        }
     }
 ?>
