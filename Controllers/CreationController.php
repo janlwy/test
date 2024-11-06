@@ -10,6 +10,26 @@ class CreationController extends BaseController implements IController
         $this->redirect('creation/createUserForm');
     }
 
+    public function list() {
+        // Non implémenté pour ce contrôleur
+        $this->redirect('creation/createUserForm');
+    }
+
+    public function create() {
+        // Redirige vers la méthode existante
+        $this->createUser();
+    }
+
+    public function update($id = null) {
+        // Non implémenté pour ce contrôleur
+        $this->redirect('creation/createUserForm');
+    }
+
+    public function delete($id = null) {
+        // Non implémenté pour ce contrôleur
+        $this->redirect('creation/createUserForm');
+    }
+
     public function createUserForm() {
         $datas = ['hideNav' => true];
         generate("Views/connect/createForm.php", $datas, "Views/base.html.php", "Création de compte", true);
