@@ -2,7 +2,6 @@
 $message = $datas['message'] ?? '';
 $error = $datas['error'] ?? '';
 ?>
-<link rel="stylesheet" href="/css/media.css">
 
 <div class="formContainer">
     <h2>Gestionnaire de Base de Données</h2>

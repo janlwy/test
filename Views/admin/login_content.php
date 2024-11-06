@@ -1,7 +1,6 @@
 <?php
 $error = $datas['error'] ?? '';
 ?>
-<link rel="stylesheet" href="/css/media.css">
 
 <div class="formContainer">
     <h2>Connexion Administration</h2>
