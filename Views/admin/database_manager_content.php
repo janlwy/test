@@ -37,7 +37,9 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
                     </div>
                     <div class="colinput">
                         <div class="column-inputs">
+                            <label>Nom de la colonne</label>
                             <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne" style="margin-bottom: 5px;">
+                            <label>Type de la colonne</label>
                             <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
                         </div>
                     </div>
@@ -153,7 +155,9 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
         const columnInputs = document.createElement('div');
         columnInputs.className = 'column-inputs';
         columnInputs.innerHTML = `
+            <label>Nom de la colonne</label>
             <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne" style="margin-bottom: 5px;">
+            <label>Type de la colonne</label>
             <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
         `;
         colinput.appendChild(columnInputs);
