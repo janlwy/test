@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 $datas['error'] = $error;
+$datas['isAdmin'] = true;
 $pageTitle = 'Connexion Administration';
 
 ob_start();
