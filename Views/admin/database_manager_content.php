@@ -143,19 +143,6 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     </a>
 </div>
 
-<style>
-.formContainer {
-    margin-bottom: 30px;
-}
-
-.formContainer h3 {
-    margin-top: 30px;
-    padding: 10px;
-    background-color: var(--active);
-    color: #f5f5f5;
-    border-radius: 5px;
-}
-</style>
 
 <script>
     function addColumn() {
