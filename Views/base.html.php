@@ -1,7 +1,14 @@
- <?php
+<?php
 	// Démarrer la session au début du fichier
 	if (session_status() === PHP_SESSION_NONE) {
 		session_start();
+	}
+
+	// Définition de la fonction shouldDisplayNav si elle n'existe pas
+	if (!function_exists('shouldDisplayNav')) {
+		function shouldDisplayNav($datas) {
+			return !isset($datas['hideNav']) || !$datas['hideNav'];
+		}
 	}
 	?>
 
