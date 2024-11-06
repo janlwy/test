@@ -1,8 +1,6 @@
 <?php
-// Démarrer la session au début du fichier
-if (session_status() === PHP_SESSION_NONE) {
-	session_start();
-}
+require_once __DIR__ . '/../Fonctions/Utils.php';
+startSessionIfNeeded();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
