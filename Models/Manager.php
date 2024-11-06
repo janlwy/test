@@ -1,7 +1,7 @@
 <?php
 
 	require_once 'Bdd.php';
-	require_once 'config.php';
+	require_once '../config.php';
 
 	class Manager {
         private $connexion = null;
