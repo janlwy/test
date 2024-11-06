@@ -18,6 +18,12 @@ class DeconnexionController extends BaseController
             // Nettoyer la session
             if (session_status() === PHP_SESSION_ACTIVE) {
                 logInfo("Destruction de la session active");
+                
+                // Supprimer spécifiquement les variables de session admin
+                unset($_SESSION['admin']);
+                unset($_SESSION['username']);
+                
+                // Vider toutes les autres variables de session
                 $_SESSION = array();
                 
                 // Supprimer le cookie de session
@@ -30,8 +36,13 @@ class DeconnexionController extends BaseController
                     logInfo("Cookie de session supprimé");
                 }
                 
+                // Détruire la session
                 session_destroy();
                 logInfo("Session détruite");
+                
+                // Démarrer une nouvelle session pour éviter les problèmes de redirection
+                session_start();
+                logInfo("Nouvelle session démarrée pour la redirection");
             }
             
             // Forcer la redirection
