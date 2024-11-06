@@ -17,9 +17,8 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     <?php endif; ?>
 
     <!-- Création de table -->
-    <div class="collapsible">Créer une nouvelle table</div>
-    <div class="contentCollapse">
-        <form method="post" id="createTableForm" class="formCentered">
+    <h3>Créer une nouvelle table</h3>
+    <form method="post" id="createTableForm" class="formCentered">
             <input type="hidden" name="action" value="create_table">
             
             <div class="rowEspace">
@@ -49,13 +48,11 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
                 </div>
             </div>
         </form>
-        </div>
-    </div>
+    </form>
 
     <!-- Ajout de colonne -->
-    <div class="collapsible">Ajouter une colonne</div>
-    <div class="contentCollapse">
-        <form method="post" class="formCentered">
+    <h3>Ajouter une colonne</h3>
+    <form method="post" class="formCentered">
             <input type="hidden" name="action" value="add_column">
             
             <div class="rowEspace">
@@ -91,13 +88,11 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
                 </div>
             </div>
         </form>
-        </div>
-    </div>
+    </form>
 
     <!-- Modification de colonne -->
-    <div class="collapsible">Modifier une colonne</div>
-    <div class="contentCollapse">
-        <form method="post" class="formCentered">
+    <h3>Modifier une colonne</h3>
+    <form method="post" class="formCentered">
             <input type="hidden" name="action" value="modify_column">
             
             <div class="rowEspace">
@@ -133,7 +128,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
                 </div>
             </div>
         </form>
-    </div>
+    </form>
 </div>
 
 <script>
