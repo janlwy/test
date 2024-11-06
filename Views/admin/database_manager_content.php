@@ -2,6 +2,7 @@
 $message = $datas['message'] ?? '';
 $error = $datas['error'] ?? '';
 $datas['hideNav'] = true; // Pour masquer la navigation standard
+$datas['isAdmin'] = true; // Pour ajuster les chemins CSS
 ?>
 
 <div class="formContainer">
