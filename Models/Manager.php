@@ -219,7 +219,7 @@
             logError("Erreur lors de la création de la table $tableName: " . $e->getMessage());
             throw new DatabaseException("Erreur lors de la création de la table", 0, $e);
         }
-    
+
         /**
          * Ajoute une colonne à une table existante
          * @param string $tableName Nom de la table
@@ -229,7 +229,7 @@
          * @throws DatabaseException
          */
         public function addColumn(string $tableName, string $columnName, string $definition) {
-        if (empty($tableName) || empty($columnName) || empty($definition)) {
+            if (empty($tableName) || empty($columnName) || empty($definition)) {
             throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
         }
 
@@ -254,7 +254,7 @@
          * @throws DatabaseException
          */
         public function modifyColumn(string $tableName, string $columnName, string $definition) {
-        if (empty($tableName) || empty($columnName) || empty($definition)) {
+            if (empty($tableName) || empty($columnName) || empty($definition)) {
             throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
         }
 
