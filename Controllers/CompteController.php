@@ -42,11 +42,8 @@ class CompteController extends BaseController implements IController
     }
     public function index()
     {
-        // Démarrer la session si elle n'est pas déjà démarrée
-        startSessionIfNeeded();
-
-        // Vérifier si l'utilisateur est connecté
-        if ($this->isUserLoggedIn()) {
+        $this->checkAuth();
+        
             $datas = [
                 'session' => $this->session,
                 'pageTitle' => "Gestion des médias"
@@ -100,10 +97,6 @@ class CompteController extends BaseController implements IController
         }
     }
 
-    private function isUserLoggedIn()
-    {
-        return isset($_SESSION['pseudo']);
-    }
 
     private function isFormDataValid()
     {
