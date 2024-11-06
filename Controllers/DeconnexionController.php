@@ -19,9 +19,9 @@ class DeconnexionController extends BaseController
             
             // Rediriger vers la page appropriée
             if ($isAdmin) {
-                header('Location: ?url=admin/login/index');
+                header('Location: index.php?url=admin/login/index', true, 302);
             } else {
-                header('Location: ?url=connexion/index');
+                header('Location: index.php?url=connexion/index', true, 302);
             }
             exit();
         } catch (Exception $e) {

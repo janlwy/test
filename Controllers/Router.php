@@ -12,6 +12,11 @@ class Router
             $controllerPath = __DIR__ . "/Admin/" . $controllerName . ".php";
             $actionName = isset($urls[2]) ? $urls[2] : 'index';
             array_splice($urls, 0, 2); // Retire 'admin' et le nom du contrôleur
+            
+            // Vérifier si le fichier existe dans le dossier Admin, sinon utiliser le contrôleur standard
+            if (!file_exists($controllerPath)) {
+                $controllerPath = __DIR__ . "/" . $controllerName . ".php";
+            }
         } else {
             $controllerName = ucfirst($urls[0]) . "Controller";
             $controllerPath = __DIR__ . "/" . $controllerName . ".php";
