@@ -36,6 +36,20 @@ class Router
             }
         }
 
+        // Vérification des permissions basées sur les rôles
+        $currentRole = isset($_SESSION['admin']) && $_SESSION['admin'] === true 
+            ? UserRole::ROLE_ADMIN 
+            : (isset($_SESSION['pseudo']) ? UserRole::ROLE_USER : '');
+            
+        $requestedRoute = strtolower($urls[0]);
+        $allowedRoutes = $currentRole ? UserRole::getAllowedRoutes($currentRole) : ['connexion'];
+            
+        if (!in_array($requestedRoute, $allowedRoutes)) {
+            logError("Accès non autorisé à la route: $requestedRoute pour le rôle: $currentRole");
+            header('Location: ?url=connexion/index');
+            exit();
+        }
+            
         logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
