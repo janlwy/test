@@ -1,8 +1,4 @@
 <?php
-	// Démarrer la session au début du fichier
-	if (session_status() === PHP_SESSION_NONE) {
-		session_start();
-	}
 
 	// Définition de la fonction shouldDisplayNav si elle n'existe pas
 	if (!function_exists('shouldDisplayNav')) {
@@ -38,7 +34,7 @@
  		<?php if (shouldDisplayNav($datas)): ?>
  			<nav class="menunav" id="myMenunav">
  				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
- 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($_SESSION['pseudo'] ?? '')); ?> </a>
+ 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($session->get('pseudo', ''))); ?> </a>
  				<a href="?url=audio/list" aria-label="Audio">Audio</a>
  				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
  				<a href="?url=photo/index" aria-label="Photo">Photo</a>

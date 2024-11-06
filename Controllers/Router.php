@@ -25,14 +25,15 @@ class Router
         }
 
 
-        startSessionIfNeeded();
-        if (!isset($_SESSION['csrf_token'])) {
-            $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
-        }
+        $session = SessionManager::getInstance();
+        $session->startSession();
+        $session->ensureCsrfToken();
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+            if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
                 logError("Erreur CSRF : jeton invalide.");
-                die("Erreur CSRF : jeton invalide.");
+                header('Location: ?url=connexion/index');
+                exit();
             }
         }
             
