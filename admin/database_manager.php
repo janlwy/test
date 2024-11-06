@@ -1,9 +1,13 @@
 <?php
 require_once '../Models/Manager.php';
-session_start();
+require_once '../Fonctions/SessionManager.php';
+
+$session = SessionManager::getInstance();
+$session->startSession();
 
 if (!isset($_SESSION['admin']) || $_SESSION['admin'] !== true) {
-    header('Location: login.php');
+    logError("Tentative d'accès non autorisé à l'interface d'administration");
+    header('Location: ../index.php?url=admin/login/index');
     exit();
 }
 
