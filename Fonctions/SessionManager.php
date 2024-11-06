@@ -153,9 +153,13 @@ class SessionManager {
         return $this->has('pseudo') && $this->has('user_id');
     }
     
-    public function setAuthenticated(string $pseudo, int $userId): void {
+    public function setAuthenticated(string $pseudo, int $userId, string $role = 'user'): void {
         $this->set('pseudo', $pseudo);
         $this->set('user_id', $userId);
+        $this->set('role', $role);
+        if ($role === 'admin') {
+            $this->set('admin', true);
+        }
         $this->regenerateToken();
     }
 }

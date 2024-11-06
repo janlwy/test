@@ -33,7 +33,6 @@
 
 			<div class="formContainer signin">
 				<p>Vous n'avez pas de compte ? <a href="?url=creation/createUserForm">Création de compte</a>.</p>
-				<p>Accès administrateur ? <a href="admin/login.php">Administration</a>.</p>
 			</div>
 		</div>
 	</form>

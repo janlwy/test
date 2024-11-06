@@ -7,12 +7,8 @@ class DeconnexionController extends BaseController
         try {
             logInfo("Début de la déconnexion");
             
-            // Déterminer si c'est une déconnexion admin ou utilisateur standard
-            $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
-            logInfo("Type d'utilisateur: " . ($isAdmin ? "admin" : "standard"));
-            
-            // Préparer l'URL de redirection
-            $redirectUrl = $isAdmin ? 'index.php?url=admin/login/index' : 'index.php?url=connexion/index';
+            // Redirection vers la page de connexion unique
+            $redirectUrl = 'index.php?url=connexion/index';
             logInfo("URL de redirection prévue: " . $redirectUrl);
             
             // Nettoyer la session
