@@ -240,10 +240,24 @@
             try {
                 $connexion = $this->getConnexion();
                 
+                // Vérifier si la colonne existe déjà
+                $stmt = $connexion->prepare("SHOW COLUMNS FROM " . $this->escapeIdentifier($tableName) . 
+                                          " LIKE :columnName");
+                $stmt->execute(['columnName' => $columnName]);
+                
+                if ($stmt->rowCount() > 0) {
+                    throw new DatabaseException("La colonne '$columnName' existe déjà dans la table '$tableName'");
+                }
+                
+                // Ajouter la colonne
                 $sql = "ALTER TABLE " . $this->escapeIdentifier($tableName) . 
                        " ADD COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
                 
-                return $connexion->exec($sql) !== false;
+                if ($connexion->exec($sql) === false) {
+                    throw new DatabaseException("Échec de l'ajout de la colonne. Vérifiez la syntaxe de la définition.");
+                }
+                
+                return true;
             } catch (PDOException $e) {
                 logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());
                 throw new DatabaseException("Erreur lors de l'ajout de la colonne", 0, $e);

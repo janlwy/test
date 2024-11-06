@@ -31,12 +31,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
 
             case 'add_column':
+                // Vérifier si la table existe
+                $tables = $manager->getConnexion()->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
+                if (!in_array($_POST['table_name'], $tables)) {
+                    throw new DatabaseException("La table '{$_POST['table_name']}' n'existe pas");
+                }
+                
                 $manager->addColumn(
                     $_POST['table_name'],
                     $_POST['column_name'],
                     $_POST['column_definition']
                 );
-                $message = "Colonne ajoutée avec succès";
+                $message = "Colonne '{$_POST['column_name']}' ajoutée avec succès à la table '{$_POST['table_name']}'";
                 break;
 
             case 'modify_column':
