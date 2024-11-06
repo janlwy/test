@@ -6,8 +6,18 @@ class Router
     {
         $url = isset($_GET['url']) ? $_GET['url'] : 'accueil/index';
         $urls = explode('/', $url);
-        $controllerName = ucfirst($urls[0]) . "Controller";
-        $actionName = isset($urls[1]) ? $urls[1] : 'index';
+        // Gestion des sous-dossiers de contrôleurs (ex: Admin/)
+        if (count($urls) >= 2 && strtolower($urls[0]) === 'admin') {
+            $controllerName = ucfirst($urls[1]) . "Controller";
+            $controllerPath = __DIR__ . "/Admin/" . $controllerName . ".php";
+            $actionName = isset($urls[2]) ? $urls[2] : 'index';
+            array_splice($urls, 0, 2); // Retire 'admin' et le nom du contrôleur
+        } else {
+            $controllerName = ucfirst($urls[0]) . "Controller";
+            $controllerPath = __DIR__ . "/" . $controllerName . ".php";
+            $actionName = isset($urls[1]) ? $urls[1] : 'index';
+            array_splice($urls, 0, 1); // Retire le nom du contrôleur
+        }
 
 
         startSessionIfNeeded();
@@ -22,7 +32,6 @@ class Router
         }
 
         logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
-        $controllerPath = __DIR__ . "/../Controllers/$controllerName.php";
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
             if (class_exists($controllerName)) {
