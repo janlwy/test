@@ -2,6 +2,7 @@
 
 	require_once 'Bdd.php';
 	require_once __DIR__ . '/../config.php';
+	require_once __DIR__ . '/../Fonctions/launch.php';
 
 	class Manager {
         private $connexion = null;
