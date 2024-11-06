@@ -1,6 +1,7 @@
 <?php
 $message = $datas['message'] ?? '';
 $error = $datas['error'] ?? '';
+$datas['hideNav'] = true; // Pour masquer la navigation standard
 ?>
 
 <div class="formContainer">
