@@ -93,15 +93,27 @@ class SessionManager {
     
     public function validateToken(?string $token): bool {
         if (!$token || !$this->has('csrf_token') || !$this->has('csrf_token_time')) {
+            logError("Token CSRF manquant ou invalide");
             return false;
         }
         
         $tokenAge = time() - $this->get('csrf_token_time');
         if ($tokenAge > 3600) { // Token expire après 1 heure
+            logError("Token CSRF expiré");
             return false;
         }
         
-        return hash_equals($this->get('csrf_token'), $token);
+        $isValid = hash_equals($this->get('csrf_token'), $token);
+        if (!$isValid) {
+            logError("Token CSRF non valide");
+        }
+        return $isValid;
+    }
+
+    public function ensureCsrfToken(): void {
+        if (!$this->has('csrf_token')) {
+            $this->regenerateToken();
+        }
     }
     
     public function validateFileUpload(array $file, array $allowedTypes, int $maxSize = 5242880): array {
