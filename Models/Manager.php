@@ -187,8 +187,7 @@
 			$resultat=array("Suppression okay");
 			return $resultat;
 		}
-	}
-    
+	
     /**
      * Exécute une requête de création de table
      * @param string $tableName Nom de la table
@@ -220,17 +219,16 @@
             logError("Erreur lors de la création de la table $tableName: " . $e->getMessage());
             throw new DatabaseException("Erreur lors de la création de la table", 0, $e);
         }
-    }
-
-    /**
-     * Ajoute une colonne à une table existante
-     * @param string $tableName Nom de la table
-     * @param string $columnName Nom de la colonne
-     * @param string $definition Définition de la colonne (type et contraintes)
-     * @return bool
-     * @throws DatabaseException
-     */
-    public function addColumn(string $tableName, string $columnName, string $definition) {
+    
+        /**
+         * Ajoute une colonne à une table existante
+         * @param string $tableName Nom de la table
+         * @param string $columnName Nom de la colonne
+         * @param string $definition Définition de la colonne (type et contraintes)
+         * @return bool
+         * @throws DatabaseException
+         */
+        public function addColumn(string $tableName, string $columnName, string $definition) {
         if (empty($tableName) || empty($columnName) || empty($definition)) {
             throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
         }
@@ -246,17 +244,16 @@
             logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());
             throw new DatabaseException("Erreur lors de l'ajout de la colonne", 0, $e);
         }
-    }
-
-    /**
-     * Modifie une colonne existante
-     * @param string $tableName Nom de la table
-     * @param string $columnName Nom de la colonne
-     * @param string $definition Nouvelle définition de la colonne
-     * @return bool
-     * @throws DatabaseException
-     */
-    public function modifyColumn(string $tableName, string $columnName, string $definition) {
+    
+        /**
+         * Modifie une colonne existante
+         * @param string $tableName Nom de la table
+         * @param string $columnName Nom de la colonne
+         * @param string $definition Nouvelle définition de la colonne
+         * @return bool
+         * @throws DatabaseException
+         */
+        public function modifyColumn(string $tableName, string $columnName, string $definition) {
         if (empty($tableName) || empty($columnName) || empty($definition)) {
             throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
         }
@@ -273,5 +270,4 @@
             throw new DatabaseException("Erreur lors de la modification de la colonne", 0, $e);
         }
     }
-
 ?>
