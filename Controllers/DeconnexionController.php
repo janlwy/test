@@ -5,24 +5,41 @@ class DeconnexionController extends BaseController
     public function index()
     {
         try {
+            logInfo("Début de la déconnexion");
+            
             // Déterminer si c'est une déconnexion admin ou utilisateur standard
             $isAdmin = isset($_SESSION['admin']) && $_SESSION['admin'] === true;
+            logInfo("Type d'utilisateur: " . ($isAdmin ? "admin" : "standard"));
             
-            // Préparer l'URL de redirection avant de détruire la session
+            // Préparer l'URL de redirection
             $redirectUrl = $isAdmin ? 'index.php?url=admin/login/index' : 'index.php?url=connexion/index';
+            logInfo("URL de redirection prévue: " . $redirectUrl);
             
-            // Nettoyer proprement la session
-            session_write_close();
-            $this->session->destroySession();
-            
-            // Forcer la suppression du cookie de session
-            if (isset($_COOKIE[session_name()])) {
-                setcookie(session_name(), '', time() - 3600, '/');
-                unset($_COOKIE[session_name()]);
+            // Nettoyer la session
+            if (session_status() === PHP_SESSION_ACTIVE) {
+                logInfo("Destruction de la session active");
+                $_SESSION = array();
+                
+                // Supprimer le cookie de session
+                if (isset($_COOKIE[session_name()])) {
+                    $params = session_get_cookie_params();
+                    setcookie(session_name(), '', time() - 42000,
+                        $params["path"], $params["domain"],
+                        $params["secure"], $params["httponly"]
+                    );
+                    logInfo("Cookie de session supprimé");
+                }
+                
+                session_destroy();
+                logInfo("Session détruite");
             }
             
-            // Rediriger vers la page appropriée
-            header('Location: ' . $redirectUrl, true, 302);
+            // Forcer la redirection
+            logInfo("Tentative de redirection vers: " . $redirectUrl);
+            header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+            header("Cache-Control: post-check=0, pre-check=0", false);
+            header("Pragma: no-cache");
+            header("Location: " . $redirectUrl, true, 302);
             exit();
         } catch (Exception $e) {
             logError("Erreur lors de la déconnexion : " . $e->getMessage());
