@@ -1632,3 +1632,153 @@
 2024-11-06 20:41:09 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
 2024-11-06 20:41:11 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
 2024-11-06 20:41:11 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:46:49 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:46:49 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:46:53 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 20:46:53 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 20:46:53 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 20:46:53 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 20:46:55 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:46:55 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:52:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:52:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:00 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:00 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:07 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 20:53:07 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 20:53:07 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 20:53:07 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 20:53:10 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 20:53:10 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 20:53:10 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 20:53:10 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 20:53:11 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 20:53:11 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 20:53:11 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 20:53:11 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 20:53:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 20:53:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-06 20:53:23 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-06 20:53:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 20:53:23 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 20:53:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 20:53:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 20:53:28 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-11-06 20:53:28 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-11-06 20:53:29 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 20:53:29 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 20:53:30 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-06 20:53:30 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-06 20:53:32 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-06 20:53:32 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-06 20:53:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 20:53:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 20:53:36 - [info] - Tentative de chargement du contrôleur : PhotoController et de la méthode : index
+2024-11-06 20:53:36 - [info] - Appel de la méthode index dans le contrôleur PhotoController
+2024-11-06 20:53:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 20:53:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 20:53:43 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-06 20:53:43 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-06 20:53:51 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 20:53:51 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 20:53:51 - [error] - Cookie de session manquant
+2024-11-06 20:53:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 20:53:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:05:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:05:23 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:05:26 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:05:26 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:05:29 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 21:05:29 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 21:05:29 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 21:05:29 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 21:05:31 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:05:31 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:10:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:10:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:10:28 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:10:28 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:12:34 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:12:34 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:15:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:15:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:16:44 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:16:44 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:16:48 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:16:48 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:16:49 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:16:49 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:16:51 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 21:16:51 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 21:16:51 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 21:16:51 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 21:16:53 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 21:16:53 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 21:16:53 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 21:16:53 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 21:18:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:18:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:18:30 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:18:30 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 21:18:37 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 21:18:37 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:00:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:00:50 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:00:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:00:50 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:00:50 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:00:50 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:00:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:00:50 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:00:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:00:50 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:00:50 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:00:50 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:00:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:00:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:00:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:00:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:01:07 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:01:07 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:01:07 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:01:07 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:01:11 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:01:11 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:01:11 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:01:11 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:01:12 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:01:12 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:01:12 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:01:12 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:01:13 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:01:13 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:01:13 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:01:13 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:01:14 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:01:14 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:01:18 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-11-06 22:01:18 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-11-06 22:01:28 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:01:28 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:01:37 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:01:37 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:01:47 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-06 22:01:47 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-06 22:01:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:01:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:01:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-06 22:01:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-06 22:01:54 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-06 22:01:54 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-06 22:02:03 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 22:02:03 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 22:02:03 - [error] - Cookie de session manquant
+2024-11-06 22:02:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:02:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
