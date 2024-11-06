@@ -1782,3 +1782,1813 @@
 2024-11-06 22:02:03 - [error] - Cookie de session manquant
 2024-11-06 22:02:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
 2024-11-06 22:02:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:09:58 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:09:58 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:09:58 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:09:58 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:10:02 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-06 22:10:02 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-06 22:10:02 - [error] - Début de la méthode index dans AccueilController
+2024-11-06 22:10:02 - [error] - Utilisateur non connecté, affichage de l'accueil
+2024-11-06 22:10:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:10:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:19:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:19:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:20:05 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-06 22:20:05 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-06 22:20:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:20:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:20:09 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 22:20:09 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 22:20:09 - [info] - Début de la déconnexion
+2024-11-06 22:20:09 - [info] - Type d'utilisateur: admin
+2024-11-06 22:20:09 - [info] - URL de redirection prévue: index.php?url=admin/login/index
+2024-11-06 22:20:09 - [info] - Destruction de la session active
+2024-11-06 22:20:09 - [info] - Cookie de session supprimé
+2024-11-06 22:20:09 - [info] - Session détruite
+2024-11-06 22:20:09 - [info] - Tentative de redirection vers: index.php?url=admin/login/index
+2024-11-06 22:20:09 - [error] - Cookie de session manquant
+2024-11-06 22:20:09 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:20:09 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:29:55 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 22:29:55 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 22:29:55 - [info] - Début de la déconnexion
+2024-11-06 22:29:55 - [info] - Type d'utilisateur: admin
+2024-11-06 22:29:55 - [info] - URL de redirection prévue: index.php?url=admin/login/index
+2024-11-06 22:29:55 - [info] - Destruction de la session active
+2024-11-06 22:29:55 - [info] - Cookie de session supprimé
+2024-11-06 22:29:55 - [info] - Session détruite
+2024-11-06 22:29:55 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-06 22:29:55 - [info] - Tentative de redirection vers: index.php?url=admin/login/index
+2024-11-06 22:29:55 - [error] - Cookie de session manquant
+2024-11-06 22:29:55 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:29:55 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:30:18 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 22:30:18 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 22:30:18 - [info] - Début de la déconnexion
+2024-11-06 22:30:18 - [info] - Type d'utilisateur: admin
+2024-11-06 22:30:18 - [info] - URL de redirection prévue: index.php?url=admin/login/index
+2024-11-06 22:30:18 - [info] - Destruction de la session active
+2024-11-06 22:30:18 - [info] - Cookie de session supprimé
+2024-11-06 22:30:18 - [info] - Session détruite
+2024-11-06 22:30:18 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-06 22:30:18 - [info] - Tentative de redirection vers: index.php?url=admin/login/index
+2024-11-06 22:30:19 - [error] - Cookie de session manquant
+2024-11-06 22:30:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:30:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:30:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-06 22:30:57 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-06 22:30:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:30:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:30:59 - [info] - Tentative de chargement du contrôleur : VideoController et de la méthode : index
+2024-11-06 22:30:59 - [info] - Appel de la méthode index dans le contrôleur VideoController
+2024-11-06 22:31:01 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:31:01 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:31:05 - [info] - Tentative de chargement du contrôleur : TexteController et de la méthode : index
+2024-11-06 22:31:05 - [info] - Appel de la méthode index dans le contrôleur TexteController
+2024-11-06 22:31:06 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:31:06 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:31:07 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-06 22:31:07 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-06 22:31:09 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-06 22:31:09 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-06 22:31:14 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-06 22:31:14 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-06 22:31:16 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-11-06 22:31:16 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-11-06 22:31:22 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-06 22:31:22 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-06 22:31:25 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-06 22:31:25 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-06 22:31:25 - [info] - Début de la déconnexion
+2024-11-06 22:31:25 - [info] - Type d'utilisateur: standard
+2024-11-06 22:31:25 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-06 22:31:25 - [info] - Destruction de la session active
+2024-11-06 22:31:25 - [info] - Cookie de session supprimé
+2024-11-06 22:31:25 - [info] - Session détruite
+2024-11-06 22:31:25 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-06 22:31:25 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-06 22:31:25 - [error] - Cookie de session manquant
+2024-11-06 22:31:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 22:31:25 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:38 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:39 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:40 - [error] - Accès non autorisé à la route: index pour le rôle: admin
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:43 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:48 - [error] - Cookie de session manquant
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:58 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:38:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:39:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:40:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:41:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:46:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 22:56:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:04:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:02 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:03 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:04 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:14 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:19 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:05:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:56 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:06:57 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:06 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:07 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:07:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:08:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:23 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:24 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:26 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:27 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:28 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:29 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:34 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:09:55 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:11 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:11 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:11 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:11 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:11 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:13 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:10:18 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Cookie de session manquant
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:37 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:11:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:12:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:13:12 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:41 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:42 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:43 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:46 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:47 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:48 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:49 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:50 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:52 - [error] - Cookie de session manquant
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:16:59 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:00 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:05 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:17:35 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:18:36 - [error] - Accès non autorisé à la route: index pour le rôle: 
+2024-11-06 23:22:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 23:22:51 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 23:22:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 23:22:53 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-06 23:23:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-06 23:23:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController

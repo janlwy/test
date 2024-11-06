@@ -1,10 +1,6 @@
 <?php
 
-require_once 'RoleCheckerTrait.php';
-
 abstract class BaseController implements IBaseController {
-    use RoleCheckerTrait;
-    
     protected $repository;
     protected $session;
     
