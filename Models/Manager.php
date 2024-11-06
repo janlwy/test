@@ -188,36 +188,37 @@
 			return $resultat;
 		}
 	
-    /**
-     * Exécute une requête de création de table
-     * @param string $tableName Nom de la table
-     * @param array $columns Définition des colonnes ['nom_colonne' => 'type définition']
-     * @return bool
-     * @throws DatabaseException
-     */
-    public function createTable(string $tableName, array $columns) {
-        if (empty($tableName) || empty($columns)) {
-            throw new DatabaseException("Le nom de la table et les colonnes sont requis");
-        }
-
-        try {
-            $connexion = $this->getConnexion();
-            
-            $columnDefinitions = [];
-            foreach ($columns as $name => $definition) {
-                $columnDefinitions[] = $this->escapeIdentifier($name) . ' ' . $definition;
+        /**
+         * Exécute une requête de création de table
+         * @param string $tableName Nom de la table
+         * @param array $columns Définition des colonnes ['nom_colonne' => 'type définition']
+         * @return bool
+         * @throws DatabaseException
+         */
+        public function createTable(string $tableName, array $columns) {
+            if (empty($tableName) || empty($columns)) {
+                throw new DatabaseException("Le nom de la table et les colonnes sont requis");
             }
-            
-            $sql = "CREATE TABLE IF NOT EXISTS " . $this->escapeIdentifier($tableName) . " (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                " . implode(",\n                ", $columnDefinitions) . ",
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )";
-            
-            return $connexion->exec($sql) !== false;
-        } catch (PDOException $e) {
-            logError("Erreur lors de la création de la table $tableName: " . $e->getMessage());
-            throw new DatabaseException("Erreur lors de la création de la table", 0, $e);
+
+            try {
+                $connexion = $this->getConnexion();
+
+                $columnDefinitions = [];
+                foreach ($columns as $name => $definition) {
+                    $columnDefinitions[] = $this->escapeIdentifier($name) . ' ' . $definition;
+                }
+
+                $sql = "CREATE TABLE IF NOT EXISTS " . $this->escapeIdentifier($tableName) . " (
+                    id INT AUTO_INCREMENT PRIMARY KEY,
+                    " . implode(",\n                ", $columnDefinitions) . ",
+                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                )";
+
+                return $connexion->exec($sql) !== false;
+            } catch (PDOException $e) {
+                logError("Erreur lors de la création de la table $tableName: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de la création de la table", 0, $e);
+            }
         }
 
         /**
@@ -240,9 +241,10 @@
                    " ADD COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
             
             return $connexion->exec($sql) !== false;
-        } catch (PDOException $e) {
+            } catch (PDOException $e) {
             logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());
             throw new DatabaseException("Erreur lors de l'ajout de la colonne", 0, $e);
+             }
         }
     
         /**
@@ -256,7 +258,7 @@
         public function modifyColumn(string $tableName, string $columnName, string $definition) {
             if (empty($tableName) || empty($columnName) || empty($definition)) {
             throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
-        }
+            }
 
         try {
             $connexion = $this->getConnexion();
@@ -265,9 +267,10 @@
                    " MODIFY COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
             
             return $connexion->exec($sql) !== false;
-        } catch (PDOException $e) {
+            } catch (PDOException $e) {
             logError("Erreur lors de la modification de la colonne $columnName dans la table $tableName: " . $e->getMessage());
             throw new DatabaseException("Erreur lors de la modification de la colonne", 0, $e);
+            }
         }
     }
 ?>
