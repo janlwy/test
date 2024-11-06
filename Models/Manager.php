@@ -231,20 +231,20 @@
          */
         public function addColumn(string $tableName, string $columnName, string $definition) {
             if (empty($tableName) || empty($columnName) || empty($definition)) {
-            throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
-        }
+                throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
+            }
 
-        try {
-            $connexion = $this->getConnexion();
-            
-            $sql = "ALTER TABLE " . $this->escapeIdentifier($tableName) . 
-                   " ADD COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
-            
-            return $connexion->exec($sql) !== false;
+            try {
+                $connexion = $this->getConnexion();
+                
+                $sql = "ALTER TABLE " . $this->escapeIdentifier($tableName) . 
+                       " ADD COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
+                
+                return $connexion->exec($sql) !== false;
             } catch (PDOException $e) {
-            logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());
-            throw new DatabaseException("Erreur lors de l'ajout de la colonne", 0, $e);
-             }
+                logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de l'ajout de la colonne", 0, $e);
+            }
         }
     
         /**
@@ -257,19 +257,19 @@
          */
         public function modifyColumn(string $tableName, string $columnName, string $definition) {
             if (empty($tableName) || empty($columnName) || empty($definition)) {
-            throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
+                throw new DatabaseException("Le nom de la table, de la colonne et sa définition sont requis");
             }
 
-        try {
-            $connexion = $this->getConnexion();
-            
-            $sql = "ALTER TABLE " . $this->escapeIdentifier($tableName) . 
-                   " MODIFY COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
-            
-            return $connexion->exec($sql) !== false;
+            try {
+                $connexion = $this->getConnexion();
+                
+                $sql = "ALTER TABLE " . $this->escapeIdentifier($tableName) . 
+                       " MODIFY COLUMN " . $this->escapeIdentifier($columnName) . " " . $definition;
+                
+                return $connexion->exec($sql) !== false;
             } catch (PDOException $e) {
-            logError("Erreur lors de la modification de la colonne $columnName dans la table $tableName: " . $e->getMessage());
-            throw new DatabaseException("Erreur lors de la modification de la colonne", 0, $e);
+                logError("Erreur lors de la modification de la colonne $columnName dans la table $tableName: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de la modification de la colonne", 0, $e);
             }
         }
     }
