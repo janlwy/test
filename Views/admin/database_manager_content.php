@@ -33,15 +33,18 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
             <div id="columns">
                 <div class="rowEspace">
                     <div class="collabel">
-                        <label>Colonnes</label>
+                        <label>Nom de la colonne</label>
                     </div>
                     <div class="colinput">
-                        <div class="column-inputs">
-                            <label>Nom de la colonne</label>
-                            <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne" style="margin-bottom: 5px;">
-                            <label>Type de la colonne</label>
-                            <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
-                        </div>
+                        <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne">
+                    </div>
+                </div>
+                <div class="rowEspace">
+                    <div class="collabel">
+                        <label>Type de la colonne</label>
+                    </div>
+                    <div class="colinput">
+                        <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
                     </div>
                 </div>
             </div>
@@ -150,16 +153,28 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
 <script>
     function addColumn() {
         const columns = document.getElementById('columns');
-        const firstRow = columns.querySelector('.rowEspace');
-        const colinput = firstRow.querySelector('.colinput');
-        const columnInputs = document.createElement('div');
-        columnInputs.className = 'column-inputs';
-        columnInputs.innerHTML = `
-            <label>Nom de la colonne</label>
-            <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne" style="margin-bottom: 5px;">
-            <label>Type de la colonne</label>
-            <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
+        const template = `
+            <div class="rowEspace">
+                <div class="collabel">
+                    <label>Nom de la colonne</label>
+                </div>
+                <div class="colinput">
+                    <input type="text" name="column_names[]" class="inputMonEspace" placeholder="Nom de la colonne">
+                </div>
+            </div>
+            <div class="rowEspace">
+                <div class="collabel">
+                    <label>Type de la colonne</label>
+                </div>
+                <div class="colinput">
+                    <input type="text" name="column_types[]" class="inputMonEspace" placeholder="Type (ex: VARCHAR(50) NOT NULL)">
+                </div>
+            </div>
         `;
-        colinput.appendChild(columnInputs);
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = template;
+        while (tempDiv.firstChild) {
+            columns.appendChild(tempDiv.firstChild);
+        }
     }
 </script>
