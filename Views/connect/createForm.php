@@ -52,11 +52,27 @@
 				const pseudo = document.getElementById('pseudo');
 
                 function validateForm() {
+                    // Validation du mot de passe
                     const isPasswordValid = password1.value === password2.value 
                         && password1.value.length >= 8 
-                        && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
+                        && /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
                     
+                    // Validation du pseudo
                     const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+
+                    // Afficher les messages d'erreur spécifiques
+                    if (!isPasswordValid) {
+                        if (password1.value !== password2.value) {
+                            password2.setCustomValidity('Les mots de passe ne correspondent pas');
+                        } else if (password1.value.length < 8) {
+                            password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères');
+                        } else {
+                            password1.setCustomValidity('Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial');
+                        }
+                    } else {
+                        password1.setCustomValidity('');
+                        password2.setCustomValidity('');
+                    }
                     
                     // Vérification du token CSRF
                     const csrfToken = document.querySelector('input[name="csrf_token"]').value;

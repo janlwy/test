@@ -154,20 +154,40 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
         const columnTypes = document.querySelectorAll('input[name="column_types[]"]');
         
         // Validation du nom de la table
+        if (!tableName) {
+            alert('Le nom de la table est requis');
+            return false;
+        }
+        
         if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(tableName)) {
             alert('Le nom de la table doit commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
             return false;
         }
+
+        // Vérification qu'il y a au moins une colonne
+        if (columnNames.length === 0) {
+            alert('Au moins une colonne est requise');
+            return false;
+        }
         
         // Validation des colonnes
+        const allowedTypes = ['INT', 'VARCHAR', 'TEXT', 'DATE', 'DATETIME', 'BOOLEAN'];
+            
         for (let i = 0; i < columnNames.length; i++) {
             if (!columnNames[i].value || !columnTypes[i].value) {
                 alert('Tous les champs de colonnes doivent être remplis');
                 return false;
             }
-            
+                
             if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(columnNames[i].value)) {
                 alert('Les noms de colonnes doivent commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
+                return false;
+            }
+
+            // Vérification du type de colonne
+            const typeBase = columnTypes[i].value.split('(')[0].toUpperCase();
+            if (!allowedTypes.includes(typeBase)) {
+                alert(`Type de colonne non autorisé: ${typeBase}\nTypes autorisés: ${allowedTypes.join(', ')}`);
                 return false;
             }
         }
