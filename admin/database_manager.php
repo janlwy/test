@@ -14,10 +14,16 @@ if (!$session->get('admin', false)) {
 $manager = new Manager();
 $message = '';
 $error = '';
-$datas = [];
+$datas = [
+    'session' => $session
+];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    try {
+    if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
+        logError("Erreur CSRF : jeton invalide");
+        $error = "Erreur de sécurité. Veuillez réessayer.";
+    } else {
+        try {
         switch ($_POST['action']) {
             case 'create_table':
                 $columns = [];

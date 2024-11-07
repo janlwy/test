@@ -19,6 +19,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     <!-- Création de table -->
     <h3>Créer une nouvelle table</h3>
     <form method="post" id="createTableForm" class="formCentered">
+            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
             <input type="hidden" name="action" value="create_table">
             
             <div class="rowEspace">
@@ -60,6 +61,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     <!-- Ajout de colonne -->
     <h3>Ajouter une colonne</h3>
     <form method="post" class="formCentered">
+            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
             <input type="hidden" name="action" value="add_column">
             
             <div class="rowEspace">
@@ -99,6 +101,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     <!-- Modification de colonne -->
     <h3>Modifier une colonne</h3>
     <form method="post" class="formCentered">
+            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
             <input type="hidden" name="action" value="modify_column">
             
             <div class="rowEspace">
