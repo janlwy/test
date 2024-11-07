@@ -236,12 +236,17 @@ class AudioController extends BaseController implements IController
             exit();
         }
 
-        // Vérifier explicitement que l'utilisateur a des fichiers audio
-        $audios = $this->audioRepository->findAllByUser($userId);
-        if (empty($audios)) {
-            $_SESSION['message'] = "Vous n'avez pas encore de fichiers audio. Ajoutez-en un !";
-            header('Location: ?url=audio/list');
-            exit();
+        $selectedTracks = $_SESSION['selected_tracks'] ?? [];
+        $audios = [];
+        
+        if (!empty($selectedTracks)) {
+            // Récupérer uniquement les pistes sélectionnées
+            foreach ($selectedTracks as $trackId) {
+                $audio = $this->audioRepository->findById($trackId);
+                if ($audio && $audio->getUserId() == $userId) {
+                    $audios[] = $audio;
+                }
+            }
         }
 
         try {
@@ -442,3 +447,25 @@ class AudioController extends BaseController implements IController
         }
     }
 }
+    public function saveSelection() {
+        $this->checkAuth();
+        
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            http_response_code(405);
+            echo json_encode(['success' => false, 'message' => 'Méthode non autorisée']);
+            exit;
+        }
+        
+        $data = json_decode(file_get_contents('php://input'), true);
+        $tracks = $data['tracks'] ?? [];
+        
+        if (empty($tracks)) {
+            http_response_code(400);
+            echo json_encode(['success' => false, 'message' => 'Aucune piste sélectionnée']);
+            exit;
+        }
+        
+        $_SESSION['selected_tracks'] = $tracks;
+        echo json_encode(['success' => true]);
+        exit;
+    }

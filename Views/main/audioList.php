@@ -46,6 +46,31 @@
         style="display: none;">
     </div>
     <div class="button-container">
-        <button type="button" id="play-selected" class="btnBase orange" onclick="playSelectedTracks()">Lire la sélection</button>
+        <button type="button" id="play-selected" class="btnBase orange" onclick="saveAndPlaySelectedTracks()">Lire la sélection</button>
+        <script>
+        function saveAndPlaySelectedTracks() {
+            const selectedTracks = Array.from(document.querySelectorAll('.select-audio:checked')).map(cb => cb.dataset.audioId);
+            if (selectedTracks.length === 0) {
+                alert('Veuillez sélectionner au moins une piste audio.');
+                return;
+            }
+            
+            // Sauvegarder la sélection via AJAX
+            fetch('?url=audio/saveSelection', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ tracks: selectedTracks })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = '?url=audio/player';
+                }
+            })
+            .catch(error => console.error('Error:', error));
+        }
+        </script>
     </div>
 </section>

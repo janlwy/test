@@ -22,7 +22,7 @@ if (!defined('ROOT_PATH')) {
 
     <?php if (empty($audios)): ?>
         <div class="info-message">
-            Aucun fichier audio disponible. Commencez par en ajouter un !
+            Aucune piste sélectionnée. Veuillez retourner à la liste et sélectionner des pistes à lire.
         </div>
     <?php else: ?>
         <div id="audioData" style="display: none;" 
