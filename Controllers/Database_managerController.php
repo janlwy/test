@@ -102,7 +102,7 @@ class Database_managerController extends BaseController implements IController {
 
         $datas['hideNav'] = true;
         $datas['isAdmin'] = true;
-        generate('Views/admin/database_manager_content.php', $datas, 'Views/base.html.php', 'Gestionnaire de Base de Données - Administration');
+        generate('Views/admin/database_manager_content.php', $datas, 'Views/base.html.php', 'Administration');
     }
 
     public function list() {

@@ -934,3 +934,68 @@
 2024-11-07 16:56:02 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
 2024-11-07 16:56:02 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
 2024-11-07 16:56:02 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:01:00 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:01:00 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:06:24 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:06:24 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:06:58 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 17:06:58 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 17:07:06 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 17:07:06 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 17:07:06 - [info] - Début de la déconnexion
+2024-11-07 17:07:06 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 17:07:06 - [info] - Destruction de la session active
+2024-11-07 17:07:06 - [info] - Cookie de session supprimé
+2024-11-07 17:07:06 - [info] - Session détruite
+2024-11-07 17:07:06 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 17:07:06 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 17:07:06 - [error] - Cookie de session manquant
+2024-11-07 17:07:06 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 17:07:06 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 17:07:06 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 17:07:17 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 17:07:17 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 17:07:17 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:07:17 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:07:23 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 17:07:23 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 17:07:23 - [info] - Début de la déconnexion
+2024-11-07 17:07:23 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 17:07:23 - [info] - Destruction de la session active
+2024-11-07 17:07:23 - [info] - Cookie de session supprimé
+2024-11-07 17:07:23 - [info] - Session détruite
+2024-11-07 17:07:23 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 17:07:23 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 17:07:23 - [error] - Cookie de session manquant
+2024-11-07 17:07:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 17:07:23 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 17:07:23 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 17:11:12 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 17:11:12 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 17:11:12 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:11:12 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:20:52 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:20:52 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 17:20:57 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 17:20:57 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 17:20:57 - [info] - Début de la déconnexion
+2024-11-07 17:20:57 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 17:20:57 - [info] - Destruction de la session active
+2024-11-07 17:20:57 - [info] - Cookie de session supprimé
+2024-11-07 17:20:57 - [info] - Session détruite
+2024-11-07 17:20:57 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 17:20:57 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 17:20:57 - [error] - Cookie de session manquant
+2024-11-07 17:20:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 17:20:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 17:20:57 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 17:21:00 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 17:21:00 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 17:21:00 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 17:21:01 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 17:21:01 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 17:21:01 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 17:21:32 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 17:21:32 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 17:21:32 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 17:21:32 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
