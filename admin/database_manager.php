@@ -1,6 +1,6 @@
 <?php
-require_once '../Models/Manager.php';
-require_once '../Fonctions/SessionManager.php';
+require_once __DIR__ . '/../Models/Manager.php';
+require_once __DIR__ . '/../Fonctions/SessionManager.php';
 
 $session = SessionManager::getInstance();
 $session->startSession();
