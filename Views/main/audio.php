@@ -13,13 +13,19 @@
         <?php unset($_SESSION['erreur']); ?>
     <?php endif; ?>
 
-    <div id="audioData" style="display: none;" 
-         data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
-         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                            return $audio->jsonData;
-                        }, $audios ?? [])), ENT_QUOTES, 'UTF-8'); ?>'>
+    <?php if (empty($audios)): ?>
+        <div class="info-message">
+            Aucun fichier audio disponible. Commencez par en ajouter un !
+        </div>
+    <?php else: ?>
+        <div id="audioData" style="display: none;" 
+             data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
+             data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
+                                return $audio->jsonData;
+                            }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
+    <?php endif; ?>
     </div>
-    <div id="player-container" class="player-container">
+    <div id="player-container" class="player-container" <?php echo empty($audios) ? 'style="display: none;"' : ''; ?>>
         <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">
         <button type="button" class="searchButton" href="#">
