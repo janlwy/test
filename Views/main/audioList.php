@@ -85,19 +85,18 @@
                 },
                 body: JSON.stringify({ tracks: selectedTracks })
             })
-            .then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        try {
-                            const jsonError = JSON.parse(text);
-                            throw new Error(jsonError.message || 'Erreur serveur');
-                        } catch (e) {
-                            console.error('Réponse brute:', text);
-                            throw new Error(`Erreur HTTP ${response.status}`);
-                        }
-                    });
+            .then(async response => {
+                const text = await response.text();
+                try {
+                    const data = JSON.parse(text);
+                    if (!response.ok) {
+                        throw new Error(data.message || 'Erreur serveur');
+                    }
+                    return data;
+                } catch (e) {
+                    console.error('Réponse non-JSON reçue:', text);
+                    throw new Error('Le serveur a retourné une réponse invalide');
                 }
-                return response.json();
             })
             .then(data => {
                 if (data.success) {
