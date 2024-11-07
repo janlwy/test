@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect" id="loginForm">
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
@@ -27,6 +27,7 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
+			<input type="hidden" name="redirect" value="<?php echo ($session->get('role') === 'admin') ? 'database_manager/index' : 'mediabox/index'; ?>">
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
@@ -37,3 +38,14 @@
 		</div>
 	</form>
 </div>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    const redirectInput = document.querySelector('input[name="redirect"]');
+    if (redirectInput) {
+        const currentAction = this.action;
+        const redirectValue = redirectInput.value;
+        this.action = currentAction.split('?')[0] + '?url=' + redirectValue;
+    }
+});
+</script>
