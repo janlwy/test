@@ -225,7 +225,6 @@ class AudioController extends BaseController implements IController
     public function player() {
         $this->checkAuth();
         
-        $manager = new Manager();
         $userId = $_SESSION['user_id'] ?? null;
         
         if ($userId === null) {
@@ -234,10 +233,28 @@ class AudioController extends BaseController implements IController
             exit();
         }
         
-        // Les pistes sélectionnées seront gérées côté client via localStorage
+        // Récupérer les audios de l'utilisateur connecté
+        $audios = $this->audioRepository->findAllByUser($userId);
+        
+        // Préparer les données complètes pour chaque audio
+        foreach ($audios as $audio) {
+            $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
+            $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
+            $audio->jsonData = [
+                'id' => $audio->getId(),
+                'title' => $audio->getTitle(),
+                'artist' => $audio->getArtist(),
+                'path' => $audio->getPath(),
+                'fullPath' => $audio->fullPath,
+                'image' => $audio->getImage(),
+                'fullImage' => $audio->fullImage
+            ];
+        }
+        
         $datas = [
             'pageTitle' => "Lecteur Audio",
-            'userId' => $userId
+            'userId' => $userId,
+            'audios' => $audios
         ];
         
         generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
