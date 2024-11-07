@@ -48,16 +48,34 @@
 			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
 
 			<script>
+			let form, password1, password2, submitBtn, pseudo;
+			
 			document.addEventListener('DOMContentLoaded', function() {
-				const form = document.querySelector('form');
-				const password1 = document.getElementById('mdp1');
-				const password2 = document.getElementById('mdp2');
-				const submitBtn = document.getElementById('submitBtn');
-				const pseudo = document.getElementById('pseudo');
+				form = document.querySelector('form');
+				password1 = document.getElementById('mdp1');
+				password2 = document.getElementById('mdp2');
+				submitBtn = document.getElementById('submitBtn');
+				pseudo = document.getElementById('pseudo');
+				
+				// Ajouter les event listeners
+				form.addEventListener('submit', function(e) {
+					if (!validateForm()) {
+						e.preventDefault();
+						return false;
+					}
+					return true;
+				});
 
-            });
+				[password1, password2, pseudo].forEach(input => {
+					input.addEventListener('input', validateForm);
+					input.addEventListener('change', validateForm);
+				});
 
-            function validateForm() {
+				// Validation initiale
+				validateForm();
+			});
+
+			function validateForm() {
                     // Validation du mot de passe
                     const isPasswordValid = password1.value === password2.value 
                         && password1.value.length >= 8 
@@ -113,22 +131,6 @@
                     }
                 });
 
-                [password1, password2, pseudo].forEach(input => {
-                    input.addEventListener('input', validateForm);
-                    input.addEventListener('change', validateForm);
-                });
-
-                // Validation initiale
-                validateForm();
-
-                // Ajouter l'event listener pour le submit du formulaire
-                form.addEventListener('submit', function(e) {
-                    if (!validateForm()) {
-                        e.preventDefault();
-                        return false;
-                    }
-                    return true;
-                });
 			</script>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
