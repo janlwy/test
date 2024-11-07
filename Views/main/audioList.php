@@ -81,22 +81,24 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken
                 },
                 body: JSON.stringify({ tracks: selectedTracks })
             })
-            .then(async response => {
-                const text = await response.text();
-                try {
-                    const data = JSON.parse(text);
-                    if (!response.ok) {
-                        throw new Error(data.message || 'Erreur serveur');
-                    }
-                    return data;
-                } catch (e) {
-                    console.error('Réponse non-JSON reçue:', text);
-                    throw new Error('Le serveur a retourné une réponse invalide');
+            .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        try {
+                            const data = JSON.parse(text);
+                            throw new Error(data.message || 'Erreur serveur');
+                        } catch (e) {
+                            console.error('Réponse brute du serveur:', text);
+                            throw new Error(`Erreur HTTP ${response.status}`);
+                        }
+                    });
                 }
+                return response.json();
             })
             .then(data => {
                 if (data.success) {
