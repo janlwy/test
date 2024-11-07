@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Fonctions/RoleManager.php';
+
 class CreationController extends BaseController implements IController
 {
     public function __construct() {
@@ -117,7 +119,7 @@ class CreationController extends BaseController implements IController
                 $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
                 $req->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
                 $req->bindValue(':mdp', password_hash($_POST['mdp'], PASSWORD_DEFAULT), PDO::PARAM_STR);
-                $req->bindValue(':role', 'user', PDO::PARAM_STR);
+                $req->bindValue(':role', RoleManager::getDefaultRole(), PDO::PARAM_STR);
                 
                 if ($req->execute()) {
                     $this->session->set('success', 'Compte créé avec succès');

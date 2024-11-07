@@ -1,11 +1,12 @@
 <?php
 require_once __DIR__ . '/../Models/Manager.php';
 require_once __DIR__ . '/../Fonctions/SessionManager.php';
+require_once __DIR__ . '/../Fonctions/RoleManager.php';
 
 $session = SessionManager::getInstance();
 $session->startSession();
 
-if (!$session->get('admin', false)) {
+if (!$session->get('role') === RoleManager::ROLE_ADMIN) {
     logError("Tentative d'accès non autorisé à l'interface d'administration");
     header('Location: ../index.php?url=admin/login/index');
     exit();
