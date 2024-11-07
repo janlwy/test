@@ -54,7 +54,7 @@ class ConnexionController extends BaseController
                     // Vérifier si l'utilisateur est un admin
                     if ($user['role'] === 'admin') {
                         $this->session->set('admin', true);
-                        $this->redirect('admin/database_manager/index');
+                        $this->redirect('database_manager/index');
                     } else {
                         $this->redirect('mediabox/index');
                     }
