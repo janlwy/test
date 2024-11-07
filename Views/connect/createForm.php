@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data" id="createForm">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -61,23 +61,27 @@
 			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
 
 			<script>
-			let form, password1, password2, submitBtn, pseudo, email;
-			
 			document.addEventListener('DOMContentLoaded', function() {
-				form = document.querySelector('form');
-				password1 = document.getElementById('mdp1');
-				password2 = document.getElementById('mdp2');
-				submitBtn = document.getElementById('submitBtn');
-				pseudo = document.getElementById('pseudo');
-				email = document.getElementById('email');
+				const form = document.getElementById('createForm');
+				const password1 = document.getElementById('mdp1');
+				const password2 = document.getElementById('mdp2');
+				const submitBtn = document.getElementById('submitBtn');
+				const pseudo = document.getElementById('pseudo');
+				const email = document.getElementById('email');
+				
+				// Activer le bouton submit par défaut
+				submitBtn.disabled = false;
 				
 				// Ajouter les event listeners
 				form.addEventListener('submit', function(e) {
-					if (!validateForm()) {
-						e.preventDefault();
-						return false;
+					e.preventDefault(); // Toujours prévenir la soumission par défaut
+					
+					if (validateForm()) {
+						console.log('Form is valid, submitting...');
+						form.submit(); // Soumettre explicitement le formulaire
+					} else {
+						console.log('Form validation failed');
 					}
-					return true;
 				});
 
 				[password1, password2, pseudo, email].forEach(input => {
@@ -85,8 +89,7 @@
 					input.addEventListener('change', validateForm);
 				});
 
-				// Validation initiale
-				validateForm();
+				validateForm(); // Validation initiale
 			});
 
 			function validateForm() {
