@@ -57,23 +57,23 @@ class CreationController extends BaseController implements IController
                     ['rule' => ['max', 50], 'message' => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères'],
                     ['rule' => ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'], 'message' => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores']
                 ],
-            'email' => [
-                ['rule' => 'required', 'message' => 'L\'email est requis'],
-                ['rule' => 'email', 'message' => 'Veuillez entrer une adresse email valide']
-            ],
-            'mdp' => [
-                ['rule' => 'required', 'message' => 'Le mot de passe est requis'],
-                ['rule' => ['min', 8], 'message' => 'Le mot de passe doit faire au moins 8 caractères'],
-                ['rule' => ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], 
-                 'message' => 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial']
-            ],
-            'mdp2' => [
-                ['rule' => 'required', 'message' => 'La confirmation du mot de passe est requise'],
-                ['rule' => ['match', 'mdp'], 'message' => 'Les mots de passe ne correspondent pas']
+                'email' => [
+                    ['rule' => 'required', 'message' => 'L\'email est requis'],
+                    ['rule' => 'email', 'message' => 'Veuillez entrer une adresse email valide']
+                ],
+                'mdp' => [
+                    ['rule' => 'required', 'message' => 'Le mot de passe est requis'],
+                    ['rule' => ['min', 8], 'message' => 'Le mot de passe doit faire au moins 8 caractères'],
+                    ['rule' => ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], 
+                     'message' => 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial']
+                ],
+                'mdp2' => [
+                    ['rule' => 'required', 'message' => 'La confirmation du mot de passe est requise'],
+                    ['rule' => ['match', 'mdp'], 'message' => 'Les mots de passe ne correspondent pas']
                 ]
             ];
 
-        if ($validator->validate($_POST, $rules)) {
+            if ($validator->validate($_POST, $rules)) {
             if ($_POST['mdp'] !== $_POST['mdp2']) {
                 $this->session->set('erreur', 'Les mots de passe ne correspondent pas');
                 $this->redirect('creation/createUserForm');
