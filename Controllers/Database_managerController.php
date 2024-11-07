@@ -23,7 +23,8 @@ class Database_managerController extends BaseController implements IController {
             'session' => $this->session,
             'message' => '',
             'error' => '',
-            'isAdmin' => true
+            'isAdmin' => true,
+            'hideNav' => true
         ];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
