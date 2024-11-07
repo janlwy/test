@@ -60,7 +60,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
 
     <!-- Ajout de colonne -->
     <h3>Ajouter une colonne</h3>
-    <form method="post" class="formCentered">
+    <form method="post" class="formCentered" onsubmit="return validateAddColumn()">
             <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
             <input type="hidden" name="action" value="add_column">
             
@@ -227,4 +227,31 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
             columns.appendChild(tempDiv.firstChild);
         }
     }
+</script>
+
+<script>
+function validateAddColumn() {
+    const tableName = document.querySelector('form[action="add_column"] input[name="table_name"]').value;
+    const columnName = document.querySelector('form[action="add_column"] input[name="column_name"]').value;
+    const columnDefinition = document.querySelector('form[action="add_column"] input[name="column_definition"]').value;
+    
+    if (!tableName || !columnName || !columnDefinition) {
+        alert('Tous les champs sont requis');
+        return false;
+    }
+    
+    if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(columnName)) {
+        alert('Le nom de la colonne doit commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
+        return false;
+    }
+    
+    const allowedTypes = ['INT', 'VARCHAR', 'TEXT', 'DATE', 'DATETIME', 'BOOLEAN'];
+    const typeBase = columnDefinition.split('(')[0].toUpperCase();
+    if (!allowedTypes.includes(typeBase)) {
+        alert(`Type de colonne non autorisé: ${typeBase}\nTypes autorisés: ${allowedTypes.join(', ')}`);
+        return false;
+    }
+    
+    return true;
+}
 </script>
