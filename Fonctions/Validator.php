@@ -2,21 +2,28 @@
 
 class Validator {
     private $errors = [];
+    private $data = [];
     
     public function validate($data, $rules) {
+        $this->data = $data;
+        $this->errors = [];
+        
         foreach ($rules as $field => $fieldRules) {
-            if (!isset($data[$field]) && in_array('required', $fieldRules)) {
-                $this->addError($field, 'Ce champ est requis');
-                continue;
-            }
-            
             $value = $data[$field] ?? null;
             
-            foreach ($fieldRules as $rule) {
-                if (is_string($rule)) {
-                    $this->validateRule($field, $value, $rule);
-                } elseif (is_array($rule)) {
-                    $this->validateParameterizedRule($field, $value, $rule);
+            foreach ($fieldRules as $rule => $message) {
+                if (is_numeric($rule)) {
+                    // Si la règle n'a pas de message personnalisé
+                    $rule = $message;
+                    $message = null;
+                }
+                
+                if (is_array($rule)) {
+                    // Règle avec paramètres : ['min', 3]
+                    $this->validateParameterizedRule($field, $value, $rule[0], $rule[1], $message);
+                } else {
+                    // Règle simple : 'required'
+                    $this->validateRule($field, $value, $rule, $message);
                 }
             }
         }
@@ -24,71 +31,86 @@ class Validator {
         return empty($this->errors);
     }
     
-    private function validateRule($field, $value, $rule) {
+    private function validateRule($field, $value, $rule, $message = null) {
+        $isValid = true;
+        $defaultMessage = '';
+        
         switch ($rule) {
             case 'required':
-                if (empty($value)) {
-                    $this->addError($field, 'Ce champ est requis');
-                }
+                $isValid = !empty($value);
+                $defaultMessage = 'Ce champ est requis';
                 break;
+                
             case 'email':
-                if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
-                    $this->addError($field, 'Email invalide');
-                }
+                $isValid = filter_var($value, FILTER_VALIDATE_EMAIL) !== false;
+                $defaultMessage = 'Adresse email invalide';
                 break;
+                
             case 'alpha':
-                if (!preg_match('/^[a-zA-Z]+$/', $value)) {
-                    $this->addError($field, 'Seules les lettres sont autorisées');
-                }
+                $isValid = preg_match('/^[a-zA-Z]+$/', $value);
+                $defaultMessage = 'Seules les lettres sont autorisées';
                 break;
+                
             case 'alphanumeric':
-                if (!preg_match('/^[a-zA-Z0-9]+$/', $value)) {
-                    $this->addError($field, 'Seuls les caractères alphanumériques sont autorisés');
-                }
+                $isValid = preg_match('/^[a-zA-Z0-9]+$/', $value);
+                $defaultMessage = 'Seuls les caractères alphanumériques sont autorisés';
                 break;
+                
             case 'username':
-                if (!preg_match('/^[a-zA-Z0-9_-]{3,20}$/', $value)) {
-                    $this->addError($field, 'Le nom d\'utilisateur doit contenir entre 3 et 20 caractères (lettres, chiffres, - et _)');
-                }
+                $isValid = preg_match('/^[a-zA-Z0-9_-]{3,20}$/', $value);
+                $defaultMessage = 'Le nom d\'utilisateur doit contenir entre 3 et 20 caractères (lettres, chiffres, - et _)';
                 break;
+                
             case 'password':
-                if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $value)) {
-                    $this->addError($field, 'Le mot de passe doit contenir au moins 8 caractères, une lettre, un chiffre et un caractère spécial');
-                }
+                $isValid = preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $value);
+                $defaultMessage = 'Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial';
                 break;
+        }
+        
+        if (!$isValid) {
+            $this->addError($field, $message ?? $defaultMessage);
         }
     }
     
-    private function validateParameterizedRule($field, $value, $rule) {
-        $ruleName = $rule[0];
-        $parameter = $rule[1];
+    private function validateParameterizedRule($field, $value, $ruleName, $parameter, $message = null) {
+        $isValid = true;
+        $defaultMessage = '';
         
         switch ($ruleName) {
             case 'min':
-                if (strlen($value) < $parameter) {
-                    $this->addError($field, "Minimum $parameter caractères requis");
-                }
+                $isValid = strlen($value) >= $parameter;
+                $defaultMessage = "Minimum $parameter caractères requis";
                 break;
+                
             case 'max':
-                if (strlen($value) > $parameter) {
-                    $this->addError($field, "Maximum $parameter caractères autorisés");
-                }
+                $isValid = strlen($value) <= $parameter;
+                $defaultMessage = "Maximum $parameter caractères autorisés";
                 break;
-            case 'matches':
-                if ($value !== $parameter) {
-                    $this->addError($field, 'Les valeurs ne correspondent pas');
-                }
+                
+            case 'match':
+                $matchValue = $this->data[$parameter] ?? null;
+                $isValid = $value === $matchValue;
+                $defaultMessage = "Les valeurs ne correspondent pas";
                 break;
+                
+            case 'pattern':
+                $isValid = preg_match($parameter, $value);
+                $defaultMessage = "Format invalide";
+                break;
+                
             case 'mime':
-                if (!in_array($value, $parameter)) {
-                    $this->addError($field, 'Type de fichier non autorisé');
-                }
+                $isValid = in_array($value, (array)$parameter);
+                $defaultMessage = "Type de fichier non autorisé";
                 break;
+                
             case 'maxsize':
-                if ($value > $parameter) {
-                    $this->addError($field, 'Fichier trop volumineux');
-                }
+                $isValid = $value <= $parameter;
+                $defaultMessage = "Taille maximale dépassée";
                 break;
+        }
+        
+        if (!$isValid) {
+            $this->addError($field, $message ?? $defaultMessage);
         }
     }
     
