@@ -93,63 +93,54 @@
 			});
 
 			function validateForm() {
-                    // Validation du mot de passe
-                    const isPasswordValid = password1.value === password2.value 
-                        && password1.value.length >= 8 
-                        && /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
-                    
-                    // Validation du pseudo
-                    const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+                const password1 = document.getElementById('mdp1');
+                const password2 = document.getElementById('mdp2');
+                const pseudo = document.getElementById('pseudo');
+                const email = document.getElementById('email');
+                const submitBtn = document.getElementById('submitBtn');
 
-                    // Validation de l'email
-                    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+                // Validation du mot de passe
+                const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/;
+                const isPasswordValid = password1.value === password2.value && passwordPattern.test(password1.value);
 
-                    // Afficher les messages d'erreur spécifiques
-                    if (!isPasswordValid) {
-                        if (password1.value !== password2.value) {
-                            password2.setCustomValidity('Les mots de passe ne correspondent pas');
-                        } else if (password1.value.length < 8) {
-                            password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères');
-                        } else {
-                            password1.setCustomValidity('Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial');
-                        }
-                    } else {
-                        password1.setCustomValidity('');
-                        password2.setCustomValidity('');
-                    }
-                    
-                    // Vérification du token CSRF
-                    const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-                    if (!csrfToken) {
-                        alert('Erreur de sécurité: token CSRF manquant');
-                        return false;
-                    }
+                // Validation du pseudo
+                const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
 
-                    submitBtn.disabled = !(isPasswordValid && isPseudoValid && isEmailValid);
-                    
-                    if (!isPasswordValid) {
-                        password2.setCustomValidity('Les mots de passe doivent correspondre et respecter les critères de sécurité');
-                        return false;
-                    } else {
-                        password2.setCustomValidity('');
-                    }
-                    
-                    if (!isPseudoValid) {
-                        pseudo.setCustomValidity('Le nom d\'utilisateur doit contenir entre 3 et 20 caractères alphanumériques');
-                        return false;
-                    } else {
-                        pseudo.setCustomValidity('');
-                    }
-                    
-                    if (!isEmailValid) {
-                        email.setCustomValidity('Veuillez entrer une adresse email valide');
-                        return false;
-                    } else {
-                        email.setCustomValidity('');
-                    }
-                    
-                    return true;
+                // Validation de l'email
+                const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+
+                // Réinitialiser tous les messages d'erreur
+                [password1, password2, pseudo, email].forEach(input => input.setCustomValidity(''));
+
+                // Vérifier le token CSRF
+                const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+                if (!csrfToken) {
+                    alert('Erreur de sécurité: token CSRF manquant');
+                    return false;
                 }
+
+                // Gérer les messages d'erreur
+                if (!isPasswordValid) {
+                    if (password1.value !== password2.value) {
+                        password2.setCustomValidity('Les mots de passe ne correspondent pas');
+                    } else {
+                        password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial');
+                    }
+                }
+
+                if (!isPseudoValid) {
+                    pseudo.setCustomValidity('Le nom d\'utilisateur doit contenir entre 3 et 20 caractères alphanumériques, tirets ou underscores');
+                }
+
+                if (!isEmailValid) {
+                    email.setCustomValidity('Veuillez entrer une adresse email valide');
+                }
+
+                // Activer/désactiver le bouton submit
+                submitBtn.disabled = !(isPasswordValid && isPseudoValid && isEmailValid);
+
+                return isPasswordValid && isPseudoValid && isEmailValid;
+            }
 
 
 			</script>
