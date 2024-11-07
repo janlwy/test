@@ -11,12 +11,9 @@ class Validator {
         foreach ($rules as $field => $fieldRules) {
             $value = $data[$field] ?? null;
             
-            foreach ($fieldRules as $rule => $message) {
-                if (is_numeric($rule)) {
-                    // Si la règle n'a pas de message personnalisé
-                    $rule = $message;
-                    $message = null;
-                }
+            foreach ($fieldRules as $ruleData) {
+                $rule = $ruleData['rule'];
+                $message = $ruleData['message'] ?? null;
                 
                 if (is_array($rule)) {
                     // Règle avec paramètres : ['min', 3]

@@ -46,24 +46,24 @@ class CreationController extends BaseController implements IController
         $validator = new Validator();
         $rules = [
             'pseudo' => [
-                'required' => 'Le nom d\'utilisateur est requis',
-                ['min', 3] => 'Le nom d\'utilisateur doit faire au moins 3 caractères',
-                ['max', 50] => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères',
-                ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'] => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores'
+                ['rule' => 'required', 'message' => 'Le nom d\'utilisateur est requis'],
+                ['rule' => ['min', 3], 'message' => 'Le nom d\'utilisateur doit faire au moins 3 caractères'],
+                ['rule' => ['max', 50], 'message' => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères'],
+                ['rule' => ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'], 'message' => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores']
             ],
             'email' => [
-                'required' => 'L\'email est requis',
-                'email' => 'Veuillez entrer une adresse email valide'
+                ['rule' => 'required', 'message' => 'L\'email est requis'],
+                ['rule' => 'email', 'message' => 'Veuillez entrer une adresse email valide']
             ],
             'mdp' => [
-                'required' => 'Le mot de passe est requis',
-                ['min', 8] => 'Le mot de passe doit faire au moins 8 caractères',
-                ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'] => 
-                'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial'
+                ['rule' => 'required', 'message' => 'Le mot de passe est requis'],
+                ['rule' => ['min', 8], 'message' => 'Le mot de passe doit faire au moins 8 caractères'],
+                ['rule' => ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], 
+                 'message' => 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial']
             ],
             'mdp2' => [
-                'required' => 'La confirmation du mot de passe est requise',
-                ['match', 'mdp'] => 'Les mots de passe ne correspondent pas'
+                ['rule' => 'required', 'message' => 'La confirmation du mot de passe est requise'],
+                ['rule' => ['match', 'mdp'], 'message' => 'Les mots de passe ne correspondent pas']
             ]
         ];
 
