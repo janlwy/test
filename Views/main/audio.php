@@ -1,9 +1,23 @@
 <section>
+    <?php if (isset($_SESSION['message'])): ?>
+        <div class="success-message">
+            <?php echo htmlspecialchars($_SESSION['message']); ?>
+        </div>
+        <?php unset($_SESSION['message']); ?>
+    <?php endif; ?>
+
+    <?php if (isset($_SESSION['erreur'])): ?>
+        <div class="error-message">
+            <?php echo htmlspecialchars($_SESSION['erreur']); ?>
+        </div>
+        <?php unset($_SESSION['erreur']); ?>
+    <?php endif; ?>
+
     <div id="audioData" style="display: none;" 
          data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
          data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
                             return $audio->jsonData;
-                        }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
+                        }, $audios ?? [])), ENT_QUOTES, 'UTF-8'); ?>'>
     </div>
     <div id="player-container" class="player-container">
         <!--     <div class="searchBox">

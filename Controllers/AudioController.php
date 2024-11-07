@@ -231,6 +231,14 @@ class AudioController extends BaseController implements IController
             header('Location: ?url=connexion/index');
             exit();
         }
+
+        // Vérifier que l'utilisateur a accès à ces fichiers audio
+        try {
+            $audios = $this->audioRepository->findAllByUser($userId);
+            
+            if (empty($audios)) {
+                $_SESSION['message'] = "Aucun fichier audio disponible.";
+            }
         
         // Récupérer les audios de l'utilisateur connecté
         $audios = $this->audioRepository->findAllByUser($userId);
