@@ -49,15 +49,16 @@ class ConnexionController extends BaseController
                 }
 
                 if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
-                    $this->session->setAuthenticated($_POST['pseudo'], $user['id']);
+                    $this->session->setAuthenticated($_POST['pseudo'], $user['id'], $user['role']);
                     
                     // Vérifier si l'utilisateur est un admin
                     if ($user['role'] === 'admin') {
                         $this->session->set('admin', true);
                         $this->redirect('database_manager/index');
-                    } else {
-                        $this->redirect('mediabox/index');
+                        return;
                     }
+                    
+                    $this->redirect('mediabox/index');
                 } else {
                     logError("Erreur de connexion : identifiants invalides");
                     $this->session->set('erreur', 'Login ou mot de passe non reconnu !');
