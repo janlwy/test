@@ -87,16 +87,17 @@
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.text().then(text => {
+                        try {
+                            const jsonError = JSON.parse(text);
+                            throw new Error(jsonError.message || 'Erreur serveur');
+                        } catch (e) {
+                            console.error('Réponse brute:', text);
+                            throw new Error(`Erreur HTTP ${response.status}`);
+                        }
+                    });
                 }
-                return response.text().then(text => {
-                    try {
-                        return JSON.parse(text);
-                    } catch (e) {
-                        console.error('Parsing error:', text);
-                        throw new Error('Invalid JSON response from server');
-                    }
-                });
+                return response.json();
             })
             .then(data => {
                 if (data.success) {
