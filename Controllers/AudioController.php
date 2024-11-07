@@ -458,6 +458,14 @@ class AudioController extends BaseController implements IController
     public function saveSelection() {
         $this->checkAuth();
         
+        // Vérifier le token CSRF dans l'en-tête
+        $csrfToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? null;
+        if (!$this->session->validateToken($csrfToken)) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'message' => 'Token CSRF invalide']);
+            exit;
+        }
+        
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
             echo json_encode(['success' => false, 'message' => 'Méthode non autorisée']);

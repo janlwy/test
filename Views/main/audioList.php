@@ -56,10 +56,14 @@
             }
             
             // Sauvegarder la sélection via AJAX
+            // Récupérer le token CSRF
+            const csrfToken = '<?php echo $session->get('csrf_token'); ?>';
+            
             fetch('?url=audio/saveSelection', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-CSRF-Token': csrfToken
                 },
                 body: JSON.stringify({ tracks: selectedTracks })
             })
