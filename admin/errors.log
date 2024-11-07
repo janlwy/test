@@ -1,0 +1,16 @@
+2024-11-07 00:50:36 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:51:26 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:51:26 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:51:40 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:51:40 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:51:55 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:51:55 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:52:03 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:52:03 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:52:19 - [error] - Tentative d'accès non autorisé à l'interface d'administration
+2024-11-07 00:52:54 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:52:54 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:58:30 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:58:30 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
+2024-11-07 00:59:03 - [error] - Erreur lors de l'ajout de la colonne email à la table users: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '' for key 'email'
+2024-11-07 00:59:03 - [error] - Erreur base de données : Erreur lors de l'ajout de la colonne
