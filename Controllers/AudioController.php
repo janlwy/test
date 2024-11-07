@@ -232,39 +232,42 @@ class AudioController extends BaseController implements IController
             exit();
         }
 
-        // Vérifier que l'utilisateur a accès à ces fichiers audio
         try {
+            // Vérifier que l'utilisateur a accès à ces fichiers audio
             $audios = $this->audioRepository->findAllByUser($userId);
             
             if (empty($audios)) {
                 $_SESSION['message'] = "Aucun fichier audio disponible.";
             }
-        
-        // Récupérer les audios de l'utilisateur connecté
-        $audios = $this->audioRepository->findAllByUser($userId);
-        
-        // Préparer les données complètes pour chaque audio
-        foreach ($audios as $audio) {
-            $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
-            $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
-            $audio->jsonData = [
-                'id' => $audio->getId(),
-                'title' => $audio->getTitle(),
-                'artist' => $audio->getArtist(),
-                'path' => $audio->getPath(),
-                'fullPath' => $audio->fullPath,
-                'image' => $audio->getImage(),
-                'fullImage' => $audio->fullImage
+            
+            // Préparer les données complètes pour chaque audio
+            foreach ($audios as $audio) {
+                $audio->fullPath = 'Ressources/audio/' . $audio->getPath();
+                $audio->fullImage = 'Ressources/images/pochettes/' . $audio->getImage();
+                $audio->jsonData = [
+                    'id' => $audio->getId(),
+                    'title' => $audio->getTitle(),
+                    'artist' => $audio->getArtist(),
+                    'path' => $audio->getPath(),
+                    'fullPath' => $audio->fullPath,
+                    'image' => $audio->getImage(),
+                    'fullImage' => $audio->fullImage
+                ];
+            }
+            
+            $datas = [
+                'pageTitle' => "Lecteur Audio",
+                'userId' => $userId,
+                'audios' => $audios
             ];
+            
+            generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
+        } catch (Exception $e) {
+            logError("Erreur dans player: " . $e->getMessage());
+            $_SESSION['erreur'] = "Une erreur est survenue lors du chargement des fichiers audio.";
+            header('Location: ?url=audio/list');
+            exit();
         }
-        
-        $datas = [
-            'pageTitle' => "Lecteur Audio",
-            'userId' => $userId,
-            'audios' => $audios
-        ];
-        
-        generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
     }
 
     public function delete($id) {
