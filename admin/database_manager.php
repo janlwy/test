@@ -98,3 +98,4 @@ require_once '../Views/admin/database_manager_content.php';
 $content = ob_get_clean();
 
 require_once '../Views/base.html.php';
+}
