@@ -240,6 +240,13 @@
             try {
                 $connexion = $this->getConnexion();
                 
+                // Vérifier si la table existe
+                $stmt = $connexion->prepare("SHOW TABLES LIKE :tableName");
+                $stmt->execute(['tableName' => $tableName]);
+                if ($stmt->rowCount() === 0) {
+                    throw new DatabaseException("La table '$tableName' n'existe pas");
+                }
+                
                 // Vérifier si la colonne existe déjà
                 $stmt = $connexion->prepare("SHOW COLUMNS FROM " . $this->escapeIdentifier($tableName) . 
                                           " LIKE :columnName");
@@ -247,6 +254,11 @@
                 
                 if ($stmt->rowCount() > 0) {
                     throw new DatabaseException("La colonne '$columnName' existe déjà dans la table '$tableName'");
+                }
+                
+                // Valider la syntaxe de la définition
+                if (!preg_match('/^[A-Za-z]+(\([0-9,]+\))?\s*(NOT NULL|NULL)?\s*(DEFAULT .*)?$/i', $definition)) {
+                    throw new DatabaseException("La définition de la colonne est invalide. Format attendu: TYPE(taille) [NOT NULL] [DEFAULT valeur]");
                 }
                 
                 // Ajouter la colonne
@@ -257,6 +269,7 @@
                     throw new DatabaseException("Échec de l'ajout de la colonne. Vérifiez la syntaxe de la définition.");
                 }
                 
+                logInfo("Colonne '$columnName' ajoutée avec succès à la table '$tableName'");
                 return true;
             } catch (PDOException $e) {
                 logError("Erreur lors de l'ajout de la colonne $columnName à la table $tableName: " . $e->getMessage());

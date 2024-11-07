@@ -31,18 +31,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 break;
 
             case 'add_column':
-                // Vérifier si la table existe
-                $tables = $manager->getConnexion()->query("SHOW TABLES")->fetchAll(PDO::FETCH_COLUMN);
-                if (!in_array($_POST['table_name'], $tables)) {
-                    throw new DatabaseException("La table '{$_POST['table_name']}' n'existe pas");
+                try {
+                    // Validation des entrées
+                    if (empty($_POST['table_name']) || empty($_POST['column_name']) || empty($_POST['column_definition'])) {
+                        throw new DatabaseException("Tous les champs sont requis");
+                    }
+                    
+                    // Nettoyage des entrées
+                    $tableName = trim($_POST['table_name']);
+                    $columnName = trim($_POST['column_name']);
+                    $definition = trim($_POST['column_definition']);
+                    
+                    // Validation du nom de la colonne
+                    if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $columnName)) {
+                        throw new DatabaseException("Le nom de la colonne n'est pas valide. Utilisez uniquement des lettres, chiffres et underscores");
+                    }
+                    
+                    $manager->addColumn($tableName, $columnName, $definition);
+                    $message = "Colonne '$columnName' ajoutée avec succès à la table '$tableName'";
+                    logInfo($message);
+                } catch (DatabaseException $e) {
+                    $error = $e->getMessage();
+                    logError("Erreur lors de l'ajout de la colonne : " . $error);
                 }
-                
-                $manager->addColumn(
-                    $_POST['table_name'],
-                    $_POST['column_name'],
-                    $_POST['column_definition']
-                );
-                $message = "Colonne '{$_POST['column_name']}' ajoutée avec succès à la table '{$_POST['table_name']}'";
                 break;
 
             case 'modify_column':
