@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data" onsubmit="return validateForm()">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -27,7 +27,7 @@
                    autocomplete="username">
 
 			<label for="mdp1"><b>Mot de passe</b></label>
-			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp1" id="mdp1" value="" required
+			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp" id="mdp1" value="" required
                    pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
                    title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
                    maxlength="72"
@@ -124,12 +124,6 @@
                     return true;
                 }
 
-                form.addEventListener('submit', function(e) {
-                    const isValid = validateForm();
-                    if (!isValid) {
-                        e.preventDefault();
-                    }
-                });
 
 			</script>
 
