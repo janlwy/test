@@ -49,11 +49,11 @@ class CreationController extends BaseController implements IController
                 throw new Exception('Token CSRF invalide');
             }
 
-        $validator = new Validator();
-        $rules = [
-            'pseudo' => [
-                ['rule' => 'required', 'message' => 'Le nom d\'utilisateur est requis'],
-                ['rule' => ['min', 3], 'message' => 'Le nom d\'utilisateur doit faire au moins 3 caractères'],
+            $validator = new Validator();
+            $rules = [
+                'pseudo' => [
+                    ['rule' => 'required', 'message' => 'Le nom d\'utilisateur est requis'],
+                    ['rule' => ['min', 3], 'message' => 'Le nom d\'utilisateur doit faire au moins 3 caractères'],
                 ['rule' => ['max', 50], 'message' => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères'],
                 ['rule' => ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'], 'message' => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores']
             ],
