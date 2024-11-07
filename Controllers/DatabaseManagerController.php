@@ -1,5 +1,9 @@
 <?php
 
+require_once 'Models/Manager.php';
+require_once 'Fonctions/RoleManager.php';
+require_once 'Controllers/BaseController.php';
+
 class DatabaseManagerController extends BaseController implements IController {
     private $manager;
 
