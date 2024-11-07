@@ -306,11 +306,15 @@
         public function findUserByPseudo(string $pseudo) {
             try {
                 $connexion = $this->getConnexion();
-                $sql = "SELECT * FROM users WHERE pseudo = :pseudo";
+                $sql = "SELECT id, pseudo, mdp, role FROM users WHERE pseudo = :pseudo";
                 $stmt = $connexion->prepare($sql);
                 $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
                 $stmt->execute();
-                return $stmt->fetch(PDO::FETCH_ASSOC);
+                $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                if ($result) {
+                    logInfo("Utilisateur trouvé: " . $pseudo . " avec le rôle: " . ($result['role'] ?? 'non défini'));
+                }
+                return $result;
             } catch (PDOException $e) {
                 throw new DatabaseException("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
             }

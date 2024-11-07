@@ -28,6 +28,7 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
+			<input type="hidden" name="role_redirect" value="1">
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
