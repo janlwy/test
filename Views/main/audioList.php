@@ -106,7 +106,14 @@
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('Une erreur est survenue lors de la communication avec le serveur.');
+                // Afficher un message d'erreur plus détaillé
+                alert('Erreur: ' + (error.message || 'Une erreur est survenue lors de la communication avec le serveur.'));
+                // Log l'erreur complète pour le débogage
+                console.log('Détails de l\'erreur:', {
+                    message: error.message,
+                    stack: error.stack,
+                    response: error.response
+                });
             });
         }
         </script>

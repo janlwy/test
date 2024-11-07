@@ -463,13 +463,12 @@ class AudioController extends BaseController implements IController
     public function saveSelection() {
         $this->checkAuth();
         
-        // Vérifier le token CSRF dans l'en-tête
-        $csrfToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? null;
-        if (!$this->session->validateToken($csrfToken)) {
-            http_response_code(403);
-            echo json_encode(['success' => false, 'message' => 'Token CSRF invalide']);
-            exit;
-        }
+        try {
+            // Vérifier le token CSRF dans l'en-tête
+            $csrfToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? null;
+            if (!$csrfToken || !hash_equals($this->session->get('csrf_token'), $csrfToken)) {
+                throw new Exception('Token CSRF invalide');
+            }
         
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             http_response_code(405);
@@ -481,10 +480,10 @@ class AudioController extends BaseController implements IController
         $tracks = $data['tracks'] ?? [];
         
         if (empty($tracks)) {
-            http_response_code(400);
-            echo json_encode(['success' => false, 'message' => 'Aucune piste sélectionnée']);
-            exit;
+            throw new Exception('Aucune piste sélectionnée');
         }
+        
+        header('Content-Type: application/json');
         
         // Vérifier que les pistes appartiennent à l'utilisateur
         $userId = $_SESSION['user_id'] ?? null;
