@@ -527,3 +527,137 @@
 2024-11-07 12:11:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
 2024-11-07 12:11:50 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
 2024-11-07 12:11:50 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:24:36 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:24:40 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:24:40 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:24:40 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:24:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:24:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:24:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:24:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:24:53 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 12:24:53 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 12:24:53 - [info] - Début de la déconnexion
+2024-11-07 12:24:53 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 12:24:53 - [info] - Destruction de la session active
+2024-11-07 12:24:53 - [info] - Cookie de session supprimé
+2024-11-07 12:24:53 - [info] - Session détruite
+2024-11-07 12:24:53 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 12:24:53 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 12:24:53 - [error] - Cookie de session manquant
+2024-11-07 12:24:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:24:53 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:24:53 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:25:44 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 12:25:44 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 12:25:44 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:37:00 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:00 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:00 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:00 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:00 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:02 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:02 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:06 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:06 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:06 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:06 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:06 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:07 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-11-07 12:37:07 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-11-07 12:37:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:07 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:07 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-07 12:37:07 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-07 12:37:07 - [info] - Début de la méthode index dans AccueilController
+2024-11-07 12:37:07 - [info] - Utilisateur connecté, redirection vers mediabox
+2024-11-07 12:37:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:17 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:37:17 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:37:23 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 12:37:23 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 12:37:23 - [info] - Début de la déconnexion
+2024-11-07 12:37:23 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 12:37:23 - [info] - Destruction de la session active
+2024-11-07 12:37:23 - [info] - Cookie de session supprimé
+2024-11-07 12:37:23 - [info] - Session détruite
+2024-11-07 12:37:23 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 12:37:23 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 12:37:23 - [error] - Cookie de session manquant
+2024-11-07 12:37:23 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:23 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:23 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:26 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:26 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:26 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:31 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-11-07 12:37:31 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-11-07 12:37:33 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2024-11-07 12:37:33 - [info] - Appel de la méthode createUserForm dans le contrôleur CreationController
+2024-11-07 12:37:37 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:37:37 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:37:37 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:37:50 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 12:37:50 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 12:37:50 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:40:04 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:40:10 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:40:11 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:40:14 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:40:14 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:40:14 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:40:14 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:40:14 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:40:20 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 12:40:20 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 12:40:20 - [info] - Début de la déconnexion
+2024-11-07 12:40:20 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 12:40:20 - [info] - Destruction de la session active
+2024-11-07 12:40:20 - [info] - Cookie de session supprimé
+2024-11-07 12:40:20 - [info] - Session détruite
+2024-11-07 12:40:20 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 12:40:20 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 12:40:20 - [error] - Cookie de session manquant
+2024-11-07 12:40:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:40:20 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:40:20 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:40:33 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 12:40:33 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 12:40:33 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:41:45 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:41:45 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 12:41:45 - [error] - Tentative d'accès non autorisé à l'interface d'administration
+2024-11-07 12:41:45 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:41:45 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:41:45 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:41:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:41:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-07 12:41:52 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-07 12:41:52 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-07 12:41:52 - [info] - Début de la déconnexion
+2024-11-07 12:41:52 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-07 12:41:52 - [info] - Destruction de la session active
+2024-11-07 12:41:52 - [info] - Cookie de session supprimé
+2024-11-07 12:41:52 - [info] - Session détruite
+2024-11-07 12:41:52 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-07 12:41:52 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-07 12:41:52 - [error] - Cookie de session manquant
+2024-11-07 12:41:52 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:41:52 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:41:52 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:42:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-07 12:42:03 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-07 12:42:04 - [info] - Tentative de chargement du contrôleur : Database_managerController et de la méthode : index
+2024-11-07 12:42:04 - [info] - Appel de la méthode index dans le contrôleur Database_managerController
+2024-11-07 12:42:04 - [error] - Tentative d'accès non autorisé à l'interface d'administration
+2024-11-07 12:42:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-07 12:42:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-07 12:42:04 - [info] - Début de la méthode index dans ConnexionController
+2024-11-07 12:42:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-07 12:42:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
