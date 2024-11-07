@@ -70,8 +70,8 @@ class CreationController extends BaseController implements IController
             'mdp2' => [
                 ['rule' => 'required', 'message' => 'La confirmation du mot de passe est requise'],
                 ['rule' => ['match', 'mdp'], 'message' => 'Les mots de passe ne correspondent pas']
-            ]
-        ];
+                ]
+            ];
 
         if ($validator->validate($_POST, $rules)) {
             if ($_POST['mdp'] !== $_POST['mdp2']) {
@@ -131,10 +131,7 @@ class CreationController extends BaseController implements IController
             $this->session->set('erreur', 'Veuillez corriger les erreurs dans le formulaire');
             $this->session->set('validation_errors', $validator->getErrors());
             $this->redirect('creation/createUserForm');
-        } catch (Exception $e) {
-            logError("Erreur lors de la création du compte : " . $e->getMessage());
-            $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
-            $this->redirect('creation/createUserForm');
         }
+    }
     }
 }
