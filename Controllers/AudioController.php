@@ -250,11 +250,20 @@ class AudioController extends BaseController implements IController
         }
 
         try {
-            // Vérifier que l'utilisateur a accès à ces fichiers audio
-            $audios = $this->audioRepository->findAllByUser($userId);
+            $selectedTracks = $_SESSION['selected_tracks'] ?? [];
+            $audios = [];
+            
+            if (!empty($selectedTracks)) {
+                foreach ($selectedTracks as $trackId) {
+                    $audio = $this->audioRepository->findById($trackId);
+                    if ($audio && $audio->getUserId() == $userId) {
+                        $audios[] = $audio;
+                    }
+                }
+            }
             
             if (empty($audios)) {
-                $_SESSION['message'] = "Aucun fichier audio disponible.";
+                $_SESSION['message'] = "Aucune piste sélectionnée ou disponible.";
             }
             
             // Préparer les données complètes pour chaque audio
