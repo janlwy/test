@@ -468,3 +468,4 @@ class AudioController extends BaseController implements IController
         echo json_encode(['success' => true]);
         exit;
     }
+}
