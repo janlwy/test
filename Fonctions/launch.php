@@ -49,16 +49,16 @@ function generateFile($file, $datas)
 
 function logError($message, $level = 'error')
 {
-	$logFile = 'errors.log'; // Nom du fichier de log
-	$logMessage = date('Y-m-d H:i:s') . " - [$level] - $message\n";
-	file_put_contents($logFile, $logMessage, FILE_APPEND);
+    $logFile = 'logs/application.log';
+    $logMessage = date('Y-m-d H:i:s') . " - [$level] - $message\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
 
 function logInfo($message)
 {
-	$logFile = 'errors.log'; // Nom du fichier de log
-	$logMessage = date('Y-m-d H:i:s') . " - [info] - $message\n";
-	file_put_contents($logFile, $logMessage, FILE_APPEND);
+    $logFile = 'logs/application.log';
+    $logMessage = date('Y-m-d H:i:s') . " - [info] - $message\n";
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
 function shouldDisplayNav($datas) {
     return !isset($datas['hideNav']) || !$datas['hideNav'];
