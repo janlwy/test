@@ -100,11 +100,9 @@ class Database_managerController extends BaseController implements IController {
 
         $pageTitle = 'Gestionnaire de Base de Données - Administration';
 
-        ob_start();
-        require_once 'Views/admin/database_manager_content.php';
-        $content = ob_get_clean();
-
-        require_once '../Views/base.html.php';
+        $datas['hideNav'] = true;
+        $datas['isAdmin'] = true;
+        generate('Views/admin/database_manager_content.php', $datas, 'Views/base.html.php', 'Gestionnaire de Base de Données - Administration');
     }
 
     public function list() {
