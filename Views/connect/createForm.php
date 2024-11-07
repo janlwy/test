@@ -48,7 +48,7 @@
 			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
 
 			<script>
-			let form, password1, password2, submitBtn, pseudo;
+			let form, password1, password2, submitBtn, pseudo, email;
 			
 			document.addEventListener('DOMContentLoaded', function() {
 				form = document.querySelector('form');
@@ -56,6 +56,7 @@
 				password2 = document.getElementById('mdp2');
 				submitBtn = document.getElementById('submitBtn');
 				pseudo = document.getElementById('pseudo');
+				email = document.getElementById('email');
 				
 				// Ajouter les event listeners
 				form.addEventListener('submit', function(e) {
@@ -66,7 +67,7 @@
 					return true;
 				});
 
-				[password1, password2, pseudo].forEach(input => {
+				[password1, password2, pseudo, email].forEach(input => {
 					input.addEventListener('input', validateForm);
 					input.addEventListener('change', validateForm);
 				});
@@ -83,6 +84,9 @@
                     
                     // Validation du pseudo
                     const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+
+                    // Validation de l'email
+                    const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
 
                     // Afficher les messages d'erreur spécifiques
                     if (!isPasswordValid) {
@@ -105,7 +109,7 @@
                         return false;
                     }
 
-                    submitBtn.disabled = !(isPasswordValid && isPseudoValid);
+                    submitBtn.disabled = !(isPasswordValid && isPseudoValid && isEmailValid);
                     
                     if (!isPasswordValid) {
                         password2.setCustomValidity('Les mots de passe doivent correspondre et respecter les critères de sécurité');
@@ -119,6 +123,13 @@
                         return false;
                     } else {
                         pseudo.setCustomValidity('');
+                    }
+                    
+                    if (!isEmailValid) {
+                        email.setCustomValidity('Veuillez entrer une adresse email valide');
+                        return false;
+                    } else {
+                        email.setCustomValidity('');
                     }
                     
                     return true;
