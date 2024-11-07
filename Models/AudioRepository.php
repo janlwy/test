@@ -18,9 +18,14 @@ class AudioRepository implements IRepository {
     
     public function findAllByUser(int $userId): array {
         try {
-            $results = $this->manager->readTableAll('audio', $userId);
+            $connection = $this->manager->getConnexion();
+            $query = "SELECT * FROM audio WHERE user_id = :user_id";
+            $stmt = $connection->prepare($query);
+            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+            $stmt->execute();
+            
             $audios = [];
-            foreach ($results as $data) {
+            while ($data = $stmt->fetch(PDO::FETCH_ASSOC)) {
                 $audios[] = new Audio($data);
             }
             return $audios;
