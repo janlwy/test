@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -40,7 +40,27 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
-			<button type="submit" class="validButton modalButton" name="creation" value="Creation">Création de compte</button>
+			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
+
+			<script>
+			function validatePasswordMatch() {
+				const password1 = document.getElementById('mdp1').value;
+				const password2 = document.getElementById('mdp2').value;
+				const submitBtn = document.getElementById('submitBtn');
+				
+				if (password1 === password2 && password1.length >= 8) {
+					submitBtn.disabled = false;
+					document.getElementById('mdp2').setCustomValidity('');
+				} else {
+					submitBtn.disabled = true;
+					document.getElementById('mdp2').setCustomValidity('Les mots de passe ne correspondent pas');
+				}
+			}
+
+			// Ajouter les écouteurs d'événements
+			document.getElementById('mdp1').addEventListener('input', validatePasswordMatch);
+			document.getElementById('mdp2').addEventListener('input', validatePasswordMatch);
+			</script>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
 
