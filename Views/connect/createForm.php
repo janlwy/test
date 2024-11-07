@@ -15,7 +15,11 @@
 				</div>
 			<?php endif; ?>
 
-			<label for="pseudo"><b>Nom d'utilisateur</b></label>
+            <label for="email"><b>Email</b></label>
+            <input class="inputModal" type="email" placeholder="Entrer votre email" name="email" id="email" required
+                   autocomplete="email">
+
+            <label for="pseudo"><b>Nom d'utilisateur</b></label>
 			<input class="inputModal" type="text" placeholder="Entrer votre nom" name="pseudo" id="pseudo" value="" required
                    pattern="[a-zA-Z0-9_-]{3,20}" 
                    title="3 à 20 caractères alphanumériques, tirets et underscores autorisés"
@@ -51,7 +55,9 @@
 				const submitBtn = document.getElementById('submitBtn');
 				const pseudo = document.getElementById('pseudo');
 
-                function validateForm() {
+            });
+
+            function validateForm() {
                     // Validation du mot de passe
                     const isPasswordValid = password1.value === password2.value 
                         && password1.value.length >= 8 
@@ -107,14 +113,22 @@
                     }
                 });
 
-				[password1, password2, pseudo].forEach(input => {
-					input.addEventListener('input', validateForm);
-					input.addEventListener('change', validateForm);
-				});
+                [password1, password2, pseudo].forEach(input => {
+                    input.addEventListener('input', validateForm);
+                    input.addEventListener('change', validateForm);
+                });
 
-				// Validation initiale
-				validateForm();
-			});
+                // Validation initiale
+                validateForm();
+
+                // Ajouter l'event listener pour le submit du formulaire
+                form.addEventListener('submit', function(e) {
+                    if (!validateForm()) {
+                        e.preventDefault();
+                        return false;
+                    }
+                    return true;
+                });
 			</script>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
