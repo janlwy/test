@@ -5,7 +5,8 @@
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour créer votre profil.</h3>
-			<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+			<?php $token = SessionManager::getInstance()->regenerateToken(); ?>
+			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
@@ -43,23 +44,48 @@
 			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
 
 			<script>
-			function validatePasswordMatch() {
-				const password1 = document.getElementById('mdp1').value;
-				const password2 = document.getElementById('mdp2').value;
+			document.addEventListener('DOMContentLoaded', function() {
+				const form = document.querySelector('form');
+				const password1 = document.getElementById('mdp1');
+				const password2 = document.getElementById('mdp2');
 				const submitBtn = document.getElementById('submitBtn');
-				
-				if (password1 === password2 && password1.length >= 8) {
-					submitBtn.disabled = false;
-					document.getElementById('mdp2').setCustomValidity('');
-				} else {
-					submitBtn.disabled = true;
-					document.getElementById('mdp2').setCustomValidity('Les mots de passe ne correspondent pas');
-				}
-			}
+				const pseudo = document.getElementById('pseudo');
 
-			// Ajouter les écouteurs d'événements
-			document.getElementById('mdp1').addEventListener('input', validatePasswordMatch);
-			document.getElementById('mdp2').addEventListener('input', validatePasswordMatch);
+				function validateForm() {
+					const isPasswordValid = password1.value === password2.value 
+						&& password1.value.length >= 8 
+						&& /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
+					
+					const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+
+					if (isPasswordValid && isPseudoValid) {
+						submitBtn.disabled = false;
+						password2.setCustomValidity('');
+					} else {
+						submitBtn.disabled = true;
+						if (!isPasswordValid) {
+							password2.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une lettre, un chiffre et un caractère spécial');
+						} else {
+							password2.setCustomValidity('');
+						}
+					}
+				}
+
+				form.addEventListener('submit', function(e) {
+					if (!validateForm()) {
+						e.preventDefault();
+						return false;
+					}
+				});
+
+				[password1, password2, pseudo].forEach(input => {
+					input.addEventListener('input', validateForm);
+					input.addEventListener('change', validateForm);
+				});
+
+				// Validation initiale
+				validateForm();
+			});
 			</script>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
