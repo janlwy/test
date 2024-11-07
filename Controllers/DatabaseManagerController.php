@@ -4,7 +4,7 @@ require_once __DIR__ . '/../Models/Manager.php';
 require_once __DIR__ . '/../Fonctions/RoleManager.php';
 require_once __DIR__ . '/../Controllers/BaseController.php';
 
-class DatabaseManagerController extends BaseController implements IController {
+class Database_managerController extends BaseController implements IController {
     private $manager;
 
     public function __construct() {
