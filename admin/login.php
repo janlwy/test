@@ -6,7 +6,7 @@ $error = '';
 $datas = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if ($_POST['username'] === 'admin' && $_POST['password'] === 'admin*123') {
+    if ($_POST['username'] === 'admin' && $_POST['password'] === 'admin_123') {
         $_SESSION['admin'] = true;
         header('Location: database_manager.php');
         exit();
