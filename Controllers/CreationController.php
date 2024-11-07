@@ -45,9 +45,14 @@ class CreationController extends BaseController implements IController
 
         $validator = new Validator();
         $rules = [
-            'pseudo' => ['required', ['min', 3]],
+            'pseudo' => ['required', ['min', 3], ['max', 50]],
             'email' => ['required', 'email'],
-            'mdp' => ['required', ['min', 8]],
+            'mdp' => [
+                'required', 
+                ['min', 8],
+                ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'],
+                'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial'
+            ],
             'mdp2' => ['required']
         ];
 

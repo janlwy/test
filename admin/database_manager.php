@@ -32,6 +32,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         $columns[$name] = $_POST['column_types'][$index];
                     }
                 }
+                // Validation du nom de table
+                if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $_POST['table_name'])) {
+                    throw new DatabaseException("Le nom de la table n'est pas valide");
+                }
+                
+                // Validation des types de colonnes autorisés
+                $allowedTypes = ['INT', 'VARCHAR', 'TEXT', 'DATE', 'DATETIME', 'BOOLEAN'];
+                foreach ($columns as $name => $type) {
+                    if (!in_array(strtoupper($type), $allowedTypes)) {
+                        throw new DatabaseException("Type de colonne non autorisé: $type");
+                    }
+                }
+                
                 $manager->createTable($_POST['table_name'], $columns);
                 $message = "Table '{$_POST['table_name']}' créée avec succès";
                 break;
