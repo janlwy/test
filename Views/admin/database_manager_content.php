@@ -18,7 +18,7 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
 
     <!-- Création de table -->
     <h3>Créer une nouvelle table</h3>
-    <form method="post" id="createTableForm" class="formCentered">
+    <form method="post" id="createTableForm" class="formCentered" onsubmit="return validateCreateTable()">
             <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
             <input type="hidden" name="action" value="create_table">
             
@@ -148,6 +148,39 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
 
 
 <script>
+    function validateCreateTable() {
+        const tableName = document.querySelector('input[name="table_name"]').value;
+        const columnNames = document.querySelectorAll('input[name="column_names[]"]');
+        const columnTypes = document.querySelectorAll('input[name="column_types[]"]');
+        
+        // Validation du nom de la table
+        if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(tableName)) {
+            alert('Le nom de la table doit commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
+            return false;
+        }
+        
+        // Validation des colonnes
+        for (let i = 0; i < columnNames.length; i++) {
+            if (!columnNames[i].value || !columnTypes[i].value) {
+                alert('Tous les champs de colonnes doivent être remplis');
+                return false;
+            }
+            
+            if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(columnNames[i].value)) {
+                alert('Les noms de colonnes doivent commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
+                return false;
+            }
+        }
+        
+        // Vérification du token CSRF
+        const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+        if (!csrfToken) {
+            alert('Erreur de sécurité: token CSRF manquant');
+            return false;
+        }
+        
+        return true;
+    }
     function addColumn() {
         const columns = document.getElementById('columns');
         const template = `

@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data" onsubmit="return validateForm()">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -57,16 +57,31 @@
                         && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
                     
                     const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+                    
+                    // Vérification du token CSRF
+                    const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+                    if (!csrfToken) {
+                        alert('Erreur de sécurité: token CSRF manquant');
+                        return false;
+                    }
 
                     submitBtn.disabled = !(isPasswordValid && isPseudoValid);
                     
                     if (!isPasswordValid) {
                         password2.setCustomValidity('Les mots de passe doivent correspondre et respecter les critères de sécurité');
+                        return false;
                     } else {
                         password2.setCustomValidity('');
                     }
                     
-                    return isPasswordValid && isPseudoValid;
+                    if (!isPseudoValid) {
+                        pseudo.setCustomValidity('Le nom d\'utilisateur doit contenir entre 3 et 20 caractères alphanumériques');
+                        return false;
+                    } else {
+                        pseudo.setCustomValidity('');
+                    }
+                    
+                    return true;
                 }
 
                 form.addEventListener('submit', function(e) {
