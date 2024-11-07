@@ -1,5 +1,10 @@
 <section>
-    <div id="audioData" style="display: none;" data-user-id="<?php echo htmlspecialchars($userId); ?>"></div>
+    <div id="audioData" style="display: none;" 
+         data-user-id="<?php echo htmlspecialchars($_SESSION['user']['id']); ?>"
+         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
+                            return $audio->jsonData;
+                        }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
+    </div>
     <div id="player-container" class="player-container">
         <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">

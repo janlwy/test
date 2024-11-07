@@ -42,6 +42,7 @@
         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
                             return $audio->jsonData;
                         }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'
+        data-user-id="<?php echo htmlspecialchars($_SESSION['user']['id']); ?>"
         style="display: none;">
     </div>
     <div class="button-container">
