@@ -70,7 +70,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    window.location.href = '?url=audio/player';
+                    window.location.href = '?url=audio/player&csrf_token=' + encodeURIComponent(csrfToken);
                 } else {
                     alert(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
                 }
