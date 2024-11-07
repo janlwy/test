@@ -4,7 +4,8 @@
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
-			<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+			<?php $token = SessionManager::getInstance()->regenerateToken(); ?>
+			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
@@ -27,7 +28,6 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
-			<input type="hidden" name="redirect" value="<?php echo ($session->get('role') === 'admin') ? 'database_manager/index' : 'mediabox/index'; ?>">
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion">Connexion</button>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
@@ -39,13 +39,3 @@
 	</form>
 </div>
 
-<script>
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    const redirectInput = document.querySelector('input[name="redirect"]');
-    if (redirectInput) {
-        const currentAction = this.action;
-        const redirectValue = redirectInput.value;
-        this.action = currentAction.split('?')[0] + '?url=' + redirectValue;
-    }
-});
-</script>
