@@ -8,12 +8,25 @@
 			<?php $token = SessionManager::getInstance()->regenerateToken(); ?>
 			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
 			<hr>
-			<?php if (isset($_SESSION['erreur'])): ?>
+			<?php 
+            if (isset($_SESSION['erreur'])): ?>
 				<div class="error-message">
 					<?php echo htmlspecialchars($_SESSION['erreur'], ENT_QUOTES, 'UTF-8');
 					unset($_SESSION['erreur']); ?>
 				</div>
-			<?php endif; ?>
+			<?php endif; 
+            
+            // Affichage des erreurs de validation
+            if (isset($_SESSION['validation_errors']) && is_array($_SESSION['validation_errors'])): ?>
+                <div class="error-message">
+                    <?php foreach ($_SESSION['validation_errors'] as $field => $errors): ?>
+                        <?php foreach ($errors as $error): ?>
+                            <p><?php echo htmlspecialchars($field . ': ' . $error, ENT_QUOTES, 'UTF-8'); ?></p>
+                        <?php endforeach; ?>
+                    <?php endforeach;
+                    unset($_SESSION['validation_errors']); ?>
+                </div>
+            <?php endif; ?>
 
             <label for="email"><b>Email</b></label>
             <input class="inputModal" type="email" placeholder="Entrer votre email" name="email" id="email" required

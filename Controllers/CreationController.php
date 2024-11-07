@@ -45,15 +45,26 @@ class CreationController extends BaseController implements IController
 
         $validator = new Validator();
         $rules = [
-            'pseudo' => ['required', ['min', 3], ['max', 50]],
-            'email' => ['required', 'email'],
+            'pseudo' => [
+                'required' => 'Le nom d\'utilisateur est requis',
+                ['min', 3] => 'Le nom d\'utilisateur doit faire au moins 3 caractères',
+                ['max', 50] => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères',
+                ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'] => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores'
+            ],
+            'email' => [
+                'required' => 'L\'email est requis',
+                'email' => 'Veuillez entrer une adresse email valide'
+            ],
             'mdp' => [
-                'required', 
-                ['min', 8],
-                ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'],
+                'required' => 'Le mot de passe est requis',
+                ['min', 8] => 'Le mot de passe doit faire au moins 8 caractères',
+                ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'] => 
                 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial'
             ],
-            'mdp2' => ['required']
+            'mdp2' => [
+                'required' => 'La confirmation du mot de passe est requise',
+                ['match', 'mdp'] => 'Les mots de passe ne correspondent pas'
+            ]
         ];
 
         if ($validator->validate($_POST, $rules)) {
