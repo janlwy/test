@@ -481,11 +481,14 @@ class AudioController extends BaseController implements IController
                 throw new Exception('Aucune piste sélectionnée');
             }
             
-            header('Content-Type: application/json');
-            
             // Vérifier que les pistes appartiennent à l'utilisateur
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
+            
+            // S'assurer qu'aucune sortie n'a été envoyée avant les en-têtes
+            if (!headers_sent()) {
+                header('Content-Type: application/json');
+            }
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);

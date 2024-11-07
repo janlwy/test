@@ -85,7 +85,19 @@
                 },
                 body: JSON.stringify({ tracks: selectedTracks })
             })
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text().then(text => {
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error('Parsing error:', text);
+                        throw new Error('Invalid JSON response from server');
+                    }
+                });
+            })
             .then(data => {
                 if (data.success) {
                     const form = document.createElement('form');
