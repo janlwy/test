@@ -70,7 +70,18 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    window.location.href = '?url=audio/player&csrf_token=' + encodeURIComponent(csrfToken);
+                    const form = document.createElement('form');
+                    form.method = 'POST';
+                    form.action = '?url=audio/player';
+                    
+                    const csrfInput = document.createElement('input');
+                    csrfInput.type = 'hidden';
+                    csrfInput.name = 'csrf_token';
+                    csrfInput.value = csrfToken;
+                    
+                    form.appendChild(csrfInput);
+                    document.body.appendChild(form);
+                    form.submit();
                 } else {
                     alert(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
                 }
