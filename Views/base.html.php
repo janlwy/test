@@ -22,6 +22,7 @@
  <link rel="stylesheet" href="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>css/media.css" type="text/css">
  <link rel="stylesheet" href="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>css/mediamusic.css" type="text/css">
  <link rel="stylesheet" href="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>css/mediavideo.css" type="text/css">
+ <link rel="stylesheet" href="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>css/admin.css" type="text/css">
  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
@@ -74,9 +75,9 @@
  		</div>
  	</footer>
 
- 	<script src="js/media.js"></script>
- 	<script src="js/mediavideo.js"></script>
- 	<script src="js/mediamusic.js"></script>
+ 	<script src="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>js/media.js"></script>
+ 	<script src="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>js/mediavideo.js"></script>
+ 	<script src="<?php echo isset($datas['isAdmin']) ? '../' : ''; ?>js/mediamusic.js"></script>
  	<noscript>Vous devez activer javascript pour une expérience complête de ce site</noscript>
  </body>
 
