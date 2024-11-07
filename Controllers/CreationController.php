@@ -61,7 +61,7 @@ class CreationController extends BaseController implements IController
                     ['rule' => 'required', 'message' => 'L\'email est requis'],
                     ['rule' => 'email', 'message' => 'Veuillez entrer une adresse email valide']
                 ],
-                'password' => [
+                'mdp' => [
                     ['rule' => 'required', 'message' => 'Le mot de passe est requis'],
                     ['rule' => ['min', 8], 'message' => 'Le mot de passe doit faire au moins 8 caractères'],
                     ['rule' => ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], 
@@ -74,7 +74,7 @@ class CreationController extends BaseController implements IController
             ];
 
             if ($validator->validate($_POST, $rules)) {
-            if ($_POST['password'] !== $_POST['password2']) {
+            if ($_POST['mdp'] !== $_POST['mdp2']) {
                 $this->session->set('erreur', 'Les mots de passe ne correspondent pas');
                 $this->redirect('creation/createUserForm');
                 return;
@@ -113,7 +113,7 @@ class CreationController extends BaseController implements IController
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
                 $req->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
-                $req->bindValue(':mdp', password_hash($_POST['password'], PASSWORD_DEFAULT), PDO::PARAM_STR);
+                $req->bindValue(':mdp', password_hash($_POST['mdp'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                 $req->bindValue(':role', 'user', PDO::PARAM_STR);
                 
                 if ($req->execute()) {
