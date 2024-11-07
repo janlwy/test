@@ -1,3 +1,10 @@
+<?php
+// Protection contre l'accès direct
+if (!defined('ROOT_PATH')) {
+    header('Location: ../index.php?url=audio/player');
+    exit();
+}
+?>
 <section>
     <?php if (isset($_SESSION['message'])): ?>
         <div class="success-message">

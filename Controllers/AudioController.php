@@ -224,6 +224,10 @@ class AudioController extends BaseController implements IController
     public function player() {
         $this->checkAuth();
         
+        if (!defined('ROOT_PATH')) {
+            define('ROOT_PATH', true);
+        }
+        
         $userId = $_SESSION['user_id'] ?? null;
         
         if ($userId === null) {
