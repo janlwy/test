@@ -469,41 +469,42 @@ class AudioController extends BaseController implements IController
             if (!$csrfToken || !hash_equals($this->session->get('csrf_token'), $csrfToken)) {
                 throw new Exception('Token CSRF invalide');
             }
-        
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            http_response_code(405);
-            echo json_encode(['success' => false, 'message' => 'Méthode non autorisée']);
-            exit;
-        }
-        
-        $data = json_decode(file_get_contents('php://input'), true);
-        $tracks = $data['tracks'] ?? [];
-        
-        if (empty($tracks)) {
-            throw new Exception('Aucune piste sélectionnée');
-        }
-        
-        header('Content-Type: application/json');
-        
-        // Vérifier que les pistes appartiennent à l'utilisateur
-        $userId = $_SESSION['user_id'] ?? null;
-        $validTracks = [];
-        
-        foreach ($tracks as $trackId) {
-            $audio = $this->audioRepository->findById($trackId);
-            if ($audio && $audio->getUserId() == $userId) {
-                $validTracks[] = $trackId;
+
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                throw new Exception('Méthode non autorisée');
             }
+            
+            $data = json_decode(file_get_contents('php://input'), true);
+            $tracks = $data['tracks'] ?? [];
+            
+            if (empty($tracks)) {
+                throw new Exception('Aucune piste sélectionnée');
+            }
+            
+            header('Content-Type: application/json');
+            
+            // Vérifier que les pistes appartiennent à l'utilisateur
+            $userId = $_SESSION['user_id'] ?? null;
+            $validTracks = [];
+            
+            foreach ($tracks as $trackId) {
+                $audio = $this->audioRepository->findById($trackId);
+                if ($audio && $audio->getUserId() == $userId) {
+                    $validTracks[] = $trackId;
+                }
+            }
+            
+            if (empty($validTracks)) {
+                throw new Exception('Aucune piste valide sélectionnée');
+            }
+            
+            $_SESSION['selected_tracks'] = $validTracks;
+            echo json_encode(['success' => true, 'count' => count($validTracks)]);
+            
+        } catch (Exception $e) {
+            http_response_code(400);
+            header('Content-Type: application/json');
+            echo json_encode(['success' => false, 'message' => $e->getMessage()]);
         }
-        
-        if (empty($validTracks)) {
-            http_response_code(403);
-            echo json_encode(['success' => false, 'message' => 'Aucune piste valide sélectionnée']);
-            exit;
-        }
-        
-        $_SESSION['selected_tracks'] = $validTracks;
-        echo json_encode(['success' => true, 'count' => count($validTracks)]);
-        exit;
     }
 }
