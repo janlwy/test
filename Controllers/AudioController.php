@@ -65,6 +65,9 @@ class AudioController extends BaseController implements IController
     public function list()
     {
         $this->checkAuth();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->checkCSRF();
+        }
         
         $userId = $_SESSION['user_id'];
         $search = $_GET['search'] ?? '';

@@ -77,8 +77,17 @@ if (!defined('ROOT_PATH')) {
         </div><br>
         <hr><br>
         <div class="boutonAligne">
-            <button type="button" class="btnBase theme" onclick="window.location.href='?url=audio/list';"><i class="iconColor material-icons md-36">undo</i></button>
-            <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">library_add</i></button>
-            <button type="button" class="btnBase theme" onclick="window.location.href='?url=compte/index#form-add';"><i class="iconColor material-icons md-36">mic</i></button>
+            <form method="POST" style="display: inline;">
+                <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+                <button type="submit" class="btnBase theme" formaction="?url=audio/list"><i class="iconColor material-icons md-36">undo</i></button>
+            </form>
+            <form method="POST" style="display: inline;">
+                <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+                <button type="submit" class="btnBase theme" formaction="?url=compte/index#form-add"><i class="iconColor material-icons md-36">library_add</i></button>
+            </form>
+            <form method="POST" style="display: inline;">
+                <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+                <button type="submit" class="btnBase theme" formaction="?url=compte/index#form-add"><i class="iconColor material-icons md-36">mic</i></button>
+            </form>
         </div>
 </section>
