@@ -23,7 +23,6 @@ class Database_managerController extends BaseController implements IController {
             'session' => $this->session,
             'message' => '',
             'error' => '',
-            'isAdmin' => true,
             'hideNav' => true
         ];
 
