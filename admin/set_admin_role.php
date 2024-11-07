@@ -7,7 +7,7 @@ $session = SessionManager::getInstance();
 $session->startSession();
 
 // Vérification que l'utilisateur actuel est admin
-if (!$session->get('role') === RoleManager::ROLE_ADMIN) {
+if ($session->get('role') !== RoleManager::ROLE_ADMIN) {
     die('Accès non autorisé');
 }
 
