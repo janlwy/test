@@ -67,9 +67,14 @@
             .then(data => {
                 if (data.success) {
                     window.location.href = '?url=audio/player';
+                } else {
+                    alert(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
                 }
             })
-            .catch(error => console.error('Error:', error));
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Une erreur est survenue lors de la communication avec le serveur.');
+            });
         }
         </script>
     </div>

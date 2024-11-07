@@ -464,8 +464,25 @@ class AudioController extends BaseController implements IController
             exit;
         }
         
-        $_SESSION['selected_tracks'] = $tracks;
-        echo json_encode(['success' => true]);
+        // Vérifier que les pistes appartiennent à l'utilisateur
+        $userId = $_SESSION['user_id'] ?? null;
+        $validTracks = [];
+        
+        foreach ($tracks as $trackId) {
+            $audio = $this->audioRepository->findById($trackId);
+            if ($audio && $audio->getUserId() == $userId) {
+                $validTracks[] = $trackId;
+            }
+        }
+        
+        if (empty($validTracks)) {
+            http_response_code(403);
+            echo json_encode(['success' => false, 'message' => 'Aucune piste valide sélectionnée']);
+            exit;
+        }
+        
+        $_SESSION['selected_tracks'] = $validTracks;
+        echo json_encode(['success' => true, 'count' => count($validTracks)]);
         exit;
     }
 }
