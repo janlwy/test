@@ -51,32 +51,30 @@
 				const submitBtn = document.getElementById('submitBtn');
 				const pseudo = document.getElementById('pseudo');
 
-				function validateForm() {
-					const isPasswordValid = password1.value === password2.value 
-						&& password1.value.length >= 8 
-						&& /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
-					
-					const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
+                function validateForm() {
+                    const isPasswordValid = password1.value === password2.value 
+                        && password1.value.length >= 8 
+                        && /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/.test(password1.value);
+                    
+                    const isPseudoValid = /^[a-zA-Z0-9_-]{3,20}$/.test(pseudo.value);
 
-					if (isPasswordValid && isPseudoValid) {
-						submitBtn.disabled = false;
-						password2.setCustomValidity('');
-					} else {
-						submitBtn.disabled = true;
-						if (!isPasswordValid) {
-							password2.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une lettre, un chiffre et un caractère spécial');
-						} else {
-							password2.setCustomValidity('');
-						}
-					}
-				}
+                    submitBtn.disabled = !(isPasswordValid && isPseudoValid);
+                    
+                    if (!isPasswordValid) {
+                        password2.setCustomValidity('Les mots de passe doivent correspondre et respecter les critères de sécurité');
+                    } else {
+                        password2.setCustomValidity('');
+                    }
+                    
+                    return isPasswordValid && isPseudoValid;
+                }
 
-				form.addEventListener('submit', function(e) {
-					if (!validateForm()) {
-						e.preventDefault();
-						return false;
-					}
-				});
+                form.addEventListener('submit', function(e) {
+                    const isValid = validateForm();
+                    if (!isValid) {
+                        e.preventDefault();
+                    }
+                });
 
 				[password1, password2, pseudo].forEach(input => {
 					input.addEventListener('input', validateForm);
