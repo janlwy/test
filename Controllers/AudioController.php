@@ -446,7 +446,6 @@ class AudioController extends BaseController implements IController
             exit();
         }
     }
-}
     public function saveSelection() {
         $this->checkAuth();
         
