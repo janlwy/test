@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/create" enctype="multipart/form-data" id="createForm">
+	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/createUser" enctype="multipart/form-data" id="createForm">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>

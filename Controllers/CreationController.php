@@ -16,8 +16,11 @@ class CreationController extends BaseController implements IController
     }
 
     public function create() {
-        // Redirige vers la méthode existante
-        $this->createUser();
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $this->createUser();
+        } else {
+            $this->redirect('creation/createUserForm');
+        }
     }
 
     public function update($id = null) {
