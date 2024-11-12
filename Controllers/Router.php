@@ -21,6 +21,7 @@ class Router
             $controllerName = ucfirst($urls[0]) . "Controller";
             $controllerPath = __DIR__ . "/" . $controllerName . ".php";
             $actionName = isset($urls[1]) ? $urls[1] : 'index';
+            $params = array_slice($urls, 2); // Récupère tous les paramètres après le contrôleur et l'action
             array_splice($urls, 0, 1); // Retire le nom du contrôleur
         }
 
@@ -60,8 +61,7 @@ class Router
                 if (method_exists($controller, $actionName)) {
                     logInfo("Appel de la méthode $actionName dans le contrôleur $controllerName");
                     // Pass any additional URL parameters to the method
-                    $params = array_slice($urls, 2);
-                    call_user_func_array([$controller, $actionName], $params);
+                    call_user_func_array([$controller, $actionName], $params ?? []);
                 } else {
                     header("HTTP/1.0 404 Not Found");
                     echo "La méthode $actionName n'existe pas dans le contrôleur $controllerName.";
