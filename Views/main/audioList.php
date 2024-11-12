@@ -92,7 +92,6 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken
                 },
                 body: JSON.stringify({ 
@@ -100,19 +99,14 @@
                     trackData: selectedTracks 
                 })
             })
-            .then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        try {
-                            const data = JSON.parse(text);
-                            throw new Error(data.message || 'Erreur serveur');
-                        } catch (e) {
-                            console.error('Réponse brute du serveur:', text);
-                            throw new Error(`Erreur HTTP ${response.status}`);
-                        }
-                    });
+            .then(response => response.text())
+            .then(text => {
+                try {
+                    return JSON.parse(text);
+                } catch (e) {
+                    console.error('Réponse non-JSON reçue:', text);
+                    throw new Error('Réponse invalide du serveur');
                 }
-                return response.json();
             })
             .then(data => {
                 if (data.success) {
