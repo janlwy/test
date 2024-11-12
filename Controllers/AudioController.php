@@ -551,18 +551,25 @@ class AudioController extends BaseController implements IController
                 throw new Exception('Erreur d\'encodage JSON: ' . json_last_error_msg());
             }
             
-            // Nettoyer une dernière fois le buffer avant d'envoyer la réponse
-            ob_clean();
+            // S'assurer qu'il n'y a aucune sortie précédente
+            if (ob_get_length()) ob_clean();
+            
+            // Envoyer la réponse JSON
             echo $response;
+            exit();
             
         } catch (Exception $e) {
-            // Nettoyer le buffer en cas d'erreur
-            ob_clean();
+            // Nettoyer toute sortie précédente
+            if (ob_get_length()) ob_clean();
+            
             http_response_code(400);
             header('Content-Type: application/json');
-            echo json_encode(['success' => false, 'message' => $e->getMessage()]);
-        } finally {
-            ob_end_flush();
+            echo json_encode([
+                'success' => false,
+                'message' => $e->getMessage(),
+                'error' => true
+            ]);
+            exit();
         }
     }
 }

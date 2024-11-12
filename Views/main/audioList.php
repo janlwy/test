@@ -95,7 +95,8 @@
                     'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken,
                     'X-Requested-With': 'XMLHttpRequest',
-                    'Cache-Control': 'no-cache, no-store, must-revalidate'
+                    'Cache-Control': 'no-cache, no-store, must-revalidate',
+                    'Pragma': 'no-cache'
                 },
                 cache: 'no-store',
                 body: JSON.stringify({ 
@@ -105,25 +106,26 @@
                 credentials: 'same-origin'
             })
             .then(async response => {
-                if (!response.ok) {
-                    const text = await response.text();
-                    console.error('Réponse brute:', text);
-                    throw new Error(`Erreur réseau: ${response.status}`);
-                }
+                const text = await response.text();
                 
-                const contentType = response.headers.get('content-type');
-                if (!contentType || !contentType.includes('application/json')) {
-                    const text = await response.text();
-                    console.error('Contenu non-JSON reçu:', text);
-                    throw new TypeError("La réponse n'est pas du JSON valide");
+                // Vérifier si la réponse est vide
+                if (!text.trim()) {
+                    throw new Error('Réponse vide du serveur');
                 }
                 
                 try {
-                    return await response.json();
-                } catch (error) {
-                    const text = await response.clone().text();
-                    console.error('Contenu causant l\'erreur de parsing:', text);
-                    throw new Error(`Erreur de parsing JSON: ${error.message}`);
+                    // Tenter de parser le JSON
+                    const data = JSON.parse(text);
+                    
+                    // Vérifier si la réponse indique une erreur
+                    if (!response.ok || data.error) {
+                        throw new Error(data.message || 'Erreur serveur');
+                    }
+                    
+                    return data;
+                } catch (e) {
+                    console.error('Réponse brute:', text);
+                    throw new Error(`Erreur de parsing JSON: ${e.message}`);
                 }
             })
             .then(data => {
