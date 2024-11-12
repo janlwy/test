@@ -26,8 +26,22 @@ let track_list = [];
 let curr_track = document.createElement('audio');
 
 function initializeAudioPlayer(tracks) {
-    track_list = tracks;
-    loadTrack(0);
+    if (tracks && tracks.length > 0) {
+        track_list = tracks;
+        loadTrack(0);
+    } else {
+        // Initialiser avec des valeurs par défaut
+        now_playing.textContent = "Aucune piste sélectionnée";
+        track_name.textContent = "Sélectionnez des pistes audio";
+        track_artist.textContent = "depuis la liste";
+        track_art.style.backgroundImage = "url('Ressources/images/default-cover.png')";
+        playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+        playpause_btn.disabled = true;
+        next_btn.disabled = true;
+        prev_btn.disabled = true;
+        seek_slider.disabled = true;
+        volume_slider.disabled = true;
+    }
 }
 
 // Load tracks from localStorage if available

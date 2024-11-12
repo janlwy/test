@@ -20,25 +20,24 @@ if (!defined('ROOT_PATH')) {
         <?php unset($_SESSION['erreur']); ?>
     <?php endif; ?>
 
+    <div id="audioData" style="display: none;" 
+         data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
+         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
+                            return [
+                                'id' => $audio->getId(),
+                                'title' => $audio->getTitle(),
+                                'artist' => $audio->getArtist(),
+                                'path' => $audio->getPath(),
+                                'image' => 'Ressources/images/pochettes/' . $audio->getImage()
+                            ];
+                        }, $audios ?? [])), ENT_QUOTES, 'UTF-8'); ?>'>
+    </div>
     <?php if (empty($audios)): ?>
         <div class="info-message">
             Aucune piste sélectionnée. Veuillez retourner à la liste et sélectionner des pistes à lire.
         </div>
-    <?php else: ?>
-        <div id="audioData" style="display: none;" 
-             data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
-             data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                                return [
-                                    'id' => $audio->getId(),
-                                    'title' => $audio->getTitle(),
-                                    'artist' => $audio->getArtist(),
-                                    'path' => $audio->getPath(),
-                                    'image' => 'Ressources/images/pochettes/' . $audio->getImage()
-                                ];
-                            }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
     <?php endif; ?>
-    </div>
-    <div id="player-container" class="player-container" <?php echo empty($audios) ? 'style="display: none;"' : ''; ?>>
+    <div id="player-container" class="player-container">
         <!--     <div class="searchBox">
         <input class="searchInput" type="text" name="chrch" placeholder="Trouver un artiste">
         <button type="button" class="searchButton" href="#">
