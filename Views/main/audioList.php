@@ -81,8 +81,15 @@
                         return null;
                     }
                     const id = parseInt(checkbox.getAttribute('data-audio-id'));
+                    const path = checkbox.getAttribute('data-audio-path');
+                    
                     if (isNaN(id) || id <= 0) {
                         console.error('ID audio invalide:', checkbox.getAttribute('data-audio-id'));
+                        return null;
+                    }
+                    
+                    if (!path) {
+                        console.error('Chemin audio manquant pour ID:', id);
                         return null;
                     }
                     return {
