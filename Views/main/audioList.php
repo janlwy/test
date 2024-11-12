@@ -94,25 +94,37 @@
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken,
-                    'X-Requested-With': 'XMLHttpRequest'
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Cache-Control': 'no-cache, no-store, must-revalidate'
                 },
+                cache: 'no-store',
                 body: JSON.stringify({ 
                     tracks: selectedTracks.map(track => track.id),
                     trackData: selectedTracks 
                 }),
                 credentials: 'same-origin'
             })
-            .then(response => {
+            .then(async response => {
                 if (!response.ok) {
+                    const text = await response.text();
+                    console.error('Réponse brute:', text);
                     throw new Error(`Erreur réseau: ${response.status}`);
                 }
+                
                 const contentType = response.headers.get('content-type');
                 if (!contentType || !contentType.includes('application/json')) {
+                    const text = await response.text();
+                    console.error('Contenu non-JSON reçu:', text);
                     throw new TypeError("La réponse n'est pas du JSON valide");
                 }
-                return response.json().catch(error => {
+                
+                try {
+                    return await response.json();
+                } catch (error) {
+                    const text = await response.clone().text();
+                    console.error('Contenu causant l\'erreur de parsing:', text);
                     throw new Error(`Erreur de parsing JSON: ${error.message}`);
-                });
+                }
             })
             .then(data => {
                 if (data.success) {

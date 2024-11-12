@@ -474,19 +474,21 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
-        // Désactiver toute sortie avant le JSON
+        // Désactiver toute sortie
         @ini_set('display_errors', 0);
         @error_reporting(0);
-        if (session_status() === PHP_SESSION_NONE) {
-            session_start();
+        @error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
+        
+        // Nettoyer tous les buffers existants
+        while (ob_get_level()) {
+            ob_end_clean();
         }
         
-        // S'assurer qu'aucun contenu n'a été envoyé
-        if (!headers_sent()) {
-            // Nettoyer tous les buffers existants
-            while (ob_get_level()) {
-                ob_end_clean();
-            }
+        // Démarrer un nouveau buffer
+        ob_start();
+        
+        if (session_status() === PHP_SESSION_NONE) {
+            @session_start();
         }
         
         $this->checkAuth();
@@ -524,13 +526,13 @@ class AudioController extends BaseController implements IController
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
             
-            // Définir les en-têtes de réponse
-            if (!headers_sent()) {
-                header_remove();
-                header('HTTP/1.1 200 OK');
-                header('Content-Type: application/json; charset=utf-8');
-                header('Cache-Control: no-cache, must-revalidate');
-            }
+            // Supprimer tous les en-têtes existants et en définir de nouveaux
+            header_remove();
+            header('HTTP/1.1 200 OK');
+            header('Content-Type: application/json; charset=utf-8');
+            header('Cache-Control: no-cache, no-store, must-revalidate');
+            header('Pragma: no-cache');
+            header('Expires: 0');
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);
