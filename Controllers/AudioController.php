@@ -550,20 +550,26 @@ class AudioController extends BaseController implements IController
             }
             
             if (empty($validTracks)) {
-                throw new Exception('Aucune piste valide sélectionnée');
+                http_response_code(400);
+                echo json_encode([
+                    'success' => false,
+                    'message' => 'Aucune piste valide sélectionnée',
+                    'error' => true
+                ]);
+                exit();
             }
             
             $_SESSION['selected_tracks'] = $validTracks;
-            $response = json_encode(['success' => true, 'count' => count($validTracks)]);
-            if ($response === false) {
-                throw new Exception('Erreur d\'encodage JSON: ' . json_last_error_msg());
-            }
             
             // S'assurer qu'il n'y a aucune sortie précédente
             if (ob_get_length()) ob_clean();
             
             // Envoyer la réponse JSON
-            echo $response;
+            echo json_encode([
+                'success' => true, 
+                'count' => count($validTracks),
+                'message' => 'Sélection sauvegardée avec succès'
+            ]);
             exit();
             
         } catch (Exception $e) {

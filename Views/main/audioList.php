@@ -98,6 +98,7 @@
                     'Cache-Control': 'no-cache, no-store, must-revalidate',
                     'Pragma': 'no-cache'
                 },
+                credentials: 'same-origin',
                 cache: 'no-store',
                 body: JSON.stringify({ 
                     tracks: selectedTracks.map(track => track.id),
@@ -105,28 +106,13 @@
                 }),
                 credentials: 'same-origin'
             })
-            .then(async response => {
-                const text = await response.text();
-                
-                // Vérifier si la réponse est vide
-                if (!text.trim()) {
-                    throw new Error('Réponse vide du serveur');
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(err => {
+                        throw new Error(err.message || 'Erreur serveur');
+                    });
                 }
-                
-                try {
-                    // Tenter de parser le JSON
-                    const data = JSON.parse(text);
-                    
-                    // Vérifier si la réponse indique une erreur
-                    if (!response.ok || data.error) {
-                        throw new Error(data.message || 'Erreur serveur');
-                    }
-                    
-                    return data;
-                } catch (e) {
-                    console.error('Réponse brute:', text);
-                    throw new Error(`Erreur de parsing JSON: ${e.message}`);
-                }
+                return response.json();
             })
             .then(data => {
                 if (data.success) {
