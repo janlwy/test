@@ -493,7 +493,15 @@ class AudioController extends BaseController implements IController
         
         $this->checkAuth();
         
+        header('Content-Type: application/json; charset=utf-8');
+        
         try {
+            // Vérifier que la requête est bien une requête AJAX
+            if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || 
+                strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest') {
+                throw new Exception('Requête non autorisée');
+            }
+            
             // Vérifier le token CSRF dans l'en-tête
             $csrfToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? null;
             if (!$csrfToken || !hash_equals($this->session->get('csrf_token'), $csrfToken)) {

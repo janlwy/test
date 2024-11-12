@@ -29,11 +29,26 @@ class Router
         $session->startSession();
         $session->ensureCsrfToken();
         
+        // Vérifier si c'est une requête AJAX
+        $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
+                  strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+                  
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
-                logError("Erreur CSRF : jeton invalide.");
-                header('Location: ?url=connexion/index');
-                exit();
+            // Pour les requêtes AJAX, renvoyer une erreur JSON
+            if ($isAjax) {
+                if (!$session->validateToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
+                    header('Content-Type: application/json');
+                    http_response_code(403);
+                    echo json_encode(['error' => true, 'message' => 'Token CSRF invalide']);
+                    exit();
+                }
+            } else {
+                // Pour les requêtes normales, rediriger
+                if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
+                    logError("Erreur CSRF : jeton invalide.");
+                    header('Location: ?url=connexion/index');
+                    exit();
+                }
             }
         }
             

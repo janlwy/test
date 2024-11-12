@@ -88,7 +88,7 @@
             // Récupérer le token CSRF
             const csrfToken = '<?php echo $session->get('csrf_token'); ?>';
             
-            fetch('?url=audio/saveSelection', {
+            fetch('index.php?url=audio/saveSelection', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
