@@ -67,11 +67,22 @@
         <button type="button" id="play-selected" class="btnBase orange" onclick="saveAndPlaySelectedTracks()">Lire la sélection</button>
         <script>
         function saveAndPlaySelectedTracks() {
-            const selectedTracks = Array.from(document.querySelectorAll('.select-audio:checked')).map(cb => cb.dataset.audioId);
-            if (selectedTracks.length === 0) {
+            const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+            if (selectedCheckboxes.length === 0) {
                 alert('Veuillez sélectionner au moins une piste audio.');
                 return;
             }
+
+            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+                const audioItem = checkbox.closest('.audio-item');
+                return {
+                    id: checkbox.dataset.audioId,
+                    title: audioItem.querySelector('h4').textContent,
+                    artist: audioItem.querySelector('p').textContent,
+                    image: audioItem.querySelector('.photoAudio').src,
+                    path: `Ressources/audio/${audioItem.dataset.audioPath}`
+                };
+            });
             
             // Sauvegarder la sélection via AJAX
             // Récupérer le token CSRF

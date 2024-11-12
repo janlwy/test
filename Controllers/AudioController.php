@@ -286,10 +286,22 @@ class AudioController extends BaseController implements IController
                 ];
             }
             
+            // Préparer les données pour le lecteur
+            $formattedAudios = array_map(function($audio) {
+                return [
+                    'id' => $audio->getId(),
+                    'title' => $audio->getTitle(),
+                    'artist' => $audio->getArtist(),
+                    'path' => $audio->getPath(),
+                    'image' => 'Ressources/images/pochettes/' . $audio->getImage()
+                ];
+            }, $audios);
+
             $datas = [
                 'pageTitle' => "Lecteur Audio",
                 'userId' => $userId,
-                'audios' => $audios
+                'audios' => $audios,
+                'formattedAudios' => $formattedAudios
             ];
             
             generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");

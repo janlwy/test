@@ -24,7 +24,17 @@ let updateTimer;
 // Create the audio element for the player
 let curr_track = document.createElement('audio');
 
+// Initialize track list and index
 let track_list = [];
+let track_index = 0;
+let isPlaying = false;
+let updateTimer;
+
+// Load tracks from localStorage if available
+if (localStorage.getItem('selectedTracks')) {
+    track_list = JSON.parse(localStorage.getItem('selectedTracks'));
+    console.log('Tracks loaded from localStorage:', track_list);
+}
 // Fonction globale pour jouer les pistes sélectionnées
 function playSelectedTracks() {
     const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');

@@ -18,6 +18,20 @@ function validatePasswordMatch() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize audio player if we're on the player page
+    const audioData = document.getElementById('audioData');
+    if (audioData) {
+        try {
+            const tracks = JSON.parse(audioData.dataset.audios);
+            if (tracks && tracks.length > 0) {
+                track_list = tracks;
+                loadTrack(0);
+                console.log('Audio tracks initialized:', tracks);
+            }
+        } catch (error) {
+            console.error('Error initializing audio player:', error);
+        }
+    }
     // Gestion de l'affichage du bouton clear dans la recherche
     const searchInput = document.querySelector('.searchInput');
     if (searchInput) {
