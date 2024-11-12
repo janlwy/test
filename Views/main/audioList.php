@@ -73,16 +73,28 @@
                 return;
             }
 
-            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-                const audioItem = checkbox.closest('.audio-item');
-                return {
-                    id: parseInt(checkbox.getAttribute('data-audio-id')),
-                    title: audioItem.querySelector('h4').textContent,
-                    artist: audioItem.querySelector('p').textContent,
-                    image: audioItem.querySelector('.photoAudio').src,
-                    path: `Ressources/audio/${checkbox.getAttribute('data-audio-path')}`
-                };
-            });
+            const selectedTracks = Array.from(selectedCheckboxes)
+                .map(checkbox => {
+                    const audioItem = checkbox.closest('.audio-item');
+                    if (!audioItem) {
+                        console.error('Element audio-item non trouvé pour la checkbox');
+                        return null;
+                    }
+                    const id = parseInt(checkbox.getAttribute('data-audio-id'));
+                    if (isNaN(id) || id <= 0) {
+                        console.error('ID audio invalide:', checkbox.getAttribute('data-audio-id'));
+                        return null;
+                    }
+                    return {
+                        id: id,
+                        title: audioItem.querySelector('h4')?.textContent || '',
+                        artist: audioItem.querySelector('p')?.textContent || '',
+                        image: audioItem.querySelector('.photoAudio')?.src || '',
+                        path: checkbox.getAttribute('data-audio-path') ? 
+                              `Ressources/audio/${checkbox.getAttribute('data-audio-path')}` : ''
+                    };
+                })
+                .filter(track => track !== null && track.title && track.artist && track.path);
             
             // Sauvegarder la sélection via AJAX
             // Récupérer le token CSRF
@@ -115,22 +127,25 @@
                 return response.json();
             })
             .then(data => {
-                if (data.success) {
-                    const form = document.createElement('form');
-                    form.method = 'POST';
-                    form.action = '?url=audio/player';
-                    
-                    const csrfInput = document.createElement('input');
-                    csrfInput.type = 'hidden';
-                    csrfInput.name = 'csrf_token';
-                    csrfInput.value = csrfToken;
-                    
-                    form.appendChild(csrfInput);
-                    document.body.appendChild(form);
-                    form.submit();
-                } else {
-                    alert(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
+                if (!data.success) {
+                    throw new Error(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
                 }
+                if (data.count === 0) {
+                    throw new Error('Aucune piste valide n\'a été sélectionnée.');
+                }
+                
+                const form = document.createElement('form');
+                form.method = 'POST';
+                form.action = '?url=audio/player';
+                
+                const csrfInput = document.createElement('input');
+                csrfInput.type = 'hidden';
+                csrfInput.name = 'csrf_token';
+                csrfInput.value = csrfToken;
+                
+                form.appendChild(csrfInput);
+                document.body.appendChild(form);
+                form.submit();
             })
             .catch(error => {
                 console.error('Error:', error);

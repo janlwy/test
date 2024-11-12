@@ -512,15 +512,26 @@ class AudioController extends BaseController implements IController
                 throw new Exception('Méthode non autorisée');
             }
             
-            $data = json_decode(file_get_contents('php://input'), true);
+            $rawData = file_get_contents('php://input');
+            if (empty($rawData)) {
+                throw new Exception('Aucune donnée reçue');
+            }
+            
+            $data = json_decode($rawData, true);
             if (json_last_error() !== JSON_ERROR_NONE) {
                 throw new Exception('Données JSON invalides: ' . json_last_error_msg());
             }
             
-            $tracks = $data['tracks'] ?? [];
+            if (!isset($data['tracks']) || !is_array($data['tracks'])) {
+                throw new Exception('Format de données invalide');
+            }
+            
+            $tracks = array_filter($data['tracks'], function($id) {
+                return is_numeric($id) && $id > 0;
+            });
             
             if (empty($tracks)) {
-                throw new Exception('Aucune piste sélectionnée');
+                throw new Exception('Aucune piste valide sélectionnée');
             }
 
             // Convertir les IDs en entiers et filtrer les valeurs non valides
