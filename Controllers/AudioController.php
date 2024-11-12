@@ -474,17 +474,20 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
-        // Désactiver l'affichage des erreurs
-        ini_set('display_errors', 0);
-        error_reporting(0);
-        
-        // Nettoyer tous les buffers de sortie dès le début
-        while (ob_get_level()) {
-            ob_end_clean();
+        // Désactiver toute sortie avant le JSON
+        @ini_set('display_errors', 0);
+        @error_reporting(0);
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
         
-        // Démarrer un nouveau buffer
-        ob_start();
+        // S'assurer qu'aucun contenu n'a été envoyé
+        if (!headers_sent()) {
+            // Nettoyer tous les buffers existants
+            while (ob_get_level()) {
+                ob_end_clean();
+            }
+        }
         
         $this->checkAuth();
         
@@ -521,9 +524,13 @@ class AudioController extends BaseController implements IController
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
             
-            // Définir les en-têtes
-            header_remove();
-            header('Content-Type: application/json; charset=utf-8');
+            // Définir les en-têtes de réponse
+            if (!headers_sent()) {
+                header_remove();
+                header('HTTP/1.1 200 OK');
+                header('Content-Type: application/json; charset=utf-8');
+                header('Cache-Control: no-cache, must-revalidate');
+            }
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);

@@ -93,18 +93,26 @@
                 headers: {
                     'Content-Type': 'application/json',
                     'Accept': 'application/json',
-                    'X-CSRF-Token': csrfToken
+                    'X-CSRF-Token': csrfToken,
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify({ 
                     tracks: selectedTracks.map(track => track.id),
                     trackData: selectedTracks 
-                })
+                }),
+                credentials: 'same-origin'
             })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Erreur réseau');
+                    throw new Error(`Erreur réseau: ${response.status}`);
                 }
-                return response.json();
+                const contentType = response.headers.get('content-type');
+                if (!contentType || !contentType.includes('application/json')) {
+                    throw new TypeError("La réponse n'est pas du JSON valide");
+                }
+                return response.json().catch(error => {
+                    throw new Error(`Erreur de parsing JSON: ${error.message}`);
+                });
             })
             .then(data => {
                 if (data.success) {
