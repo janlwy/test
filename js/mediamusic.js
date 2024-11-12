@@ -45,10 +45,33 @@ function initializeAudioPlayer(tracks) {
 }
 
 // Load tracks from localStorage if available
-if (localStorage.getItem('selectedTracks')) {
-    track_list = JSON.parse(localStorage.getItem('selectedTracks'));
-    console.log('Tracks loaded from localStorage:', track_list);
+function loadTracksFromStorage() {
+    try {
+        const storedTracks = localStorage.getItem('selectedTracks');
+        if (storedTracks) {
+            const tracks = JSON.parse(storedTracks);
+            if (Array.isArray(tracks) && tracks.length > 0) {
+                // Vérifier que chaque piste a les propriétés requises
+                const validTracks = tracks.filter(track => 
+                    track && track.id && track.path && track.title && track.artist
+                );
+                if (validTracks.length > 0) {
+                    track_list = validTracks;
+                    console.log('Tracks loaded from localStorage:', track_list);
+                    return true;
+                }
+            }
+        }
+        return false;
+    } catch (error) {
+        console.error('Error loading tracks from localStorage:', error);
+        localStorage.removeItem('selectedTracks');
+        return false;
+    }
 }
+
+// Charger les pistes au démarrage
+loadTracksFromStorage();
 // Fonction globale pour jouer les pistes sélectionnées
 function playSelectedTracks() {
     const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
@@ -68,6 +91,11 @@ function playSelectedTracks() {
         const artist = audioItem.querySelector('p').textContent;
         const image = audioItem.querySelector('.photoAudio').src;
         const id = checkbox.getAttribute('data-audio-id');
+        const audioPath = checkbox.getAttribute('data-audio-path');
+        if (!id || !audioPath) {
+            console.error('Données audio manquantes:', { id, audioPath });
+            return null;
+        }
         
         // Récupérer l'extension du fichier audio depuis les données du serveur
         const audioData = JSON.parse(document.getElementById('audioData').getAttribute('data-audios'));
@@ -146,12 +174,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadTrack(track_index) {
+    if (!track_list || !track_list[track_index]) {
+        console.error('Piste invalide ou index incorrect');
+        return;
+    }
+
     // Clear the previous seek timer
     clearInterval(updateTimer);
     resetValues();
 
     // Load a new track
-    const trackPath = track_list[track_index].path;
+    const track = track_list[track_index];
+    const trackPath = track.path;
+    
+    if (!trackPath) {
+        console.error('Chemin de la piste manquant:', track);
+        return;
+    }
+
     console.log('Chargement de la piste:', trackPath);
     curr_track.src = trackPath;
     

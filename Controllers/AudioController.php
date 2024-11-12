@@ -288,14 +288,23 @@ class AudioController extends BaseController implements IController
             
             // Préparer les données pour le lecteur
             $formattedAudios = array_map(function($audio) {
+                $audioPath = 'Ressources/audio/' . $audio->getPath();
+                // Vérifier que le fichier existe
+                if (!file_exists($audioPath)) {
+                    logError("Fichier audio manquant: " . $audioPath);
+                    return null;
+                }
                 return [
                     'id' => $audio->getId(),
                     'title' => $audio->getTitle(),
                     'artist' => $audio->getArtist(),
-                    'path' => $audio->getPath(),
+                    'path' => $audioPath,
                     'image' => 'Ressources/images/pochettes/' . $audio->getImage()
                 ];
             }, $audios);
+
+            // Filtrer les pistes invalides
+            $formattedAudios = array_filter($formattedAudios);
 
             $datas = [
                 'pageTitle' => "Lecteur Audio",

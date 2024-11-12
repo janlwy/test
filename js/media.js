@@ -23,10 +23,25 @@ document.addEventListener('DOMContentLoaded', () => {
     if (audioData) {
         try {
             const tracks = JSON.parse(audioData.dataset.audios || '[]');
+            if (!Array.isArray(tracks) || tracks.length === 0) {
+                console.warn('Aucune piste audio disponible');
+                return;
+            }
+            // Vérifier la validité des chemins audio
+            tracks.forEach(track => {
+                if (!track.path) {
+                    console.error('Chemin audio manquant pour:', track);
+                }
+            });
             initializeAudioPlayer(tracks);
             console.log('Audio tracks initialized:', tracks);
         } catch (error) {
             console.error('Error initializing audio player:', error);
+            // Afficher un message d'erreur à l'utilisateur
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = 'Erreur lors de l\'initialisation du lecteur audio';
+            document.querySelector('.player-container').prepend(errorDiv);
         }
     }
     // Gestion de l'affichage du bouton clear dans la recherche
