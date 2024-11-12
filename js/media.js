@@ -22,11 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioData = document.getElementById('audioData');
     if (audioData) {
         try {
-            const tracks = JSON.parse(audioData.dataset.audios);
-            if (tracks && tracks.length > 0) {
-                initializeAudioPlayer(tracks);
-                console.log('Audio tracks initialized:', tracks);
-            }
+            const tracks = JSON.parse(audioData.dataset.audios || '[]');
+            initializeAudioPlayer(tracks);
+            console.log('Audio tracks initialized:', tracks);
         } catch (error) {
             console.error('Error initializing audio player:', error);
         }

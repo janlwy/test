@@ -34,7 +34,7 @@ function initializeAudioPlayer(tracks) {
         now_playing.textContent = "Aucune piste sélectionnée";
         track_name.textContent = "Sélectionnez des pistes audio";
         track_artist.textContent = "depuis la liste";
-        track_art.style.backgroundImage = "url('Ressources/images/default-cover.png')";
+        track_art.style.backgroundImage = "url('./Ressources/images/default-cover.png')";
         playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
         playpause_btn.disabled = true;
         next_btn.disabled = true;

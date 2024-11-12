@@ -73,9 +73,16 @@
                 return;
             }
 
-            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => 
-                parseInt(checkbox.getAttribute('data-audio-id'))
-            );
+            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+                const audioItem = checkbox.closest('.audio-item');
+                return {
+                    id: parseInt(checkbox.getAttribute('data-audio-id')),
+                    title: audioItem.querySelector('h4').textContent,
+                    artist: audioItem.querySelector('p').textContent,
+                    image: audioItem.querySelector('.photoAudio').src,
+                    path: `Ressources/audio/${checkbox.getAttribute('data-audio-path')}`
+                };
+            });
             
             // Sauvegarder la sélection via AJAX
             // Récupérer le token CSRF
@@ -88,7 +95,10 @@
                     'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken
                 },
-                body: JSON.stringify({ tracks: selectedTracks })
+                body: JSON.stringify({ 
+                    tracks: selectedTracks.map(track => track.id),
+                    trackData: selectedTracks 
+                })
             })
             .then(response => {
                 if (!response.ok) {
