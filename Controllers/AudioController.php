@@ -505,19 +505,13 @@ class AudioController extends BaseController implements IController
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
             
-            // S'assurer qu'aucune sortie n'a été envoyée
-            if (!headers_sent()) {
-                // Nettoyer tous les buffers de sortie
-                while (ob_get_level()) {
-                    ob_end_clean();
-                }
-                
-                // Définir les en-têtes
-                header('Content-Type: application/json; charset=utf-8');
-                header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
-                header('Cache-Control: post-check=0, pre-check=0', false);
-                header('Pragma: no-cache');
+            // Nettoyer tous les buffers de sortie
+            while (ob_get_level()) {
+                ob_end_clean();
             }
+            
+            // Définir les en-têtes
+            header('Content-Type: application/json; charset=utf-8');
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);

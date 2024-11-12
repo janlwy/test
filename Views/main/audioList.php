@@ -92,6 +92,7 @@
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                     'X-CSRF-Token': csrfToken
                 },
                 body: JSON.stringify({ 
@@ -99,14 +100,11 @@
                     trackData: selectedTracks 
                 })
             })
-            .then(response => response.text())
-            .then(text => {
-                try {
-                    return JSON.parse(text);
-                } catch (e) {
-                    console.error('Réponse non-JSON reçue:', text);
-                    throw new Error('Réponse invalide du serveur');
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur réseau');
                 }
+                return response.json();
             })
             .then(data => {
                 if (data.success) {
