@@ -474,6 +474,18 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
+        // Désactiver l'affichage des erreurs
+        ini_set('display_errors', 0);
+        error_reporting(0);
+        
+        // Nettoyer tous les buffers de sortie dès le début
+        while (ob_get_level()) {
+            ob_end_clean();
+        }
+        
+        // Démarrer un nouveau buffer
+        ob_start();
+        
         $this->checkAuth();
         
         try {
@@ -488,6 +500,10 @@ class AudioController extends BaseController implements IController
             }
             
             $data = json_decode(file_get_contents('php://input'), true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new Exception('Données JSON invalides: ' . json_last_error_msg());
+            }
+            
             $tracks = $data['tracks'] ?? [];
             
             if (empty($tracks)) {
@@ -505,12 +521,8 @@ class AudioController extends BaseController implements IController
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
             
-            // Nettoyer tous les buffers de sortie
-            while (ob_get_level()) {
-                ob_end_clean();
-            }
-            
             // Définir les en-têtes
+            header_remove();
             header('Content-Type: application/json; charset=utf-8');
             
             foreach ($tracks as $trackId) {
@@ -525,12 +537,23 @@ class AudioController extends BaseController implements IController
             }
             
             $_SESSION['selected_tracks'] = $validTracks;
-            echo json_encode(['success' => true, 'count' => count($validTracks)]);
+            $response = json_encode(['success' => true, 'count' => count($validTracks)]);
+            if ($response === false) {
+                throw new Exception('Erreur d\'encodage JSON: ' . json_last_error_msg());
+            }
+            
+            // Nettoyer une dernière fois le buffer avant d'envoyer la réponse
+            ob_clean();
+            echo $response;
             
         } catch (Exception $e) {
+            // Nettoyer le buffer en cas d'erreur
+            ob_clean();
             http_response_code(400);
             header('Content-Type: application/json');
             echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+        } finally {
+            ob_end_flush();
         }
     }
 }
