@@ -20,15 +20,15 @@ const total_duration = document.querySelector(".total-duration");
 let track_index = 0;
 let isPlaying = false;
 let updateTimer;
+let track_list = [];
 
 // Create the audio element for the player
 let curr_track = document.createElement('audio');
 
-// Initialize track list and index
-let track_list = [];
-let track_index = 0;
-let isPlaying = false;
-let updateTimer;
+function initializeAudioPlayer(tracks) {
+    track_list = tracks;
+    loadTrack(0);
+}
 
 // Load tracks from localStorage if available
 if (localStorage.getItem('selectedTracks')) {
