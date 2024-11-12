@@ -84,7 +84,9 @@ if (!defined('ROOT_PATH')) {
         <hr><br>
         <div class="boutonAligne">
             <form method="POST" style="display: inline;">
-                <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+                <?php if (isset($session)): ?>
+                    <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
+                <?php endif; ?>
                 <button type="submit" class="btnBase theme" formaction="?url=audio/list"><i class="iconColor material-icons md-36">undo</i></button>
             </form>
             <form method="POST" style="display: inline;">

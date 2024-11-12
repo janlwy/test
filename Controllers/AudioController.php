@@ -301,7 +301,8 @@ class AudioController extends BaseController implements IController
                 'pageTitle' => "Lecteur Audio",
                 'userId' => $userId,
                 'audios' => $audios,
-                'formattedAudios' => $formattedAudios
+                'formattedAudios' => $formattedAudios,
+                'session' => $this->session
             ];
             
             generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
