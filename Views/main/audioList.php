@@ -73,16 +73,9 @@
                 return;
             }
 
-            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-                const audioItem = checkbox.closest('.audio-item');
-                return {
-                    id: checkbox.dataset.audioId,
-                    title: audioItem.querySelector('h4').textContent,
-                    artist: audioItem.querySelector('p').textContent,
-                    image: audioItem.querySelector('.photoAudio').src,
-                    path: `Ressources/audio/${audioItem.dataset.audioPath}`
-                };
-            });
+            const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => 
+                parseInt(checkbox.getAttribute('data-audio-id'))
+            );
             
             // Sauvegarder la sélection via AJAX
             // Récupérer le token CSRF

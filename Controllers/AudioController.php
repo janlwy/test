@@ -493,6 +493,13 @@ class AudioController extends BaseController implements IController
             if (empty($tracks)) {
                 throw new Exception('Aucune piste sélectionnée');
             }
+
+            // Convertir les IDs en entiers et filtrer les valeurs non valides
+            $tracks = array_filter(array_map('intval', $tracks));
+            
+            if (empty($tracks)) {
+                throw new Exception('IDs de pistes invalides');
+            }
             
             // Vérifier que les pistes appartiennent à l'utilisateur
             $userId = $_SESSION['user_id'] ?? null;
