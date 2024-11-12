@@ -28,7 +28,13 @@ if (!defined('ROOT_PATH')) {
         <div id="audioData" style="display: none;" 
              data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
              data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                                return $audio->jsonData;
+                                return [
+                                    'id' => $audio->getId(),
+                                    'title' => $audio->getTitle(),
+                                    'artist' => $audio->getArtist(),
+                                    'path' => $audio->getPath(),
+                                    'image' => 'Ressources/images/pochettes/' . $audio->getImage()
+                                ];
                             }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
     <?php endif; ?>
     </div>
