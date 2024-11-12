@@ -24,8 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const tracks = JSON.parse(audioData.dataset.audios);
             if (tracks && tracks.length > 0) {
-                track_list = tracks;
-                loadTrack(0);
+                initializeAudioPlayer(tracks);
                 console.log('Audio tracks initialized:', tracks);
             }
         } catch (error) {
