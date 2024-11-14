@@ -3,10 +3,11 @@
 let audioPlayer = null;
 let currentTrack = null;
 let trackList = [];
+let playerElements = null;
 
 // Initialisation des éléments du lecteur
 function initializePlayerElements() {
-    playerElements = {
+    return {
         now_playing: document.querySelector(".now-playing"),
         track_art: document.querySelector(".track-art"),
         track_name: document.querySelector(".track-name"),
@@ -51,11 +52,19 @@ function initializeAudioPlayer(tracks) {
     }
     
     trackList = tracks;
+    playerElements = initializePlayerElements();
     audioPlayer = document.querySelector('audio') || document.createElement('audio');
     audioPlayer.controls = true;
-    document.querySelector('.player-container').appendChild(audioPlayer);
     
-    loadTrack(0);
+    const playerContainer = document.querySelector('.player-container');
+    if (playerContainer) {
+        playerContainer.appendChild(audioPlayer);
+        loadTrack(0);
+        console.log('Lecteur audio initialisé avec', tracks.length, 'pistes');
+    } else {
+        console.error('Container du lecteur non trouvé');
+        showError('Erreur d\'initialisation du lecteur');
+    }
 }
 
 function setDefaultPlayerState() {
@@ -85,10 +94,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (audioDataElement && audioDataElement.dataset.audios) {
         try {
             const tracks = JSON.parse(audioDataElement.dataset.audios);
+            console.log('Données audio reçues:', tracks);
+            
             if (Array.isArray(tracks) && tracks.length > 0) {
-                track_list = tracks;
-                loadTrack(0);
-                console.log('Pistes chargées:', track_list);
+                initializeAudioPlayer(tracks);
             } else {
                 console.log('Aucune piste disponible');
                 showError("Aucune piste audio disponible");
@@ -97,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Erreur lors du chargement des pistes:', error);
             showError("Erreur lors du chargement des pistes audio");
         }
+    } else {
+        console.log('Element audioData non trouvé ou pas de données');
     }
 
     // Gestionnaire pour les checkboxes
@@ -120,23 +131,41 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadTrack(index) {
-    if (!trackList[index]) {
+    if (!trackList || !trackList[index]) {
+        console.error('Piste invalide ou trackList non initialisé');
         showError('Piste invalide');
         return;
     }
 
-    currentTrack = trackList[index];
-    audioPlayer.src = 'Ressources/audio/' + currentTrack.path;
-    audioPlayer.load();
-    audioPlayer.play().catch(error => {
-        console.error('Erreur de lecture:', error);
-        showError('Erreur lors de la lecture du fichier audio');
-    });
-    
-    // Afficher les informations de la piste
-    document.querySelector('.track-name').textContent = currentTrack.title;
-    document.querySelector('.track-artist').textContent = currentTrack.artist;
-    document.querySelector('.track-art').style.backgroundImage = `url('${currentTrack.image}')`;
+    try {
+        currentTrack = trackList[index];
+        console.log('Chargement de la piste:', currentTrack);
+        
+        if (!currentTrack.path) {
+            throw new Error('Chemin de la piste manquant');
+        }
+
+        audioPlayer.src = 'Ressources/audio/' + currentTrack.path;
+        audioPlayer.load();
+        
+        // Mettre à jour l'interface
+        if (playerElements) {
+            playerElements.track_name.textContent = currentTrack.title || 'Sans titre';
+            playerElements.track_artist.textContent = currentTrack.artist || 'Artiste inconnu';
+            playerElements.track_art.style.backgroundImage = currentTrack.image ? 
+                `url('${currentTrack.image}')` : 
+                "url('./Ressources/images/default-cover.png')";
+            playerElements.now_playing.textContent = `Piste ${index + 1} sur ${trackList.length}`;
+        }
+
+        audioPlayer.play().catch(error => {
+            console.error('Erreur de lecture:', error);
+            showError('Erreur lors de la lecture du fichier audio');
+        });
+    } catch (error) {
+        console.error('Erreur lors du chargement de la piste:', error);
+        showError('Erreur lors du chargement de la piste');
+    }
 }
 
 // Function to reset all values to their default
