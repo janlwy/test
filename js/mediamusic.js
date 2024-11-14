@@ -136,11 +136,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function loadTrack(index) {
+async function loadTrack(index) {
     if (!playerState.track_list || !playerState.track_list[index]) {
         console.error('Piste invalide ou index incorrect');
         showError('Piste invalide ou index incorrect');
-        return;
+        return false;
     }
 
     try {
@@ -151,58 +151,67 @@ function loadTrack(index) {
         if (!track.path) {
             console.error('Chemin de la piste manquant:', track);
             showError("Erreur: Fichier audio non trouvé");
-            return;
+            return false;
         }
 
-    // Vérifier l'existence du fichier avant de le charger
-    const trackPath = track.path;
-    fetch(trackPath, { 
-        method: 'HEAD',
-        cache: 'no-cache'
-    })
-    .catch(error => {
-        console.error('Erreur lors de la vérification du fichier:', error);
-        showError("Erreur: Impossible d'accéder au fichier audio");
-        throw error;
-    })
-        .then(response => {
+        // Vérifier l'existence du fichier avant de le charger
+        const trackPath = track.path;
+        try {
+            const response = await fetch(trackPath, { 
+                method: 'HEAD',
+                cache: 'no-cache'
+            });
+
             if (!response.ok) {
                 throw new Error(`Fichier non trouvé: ${trackPath}`);
             }
-            return response;
-        })
-        .then(() => {
-            console.log('Chargement de la piste:', trackPath);
-            playerElements.curr_track.src = trackPath;
-            
-            // Ajouter des gestionnaires d'événements pour déboguer
-            playerElements.curr_track.addEventListener('error', (e) => {
+        } catch (error) {
+            console.error('Erreur lors de la vérification du fichier:', error);
+            showError("Erreur: Impossible d'accéder au fichier audio");
+            return false;
+        }
+
+        console.log('Chargement de la piste:', trackPath);
+        playerElements.curr_track.src = trackPath;
+
+        // Créer une promesse pour gérer le chargement de l'audio
+        await new Promise((resolve, reject) => {
+            const errorHandler = (e) => {
                 console.error('Erreur de chargement audio:', e);
-                console.error('Code erreur:', playerElements.curr_track.error.code);
-                console.error('Message erreur:', playerElements.curr_track.error.message);
+                console.error('Code erreur:', playerElements.curr_track.error?.code);
+                console.error('Message erreur:', playerElements.curr_track.error?.message);
                 showError("Erreur de chargement du fichier audio");
-            });
-    
-            playerElements.curr_track.addEventListener('loadeddata', () => {
+                reject(new Error("Erreur de chargement audio"));
+            };
+
+            const loadedHandler = () => {
                 console.log('Piste audio chargée avec succès');
-            });
+                resolve();
+            };
+
+            playerElements.curr_track.addEventListener('error', errorHandler, { once: true });
+            playerElements.curr_track.addEventListener('loadeddata', loadedHandler, { once: true });
             
             playerElements.curr_track.load();
-
-            // Mise à jour des détails de la piste
-            playerElements.track_art.style.backgroundImage = 
-                "url(" + track.image + ")";
-            playerElements.track_name.textContent = track.title;
-            playerElements.track_artist.textContent = track.artist;
-            playerElements.now_playing.textContent =
-                "Piste " + (index + 1) + " de " + playerState.track_list.length;
-
-            // Intervalle pour mettre à jour le slider
-            playerState.updateTimer = setInterval(seekUpdate, 1000);
-
-            // Passer à la piste suivante quand celle-ci se termine
-            playerElements.curr_track.addEventListener("ended", nextTrack);
         });
+
+        // Mise à jour des détails de la piste
+        playerElements.track_art.style.backgroundImage = `url("${track.image}")`;
+        playerElements.track_name.textContent = track.title;
+        playerElements.track_artist.textContent = track.artist;
+        playerElements.now_playing.textContent = `Piste ${index + 1} de ${playerState.track_list.length}`;
+
+        // Intervalle pour mettre à jour le slider
+        playerState.updateTimer = setInterval(seekUpdate, 1000);
+
+        // Passer à la piste suivante quand celle-ci se termine
+        playerElements.curr_track.addEventListener("ended", nextTrack, { once: true });
+
+        return true;
+    } catch (error) {
+        console.error('Erreur lors du chargement de la piste:', error);
+        showError("Erreur lors du chargement de la piste audio");
+        return false;
     }
 }
 }
