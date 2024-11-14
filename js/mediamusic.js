@@ -1,31 +1,35 @@
 'use strict';
 
-let audioPlayer = null;
-let currentTrack = null;
-let trackList = [];
-let playerElements = null;
-let playerState = {
-    isPlaying: false,
-    track_index: 0,
-    track_list: []
+// État global du lecteur
+const player = {
+    audio: new Audio(),
+    currentIndex: 0,
+    tracks: [],
+    isPlaying: false
 };
 
-// Initialisation des éléments du lecteur
-function initializePlayerElements() {
-    return {
-        now_playing: document.querySelector(".now-playing"),
-        track_art: document.querySelector(".track-art"),
-        track_name: document.querySelector(".track-name"),
-        track_artist: document.querySelector(".track-artist"),
-        playpause_btn: document.querySelector(".playpause-track"),
-        next_btn: document.querySelector(".next-track"),
-        prev_btn: document.querySelector(".prev-track"),
-        seek_slider: document.querySelector(".seek_slider"),
-        volume_slider: document.querySelector(".volume_slider"),
-        curr_time: document.querySelector(".current-time"),
-        total_duration: document.querySelector(".total-duration"),
-        curr_track: document.createElement('audio')
-    };
+// Éléments de l'interface
+const elements = {
+    nowPlaying: document.querySelector(".now-playing"),
+    trackArt: document.querySelector(".track-art"),
+    trackName: document.querySelector(".track-name"),
+    trackArtist: document.querySelector(".track-artist"),
+    playButton: document.querySelector(".playpause-track"),
+    nextButton: document.querySelector(".next-track"),
+    prevButton: document.querySelector(".prev-track"),
+    seekSlider: document.querySelector(".seek_slider"),
+    volumeSlider: document.querySelector(".volume_slider"),
+    currentTime: document.querySelector(".current-time"),
+    totalDuration: document.querySelector(".total-duration")
+};
+
+// Afficher un message d'erreur
+function showMessage(message, isError = true) {
+    const div = document.createElement('div');
+    div.className = isError ? 'error-message' : 'success-message';
+    div.textContent = message;
+    document.querySelector('.player-container')?.prepend(div);
+    setTimeout(() => div.remove(), 5000);
 }
 
 function showError(message) {
@@ -50,36 +54,19 @@ function showError(message) {
     }
 }
 
+// Initialiser le lecteur avec les pistes
 function initializeAudioPlayer(tracks) {
-    if (!tracks || tracks.length === 0) {
-        showError('Aucune piste sélectionnée');
+    if (!tracks?.length) {
+        showMessage('Aucune piste sélectionnée');
         return;
     }
+
+    player.tracks = tracks;
+    player.audio.addEventListener('ended', () => playNext());
+    player.audio.addEventListener('timeupdate', updateProgress);
     
-    trackList = tracks;
-    playerState.track_list = tracks;
-    playerElements = initializePlayerElements();
-    
-    if (!playerElements.curr_track) {
-        console.error('Élément audio non initialisé');
-        showError('Erreur d\'initialisation du lecteur');
-        return;
-    }
-    
-    const playerContainer = document.querySelector('.player-container');
-    if (playerContainer) {
-        playerElements.curr_track.controls = false;
-        loadTrack(0);
-        
-        // Ajouter les écouteurs d'événements
-        playerElements.curr_track.addEventListener('ended', () => nextTrack());
-        playerElements.curr_track.addEventListener('timeupdate', seekUpdate);
-        
-        console.log('Lecteur audio initialisé avec', tracks.length, 'pistes');
-    } else {
-        console.error('Container du lecteur non trouvé');
-        showError('Erreur d\'initialisation du lecteur');
-    }
+    loadTrack(0);
+    updateControls();
 }
 
 function setDefaultPlayerState() {
@@ -145,46 +132,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Charger une piste
 function loadTrack(index) {
-    if (!playerState.track_list || !playerState.track_list[index]) {
-        console.error('Piste invalide ou track_list non initialisé');
-        showError('Piste invalide');
+    const track = player.tracks[index];
+    if (!track?.path) {
+        showMessage('Piste invalide');
         return;
     }
 
-    try {
-        resetValues();
-        playerState.track_index = index;
-        currentTrack = playerState.track_list[index];
-        console.log('Chargement de la piste:', currentTrack);
-        
-        if (!currentTrack.path) {
-            throw new Error('Chemin de la piste manquant');
-        }
+    player.currentIndex = index;
+    player.audio.src = track.path;
+    player.audio.load();
 
-        playerElements.curr_track.src = currentTrack.path;
-        playerElements.curr_track.load();
-        
-        // Mettre à jour l'interface
-        if (playerElements) {
-            playerElements.track_name.textContent = currentTrack.title || 'Sans titre';
-            playerElements.track_artist.textContent = currentTrack.artist || 'Artiste inconnu';
-            playerElements.track_art.style.backgroundImage = currentTrack.image ? 
-                `url('${currentTrack.image}')` : 
-                "url('./Ressources/images/default-cover.png')";
-            playerElements.now_playing.textContent = `Piste ${index + 1} sur ${playerState.track_list.length}`;
-        }
-
-        // Mettre à jour le volume initial
-        if (playerElements.volume_slider) {
-            playerElements.curr_track.volume = playerElements.volume_slider.value / 100;
-        }
-
-        playTrack();
-    } catch (error) {
-        console.error('Erreur lors du chargement de la piste:', error);
-        showError('Erreur lors du chargement de la piste');
-    }
+    // Mettre à jour l'interface
+    elements.trackName.textContent = track.title || 'Sans titre';
+    elements.trackArtist.textContent = track.artist || 'Artiste inconnu';
+    elements.trackArt.style.backgroundImage = track.image ? 
+        `url('${track.image}')` : 
+        "url('./Ressources/images/default-cover.png')";
+    elements.nowPlaying.textContent = `Piste ${index + 1} sur ${player.tracks.length}`;
+    
+    // Réinitialiser les contrôles
+    elements.seekSlider.value = 0;
+    elements.currentTime.textContent = "00:00";
+    elements.totalDuration.textContent = "00:00";
+    
+    playTrack();
 }
 
 // Function to reset all values to their default
@@ -211,64 +184,35 @@ function resetValues() {
 }
 
 
-function playpauseTrack() {
-    if (!playerState.isPlaying) {
-        playTrack();
-    } else {
-        pauseTrack();
-    }
+// Contrôles de lecture
+function togglePlay() {
+    player.isPlaying ? pauseTrack() : playTrack();
 }
 
 function playTrack() {
-    try {
-        playerElements.curr_track.play();
-        playerState.isPlaying = true;
-        playerElements.playpause_btn.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
-    } catch (error) {
-        console.error('Erreur lors de la lecture:', error);
-        showError('Erreur lors de la lecture de la piste');
-    }
+    player.audio.play()
+        .then(() => {
+            player.isPlaying = true;
+            elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
+        })
+        .catch(error => showMessage('Erreur de lecture'));
 }
 
 function pauseTrack() {
-    try {
-        playerElements.curr_track.pause();
-        playerState.isPlaying = false;
-        playerElements.playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
-    } catch (error) {
-        console.error('Erreur lors de la pause:', error);
-        showError('Erreur lors de la mise en pause');
-    }
+    player.audio.pause();
+    player.isPlaying = false;
+    elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
 }
 
-function nextTrack() {
-    try {
-        if (playerState.track_index < playerState.track_list.length - 1) {
-            playerState.track_index += 1;
-        } else {
-            playerState.track_index = 0;
-        }
-        loadTrack(playerState.track_index);
-        playTrack();
-    } catch (error) {
-        console.error('Erreur lors du passage à la piste suivante:', error);
-        showError('Erreur lors du changement de piste');
-    }
+// Navigation entre les pistes
+function playNext() {
+    const nextIndex = (player.currentIndex + 1) % player.tracks.length;
+    loadTrack(nextIndex);
 }
 
-function prevTrack() {
-    try {
-        if (playerState.track_index > 0) {
-            playerState.track_index -= 1;
-        } else {
-            playerState.track_index = playerState.track_list.length - 1;
-        }
-        loadTrack(playerState.track_index);
-        playTrack();
-    } catch (error) {
-        console.error('Erreur lors du passage à la piste précédente:', error);
-        showError('Erreur lors du changement de piste');
-    }
+function playPrevious() {
+    const prevIndex = player.currentIndex > 0 ? player.currentIndex - 1 : player.tracks.length - 1;
+    loadTrack(prevIndex);
 }
 
 function seekTo() {
@@ -287,36 +231,46 @@ function setVolume() {
     curr_track.volume = volume_slider.value / 100;
 }
 
-function seekUpdate() {
-    let seekPosition = 0;
+// Mise à jour de la progression
+function updateProgress() {
+    if (isNaN(player.audio.duration)) return;
 
-    try {
-        // Check if the current track duration is a legible number
-        if (!isNaN(playerElements.curr_track.duration)) {
-            seekPosition = playerElements.curr_track.currentTime * (100 / playerElements.curr_track.duration);
-            playerElements.seek_slider.value = seekPosition;
+    const seekPosition = player.audio.currentTime * (100 / player.audio.duration);
+    elements.seekSlider.value = seekPosition;
 
-            // Calculate the time left and the total duration
-            let currentMinutes = Math.floor(playerElements.curr_track.currentTime / 60);
-            let currentSeconds = Math.floor(playerElements.curr_track.currentTime - currentMinutes * 60);
-            let durationMinutes = Math.floor(playerElements.curr_track.duration / 60);
-            let durationSeconds = Math.floor(playerElements.curr_track.duration - durationMinutes * 60);
-
-            // Add a zero to the single digit time values
-            if (currentSeconds < 10) { currentSeconds = "0" + currentSeconds; }
-            if (durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
-            if (currentMinutes < 10) { currentMinutes = "0" + currentMinutes; }
-            if (durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
-
-            // Display the updated duration
-            playerElements.curr_time.textContent = currentMinutes + ":" + currentSeconds;
-            playerElements.total_duration.textContent = durationMinutes + ":" + durationSeconds;
-            return true;
-        }
-        return false;
-    } catch (error) {
-        console.error('Erreur lors de la mise à jour du temps:', error);
-        // Ne pas afficher d'erreur visuelle ici car cette fonction est appelée fréquemment
-        return false;
+    function formatTime(time) {
+        const minutes = Math.floor(time / 60);
+        const seconds = Math.floor(time % 60);
+        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
+
+    elements.currentTime.textContent = formatTime(player.audio.currentTime);
+    elements.totalDuration.textContent = formatTime(player.audio.duration);
 }
+
+// Contrôles du volume et de la progression
+function updateVolume() {
+    player.audio.volume = elements.volumeSlider.value / 100;
+}
+
+function seekTo() {
+    const time = player.audio.duration * (elements.seekSlider.value / 100);
+    player.audio.currentTime = time;
+}
+
+// Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    const audioData = document.getElementById('audioData');
+    if (audioData?.dataset.audios) {
+        try {
+            const tracks = JSON.parse(audioData.dataset.audios);
+            if (tracks.length) {
+                initializeAudioPlayer(tracks);
+            } else {
+                showMessage('Aucune piste disponible');
+            }
+        } catch (error) {
+            showMessage('Erreur de chargement des pistes');
+        }
+    }
+});
