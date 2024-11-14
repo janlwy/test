@@ -138,13 +138,13 @@ function loadTrack(track_index) {
         .then(() => {
             console.log('Chargement de la piste:', trackPath);
             curr_track.src = trackPath;
-    
-    // Ajouter des gestionnaires d'événements pour déboguer
-    curr_track.addEventListener('error', (e) => {
-        console.error('Erreur de chargement audio:', e);
-        console.error('Code erreur:', curr_track.error.code);
-        console.error('Message erreur:', curr_track.error.message);
-    });
+            
+            // Ajouter des gestionnaires d'événements pour déboguer
+            curr_track.addEventListener('error', (e) => {
+                console.error('Erreur de chargement audio:', e);
+                console.error('Code erreur:', curr_track.error.code);
+                console.error('Message erreur:', curr_track.error.message);
+            });
     
     curr_track.addEventListener('loadeddata', () => {
         console.log('Piste audio chargée avec succès');
@@ -170,9 +170,9 @@ function loadTrack(track_index) {
 
 // Function to reset all values to their default
 function resetValues() {
-    curr_time.textContent = "00:00";
-    total_duration.textContent = "00:00";
-    seek_slider.value = 0;
+    if (curr_time) curr_time.textContent = "00:00";
+    if (total_duration) total_duration.textContent = "00:00";
+    if (seek_slider) seek_slider.value = 0;
 }
 
 // Load the first track in the tracklist
