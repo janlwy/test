@@ -81,8 +81,50 @@ function setDefaultPlayerState() {
     });
 }
 
-// Fonction globale pour jouer les pistes sélectionnées
+// Fonction pour sauvegarder et jouer les pistes sélectionnées
+async function saveAndPlaySelectedTracks() {
+    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    if (selectedCheckboxes.length === 0) {
+        showMessage('Veuillez sélectionner au moins une piste audio.', true);
+        return;
+    }
 
+    const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+        const audioItem = checkbox.closest('.audio-item');
+        return {
+            id: checkbox.getAttribute('data-audio-id'),
+            path: 'Ressources/audio/' + checkbox.getAttribute('data-audio-path'),
+            title: audioItem.querySelector('h4').textContent,
+            artist: audioItem.querySelector('p').textContent,
+            image: audioItem.querySelector('.photoAudio').src
+        };
+    });
+
+    try {
+        const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+        const response = await fetch('?url=audio/saveSelection', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify({ tracks: selectedTracks.map(track => track.id) })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            window.location.href = '?url=audio/player';
+        } else {
+            showMessage(data.message || 'Erreur lors de la sauvegarde de la sélection', true);
+        }
+    } catch (error) {
+        console.error('Erreur:', error);
+        showMessage('Erreur lors de la sauvegarde de la sélection', true);
+    }
+}
+
+// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     const audioDataElement = document.getElementById('audioData');
     if (audioDataElement && audioDataElement.dataset.audios) {
@@ -100,8 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Erreur lors du chargement des pistes:', error);
             showMessage("Erreur lors du chargement des pistes audio", true);
         }
-    } else {
-        console.log('Element audioData non trouvé ou pas de données');
     }
 
     // Gestionnaire pour les checkboxes
@@ -117,7 +157,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Empêcher la propagation du clic sur la checkbox
         checkbox.addEventListener('click', (e) => {
             e.stopPropagation();
         });

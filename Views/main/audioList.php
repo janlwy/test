@@ -65,39 +65,5 @@
     </div>
     <div class="button-container">
         <button type="button" id="play-selected" class="btnBase orange" onclick="saveAndPlaySelectedTracks()">Lire la sélection</button>
-        <script>
-        function saveAndPlaySelectedTracks() {
-            const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
-            if (selectedCheckboxes.length === 0) {
-                alert('Veuillez sélectionner au moins une piste audio.');
-                return;
-            }
-
-            const selectedTracks = Array.from(selectedCheckboxes)
-                .map(checkbox => {
-                    const audioItem = checkbox.closest('.audio-item');
-                    return {
-                        id: checkbox.getAttribute('data-audio-id'),
-                        path: checkbox.getAttribute('data-audio-path'),
-                        title: audioItem.querySelector('h4').textContent,
-                        artist: audioItem.querySelector('p').textContent,
-                        image: audioItem.querySelector('.photoAudio').src
-                    };
-                });
-
-            const form = document.createElement('form');
-            form.method = 'POST';
-            form.action = '?url=audio/player';
-            
-            const csrfInput = document.createElement('input');
-            csrfInput.type = 'hidden';
-            csrfInput.name = 'csrf_token';
-            csrfInput.value = '<?php echo $session->get('csrf_token'); ?>';
-            
-            form.appendChild(csrfInput);
-            document.body.appendChild(form);
-            form.submit();
-        }
-        </script>
     </div>
 </section>
