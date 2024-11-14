@@ -203,6 +203,8 @@ function loadTrack(index) {
             // Passer à la piste suivante quand celle-ci se termine
             playerElements.curr_track.addEventListener("ended", nextTrack);
         });
+    }
+}
 }
 
 // Function to reset all values to their default
