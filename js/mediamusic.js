@@ -214,7 +214,7 @@ async function loadTrack(index) {
         return false;
     }
 }
-}
+
 
 // Function to reset all values to their default
 function resetValues() {
