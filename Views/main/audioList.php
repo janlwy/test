@@ -76,95 +76,27 @@
             const selectedTracks = Array.from(selectedCheckboxes)
                 .map(checkbox => {
                     const audioItem = checkbox.closest('.audio-item');
-                    if (!audioItem) {
-                        console.error('Element audio-item non trouvé pour la checkbox');
-                        return null;
-                    }
-                    const id = parseInt(checkbox.getAttribute('data-audio-id'));
-                    const path = checkbox.getAttribute('data-audio-path');
-                    
-                    if (isNaN(id) || id <= 0) {
-                        console.error('ID audio invalide:', checkbox.getAttribute('data-audio-id'));
-                        return null;
-                    }
-                    
-                    if (!path) {
-                        console.error('Chemin audio manquant pour ID:', id);
-                        return null;
-                    }
                     return {
-                        id: id,
-                        title: audioItem.querySelector('h4')?.textContent || '',
-                        artist: audioItem.querySelector('p')?.textContent || '',
-                        image: audioItem.querySelector('.photoAudio')?.src || '',
-                        path: checkbox.getAttribute('data-audio-path') ? 
-                              `Ressources/audio/${checkbox.getAttribute('data-audio-path')}` : ''
+                        id: checkbox.getAttribute('data-audio-id'),
+                        path: checkbox.getAttribute('data-audio-path'),
+                        title: audioItem.querySelector('h4').textContent,
+                        artist: audioItem.querySelector('p').textContent,
+                        image: audioItem.querySelector('.photoAudio').src
                     };
-                })
-                .filter(track => track !== null && track.title && track.artist && track.path);
-            
-            // Sauvegarder la sélection via AJAX
-            // Récupérer le token CSRF
-            const csrfToken = '<?php echo $session->get('csrf_token'); ?>';
-            
-            fetch('index.php?url=audio/saveSelection', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                    'X-CSRF-Token': csrfToken,
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'Cache-Control': 'no-cache, no-store, must-revalidate',
-                    'Pragma': 'no-cache'
-                },
-                credentials: 'same-origin',
-                cache: 'no-store',
-                body: JSON.stringify({ 
-                    tracks: selectedTracks.map(track => track.id),
-                    trackData: selectedTracks 
-                }),
-                credentials: 'same-origin'
-            })
-            .then(response => {
-                if (!response.ok) {
-                    return response.json().then(err => {
-                        throw new Error(err.message || 'Erreur serveur');
-                    });
-                }
-                return response.json();
-            })
-            .then(data => {
-                if (!data.success) {
-                    throw new Error(data.message || 'Une erreur est survenue lors de la sélection des pistes.');
-                }
-                if (data.count === 0) {
-                    throw new Error('Aucune piste valide n\'a été sélectionnée.');
-                }
-                
-                const form = document.createElement('form');
-                form.method = 'POST';
-                form.action = '?url=audio/player';
-                
-                const csrfInput = document.createElement('input');
-                csrfInput.type = 'hidden';
-                csrfInput.name = 'csrf_token';
-                csrfInput.value = csrfToken;
-                
-                form.appendChild(csrfInput);
-                document.body.appendChild(form);
-                form.submit();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                // Afficher un message d'erreur plus détaillé
-                alert('Erreur: ' + (error.message || 'Une erreur est survenue lors de la communication avec le serveur.'));
-                // Log l'erreur complète pour le débogage
-                console.log('Détails de l\'erreur:', {
-                    message: error.message,
-                    stack: error.stack,
-                    response: error.response
                 });
-            });
+
+            const form = document.createElement('form');
+            form.method = 'POST';
+            form.action = '?url=audio/player';
+            
+            const csrfInput = document.createElement('input');
+            csrfInput.type = 'hidden';
+            csrfInput.name = 'csrf_token';
+            csrfInput.value = '<?php echo $session->get('csrf_token'); ?>';
+            
+            form.appendChild(csrfInput);
+            document.body.appendChild(form);
+            form.submit();
         }
         </script>
     </div>
