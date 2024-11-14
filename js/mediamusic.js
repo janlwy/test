@@ -83,7 +83,11 @@ function setDefaultPlayerState() {
 
 // Fonction pour sauvegarder et jouer les pistes sélectionnées
 async function saveAndPlaySelectedTracks() {
+    console.log('Fonction saveAndPlaySelectedTracks appelée');
+    
     const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
+    
     if (selectedCheckboxes.length === 0) {
         showMessage('Veuillez sélectionner au moins une piste audio.', true);
         return;
@@ -91,17 +95,27 @@ async function saveAndPlaySelectedTracks() {
 
     const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
         const audioItem = checkbox.closest('.audio-item');
-        return {
+        const track = {
             id: checkbox.getAttribute('data-audio-id'),
-            path: 'Ressources/audio/' + checkbox.getAttribute('data-audio-path'),
-            title: audioItem.querySelector('h4').textContent,
-            artist: audioItem.querySelector('p').textContent,
+            path: checkbox.getAttribute('data-audio-path'),
+            title: audioItem.querySelector('h4').textContent.trim(),
+            artist: audioItem.querySelector('p').textContent.trim(),
             image: audioItem.querySelector('.photoAudio').src
         };
+        console.log('Piste sélectionnée:', track);
+        return track;
     });
 
     try {
-        const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+        const csrfTokenInput = document.querySelector('input[name="csrf_token"]');
+        if (!csrfTokenInput) {
+            throw new Error('Token CSRF non trouvé');
+        }
+        const csrfToken = csrfTokenInput.value;
+        console.log('Token CSRF trouvé:', csrfToken);
+
+        console.log('Envoi de la requête avec les pistes:', selectedTracks.map(track => track.id));
+        
         const response = await fetch('?url=audio/saveSelection', {
             method: 'POST',
             headers: {
@@ -112,20 +126,27 @@ async function saveAndPlaySelectedTracks() {
             body: JSON.stringify({ tracks: selectedTracks.map(track => track.id) })
         });
 
+        console.log('Réponse reçue:', response.status);
         const data = await response.json();
+        console.log('Données reçues:', data);
+
         if (data.success) {
+            console.log('Redirection vers le lecteur');
             window.location.href = '?url=audio/player';
         } else {
+            console.error('Erreur serveur:', data.message);
             showMessage(data.message || 'Erreur lors de la sauvegarde de la sélection', true);
         }
     } catch (error) {
-        console.error('Erreur:', error);
-        showMessage('Erreur lors de la sauvegarde de la sélection', true);
+        console.error('Erreur complète:', error);
+        showMessage('Erreur lors de la sauvegarde de la sélection: ' + error.message, true);
     }
 }
 
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM chargé, initialisation...');
+    
     const audioDataElement = document.getElementById('audioData');
     if (audioDataElement && audioDataElement.dataset.audios) {
         try {
@@ -145,8 +166,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Gestionnaire pour les checkboxes
-    document.querySelectorAll('.select-audio').forEach(checkbox => {
+    const checkboxes = document.querySelectorAll('.select-audio');
+    console.log('Nombre de checkboxes trouvées:', checkboxes.length);
+    
+    checkboxes.forEach(checkbox => {
         checkbox.addEventListener('change', (e) => {
+            console.log('Checkbox changée:', e.target.checked);
             const audioItem = e.target.closest('.audio-item');
             if (audioItem) {
                 if (e.target.checked) {
@@ -161,6 +186,18 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
         });
     });
+
+    // Gestionnaire pour le bouton de lecture
+    const playSelectedButton = document.getElementById('play-selected');
+    if (playSelectedButton) {
+        console.log('Bouton de lecture trouvé');
+        playSelectedButton.addEventListener('click', () => {
+            console.log('Bouton de lecture cliqué');
+            saveAndPlaySelectedTracks();
+        });
+    } else {
+        console.error('Bouton de lecture non trouvé');
+    }
 });
 
 // Charger une piste
