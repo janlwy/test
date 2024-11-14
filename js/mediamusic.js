@@ -110,12 +110,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadTrack(track_index) {
     if (!track_list || !track_list[track_index]) {
         console.error('Piste invalide ou index incorrect');
+        showError('Piste invalide ou index incorrect');
         return;
     }
 
-    // Clear the previous seek timer
-    clearInterval(updateTimer);
-    resetValues();
+    try {
+        // Clear the previous seek timer
+        clearInterval(updateTimer);
+        resetValues();
 
     // Load a new track
     const track = track_list[track_index];
@@ -170,9 +172,13 @@ function loadTrack(track_index) {
 
 // Function to reset all values to their default
 function resetValues() {
-    if (curr_time) curr_time.textContent = "00:00";
-    if (total_duration) total_duration.textContent = "00:00";
-    if (seek_slider) seek_slider.value = 0;
+    try {
+        if (curr_time) curr_time.textContent = "00:00";
+        if (total_duration) total_duration.textContent = "00:00";
+        if (seek_slider) seek_slider.value = 0;
+    } catch (error) {
+        console.error('Erreur lors de la réinitialisation des valeurs:', error);
+    }
 }
 
 // Load the first track in the tracklist
