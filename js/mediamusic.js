@@ -158,7 +158,10 @@ function loadTrack(index) {
 
     // Vérifier l'existence du fichier avant de le charger
     const trackPath = track.path;
-    fetch(trackPath, { method: 'HEAD' })
+    fetch(trackPath, { 
+        method: 'HEAD',
+        cache: 'no-cache'
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Fichier non trouvé: ${trackPath}`);
@@ -170,10 +173,11 @@ function loadTrack(index) {
             playerElements.curr_track.src = trackPath;
             
             // Ajouter des gestionnaires d'événements pour déboguer
-            curr_track.addEventListener('error', (e) => {
+            playerElements.curr_track.addEventListener('error', (e) => {
                 console.error('Erreur de chargement audio:', e);
-                console.error('Code erreur:', curr_track.error.code);
-                console.error('Message erreur:', curr_track.error.message);
+                console.error('Code erreur:', playerElements.curr_track.error.code);
+                console.error('Message erreur:', playerElements.curr_track.error.message);
+                showError("Erreur de chargement du fichier audio");
             });
     
     curr_track.addEventListener('loadeddata', () => {
@@ -216,8 +220,6 @@ function resetValues() {
     }
 }
 
-// Load the first track in the tracklist
-loadTrack(track_index);
 
 function playpauseTrack() {
     // Switch between playing and pausing
