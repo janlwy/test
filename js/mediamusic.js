@@ -1,29 +1,48 @@
 'use strict';
 
-// Lecteur audio -----------------------------------------------------------------
-// and assign them to a variable
-const now_playing = document.querySelector(".now-playing");
-const track_art = document.querySelector(".track-art");
-const track_name = document.querySelector(".track-name");
-const track_artist = document.querySelector(".track-artist");
+'use strict';
 
-const playpause_btn = document.querySelector(".playpause-track");
-const next_btn = document.querySelector(".next-track");
-const prev_btn = document.querySelector(".prev-track");
+// Éléments du lecteur audio
+let playerElements = {
+    now_playing: null,
+    track_art: null,
+    track_name: null,
+    track_artist: null,
+    playpause_btn: null,
+    next_btn: null,
+    prev_btn: null,
+    seek_slider: null,
+    volume_slider: null,
+    curr_time: null,
+    total_duration: null,
+    curr_track: null
+};
 
-const seek_slider = document.querySelector(".seek_slider");
-const volume_slider = document.querySelector(".volume_slider");
-const curr_time = document.querySelector(".current-time");
-const total_duration = document.querySelector(".total-duration");
+// État du lecteur
+let playerState = {
+    track_index: 0,
+    isPlaying: false,
+    updateTimer: null,
+    track_list: []
+};
 
-// Specify globally used values
-let track_index = 0;
-let isPlaying = false;
-let updateTimer;
-let track_list = [];
-
-// Create the audio element for the player
-let curr_track = document.createElement('audio');
+// Initialisation des éléments du lecteur
+function initializePlayerElements() {
+    playerElements = {
+        now_playing: document.querySelector(".now-playing"),
+        track_art: document.querySelector(".track-art"),
+        track_name: document.querySelector(".track-name"),
+        track_artist: document.querySelector(".track-artist"),
+        playpause_btn: document.querySelector(".playpause-track"),
+        next_btn: document.querySelector(".next-track"),
+        prev_btn: document.querySelector(".prev-track"),
+        seek_slider: document.querySelector(".seek_slider"),
+        volume_slider: document.querySelector(".volume_slider"),
+        curr_time: document.querySelector(".current-time"),
+        total_duration: document.querySelector(".total-duration"),
+        curr_track: document.createElement('audio')
+    };
+}
 
 function showError(message) {
     const errorDiv = document.createElement('div');
@@ -48,22 +67,34 @@ function showError(message) {
 }
 
 function initializeAudioPlayer(tracks) {
+    initializePlayerElements();
+    
     if (tracks && tracks.length > 0) {
-        track_list = tracks;
+        playerState.track_list = tracks;
         loadTrack(0);
     } else {
-        // Initialiser avec des valeurs par défaut
-        now_playing.textContent = "Aucune piste sélectionnée";
-        track_name.textContent = "Sélectionnez des pistes audio";
-        track_artist.textContent = "depuis la liste";
-        track_art.style.backgroundImage = "url('./Ressources/images/default-cover.png')";
-        playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
-        playpause_btn.disabled = true;
-        next_btn.disabled = true;
-        prev_btn.disabled = true;
-        seek_slider.disabled = true;
-        volume_slider.disabled = true;
+        setDefaultPlayerState();
     }
+}
+
+function setDefaultPlayerState() {
+    const elements = playerElements;
+    elements.now_playing.textContent = "Aucune piste sélectionnée";
+    elements.track_name.textContent = "Sélectionnez des pistes audio";
+    elements.track_artist.textContent = "depuis la liste";
+    elements.track_art.style.backgroundImage = "url('./Ressources/images/default-cover.png')";
+    elements.playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+    
+    // Désactiver les contrôles
+    [
+        elements.playpause_btn,
+        elements.next_btn,
+        elements.prev_btn,
+        elements.seek_slider,
+        elements.volume_slider
+    ].forEach(element => {
+        if (element) element.disabled = true;
+    });
 }
 
 // Fonction globale pour jouer les pistes sélectionnées
@@ -107,27 +138,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function loadTrack(track_index) {
-    if (!track_list || !track_list[track_index]) {
+function loadTrack(index) {
+    if (!playerState.track_list || !playerState.track_list[index]) {
         console.error('Piste invalide ou index incorrect');
         showError('Piste invalide ou index incorrect');
         return;
     }
 
     try {
-        // Clear the previous seek timer
-        clearInterval(updateTimer);
+        clearInterval(playerState.updateTimer);
         resetValues();
 
-        // Load a new track
-        const track = track_list[track_index];
-        const trackPath = track.path;
-    
-    if (!trackPath) {
-        console.error('Chemin de la piste manquant:', track);
-        showError("Erreur: Fichier audio non trouvé");
-        return;
-    }
+        const track = playerState.track_list[index];
+        if (!track.path) {
+            console.error('Chemin de la piste manquant:', track);
+            showError("Erreur: Fichier audio non trouvé");
+            return;
+        }
 
     // Vérifier l'existence du fichier avant de le charger
     fetch(trackPath, { method: 'HEAD' })
