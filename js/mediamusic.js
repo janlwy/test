@@ -162,6 +162,11 @@ function loadTrack(index) {
         method: 'HEAD',
         cache: 'no-cache'
     })
+    .catch(error => {
+        console.error('Erreur lors de la vérification du fichier:', error);
+        showError("Erreur: Impossible d'accéder au fichier audio");
+        throw error;
+    })
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Fichier non trouvé: ${trackPath}`);
@@ -205,15 +210,20 @@ function loadTrack(index) {
 // Function to reset all values to their default
 function resetValues() {
     try {
-        if (playerElements.curr_time) {
-            playerElements.curr_time.textContent = "00:00";
+        if (!playerElements) {
+            throw new Error('playerElements non initialisé');
         }
-        if (playerElements.total_duration) {
-            playerElements.total_duration.textContent = "00:00";
-        }
-        if (playerElements.seek_slider) {
-            playerElements.seek_slider.value = 0;
-        }
+        
+        const elements = ['curr_time', 'total_duration', 'seek_slider'];
+        elements.forEach(element => {
+            if (playerElements[element]) {
+                if (element === 'seek_slider') {
+                    playerElements[element].value = 0;
+                } else {
+                    playerElements[element].textContent = "00:00";
+                }
+            }
+        });
     } catch (error) {
         console.error('Erreur lors de la réinitialisation des valeurs:', error);
         showError('Erreur lors de la réinitialisation du lecteur');
