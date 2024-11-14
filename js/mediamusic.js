@@ -119,9 +119,9 @@ function loadTrack(track_index) {
         clearInterval(updateTimer);
         resetValues();
 
-    // Load a new track
-    const track = track_list[track_index];
-    const trackPath = track.path;
+        // Load a new track
+        const track = track_list[track_index];
+        const trackPath = track.path;
     
     if (!trackPath) {
         console.error('Chemin de la piste manquant:', track);
@@ -173,11 +173,18 @@ function loadTrack(track_index) {
 // Function to reset all values to their default
 function resetValues() {
     try {
-        if (curr_time) curr_time.textContent = "00:00";
-        if (total_duration) total_duration.textContent = "00:00";
-        if (seek_slider) seek_slider.value = 0;
+        const elements = {
+            curr_time,
+            total_duration,
+            seek_slider
+        };
+        
+        if (elements.curr_time) elements.curr_time.textContent = "00:00";
+        if (elements.total_duration) elements.total_duration.textContent = "00:00";
+        if (elements.seek_slider) elements.seek_slider.value = 0;
     } catch (error) {
         console.error('Erreur lors de la réinitialisation des valeurs:', error);
+        showError('Erreur lors de la réinitialisation du lecteur');
     }
 }
 
