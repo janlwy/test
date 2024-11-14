@@ -268,7 +268,7 @@ class AudioController extends BaseController implements IController
             }
             
             if (empty($audios)) {
-                $_SESSION['message'] = "Aucune piste sélectionnée ou disponible.";
+                $_SESSION['message'] = "";
             }
             
             // Préparer les données complètes pour chaque audio
