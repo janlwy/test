@@ -65,7 +65,7 @@ class Audio extends AbstractModel
         return $this->created_at;
     }
 
-    private $user_id;
+    protected $user_id;
     protected $created_at;
 
     public function setUserId($user_id)
