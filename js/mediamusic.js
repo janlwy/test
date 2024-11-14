@@ -23,33 +23,25 @@ const elements = {
     totalDuration: document.querySelector(".total-duration")
 };
 
-// Afficher un message d'erreur
+// Afficher un message
 function showMessage(message, isError = true) {
+    // Supprimer les messages précédents de même type
+    const className = isError ? 'error-message' : 'success-message';
+    const existingMessages = document.querySelectorAll('.' + className);
+    existingMessages.forEach(msg => msg.remove());
+    
     const div = document.createElement('div');
-    div.className = isError ? 'error-message' : 'success-message';
+    div.className = className;
     div.textContent = message;
-    document.querySelector('.player-container')?.prepend(div);
-    setTimeout(() => div.remove(), 5000);
-}
-
-function showError(message) {
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-message';
-    errorDiv.textContent = message;
     
-    // Supprimer les messages d'erreur précédents
-    const existingErrors = document.querySelectorAll('.error-message');
-    existingErrors.forEach(err => err.remove());
-    
-    // Ajouter le nouveau message
     const playerContainer = document.querySelector('.player-container');
     if (playerContainer) {
-        playerContainer.insertBefore(errorDiv, playerContainer.firstChild);
+        playerContainer.insertBefore(div, playerContainer.firstChild);
         
-        // Faire disparaître le message après 5 secondes
+        // Animation de disparition
         setTimeout(() => {
-            errorDiv.style.opacity = '0';
-            setTimeout(() => errorDiv.remove(), 1000);
+            div.style.opacity = '0';
+            setTimeout(() => div.remove(), 1000);
         }, 5000);
     }
 }
@@ -102,11 +94,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 initializeAudioPlayer(tracks);
             } else {
                 console.log('Aucune piste disponible');
-                showError("Aucune piste audio disponible");
+                showMessage("Aucune piste audio disponible", true);
             }
         } catch (error) {
             console.error('Erreur lors du chargement des pistes:', error);
-            showError("Erreur lors du chargement des pistes audio");
+            showMessage("Erreur lors du chargement des pistes audio", true);
         }
     } else {
         console.log('Element audioData non trouvé ou pas de données');
@@ -179,7 +171,7 @@ function resetValues() {
         });
     } catch (error) {
         console.error('Erreur lors de la réinitialisation des valeurs:', error);
-        showError('Erreur lors de la réinitialisation du lecteur');
+        showMessage('Erreur lors de la réinitialisation du lecteur', true);
     }
 }
 
