@@ -1,7 +1,5 @@
 'use strict';
 
-'use strict';
-
 // Éléments du lecteur audio
 let playerElements = {
     now_playing: null,
@@ -185,26 +183,26 @@ function loadTrack(index) {
                 showError("Erreur de chargement du fichier audio");
             });
     
-    curr_track.addEventListener('loadeddata', () => {
-        console.log('Piste audio chargée avec succès');
-    });
-    
-    curr_track.load();
+            playerElements.curr_track.addEventListener('loadeddata', () => {
+                console.log('Piste audio chargée avec succès');
+            });
+            
+            playerElements.curr_track.load();
 
-    // Update details of the track
-    track_art.style.backgroundImage =
-        "url(" + track_list[track_index].image + ")";
-    track_name.textContent = track_list[track_index].title;
-    track_artist.textContent = track_list[track_index].artist;
-    now_playing.textContent =
-        "Piste " + (track_index + 1) + " de " + track_list.length;
+            // Mise à jour des détails de la piste
+            playerElements.track_art.style.backgroundImage = 
+                "url(" + track.image + ")";
+            playerElements.track_name.textContent = track.title;
+            playerElements.track_artist.textContent = track.artist;
+            playerElements.now_playing.textContent =
+                "Piste " + (index + 1) + " de " + playerState.track_list.length;
 
-    // Set an interval of 1000 milliseconds
-    // for updating the seek slider
-    updateTimer = setInterval(seekUpdate, 1000);
+            // Intervalle pour mettre à jour le slider
+            playerState.updateTimer = setInterval(seekUpdate, 1000);
 
-    // Move to the next track if the current finishes playing
-    curr_track.addEventListener("ended", nextTrack);
+            // Passer à la piste suivante quand celle-ci se termine
+            playerElements.curr_track.addEventListener("ended", nextTrack);
+        });
 }
 
 // Function to reset all values to their default
@@ -232,52 +230,63 @@ function resetValues() {
 
 
 function playpauseTrack() {
-    // Switch between playing and pausing
-    // depending on the current state
-    if (!isPlaying) playTrack();
-    else pauseTrack();
+    if (!playerState.isPlaying) {
+        playTrack();
+    } else {
+        pauseTrack();
+    }
 }
 
 function playTrack() {
-    // Play the loaded track
-    curr_track.play();
-    isPlaying = true;
-
-    // Replace icon with the pause icon
-    playpause_btn.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
+    try {
+        playerElements.curr_track.play();
+        playerState.isPlaying = true;
+        playerElements.playpause_btn.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
+    } catch (error) {
+        console.error('Erreur lors de la lecture:', error);
+        showError('Erreur lors de la lecture de la piste');
+    }
 }
 
 function pauseTrack() {
-    // Pause the loaded track
-    curr_track.pause();
-    isPlaying = false;
-
-    // Replace icon with the play icon
-    playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+    try {
+        playerElements.curr_track.pause();
+        playerState.isPlaying = false;
+        playerElements.playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+    } catch (error) {
+        console.error('Erreur lors de la pause:', error);
+        showError('Erreur lors de la mise en pause');
+    }
 }
 
 function nextTrack() {
-    // Go back to the first track if the
-    // current one is the last in the track list
-    if (track_index < track_list.length - 1)
-        track_index += 1;
-    else track_index = 0;
-
-    // Load and play the new track
-    loadTrack(track_index);
-    playTrack();
+    try {
+        if (playerState.track_index < playerState.track_list.length - 1) {
+            playerState.track_index += 1;
+        } else {
+            playerState.track_index = 0;
+        }
+        loadTrack(playerState.track_index);
+        playTrack();
+    } catch (error) {
+        console.error('Erreur lors du passage à la piste suivante:', error);
+        showError('Erreur lors du changement de piste');
+    }
 }
 
 function prevTrack() {
-    // Go back to the last track if the
-    // current one is the first in the track list
-    if (track_index > 0)
-        track_index -= 1;
-    else track_index = track_list.length - 1;
-
-    // Load and play the new track
-    loadTrack(track_index);
-    playTrack();
+    try {
+        if (playerState.track_index > 0) {
+            playerState.track_index -= 1;
+        } else {
+            playerState.track_index = playerState.track_list.length - 1;
+        }
+        loadTrack(playerState.track_index);
+        playTrack();
+    } catch (error) {
+        console.error('Erreur lors du passage à la piste précédente:', error);
+        showError('Erreur lors du changement de piste');
+    }
 }
 
 function seekTo() {
