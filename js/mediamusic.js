@@ -329,9 +329,12 @@ function seekUpdate() {
             // Display the updated duration
             playerElements.curr_time.textContent = currentMinutes + ":" + currentSeconds;
             playerElements.total_duration.textContent = durationMinutes + ":" + durationSeconds;
+            return true;
         }
+        return false;
     } catch (error) {
         console.error('Erreur lors de la mise à jour du temps:', error);
         // Ne pas afficher d'erreur visuelle ici car cette fonction est appelée fréquemment
+        return false;
     }
 }
