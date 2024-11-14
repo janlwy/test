@@ -483,89 +483,42 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
-        // Désactiver toute sortie
-        @ini_set('display_errors', 0);
-        @error_reporting(0);
-        @error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
-        
-        // Nettoyer tous les buffers existants
-        while (ob_get_level()) {
-            ob_end_clean();
-        }
-        
-        // Démarrer un nouveau buffer
-        ob_start();
-        
-        if (session_status() === PHP_SESSION_NONE) {
-            @session_start();
-        }
-        
-        $this->checkAuth();
-        
         header('Content-Type: application/json; charset=utf-8');
         
         try {
-            // Vérifier que la requête est bien une requête AJAX
+            $this->checkAuth();
+            
+            // Vérifier que c'est une requête AJAX
             if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || 
                 strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest') {
                 throw new Exception('Requête non autorisée');
             }
+
+            // Récupérer et vérifier les données
+            $rawData = file_get_contents('php://input');
+            $data = json_decode($rawData, true);
             
-            // Vérifier le token CSRF dans l'en-tête
-            $csrfToken = $_SERVER['HTTP_X_CSRF_TOKEN'] ?? null;
-            if (!$csrfToken || !hash_equals($this->session->get('csrf_token'), $csrfToken)) {
+            if (!isset($data['tracks']) || !is_array($data['tracks']) || !isset($data['csrf_token'])) {
+                throw new Exception('Données invalides');
+            }
+
+            // Vérifier le token CSRF
+            if (!hash_equals($this->session->get('csrf_token'), $data['csrf_token'])) {
                 throw new Exception('Token CSRF invalide');
             }
 
-            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-                throw new Exception('Méthode non autorisée');
-            }
-            
-            $rawData = file_get_contents('php://input');
-            if (empty($rawData)) {
-                throw new Exception('Aucune donnée reçue');
-            }
-            
-            $data = json_decode($rawData, true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Données JSON invalides: ' . json_last_error_msg());
-            }
-            
-            if (!isset($data['tracks']) || !is_array($data['tracks'])) {
-                throw new Exception('Format de données invalide');
-            }
-            
-            // Validation et conversion des IDs
+            // Valider les IDs des pistes
             $tracks = array_filter($data['tracks'], function($id) {
                 return is_numeric($id) && $id > 0;
             });
             
             if (empty($tracks)) {
-                logError("Aucune piste valide dans les données reçues");
                 throw new Exception('Aucune piste valide sélectionnée');
             }
 
-            // Convertir les IDs en entiers
-            $tracks = array_map('intval', $tracks);
-            
-            // Log pour débogage
-            logInfo("Pistes reçues : " . implode(', ', $tracks));
-            
-            if (empty($tracks)) {
-                throw new Exception('IDs de pistes invalides');
-            }
-            
             // Vérifier que les pistes appartiennent à l'utilisateur
             $userId = $_SESSION['user_id'] ?? null;
             $validTracks = [];
-            
-            // Supprimer tous les en-têtes existants et en définir de nouveaux
-            header_remove();
-            header('HTTP/1.1 200 OK');
-            header('Content-Type: application/json; charset=utf-8');
-            header('Cache-Control: no-cache, no-store, must-revalidate');
-            header('Pragma: no-cache');
-            header('Expires: 0');
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);
@@ -575,40 +528,23 @@ class AudioController extends BaseController implements IController
             }
             
             if (empty($validTracks)) {
-                http_response_code(400);
-                echo json_encode([
-                    'success' => false,
-                    'message' => 'Aucune piste valide sélectionnée',
-                    'error' => true
-                ]);
-                exit();
+                throw new Exception('Aucune piste valide trouvée');
             }
             
             $_SESSION['selected_tracks'] = $validTracks;
             
-            // S'assurer qu'il n'y a aucune sortie précédente
-            if (ob_get_length()) ob_clean();
-            
-            // Envoyer la réponse JSON
             echo json_encode([
-                'success' => true, 
+                'success' => true,
                 'count' => count($validTracks),
                 'message' => 'Sélection sauvegardée avec succès'
             ]);
-            exit();
             
         } catch (Exception $e) {
-            // Nettoyer toute sortie précédente
-            if (ob_get_length()) ob_clean();
-            
             http_response_code(400);
-            header('Content-Type: application/json');
             echo json_encode([
                 'success' => false,
-                'message' => $e->getMessage(),
-                'error' => true
+                'message' => $e->getMessage()
             ]);
-            exit();
         }
     }
 }

@@ -116,14 +116,17 @@ async function saveAndPlaySelectedTracks() {
 
         console.log('Envoi de la requête avec les pistes:', selectedTracks.map(track => track.id));
         
-        const response = await fetch('?url=audio/saveSelection', {
+        const response = await fetch('index.php?url=audio/saveSelection', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest',
                 'X-CSRF-TOKEN': csrfToken
             },
-            body: JSON.stringify({ tracks: selectedTracks.map(track => track.id) })
+            body: JSON.stringify({ 
+                tracks: selectedTracks.map(track => track.id),
+                csrf_token: csrfToken 
+            })
         });
 
         console.log('Réponse reçue:', response.status);
