@@ -25,6 +25,28 @@ let track_list = [];
 // Create the audio element for the player
 let curr_track = document.createElement('audio');
 
+function showError(message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = message;
+    
+    // Supprimer les messages d'erreur précédents
+    const existingErrors = document.querySelectorAll('.error-message');
+    existingErrors.forEach(err => err.remove());
+    
+    // Ajouter le nouveau message
+    const playerContainer = document.querySelector('.player-container');
+    if (playerContainer) {
+        playerContainer.insertBefore(errorDiv, playerContainer.firstChild);
+        
+        // Faire disparaître le message après 5 secondes
+        setTimeout(() => {
+            errorDiv.style.opacity = '0';
+            setTimeout(() => errorDiv.remove(), 1000);
+        }, 5000);
+    }
+}
+
 function initializeAudioPlayer(tracks) {
     if (tracks && tracks.length > 0) {
         track_list = tracks;
@@ -189,11 +211,21 @@ function loadTrack(track_index) {
     
     if (!trackPath) {
         console.error('Chemin de la piste manquant:', track);
+        showError("Erreur: Fichier audio non trouvé");
         return;
     }
 
-    console.log('Chargement de la piste:', trackPath);
-    curr_track.src = trackPath;
+    // Vérifier l'existence du fichier avant de le charger
+    fetch(trackPath, { method: 'HEAD' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Fichier non trouvé: ${trackPath}`);
+            }
+            return response;
+        })
+        .then(() => {
+            console.log('Chargement de la piste:', trackPath);
+            curr_track.src = trackPath;
     
     // Ajouter des gestionnaires d'événements pour déboguer
     curr_track.addEventListener('error', (e) => {
