@@ -66,7 +66,7 @@ class Audio extends AbstractModel
     }
 
     private $user_id;
-    private $created_at;
+    protected $created_at;
 
     public function setUserId($user_id)
     {
