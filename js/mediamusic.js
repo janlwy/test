@@ -4,6 +4,11 @@ let audioPlayer = null;
 let currentTrack = null;
 let trackList = [];
 let playerElements = null;
+let playerState = {
+    isPlaying: false,
+    track_index: 0,
+    track_list: []
+};
 
 // Initialisation des éléments du lecteur
 function initializePlayerElements() {
@@ -52,14 +57,24 @@ function initializeAudioPlayer(tracks) {
     }
     
     trackList = tracks;
+    playerState.track_list = tracks;
     playerElements = initializePlayerElements();
-    audioPlayer = document.querySelector('audio') || document.createElement('audio');
-    audioPlayer.controls = true;
+    
+    if (!playerElements.curr_track) {
+        console.error('Élément audio non initialisé');
+        showError('Erreur d\'initialisation du lecteur');
+        return;
+    }
     
     const playerContainer = document.querySelector('.player-container');
     if (playerContainer) {
-        playerContainer.appendChild(audioPlayer);
+        playerElements.curr_track.controls = false;
         loadTrack(0);
+        
+        // Ajouter les écouteurs d'événements
+        playerElements.curr_track.addEventListener('ended', () => nextTrack());
+        playerElements.curr_track.addEventListener('timeupdate', seekUpdate);
+        
         console.log('Lecteur audio initialisé avec', tracks.length, 'pistes');
     } else {
         console.error('Container du lecteur non trouvé');
@@ -131,22 +146,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadTrack(index) {
-    if (!trackList || !trackList[index]) {
-        console.error('Piste invalide ou trackList non initialisé');
+    if (!playerState.track_list || !playerState.track_list[index]) {
+        console.error('Piste invalide ou track_list non initialisé');
         showError('Piste invalide');
         return;
     }
 
     try {
-        currentTrack = trackList[index];
+        resetValues();
+        playerState.track_index = index;
+        currentTrack = playerState.track_list[index];
         console.log('Chargement de la piste:', currentTrack);
         
         if (!currentTrack.path) {
             throw new Error('Chemin de la piste manquant');
         }
 
-        audioPlayer.src = 'Ressources/audio/' + currentTrack.path;
-        audioPlayer.load();
+        playerElements.curr_track.src = currentTrack.path;
+        playerElements.curr_track.load();
         
         // Mettre à jour l'interface
         if (playerElements) {
@@ -155,13 +172,15 @@ function loadTrack(index) {
             playerElements.track_art.style.backgroundImage = currentTrack.image ? 
                 `url('${currentTrack.image}')` : 
                 "url('./Ressources/images/default-cover.png')";
-            playerElements.now_playing.textContent = `Piste ${index + 1} sur ${trackList.length}`;
+            playerElements.now_playing.textContent = `Piste ${index + 1} sur ${playerState.track_list.length}`;
         }
 
-        audioPlayer.play().catch(error => {
-            console.error('Erreur de lecture:', error);
-            showError('Erreur lors de la lecture du fichier audio');
-        });
+        // Mettre à jour le volume initial
+        if (playerElements.volume_slider) {
+            playerElements.curr_track.volume = playerElements.volume_slider.value / 100;
+        }
+
+        playTrack();
     } catch (error) {
         console.error('Erreur lors du chargement de la piste:', error);
         showError('Erreur lors du chargement de la piste');
