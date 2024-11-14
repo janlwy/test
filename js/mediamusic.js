@@ -157,6 +157,7 @@ function loadTrack(index) {
         }
 
     // Vérifier l'existence du fichier avant de le charger
+    const trackPath = track.path;
     fetch(trackPath, { method: 'HEAD' })
         .then(response => {
             if (!response.ok) {
@@ -166,7 +167,7 @@ function loadTrack(index) {
         })
         .then(() => {
             console.log('Chargement de la piste:', trackPath);
-            curr_track.src = trackPath;
+            playerElements.curr_track.src = trackPath;
             
             // Ajouter des gestionnaires d'événements pour déboguer
             curr_track.addEventListener('error', (e) => {
@@ -200,15 +201,15 @@ function loadTrack(index) {
 // Function to reset all values to their default
 function resetValues() {
     try {
-        const elements = {
-            curr_time,
-            total_duration,
-            seek_slider
-        };
-        
-        if (elements.curr_time) elements.curr_time.textContent = "00:00";
-        if (elements.total_duration) elements.total_duration.textContent = "00:00";
-        if (elements.seek_slider) elements.seek_slider.value = 0;
+        if (playerElements.curr_time) {
+            playerElements.curr_time.textContent = "00:00";
+        }
+        if (playerElements.total_duration) {
+            playerElements.total_duration.textContent = "00:00";
+        }
+        if (playerElements.seek_slider) {
+            playerElements.seek_slider.value = 0;
+        }
     } catch (error) {
         console.error('Erreur lors de la réinitialisation des valeurs:', error);
         showError('Erreur lors de la réinitialisation du lecteur');
