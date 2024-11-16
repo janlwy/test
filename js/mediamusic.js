@@ -1,5 +1,23 @@
 'use strict';
 
+// Initialisation du lecteur audio au chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    const audioData = document.getElementById('audioData');
+    if (audioData && audioData.dataset.audios) {
+        try {
+            const tracks = JSON.parse(audioData.dataset.audios);
+            if (Array.isArray(tracks) && tracks.length > 0) {
+                console.log('Initializing audio player with tracks:', tracks);
+                initializeAudioPlayer(tracks);
+            } else {
+                console.warn('No audio tracks available');
+            }
+        } catch (error) {
+            console.error('Error parsing audio data:', error);
+        }
+    }
+});
+
 async function saveAndPlaySelectedTracks() {
     try {
         const selectedTracks = Array.from(document.querySelectorAll('.select-audio:checked'))
