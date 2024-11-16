@@ -27,18 +27,28 @@ if (!defined('ROOT_PATH')) {
                 $audioPath = $audio->getPath();
                 $imagePath = $audio->getImage();
                 
-                // Vérifier que les fichiers existent
+                // Vérifier que les fichiers existent et sont lisibles
                 $fullAudioPath = 'Ressources/audio/' . $audioPath;
-                error_log("Vérification du fichier audio: " . $fullAudioPath);
-                error_log("Le fichier existe: " . (file_exists($fullAudioPath) ? 'Oui' : 'Non'));
-                error_log("Permissions: " . substr(sprintf('%o', fileperms($fullAudioPath)), -4));
+                $fullImagePath = 'Ressources/images/pochettes/' . $imagePath;
                 
-                if (!file_exists($fullAudioPath)) {
-                    error_log("Fichier audio manquant: " . $fullAudioPath);
+                if (!is_readable($fullAudioPath)) {
+                    error_log("Fichier audio non lisible: " . $fullAudioPath);
+                    error_log("Permissions: " . substr(sprintf('%o', fileperms($fullAudioPath)), -4));
                     return null;
                 }
-                if (!file_exists('Ressources/images/pochettes/' . $imagePath)) {
-                    error_log("Image manquante: Ressources/images/pochettes/" . $imagePath);
+                
+                // Vérifier le type MIME
+                $finfo = new finfo(FILEINFO_MIME_TYPE);
+                $mimeType = $finfo->file($fullAudioPath);
+                $allowedTypes = [
+                    'audio/mpeg', 'audio/mp4', 'audio/wav', 
+                    'audio/x-m4a', 'audio/aac', 'audio/ogg',
+                    'video/mp4', 'video/x-m4v', 'application/mp4'
+                ];
+                
+                if (!in_array($mimeType, $allowedTypes)) {
+                    error_log("Type MIME non autorisé: " . $mimeType);
+                    return null;
                 }
                 
                 return [
@@ -47,8 +57,9 @@ if (!defined('ROOT_PATH')) {
                     'artist' => $audio->getArtist(),
                     'path' => $audioPath,
                     'image' => $imagePath,
-                    'fullPath' => 'Ressources/audio/' . $audioPath,
-                    'fullImage' => 'Ressources/images/pochettes/' . $imagePath
+                    'fullPath' => $fullAudioPath,
+                    'fullImage' => $fullImagePath,
+                    'mimeType' => $mimeType
                 ];
             }, $audios ?? []);
             
