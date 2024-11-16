@@ -283,16 +283,6 @@ class AudioController extends BaseController implements IController
             foreach ($audios as $audio) {
                 $audioPath = 'Ressources/audio/' . $audio->getPath();
                 $imagePath = 'Ressources/images/pochettes/' . $audio->getImage();
-                
-                $audio->jsonData = [
-                    'id' => $audio->getId(),
-                    'title' => $audio->getTitle(),
-                    'artist' => $audio->getArtist(),
-                    'path' => $audio->getPath(),
-                    'fullPath' => $audioPath,
-                    'image' => $audio->getImage(),
-                    'fullImage' => $imagePath
-                ];
             }
             
             // Préparer les données pour le lecteur
