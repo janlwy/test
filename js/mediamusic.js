@@ -195,14 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
 class AudioPlayer {
     loadTrack(index) {
         const track = this.tracks[index];
-        if (!track?.path) {
-            showMessage('Piste invalide');
+        if (!track?.fullPath) {
+            console.error('Piste invalide:', track);
             return;
         }
 
         this.currentIndex = index;
-        this.audio.src = track.path;
+        this.audio.src = track.fullPath;
         this.audio.load();
+
+        console.log('Chargement de la piste:', {
+            index: index,
+            track: track,
+            src: this.audio.src
+        });
 
         this.updateInterface(track, index);
         this.playTrack();
@@ -211,10 +217,17 @@ class AudioPlayer {
     updateInterface(track, index) {
         this.elements.trackName.textContent = track.title || 'Sans titre';
         this.elements.trackArtist.textContent = track.artist || 'Artiste inconnu';
-        this.elements.trackArt.style.backgroundImage = track.image ? 
-            `url('${track.image}')` : 
+        this.elements.trackArt.style.backgroundImage = track.fullImage ? 
+            `url('${track.fullImage}')` : 
             "url('./Ressources/images/default-cover.png')";
         this.elements.nowPlaying.textContent = `Piste ${index + 1} sur ${this.tracks.length}`;
+        
+        console.log('Mise à jour interface:', {
+            title: track.title,
+            artist: track.artist,
+            image: track.fullImage,
+            index: index
+        });
         
         this.elements.seekSlider.value = 0;
         this.elements.currentTime.textContent = "00:00";

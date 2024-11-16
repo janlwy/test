@@ -24,16 +24,16 @@ if (!defined('ROOT_PATH')) {
          data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
          data-audios='<?php 
             $audioData = array_map(function ($audio) {
-                $audioPath = 'Ressources/audio/' . $audio->getPath();
-                $imagePath = 'Ressources/images/pochettes/' . $audio->getImage();
+                $audioPath = $audio->getPath();
+                $imagePath = $audio->getImage();
                 
                 // Vérifier que les fichiers existent
-                if (!file_exists($audioPath)) {
-                    error_log("Fichier audio manquant: " . $audioPath);
+                if (!file_exists('Ressources/audio/' . $audioPath)) {
+                    error_log("Fichier audio manquant: Ressources/audio/" . $audioPath);
                     return null;
                 }
-                if (!file_exists($imagePath)) {
-                    error_log("Image manquante: " . $imagePath);
+                if (!file_exists('Ressources/images/pochettes/' . $imagePath)) {
+                    error_log("Image manquante: Ressources/images/pochettes/" . $imagePath);
                 }
                 
                 return [
@@ -41,7 +41,9 @@ if (!defined('ROOT_PATH')) {
                     'title' => $audio->getTitle(),
                     'artist' => $audio->getArtist(),
                     'path' => $audioPath,
-                    'image' => $imagePath
+                    'image' => $imagePath,
+                    'fullPath' => 'Ressources/audio/' . $audioPath,
+                    'fullImage' => 'Ressources/images/pochettes/' . $imagePath
                 ];
             }, $audios ?? []);
             
