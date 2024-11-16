@@ -27,7 +27,7 @@ if (!defined('ROOT_PATH')) {
                                 'id' => $audio->getId(),
                                 'title' => $audio->getTitle(),
                                 'artist' => $audio->getArtist(),
-                                'path' => $audio->getPath(),
+                                'path' => 'Ressources/audio/' . $audio->getPath(),
                                 'image' => 'Ressources/images/pochettes/' . $audio->getImage()
                             ];
                         }, $audios ?? [])), ENT_QUOTES, 'UTF-8'); ?>'>
