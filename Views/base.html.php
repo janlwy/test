@@ -33,6 +33,25 @@ if (!function_exists('shouldDisplayNav')) {
 		<button type="button" id="boutonTheme" class="boutonTheme modalButton material-icons md-36" title="Changer le thème" aria-label="Changer le thème"></button>
 	</header>
 	<main>
+		<?php if (isset($_SESSION['erreur'])): ?>
+			<div class="error-message">
+				<?php 
+				echo htmlspecialchars($_SESSION['erreur']); 
+				error_log("Erreur affichée: " . $_SESSION['erreur']);
+				unset($_SESSION['erreur']); 
+				?>
+			</div>
+		<?php endif; ?>
+
+		<?php if (isset($_SESSION['message'])): ?>
+			<div class="success-message">
+				<?php 
+				echo htmlspecialchars($_SESSION['message']); 
+				unset($_SESSION['message']); 
+				?>
+			</div>
+		<?php endif; ?>
+
 		<?php if (shouldDisplayNav($datas)): ?>
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
