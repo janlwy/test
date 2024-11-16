@@ -71,14 +71,26 @@ class AudioController extends BaseController implements IController
 
     public function list()
     {
-        $this->checkAuth();
-        $this->checkCSRF();
-        
-        $userId = $_SESSION['user_id'];
-        $search = $_GET['search'] ?? '';
-        $filter = $_GET['filter'] ?? '';
-        
-        $audios = $this->audioRepository->findAllByUser($userId);
+        try {
+            $this->checkAuth();
+            
+            // Ne pas vérifier CSRF pour les requêtes GET
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $this->checkCSRF();
+            }
+            
+            $userId = $_SESSION['user_id'] ?? null;
+            if (!$userId) {
+                throw new Exception("Utilisateur non identifié");
+            }
+            
+            $search = $_GET['search'] ?? '';
+            $filter = $_GET['filter'] ?? '';
+            
+            $audios = $this->audioRepository->findAllByUser($userId);
+            if ($audios === false) {
+                throw new Exception("Erreur lors du chargement des pistes audio");
+            }
         
         // Préparer les données complètes pour chaque audio
         foreach ($audios as $audio) {

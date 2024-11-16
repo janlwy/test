@@ -27,7 +27,10 @@
         <div class="error-message">
             <?php echo htmlspecialchars($_SESSION['erreur'], ENT_QUOTES, 'UTF-8'); ?>
         </div>
-        <?php unset($_SESSION['erreur']); ?>
+        <?php 
+            error_log("Erreur affichée dans audioList: " . $_SESSION['erreur']);
+            unset($_SESSION['erreur']); 
+        ?>
     <?php endif; ?>
     <br><br>
     <div class="boutonAligne">
