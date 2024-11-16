@@ -521,13 +521,21 @@ class AudioController extends BaseController implements IController
             
             foreach ($tracks as $trackId) {
                 $audio = $this->audioRepository->findById($trackId);
-                if ($audio && $audio->getUserId() == $userId) {
-                    $validTracks[] = $trackId;
+                if ($audio) {
+                    // Log pour le débogage
+                    error_log("Vérification de la piste ID: " . $trackId);
+                    error_log("User ID de la piste: " . $audio->getUserId());
+                    error_log("User ID actuel: " . $userId);
+                    
+                    if ($audio->getUserId() == $userId) {
+                        $validTracks[] = $trackId;
+                    }
                 }
             }
             
             if (empty($validTracks)) {
-                throw new Exception('Aucune piste valide trouvée');
+                error_log("Aucune piste valide trouvée. Tracks reçus: " . implode(', ', $tracks));
+                throw new Exception('Aucune piste valide trouvée. Veuillez sélectionner au moins une piste.');
             }
             
             $_SESSION['selected_tracks'] = $validTracks;

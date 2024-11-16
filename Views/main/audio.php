@@ -22,15 +22,34 @@ if (!defined('ROOT_PATH')) {
 
     <div id="audioData" style="display: none;" 
          data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
-         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                            return [
-                                'id' => $audio->getId(),
-                                'title' => $audio->getTitle(),
-                                'artist' => $audio->getArtist(),
-                                'path' => 'Ressources/audio/' . $audio->getPath(),
-                                'image' => 'Ressources/images/pochettes/' . $audio->getImage()
-                            ];
-                        }, $audios ?? [])), ENT_QUOTES, 'UTF-8'); ?>'>
+         data-audios='<?php 
+            $audioData = array_map(function ($audio) {
+                $audioPath = 'Ressources/audio/' . $audio->getPath();
+                $imagePath = 'Ressources/images/pochettes/' . $audio->getImage();
+                
+                // Vérifier que les fichiers existent
+                if (!file_exists($audioPath)) {
+                    error_log("Fichier audio manquant: " . $audioPath);
+                    return null;
+                }
+                if (!file_exists($imagePath)) {
+                    error_log("Image manquante: " . $imagePath);
+                }
+                
+                return [
+                    'id' => $audio->getId(),
+                    'title' => $audio->getTitle(),
+                    'artist' => $audio->getArtist(),
+                    'path' => $audioPath,
+                    'image' => $imagePath
+                ];
+            }, $audios ?? []);
+            
+            // Filtrer les entrées nulles
+            $audioData = array_filter($audioData);
+            
+            echo htmlspecialchars(json_encode($audioData), ENT_QUOTES, 'UTF-8'); 
+         ?>'>
     </div>
     <?php if (empty($audios)): ?>
         <div class="info-message">
