@@ -58,7 +58,15 @@
 
     <div id="audioData"
         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                            return $audio->jsonData;
+                            return [
+                                'id' => $audio->getId(),
+                                'title' => $audio->getTitle(), 
+                                'artist' => $audio->getArtist(),
+                                'path' => $audio->getPath(),
+                                'fullPath' => 'Ressources/audio/' . $audio->getPath(),
+                                'image' => $audio->getImage(),
+                                'fullImage' => 'Ressources/images/pochettes/' . $audio->getImage()
+                            ];
                         }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'
         data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
         style="display: none;">
