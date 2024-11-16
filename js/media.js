@@ -44,7 +44,6 @@ function validatePasswordMatch() {
         boutonTheme.textContent = "dark_mode";
         localStorage.textContent = "dark_mode";
     }
-}
 
 document.addEventListener('DOMContentLoaded', () => {
     const themeBody = document.getElementById("themeBody");
