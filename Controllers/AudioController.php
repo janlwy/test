@@ -535,19 +535,27 @@ class AudioController extends BaseController implements IController
 
             // Vérifier que les pistes appartiennent à l'utilisateur
             $userId = $_SESSION['user_id'] ?? null;
+            if (!$userId) {
+                throw new Exception('Utilisateur non identifié');
+            }
+
             $validTracks = [];
-            
             foreach ($tracks as $trackId) {
+                error_log("Traitement de la piste ID: " . $trackId);
+                
                 $audio = $this->audioRepository->findById($trackId);
-                if ($audio) {
-                    // Log pour le débogage
-                    error_log("Vérification de la piste ID: " . $trackId);
-                    error_log("User ID de la piste: " . $audio->getUserId());
-                    error_log("User ID actuel: " . $userId);
-                    
-                    if ($audio->getUserId() == $userId) {
-                        $validTracks[] = $trackId;
-                    }
+                if (!$audio) {
+                    error_log("Piste non trouvée: " . $trackId);
+                    continue;
+                }
+
+                error_log("Piste trouvée - User ID de la piste: " . $audio->getUserId() . ", User ID actuel: " . $userId);
+                
+                if ($audio->getUserId() == $userId) {
+                    $validTracks[] = $trackId;
+                    error_log("Piste validée et ajoutée: " . $trackId);
+                } else {
+                    error_log("Piste rejetée - mauvais utilisateur: " . $trackId);
                 }
             }
             

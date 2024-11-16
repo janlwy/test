@@ -24,6 +24,12 @@ async function saveAndPlaySelectedTracks() {
         }
         const csrfToken = csrfTokenInput.value;
         console.log('Token CSRF trouvé:', csrfToken);
+        console.log('Pistes sélectionnées:', selectedTracks);
+
+        // Vérifier qu'il y a des pistes sélectionnées
+        if (selectedTracks.length === 0) {
+            throw new Error('Veuillez sélectionner au moins une piste audio.');
+        }
 
         console.log('Envoi de la requête avec les pistes:', selectedTracks);
         
