@@ -1,5 +1,85 @@
 'use strict';
 
+// Fonction pour sauvegarder et jouer les pistes sélectionnées
+async function saveAndPlaySelectedTracks() {
+    console.log('Fonction saveAndPlaySelectedTracks appelée');
+    
+    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
+    
+    if (selectedCheckboxes.length === 0) {
+        showMessage('Veuillez sélectionner au moins une piste audio.', true);
+        return;
+    }
+
+    const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
+        const audioItem = checkbox.closest('.audio-item');
+        return checkbox.getAttribute('data-audio-id');
+    });
+
+    try {
+        const csrfTokenInput = document.querySelector('input[name="csrf_token"]');
+        if (!csrfTokenInput) {
+            throw new Error('Token CSRF non trouvé');
+        }
+        const csrfToken = csrfTokenInput.value;
+        console.log('Token CSRF trouvé:', csrfToken);
+
+        console.log('Envoi de la requête avec les pistes:', selectedTracks);
+        
+        const response = await fetch('index.php?url=audio/saveSelection', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify({ 
+                tracks: selectedTracks,
+                csrf_token: csrfToken 
+            })
+        });
+
+        console.log('Réponse reçue:', response.status);
+        const data = await response.json();
+        console.log('Données reçues:', data);
+
+        if (data.success) {
+            console.log('Redirection vers le lecteur');
+            window.location.href = '?url=audio/player';
+        } else {
+            console.error('Erreur serveur:', data.message);
+            showMessage(data.message || 'Erreur lors de la sauvegarde de la sélection', true);
+        }
+    } catch (error) {
+        console.error('Erreur complète:', error);
+        showMessage('Erreur lors de la sauvegarde de la sélection: ' + error.message, true);
+    }
+}
+
+// Fonction pour afficher les messages
+function showMessage(message, isError = true) {
+    // Supprimer les messages précédents de même type
+    const className = isError ? 'error-message' : 'success-message';
+    const existingMessages = document.querySelectorAll('.' + className);
+    existingMessages.forEach(msg => msg.remove());
+    
+    const div = document.createElement('div');
+    div.className = className;
+    div.textContent = message;
+    
+    const container = document.querySelector('.audio-section');
+    if (container) {
+        container.insertBefore(div, container.firstChild);
+        
+        // Animation de disparition
+        setTimeout(() => {
+            div.style.opacity = '0';
+            setTimeout(() => div.remove(), 1000);
+        }, 5000);
+    }
+}
+
 // État global du lecteur
 const player = {
     audio: new Audio(),
