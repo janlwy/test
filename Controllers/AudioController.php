@@ -391,7 +391,10 @@ class AudioController extends BaseController implements IController
                 // Types alternatifs pour M4A
                 'video/mp4' => 'm4a',
                 'video/x-m4v' => 'm4a',
-                'application/mp4' => 'm4a'
+                'application/mp4' => 'm4a',
+                'audio/x-hx-aac-adts' => 'm4a',
+                'audio/x-m4a' => 'm4a',
+                'audio/mp4a-latm' => 'm4a'
             ];
             $allowedAudioExtensions = array_values($allowedAudioTypes);
             $allowedAudioMimeTypes = array_keys($allowedAudioTypes);

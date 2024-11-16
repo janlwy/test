@@ -28,8 +28,13 @@ if (!defined('ROOT_PATH')) {
                 $imagePath = $audio->getImage();
                 
                 // Vérifier que les fichiers existent
-                if (!file_exists('Ressources/audio/' . $audioPath)) {
-                    error_log("Fichier audio manquant: Ressources/audio/" . $audioPath);
+                $fullAudioPath = 'Ressources/audio/' . $audioPath;
+                error_log("Vérification du fichier audio: " . $fullAudioPath);
+                error_log("Le fichier existe: " . (file_exists($fullAudioPath) ? 'Oui' : 'Non'));
+                error_log("Permissions: " . substr(sprintf('%o', fileperms($fullAudioPath)), -4));
+                
+                if (!file_exists($fullAudioPath)) {
+                    error_log("Fichier audio manquant: " . $fullAudioPath);
                     return null;
                 }
                 if (!file_exists('Ressources/images/pochettes/' . $imagePath)) {

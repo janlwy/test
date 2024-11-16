@@ -240,11 +240,25 @@ class AudioPlayer {
 
     async playTrack() {
         try {
+            console.log('Tentative de lecture de:', this.audio.src);
             await this.audio.play();
             this.isPlaying = true;
             this.elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
         } catch (error) {
-            showMessage('Erreur de lecture: ' + error.message);
+            console.error('Erreur de lecture:', error);
+            this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+            this.isPlaying = false;
+            
+            // Vérifier si le fichier existe
+            fetch(this.audio.src)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Fichier non trouvé (${response.status})`);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erreur lors de la vérification du fichier:', error);
+                });
         }
     }
 
