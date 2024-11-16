@@ -103,29 +103,6 @@ const elements = {
     totalDuration: document.querySelector(".total-duration")
 };
 
-// Afficher un message
-function showMessage(message, isError = true) {
-    // Supprimer les messages précédents de même type
-    const className = isError ? 'error-message' : 'success-message';
-    const existingMessages = document.querySelectorAll('.' + className);
-    existingMessages.forEach(msg => msg.remove());
-    
-    const div = document.createElement('div');
-    div.className = className;
-    div.textContent = message;
-    
-    const playerContainer = document.querySelector('.player-container');
-    if (playerContainer) {
-        playerContainer.insertBefore(div, playerContainer.firstChild);
-        
-        // Animation de disparition
-        setTimeout(() => {
-            div.style.opacity = '0';
-            setTimeout(() => div.remove(), 1000);
-        }, 5000);
-    }
-}
-
 // Initialiser le lecteur avec les pistes
 function initializeAudioPlayer(tracks) {
     if (!tracks?.length) {
@@ -137,28 +114,14 @@ function initializeAudioPlayer(tracks) {
     player.audio.addEventListener('ended', () => playNext());
     player.audio.addEventListener('timeupdate', updateProgress);
     
-    loadTrack(0);
-    updateControls();
-}
-
-function setDefaultPlayerState() {
-    const elements = playerElements;
-    elements.now_playing.textContent = "Aucune piste sélectionnée";
-    elements.track_name.textContent = "Sélectionnez des pistes audio";
-    elements.track_artist.textContent = "depuis la liste";
-    elements.track_art.style.backgroundImage = "url('./Ressources/images/default-cover.png')";
-    elements.playpause_btn.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+    // Ajouter les écouteurs d'événements pour les contrôles
+    elements.playButton.addEventListener('click', togglePlay);
+    elements.nextButton.addEventListener('click', playNext);
+    elements.prevButton.addEventListener('click', playPrevious);
+    elements.seekSlider.addEventListener('change', seekTo);
+    elements.volumeSlider.addEventListener('change', updateVolume);
     
-    // Désactiver les contrôles
-    [
-        elements.playpause_btn,
-        elements.next_btn,
-        elements.prev_btn,
-        elements.seek_slider,
-        elements.volume_slider
-    ].forEach(element => {
-        if (element) element.disabled = true;
-    });
+    loadTrack(0);
 }
 
 // Fonction pour sauvegarder et jouer les pistes sélectionnées
@@ -308,32 +271,9 @@ function loadTrack(index) {
     elements.currentTime.textContent = "00:00";
     elements.totalDuration.textContent = "00:00";
     
+    // Lecture automatique
     playTrack();
 }
-
-// Function to reset all values to their default
-function resetValues() {
-    try {
-        if (!playerElements) {
-            throw new Error('playerElements non initialisé');
-        }
-        
-        const elements = ['curr_time', 'total_duration', 'seek_slider'];
-        elements.forEach(element => {
-            if (playerElements[element]) {
-                if (element === 'seek_slider') {
-                    playerElements[element].value = 0;
-                } else {
-                    playerElements[element].textContent = "00:00";
-                }
-            }
-        });
-    } catch (error) {
-        console.error('Erreur lors de la réinitialisation des valeurs:', error);
-        showMessage('Erreur lors de la réinitialisation du lecteur', true);
-    }
-}
-
 
 // Contrôles de lecture
 function togglePlay() {
@@ -346,7 +286,10 @@ function playTrack() {
             player.isPlaying = true;
             elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
         })
-        .catch(error => showMessage('Erreur de lecture'));
+        .catch(error => {
+            console.error('Erreur de lecture:', error);
+            showMessage('Erreur de lecture: ' + error.message);
+        });
 }
 
 function pauseTrack() {
@@ -366,22 +309,6 @@ function playPrevious() {
     loadTrack(prevIndex);
 }
 
-function seekTo() {
-    // Calculate the seek position by the
-    // percentage of the seek slider
-    // and get the relative duration to the track
-    let seekto = curr_track.duration * (seek_slider.value / 100);
-
-    // Set the current track position to the calculated seek position
-    curr_track.currentTime = seekto;
-}
-
-function setVolume() {
-    // Set the volume according to the
-    // percentage of the volume slider set
-    curr_track.volume = volume_slider.value / 100;
-}
-
 // Mise à jour de la progression
 function updateProgress() {
     if (isNaN(player.audio.duration)) return;
@@ -389,24 +316,26 @@ function updateProgress() {
     const seekPosition = player.audio.currentTime * (100 / player.audio.duration);
     elements.seekSlider.value = seekPosition;
 
-    function formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    }
-
     elements.currentTime.textContent = formatTime(player.audio.currentTime);
     elements.totalDuration.textContent = formatTime(player.audio.duration);
 }
 
-// Contrôles du volume et de la progression
-function updateVolume() {
-    player.audio.volume = elements.volumeSlider.value / 100;
+function formatTime(time) {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
+// Contrôles du volume et de la progression
 function seekTo() {
     const time = player.audio.duration * (elements.seekSlider.value / 100);
-    player.audio.currentTime = time;
+    if (!isNaN(time)) {
+        player.audio.currentTime = time;
+    }
+}
+
+function updateVolume() {
+    player.audio.volume = elements.volumeSlider.value / 100;
 }
 
 // Initialisation au chargement de la page
