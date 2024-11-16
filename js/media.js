@@ -17,22 +17,6 @@ function validatePasswordMatch() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize audio player if we're on the player page
-    const audioData = document.getElementById('audioData');
-    if (audioData && audioData.dataset.audios) {
-        try {
-            const tracks = JSON.parse(audioData.dataset.audios);
-            if (Array.isArray(tracks) && tracks.length > 0) {
-                console.log('Initializing audio player with tracks:', tracks);
-                initializeAudioPlayer(tracks);
-            } else {
-                console.warn('No audio tracks available');
-            }
-        } catch (error) {
-            console.error('Error parsing audio data:', error);
-        }
-    }
     // Gestion de l'affichage du bouton clear dans la recherche
     const searchInput = document.querySelector('.searchInput');
     if (searchInput) {
