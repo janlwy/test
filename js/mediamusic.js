@@ -80,47 +80,60 @@ function showMessage(message, isError = true) {
     }
 }
 
-// État global du lecteur
-const player = {
-    audio: new Audio(),
-    currentIndex: 0,
-    tracks: [],
-    isPlaying: false
-};
+let player = null;
+let elements = null;
 
-// Éléments de l'interface
-const elements = {
-    nowPlaying: document.querySelector(".now-playing"),
-    trackArt: document.querySelector(".track-art"),
-    trackName: document.querySelector(".track-name"),
-    trackArtist: document.querySelector(".track-artist"),
-    playButton: document.querySelector(".playpause-track"),
-    nextButton: document.querySelector(".next-track"),
-    prevButton: document.querySelector(".prev-track"),
-    seekSlider: document.querySelector(".seek_slider"),
-    volumeSlider: document.querySelector(".volume_slider"),
-    currentTime: document.querySelector(".current-time"),
-    totalDuration: document.querySelector(".total-duration")
-};
+function initializePlayerElements() {
+    player = {
+        audio: new Audio(),
+        currentIndex: 0,
+        tracks: [],
+        isPlaying: false
+    };
+
+    elements = {
+        nowPlaying: document.querySelector(".now-playing"),
+        trackArt: document.querySelector(".track-art"),
+        trackName: document.querySelector(".track-name"),
+        trackArtist: document.querySelector(".track-artist"),
+        playButton: document.querySelector(".playpause-track"),
+        nextButton: document.querySelector(".next-track"),
+        prevButton: document.querySelector(".prev-track"),
+        seekSlider: document.querySelector(".seek_slider"),
+        volumeSlider: document.querySelector(".volume_slider"),
+        currentTime: document.querySelector(".current-time"),
+        totalDuration: document.querySelector(".total-duration")
+    };
+}
 
 // Initialiser le lecteur avec les pistes
 function initializeAudioPlayer(tracks) {
     if (!tracks?.length) {
-        showMessage('Aucune piste sélectionnée');
+        console.warn('No tracks provided');
         return;
     }
 
+    initializePlayerElements();
+
+    console.log('Initializing player with tracks:', tracks);
     player.tracks = tracks;
+    
+    // Configuration de l'audio
     player.audio.addEventListener('ended', () => playNext());
     player.audio.addEventListener('timeupdate', updateProgress);
+    player.audio.addEventListener('error', (e) => {
+        console.error('Audio error:', e);
+        showMessage('Erreur de lecture audio');
+    });
     
-    // Ajouter les écouteurs d'événements pour les contrôles
+    // Écouteurs d'événements pour les contrôles
     elements.playButton.addEventListener('click', togglePlay);
     elements.nextButton.addEventListener('click', playNext);
     elements.prevButton.addEventListener('click', playPrevious);
     elements.seekSlider.addEventListener('change', seekTo);
     elements.volumeSlider.addEventListener('change', updateVolume);
     
+    // Charger la première piste
     loadTrack(0);
 }
 

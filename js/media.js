@@ -20,28 +20,17 @@ function validatePasswordMatch() {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize audio player if we're on the player page
     const audioData = document.getElementById('audioData');
-    if (audioData) {
+    if (audioData && audioData.dataset.audios) {
         try {
-            const tracks = JSON.parse(audioData.dataset.audios || '[]');
-            if (!Array.isArray(tracks) || tracks.length === 0) {
-                console.warn('Aucune piste audio disponible');
-                return;
+            const tracks = JSON.parse(audioData.dataset.audios);
+            if (Array.isArray(tracks) && tracks.length > 0) {
+                console.log('Initializing audio player with tracks:', tracks);
+                initializeAudioPlayer(tracks);
+            } else {
+                console.warn('No audio tracks available');
             }
-            // Vérifier la validité des chemins audio
-            tracks.forEach(track => {
-                if (!track.path) {
-                    console.error('Chemin audio manquant pour:', track);
-                }
-            });
-            initializeAudioPlayer(tracks);
-            console.log('Audio tracks initialized:', tracks);
         } catch (error) {
-            console.error('Error initializing audio player:', error);
-            // Afficher un message d'erreur à l'utilisateur
-            const errorDiv = document.createElement('div');
-            errorDiv.className = 'error-message';
-            errorDiv.textContent = 'Erreur lors de l\'initialisation du lecteur audio';
-            document.querySelector('.player-container').prepend(errorDiv);
+            console.error('Error parsing audio data:', error);
         }
     }
     // Gestion de l'affichage du bouton clear dans la recherche
