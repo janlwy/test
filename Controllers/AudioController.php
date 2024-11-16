@@ -127,6 +127,12 @@ class AudioController extends BaseController implements IController
         ];
         
         generate("Views/main/audioList.php", $datas, "Views/base.html.php", "Liste Audio");
+        } catch (Exception $e) {
+            logError("Erreur dans list(): " . $e->getMessage());
+            $_SESSION['erreur'] = "Erreur lors du chargement de la liste audio: " . $e->getMessage();
+            header('Location: ?url=compte/index');
+            exit();
+        }
     }
     public function create() {
         $this->checkAuth();
