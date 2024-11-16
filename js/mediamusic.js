@@ -18,64 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-async function saveAndPlaySelectedTracks() {
-    try {
-        const selectedTracks = Array.from(document.querySelectorAll('.select-audio:checked'))
-            .map(checkbox => checkbox.getAttribute('data-audio-id'));
-
-        if (selectedTracks.length === 0) {
-            showMessage('Veuillez sélectionner au moins une piste audio.', true);
-            return;
-        }
-
-        const csrfToken = document.querySelector('input[name="csrf_token"]')?.value;
-        if (!csrfToken) {
-            throw new Error('Token CSRF non trouvé');
-        }
-
-        const response = await fetch('index.php?url=audio/saveSelection', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-TOKEN': csrfToken
-            },
-            body: JSON.stringify({ tracks: selectedTracks, csrf_token: csrfToken })
-        });
-
-        const data = await response.json();
-        if (data.success) {
-            window.location.href = '?url=audio/player';
-        } else {
-            throw new Error(data.message || 'Erreur lors de la sauvegarde de la sélection');
-        }
-    } catch (error) {
-        showMessage(error.message, true);
-    }
-}
-
-// Fonction pour afficher les messages
-function showMessage(message, isError = true) {
-    // Supprimer les messages précédents de même type
-    const className = isError ? 'error-message' : 'success-message';
-    const existingMessages = document.querySelectorAll('.' + className);
-    existingMessages.forEach(msg => msg.remove());
-    
-    const div = document.createElement('div');
-    div.className = className;
-    div.textContent = message;
-    
-    const container = document.querySelector('.audio-section');
-    if (container) {
-        container.insertBefore(div, container.firstChild);
-        
-        // Animation de disparition
-        setTimeout(() => {
-            div.style.opacity = '0';
-            setTimeout(() => div.remove(), 1000);
-        }, 5000);
-    }
-}
 
 class AudioPlayer {
     constructor() {
