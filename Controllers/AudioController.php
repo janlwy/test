@@ -40,20 +40,27 @@ class AudioController extends BaseController implements IController
         } else {
             $list = "<br><br><dl class='dl'>";
             foreach ($audios as $audio) {
+                // Préparer les données pour chaque audio
                 $id = $audio->getId();
                 $title = htmlspecialchars($audio->getTitle(), ENT_QUOTES, 'UTF-8');
                 $artist = htmlspecialchars($audio->getArtist(), ENT_QUOTES, 'UTF-8');
                 $image = htmlspecialchars($audio->getImage(), ENT_QUOTES, 'UTF-8');
-                $selectionligne = "<input type='checkbox' class='select-audio' data-audio-id='$id' data-audio-path='" . htmlspecialchars($audio->getPath(), ENT_QUOTES, 'UTF-8') . "'>";
+                $path = htmlspecialchars($audio->getPath(), ENT_QUOTES, 'UTF-8');
+                
+                // Construire les chemins complets
+                $fullPath = 'Ressources/audio/' . $path;
+                $fullImage = 'Ressources/images/pochettes/' . $image;
+                
+                // Créer les éléments HTML
+                $selectionligne = "<input type='checkbox' class='select-audio' data-audio-id='$id' data-audio-path='$path'>";
                 $modifier = "<a class='btnBase vert' href='index.php?url=audio/update/$id#form-add'><i class='material-icons'>update</i></a>";
                 $supprimer = "<a class='btnBase rouge' href='index.php?url=audio/delete/$id'><i class='material-icons'>delete</i></a>";
+                
                 $list .= "<div class='audio-item'>";
-
-                $list .= "<img class='photoAudio' src='Ressources/images/pochettes/$image' alt='cover'>";
+                $list .= "<img class='photoAudio' src='$fullImage' alt='cover'>";
                 $list .= "<div class='audio-details'>";
                 $list .= "<h4>$title</h4>";
                 $list .= "<p>$artist</p>";
-
                 $list .= "<div class='button-group'>$selectionligne $modifier $supprimer</div>";
                 $list .= "</div></div>";
             }
