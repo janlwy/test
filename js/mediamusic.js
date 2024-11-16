@@ -241,24 +241,38 @@ class AudioPlayer {
     async playTrack() {
         try {
             console.log('Tentative de lecture de:', this.audio.src);
+            
+            // Vérifier si le fichier existe avant la lecture
+            const response = await fetch(this.audio.src);
+            if (!response.ok) {
+                throw new Error(`Fichier non trouvé ou inaccessible (${response.status})`);
+            }
+            
+            // Vérifier le type MIME de la réponse
+            const contentType = response.headers.get('content-type');
+            console.log('Type MIME détecté:', contentType);
+            
+            if (!contentType || !contentType.includes('audio/')) {
+                throw new Error(`Type de fichier non supporté: ${contentType}`);
+            }
+
             await this.audio.play();
             this.isPlaying = true;
             this.elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
+            
         } catch (error) {
             console.error('Erreur de lecture:', error);
             this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
             this.isPlaying = false;
             
-            // Vérifier si le fichier existe
-            fetch(this.audio.src)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`Fichier non trouvé (${response.status})`);
-                    }
-                })
-                .catch(error => {
-                    console.error('Erreur lors de la vérification du fichier:', error);
-                });
+            // Afficher l'erreur à l'utilisateur
+            const errorMessage = document.createElement('div');
+            errorMessage.className = 'error-message';
+            errorMessage.textContent = `Erreur de lecture: ${error.message}`;
+            this.elements.trackName.parentNode.insertBefore(errorMessage, this.elements.trackName.nextSibling);
+            
+            // Retirer le message d'erreur après 5 secondes
+            setTimeout(() => errorMessage.remove(), 5000);
         }
     }
 
