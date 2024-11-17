@@ -569,12 +569,14 @@ class AudioController extends BaseController implements IController
                     $audioUserId = $audio->getUserId();
                     error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
                     
-                    if ($audioUserId == $userId) { // Changé === en == pour une comparaison moins stricte
+                    // Conversion explicite en entiers pour la comparaison
+                    if ((int)$audioUserId === (int)$userId) {
                         $validTracks[] = $trackId;
-                        error_log("Piste validée et ajoutée: " . $trackId);
+                        error_log("Piste validée et ajoutée: " . $trackId . " (User IDs: " . $audioUserId . " === " . $userId . ")");
                     } else {
                         $errors[] = "Piste $trackId : accès non autorisé";
-                        error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . ", user: " . $userId . ")");
+                        error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . " !== " . $userId . ")");
+                        error_log("Types: audio user_id(" . gettype($audioUserId) . ") session user_id(" . gettype($userId) . ")");
                     }
                 } catch (Exception $e) {
                     error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
