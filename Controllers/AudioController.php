@@ -585,7 +585,6 @@ class AudioController extends BaseController implements IController
                     $audioUserId = $audio->getUserId();
                     
                     // Journalisation détaillée des valeurs
-                    // Journalisation détaillée avant traitement
                     error_log("Vérification des IDs - Audio ID brut: " . var_export($audioUserId, true) . 
                              " (" . gettype($audioUserId) . "), User ID brut: " . var_export($userId, true) . 
                              " (" . gettype($userId) . ")");
@@ -619,13 +618,10 @@ class AudioController extends BaseController implements IController
                     error_log("Accès autorisé - IDs correspondent: $audioUserIdInt === $userIdInt");
                     $validTracks[] = $trackId;
                     error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
-                    } else {
-                        $errors[] = "Piste $trackId : accès non autorisé";
-                        error_log("Piste $trackId rejetée - IDs ne correspondent pas ou sont null");
-                        error_log("audioUserIdInt: " . var_export($audioUserIdInt, true) . ", userIdInt: " . var_export($userIdInt, true));
-                    }
+
                 } catch (Exception $e) {
                     error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
+                    $errors[] = "Erreur lors du traitement de la piste $trackId";
                     continue;
                 }
             }
