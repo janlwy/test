@@ -58,7 +58,6 @@ async function saveAndPlaySelectedTracks() {
             return id;
         });
 
-    try {
         const audioListData = document.getElementById('audioList-data');
         if (!audioListData) {
             throw new Error('Élément audioList-data non trouvé');
