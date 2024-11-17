@@ -101,7 +101,8 @@ async function saveAndPlaySelectedTracks() {
         const csrfToken = csrfTokenInput.value;
         console.log('Token CSRF trouvé:', csrfToken);
 
-        console.log('Envoi de la requête avec les pistes:', selectedTracks.map(track => track.id));
+        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => parseInt(checkbox.dataset.audioId));
+        console.log('Envoi de la requête avec les pistes:', selectedIds);
         
         const response = await fetch('index.php?url=audio/saveSelection', {
             method: 'POST',
@@ -111,7 +112,7 @@ async function saveAndPlaySelectedTracks() {
                 'X-CSRF-TOKEN': csrfToken
             },
             body: JSON.stringify({ 
-                tracks: selectedTracks.map(track => track.id),
+                tracks: selectedIds,
                 csrf_token: csrfToken 
             })
         });

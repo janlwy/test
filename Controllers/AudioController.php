@@ -510,13 +510,23 @@ class AudioController extends BaseController implements IController
             
             // Log pour le débogage
             error_log("saveSelection appelé");
+            
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                throw new Exception('Méthode non autorisée');
+            }
 
             // Récupérer et vérifier les données
             $rawData = file_get_contents('php://input');
             $data = json_decode($rawData, true);
             
+            error_log("Données reçues: " . print_r($data, true));
+            
             if (!isset($data['tracks']) || !is_array($data['tracks']) || !isset($data['csrf_token'])) {
-                throw new Exception('Données invalides');
+                throw new Exception('Données invalides ou manquantes');
+            }
+            
+            if (empty($data['tracks'])) {
+                throw new Exception('Aucune piste sélectionnée');
             }
 
             // Vérifier le token CSRF

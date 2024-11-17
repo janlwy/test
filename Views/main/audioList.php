@@ -75,6 +75,9 @@
         style="display: none;">
     </div>
     <div class="button-container">
-        <button type="button" id="play-selected" class="btnBase orange">Lire la sélection</button>
+        <button type="button" id="play-selected" class="btnBase orange" onclick="saveAndPlaySelectedTracks()">
+            <i class="material-icons">play_arrow</i> Lire la sélection
+        </button>
     </div>
+    <div id="message-container"></div>
 </section>
