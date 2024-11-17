@@ -54,11 +54,11 @@ async function saveAndPlaySelectedTracks() {
     });
 
     try {
-        const audioData = document.getElementById('audioData');
-        if (!audioData) {
-            throw new Error('Élément audioData non trouvé');
+        const audioListData = document.getElementById('audioList-data');
+        if (!audioListData) {
+            throw new Error('Élément audioList-data non trouvé');
         }
-        const csrfToken = audioData.dataset.csrfToken;
+        const csrfToken = audioListData.dataset.csrfToken;
         if (!csrfToken) {
             throw new Error('Token CSRF non trouvé dans les données audio');
         }
@@ -456,8 +456,8 @@ class AudioPlayer {
 
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    const audioData = document.getElementById('audioData');
-    if (audioData?.dataset.audios) {
+    const audioListData = document.getElementById('audioList-data');
+    if (audioListData?.dataset.audios) {
         try {
             const tracks = JSON.parse(audioData.dataset.audios);
             if (tracks.length) {
