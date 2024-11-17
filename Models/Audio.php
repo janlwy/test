@@ -163,7 +163,7 @@ class Audio extends AbstractModel
 
             // Supprimer l'enregistrement de la base de données
             $manager = new Manager();
-            return $manager->deleteFromTable('audio', $this->id);
+            return $manager->deleteTable('audio', $this->id);
         } catch (Exception $e) {
             logError("Erreur lors de la suppression audio: " . $e->getMessage());
             return false;
