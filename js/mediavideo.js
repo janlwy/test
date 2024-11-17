@@ -2,6 +2,11 @@
 // Lecteur video -----------------------------------------------------------------
 
 const media = document.querySelector('video');
+if (!media) {
+    console.log('Aucun élément vidéo trouvé sur cette page');
+    return;
+}
+
 const controls = document.querySelector('.controls-video');
 
 const play = document.querySelector('.play');
