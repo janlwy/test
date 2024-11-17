@@ -50,13 +50,16 @@ async function saveAndPlaySelectedTracks() {
         }
 
         const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
-            const id = parseInt(checkbox.getAttribute('data-audio-id'));
-            console.log('ID extrait de checkbox:', id);
+            const rawId = checkbox.getAttribute('data-audio-id');
+            console.log('ID brut extrait:', rawId);
+            const id = parseInt(rawId);
+            
             if (!id || isNaN(id)) {
-                console.warn('ID de piste invalide détecté:', id);
+                console.warn('ID invalide détecté:', rawId);
                 return null;
             }
-            console.log('ID sélectionné:', id);
+            
+            console.log('ID validé:', id);
             return id;
         }).filter(id => id !== null);
 
@@ -69,12 +72,6 @@ async function saveAndPlaySelectedTracks() {
             throw new Error('Token CSRF non trouvé dans les données audio');
         }
         console.log('Token CSRF trouvé:', csrfToken);
-
-        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
-            const id = checkbox.getAttribute('data-audio-id');
-            console.log('ID extrait de checkbox:', id);
-            return parseInt(id) || null;
-        }).filter(id => id !== null);
 
         if (selectedIds.length === 0) {
             throw new Error('IDs de pistes invalides');
