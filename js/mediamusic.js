@@ -188,6 +188,42 @@ class AudioPlayer {
     }
 
     initializeElements() {
+        const playerContainer = document.querySelector('.player-container');
+        if (!playerContainer) {
+            console.error('Container du lecteur non trouvé');
+            return;
+        }
+
+        // Créer les éléments s'ils n'existent pas
+        if (!document.getElementById('now-playing')) {
+            const nowPlaying = document.createElement('div');
+            nowPlaying.id = 'now-playing';
+            nowPlaying.className = 'now-playing';
+            playerContainer.appendChild(nowPlaying);
+        }
+
+        if (!document.getElementById('track-art')) {
+            const trackArt = document.createElement('div');
+            trackArt.id = 'track-art';
+            trackArt.className = 'track-art';
+            playerContainer.appendChild(trackArt);
+        }
+
+        if (!document.getElementById('track-name')) {
+            const trackName = document.createElement('div');
+            trackName.id = 'track-name';
+            trackName.className = 'track-name';
+            playerContainer.appendChild(trackName);
+        }
+
+        if (!document.getElementById('track-artist')) {
+            const trackArtist = document.createElement('div');
+            trackArtist.id = 'track-artist';
+            trackArtist.className = 'track-artist';
+            playerContainer.appendChild(trackArtist);
+        }
+
+        // Initialiser les références aux éléments
         this.elements = {
             nowPlaying: document.getElementById("now-playing"),
             trackArt: document.getElementById("track-art"),
@@ -201,6 +237,13 @@ class AudioPlayer {
             currentTime: document.querySelector(".current-time"),
             totalDuration: document.querySelector(".total-duration")
         };
+
+        // Vérifier que tous les éléments ont été créés
+        Object.entries(this.elements).forEach(([key, element]) => {
+            if (!element) {
+                console.error(`Élément ${key} non trouvé ou non créé`);
+            }
+        });
     }
 
     setupEventListeners() {
