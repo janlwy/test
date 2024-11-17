@@ -61,6 +61,12 @@ class AudioPlayer {
         if (!tracks?.length) return;
         this.tracks = tracks;
         this.loadTrack(0);
+        
+        // Vérifier si l'autoplay est activé
+        const audioData = document.getElementById('audioData');
+        if (audioData && audioData.dataset.autoplay === 'true') {
+            this.playTrack();
+        }
     }
 }
 
@@ -83,14 +89,17 @@ async function saveAndPlaySelectedTracks() {
 
     // Récupérer les données audio complètes depuis l'élément audioData
     const audioDataElement = document.getElementById('audioData');
-    const allAudios = JSON.parse(audioDataElement.dataset.audios);
+    if (!audioDataElement || !audioDataElement.dataset.audios) {
+        throw new Error('Données audio non disponibles');
+    }
 
-    const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-        const audioId = checkbox.getAttribute('data-audio-id');
-        // Trouver les données complètes de l'audio dans allAudios
-        const audioData = allAudios.find(audio => audio.id === audioId);
+    const allAudios = JSON.parse(audioDataElement.dataset.audios);
+    const selectedIds = Array.from(selectedCheckboxes).map(checkbox => checkbox.getAttribute('data-audio-id'));
+    
+    const selectedTracks = selectedIds.map(id => {
+        const audioData = allAudios.find(audio => audio.id === id);
         if (!audioData) {
-            throw new Error(`Données audio non trouvées pour l'ID: ${audioId}`);
+            throw new Error(`Données audio non trouvées pour l'ID: ${id}`);
         }
         console.log('Piste sélectionnée:', audioData);
         return audioData;

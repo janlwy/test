@@ -22,6 +22,7 @@ if (!defined('ROOT_PATH')) {
 
     <div id="audioData" style="display: none;" 
          data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
+         data-autoplay="true"
          data-audios='<?php 
             $audioData = array_map(function ($audio) {
                 $audioPath = $audio->getPath();
