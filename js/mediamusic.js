@@ -56,7 +56,7 @@ async function saveAndPlaySelectedTracks() {
             }
             console.log('ID sélectionné:', id);
             return id;
-        });
+        }).filter(id => id !== null);
 
         const audioListData = document.getElementById('audioList-data');
         if (!audioListData) {
