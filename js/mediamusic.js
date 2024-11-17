@@ -2,22 +2,18 @@
 
 // Initialisation du lecteur audio au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    // Attendre un court instant pour s'assurer que le DOM est complètement chargé
+    // Vérifier si nous sommes sur la page du lecteur audio
+    const isPlayerPage = window.location.href.includes('audio/player');
+    if (!isPlayerPage) {
+        return; // Ne pas initialiser le lecteur sur les autres pages
+    }
+
     setTimeout(() => {
         const audioData = document.getElementById('audioData');
         if (audioData && audioData.dataset.audios) {
             try {
                 const tracks = JSON.parse(audioData.dataset.audios);
                 if (Array.isArray(tracks) && tracks.length > 0) {
-                    // Vérifier que tous les éléments nécessaires sont présents
-                    const requiredElements = ['trackName', 'trackArtist', 'trackArt', 'nowPlaying'];
-                    const missingElements = requiredElements.filter(elem => !document.getElementById(elem));
-                    
-                    if (missingElements.length > 0) {
-                        console.error('Éléments manquants dans le DOM:', missingElements);
-                        return;
-                    }
-                    
                     console.log('Initializing audio player with tracks:', tracks);
                     initializeAudioPlayer(tracks);
                 } else {
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error parsing audio data:', error);
             }
         }
-    }, 100); // Délai de 100ms pour s'assurer que le DOM est prêt
+    }, 100);
 });
 
 
