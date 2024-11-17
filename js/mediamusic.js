@@ -46,11 +46,14 @@ async function saveAndPlaySelectedTracks() {
     });
 
     try {
-        const csrfTokenInput = document.querySelector('input[name="csrf_token"]');
-        if (!csrfTokenInput) {
-            throw new Error('Token CSRF non trouvé');
+        const audioData = document.getElementById('audioData');
+        if (!audioData) {
+            throw new Error('Élément audioData non trouvé');
         }
-        const csrfToken = csrfTokenInput.value;
+        const csrfToken = audioData.dataset.csrfToken;
+        if (!csrfToken) {
+            throw new Error('Token CSRF non trouvé dans les données audio');
+        }
         console.log('Token CSRF trouvé:', csrfToken);
 
         const selectedIds = Array.from(selectedCheckboxes).map(checkbox => parseInt(checkbox.dataset.audioId));
