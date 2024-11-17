@@ -6,17 +6,16 @@ if (!media) {
     console.log('Aucun élément vidéo trouvé sur cette page');
 } else {
     const controls = document.querySelector('.controls-video');
+    const play = document.querySelector('.play');
+    const stop = document.querySelector('.stop');
+    const rwd = document.querySelector('.rwd');
+    const fwd = document.querySelector('.fwd');
 
-const play = document.querySelector('.play');
-const stop = document.querySelector('.stop');
-const rwd = document.querySelector('.rwd');
-const fwd = document.querySelector('.fwd');
+    const timerWrapper = document.querySelector('.timer');
+    const timer = document.querySelector('.timer span');
+    const timerBar = document.querySelector('.timer div');
 
-const timerWrapper = document.querySelector('.timer');
-const timer = document.querySelector('.timer span');
-const timerBar = document.querySelector('.timer div');
-
-media.removeAttribute('controls');
+    media.removeAttribute('controls');
 controls.style.visibility = 'visible';
 
 play.addEventListener('click', playPauseMedia);
