@@ -143,26 +143,33 @@ if (collap && collap.length > 0) {
 }
 
 // Masquage menu navigation
-if (window.location.pathname === '/index.php' || window.location.pathname === '/ConnectForm.php') {
-    document.getElementById('myMenunav').style.display = 'none';
+const menuNav = document.getElementById('myMenunav');
+if (menuNav && (window.location.pathname === '/index.php' || window.location.pathname === '/ConnectForm.php')) {
+    menuNav.style.display = 'none';
 }
 
 
 // Fonction Recherche 
-document
-    .querySelectorAll("input[type=search]")[0]
-    .addEventListener("input", function(e) {
+const searchInput = document.querySelector("input[type=search]");
+if (searchInput) {
+    searchInput.addEventListener("input", function(e) {
         const searchValue = e.target.value.toLowerCase();
         const audioItems = document.querySelectorAll('.audio-item');
         
         audioItems.forEach(item => {
-            const title = item.querySelector('h4').textContent.toLowerCase();
-            const artist = item.querySelector('p').textContent.toLowerCase();
+            const titleElement = item.querySelector('h4');
+            const artistElement = item.querySelector('p');
             
-            if (title.includes(searchValue) || artist.includes(searchValue)) {
-                item.style.display = '';
-            } else {
-                item.style.display = 'none';
+            if (titleElement && artistElement) {
+                const title = titleElement.textContent.toLowerCase();
+                const artist = artistElement.textContent.toLowerCase();
+                
+                if (title.includes(searchValue) || artist.includes(searchValue)) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
             }
         });
     });
+}
