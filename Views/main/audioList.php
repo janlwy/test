@@ -75,9 +75,10 @@
         style="display: none;">
     </div>
     <div class="button-container">
-        <button type="button" id="play-selected" class="btnBase orange" onclick="saveAndPlaySelectedTracks()">
+        <button type="button" id="play-selected" class="btnBase orange">
             <i class="material-icons">play_arrow</i> Lire la sélection
         </button>
     </div>
     <div id="message-container"></div>
 </section>
+<script src="js/mediamusic.js"></script>
