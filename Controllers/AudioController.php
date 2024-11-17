@@ -553,6 +553,7 @@ class AudioController extends BaseController implements IController
             error_log("User ID actuel: " . $userId);
 
             $validTracks = [];
+            $errors = [];
             foreach ($tracks as $trackId) {
                 $trackId = intval($trackId);
                 error_log("Traitement de la piste ID: " . $trackId);
@@ -560,6 +561,7 @@ class AudioController extends BaseController implements IController
                 try {
                     $audio = $this->audioRepository->findById($trackId);
                     if (!$audio) {
+                        $errors[] = "Piste $trackId non trouvée";
                         error_log("Piste non trouvée: " . $trackId);
                         continue;
                     }
@@ -567,10 +569,11 @@ class AudioController extends BaseController implements IController
                     $audioUserId = $audio->getUserId();
                     error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
                     
-                    if ($audioUserId === $userId) {
+                    if ($audioUserId == $userId) { // Changé === en == pour une comparaison moins stricte
                         $validTracks[] = $trackId;
                         error_log("Piste validée et ajoutée: " . $trackId);
                     } else {
+                        $errors[] = "Piste $trackId : accès non autorisé";
                         error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . ", user: " . $userId . ")");
                     }
                 } catch (Exception $e) {
@@ -582,12 +585,11 @@ class AudioController extends BaseController implements IController
             error_log("Pistes valides après vérification: " . print_r($validTracks, true));
             
             if (empty($validTracks)) {
-                throw new Exception("Aucune piste valide trouvée parmi les pistes sélectionnées. IDs reçus: " . implode(', ', $tracks));
-            }
-            
-            if (empty($validTracks)) {
-                error_log("Aucune piste valide trouvée. Tracks reçus: " . implode(', ', $tracks));
-                throw new Exception('Aucune piste valide trouvée. Veuillez sélectionner au moins une piste.');
+                $errorMessage = !empty($errors) 
+                    ? "Erreurs : " . implode(", ", $errors)
+                    : "Aucune piste valide trouvée parmi les pistes sélectionnées";
+                error_log($errorMessage);
+                throw new Exception($errorMessage);
             }
             
             $_SESSION['selected_tracks'] = $validTracks;
