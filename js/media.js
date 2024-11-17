@@ -126,17 +126,19 @@ function myFunction() {
 
 // Collapse dans Mon Espace de gestion----------------------------------------
 var collap = document.getElementsByClassName("collapsible");
-var i;
-
-for (i = 0; i < collap.length; i++) {
-    collap[i].addEventListener("click", function () {
-        this.classList.toggle("activeCollapse");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight) {
-            content.style.maxHeight = null;
-        } else {
-            content.style.maxHeight = content.scrollHeight + "10px";
-        }
+if (collap && collap.length > 0) {
+    Array.from(collap).forEach(function(element) {
+        element.addEventListener("click", function () {
+            this.classList.toggle("activeCollapse");
+            var content = this.nextElementSibling;
+            if (content) {
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "10px";
+                }
+            }
+        });
     });
 }
 
