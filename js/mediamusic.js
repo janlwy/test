@@ -184,25 +184,22 @@ class AudioPlayer {
     }
 
     initializeElements() {
+        // Vérifier si nous sommes sur la page du lecteur audio
+        if (!window.location.href.includes('audio/player')) {
+            console.log('Page non-lecteur, initialisation annulée');
+            return;
+        }
+
         // Attendre que le DOM soit complètement chargé
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => this.initializeElements());
             return;
         }
 
-        const playerContainer = document.querySelector('.player-container');
+        const playerContainer = document.querySelector('#player-container');
         if (!playerContainer) {
-            console.error('Container du lecteur non trouvé, tentative de création');
-            const mainSection = document.querySelector('section');
-            if (!mainSection) {
-                console.error('Section principale non trouvée');
-                return;
-            }
-            
-            const newContainer = document.createElement('div');
-            newContainer.className = 'player-container';
-            mainSection.appendChild(newContainer);
-            return this.initializeElements(); // Réessayer après création
+            console.error('Container du lecteur non trouvé');
+            return;
         }
 
         // Créer les éléments s'ils n'existent pas

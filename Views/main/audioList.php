@@ -51,7 +51,7 @@
     <?php echo $audioList; ?>
 
     <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-    <div id="audioData"
+    <div id="audioList-data"
         data-csrf-token="<?php echo htmlspecialchars($session->get('csrf_token')); ?>"
         data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
                             return [
