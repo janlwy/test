@@ -38,20 +38,24 @@ function initializeAudioPlayer(tracks) {
 
 // Fonction pour sauvegarder et jouer les pistes sélectionnées
 async function saveAndPlaySelectedTracks() {
-    console.log('Fonction saveAndPlaySelectedTracks appelée');
-    
-    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
-    console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
-    
-    if (selectedCheckboxes.length === 0) {
-        throw new Error('Veuillez sélectionner au moins une piste audio.');
-    }
+    try {
+        console.log('Fonction saveAndPlaySelectedTracks appelée');
+        
+        const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+        console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
+        
+        if (selectedCheckboxes.length === 0) {
+            throw new Error('Veuillez sélectionner au moins une piste audio.');
+        }
 
-    const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
-        const id = checkbox.getAttribute('data-audio-id');
-        console.log('ID sélectionné:', id);
-        return id;
-    });
+        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
+            const id = parseInt(checkbox.getAttribute('data-audio-id'));
+            if (!id || isNaN(id)) {
+                throw new Error('ID de piste invalide détecté');
+            }
+            console.log('ID sélectionné:', id);
+            return id;
+        });
 
     try {
         const audioListData = document.getElementById('audioList-data');
@@ -76,7 +80,7 @@ async function saveAndPlaySelectedTracks() {
 
         console.log('Envoi de la requête avec les pistes:', selectedIds);
         
-        const response = await fetch('index.php?url=audio/saveSelection', {
+        const response = await fetch('?url=audio/saveSelection', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -97,8 +101,10 @@ async function saveAndPlaySelectedTracks() {
             console.log('Redirection vers le lecteur');
             window.location.href = '?url=audio/player';
         } else {
-            console.error('Erreur serveur:', data.message);
-            showMessage(data.message || 'Erreur lors de la sauvegarde de la sélection', true);
+            const errorMsg = data.message || 'Erreur lors de la sauvegarde de la sélection';
+            console.error('Erreur serveur:', errorMsg);
+            showMessage(errorMsg, true);
+            throw new Error(errorMsg);
         }
     } catch (error) {
         console.error('Erreur complète:', error);
