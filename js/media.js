@@ -150,9 +150,9 @@ if (menuNav && (window.location.pathname === '/index.php' || window.location.pat
 
 
 // Fonction Recherche 
-const searchInput = document.querySelector("input[type=search]");
-if (searchInput) {
-    searchInput.addEventListener("input", function(e) {
+const searchInputAudio = document.querySelector("input[type=search]");
+if (searchInputAudio) {
+    searchInputAudio.addEventListener("input", function(e) {
         const searchValue = e.target.value.toLowerCase();
         const audioItems = document.querySelectorAll('.audio-item');
         
