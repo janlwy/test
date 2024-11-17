@@ -549,8 +549,12 @@ class AudioController extends BaseController implements IController
                 throw new Exception('Utilisateur non identifié');
             }
 
+            error_log("Début de la validation des pistes. Tracks reçus: " . print_r($tracks, true));
+            error_log("User ID actuel: " . $userId);
+
             $validTracks = [];
             foreach ($tracks as $trackId) {
+                $trackId = intval($trackId);
                 error_log("Traitement de la piste ID: " . $trackId);
                 
                 $audio = $this->audioRepository->findById($trackId);
@@ -559,15 +563,18 @@ class AudioController extends BaseController implements IController
                     continue;
                 }
 
-                error_log("Piste trouvée - User ID de la piste: " . $audio->getUserId() . ", User ID actuel: " . $userId);
+                $audioUserId = $audio->getUserId();
+                error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
                 
-                if ($audio->getUserId() == $userId) {
+                if ($audioUserId == $userId) {
                     $validTracks[] = $trackId;
                     error_log("Piste validée et ajoutée: " . $trackId);
                 } else {
-                    error_log("Piste rejetée - mauvais utilisateur: " . $trackId);
+                    error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . ", user: " . $userId . ")");
                 }
             }
+
+            error_log("Pistes valides après vérification: " . print_r($validTracks, true));
             
             if (empty($validTracks)) {
                 error_log("Aucune piste valide trouvée. Tracks reçus: " . implode(', ', $tracks));

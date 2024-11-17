@@ -56,7 +56,11 @@ async function saveAndPlaySelectedTracks() {
         }
         console.log('Token CSRF trouvé:', csrfToken);
 
-        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => parseInt(checkbox.dataset.audioId));
+        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
+            const id = checkbox.getAttribute('data-audio-id');
+            console.log('ID extrait de checkbox:', id);
+            return parseInt(id);
+        });
         console.log('Envoi de la requête avec les pistes:', selectedIds);
         
         const response = await fetch('index.php?url=audio/saveSelection', {
