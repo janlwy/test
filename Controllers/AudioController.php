@@ -585,19 +585,24 @@ class AudioController extends BaseController implements IController
                     $audioUserId = $audio->getUserId();
                     
                     // Journalisation détaillée des valeurs
-                    error_log("Vérification des IDs - Audio ID: " . var_export($audioUserId, true) . 
-                             " (" . gettype($audioUserId) . "), User ID: " . var_export($userId, true) . 
+                    // Journalisation détaillée avant traitement
+                    error_log("Vérification des IDs - Audio ID brut: " . var_export($audioUserId, true) . 
+                             " (" . gettype($audioUserId) . "), User ID brut: " . var_export($userId, true) . 
                              " (" . gettype($userId) . ")");
 
-                    // Forcer la conversion en entiers
-                    $audioUserIdInt = is_numeric($audioUserId) ? (int)$audioUserId : null;
-                    $userIdInt = is_numeric($userId) ? (int)$userId : null;
+                    // Nettoyage et validation des IDs
+                    $audioUserIdInt = filter_var($audioUserId, FILTER_VALIDATE_INT);
+                    $userIdInt = filter_var($userId, FILTER_VALIDATE_INT);
 
-                    error_log("Après conversion - Audio ID: " . var_export($audioUserIdInt, true) . 
+                    error_log("Après nettoyage - Audio ID: " . var_export($audioUserIdInt, true) . 
                              ", User ID: " . var_export($userIdInt, true));
 
-                    // Vérification stricte après conversion
-                    if ($audioUserIdInt !== null && $userIdInt !== null && $audioUserIdInt === $userIdInt) {
+                    // Vérification plus stricte avec validation explicite
+                    if ($audioUserIdInt !== false && $userIdInt !== false && 
+                        $audioUserIdInt > 0 && $userIdInt > 0 && 
+                        $audioUserIdInt === $userIdInt) {
+                
+                        error_log("Accès autorisé - IDs correspondent: $audioUserIdInt === $userIdInt");
                         $validTracks[] = $trackId;
                         error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
