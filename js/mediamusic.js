@@ -184,9 +184,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const playSelectedButton = document.getElementById('play-selected');
     if (playSelectedButton) {
         console.log('Bouton de lecture trouvé');
-        playSelectedButton.addEventListener('click', () => {
+        playSelectedButton.addEventListener('click', async (e) => {
+            e.preventDefault();
             console.log('Bouton de lecture cliqué');
-            saveAndPlaySelectedTracks();
+            const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+            
+            if (selectedCheckboxes.length === 0) {
+                showMessage('Veuillez sélectionner au moins une piste audio.', true);
+                return;
+            }
+            
+            try {
+                await saveAndPlaySelectedTracks();
+            } catch (error) {
+                console.error('Erreur lors de la lecture:', error);
+                showMessage('Erreur lors de la lecture: ' + error.message, true);
+            }
         });
     } else {
         console.error('Bouton de lecture non trouvé');
