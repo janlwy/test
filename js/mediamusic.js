@@ -462,37 +462,30 @@ class AudioPlayer {
 }
 
 // Initialisation au chargement de la page
+document.addEventListener('DOMContentLoaded', initializeAudioContent);
+
 function initializeAudioContent() {
     const isPlayerPage = window.location.href.includes('audio/player');
     const audioListData = document.getElementById('audioList-data');
     const audioData = document.getElementById('audioData');
     
-    if (isPlayerPage && audioData?.dataset.audios) {
-        try {
+    try {
+        if (isPlayerPage && audioData?.dataset.audios) {
             const tracks = JSON.parse(audioData.dataset.audios);
             if (!tracks?.length) {
                 showMessage('Aucune piste disponible');
                 return;
             }
             console.log('Initialisation du lecteur avec', tracks.length, 'pistes');
-                initializeAudioPlayer(tracks);
-            } else {
-                showMessage('Aucune piste disponible');
-            }
-        } catch (error) {
-            console.error('Erreur de chargement des pistes:', error);
-            showMessage('Erreur de chargement des pistes');
-        }
-    } else if (audioListData?.dataset.audios) {
-        // Code pour la page de liste des pistes
-        try {
+            initializeAudioPlayer(tracks);
+        } else if (audioListData?.dataset.audios) {
             const tracks = JSON.parse(audioListData.dataset.audios);
-            if (!tracks.length) {
+            if (!tracks?.length) {
                 showMessage('Aucune piste disponible');
             }
-        } catch (error) {
-            console.error('Erreur de chargement des pistes:', error);
-            showMessage('Erreur de chargement des pistes');
         }
+    } catch (error) {
+        console.error('Erreur de chargement des pistes:', error);
+        showMessage('Erreur de chargement des pistes');
     }
-});
+}
