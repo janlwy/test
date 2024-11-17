@@ -31,10 +31,11 @@ function validatePasswordMatch() {
         });
     }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const themeBody = document.getElementById("themeBody");
-    const boutonTheme = document.getElementById("boutonTheme");
+// Déclaration des éléments du thème
+const themeBody = document.getElementById("themeBody");
+const boutonTheme = document.getElementById("boutonTheme");
 
+document.addEventListener('DOMContentLoaded', () => {
     // renvoi les elements stockés en local au chargement de la page
     if (localStorage.className && localStorage.textContent != null) {
         themeBody.className = localStorage.className;
