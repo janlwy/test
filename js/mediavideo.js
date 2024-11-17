@@ -24,6 +24,7 @@ media.addEventListener('ended', stopMedia);
 rwd.addEventListener('click', mediaBackward);
 fwd.addEventListener('click', mediaForward);
 media.addEventListener('timeupdate', setTime);
+}
 
 function playPauseMedia() {
     rwd.classList.remove('active');
