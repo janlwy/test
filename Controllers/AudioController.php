@@ -566,20 +566,13 @@ class AudioController extends BaseController implements IController
                         continue;
                     }
 
-                    $audioUserId = $audio->getUserId();
-                    error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
-                    error_log("Types avant conversion - Audio: " . gettype($audioUserId) . ", Session: " . gettype($userId));
-                    error_log("Valeurs brutes - Audio: '" . var_export($audioUserId, true) . "', Session: '" . var_export($userId, true) . "'");
+                    $audioUserId = (int)$audio->getUserId();
+                    $sessionUserId = (int)$userId;
                     
-                    // S'assurer que les deux valeurs sont des entiers
-                    $audioUserIdInt = is_null($audioUserId) ? null : (int)$audioUserId;
-                    $userIdInt = is_null($userId) ? null : (int)$userId;
+                    error_log("Comparaison des IDs - Audio: {$audioUserId} ({gettype($audioUserId)}), Session: {$sessionUserId} ({gettype($sessionUserId)})");
                     
-                    error_log("Après conversion - Audio: " . var_export($audioUserIdInt, true) . ", Session: " . var_export($userIdInt, true));
-                    error_log("Types après conversion - Audio: " . gettype($audioUserIdInt) . ", Session: " . gettype($userIdInt));
-                    
-                    // Vérification stricte avec gestion des null
-                    if (!is_null($audioUserIdInt) && !is_null($userIdInt) && $audioUserIdInt === $userIdInt) {
+                    // Vérification stricte des IDs
+                    if ($audioUserId === $sessionUserId) {
                         $validTracks[] = $trackId;
                         error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
