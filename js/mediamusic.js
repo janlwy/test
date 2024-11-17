@@ -221,13 +221,28 @@ class AudioPlayer {
             console.warn('Aucune piste à initialiser');
             return;
         }
+        
+        // Vérifier que tous les éléments nécessaires sont présents
+        const requiredElements = ['trackName', 'trackArtist', 'trackArt', 'nowPlaying'];
+        const missingElements = requiredElements.filter(elem => !this.elements[elem]);
+        
+        if (missingElements.length > 0) {
+            console.error('Éléments manquants dans le DOM:', missingElements);
+            return;
+        }
+        
         console.log('Initialisation avec les pistes:', tracks);
         this.tracks = tracks;
-        this.loadTrack(0);
         
-        const audioData = document.getElementById('audioData');
-        if (audioData?.dataset.autoplay === 'true') {
-            this.playTrack();
+        try {
+            this.loadTrack(0);
+            
+            const audioData = document.getElementById('audioData');
+            if (audioData?.dataset.autoplay === 'true') {
+                this.playTrack();
+            }
+        } catch (error) {
+            console.error('Erreur lors de l\'initialisation:', error);
         }
     }
 
@@ -253,12 +268,21 @@ class AudioPlayer {
     }
 
     updateInterface(track, index) {
-        this.elements.trackName.textContent = track.title || 'Sans titre';
-        this.elements.trackArtist.textContent = track.artist || 'Artiste inconnu';
-        this.elements.trackArt.style.backgroundImage = track.fullImage ? 
-            `url('${track.fullImage}')` : 
-            "url('./Ressources/images/default-cover.png')";
-        this.elements.nowPlaying.textContent = `Piste ${index + 1} sur ${this.tracks.length}`;
+        // Vérifier que tous les éléments existent avant de les mettre à jour
+        if (this.elements.trackName) {
+            this.elements.trackName.textContent = track.title || 'Sans titre';
+        }
+        if (this.elements.trackArtist) {
+            this.elements.trackArtist.textContent = track.artist || 'Artiste inconnu';
+        }
+        if (this.elements.trackArt) {
+            this.elements.trackArt.style.backgroundImage = track.fullImage ? 
+                `url('${track.fullImage}')` : 
+                "url('./Ressources/images/default-cover.png')";
+        }
+        if (this.elements.nowPlaying) {
+            this.elements.nowPlaying.textContent = `Piste ${index + 1} sur ${this.tracks.length}`;
+        }
         
         console.log('Mise à jour interface:', {
             title: track.title,
