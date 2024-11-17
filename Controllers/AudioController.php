@@ -584,14 +584,21 @@ class AudioController extends BaseController implements IController
 
                     $audioUserId = $audio->getUserId();
                     
-                    // Convertir explicitement en entiers pour la comparaison
+                    // Journalisation détaillée des valeurs avant conversion
+                    error_log("Valeurs brutes - Audio: " . var_export($audioUserId, true) . " (" . gettype($audioUserId) . "), Session: " . var_export($userId, true) . " (" . gettype($userId) . ")");
+            
+                    // Nettoyage et conversion des valeurs
+                    $audioUserId = filter_var($audioUserId, FILTER_SANITIZE_NUMBER_INT);
+                    $userId = filter_var($userId, FILTER_SANITIZE_NUMBER_INT);
+            
+                    // Conversion finale en entiers
                     $audioUserId = (int)$audioUserId;
                     $userId = (int)$userId;
             
-                    error_log("Comparaison des IDs - Audio: {$audioUserId} (type: " . gettype($audioUserId) . "), Session: {$userId} (type: " . gettype($userId) . ")");
+                    error_log("Après conversion - Audio: {$audioUserId} (" . gettype($audioUserId) . "), Session: {$userId} (" . gettype($userId) . ")");
             
-                    // Vérification stricte des IDs après conversion
-                    if ($audioUserId === $userId) {
+                    // Vérification avec comparaison souple puis stricte
+                    if ($audioUserId == $userId || $audioUserId === $userId) {
                         $validTracks[] = $trackId;
                         error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
