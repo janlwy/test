@@ -34,27 +34,18 @@
     <?php endif; ?>
     <br><br>
     <div class="boutonAligne">
-        <form method="POST" style="display: inline;">
-            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-            <button type="submit" class="btnBase theme" formaction="?url=compte/index#form-add">
-                <i class="iconColor material-icons md-36">library_add</i>
-                <span class="spanIconText">Ajouter</span>
-            </button>
-        </form>
-        <form method="POST" style="display: inline;">
-            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-            <button type="submit" class="btnBase theme" formaction="?url=audio/player">
-                <i class="iconColor material-icons md-36">radio</i>
-                <span class="spanIconText">Lecteur</span>
-            </button>
-        </form>
-        <form method="POST" style="display: inline;">
-            <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-            <button type="submit" class="btnBase theme" formaction="?url=compte/index#form-add">
-                <i class="iconColor material-icons md-36">mic</i>
-                <span class="spanIconText">Enregistrer</span>
-            </button>
-        </form>
+        <a href="?url=compte/index#form-add" class="btnBase theme">
+            <i class="iconColor material-icons md-36">library_add</i>
+            <span class="spanIconText">Ajouter</span>
+        </a>
+        <a href="?url=audio/player" class="btnBase theme">
+            <i class="iconColor material-icons md-36">radio</i>
+            <span class="spanIconText">Lecteur</span>
+        </a>
+        <a href="?url=compte/index#form-add" class="btnBase theme">
+            <i class="iconColor material-icons md-36">mic</i>
+            <span class="spanIconText">Enregistrer</span>
+        </a>
     </div>
 
     <?php echo $audioList; ?>

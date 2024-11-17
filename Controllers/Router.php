@@ -34,21 +34,30 @@ class Router
         $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
                   strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
                   
+        // Liste des actions qui nécessitent une vérification CSRF
+        $csrfProtectedActions = ['create', 'update', 'delete', 'save'];
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            // Pour les requêtes AJAX, renvoyer une erreur JSON
-            if ($isAjax) {
-                if (!$session->validateToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
-                    header('Content-Type: application/json');
-                    http_response_code(403);
-                    echo json_encode(['error' => true, 'message' => 'Token CSRF invalide']);
-                    exit();
-                }
-            } else {
-                // Pour les requêtes normales, rediriger
-                if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
-                    logError("Erreur CSRF : jeton invalide.");
-                    header('Location: ?url=connexion/index');
-                    exit();
+            $currentAction = $actionName ?? '';
+            
+            // Vérifier si l'action nécessite une protection CSRF
+            if (in_array($currentAction, $csrfProtectedActions)) {
+                // Pour les requêtes AJAX
+                if ($isAjax) {
+                    if (!$session->validateToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
+                        header('Content-Type: application/json');
+                        http_response_code(403);
+                        echo json_encode(['error' => true, 'message' => 'Token CSRF invalide']);
+                        exit();
+                    }
+                } else {
+                    // Pour les requêtes normales
+                    if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
+                        logError("Erreur CSRF : jeton invalide pour l'action $currentAction");
+                        $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer.";
+                        header('Location: ?url=audio/list');
+                        exit();
+                    }
                 }
             }
         }
