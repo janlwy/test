@@ -72,6 +72,10 @@ const switchMobile = document.querySelector('.iconeTheme');
         console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
         themeBody.className = `${localStorage.className}`;
         boutonTheme.textContent = `${localStorage.textContent}`;
+        const iconeTheme = document.querySelector('.iconeTheme');
+        if (iconeTheme) {
+            iconeTheme.textContent = `${localStorage.textContent}`;
+        }
     });
 });
 
