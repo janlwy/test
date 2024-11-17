@@ -50,15 +50,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Changer le thème ---- Sombre-Clair -----------------------------------
-// Sélectionner les éléments de changement de thème
-const themeElements = [
-    document.querySelector('.boutonTheme'),
-    document.querySelector('.iconeTheme')
-].filter(element => element !== null);
+// Sélectionner les éléments de changement de thème et ajouter les écouteurs d'événements
+function initThemeElements() {
+    const themeElements = [
+        document.querySelector('.boutonTheme'),
+        document.querySelector('.iconeTheme')
+    ].filter(element => element !== null);
 
-// Ajouter les écouteurs d'événements seulement aux éléments qui existent
-themeElements.forEach(element => {
-    element.addEventListener('click', function() {
+    themeElements.forEach(element => {
+        if (element) {
+            element.addEventListener('click', handleThemeChange);
+        }
+    });
+}
+
+function handleThemeChange() {
     /* map fait appel à un tableau pour les deux elements avec ecoute simultanée */
     document.body.classList.toggle('clair-theme');
     document.body.classList.toggle('sombre-theme');
@@ -68,20 +74,27 @@ themeElements.forEach(element => {
     if (localStorage.className == "clair-theme" && localStorage.textContent == "dark_mode") {
         localStorage.className = "sombre-theme";
         localStorage.textContent = "light_mode";
-    }else{
+    } else {
         localStorage.className = "clair-theme";
         localStorage.textContent = "dark_mode";
     }
 
-        console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
+    console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
+    
+    if (themeBody) {
         themeBody.className = `${localStorage.className}`;
+    }
+    if (boutonTheme) {
         boutonTheme.textContent = `${localStorage.textContent}`;
-        const iconeTheme = document.querySelector('.iconeTheme');
-        if (iconeTheme) {
-            iconeTheme.textContent = `${localStorage.textContent}`;
-        }
-    });
-});
+    }
+    const iconeTheme = document.querySelector('.iconeTheme');
+    if (iconeTheme) {
+        iconeTheme.textContent = `${localStorage.textContent}`;
+    }
+}
+
+// Initialiser les écouteurs d'événements au chargement du DOM
+document.addEventListener('DOMContentLoaded', initThemeElements);
 
 
 // Menu de la navbar ---------------------------------------------------
