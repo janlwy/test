@@ -78,21 +78,22 @@ async function saveAndPlaySelectedTracks() {
     console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
     
     if (selectedCheckboxes.length === 0) {
-        showMessage('Veuillez sélectionner au moins une piste audio.', true);
-        return;
+        throw new Error('Veuillez sélectionner au moins une piste audio.');
     }
 
+    // Récupérer les données audio complètes depuis l'élément audioData
+    const audioDataElement = document.getElementById('audioData');
+    const allAudios = JSON.parse(audioDataElement.dataset.audios);
+
     const selectedTracks = Array.from(selectedCheckboxes).map(checkbox => {
-        const audioItem = checkbox.closest('.audio-item');
-        const track = {
-            id: checkbox.getAttribute('data-audio-id'),
-            path: checkbox.getAttribute('data-audio-path'),
-            title: audioItem.querySelector('h4').textContent.trim(),
-            artist: audioItem.querySelector('p').textContent.trim(),
-            image: audioItem.querySelector('.photoAudio').src
-        };
-        console.log('Piste sélectionnée:', track);
-        return track;
+        const audioId = checkbox.getAttribute('data-audio-id');
+        // Trouver les données complètes de l'audio dans allAudios
+        const audioData = allAudios.find(audio => audio.id === audioId);
+        if (!audioData) {
+            throw new Error(`Données audio non trouvées pour l'ID: ${audioId}`);
+        }
+        console.log('Piste sélectionnée:', audioData);
+        return audioData;
     });
 
     try {
