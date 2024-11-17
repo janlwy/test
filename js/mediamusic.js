@@ -110,8 +110,8 @@ async function saveAndPlaySelectedTracks() {
     } catch (error) {
         console.error('Erreur complète:', error);
         showMessage('Erreur lors de la sauvegarde de la sélection: ' + error.message, true);
+        }
     }
-}
 }
 
 function showMessage(message, isError = false) {
