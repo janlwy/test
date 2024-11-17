@@ -114,12 +114,9 @@ if (!defined('ROOT_PATH')) {
         </div><br>
         <hr><br>
         <div class="boutonAligne">
-            <form method="POST" style="display: inline;">
-                <?php if (isset($session)): ?>
-                    <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-                <?php endif; ?>
-                <button type="submit" class="btnBase theme" formaction="?url=audio/list"><i class="iconColor material-icons md-36">undo</i></button>
-            </form>
+            <a href="?url=audio/list" class="btnBase theme" style="display: inline-block;">
+                <i class="iconColor material-icons md-36">undo</i>
+            </a>
             <form method="POST" style="display: inline;">
                 <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
                 <button type="submit" class="btnBase theme" formaction="?url=compte/index#form-add"><i class="iconColor material-icons md-36">library_add</i></button>
