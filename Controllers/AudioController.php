@@ -584,10 +584,14 @@ class AudioController extends BaseController implements IController
 
                     $audioUserId = $audio->getUserId();
                     
-                    error_log("Comparaison des IDs - Audio: {$audioUserId}, Session: {$userId}");
-                    
-                    // Vérification des IDs
-                    if ($audioUserId == $userId) {
+                    // Convertir explicitement en entiers pour la comparaison
+                    $audioUserId = (int)$audioUserId;
+                    $userId = (int)$userId;
+            
+                    error_log("Comparaison des IDs - Audio: {$audioUserId} (type: " . gettype($audioUserId) . "), Session: {$userId} (type: " . gettype($userId) . ")");
+            
+                    // Vérification stricte des IDs après conversion
+                    if ($audioUserId === $userId) {
                         $validTracks[] = $trackId;
                         error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
