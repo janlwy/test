@@ -19,60 +19,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-class AudioPlayer {
-    constructor() {
-        this.audio = new Audio();
-        this.currentIndex = 0;
-        this.tracks = [];
-        this.isPlaying = false;
-        this.initializeElements();
-        this.setupEventListeners();
-    }
-
-    initializeElements() {
-        this.elements = {
-            nowPlaying: document.querySelector(".now-playing"),
-            trackArt: document.querySelector(".track-art"),
-            trackName: document.querySelector(".track-name"),
-            trackArtist: document.querySelector(".track-artist"),
-            playButton: document.querySelector(".playpause-track"),
-            nextButton: document.querySelector(".next-track"),
-            prevButton: document.querySelector(".prev-track"),
-            seekSlider: document.querySelector(".seek_slider"),
-            volumeSlider: document.querySelector(".volume_slider"),
-            currentTime: document.querySelector(".current-time"),
-            totalDuration: document.querySelector(".total-duration")
-        };
-    }
-
-    setupEventListeners() {
-        this.audio.addEventListener('ended', () => this.playNext());
-        this.audio.addEventListener('timeupdate', () => this.updateProgress());
-        this.audio.addEventListener('error', () => showMessage('Erreur de lecture audio'));
-        
-        this.elements.playButton.addEventListener('click', () => this.togglePlay());
-        this.elements.nextButton.addEventListener('click', () => this.playNext());
-        this.elements.prevButton.addEventListener('click', () => this.playPrevious());
-        this.elements.seekSlider.addEventListener('change', () => this.seekTo());
-        this.elements.volumeSlider.addEventListener('change', () => this.updateVolume());
-    }
-
-    initialize(tracks) {
-        if (!tracks?.length) return;
-        this.tracks = tracks;
-        this.loadTrack(0);
-        
-        // Vérifier si l'autoplay est activé
-        const audioData = document.getElementById('audioData');
-        if (audioData && audioData.dataset.autoplay === 'true') {
-            this.playTrack();
-        }
-    }
-}
-
-const player = new AudioPlayer();
+let player;
 
 function initializeAudioPlayer(tracks) {
+    if (!player) {
+        player = new AudioPlayer();
+    }
     player.initialize(tracks);
 }
 
@@ -202,6 +154,71 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 class AudioPlayer {
+    constructor() {
+        this.audio = new Audio();
+        this.currentIndex = 0;
+        this.tracks = [];
+        this.isPlaying = false;
+        this.initializeElements();
+        this.setupEventListeners();
+    }
+
+    initializeElements() {
+        this.elements = {
+            nowPlaying: document.querySelector(".now-playing"),
+            trackArt: document.querySelector(".track-art"),
+            trackName: document.querySelector(".track-name"),
+            trackArtist: document.querySelector(".track-artist"),
+            playButton: document.querySelector(".playpause-track"),
+            nextButton: document.querySelector(".next-track"),
+            prevButton: document.querySelector(".prev-track"),
+            seekSlider: document.querySelector(".seek_slider"),
+            volumeSlider: document.querySelector(".volume_slider"),
+            currentTime: document.querySelector(".current-time"),
+            totalDuration: document.querySelector(".total-duration")
+        };
+    }
+
+    setupEventListeners() {
+        this.audio.addEventListener('ended', () => this.playNext());
+        this.audio.addEventListener('timeupdate', () => this.updateProgress());
+        this.audio.addEventListener('error', (e) => {
+            console.error('Erreur audio:', e);
+            showMessage('Erreur de lecture audio: ' + (e.message || 'Erreur inconnue'));
+        });
+        
+        if (this.elements.playButton) {
+            this.elements.playButton.addEventListener('click', () => this.togglePlay());
+        }
+        if (this.elements.nextButton) {
+            this.elements.nextButton.addEventListener('click', () => this.playNext());
+        }
+        if (this.elements.prevButton) {
+            this.elements.prevButton.addEventListener('click', () => this.playPrevious());
+        }
+        if (this.elements.seekSlider) {
+            this.elements.seekSlider.addEventListener('change', () => this.seekTo());
+        }
+        if (this.elements.volumeSlider) {
+            this.elements.volumeSlider.addEventListener('change', () => this.updateVolume());
+        }
+    }
+
+    initialize(tracks) {
+        if (!tracks?.length) {
+            console.warn('Aucune piste à initialiser');
+            return;
+        }
+        console.log('Initialisation avec les pistes:', tracks);
+        this.tracks = tracks;
+        this.loadTrack(0);
+        
+        const audioData = document.getElementById('audioData');
+        if (audioData?.dataset.autoplay === 'true') {
+            this.playTrack();
+        }
+    }
+
     loadTrack(index) {
         const track = this.tracks[index];
         if (!track?.fullPath) {
