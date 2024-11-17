@@ -52,7 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
 const switcher = document.querySelector('.boutonTheme');
 const switchMobile = document.querySelector('.iconeTheme');
 
-[switcher, switchMobile].map(Element => Element.addEventListener('click', function() {
+// Vérifier que les éléments existent avant d'ajouter les écouteurs
+[switcher, switchMobile].filter(element => element).forEach(element => {
+    element.addEventListener('click', function() {
     /* map fait appel à un tableau pour les deux elements avec ecoute simultanée */
     document.body.classList.toggle('clair-theme');
     document.body.classList.toggle('sombre-theme');
@@ -68,11 +70,15 @@ const switchMobile = document.querySelector('.iconeTheme');
         localStorage.textContent = "dark_mode";
     }
 
-    console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
-    themeBody.className = `${localStorage.className}`;
-    boutonTheme.textContent = `${localStorage.textContent}`;
-    iconeTheme.textContent = `${localStorage.textContent}`;
-}));
+        console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
+        themeBody.className = `${localStorage.className}`;
+        boutonTheme.textContent = `${localStorage.textContent}`;
+        const iconeTheme = document.querySelector('.iconeTheme');
+        if (iconeTheme) {
+            iconeTheme.textContent = `${localStorage.textContent}`;
+        }
+    });
+});
 
 
 // Menu de la navbar ---------------------------------------------------
