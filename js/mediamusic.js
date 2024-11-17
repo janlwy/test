@@ -459,7 +459,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioListData = document.getElementById('audioList-data');
     if (audioListData?.dataset.audios) {
         try {
-            const tracks = JSON.parse(audioData.dataset.audios);
+            const tracks = JSON.parse(audioListData.dataset.audios);
             if (tracks.length) {
                 initializeAudioPlayer(tracks);
             } else {
