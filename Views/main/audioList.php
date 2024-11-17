@@ -81,4 +81,3 @@
     </div>
     <div id="message-container"></div>
 </section>
-<script src="js/mediamusic.js"></script>
