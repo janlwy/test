@@ -503,21 +503,37 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
+        // Désactiver l'affichage des erreurs PHP
+        ini_set('display_errors', '0');
+        error_reporting(0);
+        
+        // Définir les en-têtes avant toute sortie
         header('Content-Type: application/json; charset=utf-8');
+        header_remove('X-Powered-By');
         
         try {
             $this->checkAuth();
             
-            // Log pour le débogage
-            error_log("saveSelection appelé");
-            
             if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 throw new Exception('Méthode non autorisée');
+            }
+            
+            // Vérifier le Content-Type de la requête
+            if (!isset($_SERVER['CONTENT_TYPE']) || 
+                strpos($_SERVER['CONTENT_TYPE'], 'application/json') === false) {
+                throw new Exception('Content-Type doit être application/json');
             }
 
             // Récupérer et vérifier les données
             $rawData = file_get_contents('php://input');
+            if ($rawData === false) {
+                throw new Exception('Impossible de lire les données de la requête');
+            }
+            
             $data = json_decode($rawData, true);
+            if (json_last_error() !== JSON_ERROR_NONE) {
+                throw new Exception('Données JSON invalides: ' . json_last_error_msg());
+            }
             
             error_log("Données reçues: " . print_r($data, true));
             
@@ -598,18 +614,25 @@ class AudioController extends BaseController implements IController
             
             $_SESSION['selected_tracks'] = $validTracks;
             
-            echo json_encode([
+            $response = [
                 'success' => true,
                 'count' => count($validTracks),
                 'message' => 'Sélection sauvegardée avec succès'
-            ]);
+            ];
+            
+            http_response_code(200);
+            echo json_encode($response);
+            exit();
             
         } catch (Exception $e) {
+            error_log("Erreur dans saveSelection: " . $e->getMessage());
+            
             http_response_code(400);
             echo json_encode([
                 'success' => false,
                 'message' => $e->getMessage()
             ]);
+            exit();
         }
     }
 }
