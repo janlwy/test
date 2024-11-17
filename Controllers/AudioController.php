@@ -557,24 +557,33 @@ class AudioController extends BaseController implements IController
                 $trackId = intval($trackId);
                 error_log("Traitement de la piste ID: " . $trackId);
                 
-                $audio = $this->audioRepository->findById($trackId);
-                if (!$audio) {
-                    error_log("Piste non trouvée: " . $trackId);
-                    continue;
-                }
+                try {
+                    $audio = $this->audioRepository->findById($trackId);
+                    if (!$audio) {
+                        error_log("Piste non trouvée: " . $trackId);
+                        continue;
+                    }
 
-                $audioUserId = $audio->getUserId();
-                error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
-                
-                if ($audioUserId == $userId) {
-                    $validTracks[] = $trackId;
-                    error_log("Piste validée et ajoutée: " . $trackId);
-                } else {
-                    error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . ", user: " . $userId . ")");
+                    $audioUserId = $audio->getUserId();
+                    error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
+                    
+                    if ($audioUserId === $userId) {
+                        $validTracks[] = $trackId;
+                        error_log("Piste validée et ajoutée: " . $trackId);
+                    } else {
+                        error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . ", user: " . $userId . ")");
+                    }
+                } catch (Exception $e) {
+                    error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
+                    continue;
                 }
             }
 
             error_log("Pistes valides après vérification: " . print_r($validTracks, true));
+            
+            if (empty($validTracks)) {
+                throw new Exception("Aucune piste valide trouvée parmi les pistes sélectionnées. IDs reçus: " . implode(', ', $tracks));
+            }
             
             if (empty($validTracks)) {
                 error_log("Aucune piste valide trouvée. Tracks reçus: " . implode(', ', $tracks));

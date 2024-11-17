@@ -59,8 +59,13 @@ async function saveAndPlaySelectedTracks() {
         const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
             const id = checkbox.getAttribute('data-audio-id');
             console.log('ID extrait de checkbox:', id);
-            return parseInt(id);
-        });
+            return parseInt(id) || null;
+        }).filter(id => id !== null);
+
+        if (selectedIds.length === 0) {
+            throw new Error('IDs de pistes invalides');
+        }
+
         console.log('Envoi de la requête avec les pistes:', selectedIds);
         
         const response = await fetch('index.php?url=audio/saveSelection', {
