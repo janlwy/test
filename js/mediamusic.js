@@ -45,7 +45,8 @@ async function saveAndPlaySelectedTracks() {
         console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
         
         if (selectedCheckboxes.length === 0) {
-            throw new Error('Veuillez sélectionner au moins une piste audio.');
+            showMessage('Veuillez sélectionner au moins une piste audio.', true);
+            return;
         }
 
         const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
@@ -461,8 +462,7 @@ class AudioPlayer {
 }
 
 // Initialisation au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    // Vérifier si nous sommes sur la page du lecteur audio
+function initializeAudioContent() {
     const isPlayerPage = window.location.href.includes('audio/player');
     const audioListData = document.getElementById('audioList-data');
     const audioData = document.getElementById('audioData');
@@ -470,7 +470,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (isPlayerPage && audioData?.dataset.audios) {
         try {
             const tracks = JSON.parse(audioData.dataset.audios);
-            if (tracks.length) {
+            if (!tracks?.length) {
+                showMessage('Aucune piste disponible');
+                return;
+            }
+            console.log('Initialisation du lecteur avec', tracks.length, 'pistes');
                 initializeAudioPlayer(tracks);
             } else {
                 showMessage('Aucune piste disponible');
