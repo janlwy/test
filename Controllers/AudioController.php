@@ -568,21 +568,24 @@ class AudioController extends BaseController implements IController
 
                     $audioUserId = $audio->getUserId();
                     error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
+                    error_log("Types avant conversion - Audio: " . gettype($audioUserId) . ", Session: " . gettype($userId));
+                    error_log("Valeurs brutes - Audio: '" . var_export($audioUserId, true) . "', Session: '" . var_export($userId, true) . "'");
                     
-                    // Forcer la conversion en entiers et vérifier les valeurs
-                    $audioUserIdInt = (int)$audioUserId;
-                    $userIdInt = (int)$userId;
+                    // S'assurer que les deux valeurs sont des entiers
+                    $audioUserIdInt = is_null($audioUserId) ? null : (int)$audioUserId;
+                    $userIdInt = is_null($userId) ? null : (int)$userId;
                     
-                    error_log("Comparaison des IDs - Audio: $audioUserIdInt (original: $audioUserId), Session: $userIdInt (original: $userId)");
-                    error_log("Types - Audio: " . gettype($audioUserId) . ", Session: " . gettype($userId));
+                    error_log("Après conversion - Audio: " . var_export($audioUserIdInt, true) . ", Session: " . var_export($userIdInt, true));
+                    error_log("Types après conversion - Audio: " . gettype($audioUserIdInt) . ", Session: " . gettype($userIdInt));
                     
-                    if ($audioUserIdInt === $userIdInt) {
+                    // Vérification stricte avec gestion des null
+                    if (!is_null($audioUserIdInt) && !is_null($userIdInt) && $audioUserIdInt === $userIdInt) {
                         $validTracks[] = $trackId;
                         error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
                         $errors[] = "Piste $trackId : accès non autorisé";
-                        error_log("Piste $trackId rejetée - IDs ne correspondent pas: $audioUserIdInt !== $userIdInt");
-                        error_log("Valeurs brutes - Audio: '$audioUserId', Session: '$userId'");
+                        error_log("Piste $trackId rejetée - IDs ne correspondent pas ou sont null");
+                        error_log("audioUserIdInt: " . var_export($audioUserIdInt, true) . ", userIdInt: " . var_export($userIdInt, true));
                     }
                 } catch (Exception $e) {
                     error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
