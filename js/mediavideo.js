@@ -99,16 +99,16 @@ function windForward() {
     }
 }
 
-function setTime() {
-    const minutes = Math.floor(media.currentTime / 60);
-    const seconds = Math.floor(media.currentTime - minutes * 60);
+    function setTime() {
+        const minutes = Math.floor(media.currentTime / 60);
+        const seconds = Math.floor(media.currentTime - minutes * 60);
 
-    const minuteValue = minutes.toString().padStart(2, '0');
-    const secondValue = seconds.toString().padStart(2, '0');
+        const minuteValue = minutes.toString().padStart(2, '0');
+        const secondValue = seconds.toString().padStart(2, '0');
 
-    const mediaTime = `${minuteValue}:${secondValue}`;
-    timer.textContent = mediaTime;
+        const mediaTime = `${minuteValue}:${secondValue}`;
+        timer.textContent = mediaTime;
 
-    const barLength = timerWrapper.clientWidth * (media.currentTime / media.duration);
-    timerBar.style.width = `${barLength}px`;
-}
+        const barLength = timerWrapper.clientWidth * (media.currentTime / media.duration);
+        timerBar.style.width = `${barLength}px`;
+    }
