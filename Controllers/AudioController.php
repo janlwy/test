@@ -569,14 +569,20 @@ class AudioController extends BaseController implements IController
                     $audioUserId = $audio->getUserId();
                     error_log("Piste trouvée - User ID de la piste: " . $audioUserId . ", User ID actuel: " . $userId);
                     
-                    // Conversion explicite en entiers pour la comparaison
-                    if ((int)$audioUserId === (int)$userId) {
+                    // Forcer la conversion en entiers et vérifier les valeurs
+                    $audioUserIdInt = (int)$audioUserId;
+                    $userIdInt = (int)$userId;
+                    
+                    error_log("Comparaison des IDs - Audio: $audioUserIdInt (original: $audioUserId), Session: $userIdInt (original: $userId)");
+                    error_log("Types - Audio: " . gettype($audioUserId) . ", Session: " . gettype($userId));
+                    
+                    if ($audioUserIdInt === $userIdInt) {
                         $validTracks[] = $trackId;
-                        error_log("Piste validée et ajoutée: " . $trackId . " (User IDs: " . $audioUserId . " === " . $userId . ")");
+                        error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
                     } else {
                         $errors[] = "Piste $trackId : accès non autorisé";
-                        error_log("Piste rejetée - mauvais utilisateur (audio: " . $audioUserId . " !== " . $userId . ")");
-                        error_log("Types: audio user_id(" . gettype($audioUserId) . ") session user_id(" . gettype($userId) . ")");
+                        error_log("Piste $trackId rejetée - IDs ne correspondent pas: $audioUserIdInt !== $userIdInt");
+                        error_log("Valeurs brutes - Audio: '$audioUserId', Session: '$userId'");
                     }
                 } catch (Exception $e) {
                     error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
