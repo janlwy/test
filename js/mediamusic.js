@@ -2,20 +2,32 @@
 
 // Initialisation du lecteur audio au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    const audioData = document.getElementById('audioData');
-    if (audioData && audioData.dataset.audios) {
-        try {
-            const tracks = JSON.parse(audioData.dataset.audios);
-            if (Array.isArray(tracks) && tracks.length > 0) {
-                console.log('Initializing audio player with tracks:', tracks);
-                initializeAudioPlayer(tracks);
-            } else {
-                console.warn('No audio tracks available');
+    // Attendre un court instant pour s'assurer que le DOM est complètement chargé
+    setTimeout(() => {
+        const audioData = document.getElementById('audioData');
+        if (audioData && audioData.dataset.audios) {
+            try {
+                const tracks = JSON.parse(audioData.dataset.audios);
+                if (Array.isArray(tracks) && tracks.length > 0) {
+                    // Vérifier que tous les éléments nécessaires sont présents
+                    const requiredElements = ['trackName', 'trackArtist', 'trackArt', 'nowPlaying'];
+                    const missingElements = requiredElements.filter(elem => !document.getElementById(elem));
+                    
+                    if (missingElements.length > 0) {
+                        console.error('Éléments manquants dans le DOM:', missingElements);
+                        return;
+                    }
+                    
+                    console.log('Initializing audio player with tracks:', tracks);
+                    initializeAudioPlayer(tracks);
+                } else {
+                    console.warn('No audio tracks available');
+                }
+            } catch (error) {
+                console.error('Error parsing audio data:', error);
             }
-        } catch (error) {
-            console.error('Error parsing audio data:', error);
         }
-    }
+    }, 100); // Délai de 100ms pour s'assurer que le DOM est prêt
 });
 
 
@@ -222,12 +234,24 @@ class AudioPlayer {
             return;
         }
         
-        // Vérifier que tous les éléments nécessaires sont présents
-        const requiredElements = ['trackName', 'trackArtist', 'trackArt', 'nowPlaying'];
-        const missingElements = requiredElements.filter(elem => !this.elements[elem]);
+        // Réinitialiser les éléments pour s'assurer qu'ils sont à jour
+        this.initializeElements();
+        
+        // Vérification plus détaillée des éléments
+        const elementCheck = {
+            trackName: this.elements.trackName,
+            trackArtist: this.elements.trackArtist,
+            trackArt: this.elements.trackArt,
+            nowPlaying: this.elements.nowPlaying
+        };
+        
+        const missingElements = Object.entries(elementCheck)
+            .filter(([key, element]) => !element)
+            .map(([key]) => key);
         
         if (missingElements.length > 0) {
             console.error('Éléments manquants dans le DOM:', missingElements);
+            console.log('État actuel des éléments:', elementCheck);
             return;
         }
         
