@@ -60,7 +60,6 @@ const switchMobile = document.querySelector('.iconeTheme');
     document.body.classList.toggle('sombre-theme');
 
     const className = document.body.className;
-    const iconeTheme = document.getElementsByClassName("iconeTheme");
     /* localStorage stocke la classe et l'icone du theme actif pour persitance*/
     if (localStorage.className == "clair-theme" && localStorage.textContent == "dark_mode") {
         localStorage.className = "sombre-theme";
@@ -73,10 +72,6 @@ const switchMobile = document.querySelector('.iconeTheme');
         console.log('nom de classe: ' + className + ` et bouton : ` + localStorage.textContent);
         themeBody.className = `${localStorage.className}`;
         boutonTheme.textContent = `${localStorage.textContent}`;
-        const iconeTheme = document.querySelector('.iconeTheme');
-        if (iconeTheme) {
-            iconeTheme.textContent = `${localStorage.textContent}`;
-        }
     });
 });
 
