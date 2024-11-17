@@ -508,11 +508,8 @@ class AudioController extends BaseController implements IController
         try {
             $this->checkAuth();
             
-            // Vérifier que c'est une requête AJAX
-            if (!isset($_SERVER['HTTP_X_REQUESTED_WITH']) || 
-                strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) !== 'xmlhttprequest') {
-                throw new Exception('Requête non autorisée');
-            }
+            // Log pour le débogage
+            error_log("saveSelection appelé");
 
             // Récupérer et vérifier les données
             $rawData = file_get_contents('php://input');

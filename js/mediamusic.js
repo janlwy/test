@@ -87,22 +87,10 @@ async function saveAndPlaySelectedTracks() {
         throw new Error('Veuillez sélectionner au moins une piste audio.');
     }
 
-    // Récupérer les données audio complètes depuis l'élément audioData
-    const audioDataElement = document.getElementById('audioData');
-    if (!audioDataElement || !audioDataElement.dataset.audios) {
-        throw new Error('Données audio non disponibles');
-    }
-
-    const allAudios = JSON.parse(audioDataElement.dataset.audios);
-    const selectedIds = Array.from(selectedCheckboxes).map(checkbox => checkbox.getAttribute('data-audio-id'));
-    
-    const selectedTracks = selectedIds.map(id => {
-        const audioData = allAudios.find(audio => audio.id === id);
-        if (!audioData) {
-            throw new Error(`Données audio non trouvées pour l'ID: ${id}`);
-        }
-        console.log('Piste sélectionnée:', audioData);
-        return audioData;
+    const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
+        const id = checkbox.getAttribute('data-audio-id');
+        console.log('ID sélectionné:', id);
+        return id;
     });
 
     try {
@@ -145,27 +133,17 @@ async function saveAndPlaySelectedTracks() {
     }
 }
 
+function showMessage(message, isError = false) {
+    const messageDiv = document.createElement('div');
+    messageDiv.className = isError ? 'error-message' : 'success-message';
+    messageDiv.textContent = message;
+    document.querySelector('section').insertBefore(messageDiv, document.querySelector('section').firstChild);
+    setTimeout(() => messageDiv.remove(), 5000);
+}
+
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM chargé, initialisation...');
-    
-    const audioDataElement = document.getElementById('audioData');
-    if (audioDataElement && audioDataElement.dataset.audios) {
-        try {
-            const tracks = JSON.parse(audioDataElement.dataset.audios);
-            console.log('Données audio reçues:', tracks);
-            
-            if (Array.isArray(tracks) && tracks.length > 0) {
-                initializeAudioPlayer(tracks);
-            } else {
-                console.log('Aucune piste disponible');
-                showMessage("Aucune piste audio disponible", true);
-            }
-        } catch (error) {
-            console.error('Erreur lors du chargement des pistes:', error);
-            showMessage("Erreur lors du chargement des pistes audio", true);
-        }
-    }
 
     // Gestionnaire pour les checkboxes
     const checkboxes = document.querySelectorAll('.select-audio');
@@ -195,8 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Bouton de lecture trouvé');
         playSelectedButton.addEventListener('click', async (e) => {
             e.preventDefault();
+            e.stopPropagation();
             console.log('Bouton de lecture cliqué');
+            
             const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+            console.log('Checkboxes sélectionnées:', selectedCheckboxes.length);
             
             if (selectedCheckboxes.length === 0) {
                 showMessage('Veuillez sélectionner au moins une piste audio.', true);
@@ -204,7 +185,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             try {
-                await saveAndPlaySelectedTracks();
+                const result = await saveAndPlaySelectedTracks();
+                console.log('Résultat saveAndPlaySelectedTracks:', result);
+                if (result && result.success) {
+                    window.location.href = '?url=audio/player';
+                }
             } catch (error) {
                 console.error('Erreur lors de la lecture:', error);
                 showMessage('Erreur lors de la lecture: ' + error.message, true);
