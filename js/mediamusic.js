@@ -462,16 +462,32 @@ class AudioPlayer {
 
 // Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
+    // Vérifier si nous sommes sur la page du lecteur audio
+    const isPlayerPage = window.location.href.includes('audio/player');
     const audioListData = document.getElementById('audioList-data');
-    if (audioListData?.dataset.audios) {
+    const audioData = document.getElementById('audioData');
+    
+    if (isPlayerPage && audioData?.dataset.audios) {
         try {
-            const tracks = JSON.parse(audioListData.dataset.audios);
+            const tracks = JSON.parse(audioData.dataset.audios);
             if (tracks.length) {
                 initializeAudioPlayer(tracks);
             } else {
                 showMessage('Aucune piste disponible');
             }
         } catch (error) {
+            console.error('Erreur de chargement des pistes:', error);
+            showMessage('Erreur de chargement des pistes');
+        }
+    } else if (audioListData?.dataset.audios) {
+        // Code pour la page de liste des pistes
+        try {
+            const tracks = JSON.parse(audioListData.dataset.audios);
+            if (!tracks.length) {
+                showMessage('Aucune piste disponible');
+            }
+        } catch (error) {
+            console.error('Erreur de chargement des pistes:', error);
             showMessage('Erreur de chargement des pistes');
         }
     }
