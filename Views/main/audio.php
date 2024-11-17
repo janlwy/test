@@ -79,10 +79,10 @@ if (!defined('ROOT_PATH')) {
         <div class="player-audio">
             <!-- Section pour afficher les détails -->
             <div class="details-audio">
-                <div class="now-playing">Piste 0 de 0</div>
-                <div class="track-art"></div>
-                <div class="track-name">Nom de la piste</div>
-                <div class="track-artist">Artiste de la piste</div>
+                <div id="now-playing" class="now-playing">Piste 0 de 0</div>
+                <div id="track-art" class="track-art"></div>
+                <div id="track-name" class="track-name">Nom de la piste</div>
+                <div id="track-artist" class="track-artist">Artiste de la piste</div>
             </div>
 
             <!-- Section pour afficher les boutons de contrôle -->

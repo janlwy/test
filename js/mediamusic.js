@@ -177,10 +177,10 @@ class AudioPlayer {
 
     initializeElements() {
         this.elements = {
-            nowPlaying: document.querySelector(".now-playing"),
-            trackArt: document.querySelector(".track-art"),
-            trackName: document.querySelector(".track-name"),
-            trackArtist: document.querySelector(".track-artist"),
+            nowPlaying: document.getElementById("now-playing"),
+            trackArt: document.getElementById("track-art"),
+            trackName: document.getElementById("track-name"),
+            trackArtist: document.getElementById("track-artist"),
             playButton: document.querySelector(".playpause-track"),
             nextButton: document.querySelector(".next-track"),
             prevButton: document.querySelector(".prev-track"),
