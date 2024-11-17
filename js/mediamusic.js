@@ -51,8 +51,10 @@ async function saveAndPlaySelectedTracks() {
 
         const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
             const id = parseInt(checkbox.getAttribute('data-audio-id'));
+            console.log('ID extrait de checkbox:', id);
             if (!id || isNaN(id)) {
-                throw new Error('ID de piste invalide détecté');
+                console.warn('ID de piste invalide détecté:', id);
+                return null;
             }
             console.log('ID sélectionné:', id);
             return id;
