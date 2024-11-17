@@ -49,11 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Changer le thème ---- Sombre-Clair -----------------------------------
-const switcher = document.querySelector('.boutonTheme');
-const switchMobile = document.querySelector('.iconeTheme');
+// Sélectionner les éléments de changement de thème
+const themeElements = [
+    document.querySelector('.boutonTheme'),
+    document.querySelector('.iconeTheme')
+].filter(element => element !== null);
 
-// Vérifier que les éléments existent avant d'ajouter les écouteurs
-[switcher, switchMobile].filter(element => element).forEach(element => {
+// Ajouter les écouteurs d'événements seulement aux éléments qui existent
+themeElements.forEach(element => {
     element.addEventListener('click', function() {
     /* map fait appel à un tableau pour les deux elements avec ecoute simultanée */
     document.body.classList.toggle('clair-theme');
