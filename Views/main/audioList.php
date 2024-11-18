@@ -35,6 +35,9 @@
 
     <?php echo $audioList; ?>
 
+    <div id="audioList-data" 
+         data-csrf-token="<?php echo $session->get('csrf_token'); ?>">
+    </div>
     <form id="selection-form" action="?url=audio/player" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
         <div class="button-container">
