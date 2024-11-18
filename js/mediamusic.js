@@ -1,11 +1,31 @@
 'use strict';
 
-// Initialisation du lecteur audio au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
-    // Vérifier si nous sommes sur la page du lecteur audio
-    const isPlayerPage = window.location.href.includes('audio/player');
-    if (!isPlayerPage) {
-        return; // Ne pas initialiser le lecteur sur les autres pages
+    // Gestionnaire pour le formulaire de sélection
+    const form = document.getElementById('selection-form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Récupérer les pistes sélectionnées
+            const selectedTracks = document.querySelectorAll('.select-audio:checked');
+            if (selectedTracks.length === 0) {
+                alert('Veuillez sélectionner au moins une piste audio.');
+                return;
+            }
+
+            // Ajouter les pistes sélectionnées au formulaire
+            selectedTracks.forEach(checkbox => {
+                const input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = 'tracks[]';
+                input.value = checkbox.getAttribute('data-audio-id');
+                form.appendChild(input);
+            });
+
+            // Soumettre le formulaire
+            form.submit();
+        });
     }
 
     setTimeout(() => {

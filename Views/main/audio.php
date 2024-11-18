@@ -1,13 +1,32 @@
-<?php if (empty($audios)): ?>
-    <div class="info-message">Aucune piste sélectionnée</div>
-    <a href="?url=audio/list" class="btnBase theme">Retour à la liste</a>
-<?php else: ?>
 <section>
-    <?php if (isset($_SESSION['message'])): ?>
-        <div class="success-message">
-            <?php echo htmlspecialchars($_SESSION['message']); ?>
+    <?php if (empty($audios)): ?>
+        <div class="info-message">Aucune piste sélectionnée</div>
+        <a href="?url=audio/list" class="btnBase theme">Retour à la liste</a>
+    <?php else: ?>
+        <div id="player-container" class="player-container">
+            <div class="player-audio">
+                <div class="details-audio">
+                    <div id="track-art" class="track-art">
+                        <img src="<?php echo $audios[0]->getFullImagePath(); ?>" alt="Pochette">
+                    </div>
+                    <div id="track-name" class="track-name"><?php echo htmlspecialchars($audios[0]->getTitle()); ?></div>
+                    <div id="track-artist" class="track-artist"><?php echo htmlspecialchars($audios[0]->getArtist()); ?></div>
+                </div>
+
+                <audio controls class="audio-player" autoplay>
+                    <?php foreach ($audios as $audio): ?>
+                        <source src="<?php echo $audio->getFullPath(); ?>" type="audio/mpeg">
+                    <?php endforeach; ?>
+                    Votre navigateur ne supporte pas la lecture audio.
+                </audio>
+            </div>
+            
+            <div class="boutonAligne">
+                <a href="?url=audio/list" class="btnBase theme">
+                    <i class="iconColor material-icons md-36">undo</i>
+                </a>
+            </div>
         </div>
-        <?php unset($_SESSION['message']); ?>
     <?php endif; ?>
 
     <?php if (isset($_SESSION['erreur'])): ?>
