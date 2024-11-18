@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     setTimeout(() => {
-        const audioData = document.getElementById('audioData');
-        if (audioData && audioData.dataset.audios) {
+        const playerData = document.getElementById('player-data');
+        if (playerData && playerData.dataset.tracks) {
             try {
-                const tracks = JSON.parse(audioData.dataset.audios);
+                const tracks = JSON.parse(playerData.dataset.tracks);
                 if (Array.isArray(tracks) && tracks.length > 0) {
                     console.log('Initializing audio player with tracks:', tracks);
                     initializeAudioPlayer(tracks);

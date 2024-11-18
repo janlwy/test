@@ -13,14 +13,7 @@
         <?php endif; ?>
 
         <div id="player-data" 
-             data-tracks='<?php echo htmlspecialchars(json_encode(array_map(function($audio) {
-                 return [
-                     'title' => $audio->getTitle(),
-                     'artist' => $audio->getArtist(),
-                     'audio' => 'Ressources/audio/' . $audio->getPath(),
-                     'cover' => 'Ressources/images/pochettes/' . $audio->getImage()
-                 ];
-             }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
+             data-tracks='<?php echo htmlspecialchars(json_encode($formattedAudios), ENT_QUOTES, 'UTF-8'); ?>'>
         </div>
 
         <div id="player-container" class="player-container">

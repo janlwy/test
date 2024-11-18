@@ -285,34 +285,17 @@ class AudioController extends BaseController implements IController
         }
 
         try {
-            $selectedTracks = $_SESSION['selected_tracks'] ?? [];
-            $audios = [];
-            
-            if (!empty($selectedTracks)) {
-                foreach ($selectedTracks as $trackId) {
-                    $audio = $this->audioRepository->findById($trackId);
-                    if ($audio && $audio->getUserId() == $userId) {
-                        $audios[] = $audio;
-                    }
-                }
-            }
-            
+            $audios = $this->audioRepository->findAllByUser($userId);
+        
             if (empty($audios)) {
-                $_SESSION['erreur'] = "Aucune piste sélectionnée ou pistes invalides";
+                $_SESSION['erreur'] = "Aucune piste disponible pour l'utilisateur.";
                 header('Location: ?url=audio/list');
                 exit();
             }
-            
-            // Préparer les données complètes pour chaque audio
-            foreach ($audios as $audio) {
-                $audioPath = 'Ressources/audio/' . $audio->getPath();
-                $imagePath = 'Ressources/images/pochettes/' . $audio->getImage();
-            }
-            
+        
             // Préparer les données pour le lecteur
             $formattedAudios = array_map(function($audio) {
                 $audioPath = 'Ressources/audio/' . $audio->getPath();
-                // Vérifier que le fichier existe
                 if (!file_exists($audioPath)) {
                     logError("Fichier audio manquant: " . $audioPath);
                     return null;
@@ -326,7 +309,6 @@ class AudioController extends BaseController implements IController
                 ];
             }, $audios);
 
-            // Filtrer les pistes invalides
             $formattedAudios = array_filter($formattedAudios);
 
             $datas = [
@@ -336,7 +318,7 @@ class AudioController extends BaseController implements IController
                 'formattedAudios' => $formattedAudios,
                 'session' => $this->session
             ];
-            
+        
             generate("Views/main/audio.php", $datas, "Views/base.html.php", "Lecteur Audio");
         } catch (Exception $e) {
             logError("Erreur dans player: " . $e->getMessage());
