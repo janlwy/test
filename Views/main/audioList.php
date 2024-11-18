@@ -1,19 +1,4 @@
-<section class="audio-section dl">
-    <div class="searchBox">
-        <form method="GET" class="search-form">
-            <input type="hidden" name="url" value="audio/list">
-            <input class="searchInput" type="text" name="search"
-                value="<?php echo htmlspecialchars($_GET['search'] ?? '', ENT_QUOTES, 'UTF-8'); ?>"
-                placeholder="Rechercher par titre ou artiste"
-                onkeydown="if(event.key === 'Enter') this.form.submit();">
-            <button type="button" class="clearButton" onclick="clearSearch()" style="display: <?php echo isset($_GET['search']) && $_GET['search'] !== '' ? 'block' : 'none'; ?>">
-                <i class="material-icons">close</i>
-            </button>
-            <button type="submit" class="searchButton">
-                <i class="material-icons">search</i>
-            </button>
-        </form>
-    </div>
+<section class="audio-section">
 
 
     <?php if (isset($_SESSION['message'])): ?>
@@ -51,34 +36,12 @@
     <?php echo $audioList; ?>
 
     <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-    <div id="audioList-data"
-        data-csrf-token="<?php echo htmlspecialchars($session->get('csrf_token')); ?>"
-        data-audios='<?php echo htmlspecialchars(json_encode(array_map(function ($audio) {
-                            return [
-                                'id' => $audio->getId(),
-                                'title' => $audio->getTitle(), 
-                                'artist' => $audio->getArtist(),
-                                'path' => $audio->getPath(),
-                                'fullPath' => 'Ressources/audio/' . $audio->getPath(),
-                                'image' => $audio->getImage(),
-                                'fullImage' => 'Ressources/images/pochettes/' . $audio->getImage(),
-                                'duration' => 0,
-                                'lastPosition' => 0
-                            ];
-                        }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'
-        data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
-        data-player-state='<?php echo htmlspecialchars(json_encode([
-            'currentTrack' => $session->get('current_track_index', 0),
-            'isPlaying' => $session->get('is_playing', false),
-            'volume' => $session->get('player_volume', 1),
-            'selectedTracks' => $session->get('selected_tracks', [])
-        ]), ENT_QUOTES, 'UTF-8'); ?>'
-        style="display: none;">
-    </div>
+    <form id="selection-form" action="?url=audio/player" method="POST">
+        <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
     <div class="button-container">
-        <button type="button" id="play-selected" class="btnBase orange">
+        <button type="submit" class="btnBase orange">
             <i class="material-icons">play_arrow</i> Lire la sélection
         </button>
     </div>
-    <div id="message-container"></div>
+    </form>
 </section>

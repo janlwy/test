@@ -1,10 +1,8 @@
-<?php
-// Protection contre l'accès direct
-if (!defined('ROOT_PATH')) {
-    header('Location: ../index.php?url=audio/player');
-    exit();
-}
-?>
+<?php if (empty($audios)): ?>
+    <div class="info-message">Aucune piste sélectionnée</div>
+    <a href="?url=audio/list" class="btnBase theme">Retour à la liste</a>
+    <?php exit(); ?>
+<?php endif; ?>
 <section>
     <?php if (isset($_SESSION['message'])): ?>
         <div class="success-message">
@@ -20,55 +18,15 @@ if (!defined('ROOT_PATH')) {
         <?php unset($_SESSION['erreur']); ?>
     <?php endif; ?>
 
-    <div id="audioData" style="display: none;" 
-         data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
-         data-autoplay="true"
-         data-audios='<?php 
-            $audioData = array_map(function ($audio) {
-                $audioPath = $audio->getPath();
-                $imagePath = $audio->getImage();
-                
-                // Vérifier que les fichiers existent et sont lisibles
-                $fullAudioPath = 'Ressources/audio/' . $audioPath;
-                $fullImagePath = 'Ressources/images/pochettes/' . $imagePath;
-                
-                if (!is_readable($fullAudioPath)) {
-                    error_log("Fichier audio non lisible: " . $fullAudioPath);
-                    error_log("Permissions: " . substr(sprintf('%o', fileperms($fullAudioPath)), -4));
-                    return null;
-                }
-                
-                // Vérifier le type MIME
-                $finfo = new finfo(FILEINFO_MIME_TYPE);
-                $mimeType = $finfo->file($fullAudioPath);
-                $allowedTypes = [
-                    'audio/mpeg', 'audio/mp4', 'audio/wav', 
-                    'audio/x-m4a', 'audio/aac', 'audio/ogg',
-                    'video/mp4', 'video/x-m4v', 'application/mp4'
-                ];
-                
-                if (!in_array($mimeType, $allowedTypes)) {
-                    error_log("Type MIME non autorisé: " . $mimeType);
-                    return null;
-                }
-                
-                return [
-                    'id' => $audio->getId(),
-                    'title' => $audio->getTitle(),
-                    'artist' => $audio->getArtist(),
-                    'path' => $audioPath,
-                    'image' => $imagePath,
-                    'fullPath' => $fullAudioPath,
-                    'fullImage' => $fullImagePath,
-                    'mimeType' => $mimeType
-                ];
-            }, $audios ?? []);
-            
-            // Filtrer les entrées nulles
-            $audioData = array_filter($audioData);
-            
-            echo htmlspecialchars(json_encode($audioData), ENT_QUOTES, 'UTF-8'); 
-         ?>'>
+    <div id="player-data" 
+         data-tracks='<?php echo htmlspecialchars(json_encode(array_map(function($audio) {
+             return [
+                 'title' => $audio->getTitle(),
+                 'artist' => $audio->getArtist(),
+                 'audio' => 'Ressources/audio/' . $audio->getPath(),
+                 'cover' => 'Ressources/images/pochettes/' . $audio->getImage()
+             ];
+         }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'>
     </div>
     <?php if (empty($audios)): ?>
         <div class="info-message">
