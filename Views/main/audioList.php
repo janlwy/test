@@ -36,7 +36,7 @@
     <div class="audio-grid">
         <?php foreach ($audios as $audio): ?>
             <div class="audio-item" data-audio-id="<?php echo $audio->getId(); ?>">
-                <img src="<?php echo $audio->getFullImagePath(); ?>" alt="Pochette" class="audio-cover">
+                <img src="<?php echo $audio->getFullImagePath(); ?>" alt="Pochette" class="audio-cover" style="max-width: 150px; height: auto;">
                 <div class="audio-info">
                     <h4><?php echo htmlspecialchars($audio->getTitle()); ?></h4>
                     <p><?php echo htmlspecialchars($audio->getArtist()); ?></p>

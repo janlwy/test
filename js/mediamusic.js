@@ -126,9 +126,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Gestionnaire pour le bouton de lecture
     const playSelectedButton = document.getElementById('play-selected');
-    if (playSelectedButton) {
-        console.log('Bouton de lecture trouvé');
-        const form = document.getElementById('selection-form');
+    const form = document.getElementById('playlist-form');
+    
+    if (playSelectedButton && form) {
+        console.log('Bouton de lecture et formulaire trouvés');
         form.addEventListener('submit', (e) => {
             e.preventDefault(); // Empêcher la soumission par défaut
             

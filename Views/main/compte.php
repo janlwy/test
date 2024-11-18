@@ -4,7 +4,10 @@
 
     <button type="button" class="collapsible">Audio</button>
     <div class="contentCollapse">
-        <button type="button" class="btnBase invisible invisibleTxt" id="form-add"> </button>
+        <button type="button" class="btnBase theme" id="form-add">
+            <i class="iconColor material-icons md-36">library_add</i>
+            <span class="spanIconText">Ajouter</span>
+        </button>
         <form id="formCrud" class="formFont" method="POST" action="<?php echo $formAction ?? '?url=audio/create'; ?>" enctype="multipart/form-data">
             <div class="rowEspace">
                 <div class="collabel">
