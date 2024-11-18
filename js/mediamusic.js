@@ -60,9 +60,9 @@ function initializeAudioPlayer(tracks) {
 
 // Fonction pour ajouter les champs cachés au formulaire
 function addSelectedTracksToForm() {
-    const form = document.getElementById('selection-form');
+    const form = document.getElementById('playlist-form');
     if (!form) {
-        console.error('Formulaire de sélection non trouvé');
+        console.error('Formulaire de playlist non trouvé');
         return false;
     }
 
