@@ -329,7 +329,7 @@ class AudioPlayer {
     loadTrack(index) {
         try {
             const track = this.tracks[index];
-            if (!track?.fullPath) {
+            if (!track || !track.fullPath) {
                 throw new Error('Piste invalide ou chemin manquant');
             }
 
