@@ -79,31 +79,42 @@ async function saveAndPlaySelectedTracks() {
 
         console.log('Envoi de la requête avec les pistes:', selectedIds);
         
-        const response = await fetch('?url=audio/saveSelection', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-Requested-With': 'XMLHttpRequest',
-                'X-CSRF-TOKEN': csrfToken
-            },
-            body: JSON.stringify({ 
-                tracks: selectedIds,
-                csrf_token: csrfToken 
-            })
-        });
+        try {
+            const response = await fetch('?url=audio/saveSelection', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'X-CSRF-TOKEN': csrfToken
+                },
+                body: JSON.stringify({ 
+                    tracks: selectedIds,
+                    csrf_token: csrfToken 
+                })
+            });
 
-        console.log('Réponse reçue:', response.status);
-        const data = await response.json();
-        console.log('Données reçues:', data);
+            console.log('Réponse reçue:', response.status);
+            
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error('Erreur détaillée:', errorData);
+                throw new Error(errorData.message || `Erreur HTTP: ${response.status}`);
+            }
 
-        if (data.success) {
-            console.log('Redirection vers le lecteur');
-            window.location.href = '?url=audio/player';
-        } else {
-            const errorMsg = data.message || 'Erreur lors de la sauvegarde de la sélection';
-            console.error('Erreur serveur:', errorMsg);
-            showMessage(errorMsg, true);
-            throw new Error(errorMsg);
+            const data = await response.json();
+            console.log('Données reçues:', data);
+
+            if (data.success) {
+                console.log('Redirection vers le lecteur');
+                window.location.href = '?url=audio/player';
+                return data;
+            } else {
+                throw new Error(data.message || 'Erreur lors de la sauvegarde de la sélection');
+            }
+        } catch (error) {
+            console.error('Erreur lors de la requête:', error);
+            showMessage(error.message, true);
+            throw error;
         }
     } catch (error) {
         console.error('Erreur complète:', error);
