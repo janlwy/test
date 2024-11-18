@@ -582,13 +582,32 @@ class AudioController extends BaseController implements IController
                         continue;
                     }
 
-                    $audioUserId = intval($audio->getUserId());
+                    if (!$audio) {
+                        error_log("Piste non trouvée - Track ID: $trackId");
+                        $errors[] = "Piste $trackId : non trouvée";
+                        continue;
+                    }
+
+                    $audioUserId = $audio->getUserId();
+                    if ($audioUserId === null) {
+                        error_log("ID utilisateur null pour la piste $trackId");
+                        $errors[] = "Piste $trackId : ID utilisateur manquant";
+                        continue;
+                    }
+
+                    $audioUserId = intval($audioUserId);
                     $userIdInt = intval($userId);
                     
                     error_log("Debug validation - Track ID: $trackId, Audio User ID: $audioUserId, Current User ID: $userIdInt");
                     
-                    if ($audioUserId <= 0 || $userIdInt <= 0) {
-                        error_log("IDs invalides - Audio User: $audioUserId, User: $userIdInt");
+                    if ($audioUserId <= 0) {
+                        error_log("ID audio invalide - Audio User: $audioUserId");
+                        $errors[] = "Piste $trackId : ID audio invalide";
+                        continue;
+                    }
+
+                    if ($userIdInt <= 0) {
+                        error_log("ID utilisateur invalide - User: $userIdInt");
                         $errors[] = "Piste $trackId : ID utilisateur invalide";
                         continue;
                     }
@@ -600,7 +619,7 @@ class AudioController extends BaseController implements IController
                         continue;
                     }
 
-                    error_log("Accès autorisé - IDs correspondent: $audioUserId === $userIdInt");
+                    error_log("Accès autorisé - Track: $trackId, Audio User: $audioUserId, User: $userIdInt");
                     $validTracks[] = $trackId;
                     error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
 
