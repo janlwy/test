@@ -28,13 +28,13 @@
 
                 <!-- Section pour afficher les boutons de contrôle -->
                 <div class="buttons-audio">
-                    <div class="prev-track" onclick="prevTrack()">
+                    <div class="prev-track">
                         <i class="material-icons md-36">skip_previous</i>
                     </div>
-                    <div class="playpause-track" onclick="playpauseTrack()">
+                    <div class="playpause-track">
                         <i class="material-icons md-48">play_circle</i>
                     </div>
-                    <div class="next-track" onclick="nextTrack()">
+                    <div class="next-track">
                         <i class="material-icons md-36">skip_next</i>
                     </div>
                 </div>

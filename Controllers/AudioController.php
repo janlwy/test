@@ -285,14 +285,12 @@ class AudioController extends BaseController implements IController
         }
 
         try {
-            $audios = $this->audioRepository->findAllByUser($userId);
-        
             if (empty($audios)) {
                 $_SESSION['erreur'] = "Aucune piste disponible pour l'utilisateur.";
                 header('Location: ?url=audio/list');
                 exit();
             }
-        
+
             // Préparer les données pour le lecteur
             $formattedAudios = array_map(function($audio) {
                 $audioPath = 'Ressources/audio/' . $audio->getPath();
@@ -304,8 +302,9 @@ class AudioController extends BaseController implements IController
                     'id' => $audio->getId(),
                     'title' => $audio->getTitle(),
                     'artist' => $audio->getArtist(),
-                    'path' => $audioPath,
-                    'image' => 'Ressources/images/pochettes/' . $audio->getImage()
+                    'fullPath' => $audioPath,
+                    'image' => 'Ressources/images/pochettes/' . $audio->getImage(),
+                    'fullImage' => 'Ressources/images/pochettes/' . $audio->getImage()
                 ];
             }, $audios);
 

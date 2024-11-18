@@ -55,7 +55,11 @@ function initializeAudioPlayer(tracks) {
     if (!player) {
         player = new AudioPlayer();
     }
-    player.initialize(tracks);
+    player.initialize(tracks.map(track => ({
+        ...track,
+        fullPath: track.fullPath || track.path,
+        fullImage: track.fullImage || track.image
+    })));
 }
 
 // Fonction pour ajouter les champs cachés au formulaire
