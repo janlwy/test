@@ -1,8 +1,7 @@
 <?php if (empty($audios)): ?>
     <div class="info-message">Aucune piste sélectionnée</div>
     <a href="?url=audio/list" class="btnBase theme">Retour à la liste</a>
-    <?php exit(); ?>
-<?php endif; ?>
+<?php else: ?>
 <section>
     <?php if (isset($_SESSION['message'])): ?>
         <div class="success-message">

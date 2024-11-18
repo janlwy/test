@@ -290,7 +290,9 @@ class AudioController extends BaseController implements IController
             }
             
             if (empty($audios)) {
-                $_SESSION['message'] = "";
+                $_SESSION['erreur'] = "Aucune piste sélectionnée ou pistes invalides";
+                header('Location: ?url=audio/list');
+                exit();
             }
             
             // Préparer les données complètes pour chaque audio

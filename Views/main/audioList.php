@@ -35,13 +35,12 @@
 
     <?php echo $audioList; ?>
 
-    <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
     <form id="selection-form" action="?url=audio/player" method="POST">
         <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-    <div class="button-container">
-        <button type="submit" class="btnBase orange">
-            <i class="material-icons">play_arrow</i> Lire la sélection
-        </button>
-    </div>
+        <div class="button-container">
+            <button type="submit" class="btnBase orange" id="play-selected">
+                <i class="material-icons">play_arrow</i> Lire la sélection
+            </button>
+        </div>
     </form>
 </section>
