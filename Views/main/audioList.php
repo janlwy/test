@@ -45,6 +45,13 @@
                     <button class="play-single btnBase vert" onclick="window.location='?url=audio/player&id=<?php echo $audio->getId(); ?>'">
                         <i class="material-icons">play_arrow</i>
                     </button>
+                    <a href="?url=audio/update/<?php echo $audio->getId(); ?>#form-add" class="btnBase orange">
+                        <i class="material-icons">edit</i>
+                    </a>
+                    <a href="?url=audio/delete/<?php echo $audio->getId(); ?>" class="btnBase rouge" 
+                       onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet audio ?');">
+                        <i class="material-icons">delete</i>
+                    </a>
                     <input type="checkbox" class="select-track" data-id="<?php echo $audio->getId(); ?>">
                 </div>
             </div>
