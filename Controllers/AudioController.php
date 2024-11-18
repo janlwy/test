@@ -501,55 +501,39 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
-        try {
-            $this->checkAuth();
-            
-            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-                throw new Exception('Méthode non autorisée');
-            }
-
-            // Vérifier le token CSRF
-            if (!isset($_POST['csrf_token']) || 
-                !hash_equals($this->session->get('csrf_token'), $_POST['csrf_token'])) {
-                throw new Exception('Token CSRF invalide');
-            }
-
-            // Récupérer les IDs des pistes sélectionnées
-            $selectedTracks = $_POST['tracks'] ?? [];
-            
-            // Debug plus détaillé
-            error_log("POST data reçue : " . print_r($_POST, true));
-            error_log("Pistes sélectionnées (brut) : " . print_r($selectedTracks, true));
-            
-            if (empty($selectedTracks)) {
-                throw new Exception('Aucune piste sélectionnée');
-            }
-
-            // Valider les IDs des pistes
-            $validTracks = [];
-            $userId = $_SESSION['user_id'] ?? null;
-            
-            foreach ($selectedTracks as $trackId) {
-                $audio = $this->audioRepository->findById((int)$trackId);
-                if ($audio && $audio->getUserId() == $userId) {
-                    $validTracks[] = (int)$trackId;
-                }
-            }
-
-            if (empty($validTracks)) {
-                throw new Exception('Aucune piste valide sélectionnée');
-            }
-
-            $_SESSION['selected_tracks'] = $validTracks;
-            $_SESSION['message'] = 'Sélection sauvegardée avec succès';
-            
-            header('Location: ?url=audio/player');
-            exit();
-            
-        } catch (Exception $e) {
-            $_SESSION['erreur'] = $e->getMessage();
+        $this->checkAuth();
+        
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $_SESSION['erreur'] = 'Méthode non autorisée';
             header('Location: ?url=audio/list');
             exit();
         }
+
+        $selectedTracks = $_POST['tracks'] ?? [];
+        if (empty($selectedTracks)) {
+            $_SESSION['erreur'] = 'Aucune piste sélectionnée';
+            header('Location: ?url=audio/list');
+            exit();
+        }
+
+        $userId = $_SESSION['user_id'];
+        $audios = [];
+        
+        foreach ($selectedTracks as $trackId) {
+            $audio = $this->audioRepository->findById((int)$trackId);
+            if ($audio && $audio->getUserId() == $userId) {
+                $audios[] = $audio;
+            }
+        }
+
+        if (empty($audios)) {
+            $_SESSION['erreur'] = 'Aucune piste valide sélectionnée';
+            header('Location: ?url=audio/list');
+            exit();
+        }
+
+        $_SESSION['selected_tracks'] = $selectedTracks;
+        header('Location: ?url=audio/player');
+        exit();
     }
 }
