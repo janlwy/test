@@ -1,32 +1,34 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Gestionnaire pour le formulaire de sélection
-    const form = document.getElementById('selection-form');
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+    const playlistForm = document.getElementById('playlist-form');
+    const playSelectedBtn = document.getElementById('play-selected');
+    
+    // Gérer la sélection des pistes
+    document.querySelectorAll('.select-track').forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const selectedCount = document.querySelectorAll('.select-track:checked').length;
+            playSelectedBtn.style.display = selectedCount > 0 ? 'block' : 'none';
             
-            // Récupérer les pistes sélectionnées
-            const selectedTracks = document.querySelectorAll('.select-audio:checked');
-            if (selectedTracks.length === 0) {
-                alert('Veuillez sélectionner au moins une piste audio.');
-                return;
+            // Mettre à jour le formulaire
+            if (selectedCount > 0) {
+                const selectedIds = Array.from(document.querySelectorAll('.select-track:checked'))
+                    .map(cb => cb.dataset.id);
+                
+                // Supprimer les anciens inputs
+                playlistForm.querySelectorAll('input[name="ids[]"]').forEach(input => input.remove());
+                
+                // Ajouter les nouveaux inputs
+                selectedIds.forEach(id => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'ids[]';
+                    input.value = id;
+                    playlistForm.appendChild(input);
+                });
             }
-
-            // Ajouter les pistes sélectionnées au formulaire
-            selectedTracks.forEach(checkbox => {
-                const input = document.createElement('input');
-                input.type = 'hidden';
-                input.name = 'tracks[]';
-                input.value = checkbox.getAttribute('data-audio-id');
-                form.appendChild(input);
-            });
-
-            // Soumettre le formulaire
-            form.submit();
         });
-    }
+    });
 
     setTimeout(() => {
         const audioData = document.getElementById('audioData');

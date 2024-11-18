@@ -33,14 +33,28 @@
         </a>
     </div>
 
-    <?php echo $audioList; ?>
+    <div class="audio-grid">
+        <?php foreach ($audios as $audio): ?>
+            <div class="audio-item" data-audio-id="<?php echo $audio->getId(); ?>">
+                <img src="<?php echo $audio->getFullImagePath(); ?>" alt="Pochette" class="audio-cover">
+                <div class="audio-info">
+                    <h4><?php echo htmlspecialchars($audio->getTitle()); ?></h4>
+                    <p><?php echo htmlspecialchars($audio->getArtist()); ?></p>
+                </div>
+                <div class="audio-controls">
+                    <button class="play-single btnBase vert" onclick="window.location='?url=audio/player&id=<?php echo $audio->getId(); ?>'">
+                        <i class="material-icons">play_arrow</i>
+                    </button>
+                    <input type="checkbox" class="select-track" data-id="<?php echo $audio->getId(); ?>">
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-    <form id="selection-form" action="?url=audio/saveSelection" method="POST">
-        <input type="hidden" name="csrf_token" value="<?php echo $session->get('csrf_token'); ?>">
-        <div class="button-container">
-            <button type="submit" class="btnBase orange" id="play-selected">
-                <i class="material-icons">play_arrow</i> Lire la sélection
-            </button>
-        </div>
+    <form id="playlist-form" action="?url=audio/player" method="GET" class="playlist-controls">
+        <input type="hidden" name="url" value="audio/player">
+        <button type="submit" class="btnBase orange" id="play-selected" style="display: none;">
+            <i class="material-icons">playlist_play</i> Lire la sélection
+        </button>
     </form>
 </section>

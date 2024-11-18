@@ -250,11 +250,6 @@ class AudioController extends BaseController implements IController
 
     public function player() {
         $this->checkAuth();
-        
-        if (!defined('ROOT_PATH')) {
-            define('ROOT_PATH', true);
-        }
-        
         $userId = $_SESSION['user_id'] ?? null;
         
         if ($userId === null) {
@@ -263,13 +258,22 @@ class AudioController extends BaseController implements IController
             exit();
         }
 
-        $selectedTracks = $_SESSION['selected_tracks'] ?? [];
+        // Récupérer soit un ID unique soit un tableau d'IDs
+        $singleId = $_GET['id'] ?? null;
+        $multipleIds = $_GET['ids'] ?? [];
+        
         $audios = [];
         
-        if (!empty($selectedTracks)) {
-            // Récupérer uniquement les pistes sélectionnées
-            foreach ($selectedTracks as $trackId) {
-                $audio = $this->audioRepository->findById($trackId);
+        if ($singleId !== null) {
+            // Lecture d'une seule piste
+            $audio = $this->audioRepository->findById($singleId);
+            if ($audio && $audio->getUserId() == $userId) {
+                $audios[] = $audio;
+            }
+        } elseif (!empty($multipleIds)) {
+            // Lecture d'une playlist
+            foreach ($multipleIds as $id) {
+                $audio = $this->audioRepository->findById($id);
                 if ($audio && $audio->getUserId() == $userId) {
                     $audios[] = $audio;
                 }
