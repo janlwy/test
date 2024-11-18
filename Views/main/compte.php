@@ -4,9 +4,7 @@
 
     <button type="button" class="collapsible">Audio</button>
     <div class="contentCollapse">
-        <button type="button" class="btnBase theme" id="form-add">
-            <i class="iconColor material-icons md-36">library_add</i>
-            <span class="spanIconText">Ajouter</span>
+        <button type="button" class="btnBase invisible" id="form-add">
         </button>
         <form id="formCrud" class="formFont" method="POST" action="<?php echo $formAction ?? '?url=audio/create'; ?>" enctype="multipart/form-data">
             <div class="rowEspace">
@@ -14,7 +12,7 @@
                     <label for="title">Titre</label>
                 </div>
                 <div class="colinput">
-                    <input type="text" name="title" id="title" class="inputMonEspace" 
+                    <input type="text" name="title" id="title" class="inputMonEspace"
                         value="<?php echo isset($audio) ? html_entity_decode($audio->getTitle(), ENT_QUOTES, 'UTF-8') : ''; ?>"
                         <?php if (!isset($audio)): ?>required<?php endif; ?>
                         pattern="[A-Za-zÀ-ÿ0-9\s\-_\.']{2,100}"
@@ -41,8 +39,8 @@
                 </div>
                 <div class="colinput">
                     <?php if (isset($audio)): ?>
-                        <img src="Ressources/images/pochettes/<?php echo htmlspecialchars($audio->getImage()); ?>" 
-                             alt="Pochette actuelle" style="max-width: 100px; margin-bottom: 10px;"><br>
+                        <img src="Ressources/images/pochettes/<?php echo htmlspecialchars($audio->getImage()); ?>"
+                            alt="Pochette actuelle" style="max-width: 100px; margin-bottom: 10px;"><br>
                     <?php endif; ?>
                     <input type="file" name="image" id="image" class="inputMonEspace"
                         <?php echo !isset($audio) ? 'required' : ''; ?>

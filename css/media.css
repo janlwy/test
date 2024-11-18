@@ -129,7 +129,7 @@ i { /* Change le curseur de la souris en pointeur au survol */
     justify-content: center;
 }
 /* couleur de fond des boutons + hover */
-.vert {background-color: #008000;}.vert:hover {background-color: #46a049;}.blue {background-color: #2b2bff;}.blue:hover {background: #628fb4;}.orange {background-color: #ffa500;}.orange:hover {background: #9e763a;}.rouge {background-color: #ff0000;}.rouge:hover {background: #96413b;}.gris{background-color: #808080;color: #000000;}.gris:hover {background: #a8a4a4;}.theme {background-color: var(--btntheme);}.invisible {background-color: var(--collapsForm);}
+.vert {background-color: #008000;}.vert:hover {background-color: #46a049;}.blue {background-color: #2b2bff;}.blue:hover {background: #628fb4;}.orange {background-color: #ffa500;}.orange:hover {background: #9e763a;}.rouge {background-color: #ff0000;}.rouge:hover {background: #96413b;}.gris{background-color: #808080;color: #000000;}.gris:hover {background: #a8a4a4;}.theme {background-color: var(--btntheme);}.invisible {background-color: var(--collapsForm); outline: none;}
 
 .boutonTheme {
     cursor: pointer;
