@@ -520,6 +520,9 @@ class AudioController extends BaseController implements IController
                 throw new Exception('Aucune piste sélectionnée');
             }
 
+            // Debug log
+            error_log("Pistes sélectionnées : " . print_r($selectedTracks, true));
+
             // Valider les IDs des pistes
             $validTracks = [];
             $userId = $_SESSION['user_id'] ?? null;

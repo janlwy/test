@@ -97,10 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Bouton de lecture trouvé');
         const form = document.getElementById('selection-form');
         form.addEventListener('submit', (e) => {
+            e.preventDefault(); // Empêcher la soumission par défaut
+            
             if (!addSelectedTracksToForm()) {
-                e.preventDefault();
                 showMessage('Veuillez sélectionner au moins une piste audio.', true);
+                return;
             }
+            
+            // Soumettre le formulaire
+            form.submit();
         });
     } else {
         console.error('Bouton de lecture non trouvé');
