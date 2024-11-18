@@ -39,7 +39,13 @@ function initializeAudioPlayer(tracks) {
 // Fonction pour ajouter les champs cachés au formulaire
 function addSelectedTracksToForm() {
     const form = document.getElementById('selection-form');
+    if (!form) {
+        console.error('Formulaire de sélection non trouvé');
+        return false;
+    }
+
     const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    console.log('Checkboxes sélectionnées:', selectedCheckboxes.length);
     
     // Supprimer les anciens champs cachés s'il y en a
     const oldInputs = form.querySelectorAll('input[name="tracks[]"]');
@@ -47,14 +53,19 @@ function addSelectedTracksToForm() {
     
     // Ajouter les nouveaux champs cachés
     selectedCheckboxes.forEach(checkbox => {
+        const audioId = checkbox.getAttribute('data-audio-id');
+        console.log('Ajout de la piste:', audioId);
+        
         const input = document.createElement('input');
         input.type = 'hidden';
         input.name = 'tracks[]';
-        input.value = checkbox.getAttribute('data-audio-id');
+        input.value = audioId;
         form.appendChild(input);
     });
     
-    return selectedCheckboxes.length > 0;
+    const hasSelectedTracks = selectedCheckboxes.length > 0;
+    console.log('Nombre total de pistes sélectionnées:', selectedCheckboxes.length);
+    return hasSelectedTracks;
 }
 
 function showMessage(message, isError = false) {
@@ -99,9 +110,18 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', (e) => {
             e.preventDefault(); // Empêcher la soumission par défaut
             
-            if (!addSelectedTracksToForm()) {
+            const hasSelectedTracks = addSelectedTracksToForm();
+            console.log('Pistes sélectionnées:', hasSelectedTracks);
+            
+            if (!hasSelectedTracks) {
                 showMessage('Veuillez sélectionner au moins une piste audio.', true);
                 return;
+            }
+            
+            // Debug des données du formulaire avant soumission
+            const formData = new FormData(form);
+            for (let pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
             }
             
             // Soumettre le formulaire

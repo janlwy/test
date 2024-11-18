@@ -516,12 +516,14 @@ class AudioController extends BaseController implements IController
 
             // Récupérer les IDs des pistes sélectionnées
             $selectedTracks = $_POST['tracks'] ?? [];
+            
+            // Debug plus détaillé
+            error_log("POST data reçue : " . print_r($_POST, true));
+            error_log("Pistes sélectionnées (brut) : " . print_r($selectedTracks, true));
+            
             if (empty($selectedTracks)) {
                 throw new Exception('Aucune piste sélectionnée');
             }
-
-            // Debug log
-            error_log("Pistes sélectionnées : " . print_r($selectedTracks, true));
 
             // Valider les IDs des pistes
             $validTracks = [];
