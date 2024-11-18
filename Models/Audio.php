@@ -75,11 +75,19 @@ class Audio extends AbstractModel
 
     public function getUserId(): ?int
     {
-        if ($this->user_id === null || $this->user_id === '') {
+        // Validation plus stricte de l'ID utilisateur
+        if ($this->user_id === null || $this->user_id === '' || $this->user_id === 0) {
+            error_log("getUserId: ID utilisateur invalide - Valeur brute: " . var_export($this->user_id, true));
             return null;
         }
+        
         $userId = intval($this->user_id);
-        return $userId > 0 ? $userId : null;
+        if ($userId <= 0) {
+            error_log("getUserId: ID utilisateur invalide après conversion - Valeur: $userId");
+            return null;
+        }
+        
+        return $userId;
     }
 
     public function save()

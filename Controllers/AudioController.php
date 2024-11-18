@@ -589,30 +589,34 @@ class AudioController extends BaseController implements IController
                     }
 
                     $audioUserId = $audio->getUserId();
-                    if ($audioUserId === null) {
-                        error_log("ID utilisateur null pour la piste $trackId");
-                        $errors[] = "Piste $trackId : ID utilisateur manquant";
+                    $userIdInt = intval($userId);
+                    
+                    error_log("Debug validation - Track ID: $trackId, Audio User ID: " . var_export($audioUserId, true) . ", Current User ID: $userIdInt");
+                    
+                    // Vérification plus stricte de l'ID utilisateur
+                    if ($audioUserId === null || $audioUserId === 0 || $audioUserId === '') {
+                        error_log("ID utilisateur invalide pour la piste $trackId - Audio User ID: " . var_export($audioUserId, true));
+                        $errors[] = "Piste $trackId : ID utilisateur invalide ou manquant";
                         continue;
                     }
 
+                    // Conversion explicite en entier
                     $audioUserId = intval($audioUserId);
-                    $userIdInt = intval($userId);
-                    
-                    error_log("Debug validation - Track ID: $trackId, Audio User ID: $audioUserId, Current User ID: $userIdInt");
                     
                     if ($audioUserId <= 0) {
-                        error_log("ID audio invalide - Audio User: $audioUserId");
+                        error_log("ID audio invalide après conversion - Audio User: $audioUserId");
                         $errors[] = "Piste $trackId : ID audio invalide";
                         continue;
                     }
 
                     if ($userIdInt <= 0) {
-                        error_log("ID utilisateur invalide - User: $userIdInt");
-                        $errors[] = "Piste $trackId : ID utilisateur invalide";
+                        error_log("ID utilisateur de session invalide - User: $userIdInt");
+                        $errors[] = "Piste $trackId : ID utilisateur de session invalide";
                         continue;
                     }
 
                     if ($audioUserId !== $userIdInt) {
+                        error_log("Non-correspondance des IDs - Audio User: $audioUserId (type: " . gettype($audioUserId) . "), Session User: $userIdInt (type: " . gettype($userIdInt) . ")");
                         error_log("Non-correspondance - Audio User: $audioUserId, User: $userIdInt");
                         error_log("Types des IDs - Audio User: " . gettype($audioUserId) . ", User: " . gettype($userIdInt));
                         $errors[] = "Piste $trackId : accès non autorisé";
