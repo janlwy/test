@@ -23,13 +23,6 @@ if (!defined('ROOT_PATH')) {
     <div id="audioData" style="display: none;" 
          data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
          data-autoplay="true"
-         data-resume="<?php echo htmlspecialchars($session->get('resume_playback', 'true')); ?>"
-         data-player-state='<?php echo htmlspecialchars(json_encode([
-            'currentTrack' => $session->get('current_track_index', 0),
-            'isPlaying' => $session->get('is_playing', false),
-            'volume' => $session->get('player_volume', 1),
-            'lastPosition' => $session->get('last_position', 0)
-         ]), ENT_QUOTES, 'UTF-8'); ?>'
          data-audios='<?php 
             $audioData = array_map(function ($audio) {
                 $audioPath = $audio->getPath();

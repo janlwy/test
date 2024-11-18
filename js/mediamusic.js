@@ -290,14 +290,17 @@ class AudioPlayer {
             return;
         }
 
-        // Récupérer l'état du lecteur
-        const audioData = document.getElementById('audioData');
-        let playerState = {};
-        try {
-            playerState = JSON.parse(audioData?.dataset.playerState || '{}');
-        } catch (e) {
-            console.warn('Erreur lors de la lecture de l\'état du lecteur:', e);
+        this.tracks = tracks;
+        this.currentIndex = 0;
+        this.isPlaying = false;
+
+        // Initialiser le volume
+        if (this.elements.volumeSlider) {
+            this.audio.volume = this.elements.volumeSlider.value / 100;
         }
+
+        // Charger la première piste
+        this.loadTrack(0);
         
         // Réinitialiser les éléments pour s'assurer qu'ils sont à jour
         this.initializeElements();
@@ -336,23 +339,33 @@ class AudioPlayer {
     }
 
     loadTrack(index) {
-        const track = this.tracks[index];
-        if (!track?.fullPath) {
-            console.error('Piste invalide:', track);
-            return;
-        }
+        try {
+            const track = this.tracks[index];
+            if (!track?.fullPath) {
+                throw new Error('Piste invalide ou chemin manquant');
+            }
 
-        this.currentIndex = index;
-        this.audio.src = track.fullPath;
-        
-        // Restaurer la dernière position si disponible
-        const audioData = document.getElementById('audioData');
-        const playerState = JSON.parse(audioData?.dataset.playerState || '{}');
-        if (playerState.lastPosition && index === playerState.currentTrack) {
-            this.audio.currentTime = playerState.lastPosition;
+            // Réinitialiser l'audio
+            this.audio.pause();
+            this.isPlaying = false;
+            
+            // Mettre à jour l'index et la source
+            this.currentIndex = index;
+            this.audio.src = track.fullPath;
+            
+            // Charger et préparer l'audio
+            this.audio.load();
+            this.updateInterface(track, index);
+
+            // Lecture automatique si nécessaire
+            const audioData = document.getElementById('audioData');
+            if (audioData?.dataset.autoplay === 'true') {
+                this.playTrack();
+            }
+        } catch (error) {
+            console.error('Erreur de chargement:', error);
+            showMessage('Erreur lors du chargement de la piste: ' + error.message, true);
         }
-        
-        this.audio.load();
 
         console.log('Chargement de la piste:', {
             index: index,
@@ -398,40 +411,30 @@ class AudioPlayer {
     }
 
     async playTrack() {
-        try {
-            console.log('Tentative de lecture de:', this.audio.src);
-            
-            // Vérifier si le fichier existe avant la lecture
-            const response = await fetch(this.audio.src);
-            if (!response.ok) {
-                throw new Error(`Fichier non trouvé ou inaccessible (${response.status})`);
-            }
-            
-            // Vérifier le type MIME de la réponse
-            const contentType = response.headers.get('content-type');
-            console.log('Type MIME détecté:', contentType);
-            
-            if (!contentType || !contentType.includes('audio/')) {
-                throw new Error(`Type de fichier non supporté: ${contentType}`);
-            }
+        if (!this.audio.src) {
+            showMessage('Aucune piste sélectionnée', true);
+            return;
+        }
 
+        try {
             await this.audio.play();
             this.isPlaying = true;
             this.elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
             
+            // Sauvegarder l'état de lecture
+            const state = {
+                currentTrack: this.currentIndex,
+                isPlaying: true,
+                volume: this.audio.volume,
+                position: this.audio.currentTime
+            };
+            localStorage.setItem('audioPlayerState', JSON.stringify(state));
+            
         } catch (error) {
             console.error('Erreur de lecture:', error);
-            this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
             this.isPlaying = false;
-            
-            // Afficher l'erreur à l'utilisateur
-            const errorMessage = document.createElement('div');
-            errorMessage.className = 'error-message';
-            errorMessage.textContent = `Erreur de lecture: ${error.message}`;
-            this.elements.trackName.parentNode.insertBefore(errorMessage, this.elements.trackName.nextSibling);
-            
-            // Retirer le message d'erreur après 5 secondes
-            setTimeout(() => errorMessage.remove(), 5000);
+            this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+            showMessage('Erreur de lecture: ' + error.message, true);
         }
     }
 
