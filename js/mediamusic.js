@@ -66,7 +66,7 @@ function addSelectedTracksToForm() {
         return false;
     }
 
-    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    const selectedCheckboxes = document.querySelectorAll('.select-track:checked');
     console.log('Checkboxes sélectionnées:', selectedCheckboxes.length);
     
     // Supprimer les anciens champs cachés s'il y en a
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM chargé, initialisation...');
 
     // Gestionnaire pour les checkboxes
-    const checkboxes = document.querySelectorAll('.select-audio');
+    const checkboxes = document.querySelectorAll('.select-track');
     console.log('Nombre de checkboxes trouvées:', checkboxes.length);
     
     checkboxes.forEach(checkbox => {
@@ -116,6 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     audioItem.classList.remove('selected');
                 }
+            }
+            
+            // Mettre à jour l'affichage du bouton de lecture
+            const selectedCount = document.querySelectorAll('.select-track:checked').length;
+            const playSelectedBtn = document.getElementById('play-selected');
+            if (playSelectedBtn) {
+                playSelectedBtn.style.display = selectedCount > 0 ? 'block' : 'none';
             }
         });
 
