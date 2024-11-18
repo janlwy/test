@@ -36,91 +36,26 @@ function initializeAudioPlayer(tracks) {
     player.initialize(tracks);
 }
 
-// Fonction pour sauvegarder et jouer les pistes sélectionnées
-async function saveAndPlaySelectedTracks() {
-    try {
-        console.log('Fonction saveAndPlaySelectedTracks appelée');
-        
-        const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
-        console.log('Nombre de pistes sélectionnées:', selectedCheckboxes.length);
-        
-        if (selectedCheckboxes.length === 0) {
-            showMessage('Veuillez sélectionner au moins une piste audio.', true);
-            return;
-        }
-
-        const selectedIds = Array.from(selectedCheckboxes).map(checkbox => {
-            const rawId = checkbox.getAttribute('data-audio-id');
-            console.log('ID brut extrait:', rawId);
-            const id = parseInt(rawId);
-            
-            if (!id || isNaN(id)) {
-                console.warn('ID invalide détecté:', rawId);
-                return null;
-            }
-            
-            console.log('ID validé:', id);
-            return id;
-        }).filter(id => id !== null);
-
-        const audioListData = document.getElementById('audioList-data');
-        if (!audioListData) {
-            throw new Error('Élément audioList-data non trouvé');
-        }
-        const csrfToken = audioListData.dataset.csrfToken;
-        if (!csrfToken) {
-            throw new Error('Token CSRF non trouvé dans les données audio');
-        }
-        console.log('Token CSRF trouvé:', csrfToken);
-
-        if (selectedIds.length === 0) {
-            throw new Error('IDs de pistes invalides');
-        }
-
-        console.log('Envoi de la requête avec les pistes:', selectedIds);
-        
-        try {
-            const response = await fetch('?url=audio/saveSelection', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-Requested-With': 'XMLHttpRequest',
-                    'X-CSRF-TOKEN': csrfToken
-                },
-                body: JSON.stringify({ 
-                    tracks: selectedIds,
-                    csrf_token: csrfToken 
-                })
-            });
-
-            console.log('Réponse reçue:', response.status);
-            
-            if (!response.ok) {
-                const errorData = await response.json();
-                console.error('Erreur détaillée:', errorData);
-                throw new Error(errorData.message || `Erreur HTTP: ${response.status}`);
-            }
-
-            const data = await response.json();
-            console.log('Données reçues:', data);
-
-            if (data.success) {
-                console.log('Redirection vers le lecteur');
-                window.location.href = '?url=audio/player';
-                return data;
-            } else {
-                throw new Error(data.message || 'Erreur lors de la sauvegarde de la sélection');
-            }
-        } catch (error) {
-            console.error('Erreur lors de la requête:', error);
-            showMessage(error.message, true);
-            throw error;
-        }
-    } catch (error) {
-        console.error('Erreur complète:', error);
-        showMessage('Erreur lors de la sauvegarde de la sélection: ' + error.message, true);
-        }
-    }
+// Fonction pour ajouter les champs cachés au formulaire
+function addSelectedTracksToForm() {
+    const form = document.getElementById('selection-form');
+    const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
+    
+    // Supprimer les anciens champs cachés s'il y en a
+    const oldInputs = form.querySelectorAll('input[name="tracks[]"]');
+    oldInputs.forEach(input => input.remove());
+    
+    // Ajouter les nouveaux champs cachés
+    selectedCheckboxes.forEach(checkbox => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = 'tracks[]';
+        input.value = checkbox.getAttribute('data-audio-id');
+        form.appendChild(input);
+    });
+    
+    return selectedCheckboxes.length > 0;
+}
 
 function showMessage(message, isError = false) {
     const messageDiv = document.createElement('div');
@@ -160,28 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const playSelectedButton = document.getElementById('play-selected');
     if (playSelectedButton) {
         console.log('Bouton de lecture trouvé');
-        playSelectedButton.addEventListener('click', async (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Bouton de lecture cliqué');
-            
-            const selectedCheckboxes = document.querySelectorAll('.select-audio:checked');
-            console.log('Checkboxes sélectionnées:', selectedCheckboxes.length);
-            
-            if (selectedCheckboxes.length === 0) {
+        const form = document.getElementById('selection-form');
+        form.addEventListener('submit', (e) => {
+            if (!addSelectedTracksToForm()) {
+                e.preventDefault();
                 showMessage('Veuillez sélectionner au moins une piste audio.', true);
-                return;
-            }
-            
-            try {
-                const result = await saveAndPlaySelectedTracks();
-                console.log('Résultat saveAndPlaySelectedTracks:', result);
-                if (result && result.success) {
-                    window.location.href = '?url=audio/player';
-                }
-            } catch (error) {
-                console.error('Erreur lors de la lecture:', error);
-                showMessage('Erreur lors de la lecture: ' + error.message, true);
             }
         });
     } else {

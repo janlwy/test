@@ -501,167 +501,49 @@ class AudioController extends BaseController implements IController
         }
     }
     public function saveSelection() {
-        // Désactiver l'affichage des erreurs PHP
-        ini_set('display_errors', '0');
-        error_reporting(0);
-        
-        // Définir les en-têtes avant toute sortie
-        header('Content-Type: application/json; charset=utf-8');
-        header_remove('X-Powered-By');
-        
         try {
             $this->checkAuth();
             
             if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
                 throw new Exception('Méthode non autorisée');
             }
-            
-            // Vérifier le Content-Type de la requête
-            if (!isset($_SERVER['CONTENT_TYPE']) || 
-                strpos($_SERVER['CONTENT_TYPE'], 'application/json') === false) {
-                throw new Exception('Content-Type doit être application/json');
-            }
-
-            // Récupérer et vérifier les données
-            $rawData = file_get_contents('php://input');
-            if ($rawData === false) {
-                throw new Exception('Impossible de lire les données de la requête');
-            }
-            
-            $data = json_decode($rawData, true);
-            if (json_last_error() !== JSON_ERROR_NONE) {
-                throw new Exception('Données JSON invalides: ' . json_last_error_msg());
-            }
-            
-            error_log("Données reçues: " . print_r($data, true));
-            
-            if (!isset($data['tracks']) || !is_array($data['tracks']) || !isset($data['csrf_token'])) {
-                throw new Exception('Données invalides ou manquantes');
-            }
-            
-            if (empty($data['tracks'])) {
-                throw new Exception('Aucune piste sélectionnée');
-            }
 
             // Vérifier le token CSRF
-            if (!hash_equals($this->session->get('csrf_token'), $data['csrf_token'])) {
+            if (!isset($_POST['csrf_token']) || 
+                !hash_equals($this->session->get('csrf_token'), $_POST['csrf_token'])) {
                 throw new Exception('Token CSRF invalide');
             }
 
+            // Récupérer les IDs des pistes sélectionnées
+            $selectedTracks = $_POST['tracks'] ?? [];
+            if (empty($selectedTracks)) {
+                throw new Exception('Aucune piste sélectionnée');
+            }
+
             // Valider les IDs des pistes
-            $tracks = array_filter($data['tracks'], function($id) {
-                return is_numeric($id) && $id > 0;
-            });
-            
-            if (empty($tracks)) {
-                throw new Exception('Aucune piste valide sélectionnée');
-            }
-
-            // Vérifier que les pistes appartiennent à l'utilisateur
-            $userId = $_SESSION['user_id'] ?? null;
-            if (!$userId) {
-                throw new Exception('Utilisateur non identifié');
-            }
-
-            error_log("Début de la validation des pistes. Tracks reçus: " . print_r($tracks, true));
-            error_log("User ID actuel: " . $userId);
-
             $validTracks = [];
-            $errors = [];
-            foreach ($tracks as $trackId) {
-                $trackId = intval($trackId);
-                error_log("Traitement de la piste ID: " . $trackId);
-                
-                try {
-                    $audio = $this->audioRepository->findById($trackId);
-                    if (!$audio) {
-                        $errors[] = "Piste $trackId non trouvée";
-                        error_log("Piste non trouvée: " . $trackId);
-                        continue;
-                    }
-
-                    if (!$audio) {
-                        error_log("Piste non trouvée - Track ID: $trackId");
-                        $errors[] = "Piste $trackId : non trouvée";
-                        continue;
-                    }
-
-                    $audioUserId = $audio->getUserId();
-                    $userIdInt = intval($userId);
-                    
-                    error_log("Debug validation - Track ID: $trackId, Audio User ID: " . var_export($audioUserId, true) . ", Current User ID: $userIdInt");
-                    
-                    // Vérification plus stricte de l'ID utilisateur
-                    if ($audioUserId === null || $audioUserId === 0 || $audioUserId === '') {
-                        error_log("ID utilisateur invalide pour la piste $trackId - Audio User ID: " . var_export($audioUserId, true));
-                        $errors[] = "Piste $trackId : ID utilisateur invalide ou manquant";
-                        continue;
-                    }
-
-                    // Conversion explicite en entier
-                    $audioUserId = intval($audioUserId);
-                    
-                    if ($audioUserId <= 0) {
-                        error_log("ID audio invalide après conversion - Audio User: $audioUserId");
-                        $errors[] = "Piste $trackId : ID audio invalide";
-                        continue;
-                    }
-
-                    if ($userIdInt <= 0) {
-                        error_log("ID utilisateur de session invalide - User: $userIdInt");
-                        $errors[] = "Piste $trackId : ID utilisateur de session invalide";
-                        continue;
-                    }
-
-                    if ($audioUserId !== $userIdInt) {
-                        error_log("Non-correspondance des IDs - Audio User: $audioUserId (type: " . gettype($audioUserId) . "), Session User: $userIdInt (type: " . gettype($userIdInt) . ")");
-                        error_log("Non-correspondance - Audio User: $audioUserId, User: $userIdInt");
-                        error_log("Types des IDs - Audio User: " . gettype($audioUserId) . ", User: " . gettype($userIdInt));
-                        $errors[] = "Piste $trackId : accès non autorisé";
-                        continue;
-                    }
-
-                    error_log("Accès autorisé - Track: $trackId, Audio User: $audioUserId, User: $userIdInt");
-                    $validTracks[] = $trackId;
-                    error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
-
-                } catch (Exception $e) {
-                    error_log("Erreur lors du traitement de la piste " . $trackId . ": " . $e->getMessage());
-                    $errors[] = "Erreur lors du traitement de la piste $trackId";
-                    continue;
+            $userId = $_SESSION['user_id'] ?? null;
+            
+            foreach ($selectedTracks as $trackId) {
+                $audio = $this->audioRepository->findById((int)$trackId);
+                if ($audio && $audio->getUserId() == $userId) {
+                    $validTracks[] = (int)$trackId;
                 }
             }
 
-            error_log("Pistes valides après vérification: " . print_r($validTracks, true));
-            
             if (empty($validTracks)) {
-                $errorMessage = !empty($errors) 
-                    ? "Erreurs : " . implode(", ", $errors)
-                    : "Aucune piste valide trouvée parmi les pistes sélectionnées";
-                error_log($errorMessage);
-                throw new Exception($errorMessage);
+                throw new Exception('Aucune piste valide sélectionnée');
             }
-            
+
             $_SESSION['selected_tracks'] = $validTracks;
+            $_SESSION['message'] = 'Sélection sauvegardée avec succès';
             
-            $response = [
-                'success' => true,
-                'count' => count($validTracks),
-                'message' => 'Sélection sauvegardée avec succès'
-            ];
-            
-            http_response_code(200);
-            echo json_encode($response);
+            header('Location: ?url=audio/player');
             exit();
             
         } catch (Exception $e) {
-            error_log("Erreur dans saveSelection: " . $e->getMessage());
-            
-            http_response_code(400);
-            echo json_encode([
-                'success' => false,
-                'message' => $e->getMessage()
-            ]);
+            $_SESSION['erreur'] = $e->getMessage();
+            header('Location: ?url=audio/list');
             exit();
         }
     }
