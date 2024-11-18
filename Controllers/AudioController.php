@@ -582,8 +582,8 @@ class AudioController extends BaseController implements IController
                         continue;
                     }
 
-                    $audioUserId = (int)$audio->getUserId();
-                    $userIdInt = (int)$userId;
+                    $audioUserId = intval($audio->getUserId());
+                    $userIdInt = intval($userId);
                     
                     error_log("Debug validation - Track ID: $trackId, Audio User ID: $audioUserId, Current User ID: $userIdInt");
                     
@@ -595,11 +595,12 @@ class AudioController extends BaseController implements IController
 
                     if ($audioUserId !== $userIdInt) {
                         error_log("Non-correspondance - Audio User: $audioUserId, User: $userIdInt");
+                        error_log("Types des IDs - Audio User: " . gettype($audioUserId) . ", User: " . gettype($userIdInt));
                         $errors[] = "Piste $trackId : accès non autorisé";
                         continue;
                     }
 
-                    error_log("Accès autorisé - IDs correspondent: $audioUserIdInt === $userIdInt");
+                    error_log("Accès autorisé - IDs correspondent: $audioUserId === $userIdInt");
                     $validTracks[] = $trackId;
                     error_log("Piste $trackId validée - IDs correspondent: $audioUserIdInt === $userIdInt");
 

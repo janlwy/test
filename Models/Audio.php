@@ -75,7 +75,7 @@ class Audio extends AbstractModel
 
     public function getUserId(): ?int
     {
-        return $this->user_id ? (int)$this->user_id : null;
+        return $this->user_id !== null ? intval($this->user_id) : null;
     }
 
     public function save()
