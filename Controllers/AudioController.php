@@ -251,10 +251,6 @@ class AudioController extends BaseController implements IController
     public function player() {
         $this->checkAuth();
         
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $this->checkCSRF();
-        }
-        
         if (!defined('ROOT_PATH')) {
             define('ROOT_PATH', true);
         }

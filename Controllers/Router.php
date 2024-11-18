@@ -37,11 +37,14 @@ class Router
         // Liste des actions qui nécessitent une vérification CSRF
         $csrfProtectedActions = ['create', 'update', 'delete', 'save'];
         
+        // Liste des actions exemptées de vérification CSRF
+        $csrfExemptActions = ['player', 'list'];
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $currentAction = $actionName ?? '';
             
             // Vérifier si l'action nécessite une protection CSRF
-            if (in_array($currentAction, $csrfProtectedActions)) {
+            if (in_array($currentAction, $csrfProtectedActions) && !in_array($currentAction, $csrfExemptActions)) {
                 // Pour les requêtes AJAX
                 if ($isAjax) {
                     if (!$session->validateToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
