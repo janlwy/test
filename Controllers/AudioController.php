@@ -261,6 +261,7 @@ class AudioController extends BaseController implements IController
         // Récupérer soit un ID unique soit un tableau d'IDs
         $singleId = $_GET['id'] ?? null;
         $multipleIds = $_GET['ids'] ?? [];
+        $selectedTracks = $_SESSION['selected_tracks'] ?? [];
         
         $audios = [];
         
@@ -278,6 +279,9 @@ class AudioController extends BaseController implements IController
                     $audios[] = $audio;
                 }
             }
+        } else {
+            // Si aucune piste n'est spécifiée, charger toutes les pistes de l'utilisateur
+            $audios = $this->audioRepository->findAllByUser($userId);
         }
 
         try {
