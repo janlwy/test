@@ -61,10 +61,18 @@
                                 'path' => $audio->getPath(),
                                 'fullPath' => 'Ressources/audio/' . $audio->getPath(),
                                 'image' => $audio->getImage(),
-                                'fullImage' => 'Ressources/images/pochettes/' . $audio->getImage()
+                                'fullImage' => 'Ressources/images/pochettes/' . $audio->getImage(),
+                                'duration' => 0,
+                                'lastPosition' => 0
                             ];
                         }, $audios)), ENT_QUOTES, 'UTF-8'); ?>'
         data-user-id="<?php echo htmlspecialchars($_SESSION['user_id']); ?>"
+        data-player-state='<?php echo htmlspecialchars(json_encode([
+            'currentTrack' => $session->get('current_track_index', 0),
+            'isPlaying' => $session->get('is_playing', false),
+            'volume' => $session->get('player_volume', 1),
+            'selectedTracks' => $session->get('selected_tracks', [])
+        ]), ENT_QUOTES, 'UTF-8'); ?>'
         style="display: none;">
     </div>
     <div class="button-container">

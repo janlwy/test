@@ -289,6 +289,15 @@ class AudioPlayer {
             console.warn('Aucune piste à initialiser');
             return;
         }
+
+        // Récupérer l'état du lecteur
+        const audioData = document.getElementById('audioData');
+        let playerState = {};
+        try {
+            playerState = JSON.parse(audioData?.dataset.playerState || '{}');
+        } catch (e) {
+            console.warn('Erreur lors de la lecture de l\'état du lecteur:', e);
+        }
         
         // Réinitialiser les éléments pour s'assurer qu'ils sont à jour
         this.initializeElements();
@@ -335,6 +344,14 @@ class AudioPlayer {
 
         this.currentIndex = index;
         this.audio.src = track.fullPath;
+        
+        // Restaurer la dernière position si disponible
+        const audioData = document.getElementById('audioData');
+        const playerState = JSON.parse(audioData?.dataset.playerState || '{}');
+        if (playerState.lastPosition && index === playerState.currentTrack) {
+            this.audio.currentTime = playerState.lastPosition;
+        }
+        
         this.audio.load();
 
         console.log('Chargement de la piste:', {
