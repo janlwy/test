@@ -3699,3 +3699,34 @@
 2024-11-18 16:05:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
 2024-11-18 16:06:00 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
 2024-11-18 16:06:00 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-11-18 17:38:57 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:38:57 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:39:05 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-18 17:39:05 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-18 17:49:20 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:49:20 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:49:32 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-18 17:49:32 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-18 17:49:32 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:49:32 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:49:44 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-18 17:49:44 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-18 17:50:44 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:50:44 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:50:47 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-11-18 17:50:47 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-11-18 17:51:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : create
+2024-11-18 17:51:59 - [info] - Appel de la méthode create dans le contrôleur AudioController
+2024-11-18 17:51:59 - [info] - Début de la méthode addMusic
+2024-11-18 17:51:59 - [info] - Type MIME de l'image : image/png
+2024-11-18 17:51:59 - [info] - Type MIME de l'audio : video/mp4
+2024-11-18 17:51:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:51:59 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:52:12 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-18 17:52:12 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-18 17:52:18 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-18 17:52:18 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-18 17:54:39 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-18 17:54:39 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-19 09:20:02 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-19 09:20:03 - [info] - Appel de la méthode player dans le contrôleur AudioController
