@@ -1,0 +1,39 @@
+# Modèle Conceptuel des Données (MCD)
+
+Entité: Video
+- id : int (PK)
+- title : varchar(255)
+- description : text
+- path : varchar(255)
+- thumbnail : varchar(255)
+- user_id : int (FK)
+- created_at : timestamp
+
+Entité: Photo
+- id : int (PK)
+- title : varchar(255)
+- description : text
+- path : varchar(255)
+- user_id : int (FK)
+- created_at : timestamp
+
+Entité: Text
+- id : int (PK)
+- title : varchar(255)
+- content : text
+- user_id : int (FK)
+- created_at : timestamp
+
+# Associations
+
+Association: User_Video
+- user_id (FK) -> Users.id
+- video_id (FK) -> Video.id
+
+Association: User_Photo
+- user_id (FK) -> Users.id
+- photo_id (FK) -> Photo.id
+
+Association: User_Text
+- user_id (FK) -> Users.id
+- text_id (FK) -> Text.id
