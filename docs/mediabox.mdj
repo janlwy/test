@@ -1,0 +1,116 @@
+{
+    "_type": "Project",
+    "name": "MediaBox",
+    "ownedElements": [
+        {
+            "_type": "UMLModel",
+            "name": "MediaBox",
+            "ownedElements": [
+                {
+                    "_type": "UMLClassDiagram",
+                    "name": "Main",
+                    "defaultDiagram": true,
+                    "ownedElements": [
+                        {
+                            "_type": "UMLClass",
+                            "name": "Audio",
+                            "attributes": [
+                                {"name": "-title", "type": "string"},
+                                {"name": "-artist", "type": "string"},
+                                {"name": "-image", "type": "string"},
+                                {"name": "-path", "type": "string"},
+                                {"name": "#user_id", "type": "int"},
+                                {"name": "#created_at", "type": "string"}
+                            ],
+                            "operations": [
+                                {"name": "+save", "returnType": "bool"},
+                                {"name": "+delete", "returnType": "bool"},
+                                {"name": "+validateAudioFile", "parameters": [{"name": "file", "type": "array"}], "returnType": "array"},
+                                {"name": "+getFullPath", "returnType": "string"},
+                                {"name": "+getFullImagePath", "returnType": "string"}
+                            ]
+                        },
+                        {
+                            "_type": "UMLClass",
+                            "name": "AudioController",
+                            "attributes": [
+                                {"name": "-audioRepository", "type": "AudioRepository"}
+                            ],
+                            "operations": [
+                                {"name": "+index", "returnType": "void"},
+                                {"name": "+list", "returnType": "void"},
+                                {"name": "+create", "returnType": "void"},
+                                {"name": "+update", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"},
+                                {"name": "+delete", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"},
+                                {"name": "+player", "returnType": "void"}
+                            ]
+                        },
+                        {
+                            "_type": "UMLClass",
+                            "name": "AudioRepository",
+                            "attributes": [
+                                {"name": "-manager", "type": "Manager"}
+                            ],
+                            "operations": [
+                                {"name": "+findById", "parameters": [{"name": "id", "type": "int"}], "returnType": "?Audio"},
+                                {"name": "+findAll", "returnType": "array"},
+                                {"name": "+findAllByUser", "parameters": [{"name": "userId", "type": "int"}], "returnType": "array"},
+                                {"name": "+save", "parameters": [{"name": "entity", "type": "Audio"}], "returnType": "void"},
+                                {"name": "+delete", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"}
+                            ]
+                        },
+                        {
+                            "_type": "UMLClass",
+                            "name": "SessionManager",
+                            "attributes": [
+                                {"name": "-instance", "type": "?SessionManager", "isStatic": true},
+                                {"name": "-SESSION_LIFETIME", "type": "int", "isStatic": true}
+                            ],
+                            "operations": [
+                                {"name": "+getInstance", "returnType": "SessionManager", "isStatic": true},
+                                {"name": "-setSecureCookieParams", "returnType": "void"},
+                                {"name": "-regenerateIfNeeded", "returnType": "void"},
+                                {"name": "-validateSession", "returnType": "void"},
+                                {"name": "+destroySession", "returnType": "void"}
+                            ]
+                        },
+                        {
+                            "_type": "UMLClass",
+                            "name": "Manager",
+                            "attributes": [
+                                {"name": "-connexion", "type": "?PDO"}
+                            ],
+                            "operations": [
+                                {"name": "+getConnexion", "returnType": "PDO"},
+                                {"name": "+readTableAll", "parameters": [{"name": "table", "type": "string"}, {"name": "userId", "type": "?int"}], "returnType": "array"},
+                                {"name": "+updateTable", "parameters": [{"name": "table", "type": "string"}, {"name": "data", "type": "array"}, {"name": "id", "type": "int"}], "returnType": "array"},
+                                {"name": "+insertTable", "parameters": [{"name": "table", "type": "string"}, {"name": "data", "type": "array"}], "returnType": "array"},
+                                {"name": "+deleteTable", "parameters": [{"name": "table", "type": "string"}, {"name": "id", "type": "int"}], "returnType": "array"}
+                            ]
+                        }
+                    ],
+                    "associations": [
+                        {
+                            "_type": "UMLAssociation",
+                            "end1": {"reference": "AudioController"},
+                            "end2": {"reference": "AudioRepository"},
+                            "direction": "unidirectional"
+                        },
+                        {
+                            "_type": "UMLAssociation", 
+                            "end1": {"reference": "AudioRepository"},
+                            "end2": {"reference": "Manager"},
+                            "direction": "unidirectional"
+                        },
+                        {
+                            "_type": "UMLAssociation",
+                            "end1": {"reference": "AudioRepository"},
+                            "end2": {"reference": "Audio"},
+                            "direction": "unidirectional"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
