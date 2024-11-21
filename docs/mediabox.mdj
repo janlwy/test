@@ -1,112 +1,313 @@
 {
     "_type": "Project",
     "name": "MediaBox",
+    "author": "Jean-Louis Marsillon",
+    "version": "1.0",
     "ownedElements": [
         {
             "_type": "UMLModel",
+            "_id": "AAAAAAFF+qBWK6M3Z8Y=",
+            "_parent": {
+                "$ref": "AAAAAAFF+h6SjaM2Hec="
+            },
             "name": "MediaBox",
             "ownedElements": [
                 {
                     "_type": "UMLClassDiagram",
+                    "_id": "AAAAAAFF+qBtyKM79qY=",
+                    "_parent": {
+                        "$ref": "AAAAAAFF+qBWK6M3Z8Y="
+                    },
                     "name": "Main",
                     "defaultDiagram": true,
-                    "ownedElements": [
+                    "ownedViews": [
                         {
-                            "_type": "UMLClass",
-                            "name": "Audio",
-                            "attributes": [
-                                {"name": "-title", "type": "string"},
-                                {"name": "-artist", "type": "string"},
-                                {"name": "-image", "type": "string"},
-                                {"name": "-path", "type": "string"},
-                                {"name": "#user_id", "type": "int"},
-                                {"name": "#created_at", "type": "string"}
+                            "_type": "UMLClassView",
+                            "_id": "AAAAAAGMqXJ6xYQN1To=",
+                            "_parent": {
+                                "$ref": "AAAAAAFF+qBtyKM79qY="
+                            },
+                            "model": {
+                                "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                            },
+                            "subViews": [
+                                {
+                                    "_type": "UMLNameCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQOcFg=",
+                                    "_parent": {
+                                        "$ref": "AAAAAAGMqXJ6xYQN1To="
+                                    },
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "subViews": [
+                                        {
+                                            "_type": "LabelView",
+                                            "_id": "AAAAAAGMqXJ6xYQPW+Q=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQOcFg="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 77,
+                                            "top": 77,
+                                            "width": 309,
+                                            "height": 13,
+                                            "text": "Audio"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLAttributeCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQUvtg=",
+                                    "_parent": {
+                                        "$ref": "AAAAAAGMqXJ6xYQN1To="
+                                    },
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "subViews": [
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXKcB4Q0K/8=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXKcAoQx4vw="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 95,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "-title: string",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXK6zoQ7qdY=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXK6yoQ4P7o="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 110,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "-artist: string",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXLW5YRCZGE=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXLW4YQ/n7Y="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 125,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "-image: string",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXLmN4RJzUA=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXLmM4RGQkM="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 140,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "-path: string",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXL3cYRQEBA=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXL3bYRNp1c="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 155,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "#user_id: int",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "AAAAAAGMqXMG44RXB4Y=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXMG34RUvV4="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 170,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "#created_at: string",
+                                            "horizontalAlignment": 0
+                                        }
+                                    ],
+                                    "visible": true,
+                                    "font": "Arial;13;0",
+                                    "left": 77,
+                                    "top": 90,
+                                    "width": 309,
+                                    "height": 98
+                                },
+                                {
+                                    "_type": "UMLOperationCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQVp9Y=",
+                                    "_parent": {
+                                        "$ref": "AAAAAAGMqXJ6xYQN1To="
+                                    },
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "subViews": [
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "AAAAAAGMqXMwB4ReNVU=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXMwA4RbvDA="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 193,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "+save(): bool",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "AAAAAAGMqXNFyYRlxnE=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXNFxYRiQkM="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 208,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "+delete(): bool",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "AAAAAAGMqXNZ1YRsNh8=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXNZ0YRpQkM="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 223,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "+validateAudioFile(file: array): array",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "AAAAAAGMqXN3QYRzNh8=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXN3PYRwQkM="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 238,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "+getFullPath(): string",
+                                            "horizontalAlignment": 0
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "AAAAAAGMqXOOsYR6Nh8=",
+                                            "_parent": {
+                                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                                            },
+                                            "model": {
+                                                "$ref": "AAAAAAGMqXOOrYR3QkM="
+                                            },
+                                            "visible": true,
+                                            "font": "Arial;13;0",
+                                            "left": 82,
+                                            "top": 253,
+                                            "width": 299,
+                                            "height": 13,
+                                            "text": "+getFullImagePath(): string",
+                                            "horizontalAlignment": 0
+                                        }
+                                    ],
+                                    "visible": true,
+                                    "font": "Arial;13;0",
+                                    "left": 77,
+                                    "top": 188,
+                                    "width": 309,
+                                    "height": 83
+                                }
                             ],
-                            "operations": [
-                                {"name": "+save", "returnType": "bool"},
-                                {"name": "+delete", "returnType": "bool"},
-                                {"name": "+validateAudioFile", "parameters": [{"name": "file", "type": "array"}], "returnType": "array"},
-                                {"name": "+getFullPath", "returnType": "string"},
-                                {"name": "+getFullImagePath", "returnType": "string"}
-                            ]
-                        },
-                        {
-                            "_type": "UMLClass",
-                            "name": "AudioController",
-                            "attributes": [
-                                {"name": "-audioRepository", "type": "AudioRepository"}
-                            ],
-                            "operations": [
-                                {"name": "+index", "returnType": "void"},
-                                {"name": "+list", "returnType": "void"},
-                                {"name": "+create", "returnType": "void"},
-                                {"name": "+update", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"},
-                                {"name": "+delete", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"},
-                                {"name": "+player", "returnType": "void"}
-                            ]
-                        },
-                        {
-                            "_type": "UMLClass",
-                            "name": "AudioRepository",
-                            "attributes": [
-                                {"name": "-manager", "type": "Manager"}
-                            ],
-                            "operations": [
-                                {"name": "+findById", "parameters": [{"name": "id", "type": "int"}], "returnType": "?Audio"},
-                                {"name": "+findAll", "returnType": "array"},
-                                {"name": "+findAllByUser", "parameters": [{"name": "userId", "type": "int"}], "returnType": "array"},
-                                {"name": "+save", "parameters": [{"name": "entity", "type": "Audio"}], "returnType": "void"},
-                                {"name": "+delete", "parameters": [{"name": "id", "type": "int"}], "returnType": "void"}
-                            ]
-                        },
-                        {
-                            "_type": "UMLClass",
-                            "name": "SessionManager",
-                            "attributes": [
-                                {"name": "-instance", "type": "?SessionManager", "isStatic": true},
-                                {"name": "-SESSION_LIFETIME", "type": "int", "isStatic": true}
-                            ],
-                            "operations": [
-                                {"name": "+getInstance", "returnType": "SessionManager", "isStatic": true},
-                                {"name": "-setSecureCookieParams", "returnType": "void"},
-                                {"name": "-regenerateIfNeeded", "returnType": "void"},
-                                {"name": "-validateSession", "returnType": "void"},
-                                {"name": "+destroySession", "returnType": "void"}
-                            ]
-                        },
-                        {
-                            "_type": "UMLClass",
-                            "name": "Manager",
-                            "attributes": [
-                                {"name": "-connexion", "type": "?PDO"}
-                            ],
-                            "operations": [
-                                {"name": "+getConnexion", "returnType": "PDO"},
-                                {"name": "+readTableAll", "parameters": [{"name": "table", "type": "string"}, {"name": "userId", "type": "?int"}], "returnType": "array"},
-                                {"name": "+updateTable", "parameters": [{"name": "table", "type": "string"}, {"name": "data", "type": "array"}, {"name": "id", "type": "int"}], "returnType": "array"},
-                                {"name": "+insertTable", "parameters": [{"name": "table", "type": "string"}, {"name": "data", "type": "array"}], "returnType": "array"},
-                                {"name": "+deleteTable", "parameters": [{"name": "table", "type": "string"}, {"name": "id", "type": "int"}], "returnType": "array"}
-                            ]
-                        }
-                    ],
-                    "associations": [
-                        {
-                            "_type": "UMLAssociation",
-                            "end1": {"reference": "AudioController"},
-                            "end2": {"reference": "AudioRepository"},
-                            "direction": "unidirectional"
-                        },
-                        {
-                            "_type": "UMLAssociation", 
-                            "end1": {"reference": "AudioRepository"},
-                            "end2": {"reference": "Manager"},
-                            "direction": "unidirectional"
-                        },
-                        {
-                            "_type": "UMLAssociation",
-                            "end1": {"reference": "AudioRepository"},
-                            "end2": {"reference": "Audio"},
-                            "direction": "unidirectional"
+                            "visible": true,
+                            "font": "Arial;13;0",
+                            "containerChangeable": true,
+                            "left": 77,
+                            "top": 77,
+                            "width": 309,
+                            "height": 194,
+                            "nameCompartment": {
+                                "$ref": "AAAAAAGMqXJ6xYQOcFg="
+                            },
+                            "attributeCompartment": {
+                                "$ref": "AAAAAAGMqXJ6xYQUvtg="
+                            },
+                            "operationCompartment": {
+                                "$ref": "AAAAAAGMqXJ6xYQVp9Y="
+                            }
                         }
                     ]
                 }
