@@ -55,7 +55,10 @@
                                             "top": 77,
                                             "width": 309,
                                             "height": 13,
-                                            "text": "Audio"
+                                            "text": "Audio",
+                                            "horizontalAlignment": 0,
+                                            "verticalAlignment": 5,
+                                            "wordWrap": false
                                         }
                                     ]
                                 },
