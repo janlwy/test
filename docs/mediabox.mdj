@@ -3,6 +3,8 @@
     "name": "MediaBox",
     "author": "Jean-Louis Marsillon",
     "version": "1.0",
+    "tags": [],
+    "defaultDiagram": "AAAAAAFF+qBtyKM79qY=",
     "ownedElements": [
         {
             "_type": "UMLModel",
