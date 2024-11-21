@@ -1,0 +1,144 @@
+{
+    "_type": "Project",
+    "name": "Audio",
+    "ownedElements": [
+        {
+            "_type": "UMLModel",
+            "_id": "AAAAAAFF+qBWK6M3Z8Y=",
+            "name": "Model",
+            "ownedElements": [
+                {
+                    "_type": "UMLClassDiagram",
+                    "_id": "AAAAAAFF+qBtyKM79qY=",
+                    "name": "Main",
+                    "defaultDiagram": true,
+                    "ownedViews": [
+                        {
+                            "_type": "UMLClassView",
+                            "_id": "AAAAAAGMqXJ6xYQN1To=",
+                            "name": "Audio",
+                            "model": {
+                                "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                            },
+                            "subViews": [
+                                {
+                                    "_type": "UMLNameCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQOcFg=",
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "font": "Arial;13;0",
+                                    "left": 248,
+                                    "top": 133,
+                                    "width": 309,
+                                    "height": 25,
+                                    "text": "Audio"
+                                },
+                                {
+                                    "_type": "UMLAttributeCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQUvtg=",
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "font": "Arial;13;0",
+                                    "left": 248,
+                                    "top": 158,
+                                    "width": 309,
+                                    "height": 117,
+                                    "subViews": [
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "title",
+                                            "visibility": "private",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "artist",
+                                            "visibility": "private",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "image",
+                                            "visibility": "private",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "path",
+                                            "visibility": "private",
+                                            "type": "string"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "user_id",
+                                            "visibility": "protected",
+                                            "type": "int"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "name": "created_at",
+                                            "visibility": "protected",
+                                            "type": "string"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "_type": "UMLOperationCompartmentView",
+                                    "_id": "AAAAAAGMqXJ6xYQVp9Y=",
+                                    "model": {
+                                        "$ref": "AAAAAAGMqXJ6xIQLr3Q="
+                                    },
+                                    "font": "Arial;13;0",
+                                    "left": 248,
+                                    "top": 275,
+                                    "width": 309,
+                                    "height": 125,
+                                    "subViews": [
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "name": "save",
+                                            "visibility": "public",
+                                            "returnType": "bool"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "name": "delete",
+                                            "visibility": "public",
+                                            "returnType": "bool"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "name": "validateAudioFile",
+                                            "visibility": "public",
+                                            "parameters": [
+                                                {
+                                                    "name": "file",
+                                                    "type": "array"
+                                                }
+                                            ],
+                                            "returnType": "array"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "name": "getFullPath",
+                                            "visibility": "public",
+                                            "returnType": "string"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "name": "getFullImagePath",
+                                            "visibility": "public",
+                                            "returnType": "string"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
