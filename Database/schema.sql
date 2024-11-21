@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS `audio` (
   `user_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `user_id` (`user_id`),
+  INDEX `idx_user_id` (`user_id`),
   CONSTRAINT `fk_audio_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -20,5 +20,5 @@ CREATE TABLE IF NOT EXISTS `users` (
   `role` varchar(20) NOT NULL DEFAULT 'user',
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `pseudo` (`pseudo`)
+  UNIQUE INDEX `idx_pseudo_unique` (`pseudo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
