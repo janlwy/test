@@ -1,6 +1,8 @@
 {
     "_type": "Project",
-    "name": "Audio",
+    "name": "MediaBox",
+    "author": "Jean-Louis Marsillon",
+    "version": "1.0",
     "ownedElements": [
         {
             "_type": "UMLModel",
@@ -10,13 +12,14 @@
                 {
                     "_type": "UMLClassDiagram",
                     "_id": "AAAAAAFF+qBtyKM79qY=",
-                    "name": "Main",
+                    "name": "Audio Class Diagram",
                     "defaultDiagram": true,
                     "ownedViews": [
                         {
                             "_type": "UMLClassView",
                             "_id": "AAAAAAGMqXJ6xYQN1To=",
                             "name": "Audio",
+                            "stereotype": "Model",
                             "model": {
                                 "$ref": "AAAAAAGMqXJ6xIQLr3Q="
                             },
@@ -27,7 +30,7 @@
                                     "model": {
                                         "$ref": "AAAAAAGMqXJ6xIQLr3Q="
                                     },
-                                    "font": "Arial;13;0",
+                                    "font": "Arial;13;1",
                                     "left": 248,
                                     "top": 133,
                                     "width": 309,
@@ -48,39 +51,45 @@
                                     "subViews": [
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "title",
-                                            "visibility": "private",
-                                            "type": "string"
+                                            "_id": "attr1",
+                                            "name": "-id: int",
+                                            "visibility": "private"
                                         },
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "artist",
-                                            "visibility": "private",
-                                            "type": "string"
+                                            "_id": "attr2", 
+                                            "name": "-title: string",
+                                            "visibility": "private"
                                         },
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "image",
-                                            "visibility": "private",
-                                            "type": "string"
+                                            "_id": "attr3",
+                                            "name": "-artist: string",
+                                            "visibility": "private"
                                         },
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "path",
-                                            "visibility": "private",
-                                            "type": "string"
+                                            "_id": "attr4",
+                                            "name": "-image: string",
+                                            "visibility": "private"
                                         },
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "user_id",
-                                            "visibility": "protected",
-                                            "type": "int"
+                                            "_id": "attr5",
+                                            "name": "-path: string",
+                                            "visibility": "private"
                                         },
                                         {
                                             "_type": "UMLAttributeView",
-                                            "name": "created_at",
-                                            "visibility": "protected",
-                                            "type": "string"
+                                            "_id": "attr6",
+                                            "name": "#user_id: int",
+                                            "visibility": "protected"
+                                        },
+                                        {
+                                            "_type": "UMLAttributeView",
+                                            "_id": "attr7",
+                                            "name": "#created_at: string",
+                                            "visibility": "protected"
                                         }
                                     ]
                                 },
@@ -98,39 +107,63 @@
                                     "subViews": [
                                         {
                                             "_type": "UMLOperationView",
-                                            "name": "save",
-                                            "visibility": "public",
-                                            "returnType": "bool"
+                                            "_id": "op1",
+                                            "name": "+__construct(data: array)",
+                                            "visibility": "public"
                                         },
                                         {
                                             "_type": "UMLOperationView",
-                                            "name": "delete",
-                                            "visibility": "public",
-                                            "returnType": "bool"
+                                            "_id": "op2",
+                                            "name": "+save(): bool",
+                                            "visibility": "public"
                                         },
                                         {
                                             "_type": "UMLOperationView",
-                                            "name": "validateAudioFile",
-                                            "visibility": "public",
-                                            "parameters": [
-                                                {
-                                                    "name": "file",
-                                                    "type": "array"
-                                                }
-                                            ],
-                                            "returnType": "array"
+                                            "_id": "op3",
+                                            "name": "+delete(): bool",
+                                            "visibility": "public"
                                         },
                                         {
                                             "_type": "UMLOperationView",
-                                            "name": "getFullPath",
-                                            "visibility": "public",
-                                            "returnType": "string"
+                                            "_id": "op4",
+                                            "name": "+validateAudioFile(file: array): array",
+                                            "visibility": "public"
                                         },
                                         {
                                             "_type": "UMLOperationView",
-                                            "name": "getFullImagePath",
-                                            "visibility": "public",
-                                            "returnType": "string"
+                                            "_id": "op5",
+                                            "name": "+getFullPath(): string",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "op6",
+                                            "name": "+getFullImagePath(): string",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "op7",
+                                            "name": "+getUserId(): ?int",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "op8",
+                                            "name": "+setUserId(user_id: int): void",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "op9",
+                                            "name": "+getTitle(): string",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperationView",
+                                            "_id": "op10",
+                                            "name": "+setTitle(title: string): void",
+                                            "visibility": "public"
                                         }
                                     ]
                                 }
