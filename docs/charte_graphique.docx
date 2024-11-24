@@ -1,165 +1,47 @@
-# Charte Graphique MediaBox
-
-## Table des matières
-1. Identité Visuelle
-2. Palette de Couleurs  
-3. Typographie
-4. Composants UI
-5. Responsive Design
-6. Animations
-7. Mise en Page
-8. Accessibilité
-
-## 1. Identité Visuelle
-
-### Logo et Favicon
-L'identité visuelle de MediaBox s'articule autour d'un favicon distinctif qui sert également de logo principal à l'application.
-
-**Spécifications techniques :**
-- Format : ICO (48x48 pixels)
-- Emplacement : Ressources/favicon/favicon.ico
-- Couleur principale : Bleu marine (#000080)
-
-**Utilisations :**
-- Favicon dans le navigateur
-- Logo d'en-tête de l'application
-- Icône de raccourci
-- Image de marque sur les documents
-
-**Intégration technique :**
-- Référence HTML : `<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">`
-- Configuration PWA : Définie dans site.webmanifest
-
-## 2. Palette de Couleurs
-
-### Thème Clair
-| Élément | Couleur | Code HEX |
-|---------|---------|----------|
-| Fond principal | Blanc cassé | #F5F5F5 |
-| Texte | Gris foncé | #182020 |
-| Accent primaire | Vert foncé | #2f4f4f |
-| Accent secondaire | Bleu marine | #000080 |
-| Éléments interactifs | Bleu argenté | #747492 |
-
-### Thème Sombre
-| Élément | Couleur | Code HEX |
-|---------|---------|----------|
-| Fond principal | Gris foncé | #464242 |
-| Texte | Blanc cassé | #F5F5F5 |
-| Accent primaire | Bleu argenté | #747492 |
-| Accent secondaire | Orange | #ffb764 |
-| Éléments interactifs | Rouge | #bd2121 |
-
-### Couleurs Communes
-| Usage | Couleur | Code HEX |
-|-------|---------|----------|
-| Gris clair | Silver | #cccccc |
-| Gris moyen | Gray | #808080 |
-| Gris foncé | Dim Gray | #696969 |
-| Accent violet | Purple | #942494 |
-| Overlay | Gainsboro | #dcdcdcce |
-
-## 3. Typographie
-
-### Police Principale
-**Famille :** 'Noto Sans Display', sans-serif
-
-**Hiérarchie typographique :**
-| Élément | Taille | Usage |
-|---------|--------|-------|
-| H1 | 5rem | Titres principaux |
-| H2/H5 | 3rem | Sous-titres |
-| H3 | 1.5rem | Titres de sections |
-| Corps de texte | 16px | Texte courant |
-
-### Système d'Icônes
-**Police :** Material Icons
-
-**Tailles standardisées :**
-- md-48 : 48px (grands icônes)
-- md-36 : 36px (icônes moyens)
-- md-24 : 24px (petits icônes)
-- md-16 : 16px (mini icônes)
-
-## 4. Composants UI
-
-### Boutons
-**Style de base :** .btnBase
-
-**Variantes :**
-| Classe | Usage | Couleur |
-|--------|-------|---------|
-| .vert | Actions positives | #008000 |
-| .blue | Actions principales | #2b2bff |
-| .orange | Actions d'attention | #ffa500 |
-| .rouge | Actions destructives | #ff0000 |
-| .gris | Actions neutres | #808080 |
-| .theme | Actions thématiques | Variable |
-
-### Cartes
-- Border-radius : 70px 6%
-- Ombre portée : Variable selon le thème
-- Animation : Transition sur hover
-
-### Formulaires
-- Border-radius : 13px
-- Padding : 12px 10px
-- Bordure : 1px solid #a8a4a4
-
-### Messages Système
-| Type | Style |
-|------|-------|
-| Succès | Fond vert, texte blanc |
-| Erreur | Fond rouge, texte blanc |
-| Durée d'affichage | 5 secondes |
-
-## 5. Responsive Design
-
-### Points de Rupture
-| Appareil | Largeur |
-|----------|---------|
-| Mobile | < 600px |
-| Tablette | 601px - 999px |
-| Desktop | 1000px - 1999px |
-| Large Desktop | ≥ 2000px |
-
-### Adaptations Principales
-- Navigation : Menu hamburger sur mobile
-- Grille : 4 à 2 colonnes sur tablette
-- Footer : Barre de navigation fixe sur mobile
-- Cartes : Redimensionnement adaptatif
-
-## 6. Animations
-
-### Transitions
-| Élément | Durée | Type |
-|---------|--------|------|
-| Hover | 0.2s | opacity |
-| Menu | 0.2s | max-height |
-| Boutons | 0.3s | transform |
-
-### Effets Visuels
-- Cartes : Ombre dynamique
-- Boutons : Scale sur hover
-- Messages : Fade-in/out
-
-## 7. Mise en Page
-
-### Structure
-- Largeur maximale : 85% (desktop)
-- Marges : auto
-- Espacement vertical : 20px
-
-### Système de Grille
-**Configuration :**
-- Display : flex
-- Gap : 20px
-- Distribution responsive des colonnes
-
-## 8. Accessibilité
-
-### Standards
-- Contraste texte/fond : Ratio minimum 4.5:1
-- Focus visible sur éléments interactifs
-- Alternatives textuelles pour icônes
-- Structure HTML sémantique
+{
+  "docProps": {
+    "app": {
+      "Application": "Microsoft Office Word",
+      "AppVersion": "16.0.0",
+      "Company": "",
+      "DocSecurity": "0",
+      "ScaleCrop": "false",
+      "LinksUpToDate": "false",
+      "SharedDoc": "false",
+      "HyperlinksChanged": "false",
+      "TotalTime": "0"
+    },
+    "core": {
+      "Title": "Charte Graphique MediaBox",
+      "Subject": "",
+      "Creator": "Jean-Louis Marsillon",
+      "Keywords": "",
+      "Description": "",
+      "LastModifiedBy": "",
+      "Revision": "1",
+      "Created": "2024-02-24T10:00:00Z",
+      "Modified": "2024-02-24T10:00:00Z",
+      "Category": "",
+      "ContentStatus": "",
+      "Language": "fr-FR"
+    }
+  },
+  "word/document.xml": {
+    "content": "# Charte Graphique MediaBox\n\n[Le reste du contenu markdown converti en format Word...]"
+  },
+  "word/styles.xml": {
+    "styles": {
+      "heading1": {
+        "name": "Heading 1",
+        "font": "Noto Sans Display",
+        "size": "32pt",
+        "color": "#000080"
+      },
+      "normal": {
+        "name": "Normal",
+        "font": "Noto Sans Display",
+        "size": "11pt"
+      }
+    }
+  }
+}
