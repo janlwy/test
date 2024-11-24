@@ -1,47 +1,50 @@
-{
-  "docProps": {
-    "app": {
-      "Application": "Microsoft Office Word",
-      "AppVersion": "16.0.0",
-      "Company": "",
-      "DocSecurity": "0",
-      "ScaleCrop": "false",
-      "LinksUpToDate": "false",
-      "SharedDoc": "false",
-      "HyperlinksChanged": "false",
-      "TotalTime": "0"
-    },
-    "core": {
-      "Title": "Charte Graphique MediaBox",
-      "Subject": "",
-      "Creator": "Jean-Louis Marsillon",
-      "Keywords": "",
-      "Description": "",
-      "LastModifiedBy": "",
-      "Revision": "1",
-      "Created": "2024-02-24T10:00:00Z",
-      "Modified": "2024-02-24T10:00:00Z",
-      "Category": "",
-      "ContentStatus": "",
-      "Language": "fr-FR"
-    }
-  },
-  "word/document.xml": {
-    "content": "# Charte Graphique MediaBox\n\n[Le reste du contenu markdown converti en format Word...]"
-  },
-  "word/styles.xml": {
-    "styles": {
-      "heading1": {
-        "name": "Heading 1",
-        "font": "Noto Sans Display",
-        "size": "32pt",
-        "color": "#000080"
-      },
-      "normal": {
-        "name": "Normal",
-        "font": "Noto Sans Display",
-        "size": "11pt"
-      }
-    }
-  }
-}
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Word.Document"?>
+<pkg:package xmlns:pkg="http://schemas.microsoft.com/office/2006/xmlPackage">
+  <pkg:part pkg:name="/word/document.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml">
+    <pkg:xmlData>
+      <w:document xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml">
+        <w:body>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Heading1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Charte Graphique MediaBox</w:t>
+            </w:r>
+          </w:p>
+          <w:p>
+            <w:pPr>
+              <w:pStyle w:val="Normal"/>
+            </w:pPr>
+            <w:r>
+              <w:t>1. Identité Visuelle</w:t>
+            </w:r>
+          </w:p>
+          <!-- Le contenu de la charte graphique sera ici -->
+        </w:body>
+      </w:document>
+    </pkg:xmlData>
+  </pkg:part>
+  <pkg:part pkg:name="/word/styles.xml" pkg:contentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml">
+    <pkg:xmlData>
+      <w:styles xmlns:w="http://schemas.microsoft.com/office/word/2003/wordml">
+        <w:style w:type="paragraph" w:styleId="Heading1">
+          <w:name w:val="Heading 1"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Noto Sans Display" w:hAnsi="Noto Sans Display"/>
+            <w:sz w:val="64"/>
+            <w:color w:val="000080"/>
+          </w:rPr>
+        </w:style>
+        <w:style w:type="paragraph" w:styleId="Normal">
+          <w:name w:val="Normal"/>
+          <w:rPr>
+            <w:rFonts w:ascii="Noto Sans Display" w:hAnsi="Noto Sans Display"/>
+            <w:sz w:val="22"/>
+          </w:rPr>
+        </w:style>
+      </w:styles>
+    </pkg:xmlData>
+  </pkg:part>
+</pkg:package>
