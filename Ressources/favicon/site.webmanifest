@@ -3,17 +3,12 @@
     "short_name": "MediaBox",
     "icons": [
         {
-            "src": "/Ressources/favicon/android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "/Ressources/favicon/android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/Ressources/favicon/favicon.ico",
+            "sizes": "48x48",
+            "type": "image/x-icon"
         }
     ],
-    "theme_color": "#000080",
+    "theme_color": "#000080", 
     "background_color": "#F5F5F5",
     "display": "standalone"
 }

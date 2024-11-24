@@ -19,10 +19,6 @@ if (!function_exists('shouldDisplayNav')) {
 	<meta name="description" content="Mon projet CDA">
 	<title>MédiaBox</title>
 	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
-	<link rel="apple-touch-icon" sizes="180x180" href="Ressources/favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="Ressources/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="Ressources/favicon/favicon-16x16.png">
-	<link rel="manifest" href="Ressources/favicon/site.webmanifest">
 </head>
 <link rel="stylesheet" href="css/media.css" type="text/css">
 <link rel="stylesheet" href="css/mediamusic.css" type="text/css">
