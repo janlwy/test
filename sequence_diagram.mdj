@@ -1,0 +1,126 @@
+{
+    "name": "MediaBox Authentication and Audio Playback",
+    "type": "Sequence Diagram",
+    "participants": [
+        {
+            "name": "Client",
+            "type": "Actor"
+        },
+        {
+            "name": ":ConnexionController",
+            "type": "Participant"
+        },
+        {
+            "name": ":SessionManager",
+            "type": "Participant"
+        },
+        {
+            "name": ":Manager",
+            "type": "Participant"
+        },
+        {
+            "name": ":AudioController",
+            "type": "Participant"
+        },
+        {
+            "name": ":AudioRepository",
+            "type": "Participant"
+        }
+    ],
+    "messages": [
+        {
+            "from": "Client",
+            "to": ":ConnexionController",
+            "name": "connect(pseudo, mdp)",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":ConnexionController",
+            "to": ":Manager",
+            "name": "getConnexion()",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":Manager",
+            "to": ":ConnexionController",
+            "name": "PDO Connection",
+            "type": "Return"
+        },
+        {
+            "from": ":ConnexionController",
+            "to": ":Manager",
+            "name": "validateCredentials(pseudo, mdp)",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":ConnexionController",
+            "to": ":SessionManager",
+            "name": "setAuthenticated(pseudo, userId, role)",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":ConnexionController",
+            "to": "Client",
+            "name": "redirect('mediabox/index')",
+            "type": "Return"
+        },
+        {
+            "from": "Client",
+            "to": ":AudioController",
+            "name": "player()",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":AudioController",
+            "to": ":SessionManager",
+            "name": "checkAuth()",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":AudioController",
+            "to": ":AudioRepository",
+            "name": "findAllByUser(userId)",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":AudioRepository",
+            "to": ":Manager",
+            "name": "getConnexion()",
+            "type": "Synchronous"
+        },
+        {
+            "from": ":AudioRepository",
+            "to": ":AudioController",
+            "name": "return Audio[]",
+            "type": "Return"
+        },
+        {
+            "from": ":AudioController",
+            "to": "Client",
+            "name": "generate('Views/main/audio.php', datas)",
+            "type": "Return"
+        }
+    ],
+    "notes": [
+        {
+            "text": "Authentication Flow",
+            "position": "after connect(pseudo, mdp)"
+        },
+        {
+            "text": "Audio Player Flow",
+            "position": "after player()"
+        }
+    ],
+    "activations": [
+        {
+            "participant": ":ConnexionController",
+            "start": "connect(pseudo, mdp)",
+            "end": "redirect('mediabox/index')"
+        },
+        {
+            "participant": ":AudioController",
+            "start": "player()",
+            "end": "generate('Views/main/audio.php', datas)"
+        }
+    ]
+}
