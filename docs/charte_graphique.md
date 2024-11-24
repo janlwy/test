@@ -3,22 +3,20 @@
 ## 1. Identité Visuelle
 
 ### Logo et Favicon
-- Logo principal : "M" stylisé en bleu marine (#000080)
-- Format favicon : 32x32px, format .ico
+- Logo principal : Favicon stylisé en bleu marine (#000080)
+- Emplacement : Ressources/favicon/favicon.ico
+- Format : 48x48px, format .ico
 - Utilisations :
   - Favicon dans le navigateur
   - Logo d'en-tête de l'application
   - Icône de raccourci
   - Image de marque sur les documents
 
-### Déclinaisons
-- Version claire : Logo bleu marine sur fond clair
-- Version sombre : Logo blanc sur fond sombre
-- Tailles recommandées :
-  - Grand : 256x256px (applications desktop)
-  - Moyen : 128x128px (en-têtes)
-  - Petit : 32x32px (favicon)
-  - Mini : 16x16px (onglets navigateur)
+### Déclinaisons et Intégration
+- Emplacement standard : Ressources/favicon/favicon.ico
+- Référence dans base.html.php : <link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
+- Manifest : Configuré dans site.webmanifest pour une intégration PWA
+- Taille unique optimisée : 48x48px pour une meilleure compatibilité cross-platform
 
 ## 2. Palette de Couleurs
 
