@@ -3730,3 +3730,84 @@
 2024-11-18 17:54:39 - [info] - Appel de la méthode player dans le contrôleur AudioController
 2024-11-19 09:20:02 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
 2024-11-19 09:20:03 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-19 13:11:45 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-19 13:11:45 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-24 17:17:58 - [error] - Cookie de session manquant
+2024-11-24 17:17:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:17:58 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:17:58 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:18:02 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-11-24 17:18:02 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-11-24 17:18:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:18:02 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:18:02 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:18:08 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:18:08 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:18:08 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:18:08 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-11-24 17:18:45 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:18:45 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:18:45 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:18:56 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-24 17:18:56 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-24 17:18:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-24 17:18:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-24 17:19:01 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-24 17:19:01 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-24 17:19:08 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-24 17:19:08 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-24 17:19:08 - [info] - Début de la déconnexion
+2024-11-24 17:19:08 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-24 17:19:08 - [info] - Destruction de la session active
+2024-11-24 17:19:08 - [info] - Cookie de session supprimé
+2024-11-24 17:19:08 - [info] - Session détruite
+2024-11-24 17:19:08 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-24 17:19:08 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-24 17:19:08 - [error] - Cookie de session manquant
+2024-11-24 17:19:08 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:19:08 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:19:08 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:19:10 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:19:10 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:19:10 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:19:10 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-11-24 17:19:24 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:19:24 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:19:24 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:19:24 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-11-24 17:19:25 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:19:25 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:19:25 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:19:25 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-11-24 17:19:26 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:19:26 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:19:26 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:19:26 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-11-24 17:19:32 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:19:32 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:19:32 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:19:44 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-11-24 17:19:44 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-11-24 17:19:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-24 17:19:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-24 17:19:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-11-24 17:19:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-11-24 17:19:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-11-24 17:19:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-11-24 17:20:02 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-11-24 17:20:02 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-11-24 17:20:02 - [info] - Début de la déconnexion
+2024-11-24 17:20:02 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-11-24 17:20:02 - [info] - Destruction de la session active
+2024-11-24 17:20:02 - [info] - Cookie de session supprimé
+2024-11-24 17:20:02 - [info] - Session détruite
+2024-11-24 17:20:02 - [info] - Nouvelle session démarrée pour la redirection
+2024-11-24 17:20:02 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-11-24 17:20:02 - [error] - Cookie de session manquant
+2024-11-24 17:20:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-11-24 17:20:02 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-11-24 17:20:02 - [info] - Début de la méthode index dans ConnexionController
+2024-11-24 17:20:11 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-11-24 17:20:11 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-11-24 17:20:11 - [info] - Début de la méthode index dans AccueilController
+2024-11-24 17:20:11 - [info] - Utilisateur non connecté, affichage de l'accueil
