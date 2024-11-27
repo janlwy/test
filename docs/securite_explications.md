@@ -25,16 +25,81 @@ Pour garantir la sécurité des comptes, nous exigeons que chaque mot de passe r
 - Notification à l'utilisateur en cas de tentatives de connexion suspectes
 
 ## 2. Protection Contre les Injections SQL
-- Toutes les requêtes utilisent des requêtes préparées
-- Les données utilisateur sont toujours validées avant utilisation
-- Les erreurs de base de données ne révèlent pas d'informations sensibles
-- Utilisation de comptes base de données avec privilèges minimaux
+
+### Description
+Les injections SQL représentent l'une des vulnérabilités les plus critiques dans les applications web. Elles permettent à un attaquant d'injecter du code SQL malveillant via les entrées utilisateur pour manipuler ou extraire des données non autorisées.
+
+### Mesures Implémentées
+- **Requêtes Préparées PDO**
+  * Utilisation systématique de bindValue() avec typage strict
+  * Séparation complète des données et du code SQL
+  * Validation du type de données (PDO::PARAM_INT, PDO::PARAM_STR, etc.)
+
+- **Validation Stricte des Entrées**
+  * Filtrage des caractères spéciaux
+  * Validation du format et de la longueur
+  * Conversion des types de données
+  * Liste blanche des valeurs acceptées
+
+- **Gestion Sécurisée des Erreurs**
+  * Messages d'erreur génériques pour l'utilisateur
+  * Journalisation détaillée des erreurs côté serveur
+  * Pas d'affichage des détails techniques en production
+
+- **Principe du Moindre Privilège**
+  * Compte base de données avec permissions minimales
+  * Séparation des accès lecture/écriture
+  * Révocation des privilèges non essentiels
+  * Audit régulier des permissions
+
+### Exemple de Code Sécurisé
+```php
+// Exemple de requête préparée sécurisée
+$stmt = $connexion->prepare("SELECT * FROM users WHERE id = :id");
+$stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+$stmt->execute();
+```
 
 ## 3. Protection Contre les Attaques XSS (Cross-Site Scripting)
-- Toutes les données affichées sont échappées avec htmlspecialchars()
-- Les balises HTML dangereuses sont filtrées
-- En-têtes de sécurité configurés (Content-Security-Policy)
-- Validation stricte des entrées utilisateur
+
+### Description
+Le Cross-Site Scripting (XSS) permet à un attaquant d'injecter du code JavaScript malveillant qui s'exécute dans le navigateur des utilisateurs, compromettant potentiellement leurs données et leur session.
+
+### Mesures Implémentées
+- **Échappement Systématique des Sorties**
+  * Utilisation de htmlspecialchars() avec options strictes
+  * Encodage UTF-8 systématique
+  * Échappement contextuel (HTML, JavaScript, CSS, URL)
+  * Double encodage prévenu
+
+- **Filtrage des Entrées**
+  * Liste blanche des balises HTML autorisées
+  * Suppression des attributs dangereux
+  * Validation des URLs et des ressources
+  * Nettoyage des données JSON/XML
+
+- **En-têtes de Sécurité**
+  * Content-Security-Policy (CSP) strict
+  * X-XSS-Protection activé
+  * X-Content-Type-Options: nosniff
+  * Referrer-Policy configuré
+
+- **Validation Côté Serveur**
+  * Vérification du type de contenu
+  * Limitation de la taille des entrées
+  * Détection des patterns malveillants
+  * Journalisation des tentatives suspectes
+
+### Configuration CSP Recommandée
+```apache
+Content-Security-Policy: 
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline';
+    img-src 'self' data:;
+    font-src 'self';
+    frame-ancestors 'none';
+```
 
 ## 4. Protection CSRF (Cross-Site Request Forgery)
 - Jeton unique par session
