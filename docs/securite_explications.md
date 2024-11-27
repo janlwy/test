@@ -1,18 +1,28 @@
-# Mesures de Sécurité de MediaBox - Guide Explicatif
+# Guide Complet des Mesures de Sécurité de MediaBox
 
 ## Introduction
-Ce document explique en termes simples les différentes mesures de sécurité mises en place dans MediaBox, ainsi que les bonnes pratiques recommandées.
+Ce document présente de manière détaillée et accessible l'ensemble des mesures de sécurité implémentées dans l'application MediaBox. Il est destiné à la fois aux utilisateurs souhaitant comprendre comment leurs données sont protégées et aux développeurs désireux d'appliquer les bonnes pratiques de sécurité.
 
-## 1. Protection des Mots de Passe
-- Les mots de passe sont stockés de manière sécurisée (hachage avec bcrypt)
-- Règles pour un mot de passe fort :
-  * Au moins 8 caractères
-  * Au moins une majuscule
-  * Au moins une minuscule 
-  * Au moins un chiffre
-  * Au moins un caractère spécial (@$!%*#?&)
-- Le mot de passe n'est jamais stocké en clair
-- Limite de tentatives de connexion (3 essais puis blocage temporaire)
+## 1. Sécurisation Complète des Mots de Passe
+Notre système de gestion des mots de passe utilise les meilleures pratiques actuelles en matière de sécurité :
+
+### Stockage Sécurisé
+- Nous utilisons l'algorithme bcrypt pour le hachage des mots de passe, reconnu pour sa robustesse et sa résistance aux attaques par force brute
+- Chaque mot de passe est salé de manière unique avant le hachage
+- Les mots de passe ne sont jamais stockés en clair dans notre base de données
+
+### Politique de Mots de Passe Robuste
+Pour garantir la sécurité des comptes, nous exigeons que chaque mot de passe respecte les critères suivants :
+- Une longueur minimale de 8 caractères pour assurer une complexité suffisante
+- Au moins une lettre majuscule pour la diversité des caractères
+- Au moins une lettre minuscule pour renforcer la complexité
+- Au moins un chiffre pour augmenter l'entropie
+- Au moins un caractère spécial parmi @$!%*#?& pour maximiser la sécurité
+
+### Protection Contre les Attaques
+- Limitation à 3 tentatives de connexion avant le blocage temporaire du compte
+- Délai progressif entre les tentatives pour prévenir les attaques automatisées
+- Notification à l'utilisateur en cas de tentatives de connexion suspectes
 
 ## 2. Protection Contre les Injections SQL
 - Toutes les requêtes utilisent des requêtes préparées
