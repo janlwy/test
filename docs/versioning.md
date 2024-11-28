@@ -3,102 +3,119 @@
 ## Structure des Branches
 
 ### Branches Principales
-- `main` : Branche de production, code stable et validé
-- `develop` : Branche de développement principale
-- `staging` : Branche de pré-production pour les tests
+- `main` : Production stable de MediaBox
+- `develop` : Développement principal et intégration des fonctionnalités
+- `staging` : Tests de pré-production et validation utilisateur
 
 ### Branches Fonctionnelles
-- `feature/*` : Nouvelles fonctionnalités (ex: feature/audio-player)
-- `bugfix/*` : Corrections de bugs
+- `feature/media-*` : Nouvelles fonctionnalités médias (ex: feature/media-audio-player)
+- `feature/ui-*` : Améliorations interface (ex: feature/ui-dark-theme)
+- `feature/security-*` : Fonctionnalités sécurité (ex: feature/security-auth)
+- `bugfix/*` : Corrections de bugs spécifiques
 - `hotfix/*` : Corrections urgentes en production
 - `release/*` : Préparation des versions
 
-## Workflow de Développement
+## Workflow par Module
 
-### 1. Développement de Fonctionnalités
+### 1. Module Audio
 ```mermaid
 graph LR
-    develop --> feature/branch
-    feature/branch --> develop
+    develop --> feature/media-audio
+    feature/media-audio --> develop
 ```
-1. Création depuis `develop` : `git checkout -b feature/nom-feature`
-2. Développement et commits réguliers
-3. Tests unitaires et intégration
-4. Pull Request vers `develop`
+- Branches dédiées pour :
+  * Lecteur audio (feature/media-audio-player)
+  * Gestion playlists (feature/media-audio-playlist)
+  * Upload fichiers (feature/media-audio-upload)
+  * Métadonnées (feature/media-audio-metadata)
 
-### 2. Phase de Test
-```mermaid
-graph LR
-    develop --> staging
-    staging --> develop
+### 2. Module Vidéo
+- Branches pour :
+  * Lecteur vidéo (feature/media-video-player)
+  * Gestion miniatures (feature/media-video-thumbnails)
+  * Encodage (feature/media-video-encoding)
+
+### 3. Module Photo
+- Branches pour :
+  * Galerie photos (feature/media-photo-gallery)
+  * Édition images (feature/media-photo-edit)
+  * Albums (feature/media-photo-albums)
+
+### 4. Module Texte
+- Branches pour :
+  * Éditeur texte (feature/media-text-editor)
+  * Catégorisation (feature/media-text-categories)
+  * Recherche (feature/media-text-search)
+
+## Conventions de Commits
+
+### Format
 ```
-1. Merge des features validées dans `staging`
-2. Tests automatisés
-3. Tests manuels QA
-4. Validation fonctionnelle
+type(scope): description
 
-### 3. Mise en Production
-```mermaid
-graph LR
-    staging --> main
-    main --> hotfix
-    hotfix --> main
+- feat(audio): Ajout du support des playlists
+- fix(security): Correction faille XSS dans l'upload
+- style(ui): Mise à jour thème sombre
+- docs(api): Documentation endpoints médias
 ```
-1. Création branche `release/x.y.z`
-2. Tests finaux et documentation
-3. Merge dans `main` et tag version
-4. Hotfix si nécessaire
 
-## Conventions
-
-### Commits
-- Format : `type(scope): description`
-- Types : feat, fix, docs, style, refactor, test, chore
-- Message clair et descriptif
-
-### Versioning
-- Semantic Versioning (MAJOR.MINOR.PATCH)
-- Tags pour chaque release
-- Changelog maintenu à jour
-
-### Protection des Branches
-- `main` : Push direct interdit
-- `develop` : Pull Request obligatoire
-- `staging` : Tests automatisés requis
+### Types Spécifiques MediaBox
+- `feat(media)`: Nouvelles fonctionnalités médias
+- `feat(ui)`: Améliorations interface
+- `feat(security)`: Fonctionnalités sécurité
+- `fix(media)`: Corrections bugs médias
+- `fix(security)`: Corrections sécurité
+- `style(ui)`: Modifications CSS/design
+- `docs(api)`: Documentation API
+- `test(media)`: Tests fonctionnels médias
 
 ## Environnements
 
-### Local (Développement)
-- Branche : feature/* ou develop
-- Base de données de dev
-- Configuration de debug
+### Développement (Local)
+- Base de données : MySQL dev locale
+- Stockage médias : Dossier local /Ressources
+- Configuration debug activée
+- Variables d'environnement dev
 
-### Test
-- Branche : staging
-- Base de données de test
-- Tests automatisés
+### Test (Staging)
+- Base de données : MySQL test
+- Stockage médias : Serveur test dédié
+- Tests automatisés activés
+- Monitoring des performances
 
 ### Production
-- Branche : main
-- Base de données production
-- Monitoring et logs
+- Base de données : MySQL prod
+- Stockage médias : CDN/Serveur production
+- Logs sécurité activés
+- Sauvegardes automatiques
 
-## Procédures
+## Procédures Spécifiques
 
-### Merge Request
-1. Code review obligatoire
-2. Tests passants
-3. Documentation à jour
-4. Conflits résolus
+### Déploiement Audio/Vidéo
+1. Tests encodage médias
+2. Vérification des lecteurs
+3. Tests performances streaming
+4. Validation formats supportés
 
-### Hotfix
-1. Branche depuis main
-2. Correction rapide
-3. Tests critiques
-4. Merge dans main ET develop
+### Déploiement Photos
+1. Tests compression images
+2. Vérification miniatures
+3. Tests galerie responsive
+4. Validation métadonnées
 
-### Release
-1. Gel des fonctionnalités
-2. Tests complets
-3. Documentation finale
-4. Tag et merge
+### Sécurité
+1. Scan vulnérabilités
+2. Tests injection SQL
+3. Validation uploads
+4. Vérification permissions
+
+## Versioning Sémantique
+- MAJOR : Changements architecture médias
+- MINOR : Nouvelles fonctionnalités médias
+- PATCH : Corrections bugs et optimisations
+
+## Protection des Données
+- Sauvegarde base de données quotidienne
+- Backup médias hebdomadaire
+- Rétention 30 jours
+- Chiffrement des sauvegardes
