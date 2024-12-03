@@ -3856,3 +3856,194 @@
 2024-11-29 16:21:13 - [info] - Appel de la méthode index dans le contrôleur AccueilController
 2024-11-29 16:21:13 - [info] - Début de la méthode index dans AccueilController
 2024-11-29 16:21:13 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-12-01 00:13:02 - [error] - Cookie de session manquant
+2024-12-01 00:13:02 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-01 00:13:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-01 00:13:03 - [info] - Début de la méthode index dans ConnexionController
+2024-12-01 00:13:18 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-12-01 00:13:18 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-12-01 00:13:22 - [error] - Erreur de connexion à la base de données : SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+2024-12-01 00:13:22 - [error] - Erreur de connexion à la base de données : SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+2024-12-01 00:13:52 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-12-01 00:13:52 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-12-01 00:13:53 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-01 00:13:53 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-01 00:15:18 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-01 00:15:18 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-01 00:15:48 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-01 00:15:48 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 09:52:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 09:52:26 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 09:52:32 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 09:52:33 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 09:54:39 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 09:54:39 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 09:55:18 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 09:55:18 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 09:55:24 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 09:55:24 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 09:55:25 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 09:55:25 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 09:55:41 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 09:55:41 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 09:55:50 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 09:55:50 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 09:55:55 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 09:55:55 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 11:07:52 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 11:07:52 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 11:07:52 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 11:07:52 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 11:07:52 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:28:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:28:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:28:10 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-12-03 13:28:10 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-12-03 13:28:10 - [info] - Début de la déconnexion
+2024-12-03 13:28:10 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-12-03 13:28:10 - [info] - Destruction de la session active
+2024-12-03 13:28:10 - [info] - Cookie de session supprimé
+2024-12-03 13:28:10 - [info] - Session détruite
+2024-12-03 13:28:10 - [info] - Nouvelle session démarrée pour la redirection
+2024-12-03 13:28:10 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-12-03 13:28:10 - [error] - Cookie de session manquant
+2024-12-03 13:28:10 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 13:28:10 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 13:28:10 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 13:28:15 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-12-03 13:28:15 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-12-03 13:28:15 - [info] - Début de la méthode index dans AccueilController
+2024-12-03 13:28:15 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-12-03 13:28:36 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-12-03 13:28:36 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-12-03 13:28:36 - [info] - Début de la méthode index dans AccueilController
+2024-12-03 13:28:36 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-12-03 13:28:41 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2024-12-03 13:28:41 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2024-12-03 13:28:41 - [info] - Début de la méthode index dans AccueilController
+2024-12-03 13:28:41 - [info] - Utilisateur non connecté, affichage de l'accueil
+2024-12-03 13:31:16 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 13:31:16 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 13:31:16 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 13:31:35 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 13:31:35 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 13:31:35 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 13:33:00 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-12-03 13:33:00 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-12-03 13:33:00 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:33:00 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:33:35 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:33:35 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:33:38 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:33:38 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:35:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 13:35:19 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 13:35:19 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 13:35:19 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:35:19 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:40:52 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 13:40:52 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 13:40:57 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:40:57 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:40:58 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:40:59 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:41:33 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:41:33 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:41:37 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:41:37 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:41:40 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:41:40 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:41:51 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:41:51 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:41:53 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:41:53 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:42:57 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-12-03 13:42:57 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-12-03 13:42:57 - [info] - Début de la déconnexion
+2024-12-03 13:42:57 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-12-03 13:42:57 - [info] - Destruction de la session active
+2024-12-03 13:42:57 - [info] - Cookie de session supprimé
+2024-12-03 13:42:57 - [info] - Session détruite
+2024-12-03 13:42:57 - [info] - Nouvelle session démarrée pour la redirection
+2024-12-03 13:42:57 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-12-03 13:42:57 - [error] - Cookie de session manquant
+2024-12-03 13:42:57 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 13:42:57 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 13:42:57 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 13:43:09 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-12-03 13:43:09 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-12-03 13:43:09 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:43:09 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:43:11 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:43:11 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:44:09 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:44:09 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:44:11 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:44:11 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:45:43 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:45:43 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:45:46 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:45:46 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:45:49 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 13:45:49 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 13:46:33 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2024-12-03 13:46:33 - [info] - Appel de la méthode index dans le contrôleur CompteController
+2024-12-03 13:47:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:47:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:47:44 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:47:44 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:47:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 13:47:47 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 13:48:21 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:48:21 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:48:24 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 13:48:24 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 13:50:07 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:50:07 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:50:59 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 13:50:59 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 13:51:03 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:51:03 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:51:07 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 13:51:07 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 13:51:12 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 13:51:12 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 13:52:16 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 13:52:16 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 13:52:20 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:52:20 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 13:53:47 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 13:53:47 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:23:40 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:23:40 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:23:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:23:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:23:44 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:23:44 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:23:45 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:23:45 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:23:47 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 15:23:47 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 15:23:49 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : player
+2024-12-03 15:23:49 - [info] - Appel de la méthode player dans le contrôleur AudioController
+2024-12-03 15:23:56 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:23:56 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:24:03 - [info] - Tentative de chargement du contrôleur : DeconnexionController et de la méthode : index
+2024-12-03 15:24:03 - [info] - Appel de la méthode index dans le contrôleur DeconnexionController
+2024-12-03 15:24:03 - [info] - Début de la déconnexion
+2024-12-03 15:24:03 - [info] - URL de redirection prévue: index.php?url=connexion/index
+2024-12-03 15:24:03 - [info] - Destruction de la session active
+2024-12-03 15:24:03 - [info] - Cookie de session supprimé
+2024-12-03 15:24:03 - [info] - Session détruite
+2024-12-03 15:24:03 - [info] - Nouvelle session démarrée pour la redirection
+2024-12-03 15:24:03 - [info] - Tentative de redirection vers: index.php?url=connexion/index
+2024-12-03 15:24:03 - [error] - Cookie de session manquant
+2024-12-03 15:24:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-03 15:24:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-03 15:24:03 - [info] - Début de la méthode index dans ConnexionController
+2024-12-03 15:24:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2024-12-03 15:24:13 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2024-12-03 15:24:13 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:24:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:24:15 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 15:24:15 - [info] - Appel de la méthode list dans le contrôleur AudioController

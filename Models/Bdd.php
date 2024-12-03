@@ -11,7 +11,6 @@ class Bdd
             return $connexion;
         } catch (PDOException $e) {
             logError("Erreur de connexion à la base de données : " . $e->getMessage());
-            logError("Erreur de connexion à la base de données : " . $e->getMessage());
             die("Erreur de connexion à la base de données. Veuillez vérifier les paramètres de connexion.");
         }
     }

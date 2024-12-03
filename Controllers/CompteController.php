@@ -46,7 +46,7 @@ class CompteController extends BaseController implements IController
         
         $datas = [
             'session' => $this->session,
-            'pageTitle' => "Gestion des médias"
+            'pageTitle' => "Gestion des notes"
         ];
         generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon compte", false);
     }
