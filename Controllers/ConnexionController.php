@@ -20,6 +20,13 @@ class ConnexionController extends BaseController
         generate("Views/connect/connectForm.php", ['hideNav' => true], "Views/base.html.php", "Calepin", true);
     }
     
+    private $loginAttemptManager;
+    
+    public function __construct() {
+        parent::__construct();
+        $this->loginAttemptManager = new LoginAttemptManager();
+    }
+
     public function connect()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
@@ -29,6 +36,15 @@ class ConnexionController extends BaseController
             if (!isset($_POST['pseudo']) || empty($_POST['pseudo']) || 
                 !isset($_POST['mdp']) || empty($_POST['mdp'])) {
                 $this->session->set('erreur', 'Tous les champs sont requis');
+                $this->redirect('connexion/index');
+            }
+
+            $pseudo = $_POST['pseudo'];
+            $ip = $_SERVER['REMOTE_ADDR'];
+
+            // Vérifier si l'utilisateur ou l'IP est bloqué
+            if ($this->loginAttemptManager->isLockedOut($pseudo, $ip)) {
+                $this->session->set('erreur', 'Compte temporairement bloqué. Veuillez réessayer dans 15 minutes.');
                 $this->redirect('connexion/index');
             }
 
@@ -49,6 +65,8 @@ class ConnexionController extends BaseController
                 }
 
                 if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
+                    // Nettoyer les anciennes tentatives avant de connecter
+                    $this->loginAttemptManager->cleanupOldAttempts();
                     $this->session->setAuthenticated($_POST['pseudo'], $user['id'], $user['role']);
                     
                     // Vérifier si l'utilisateur est un admin
@@ -60,8 +78,14 @@ class ConnexionController extends BaseController
                     
                     $this->redirect('mediabox/index');
                 } else {
-                    logError("Erreur de connexion : identifiants invalides");
-                    $this->session->set('erreur', 'Login ou mot de passe non reconnu !');
+                    // Enregistrer la tentative échouée
+                    $this->loginAttemptManager->recordAttempt($pseudo, $ip);
+                    
+                    // Obtenir le nombre de tentatives restantes
+                    $remainingAttempts = $this->loginAttemptManager->getRemainingAttempts($pseudo, $ip);
+                    
+                    logError("Erreur de connexion : identifiants invalides pour l'utilisateur $pseudo depuis $ip");
+                    $this->session->set('erreur', "Login ou mot de passe non reconnu ! Il vous reste $remainingAttempts tentatives avant le blocage temporaire.");
                     $this->redirect('connexion/index');
                 }
             } catch (PDOException $e) {
