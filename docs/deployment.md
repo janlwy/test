@@ -213,6 +213,24 @@ ServerSignature Off
     Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 </IfModule>
 
+# Security Headers
+<IfModule mod_headers.c>
+    # Protection contre les attaques XSS
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Empêche le site d'être affiché dans un iframe (protection clickjacking)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Empêche le navigateur de deviner le type MIME
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Force HTTPS pendant 1 an incluant les sous-domaines
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    
+    # Politique de sécurité du contenu
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;"
+</IfModule>
+
 # Redirection vers HTTPS
 RewriteEngine On
 RewriteCond %{HTTPS} off
