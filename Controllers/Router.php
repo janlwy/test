@@ -4,7 +4,12 @@ class Router
 {
     public function __construct()
     {
+        // Nettoyer les entrées GET et POST
+        XssProtection::cleanGet();
+        XssProtection::cleanPost();
+        
         $url = isset($_GET['url']) ? $_GET['url'] : 'accueil/index';
+        $url = XssProtection::clean($url);
         $urls = explode('/', $url);
         // Gestion des sous-dossiers de contrôleurs (ex: Admin/)
         if (count($urls) >= 2 && strtolower($urls[0]) === 'admin') {
