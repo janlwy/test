@@ -1,6 +1,95 @@
-# Cahier des Charges - MediaBox
+# Cahier des Charges MediaBox - Méthode QQOQCP
 
-## 1. Présentation du Projet
+## QUI ? (Acteurs du projet)
+
+### Équipe Projet
+- Développeurs PHP/MySQL
+- Designer UI/UX
+- Administrateur système
+- Chef de projet
+
+### Utilisateurs
+- Utilisateurs finaux (particuliers)
+- Administrateurs système
+- Modérateurs de contenu
+
+## QUOI ? (Description du projet)
+
+### Nature du Projet
+- Application web de gestion multimédia
+- Système de stockage et lecture de médias
+- Interface utilisateur responsive
+
+### Fonctionnalités Principales
+- Gestion de fichiers audio
+- Gestion de fichiers vidéo
+- Gestion de photos
+- Gestion de notes textuelles
+- Système d'authentification
+- Interface d'administration
+
+## OÙ ? (Contexte spatial)
+
+### Déploiement
+- Hébergement sur serveur dédié
+- Accès via navigateurs web
+- Stockage sur serveur sécurisé
+
+### Accessibilité
+- Interface web responsive
+- Compatible mobiles/tablettes
+- Accessible depuis Internet
+
+## QUAND ? (Contexte temporel)
+
+### Planning
+- Phase 1 (Core) : M1-M2
+- Phase 2 (Médias) : M3-M4
+- Phase 3 (Features) : M5-M6
+- Phase 4 (Polish) : M7-M8
+
+### Contraintes Temporelles
+- Livraison finale : 8 mois
+- Réunions hebdomadaires
+- Revues de code bi-mensuelles
+
+## COMMENT ? (Moyens et méthodes)
+
+### Technologies
+- Backend : PHP 8.2
+- Base de données : MySQL 10.4
+- Frontend : HTML5/CSS3/JavaScript
+- Architecture MVC
+
+### Méthodologie
+- Développement Agile
+- Tests automatisés
+- Intégration continue
+- Revues de code
+
+### Infrastructure
+- Conteneurisation Docker
+- CI/CD avec GitHub Actions
+- Monitoring et logging
+- Backups automatisés
+
+## POURQUOI ? (Objectifs et justification)
+
+### Objectifs Principaux
+- Centraliser les médias personnels
+- Faciliter l'organisation des fichiers
+- Offrir une interface intuitive
+- Assurer la sécurité des données
+
+### Bénéfices Attendus
+- Meilleure organisation personnelle
+- Accès simplifié aux médias
+- Protection des données
+- Expérience utilisateur optimisée
+
+## Spécifications Détaillées
+
+[Le reste du cahier des charges existant...]
 
 ### 1.1 Contexte
 MediaBox est une application web de gestion de médias personnels permettant aux utilisateurs de stocker, organiser et lire différents types de contenus multimédias.
