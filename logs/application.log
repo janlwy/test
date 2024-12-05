@@ -4047,3 +4047,19 @@
 2024-12-03 15:24:13 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
 2024-12-03 15:24:15 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
 2024-12-03 15:24:15 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 15:33:42 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:33:42 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:34:04 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:34:04 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:34:08 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:34:08 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 15:34:09 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 15:34:09 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 15:34:15 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 15:34:15 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 15:34:28 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 15:34:28 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-03 16:22:58 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2024-12-03 16:22:58 - [info] - Appel de la méthode list dans le contrôleur AudioController
+2024-12-03 16:23:03 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2024-12-03 16:23:03 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
