@@ -1,0 +1,57 @@
+# Monitoring Configuration
+
+# Application Health Checks
+health_checks:
+  endpoints:
+    - name: "API Status"
+      url: "/api/status"
+      interval: "30s"
+      timeout: "5s"
+    - name: "Database"
+      url: "/api/db/status" 
+      interval: "1m"
+      timeout: "10s"
+
+# Performance Metrics
+metrics:
+  collect_interval: "15s"
+  retention_days: 30
+  targets:
+    - php_fpm_status
+    - mysql_status
+    - disk_usage
+    - memory_usage
+    - cpu_load
+
+# Logging Configuration  
+logging:
+  level: "info"
+  format: "json"
+  outputs:
+    - type: "file"
+      path: "/var/log/mediabox/app.log"
+    - type: "syslog"
+      facility: "local0"
+
+# Alert Configuration
+alerts:
+  disk_space:
+    warning: 80  # Percentage
+    critical: 90
+  memory:
+    warning: 85  # Percentage
+    critical: 95
+  response_time:
+    warning: 2000  # Milliseconds
+    critical: 5000
+
+# Backup Configuration
+backups:
+  database:
+    schedule: "0 2 * * *"  # Daily at 2 AM
+    retention: 7  # Days
+    type: "mysql"
+  media_files:
+    schedule: "0 3 * * 0"  # Weekly on Sunday at 3 AM
+    retention: 30  # Days
+    type: "files"
