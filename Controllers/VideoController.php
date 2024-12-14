@@ -12,9 +12,7 @@ class VideoController extends BaseController implements IController
     public function index()
     {
         $this->checkAuth();
-        $this->checkCSRF();
-        $datas = [];
-        generate("Views/main/video.php", $datas, "Views/base.html.php", "Video");
+        $this->redirect('video/list');
     }
 
     public function list() {

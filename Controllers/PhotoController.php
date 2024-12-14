@@ -12,9 +12,7 @@ class PhotoController extends BaseController implements IController
     public function index()
     {
         $this->checkAuth();
-        $this->checkCSRF();
-        $datas = [];
-        generate("Views/main/photo.php", $datas, "Views/base.html.php", "Photo");
+        $this->redirect('photo/list');
     }
 
     public function list() {

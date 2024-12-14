@@ -12,9 +12,7 @@ class TexteController extends BaseController implements IController
     public function index()
     {
         $this->checkAuth();
-        $this->checkCSRF();
-        $datas = [];
-        generate("Views/main/texte.php", $datas, "Views/base.html.php", "Texte");
+        $this->redirect('texte/list');
     }
 
     public function list() {
