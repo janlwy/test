@@ -1,4 +1,7 @@
 {
+    "name": "janlwy/test",
+    "description": "Application de gestion de médias",
+    "license": "proprietary",
     "require-dev": {
         "phpunit/phpunit": "^5.2"
     }
