@@ -17,7 +17,23 @@ class VideoController extends BaseController implements IController
 
     public function list() {
         $this->checkAuth();
-        // TODO: Implémenter l'affichage de la liste
+        try {
+            $userId = $this->session->get('user_id');
+            if (!$userId) {
+                throw new Exception("Utilisateur non identifié");
+            }
+            
+            $videos = $this->repository->findAllByUser($userId);
+            $datas = [
+                'videos' => $videos,
+                'session' => $this->session
+            ];
+            
+            generate("Views/main/videoList.php", $datas, "Views/base.html.php", "Liste Vidéos");
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+            $this->redirect('video/index');
+        }
     }
 
     public function create() {

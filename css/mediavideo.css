@@ -1,143 +1,228 @@
 /**************************************** onglet Video ****************************/
 
+/* Styles de base pour la grille vidéo */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
 
-@font-face {
-    font-family: "HeydingsControlsRegular";
-    src: url("/ressources/fonts/heydings_controls-webfont.eot");
-    src: url("/ressources/fonts/heydings_controls-webfont.eot?#iefix") format("embedded-opentype"),
-        url("/ressources/fonts/heydings_controls-webfont.woff") format("woff"),
-        url("/ressources/fonts/heydings_controls-webfont.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
+.video-item {
+    background: var(--btnBackGround);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+}
+
+.video-preview {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Ratio 16:9 */
+}
+
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.video-duration {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h4 {
+    margin: 0 0 10px 0;
+    color: var(--fontcolor);
+}
+
+.video-info p {
+    margin: 0;
+    font-size: 0.9em;
+    color: var(--fontcolor);
+}
+
+.video-date {
+    display: block;
+    font-size: 0.8em;
+    color: var(--fontcolor);
+    margin-top: 10px;
+}
+
+.video-controls {
+    display: flex;
+    gap: 10px;
+    padding: 10px 15px;
+    background: var(--btnBackGround);
+    align-items: center;
+}
+
+.video-controls button,
+.video-controls a {
+    padding: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.video-controls .material-icons {
+    font-size: 20px;
+}
+
+.select-video {
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+/* Styles pour le lecteur vidéo */
+.player-video {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--btnBackGround);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 video {
-    max-width: 95%;
-    border-radius: 20px;
-}
-
-.player-video {
-    width: 98%;
-    height: 30vh;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--bodyBg);
-    border-radius: 20px;
-    margin: auto 0 auto 7px;
+    width: 100%;
+    border-radius: 10px 10px 0 0;
 }
 
 .controls-video {
-    visibility: hidden;
-    opacity: 0.99;
-    width: 90%;
-    border-radius: 10px;
-    position: absolute;
-    bottom: 45%;
-    left: 50%;
-    margin-left: -46%;
-    background-color: black;
-    box-shadow: 3px 3px 5px black;
-    transition: 1s all;
     display: flex;
+    align-items: center;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 0 0 10px 10px;
 }
 
-.controls, .controls button {
-    background: linear-gradient(to bottom, #6787f1, #353434, #353434, #6787f1);
+.controls-video button {
+    background: none;
+    border: none;
+    color: white;
+    padding: 8px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
-.player:hover .controls, .player:focus .controls {
-    opacity: 1;
-}
-
-.controls button:before {
-    font-family: HeydingsControlsRegular;
-    font-size: 20px;
-    position: relative;
-    content: attr(data-icon);
-    color: #aaa;
-    text-shadow: 1px 1px 0px black;
-}
-
-.play:before {
-    font-size: 22px;
-}
-
-
-.controls button, .timer {
-    height: 38px;
-    line-height: 19px;
-    box-shadow: inset 0 -5px 25px rgba(0, 0, 0, 0.3);
-    border-right: 1px solid #333;
-}
-
-.controls button {
-    position: relative;
-    border: 0;
-    flex: 1;
-    outline: none;
-}
-
-.play {
-    border-radius: 10px 0 0 10px;
-}
-
-.fwd {
-    border-radius: 0 10px 10px 0;
+.controls-video button:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .timer {
-    line-height: 38px;
-    font-size: 16px;
-    font-family: monospace;
-    text-shadow: 1px 1px 0px #000000;
-    color: #ffffff;
-    flex: 5;
+    flex-grow: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 15px;
     position: relative;
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 .timer div {
-    position: absolute;
-    background-color: #ffffff33;
-    left: 0;
-    top: 0;
-    width: 0;
-    height: 38px;
-    z-index: 2;
+    height: 100%;
+    background: var(--color-primary);
+    border-radius: 2px;
 }
 
 .timer span {
     position: absolute;
-    z-index: 3;
-    left: 19px;
+    right: -50px;
+    color: white;
+    font-size: 14px;
 }
 
-.controls button:hover, .controls button:focus {
-    box-shadow: inset 1px 1px 2px black;
+/* Styles pour la recherche */
+.searchBox {
+    margin: 20px auto;
+    max-width: 600px;
 }
 
-.controls button:active {
-    box-shadow: inset 3px 3px 2px black;
+.search-form {
+    display: flex;
+    gap: 10px;
 }
 
-.active:before {
-    color: red;
+.searchInput {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid var(--btntheme);
+    border-radius: 20px;
+    font-size: 16px;
+    background: var(--btnBackGround);
+    color: var(--fontcolor);
 }
 
-@media (max-width: 600px) {
-    body {
-        width: 98%;
-        margin: 0 0 220px 0;
+.searchButton,
+.clearButton {
+    background: var(--btntheme);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchButton:hover,
+.clearButton:hover {
+    background: var(--active);
+}
+
+/* Styles pour la sélection */
+.video-item.selected {
+    border: 2px solid var(--color-primary);
+}
+
+#play-selected {
+    margin: 20px auto;
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
     }
-
-    footer {
-        /* fixer le footer au bas de l'écran pour tabbar */
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        height: 50px;
-        margin: 0;
+    
+    .video-controls {
+        flex-wrap: wrap;
     }
-
+    
+    .searchBox {
+        width: 90%;
+    }
 }
