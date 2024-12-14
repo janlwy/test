@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../Fonctions/XssProtection.php';
+
 class Router
 {
     public function __construct()
