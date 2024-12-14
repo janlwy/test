@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     if (texteItems.length > 0) {
-        showPhoto(0);
+        showTexte(0);
         
         texteItems.forEach((item, index) => {
             item.addEventListener('click', () => {

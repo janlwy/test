@@ -19,7 +19,23 @@ class PhotoController extends BaseController implements IController
 
     public function list() {
         $this->checkAuth();
-        // TODO: Implémenter l'affichage de la liste
+        try {
+            $userId = $this->session->get('user_id');
+            if (!$userId) {
+                throw new Exception("Utilisateur non identifié");
+            }
+            
+            $photos = $this->repository->findAllByUser($userId);
+            $datas = [
+                'photos' => $photos,
+                'session' => $this->session
+            ];
+            
+            generate("Views/main/photoList.php", $datas, "Views/base.html.php", "Liste Photos");
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+            $this->redirect('photo/index');
+        }
     }
 
     public function create() {

@@ -19,24 +19,94 @@ class TexteController extends BaseController implements IController
 
     public function list() {
         $this->checkAuth();
-        // TODO: Implémenter l'affichage de la liste
+        try {
+            $userId = $this->session->get('user_id');
+            if (!$userId) {
+                throw new Exception("Utilisateur non identifié");
+            }
+            
+            $textes = $this->repository->findAllByUser($userId);
+            $datas = [
+                'textes' => $textes,
+                'session' => $this->session
+            ];
+            
+            generate("Views/main/texteList.php", $datas, "Views/base.html.php", "Liste Textes");
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+            $this->redirect('texte/index');
+        }
     }
 
     public function create() {
         $this->checkAuth();
         $this->checkCSRF();
-        // TODO: Implémenter la création
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            try {
+                $texte = new Texte();
+                $texte->setTitle($_POST['title']);
+                $texte->setContent($_POST['content']);
+                $texte->setUserId($this->session->get('user_id'));
+                
+                if ($texte->validate()) {
+                    $this->repository->save($texte);
+                    $_SESSION['message'] = "Texte créé avec succès";
+                    $this->redirect('texte/list');
+                } else {
+                    throw new Exception("Données invalides");
+                }
+            } catch (Exception $e) {
+                $_SESSION['erreur'] = $e->getMessage();
+                $this->redirect('texte/index');
+            }
+        }
     }
 
     public function update($id) {
         $this->checkAuth();
         $this->checkCSRF();
-        // TODO: Implémenter la mise à jour
+        
+        try {
+            $texte = $this->repository->findById($id);
+            if (!$texte) {
+                throw new Exception("Texte non trouvé");
+            }
+            
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $texte->setTitle($_POST['title']);
+                $texte->setContent($_POST['content']);
+                
+                if ($texte->validate()) {
+                    $this->repository->save($texte);
+                    $_SESSION['message'] = "Texte mis à jour avec succès";
+                    $this->redirect('texte/list');
+                } else {
+                    throw new Exception("Données invalides");
+                }
+            }
+            
+            $datas = [
+                'texte' => $texte,
+                'session' => $this->session
+            ];
+            generate("Views/main/texte.php", $datas, "Views/base.html.php", "Modifier Texte");
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+            $this->redirect('texte/list');
+        }
     }
 
     public function delete($id) {
         $this->checkAuth();
         $this->checkCSRF();
-        // TODO: Implémenter la suppression
+        
+        try {
+            $this->repository->delete($id);
+            $_SESSION['message'] = "Texte supprimé avec succès";
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+        }
+        $this->redirect('texte/list');
     }
 }
