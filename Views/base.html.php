@@ -17,7 +17,7 @@ if (!function_exists('shouldDisplayNav')) {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Jean-Louis Marsillon">
 	<meta name="description" content="Mon projet CDA">
-	<title>MédiaBox</title>
+	<title>Calepin</title>
 	<link rel="icon" type="image/x-icon" href="Ressources/favicon/favicon.ico">
 </head>
 <link rel="stylesheet" href="css/media.css" type="text/css">
