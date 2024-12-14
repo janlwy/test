@@ -36,6 +36,71 @@ class VideoController extends BaseController implements IController
         }
     }
 
+    public function player() {
+        $this->checkAuth();
+        $userId = $this->session->get('user_id');
+        
+        if ($userId === null) {
+            $_SESSION['erreur'] = "Erreur : utilisateur non identifié.";
+            $this->redirect('connexion/index');
+            return;
+        }
+
+        // Récupérer soit un ID unique soit un tableau d'IDs
+        $singleId = $_GET['id'] ?? null;
+        $multipleIds = $_GET['ids'] ?? [];
+        
+        $videos = [];
+        
+        if ($singleId !== null) {
+            // Lecture d'une seule vidéo
+            $video = $this->repository->findById($singleId);
+            if ($video && $video->getUserId() == $userId) {
+                $videos[] = $video;
+            }
+        } elseif (!empty($multipleIds)) {
+            // Lecture d'une playlist
+            foreach ($multipleIds as $id) {
+                $video = $this->repository->findById($id);
+                if ($video && $video->getUserId() == $userId) {
+                    $videos[] = $video;
+                }
+            }
+        }
+
+        try {
+            if (empty($videos)) {
+                $_SESSION['erreur'] = "Aucune vidéo disponible.";
+                $this->redirect('video/list');
+                return;
+            }
+
+            // Préparer les données pour le lecteur
+            $formattedVideos = array_map(function($video) {
+                return [
+                    'id' => $video->getId(),
+                    'title' => $video->getTitle(),
+                    'description' => $video->getDescription(),
+                    'path' => $video->getFullPath(),
+                    'thumbnail' => $video->getThumbnailPath()
+                ];
+            }, $videos);
+
+            $datas = [
+                'pageTitle' => "Lecteur Vidéo",
+                'videos' => $videos,
+                'formattedVideos' => $formattedVideos,
+                'session' => $this->session
+            ];
+        
+            generate("Views/main/video.php", $datas, "Views/base.html.php", "Lecteur Vidéo");
+        } catch (Exception $e) {
+            logError("Erreur dans player: " . $e->getMessage());
+            $_SESSION['erreur'] = "Une erreur est survenue lors du chargement des vidéos.";
+            $this->redirect('video/list');
+        }
+    }
+
     public function create() {
         $this->checkAuth();
         $this->checkCSRF();
@@ -49,8 +114,8 @@ class VideoController extends BaseController implements IController
             
             if (!$validator->validate($_POST, $rules)) {
                 $_SESSION['erreur'] = $validator->getFirstError();
-                header('Location: ?url=video/index');
-                exit();
+                $this->redirect('video/index');
+                return;
             }
             
             // TODO: Implémenter la validation et l'upload de fichier
