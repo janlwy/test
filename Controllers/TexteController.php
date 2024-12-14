@@ -6,7 +6,7 @@ class TexteController extends BaseController implements IController
     
     public function __construct() {
         parent::__construct();
-        // TODO: Ajouter TexteRepository quand il sera créé
+        $this->repository = new TexteRepository();
     }
 
     public function index()

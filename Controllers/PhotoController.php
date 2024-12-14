@@ -6,7 +6,7 @@ class PhotoController extends BaseController implements IController
     
     public function __construct() {
         parent::__construct();
-        // TODO: Ajouter PhotoRepository quand il sera créé
+        $this->repository = new PhotoRepository();
     }
 
     public function index()
