@@ -6,7 +6,7 @@ class VideoController extends BaseController implements IController
     
     public function __construct() {
         parent::__construct();
-        // TODO: Ajouter VideoRepository quand il sera créé
+        $this->repository = new VideoRepository();
     }
 
     public function index()
