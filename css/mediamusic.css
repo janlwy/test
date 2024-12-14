@@ -6,12 +6,16 @@
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: var(--color-bg-search);
     height: 40px;
     border-radius: 40px;
     padding: 10px;
-    margin: 10px;
+    margin: 20px auto;
     gap: 8px;
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .search-form {

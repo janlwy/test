@@ -164,8 +164,15 @@ video {
 
 /* Styles pour la recherche */
 .searchBox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 20px auto;
     max-width: 600px;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .search-form {
