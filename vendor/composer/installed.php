@@ -5,20 +5,11 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '64c31414d333fc174e974b8aa178d1e284abb563',
-        'name' => '__root__',
+        'reference' => 'bbe0f019bc18f42a1e5b19674b6f7b8f9b1a76a3',
+        'name' => 'janlwy/test',
         'dev' => true,
     ),
     'versions' => array(
-        '__root__' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'reference' => '64c31414d333fc174e974b8aa178d1e284abb563',
-            'dev_requirement' => false,
-        ),
         'doctrine/instantiator' => array(
             'pretty_version' => '1.5.0',
             'version' => '1.5.0.0',
@@ -27,6 +18,15 @@
             'aliases' => array(),
             'reference' => '0a0fa9780f5d4e507415a065172d26a98d02047b',
             'dev_requirement' => true,
+        ),
+        'janlwy/test' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => 'bbe0f019bc18f42a1e5b19674b6f7b8f9b1a76a3',
+            'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
             'pretty_version' => '1.12.1',
