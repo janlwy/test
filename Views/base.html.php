@@ -58,6 +58,9 @@ if (!function_exists('shouldDisplayNav')) {
 			<nav class="menunav" id="myMenunav">
 				<a href="?url=mediabox/index" class="active" aria-label="Accueil"><i class="material-icons">home</i></a>
 				<a href="?url=compte/index" class="active" aria-label="Profil"><?php echo htmlentities(trim($session->get('pseudo', ''))); ?> </a>
+				<?php if ($session->get('role') === 'admin'): ?>
+					<a href="?url=database_manager/index" class="active" aria-label="Administration"><i class="material-icons">admin_panel_settings</i> Admin Center</a>
+				<?php endif; ?>
 				<a href="?url=audio/list" aria-label="Audio">Audio</a>
 				<a href="?url=video/index" aria-label="Vidéo">Vidéo</a>
 				<a href="?url=photo/index" aria-label="Photo">Photo</a>
