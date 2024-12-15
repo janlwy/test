@@ -570,8 +570,8 @@ nav {
 
 .column {
     flex: 1 1 200px; /* Permet aux colonnes de s'adapter à l'espace disponible */
-    max-width: 300px; /* Limite la largeur maximale des colonnes */
-    margin: 10px; /* Ajoute un espace autour des colonnes */
+    max-width: 280px; /* Limite la largeur maximale des colonnes */
+    margin: 5px; /* Ajoute un espace autour des colonnes */
 }
 
 .card {
@@ -583,7 +583,7 @@ nav {
 }
 
 .card:hover {
-    background-color: #d47373;
+    background-color: #694b4b;
 }
 
 .card i {
@@ -971,8 +971,8 @@ footer {
         margin: 10px;
     }
     .card {
-        height: 280px;
-        width: 280px;
+        height: 260px;
+        width: 260px;
         padding-top: 12%;
     }
     .titrecarte {
@@ -1009,8 +1009,8 @@ footer {
         margin-bottom: 10px;
     }
     .card {
-        height: 280px;
-        width: 250px;
+        height: 270px;
+        width: 220px;
         border-radius: 70px 6%;
     }            
     .card i {
@@ -1025,15 +1025,15 @@ footer {
 /******************** Extra large  (écran de 2000px et plus) */
 @media (min-width: 2000px) {
     .column {
-        width: 43%/* 830px */;
+        width: 20%/* 830px */;
         display: block;
         margin-bottom: 15px;
     }
     .card {
-        display: flex;
-        height: 330px;
-        width: auto;
-        border-radius: 70px;
+        /*display: flex;*/
+        height: 350px;
+        width: 400px;
+        /*border-radius: 70px;*/
     }
     .card i {
         font-size: 180px;
@@ -1042,7 +1042,7 @@ footer {
     .titrecarte {
         display: block;
         margin: auto 80px;
-        font-size: 100px;
+        font-size: 80px;
     }
     /*.formCentered {
         width: 80%;
