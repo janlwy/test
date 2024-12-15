@@ -423,9 +423,10 @@ input::placeholder { /*police pesudo-element*/
 nav {
     background: var(--navBg);
     border-radius: 20px;
-    margin: auto 0 auto 7px;
+    margin: 10px auto;
     perspective: 1000px;
-    width: 95%; /* Limiter la largeur de la nav */
+    width: 95%;
+    max-width: 1800px;
 }
 
 .menunav {
