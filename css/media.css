@@ -1024,29 +1024,57 @@ footer {
 
 /******************** Extra large  (écran de 2000px et plus) */
 @media (min-width: 2000px) {
+    body {
+        width: 95%;
+        max-width: 2400px;
+        margin: 0 auto;
+    }
+    
+    .row {
+        justify-content: space-evenly;
+        gap: 30px;
+        padding: 20px;
+    }
+    
     .column {
-        width: 20%/* 830px */;
-        display: block;
-        margin-bottom: 15px;
+        flex: 1 1 400px;
+        max-width: 500px;
+        margin: 15px;
     }
+    
     .card {
-        /*display: flex;*/
-        height: 350px;
-        width: 400px;
-        /*border-radius: 70px;*/
+        height: 450px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        border-radius: 35px;
+        transition: transform 0.3s ease;
     }
+    
+    .card:hover {
+        transform: scale(1.02);
+    }
+    
     .card i {
-        font-size: 180px;
-        margin: auto 30px;
+        font-size: 200px;
+        margin-bottom: 30px;
     }
+    
     .titrecarte {
         display: block;
-        margin: auto 80px;
-        font-size: 80px;
+        font-size: 60px;
+        text-align: center;
+        margin-top: 20px;
     }
-    /*.formCentered {
-        width: 80%;
-    }*/
+    
+    .formCentered {
+        width: 90%;
+        max-width: 1800px;
+        margin: 0 auto;
+    }
 }
 
 /******************** Bricoles diverses et variées */
