@@ -8,7 +8,7 @@ services:
     volumes:
       - ./:/var/www/html
     environment:
-      - DB_HOST=${DB_HOST:-localhost}
+      - DB_HOST=db
       - DB_NAME=${DB_NAME:-cda_projet}
       - DB_USER=${DB_USER:-root}
       - DB_PASSWORD=${DB_PASSWORD:-}
