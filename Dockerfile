@@ -39,7 +39,7 @@ RUN --mount=type=bind,source=composer.json,target=composer.json \
 # most recent version of that tag when you build your Dockerfile.
 # If reproducibility is important, consider using a specific digest SHA, like
 # php@sha256:99cede493dfd88720b610eb8077c8688d3cca50003d76d1d539b0efc8cca72b4.
-FROM php:8.1.3-apache as final
+FROM php:8.1.3-apache AS final
 
 # Your PHP application may require additional PHP extensions to be installed
 # manually. For detailed instructions for installing extensions can be found, see
