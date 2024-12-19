@@ -9,7 +9,7 @@
 ################################################################################
 
 # Create a stage for installing app dependencies defined in Composer.
-FROM composer:lts as deps
+FROM composer:lts AS deps
 
 WORKDIR /app
 
