@@ -7,3 +7,4 @@ $session->startSession();
 
 $router = new Router();
 ?>
+
