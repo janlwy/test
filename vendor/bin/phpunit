@@ -13,6 +13,10 @@
 namespace Composer;
 
 $binPath = __DIR__ . "/../phpunit/phpunit/phpunit";
+if (!file_exists($binPath)) {
+    fwrite(STDERR, "PHPUnit binary not found at $binPath\n");
+    exit(1);
+}
 
 if (PHP_VERSION_ID < 80000) {
     if (!class_exists('Composer\BinProxyWrapper')) {
