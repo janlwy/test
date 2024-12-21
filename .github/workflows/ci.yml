@@ -30,4 +30,4 @@ jobs:
       run: chmod +x vendor/bin/phpunit
 
     - name: Run test suite
-      run: vendor/bin/phpunit
+      run: vendor/bin/phpunit --configuration vendor/sebastian/object-enumerator/phpunit.xml
