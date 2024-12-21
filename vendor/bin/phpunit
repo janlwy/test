@@ -12,7 +12,7 @@
 
 namespace Composer;
 
-$binPath = __DIR__ . "/" . '../phpunit/phpunit/phpunit';
+$binPath = __DIR__ . "/../phpunit/phpunit/phpunit";
 
 if (PHP_VERSION_ID < 80000) {
     if (!class_exists('Composer\BinProxyWrapper')) {
