@@ -26,5 +26,8 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    - name: Ensure PHPUnit is executable
+      run: chmod +x vendor/bin/phpunit
+
     - name: Run test suite
       run: vendor/bin/phpunit
