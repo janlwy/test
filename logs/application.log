@@ -5058,3 +5058,7 @@
 2024-12-15 17:37:34 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
 2024-12-15 17:37:49 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
 2024-12-15 17:37:49 - [info] - Appel de la méthode index dans le contrôleur MediaboxController
+2024-12-16 22:53:58 - [error] - Cookie de session manquant
+2024-12-16 22:53:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2024-12-16 22:53:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2024-12-16 22:53:59 - [info] - Début de la méthode index dans ConnexionController
