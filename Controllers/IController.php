@@ -1,5 +1,9 @@
 <?php
 
+interface IBaseController {
+    // Define any necessary methods here
+}
+
 interface IController extends IBaseController {
     public function list();
     public function create();
