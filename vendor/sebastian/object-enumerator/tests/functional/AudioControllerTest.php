@@ -2,6 +2,8 @@
 use PHPUnit\Framework\TestCase;
 use App\Session\SessionManager;
 use App\Controllers\AudioController;
+use App\Models\Audio;
+use App\Models\AudioRepository;
 
 class AudioControllerTest extends TestCase
 {
