@@ -6,7 +6,8 @@ if (!interface_exists('IBaseController')) {
     }
 }
 
-interface IController extends IBaseController {
+if (!interface_exists('IController')) {
+    interface IController extends IBaseController {
     public function list();
     public function create();
     public function update($id);
