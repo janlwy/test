@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use App\Models\Audio;
+use App\Models\Manager;
 
 class AudioTest extends TestCase
 {

@@ -1,4 +1,7 @@
 <?php
+namespace App\Models;
+
+use App\Models\Manager;
 
 class TexteRepository implements IRepository {
     private $manager;

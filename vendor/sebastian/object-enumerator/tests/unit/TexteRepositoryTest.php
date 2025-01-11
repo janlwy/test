@@ -1,6 +1,8 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use App\Models\Manager;
+use App\Models\TexteRepository;
+use App\Models\Texte;
 
 class TexteRepositoryTest extends TestCase
 {

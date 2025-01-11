@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use App\Session\SessionManager;
 
 class SessionManagerTest extends TestCase
 {

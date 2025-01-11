@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
 use App\Controllers\TexteController;
+use App\Session\SessionManager;
 
 class TexteControllerTest extends TestCase
 {
