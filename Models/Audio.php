@@ -136,7 +136,7 @@ class Audio extends AbstractModel
             return $errors;
         }
 
-        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
         $mimeType = $finfo->file($file['tmp_name']);
 
         if (!array_key_exists($mimeType, $allowedTypes)) {

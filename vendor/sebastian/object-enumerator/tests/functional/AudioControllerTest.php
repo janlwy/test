@@ -4,6 +4,8 @@ use App\Session\SessionManager;
 use App\Controllers\AudioController;
 use App\Models\Audio;
 use App\Models\AudioRepository;
+use App\Models\Manager;
+use App\Models\DatabaseException;
 
 class AudioControllerTest extends TestCase
 {
