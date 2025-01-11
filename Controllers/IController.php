@@ -1,7 +1,9 @@
 <?php
 
-interface IBaseController {
-    // Define any necessary methods here
+if (!interface_exists('IBaseController')) {
+    interface IBaseController {
+        // Define any necessary methods here
+    }
 }
 
 interface IController extends IBaseController {
