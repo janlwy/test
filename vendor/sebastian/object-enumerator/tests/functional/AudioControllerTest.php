@@ -107,7 +107,6 @@ class AudioControllerTest extends TestCase
         $this->assertFileExists('Ressources/audio/test.mp3');
         $this->assertFileExists('Ressources/images/pochettes/test.jpg');
     }
-    }
 
     public function testUpdateAudio()
     {
