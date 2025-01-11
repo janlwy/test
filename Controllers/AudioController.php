@@ -1,4 +1,5 @@
 <?php
+namespace App\Controllers;
 
 class AudioController extends BaseController implements IController
 {
