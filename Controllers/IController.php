@@ -12,4 +12,5 @@ if (!interface_exists('IController')) {
     public function create();
     public function update($id);
     public function delete($id);
+    }
 }
