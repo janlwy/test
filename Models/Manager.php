@@ -1,7 +1,7 @@
 <?php
 namespace App\Models;
 
-require_once 'Bdd.php';
+use App\Models\Bdd;
 require_once 'DatabaseException.php';
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../Fonctions/launch.php';
