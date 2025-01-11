@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use App\Models\Manager;
 
 class TexteRepositoryTest extends TestCase
 {

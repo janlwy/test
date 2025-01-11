@@ -1,5 +1,6 @@
 <?php
 use PHPUnit\Framework\TestCase;
+use App\Controllers\TexteController;
 
 class TexteControllerTest extends TestCase
 {
