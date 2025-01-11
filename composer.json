@@ -5,7 +5,10 @@
     "autoload": {
         "psr-4": {
             "App\\": "./",
-            "App\\Controllers\\": "Controllers/"
+            "App\\Controllers\\": "Controllers/",
+            "App\\Models\\": "Models/",
+            "App\\Session\\": "Session/",
+            "App\\Validation\\": "Validation/"
         }
     },
     "require-dev": {
