@@ -14,8 +14,9 @@ class Bdd
             $connexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $connexion;
         } catch (PDOException $e) {
-            logError("Erreur de connexion à la base de données : " . $e->getMessage());
-            die("Erreur de connexion à la base de données. Veuillez vérifier les paramètres de connexion.");
+            $errorMessage = "Erreur de connexion à la base de données : " . $e->getMessage();
+            logError($errorMessage);
+            die($errorMessage);
         }
     }
 }
