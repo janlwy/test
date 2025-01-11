@@ -1,8 +1,8 @@
 <?php
 namespace App\Models;
 
-require_once 'AbstractModel.php';
-require_once 'Manager.php';
+use App\Models\AbstractModel;
+use App\Models\Manager;
 
 class Audio extends AbstractModel
 {
