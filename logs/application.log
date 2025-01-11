@@ -5062,3 +5062,4 @@
 2024-12-16 22:53:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
 2024-12-16 22:53:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
 2024-12-16 22:53:59 - [info] - Début de la méthode index dans ConnexionController
+2025-01-11 17:03:14 - [error] - Erreur de connexion à la base de données : SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
