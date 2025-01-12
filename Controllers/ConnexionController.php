@@ -2,6 +2,8 @@
 namespace Controllers;
 
 require_once __DIR__ . '/BaseController.php';
+use PDO;
+use Models\Manager;
 
 class ConnexionController extends BaseController
 {

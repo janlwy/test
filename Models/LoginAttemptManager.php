@@ -2,6 +2,7 @@
 namespace Models;
 
 use PDO;
+use Models\Manager;
 
 class LoginAttemptManager {
     private const MAX_ATTEMPTS = 3;
