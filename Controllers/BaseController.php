@@ -1,7 +1,7 @@
 <?php
-namespace App\Controllers;
+namespace Controllers;
 
-use App\Session\SessionManager;
+use Session\SessionManager;
 
 abstract class BaseController implements IBaseController {
     protected $repository;
