@@ -1,5 +1,5 @@
 <?php
-namespace App\Session;
+namespace Session;
 
 class SessionManager {
     private static $instance = null;

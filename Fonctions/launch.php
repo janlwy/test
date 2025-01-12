@@ -1,4 +1,5 @@
 <?php
+use Session\SessionManager;
 
 function charger($class)
 {
