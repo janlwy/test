@@ -27,7 +27,7 @@ class ConnexionController extends BaseController
     
     public function __construct() {
         parent::__construct();
-        $this->loginAttemptManager = new LoginAttemptManager();
+        $this->loginAttemptManager = new \Models\LoginAttemptManager();
     }
 
     public function connect()
