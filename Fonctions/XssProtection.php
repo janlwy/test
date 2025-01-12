@@ -1,4 +1,5 @@
 <?php
+namespace Fonctions;
 
 class XssProtection {
     public static function clean($data) {
