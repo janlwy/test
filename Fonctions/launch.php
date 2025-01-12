@@ -2,17 +2,27 @@
 
 function charger($class)
 {
-	$fileModels = "./Models/$class.php";
-	$fileControllers = "./Controllers/$class.php";
-	$fileViews = "./Views/$class.php";
-	$fileRessources = "./Ressources/$class.php";
-	$fileFonctions = "./Fonctions/$class.php";
-	$files = array($fileModels, $fileControllers, $fileViews, $fileRessources, $fileFonctions);
-	foreach ($files as $file) {
-		if (file_exists($file)) {
-			include_once $file; // Utilisation de include_once
-		}
-	}
+    // Convert namespace separators to directory separators
+    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
+    
+    // Define possible paths
+    $paths = [
+        "./Models/",
+        "./Controllers/",
+        "./Views/",
+        "./Ressources/",
+        "./Fonctions/",
+        "./"
+    ];
+    
+    // Try each path
+    foreach ($paths as $path) {
+        $file = $path . $class . '.php';
+        if (file_exists($file)) {
+            include_once $file;
+            return;
+        }
+    }
 }
 
 function printr($tableaux)
