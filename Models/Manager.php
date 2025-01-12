@@ -322,3 +322,46 @@ class Manager {
         }
     }
 ?>
+<?php
+namespace Models;
+
+use PDO;
+use PDOException;
+
+class Manager {
+    private $connexion = null;
+    private $inTransaction = false;
+
+    public function getConnexion() {
+        try {
+            if ($this->connexion === null) {
+                $this->connexion = Bdd::getConnexion();
+            }
+            return $this->connexion;
+        } catch (PDOException $e) {
+            logError("Erreur de connexion à la base de données: " . $e->getMessage());
+            throw new \Exception("Impossible de se connecter à la base de données", 0, $e);
+        }
+    }
+
+    public function beginTransaction(): void {
+        if (!$this->inTransaction) {
+            $this->getConnexion()->beginTransaction();
+            $this->inTransaction = true;
+        }
+    }
+
+    public function commit(): void {
+        if ($this->inTransaction) {
+            $this->getConnexion()->commit();
+            $this->inTransaction = false;
+        }
+    }
+
+    public function rollback(): void {
+        if ($this->inTransaction) {
+            $this->getConnexion()->rollBack();
+            $this->inTransaction = false;
+        }
+    }
+}
