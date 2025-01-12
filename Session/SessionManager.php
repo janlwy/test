@@ -46,6 +46,12 @@ class SessionManager {
         return isset($_SESSION[$key]);
     }
     
+    public function ensureCsrfToken(): void {
+        if (!$this->has('csrf_token')) {
+            $this->regenerateToken();
+        }
+    }
+    
     public function regenerateToken(): string {
         $token = bin2hex(random_bytes(32));
         $this->set('csrf_token', $token);
