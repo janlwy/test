@@ -1,6 +1,7 @@
 <?php
 namespace Controllers;
 
+require_once __DIR__ . '/IBaseController.php';
 use Session\SessionManager;
 
 abstract class BaseController implements IBaseController {
