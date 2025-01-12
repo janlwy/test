@@ -1,4 +1,7 @@
 <?php
+namespace Controllers;
+
+require_once __DIR__ . '/BaseController.php';
 
 class ConnexionController extends BaseController
 {
