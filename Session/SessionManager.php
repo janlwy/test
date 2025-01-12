@@ -4,8 +4,21 @@ namespace Session;
 class SessionManager {
     private static $instance = null;
     
+    private const SESSION_LIFETIME = 1800; // 30 minutes
+    
     private function __construct() {
+        // Constructor is private for singleton pattern
+    }
+    
+    public function startSession(): void {
         if (session_status() === PHP_SESSION_NONE) {
+            session_set_cookie_params([
+                'lifetime' => self::SESSION_LIFETIME,
+                'path' => '/',
+                'secure' => true,
+                'httponly' => true,
+                'samesite' => 'Strict'
+            ]);
             session_start();
         }
     }

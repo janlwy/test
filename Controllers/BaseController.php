@@ -10,7 +10,6 @@ abstract class BaseController implements IBaseController {
     
     public function __construct() {
         $this->session = SessionManager::getInstance();
-        $this->session->startSession();
     }
     
     protected function checkAuth() {
