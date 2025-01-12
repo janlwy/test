@@ -1,4 +1,5 @@
 <?php
+namespace Controllers;
 
 require_once __DIR__ . '/../Fonctions/XssProtection.php';
 
@@ -75,8 +76,9 @@ class Router
         logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
-            if (class_exists($controllerName)) {
-                $controller = new $controllerName();
+            $fullClassName = "Controllers\\$controllerName";
+            if (class_exists($fullClassName)) {
+                $controller = new $fullClassName();
                 if (method_exists($controller, $actionName)) {
                     logInfo("Appel de la méthode $actionName dans le contrôleur $controllerName");
                     // Pass any additional URL parameters to the method
