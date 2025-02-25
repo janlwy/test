@@ -6,12 +6,11 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Session\\' => array($baseDir . '/Fonctions'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
+    'Models\\' => array($baseDir . '/Models'),
+    'Fonctions\\' => array($baseDir . '/Fonctions'),
     'Doctrine\\Instantiator\\' => array($vendorDir . '/doctrine/instantiator/src/Doctrine/Instantiator'),
     'DeepCopy\\' => array($vendorDir . '/myclabs/deep-copy/src/DeepCopy'),
-    'App\\Validation\\' => array($baseDir . '/Validation'),
-    'App\\Session\\' => array($baseDir . '/Session'),
-    'App\\Models\\' => array($baseDir . '/Models'),
-    'App\\Controllers\\' => array($baseDir . '/Controllers'),
-    'App\\' => array($baseDir . '/'),
+    'Controllers\\' => array($baseDir . '/Controllers'),
 );

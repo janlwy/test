@@ -12,29 +12,49 @@ class ComposerStaticInitf0bb306b92929fa3e249c70b04a83c85
     );
 
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Session\\' => 8,
+        ),
         'P' => 
         array (
             'PhpParser\\' => 10,
+        ),
+        'M' => 
+        array (
+            'Models\\' => 7,
+        ),
+        'F' => 
+        array (
+            'Fonctions\\' => 10,
         ),
         'D' => 
         array (
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
         ),
-        'A' => 
+        'C' => 
         array (
-            'App\\Validation\\' => 15,
-            'App\\Session\\' => 12,
-            'App\\Models\\' => 11,
-            'App\\Controllers\\' => 16,
-            'App\\' => 4,
+            'Controllers\\' => 12,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Session\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Fonctions',
+        ),
         'PhpParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Models\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Models',
+        ),
+        'Fonctions\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Fonctions',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
@@ -44,25 +64,9 @@ class ComposerStaticInitf0bb306b92929fa3e249c70b04a83c85
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
         ),
-        'App\\Validation\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Validation',
-        ),
-        'App\\Session\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Session',
-        ),
-        'App\\Models\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Models',
-        ),
-        'App\\Controllers\\' => 
+        'Controllers\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Controllers',
-        ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/',
         ),
     );
 

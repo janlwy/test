@@ -5176,3 +5176,38 @@
 2025-02-22 21:51:35 - [info] - Appel de la méthode index dans le contrôleur AccueilController
 2025-02-22 21:51:35 - [info] - Début de la méthode index dans AccueilController
 2025-02-22 21:51:35 - [info] - Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:46:38] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:46:38] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:46:38] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:46:38] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:46:41] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:48:15] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:48:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-02-25 21:50:39] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-02-25 21:50:42] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-02-25 21:50:45] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:50:46] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:50:46] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:50:46] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:50:46] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:50:49] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:50:49] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:50:49] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:50:49] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:50:51] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:50:51] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:50:51] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:50:51] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:50:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:51:11] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-02-25 21:55:51] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-02-25 21:55:56] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:55:58] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:55:58] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:55:58] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:55:58] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:56:01] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:56:01] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:56:01] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:56:01] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:56:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
