@@ -13,7 +13,14 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
     <?php endif; ?>
     
     <?php if ($error): ?>
-        <div class="error-message"><?php echo htmlspecialchars($error); ?></div>
+        <div class="error-message">
+            <?php echo htmlspecialchars($error); ?>
+            <?php if (strpos($error, 'SQLSTATE') !== false): ?>
+                <div class="sql-error-details">
+                    Erreur technique : veuillez contacter l'administrateur
+                </div>
+            <?php endif; ?>
+        </div>
     <?php endif; ?>
 
     <!-- Création de table -->
@@ -180,7 +187,11 @@ $datas['isAdmin'] = true; // Pour ajuster les chemins CSS
             }
                 
             if (!/^[a-zA-Z][a-zA-Z0-9_]*$/.test(columnNames[i].value)) {
-                alert('Les noms de colonnes doivent commencer par une lettre et ne contenir que des caractères alphanumériques et des underscores');
+                alert('Les noms de colonnes doivent :\n- Commencer par une lettre\n- Ne contenir que des caractères alphanumériques et des underscores\n- Faire moins de ' + MAX_COLUMN_NAME_LENGTH + ' caractères');
+                return false;
+            }
+            if (columnNames[i].value.length > MAX_COLUMN_NAME_LENGTH) {
+                alert('Le nom de la colonne "' + columnNames[i].value + '" est trop long (max ' + MAX_COLUMN_NAME_LENGTH + ' caractères)');
                 return false;
             }
 

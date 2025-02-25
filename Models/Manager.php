@@ -22,10 +22,16 @@ class Manager {
             }
         }
 
-        public function beginTransaction() {
-            if (!$this->inTransaction) {
+        public function beginTransaction(): void {
+            if ($this->inTransaction) {
+                throw new DatabaseException("Une transaction est déjà en cours");
+            }
+        
+            try {
                 $this->getConnexion()->beginTransaction();
                 $this->inTransaction = true;
+            } catch (PDOException $e) {
+                throw new DatabaseException("Erreur lors du démarrage de la transaction : " . $e->getMessage(), 0, $e);
             }
         }
 
@@ -42,14 +48,25 @@ class Manager {
                 $this->inTransaction = false;
             }
         }
-        public function readTableAll($table, $userId = null) {
+        public function readTableAll(string $table, ?int $userId = null): array {
             if (empty($table)) {
                 throw new DatabaseException("Le nom de la table est requis");
+            }
+            
+            if (!preg_match('/^[a-zA-Z_][a-zA-Z0-9_]*$/', $table)) {
+                throw new DatabaseException("Nom de table invalide");
             }
 
             try {
                 $connexion = $this->getConnexion();
                 $sql = "SELECT * FROM " . $this->escapeIdentifier($table);
+                
+                // Vérification de l'existence de la table
+                $stmt = $connexion->prepare("SHOW TABLES LIKE :table");
+                $stmt->execute(['table' => $table]);
+                if ($stmt->rowCount() === 0) {
+                    throw new DatabaseException("La table '$table' n'existe pas");
+                }
                 
                 if ($userId !== null) {
                     $sql .= " WHERE user_id = :user_id";
