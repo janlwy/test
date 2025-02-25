@@ -75,7 +75,9 @@ class Router
             }
         }
             
-        logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
+        if (function_exists('logInfo')) {
+            logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
+        }
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
             $fullClassName = "Controllers\\$controllerName";

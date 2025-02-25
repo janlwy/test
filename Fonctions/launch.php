@@ -60,7 +60,15 @@ function generateFile($file, $datas)
 
 function logError(string $message, string $level = 'error'): void
 {
-    $logFile = LOG_DIR . '/application.log';
+    // Définir un répertoire de logs par défaut si non configuré
+    $logDir = defined('LOG_DIR') ? LOG_DIR : __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'logs';
+    
+    // Créer le répertoire s'il n'existe pas
+    if (!is_dir($logDir)) {
+        @mkdir($logDir, 0755, true);
+    }
+    
+    $logFile = $logDir . DIRECTORY_SEPARATOR . 'application.log';
     $logMessage = sprintf(
         "[%s] %s: %s\n",
         date('Y-m-d H:i:s'),

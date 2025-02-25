@@ -16,8 +16,10 @@ define('MAX_DB_NAME_LENGTH', 64);
 define('MAX_COLUMN_NAME_LENGTH', 64);
 
 // Configuration des logs
-define('LOG_DIR', __DIR__ . '/../logs');
-if (!is_dir(LOG_DIR)) {
-    mkdir(LOG_DIR, 0755, true);
+if (!defined('LOG_DIR')) {
+    define('LOG_DIR', __DIR__ . DIRECTORY_SEPARATOR . '..' . DIRECTORY_SEPARATOR . 'logs');
+    if (!is_dir(LOG_DIR)) {
+        @mkdir(LOG_DIR, 0755, true);
+    }
 }
 ?>
