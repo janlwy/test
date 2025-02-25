@@ -378,9 +378,16 @@ class Manager {
     }
 
     public function commit(): void {
-        if ($this->inTransaction) {
+        if (!$this->inTransaction) {
+            throw new DatabaseException('Aucune transaction en cours');
+        }
+        
+        try {
             $this->getConnexion()->commit();
             $this->inTransaction = false;
+        } catch (PDOException $e) {
+            $this->inTransaction = false;
+            throw new DatabaseException('Erreur lors du commit : ' . $e->getMessage(), 0, $e);
         }
     }
 

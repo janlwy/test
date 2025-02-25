@@ -26,6 +26,8 @@ class SessionManager {
     
     private function setSecureCookieParams(): void {
         $cookieParams = session_get_cookie_params();
+        
+        // Configuration des cookies de session
         session_set_cookie_params([
             'lifetime' => $cookieParams['lifetime'],
             'path' => '/',
@@ -35,13 +37,25 @@ class SessionManager {
             'samesite' => 'Strict'
         ]);
         
-        // Configuration supplémentaire de sécurité
+        // Configuration PHP.ini pour la sécurité
         ini_set('session.cookie_httponly', '1');
         ini_set('session.cookie_secure', ($_SERVER['HTTPS'] ?? 'off') === 'on' ? '1' : '0');
         ini_set('session.cookie_samesite', 'Strict');
         ini_set('session.use_strict_mode', '1');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.cookie_lifetime', '0'); // Expire à la fermeture du navigateur
+        ini_set('session.gc_maxlifetime', '1440'); // 24 minutes
+        ini_set('session.cookie_secure', '1');
+        ini_set('session.cookie_httponly', '1');
+        ini_set('session.use_trans_sid', '0');
+        ini_set('session.hash_function', 'sha256');
+        ini_set('session.hash_bits_per_character', '5');
+        
+        // Protection contre les attaques de fixation de session
+        if (empty($_SESSION['initiated'])) {
+            session_regenerate_id(true);
+            $_SESSION['initiated'] = true;
+        }
     }
     
     private function regenerateIfNeeded(): void {
@@ -99,6 +113,15 @@ class SessionManager {
             $this->set('csrf_token_time', $timestamp);
             $this->set('csrf_token_ip', $_SERVER['REMOTE_ADDR'] ?? '');
             $this->set('csrf_token_user_agent', $_SERVER['HTTP_USER_AGENT'] ?? '');
+            
+            // Ajout d'un sel unique pour renforcer la sécurité
+            $salt = bin2hex(random_bytes(16));
+            $this->set('csrf_token_salt', $salt);
+            
+            // Hashage du token avec le sel
+            $hashedToken = hash('sha256', $token . $salt);
+            $this->set('csrf_token_hashed', $hashedToken);
+            
             return $token;
         } catch (Exception $e) {
             logError('Erreur lors de la génération du token CSRF : ' . $e->getMessage());

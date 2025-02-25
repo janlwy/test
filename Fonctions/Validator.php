@@ -29,10 +29,14 @@ class Validator {
     }
     
     private function validateRule(string $field, $value, string $rule, ?string $message = null): void {
-        if ($value === null) {
+        // Vérification de la valeur null
+        if ($value === null || $value === '') {
             $this->addError($field, $message ?? 'Ce champ est requis');
             return;
         }
+        
+        // Nettoyage de la valeur
+        $value = is_string($value) ? trim($value) : $value;
         $isValid = true;
         $defaultMessage = '';
         
