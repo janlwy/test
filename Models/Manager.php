@@ -1,8 +1,10 @@
 <?php
-namespace App\Models;
+namespace Models;
 
-use App\Models\Bdd;
-require_once 'DatabaseException.php';
+use Models\Bdd;
+use Models\DatabaseException;
+use PDO;
+use PDOException;
 require_once __DIR__ . '/../config.php';
 require_once __DIR__ . '/../Fonctions/launch.php';
 

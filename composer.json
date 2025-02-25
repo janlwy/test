@@ -4,11 +4,10 @@
     "license": "proprietary",
     "autoload": {
         "psr-4": {
-            "App\\": "./",
-            "App\\Controllers\\": "Controllers/",
-            "App\\Models\\": "Models/",
-            "App\\Session\\": "Session/",
-            "App\\Validation\\": "Validation/"
+            "Models\\": "Models/",
+            "Controllers\\": "Controllers/",
+            "Session\\": "Fonctions/",
+            "Fonctions\\": "Fonctions/"
         }
     },
     "require-dev": {
