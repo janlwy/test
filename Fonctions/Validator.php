@@ -28,7 +28,11 @@ class Validator {
         return empty($this->errors);
     }
     
-    private function validateRule($field, $value, $rule, $message = null) {
+    private function validateRule(string $field, $value, string $rule, ?string $message = null): void {
+        if ($value === null) {
+            $this->addError($field, $message ?? 'Ce champ est requis');
+            return;
+        }
         $isValid = true;
         $defaultMessage = '';
         

@@ -29,11 +29,19 @@ class SessionManager {
         session_set_cookie_params([
             'lifetime' => $cookieParams['lifetime'],
             'path' => '/',
-            'domain' => '',
-            'secure' => true,
+            'domain' => $_SERVER['HTTP_HOST'] ?? '',
+            'secure' => ($_SERVER['HTTPS'] ?? 'off') === 'on',
             'httponly' => true,
             'samesite' => 'Strict'
         ]);
+        
+        // Configuration supplémentaire de sécurité
+        ini_set('session.cookie_httponly', '1');
+        ini_set('session.cookie_secure', ($_SERVER['HTTPS'] ?? 'off') === 'on' ? '1' : '0');
+        ini_set('session.cookie_samesite', 'Strict');
+        ini_set('session.use_strict_mode', '1');
+        ini_set('session.use_only_cookies', '1');
+        ini_set('session.cookie_lifetime', '0'); // Expire à la fermeture du navigateur
     }
     
     private function regenerateIfNeeded(): void {
@@ -84,11 +92,18 @@ class SessionManager {
     }
     
     public function regenerateToken(): string {
-        $token = bin2hex(random_bytes(32));
-        $timestamp = time();
-        $this->set('csrf_token', $token);
-        $this->set('csrf_token_time', $timestamp);
-        return $token;
+        try {
+            $token = bin2hex(random_bytes(32));
+            $timestamp = time();
+            $this->set('csrf_token', $token);
+            $this->set('csrf_token_time', $timestamp);
+            $this->set('csrf_token_ip', $_SERVER['REMOTE_ADDR'] ?? '');
+            $this->set('csrf_token_user_agent', $_SERVER['HTTP_USER_AGENT'] ?? '');
+            return $token;
+        } catch (Exception $e) {
+            logError('Erreur lors de la génération du token CSRF : ' . $e->getMessage());
+            throw new RuntimeException('Impossible de générer un token de sécurité');
+        }
     }
     
     public function validateToken(?string $token): bool {

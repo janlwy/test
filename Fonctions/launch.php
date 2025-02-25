@@ -58,18 +58,34 @@ function generateFile($file, $datas)
 	}
 }
 
-function logError($message, $level = 'error')
+function logError(string $message, string $level = 'error'): void
 {
-    $logFile = 'logs/application.log';
-    $logMessage = date('Y-m-d H:i:s') . " - [$level] - $message\n";
+    $logFile = LOG_DIR . '/application.log';
+    $logMessage = sprintf(
+        "[%s] %s: %s\n",
+        date('Y-m-d H:i:s'),
+        strtoupper($level),
+        $message
+    );
+    
+    // Rotation des logs si > 10MB
+    if (file_exists($logFile) && filesize($logFile) > 10 * 1024 * 1024) {
+        rename($logFile, $logFile . '.' . date('YmdHis'));
+    }
+    
     file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
 
-function logInfo($message)
+function logInfo(string $message): void
 {
-    $logFile = 'logs/application.log';
-    $logMessage = date('Y-m-d H:i:s') . " - [info] - $message\n";
-    file_put_contents($logFile, $logMessage, FILE_APPEND);
+    logError($message, 'info');
+}
+
+function logDebug(string $message): void
+{
+    if (defined('DEBUG_MODE') && DEBUG_MODE) {
+        logError($message, 'debug');
+    }
 }
 function shouldDisplayNav($datas) {
     return !isset($datas['hideNav']) || !$datas['hideNav'];
