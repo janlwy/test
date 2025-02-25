@@ -1,6 +1,8 @@
 <?php
+namespace Controllers;
 
-require_once 'Fonctions/RoleManager.php';
+require_once __DIR__ . '/BaseController.php';
+require_once __DIR__ . '/../Fonctions/RoleManager.php';
 
 class CreationController extends BaseController implements IController
 {
