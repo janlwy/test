@@ -5063,3 +5063,116 @@
 2024-12-16 22:53:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
 2024-12-16 22:53:59 - [info] - Début de la méthode index dans ConnexionController
 2025-01-11 17:03:14 - [error] - Erreur de connexion à la base de données : SQLSTATE[HY000] [2002] Aucune connexion n’a pu être établie car l’ordinateur cible l’a expressément refusée
+2025-01-12 07:55:58 - [error] - Cookie de session manquant
+2025-01-12 07:55:58 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:14:20 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:14:25 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:14:31 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:16:19 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:16:22 - [info] - Tentative de chargement du contrôleur : AudioController et de la méthode : list
+2025-01-12 14:16:23 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2025-01-12 14:16:25 - [info] - Tentative de chargement du contrôleur : CompteController et de la méthode : index
+2025-01-12 14:16:26 - [info] - Tentative de chargement du contrôleur : MediaboxController et de la méthode : index
+2025-01-12 14:16:32 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:16:39 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:16:40 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:44 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:48 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:49 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:50 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:51 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:18:58 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:19:55 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:20:29 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:20:38 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:14 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:18 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:19 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:20 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:20 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:20 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:21:20 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:01 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:01 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:01 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:01 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:10 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:10 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:10 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:10 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:11 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:11 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:11 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:11 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:11 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:11 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:11 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:11 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:12 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:12 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:12 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:12 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:12 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 14:26:12 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 14:26:12 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 14:26:12 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 14:26:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:27:01 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:27:06 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:27:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:29:51 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:30:21 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:30:27 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:31:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 14:31:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-01-12 14:31:07 - [info] - Début de la méthode index dans ConnexionController
+2025-01-12 15:27:59 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 15:27:59 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-01-12 15:27:59 - [info] - Début de la méthode index dans ConnexionController
+2025-01-12 15:28:02 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-01-12 15:28:02 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-01-12 15:28:02 - [info] - Début de la méthode index dans AccueilController
+2025-01-12 15:28:02 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-01-12 15:28:04 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 15:28:04 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-01-12 15:28:04 - [info] - Début de la méthode index dans ConnexionController
+2025-01-12 15:28:10 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2025-01-12 15:28:13 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-12 15:28:13 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-01-12 15:28:13 - [info] - Début de la méthode index dans ConnexionController
+2025-01-22 11:23:31 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-01-22 11:23:32 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-01-22 11:23:32 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:42:43 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-02-22 21:42:44 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-02-22 21:42:44 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:42:51 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-02-22 21:42:51 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-02-22 21:42:51 - [info] - Début de la méthode index dans AccueilController
+2025-02-22 21:42:51 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-02-22 21:42:55 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-02-22 21:42:55 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-02-22 21:42:55 - [info] - Début de la méthode index dans AccueilController
+2025-02-22 21:42:55 - [info] - Utilisateur non connecté, affichage de l'accueil
+2025-02-22 21:44:05 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-02-22 21:44:05 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-02-22 21:44:05 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:44:25 - [info] - Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+2025-02-22 21:44:31 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-02-22 21:44:31 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-02-22 21:44:31 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:45:53 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+2025-02-22 21:45:53 - [info] - Appel de la méthode connect dans le contrôleur ConnexionController
+2025-02-22 21:46:03 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-02-22 21:46:03 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-02-22 21:46:03 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:46:07 - [info] - Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+2025-02-22 21:46:07 - [info] - Appel de la méthode index dans le contrôleur ConnexionController
+2025-02-22 21:46:07 - [info] - Début de la méthode index dans ConnexionController
+2025-02-22 21:51:34 - [info] - Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+2025-02-22 21:51:35 - [info] - Appel de la méthode index dans le contrôleur AccueilController
+2025-02-22 21:51:35 - [info] - Début de la méthode index dans AccueilController
+2025-02-22 21:51:35 - [info] - Utilisateur non connecté, affichage de l'accueil
