@@ -45,10 +45,10 @@ class Router
                   strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
                   
         // Liste des actions qui nécessitent une vérification CSRF
-        $csrfProtectedActions = ['create', 'update', 'delete', 'save'];
+        $csrfProtectedActions = ['create', 'update', 'delete', 'save', 'connect', 'createUser'];
         
         // Liste des actions exemptées de vérification CSRF
-        $csrfExemptActions = ['player', 'list'];
+        $csrfExemptActions = ['player', 'list', 'index'];
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $currentAction = $actionName ?? '';

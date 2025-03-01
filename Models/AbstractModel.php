@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace Models;
 
 abstract class AbstractModel {
     protected $id;
@@ -44,8 +44,8 @@ abstract class AbstractModel {
     }
     
     public function toArray(): array {
-        $reflect = new ReflectionClass($this);
-        $props = $reflect->getProperties(ReflectionProperty::IS_PROTECTED | ReflectionProperty::IS_PRIVATE);
+        $reflect = new \ReflectionClass($this);
+        $props = $reflect->getProperties(\ReflectionProperty::IS_PROTECTED | \ReflectionProperty::IS_PRIVATE);
         
         $array = [];
         foreach ($props as $prop) {

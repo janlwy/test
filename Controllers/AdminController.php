@@ -1,4 +1,5 @@
 <?php
+namespace Controllers;
 
 class AdminController extends BaseController implements IController {
     private $manager;

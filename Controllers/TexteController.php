@@ -1,9 +1,9 @@
 <?php
-namespace App\Controllers;
+namespace Controllers;
 
-use App\Models\TexteRepository;
-use App\Controllers\BaseController;
-use App\Controllers\IController;
+use Models\TexteRepository;
+use Controllers\BaseController;
+use Controllers\IController;
 
 class TexteController extends BaseController implements IController
 {

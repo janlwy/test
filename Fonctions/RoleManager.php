@@ -1,4 +1,5 @@
 <?php
+namespace Fonctions;
 
 class RoleManager {
     public const ROLE_ADMIN = 'admin';

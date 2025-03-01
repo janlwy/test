@@ -1,4 +1,5 @@
 <?php
+namespace Controllers;
 
 class VideoController extends BaseController implements IController
 {

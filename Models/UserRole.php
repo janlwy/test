@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 
 class UserRole {
     public const ROLE_USER = 'user';

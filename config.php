@@ -24,7 +24,7 @@ if (!defined('LOG_DIR')) {
 
 // Vérification de la connexion à la base de données
 try {
-    $testConn = new PDO(
+    $testConn = new \PDO(
         "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME,
         DB_USER,
         DB_PASSWORD,
@@ -35,9 +35,9 @@ try {
             PDO::ATTR_PERSISTENT => true
         ]
     );
-} catch (PDOException $e) {
+} catch (\PDOException $e) {
     logError("Erreur de connexion à la base de données : " . $e->getMessage());
-    throw new RuntimeException("Impossible de se connecter à la base de données. Vérifiez vos paramètres de connexion.");
+    throw new \RuntimeException("Impossible de se connecter à la base de données. Vérifiez vos paramètres de connexion.");
 }
 
 // Configuration du fuseau horaire

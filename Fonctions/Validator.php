@@ -1,4 +1,5 @@
 <?php
+namespace Fonctions;
 
 class Validator {
     private $errors = [];

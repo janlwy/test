@@ -1,11 +1,11 @@
 <?php
-namespace App\Controllers;
+namespace Controllers;
 
-use App\Models\Audio;
-use App\Models\AudioRepository;
-use App\Models\Manager;
-use App\Session\SessionManager;
-use App\Controllers\IController;
+use Models\Audio;
+use Models\AudioRepository;
+use Models\Manager;
+use Session\SessionManager;
+use Controllers\IController;
 
 class AudioController extends BaseController implements IController
 {

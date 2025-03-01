@@ -1,4 +1,5 @@
 <?php
+namespace Controllers;
 
 class PhotoController extends BaseController implements IController
 {

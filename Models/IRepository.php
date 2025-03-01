@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace Models;
 
 interface IRepository {
     public function findById(int $id);

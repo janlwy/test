@@ -1,4 +1,5 @@
 <?php
+namespace Controllers;
 
 class MediaboxController extends BaseController implements IController
 {

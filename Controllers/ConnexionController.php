@@ -93,7 +93,7 @@ class ConnexionController extends BaseController
                     $this->session->set('erreur', "Login ou mot de passe non reconnu ! Il vous reste $remainingAttempts tentatives avant le blocage temporaire.");
                     $this->redirect('connexion/index');
                 }
-            } catch (PDOException $e) {
+            } catch (\PDOException $e) {
                 logError("Erreur PDO : " . $e->getMessage());
                 $this->session->set('erreur', "Une erreur est survenue lors de la connexion.");
                 $this->redirect('connexion/index');

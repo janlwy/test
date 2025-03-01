@@ -56,7 +56,7 @@ class CreationController extends BaseController implements IController
                 throw new Exception('Token CSRF invalide');
             }
 
-            $validator = new Validator();
+            $validator = new \Validator();
             $rules = [
                 'pseudo' => [
                     ['rule' => 'required', 'message' => 'Le nom d\'utilisateur est requis'],
