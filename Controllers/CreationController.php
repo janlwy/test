@@ -145,11 +145,6 @@ class CreationController extends BaseController implements IController
                 $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
                 $this->redirect('creation/createUserForm');
             }
-        } else {
-            $this->session->set('erreur', 'Veuillez corriger les erreurs dans le formulaire');
-            $this->session->set('validation_errors', $validator->getErrors());
-            $this->redirect('creation/createUserForm');
-            }
         } catch (Exception $e) {
             logError("Erreur lors de la création du compte : " . $e->getMessage());
             $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
