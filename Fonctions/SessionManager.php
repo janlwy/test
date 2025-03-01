@@ -1,4 +1,5 @@
 <?php
+namespace Session;
 
 class SessionManager {
     private static $instance = null;

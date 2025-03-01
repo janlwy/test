@@ -77,8 +77,16 @@ class Router
                     // Pour les requêtes normales
                     if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
                         logError("Erreur CSRF : jeton invalide pour l'action $currentAction");
-                        $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer.";
-                        header('Location: ?url=audio/list');
+                        $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer. Token manquant ou invalide.";
+                        
+                        // Rediriger vers une page appropriée en fonction du contexte
+                        if (strpos($url, 'creation') !== false) {
+                            header('Location: ?url=creation/createUserForm');
+                        } elseif (strpos($url, 'connexion') !== false) {
+                            header('Location: ?url=connexion/index');
+                        } else {
+                            header('Location: ?url=accueil/index');
+                        }
                         exit();
                     }
                 }

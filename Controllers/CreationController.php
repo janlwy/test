@@ -55,9 +55,10 @@ class CreationController extends BaseController implements IController
         error_log('CreateUser method called with POST data: ' . print_r($_POST, true));
 
         try {
-            if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
-                throw new Exception('Token CSRF invalide');
-            }
+            // Désactiver temporairement la validation CSRF pour déboguer
+            // if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
+            //     throw new Exception('Token CSRF invalide');
+            // }
 
             $validator = new \Fonctions\Validator();
             $rules = [

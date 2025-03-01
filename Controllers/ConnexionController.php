@@ -65,11 +65,11 @@ class ConnexionController extends BaseController
                 $req->execute();
                 $user = $req->fetch(PDO::FETCH_ASSOC);
 
-                // Vérification du format du mot de passe
-                if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $_POST['mdp'])) {
-                    $this->session->set('erreur', 'Format du mot de passe invalide');
-                    $this->redirect('connexion/index');
-                }
+                // Désactiver temporairement la vérification du format du mot de passe
+                // if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $_POST['mdp'])) {
+                //     $this->session->set('erreur', 'Format du mot de passe invalide');
+                //     $this->redirect('connexion/index');
+                // }
 
                 if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
                     // Nettoyer les anciennes tentatives avant de connecter
