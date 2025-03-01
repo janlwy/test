@@ -18,19 +18,42 @@ class SessionManager {
     }
     
     public function startSession(): void {
+        // Vérifier si une session est déjà active
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            return;
+        }
+        
+        // Vérifier si une session peut être démarrée
         if (session_status() === PHP_SESSION_NONE) {
-            $this->setSecureCookieParams();
-            session_start();
-            
-            // S'assurer que la session est bien démarrée avant de continuer
-            if (session_status() === PHP_SESSION_ACTIVE) {
-                // Régénérer l'ID de session après avoir démarré la session
-                $this->regenerateIfNeeded();
-                $this->validateSession();
-            } else {
-                // Journaliser l'erreur si la session n'a pas pu être démarrée
+            try {
+                // Configurer les paramètres de sécurité des cookies
+                $this->setSecureCookieParams();
+                
+                // Démarrer la session
+                session_start();
+                
+                // S'assurer que la session est bien démarrée avant de continuer
+                if (session_status() === PHP_SESSION_ACTIVE) {
+                    // Initialiser la session si nécessaire
+                    if (!isset($_SESSION['initiated'])) {
+                        $_SESSION['initiated'] = true;
+                        $_SESSION['last_regeneration'] = time();
+                    } else {
+                        // Régénérer l'ID de session si nécessaire
+                        $this->regenerateIfNeeded();
+                    }
+                    
+                    // Valider la session
+                    $this->validateSession();
+                } else {
+                    // Journaliser l'erreur si la session n'a pas pu être démarrée
+                    if (function_exists('logError')) {
+                        logError("Impossible de démarrer la session");
+                    }
+                }
+            } catch (\Exception $e) {
                 if (function_exists('logError')) {
-                    logError("Impossible de démarrer la session");
+                    logError("Erreur lors du démarrage de la session: " . $e->getMessage());
                 }
             }
         }
@@ -39,48 +62,48 @@ class SessionManager {
     private function setSecureCookieParams(): void {
         $cookieParams = session_get_cookie_params();
         
+        // Déterminer si la connexion est sécurisée
+        $isSecure = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+        
         // Configuration des cookies de session
         session_set_cookie_params([
             'lifetime' => $cookieParams['lifetime'],
             'path' => '/',
             'domain' => $_SERVER['HTTP_HOST'] ?? '',
-            'secure' => ($_SERVER['HTTPS'] ?? 'off') === 'on',
+            'secure' => $isSecure,
             'httponly' => true,
-            'samesite' => 'Strict'
+            'samesite' => 'Lax' // Changé de Strict à Lax pour plus de compatibilité
         ]);
         
         // Configuration PHP.ini pour la sécurité
         ini_set('session.cookie_httponly', '1');
-        ini_set('session.cookie_secure', ($_SERVER['HTTPS'] ?? 'off') === 'on' ? '1' : '0');
-        ini_set('session.cookie_samesite', 'Strict');
+        ini_set('session.cookie_secure', $isSecure ? '1' : '0');
+        ini_set('session.cookie_samesite', 'Lax');
         ini_set('session.use_strict_mode', '1');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.cookie_lifetime', '0'); // Expire à la fermeture du navigateur
         ini_set('session.gc_maxlifetime', '1440'); // 24 minutes
-        ini_set('session.cookie_secure', '1');
-        ini_set('session.cookie_httponly', '1');
         ini_set('session.use_trans_sid', '0');
         ini_set('session.hash_function', 'sha256');
         ini_set('session.hash_bits_per_character', '5');
         
-        // Protection contre les attaques de fixation de session
-        if (empty($_SESSION['initiated'])) {
-            session_regenerate_id(true);
-            $_SESSION['initiated'] = true;
-        }
+        // Ne pas régénérer l'ID de session ici, car $_SESSION n'est pas encore disponible
     }
     
     private function regenerateIfNeeded(): void {
-        // Double vérification que la session est active
-        if (session_status() !== PHP_SESSION_ACTIVE) {
+        // Double vérification que la session est active et initialisée
+        if (session_status() !== PHP_SESSION_ACTIVE || !isset($_SESSION)) {
             return;
         }
         
         try {
             if (!isset($_SESSION['last_regeneration']) || 
                 (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
-                if (session_regenerate_id(true)) {
-                    $_SESSION['last_regeneration'] = time();
+                // Vérifier que la session est active avant de régénérer l'ID
+                if (session_status() === PHP_SESSION_ACTIVE) {
+                    if (session_regenerate_id(true)) {
+                        $_SESSION['last_regeneration'] = time();
+                    }
                 }
             }
         } catch (\Exception $e) {
@@ -93,7 +116,7 @@ class SessionManager {
     
     private function validateSession(): void {
         // Vérifier si une session est active
-        if (session_status() !== PHP_SESSION_ACTIVE) {
+        if (session_status() !== PHP_SESSION_ACTIVE || !isset($_SESSION)) {
             return;
         }
         
@@ -102,9 +125,15 @@ class SessionManager {
             if (function_exists('logError')) {
                 logError("Cookie de session manquant");
             }
+            
+            // Ne pas rediriger automatiquement, juste détruire la session
             $this->destroySession();
-            header('Location: ?url=connexion/index');
-            exit();
+            
+            // Éviter de rediriger si nous sommes déjà sur la page de connexion
+            if (!isset($_GET['url']) || $_GET['url'] !== 'connexion/index') {
+                header('Location: ?url=connexion/index');
+                exit();
+            }
         }
     }
     

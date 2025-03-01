@@ -5,9 +5,24 @@ spl_autoload_register('charger');
 use Controllers\Router;
 use Session\SessionManager;
 
-$session = SessionManager::getInstance();
-$session->startSession();
+try {
+    $session = SessionManager::getInstance();
+    $session->startSession();
 
-$router = new Router();
+    // Vérifier que la session est active
+    if (session_status() !== PHP_SESSION_ACTIVE) {
+        logError("La session n'a pas pu être démarrée dans index.php");
+    }
+
+    $router = new Router();
+} catch (\Exception $e) {
+    // Journaliser l'erreur
+    if (function_exists('logError')) {
+        logError("Erreur critique dans index.php: " . $e->getMessage());
+    }
+    
+    // Afficher un message d'erreur convivial
+    echo "Une erreur est survenue. Veuillez réessayer ultérieurement.";
+}
 ?>
 

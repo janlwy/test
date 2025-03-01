@@ -36,9 +36,19 @@ class Router
         }
 
 
-        $session = SessionManager::getInstance();
-        $session->startSession();
-        $session->ensureCsrfToken();
+        try {
+            $session = SessionManager::getInstance();
+            $session->startSession();
+            
+            // Vérifier que la session est active avant d'essayer d'utiliser ensureCsrfToken
+            if (session_status() === PHP_SESSION_ACTIVE) {
+                $session->ensureCsrfToken();
+            } else {
+                logError("Impossible de démarrer la session dans le Router");
+            }
+        } catch (\Exception $e) {
+            logError("Erreur lors de l'initialisation de la session: " . $e->getMessage());
+        }
         
         // Vérifier si c'est une requête AJAX
         $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
