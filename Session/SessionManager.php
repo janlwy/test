@@ -21,9 +21,18 @@ class SessionManager {
         if (session_status() === PHP_SESSION_NONE) {
             $this->setSecureCookieParams();
             session_start();
-            // Régénérer l'ID de session après avoir démarré la session
-            $this->regenerateIfNeeded();
-            $this->validateSession();
+            
+            // S'assurer que la session est bien démarrée avant de continuer
+            if (session_status() === PHP_SESSION_ACTIVE) {
+                // Régénérer l'ID de session après avoir démarré la session
+                $this->regenerateIfNeeded();
+                $this->validateSession();
+            } else {
+                // Journaliser l'erreur si la session n'a pas pu être démarrée
+                if (function_exists('logError')) {
+                    logError("Impossible de démarrer la session");
+                }
+            }
         }
     }
     
@@ -62,19 +71,34 @@ class SessionManager {
     }
     
     private function regenerateIfNeeded(): void {
-        // Vérifier si une session est active avant de régénérer l'ID
-        if (session_status() === PHP_SESSION_ACTIVE) {
+        // Double vérification que la session est active
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+        
+        try {
             if (!isset($_SESSION['last_regeneration']) || 
                 (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
-                session_regenerate_id(true);
-                $_SESSION['last_regeneration'] = time();
+                if (session_regenerate_id(true)) {
+                    $_SESSION['last_regeneration'] = time();
+                }
+            }
+        } catch (\Exception $e) {
+            // Capturer toute exception qui pourrait survenir
+            if (function_exists('logError')) {
+                logError("Erreur lors de la régénération de l'ID de session: " . $e->getMessage());
             }
         }
     }
     
     private function validateSession(): void {
-        // Vérifier si une session est active et si le cookie de session existe
-        if (session_status() === PHP_SESSION_ACTIVE && !isset($_COOKIE[session_name()])) {
+        // Vérifier si une session est active
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+        
+        // Vérifier si le cookie de session existe
+        if (!isset($_COOKIE[session_name()])) {
             if (function_exists('logError')) {
                 logError("Cookie de session manquant");
             }
