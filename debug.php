@@ -42,7 +42,7 @@ echo "</pre>";
 
 // Tester la classe SessionManager
 try {
-    $session = Session\SessionManager::getInstance();
+    $session = Fonctions\SessionManager::getInstance();
     echo "<p style='color:green'>Instance de SessionManager créée avec succès</p>";
     
     // Vérifier si la méthode validateToken existe

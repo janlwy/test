@@ -1,5 +1,6 @@
 <?php
-namespace Session;
+// Utiliser un namespace différent pour éviter le conflit
+namespace Fonctions;
 
 class SessionManager {
     private static $instance = null;

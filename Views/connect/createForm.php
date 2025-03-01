@@ -5,7 +5,7 @@
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour créer votre profil.</h3>
-			<?php $token = SessionManager::getInstance()->regenerateToken(); ?>
+			<?php $token = \Fonctions\SessionManager::getInstance()->regenerateToken(); ?>
 			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
 			<hr>
 			<?php 

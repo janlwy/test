@@ -2,7 +2,7 @@
 namespace Controllers;
 
 require_once __DIR__ . '/../Fonctions/XssProtection.php';
-use Session\SessionManager;
+use Fonctions\SessionManager;
 use Fonctions\XssProtection;
 
 class Router
