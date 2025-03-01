@@ -13,6 +13,13 @@
 					unset($_SESSION['erreur']); ?>
 				</div>
 			<?php endif; ?>
+			
+			<?php if (isset($_SESSION['message'])): ?>
+				<div class="success-message">
+					<?php echo htmlspecialchars($_SESSION['message'], ENT_QUOTES, 'UTF-8');
+					unset($_SESSION['message']); ?>
+				</div>
+			<?php endif; ?>
 
 			<label for="pseudo"><b>Nom d'utilisateur</b></label>
 			<input class="inputModal" type="text" placeholder="Entrez votre nom" name="pseudo" id="pseudo" required>

@@ -127,7 +127,8 @@ class CreationController extends BaseController implements IController
                 $req->bindValue(':role', RoleManager::getDefaultRole(), PDO::PARAM_STR);
                 
                 if ($req->execute()) {
-                    $this->session->set('success', 'Compte créé avec succès. Vous pouvez maintenant vous connecter.');
+                    // Stocker un message de succès
+                    $_SESSION['message'] = 'Compte créé avec succès. Vous pouvez maintenant vous connecter.';
                     $this->redirect('connexion/index');
                 } else {
                     throw new Exception('Erreur lors de la création du compte');

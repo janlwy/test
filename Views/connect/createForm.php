@@ -72,6 +72,15 @@
 				// Activer le bouton submit par défaut
 				submitBtn.disabled = false;
 				
+				// Fonction pour valider la correspondance des mots de passe
+				function validatePasswordMatch() {
+					if (password1.value !== password2.value) {
+						password2.setCustomValidity('Les mots de passe ne correspondent pas');
+					} else {
+						password2.setCustomValidity('');
+					}
+				}
+				
 				// Ajouter les event listeners
 				form.addEventListener('submit', function(e) {
 					e.preventDefault(); // Toujours prévenir la soumission par défaut
@@ -88,6 +97,9 @@
 					input.addEventListener('input', validateForm);
 					input.addEventListener('change', validateForm);
 				});
+				
+				// Ajouter un événement spécifique pour la validation des mots de passe
+				password2.addEventListener('input', validatePasswordMatch);
 
 				validateForm(); // Validation initiale
 			});
