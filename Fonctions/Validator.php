@@ -13,8 +13,15 @@ class Validator {
             $value = $data[$field] ?? null;
             
             foreach ($fieldRules as $ruleData) {
-                $rule = $ruleData['rule'];
-                $message = $ruleData['message'] ?? null;
+                if (is_array($ruleData)) {
+                    // Format avec message: ['rule' => 'required', 'message' => 'Ce champ est requis']
+                    $rule = $ruleData['rule'] ?? $ruleData[0];
+                    $message = $ruleData['message'] ?? null;
+                } else {
+                    // Format simple: 'required'
+                    $rule = $ruleData;
+                    $message = null;
+                }
                 
                 if (is_array($rule)) {
                     // Règle avec paramètres : ['min', 3]

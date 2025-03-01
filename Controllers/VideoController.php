@@ -111,7 +111,7 @@ class VideoController extends BaseController implements IController
         $this->checkCSRF();
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $validator = new Validator();
+            $validator = new \Fonctions\Validator();
             $rules = [
                 'title' => ['required', ['min', 2], ['max', 100]],
                 'description' => ['required', ['max', 500]]
