@@ -1,12 +1,16 @@
 <?php
+namespace Controllers;
+
+require_once __DIR__ . '/BaseController.php';
+require_once __DIR__ . '/../Fonctions/SessionManager.php';
+use Session\SessionManager;
+use PDO;
+use Models\Manager;
 
 class CompteController extends BaseController implements IController
 {
-    protected $session;
-
     public function __construct() {
         parent::__construct();
-        $this->session = SessionManager::getInstance();
     }
 
     public function list()
