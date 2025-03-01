@@ -19,12 +19,14 @@
             // Affichage des erreurs de validation
             if (isset($_SESSION['validation_errors']) && is_array($_SESSION['validation_errors'])): ?>
                 <div class="error-message">
+                    <ul>
                     <?php foreach ($_SESSION['validation_errors'] as $field => $errors): ?>
                         <?php foreach ($errors as $error): ?>
-                            <p><?php echo htmlspecialchars($field . ': ' . $error, ENT_QUOTES, 'UTF-8'); ?></p>
+                            <li><?php echo htmlspecialchars($field . ': ' . $error, ENT_QUOTES, 'UTF-8'); ?></li>
                         <?php endforeach; ?>
                     <?php endforeach;
                     unset($_SESSION['validation_errors']); ?>
+                    </ul>
                 </div>
             <?php endif; ?>
 

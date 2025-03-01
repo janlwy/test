@@ -83,7 +83,14 @@ class CreationController extends BaseController implements IController
                 ]
             ];
 
-            if ($validator->validate($_POST, $rules)) {
+            if (!$validator->validate($_POST, $rules)) {
+                $this->session->set('erreur', 'Veuillez corriger les erreurs dans le formulaire');
+                $this->session->set('validation_errors', $validator->getErrors());
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+            
+            // Vérification supplémentaire des mots de passe
             if ($_POST['mdp'] !== $_POST['mdp2']) {
                 $this->session->set('erreur', 'Les mots de passe ne correspondent pas');
                 $this->redirect('creation/createUserForm');

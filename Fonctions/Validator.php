@@ -37,21 +37,20 @@ class Validator {
     }
     
     private function validateRule(string $field, $value, string $rule, ?string $message = null): void {
-        // Vérification de la valeur null
-        if ($value === null || $value === '') {
-            $this->addError($field, $message ?? 'Ce champ est requis');
-            return;
-        }
-        
-        // Nettoyage de la valeur
+        // Nettoyage de la valeur si c'est une chaîne
         $value = is_string($value) ? trim($value) : $value;
         $isValid = true;
         $defaultMessage = '';
         
         switch ($rule) {
             case 'required':
-                $isValid = !empty($value);
+                $isValid = !($value === null || $value === '');
                 $defaultMessage = 'Ce champ est requis';
+                
+                if (!$isValid) {
+                    $this->addError($field, $message ?? $defaultMessage);
+                }
+                return; // On sort de la fonction après avoir vérifié required
                 break;
                 
             case 'email':
@@ -86,6 +85,11 @@ class Validator {
     }
     
     private function validateParameterizedRule($field, $value, $ruleName, $parameter, $message = null) {
+        // Si la valeur est vide et que ce n'est pas une règle 'required', on ne valide pas
+        if (($value === null || $value === '') && $ruleName !== 'required') {
+            return;
+        }
+        
         $isValid = true;
         $defaultMessage = '';
         
