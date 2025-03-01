@@ -1,6 +1,10 @@
 <?php
 namespace Controllers;
 
+use Models\VideoRepository;
+use Fonctions\Validator;
+use Exception;
+
 class VideoController extends BaseController implements IController
 {
     protected $repository;

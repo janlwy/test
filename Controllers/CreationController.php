@@ -3,6 +3,9 @@ namespace Controllers;
 
 require_once __DIR__ . '/BaseController.php';
 require_once __DIR__ . '/../Fonctions/RoleManager.php';
+use Models\Manager;
+use PDO;
+use Exception;
 
 class CreationController extends BaseController implements IController
 {

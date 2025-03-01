@@ -1,6 +1,10 @@
 <?php
 namespace Controllers;
 
+use Models\Manager;
+use Fonctions\RoleManager;
+use Exception;
+
 class AdminController extends BaseController implements IController {
     private $manager;
 

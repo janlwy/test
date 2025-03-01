@@ -29,7 +29,9 @@ class ConnexionController extends BaseController
     
     public function __construct() {
         parent::__construct();
-        $this->loginAttemptManager = new \Models\LoginAttemptManager();
+        if (class_exists('\Models\LoginAttemptManager')) {
+            $this->loginAttemptManager = new \Models\LoginAttemptManager();
+        }
     }
 
     public function connect()
@@ -48,7 +50,7 @@ class ConnexionController extends BaseController
             $ip = $_SERVER['REMOTE_ADDR'];
 
             // Vérifier si l'utilisateur ou l'IP est bloqué
-            if ($this->loginAttemptManager->isLockedOut($pseudo, $ip)) {
+            if (isset($this->loginAttemptManager) && $this->loginAttemptManager->isLockedOut($pseudo, $ip)) {
                 $this->session->set('erreur', 'Compte temporairement bloqué. Veuillez réessayer dans 15 minutes.');
                 $this->redirect('connexion/index');
             }
@@ -71,7 +73,9 @@ class ConnexionController extends BaseController
 
                 if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
                     // Nettoyer les anciennes tentatives avant de connecter
-                    $this->loginAttemptManager->cleanupOldAttempts();
+                    if (isset($this->loginAttemptManager)) {
+                        $this->loginAttemptManager->cleanupOldAttempts();
+                    }
                     $this->session->setAuthenticated($_POST['pseudo'], $user['id'], $user['role']);
                     
                     // Vérifier si l'utilisateur est un admin
@@ -84,10 +88,12 @@ class ConnexionController extends BaseController
                     $this->redirect('mediabox/index');
                 } else {
                     // Enregistrer la tentative échouée
-                    $this->loginAttemptManager->recordAttempt($pseudo, $ip);
-                    
-                    // Obtenir le nombre de tentatives restantes
-                    $remainingAttempts = $this->loginAttemptManager->getRemainingAttempts($pseudo, $ip);
+                    $remainingAttempts = 5; // Valeur par défaut
+                    if (isset($this->loginAttemptManager)) {
+                        $this->loginAttemptManager->recordAttempt($pseudo, $ip);
+                        // Obtenir le nombre de tentatives restantes
+                        $remainingAttempts = $this->loginAttemptManager->getRemainingAttempts($pseudo, $ip);
+                    }
                     
                     logError("Erreur de connexion : identifiants invalides pour l'utilisateur $pseudo depuis $ip");
                     $this->session->set('erreur', "Login ou mot de passe non reconnu ! Il vous reste $remainingAttempts tentatives avant le blocage temporaire.");

@@ -2,8 +2,8 @@
 namespace Controllers;
 
 use Models\TexteRepository;
-use Controllers\BaseController;
-use Controllers\IController;
+use Models\Texte;
+use Exception;
 
 class TexteController extends BaseController implements IController
 {

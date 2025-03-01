@@ -1,6 +1,10 @@
 <?php
 namespace Controllers;
 
+use Models\PhotoRepository;
+use Fonctions\Validator;
+use Exception;
+
 class PhotoController extends BaseController implements IController
 {
     protected $repository;

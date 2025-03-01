@@ -1,6 +1,10 @@
 <?php
 namespace Models;
 
+use PDO;
+use Exception;
+use InvalidArgumentException;
+
 class AudioRepository implements IRepository {
     private $manager;
     
@@ -22,7 +26,7 @@ class AudioRepository implements IRepository {
             $connection = $this->manager->getConnexion();
             $query = "SELECT * FROM audio WHERE user_id = :user_id ORDER BY title ASC";
             $stmt = $connection->prepare($query);
-            $stmt->bindValue(':user_id', intval($userId), \PDO::PARAM_INT);
+            $stmt->bindValue(':user_id', intval($userId), PDO::PARAM_INT);
             $stmt->execute();
             
             $audios = [];
