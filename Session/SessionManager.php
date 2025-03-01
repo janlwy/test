@@ -21,6 +21,7 @@ class SessionManager {
         if (session_status() === PHP_SESSION_NONE) {
             $this->setSecureCookieParams();
             session_start();
+            // Régénérer l'ID de session après avoir démarré la session
             $this->regenerateIfNeeded();
             $this->validateSession();
         }
@@ -61,15 +62,19 @@ class SessionManager {
     }
     
     private function regenerateIfNeeded(): void {
-        if (!isset($_SESSION['last_regeneration']) || 
-            (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
-            session_regenerate_id(true);
-            $_SESSION['last_regeneration'] = time();
+        // Vérifier si une session est active avant de régénérer l'ID
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            if (!isset($_SESSION['last_regeneration']) || 
+                (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
+                session_regenerate_id(true);
+                $_SESSION['last_regeneration'] = time();
+            }
         }
     }
     
     private function validateSession(): void {
-        if (!isset($_COOKIE[session_name()])) {
+        // Vérifier si une session est active et si le cookie de session existe
+        if (session_status() === PHP_SESSION_ACTIVE && !isset($_COOKIE[session_name()])) {
             if (function_exists('logError')) {
                 logError("Cookie de session manquant");
             }
