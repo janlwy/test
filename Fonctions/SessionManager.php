@@ -17,61 +17,101 @@ class SessionManager {
     
     public function startSession(): void {
         if (session_status() === PHP_SESSION_NONE) {
-            $this->setSecureCookieParams();
-            session_start();
-            $this->regenerateIfNeeded();
-            $this->validateSession();
+            try {
+                $this->setSecureCookieParams();
+                session_start();
+                
+                // Vérifier que la session a bien démarré
+                if (session_status() === PHP_SESSION_ACTIVE) {
+                    // Initialiser la session si nécessaire
+                    if (!isset($_SESSION['initiated'])) {
+                        $_SESSION['initiated'] = true;
+                        $_SESSION['last_regeneration'] = time();
+                    } else {
+                        $this->regenerateIfNeeded();
+                    }
+                    $this->validateSession();
+                } else {
+                    if (function_exists('logError')) {
+                        logError("Impossible de démarrer la session");
+                    }
+                }
+            } catch (\Exception $e) {
+                if (function_exists('logError')) {
+                    logError("Erreur lors du démarrage de la session: " . $e->getMessage());
+                }
+            }
         }
     }
     
     private function setSecureCookieParams(): void {
         $cookieParams = session_get_cookie_params();
         
+        // Déterminer si la connexion est sécurisée
+        $isSecure = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on';
+        
         // Configuration des cookies de session
         session_set_cookie_params([
             'lifetime' => $cookieParams['lifetime'],
             'path' => '/',
             'domain' => $_SERVER['HTTP_HOST'] ?? '',
-            'secure' => ($_SERVER['HTTPS'] ?? 'off') === 'on',
+            'secure' => $isSecure,
             'httponly' => true,
-            'samesite' => 'Strict'
+            'samesite' => 'Lax' // Changé de Strict à Lax pour plus de compatibilité
         ]);
         
         // Configuration PHP.ini pour la sécurité
         ini_set('session.cookie_httponly', '1');
-        ini_set('session.cookie_secure', ($_SERVER['HTTPS'] ?? 'off') === 'on' ? '1' : '0');
-        ini_set('session.cookie_samesite', 'Strict');
+        ini_set('session.cookie_secure', $isSecure ? '1' : '0');
+        ini_set('session.cookie_samesite', 'Lax');
         ini_set('session.use_strict_mode', '1');
         ini_set('session.use_only_cookies', '1');
         ini_set('session.cookie_lifetime', '0'); // Expire à la fermeture du navigateur
         ini_set('session.gc_maxlifetime', '1440'); // 24 minutes
-        ini_set('session.cookie_secure', '1');
-        ini_set('session.cookie_httponly', '1');
         ini_set('session.use_trans_sid', '0');
         ini_set('session.hash_function', 'sha256');
         ini_set('session.hash_bits_per_character', '5');
-        
-        // Protection contre les attaques de fixation de session
-        if (empty($_SESSION['initiated'])) {
-            session_regenerate_id(true);
-            $_SESSION['initiated'] = true;
-        }
     }
     
     private function regenerateIfNeeded(): void {
-        if (!isset($_SESSION['last_regeneration']) || 
-            (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
-            session_regenerate_id(true);
-            $_SESSION['last_regeneration'] = time();
+        // Double vérification que la session est active
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+        
+        try {
+            if (!isset($_SESSION['last_regeneration']) || 
+                (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME) {
+                if (session_regenerate_id(true)) {
+                    $_SESSION['last_regeneration'] = time();
+                }
+            }
+        } catch (\Exception $e) {
+            if (function_exists('logError')) {
+                logError("Erreur lors de la régénération de l'ID de session: " . $e->getMessage());
+            }
         }
     }
     
     private function validateSession(): void {
+        // Vérifier si une session est active
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            return;
+        }
+        
+        // Vérifier si le cookie de session existe
         if (!isset($_COOKIE[session_name()])) {
-            logError("Cookie de session manquant");
+            if (function_exists('logError')) {
+                logError("Cookie de session manquant");
+            }
+            
             $this->destroySession();
-            header('Location: ?url=connexion/index');
-            exit();
+            
+            // Éviter de rediriger si nous sommes déjà sur la page de connexion
+            if (!isset($_GET['url']) || $_GET['url'] !== 'connexion/index') {
+                header('Location: ?url=connexion/index');
+                exit();
+            }
         }
     }
     
@@ -123,26 +163,32 @@ class SessionManager {
             $this->set('csrf_token_hashed', $hashedToken);
             
             return $token;
-        } catch (Exception $e) {
-            logError('Erreur lors de la génération du token CSRF : ' . $e->getMessage());
-            throw new RuntimeException('Impossible de générer un token de sécurité');
+        } catch (\Exception $e) {
+            if (function_exists('logError')) {
+                logError('Erreur lors de la génération du token CSRF : ' . $e->getMessage());
+            }
+            throw new \RuntimeException('Impossible de générer un token de sécurité');
         }
     }
     
     public function validateToken(?string $token): bool {
         if (!$token || !$this->has('csrf_token') || !$this->has('csrf_token_time')) {
-            logError("Token CSRF manquant ou invalide");
+            if (function_exists('logError')) {
+                logError("Token CSRF manquant ou invalide");
+            }
             return false;
         }
         
         $tokenAge = time() - $this->get('csrf_token_time');
         if ($tokenAge > 3600) { // Token expire après 1 heure
-            logError("Token CSRF expiré");
+            if (function_exists('logError')) {
+                logError("Token CSRF expiré");
+            }
             return false;
         }
         
         $isValid = hash_equals($this->get('csrf_token'), $token);
-        if (!$isValid) {
+        if (!$isValid && function_exists('logError')) {
             logError("Token CSRF non valide");
         }
         return $isValid;
@@ -177,7 +223,7 @@ class SessionManager {
             $errors[] = 'Le fichier est trop volumineux.';
         }
         
-        $finfo = new finfo(FILEINFO_MIME_TYPE);
+        $finfo = new \finfo(FILEINFO_MIME_TYPE);
         $mimeType = $finfo->file($file['tmp_name']);
         
         if (!in_array($mimeType, $allowedTypes)) {
