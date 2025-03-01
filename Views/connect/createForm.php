@@ -42,14 +42,14 @@
 			<label for="mdp1"><b>Mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp" id="mdp1" value="" required
                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
-                   title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
+                   title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial"
                    maxlength="72"
                    autocomplete="new-password">
 
 			<label for="mdp2"><b>Répéter le mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Répétez le mot de passe" name="mdp2" id="mdp2" value="" required
-                   pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
-                   title="Au moins 8 caractères, incluant au moins une lettre, un chiffre et un caractère spécial"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
+                   title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial"
                    maxlength="72"
                    autocomplete="new-password"
                    oninput="validatePasswordMatch()">
