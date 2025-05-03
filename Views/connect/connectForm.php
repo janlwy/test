@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=connexion/connect" id="loginForm">
+	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=connexion/connect" id="loginForm" onsubmit="return validateLoginForm()">
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
@@ -51,6 +51,47 @@
 </div>
 
 <script>
+function validateLoginForm() {
+    console.log('Validation du formulaire de connexion');
+    
+    // Récupérer les valeurs des champs
+    const pseudo = document.getElementById('pseudo').value.trim();
+    const mdp = document.getElementById('mdp').value;
+    const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+    const loginButton = document.getElementById('loginButton');
+    
+    // Vérifier que tous les champs sont remplis
+    if (!pseudo) {
+        alert('Veuillez entrer votre nom d\'utilisateur');
+        return false;
+    }
+    
+    if (!mdp) {
+        alert('Veuillez entrer votre mot de passe');
+        return false;
+    }
+    
+    if (!csrfToken) {
+        console.error('Token CSRF manquant');
+        alert('Erreur de sécurité: token CSRF manquant');
+        return false;
+    }
+    
+    // Désactiver le bouton pour éviter les doubles soumissions
+    loginButton.disabled = true;
+    loginButton.textContent = 'Connexion en cours...';
+    
+    // Afficher les données qui seront envoyées (sans le mot de passe)
+    console.log('Soumission du formulaire avec les données:', {
+        pseudo: pseudo,
+        csrf_token: csrfToken,
+        action: 'index.php?url=connexion/connect'
+    });
+    
+    // Autoriser la soumission du formulaire
+    return true;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Afficher/masquer le mot de passe
     const passwordInput = document.getElementById('mdp');
@@ -60,51 +101,6 @@ document.addEventListener('DOMContentLoaded', function() {
         showPasswordCheckbox.addEventListener('change', function() {
             passwordInput.type = this.checked ? 'text' : 'password';
         });
-    }
-    
-    // Gestion de la soumission du formulaire
-    const loginForm = document.getElementById('loginForm');
-    const loginButton = document.getElementById('loginButton');
-    
-    if (loginForm && loginButton) {
-        console.log('Formulaire et bouton trouvés');
-        
-        loginForm.addEventListener('submit', function(e) {
-            console.log('Formulaire soumis');
-            
-            // Vérifier les données du formulaire
-            const pseudo = document.getElementById('pseudo').value;
-            const mdp = document.getElementById('mdp').value;
-            const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-            
-            console.log('Données du formulaire:', {
-                pseudo: pseudo ? 'Rempli' : 'Vide',
-                mdp: mdp ? 'Rempli' : 'Vide',
-                csrfToken: csrfToken ? 'Présent' : 'Manquant'
-            });
-            
-            if (!pseudo || !mdp || !csrfToken) {
-                console.error('Formulaire incomplet');
-                alert('Veuillez remplir tous les champs');
-                e.preventDefault();
-                return false;
-            }
-            
-            // Désactiver le bouton pour éviter les doubles soumissions
-            loginButton.disabled = true;
-            loginButton.textContent = 'Connexion en cours...';
-            
-            // Réactiver le bouton après 5 secondes au cas où la soumission échoue
-            setTimeout(function() {
-                loginButton.disabled = false;
-                loginButton.textContent = 'Connexion';
-            }, 5000);
-            
-            // Laisser le formulaire se soumettre normalement
-            return true;
-        });
-    } else {
-        console.error('Formulaire ou bouton non trouvé');
     }
 });
 </script>

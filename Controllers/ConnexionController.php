@@ -40,6 +40,7 @@ class ConnexionController extends BaseController
         logInfo("Données POST: " . print_r($_POST, true));
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Vérification du paramètre de connexion
             if (!isset($_POST['connexion']) || $_POST['connexion'] != 'Connexion') {
                 logError("Paramètre 'connexion' manquant ou invalide");
                 $this->session->set('erreur', 'Requête invalide');
@@ -47,8 +48,15 @@ class ConnexionController extends BaseController
                 return;
             }
 
-            // Vérification CSRF
-            if (!isset($_POST['csrf_token']) || !$this->session->validateToken($_POST['csrf_token'])) {
+            // Vérification CSRF - Séparation des vérifications pour un meilleur diagnostic
+            if (!isset($_POST['csrf_token'])) {
+                logError("Token CSRF manquant dans la requête");
+                $this->session->set('erreur', 'Erreur de sécurité: token manquant');
+                $this->redirect('connexion/index');
+                return;
+            }
+            
+            if (!$this->session->validateToken($_POST['csrf_token'])) {
                 logError("Erreur CSRF : jeton invalide lors de la tentative de connexion");
                 $this->session->set('erreur', 'Erreur de sécurité. Veuillez réessayer.');
                 $this->redirect('connexion/index');

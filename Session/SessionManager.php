@@ -169,8 +169,11 @@ class SessionManager {
     
     public function regenerateToken(): string {
         try {
+            // Générer un nouveau token
             $token = bin2hex(random_bytes(32));
             $timestamp = time();
+            
+            // Stocker le token et ses métadonnées en session
             $this->set('csrf_token', $token);
             $this->set('csrf_token_time', $timestamp);
             $this->set('csrf_token_ip', $_SERVER['REMOTE_ADDR'] ?? '');
@@ -184,6 +187,11 @@ class SessionManager {
             $hashedToken = hash('sha256', $token . $salt);
             $this->set('csrf_token_hashed', $hashedToken);
             
+            // Log pour le débogage
+            if (function_exists('logInfo')) {
+                logInfo('Nouveau token CSRF généré: ' . substr($token, 0, 8) . '...');
+            }
+            
             return $token;
         } catch (\Exception $e) {
             if (function_exists('logError')) {
@@ -194,9 +202,23 @@ class SessionManager {
     }
     
     public function validateToken(?string $token): bool {
-        if (!$token || !$this->has('csrf_token') || !$this->has('csrf_token_time')) {
+        if (!$token) {
             if (function_exists('logError')) {
-                logError("Token CSRF manquant ou invalide");
+                logError("Token CSRF manquant dans la requête");
+            }
+            return false;
+        }
+        
+        if (!$this->has('csrf_token')) {
+            if (function_exists('logError')) {
+                logError("Token CSRF non trouvé en session");
+            }
+            return false;
+        }
+        
+        if (!$this->has('csrf_token_time')) {
+            if (function_exists('logError')) {
+                logError("Horodatage du token CSRF non trouvé en session");
             }
             return false;
         }
@@ -204,15 +226,20 @@ class SessionManager {
         $tokenAge = time() - $this->get('csrf_token_time');
         if ($tokenAge > 3600) { // Token expire après 1 heure
             if (function_exists('logError')) {
-                logError("Token CSRF expiré");
+                logError("Token CSRF expiré (âge: $tokenAge secondes)");
             }
             return false;
         }
         
-        $isValid = hash_equals($this->get('csrf_token'), $token);
+        $sessionToken = $this->get('csrf_token');
+        $isValid = hash_equals($sessionToken, $token);
+        
         if (!$isValid && function_exists('logError')) {
-            logError("Token CSRF non valide");
+            logError("Token CSRF invalide. Reçu: $token, Attendu: $sessionToken");
+        } else if (function_exists('logInfo')) {
+            logInfo("Token CSRF validé avec succès");
         }
+        
         return $isValid;
     }
 
