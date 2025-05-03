@@ -223,6 +223,7 @@
 			});
 
 			function validateForm() {
+                console.log('Validation du formulaire en cours...');
                 const password1 = document.getElementById('mdp1');
                 const password2 = document.getElementById('mdp2');
                 const pseudo = document.getElementById('pseudo');
@@ -239,12 +240,19 @@
                 // Validation de l'email
                 const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
 
+                console.log('Validation:', {
+                    password: isPasswordValid,
+                    pseudo: isPseudoValid,
+                    email: isEmailValid
+                });
+
                 // Réinitialiser tous les messages d'erreur
                 [password1, password2, pseudo, email].forEach(input => input.setCustomValidity(''));
 
                 // Vérifier le token CSRF
                 const csrfToken = document.querySelector('input[name="csrf_token"]').value;
                 if (!csrfToken) {
+                    console.error('Token CSRF manquant');
                     alert('Erreur de sécurité: token CSRF manquant');
                     return false;
                 }
