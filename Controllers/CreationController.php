@@ -80,47 +80,65 @@ class CreationController extends BaseController implements IController
                 return;
             }
 
-            $validator = new \Fonctions\Validator();
-            $rules = [
-                'pseudo' => [
-                    ['rule' => 'required', 'message' => 'Le nom d\'utilisateur est requis'],
-                    ['rule' => ['min', 3], 'message' => 'Le nom d\'utilisateur doit faire au moins 3 caractères'],
-                    ['rule' => ['max', 50], 'message' => 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères'],
-                    ['rule' => ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/'], 'message' => 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores']
-                ],
-                'email' => [
-                    ['rule' => 'required', 'message' => 'L\'email est requis'],
-                    ['rule' => 'email', 'message' => 'Veuillez entrer une adresse email valide']
-                ],
-                'mdp' => [
-                    ['rule' => 'required', 'message' => 'Le mot de passe est requis'],
-                    ['rule' => ['min', 8], 'message' => 'Le mot de passe doit faire au moins 8 caractères'],
-                    ['rule' => ['pattern', '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/'], 
-                     'message' => 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial']
-                ],
-                'mdp2' => [
-                    ['rule' => 'required', 'message' => 'La confirmation du mot de passe est requise'],
-                    ['rule' => ['match', 'mdp'], 'message' => 'Les mots de passe ne correspondent pas']
-                ]
-            ];
+            // Validation manuelle des données au lieu d'utiliser le validateur
+            $errors = [];
+            
+            // Validation du pseudo
+            if (empty($_POST['pseudo'])) {
+                $errors['pseudo'][] = 'Le nom d\'utilisateur est requis';
+            } elseif (strlen($_POST['pseudo']) < 3) {
+                $errors['pseudo'][] = 'Le nom d\'utilisateur doit faire au moins 3 caractères';
+            } elseif (strlen($_POST['pseudo']) > 50) {
+                $errors['pseudo'][] = 'Le nom d\'utilisateur ne peut pas dépasser 50 caractères';
+            } elseif (!preg_match('/^[a-zA-Z0-9_-]{3,20}$/', $_POST['pseudo'])) {
+                $errors['pseudo'][] = 'Le nom d\'utilisateur ne peut contenir que des lettres, chiffres, tirets et underscores';
+            }
+            
+            // Validation de l'email
+            if (empty($_POST['email'])) {
+                $errors['email'][] = 'L\'email est requis';
+            } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                $errors['email'][] = 'Veuillez entrer une adresse email valide';
+            }
+            
+            // Validation du mot de passe
+            if (empty($_POST['mdp'])) {
+                $errors['mdp'][] = 'Le mot de passe est requis';
+            } elseif (strlen($_POST['mdp']) < 8) {
+                $errors['mdp'][] = 'Le mot de passe doit faire au moins 8 caractères';
+            } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $_POST['mdp'])) {
+                $errors['mdp'][] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial';
+            }
+            
+            // Validation de la confirmation du mot de passe
+            if (empty($_POST['mdp2'])) {
+                $errors['mdp2'][] = 'La confirmation du mot de passe est requise';
+            } elseif ($_POST['mdp'] !== $_POST['mdp2']) {
+                $errors['mdp2'][] = 'Les mots de passe ne correspondent pas';
+            }
 
-            if (!$validator->validate($_POST, $rules)) {
+            // Si des erreurs sont présentes
+            if (!empty($errors)) {
                 $this->session->set('erreur', 'Veuillez corriger les erreurs dans le formulaire');
-                $this->session->set('validation_errors', $validator->getErrors());
+                $this->session->set('validation_errors', $errors);
                 $this->redirect('creation/createUserForm');
                 return;
             }
             
-            // Vérification supplémentaire des mots de passe
-            if ($_POST['mdp'] !== $_POST['mdp2']) {
-                $this->session->set('erreur', 'Les mots de passe ne correspondent pas');
-                $this->redirect('creation/createUserForm');
-                return;
-            }
+            // Les données sont valides, on peut continuer
+            logInfo("Validation réussie pour la création de compte: " . $_POST['pseudo']);
 
             try {
                 $manager = new Manager();
                 $connexion = $manager->getConnexion();
+                
+                // Vérifier si la table users existe et a la structure requise
+                if (!$manager->checkUsersTableStructure()) {
+                    logError("Structure de la table users incorrecte ou manquante");
+                    $this->session->set('erreur', 'Erreur de configuration de la base de données. Veuillez contacter l\'administrateur.');
+                    $this->redirect('creation/createUserForm');
+                    return;
+                }
 
                 // Vérifier si le pseudo existe déjà
                 $sql = 'SELECT COUNT(*) FROM users WHERE pseudo = :pseudo';
@@ -147,22 +165,48 @@ class CreationController extends BaseController implements IController
                 }
 
                 // Insérer le nouvel utilisateur
-                $sql = 'INSERT INTO users (pseudo, email, mdp, role) VALUES (:pseudo, :email, :mdp, :role)';
+                $sql = 'INSERT INTO users (pseudo, email, mdp, role, created_at, active) VALUES (:pseudo, :email, :mdp, :role, NOW(), 1)';
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
                 $req->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
                 $req->bindValue(':mdp', password_hash($_POST['mdp'], PASSWORD_DEFAULT), PDO::PARAM_STR);
                 $req->bindValue(':role', RoleManager::getDefaultRole(), PDO::PARAM_STR);
                 
-                if ($req->execute()) {
-                    // Stocker un message de succès
-                    $_SESSION['message'] = 'Compte créé avec succès. Vous pouvez maintenant vous connecter.';
-                    logInfo("Compte créé avec succès pour l'utilisateur: " . $_POST['pseudo']);
-                    $this->redirect('connexion/index');
-                } else {
-                    $errorInfo = $req->errorInfo();
-                    logError("Erreur SQL lors de la création du compte: " . json_encode($errorInfo));
-                    throw new Exception('Erreur lors de la création du compte: ' . $errorInfo[2]);
+                logInfo("Tentative d'insertion d'un nouvel utilisateur: " . $_POST['pseudo']);
+                
+                try {
+                    $connexion->beginTransaction();
+                    
+                    if ($req->execute()) {
+                        $connexion->commit();
+                        // Stocker un message de succès
+                        $_SESSION['message'] = 'Compte créé avec succès. Vous pouvez maintenant vous connecter.';
+                        logInfo("Compte créé avec succès pour l'utilisateur: " . $_POST['pseudo']);
+                        $this->redirect('connexion/index');
+                    } else {
+                        $connexion->rollBack();
+                        $errorInfo = $req->errorInfo();
+                        logError("Erreur SQL lors de la création du compte: " . json_encode($errorInfo));
+                        throw new Exception('Erreur lors de la création du compte: ' . $errorInfo[2]);
+                    }
+                } catch (PDOException $e) {
+                    $connexion->rollBack();
+                    logError("Exception PDO lors de la création du compte: " . $e->getMessage());
+                    
+                    // Vérifier si c'est une erreur de clé dupliquée
+                    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+                        if (strpos($e->getMessage(), 'pseudo') !== false) {
+                            $this->session->set('erreur', 'Ce nom d\'utilisateur est déjà utilisé');
+                        } elseif (strpos($e->getMessage(), 'email') !== false) {
+                            $this->session->set('erreur', 'Cette adresse email est déjà utilisée');
+                        } else {
+                            $this->session->set('erreur', 'Un compte avec ces informations existe déjà');
+                        }
+                    } else {
+                        $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
+                    }
+                    
+                    $this->redirect('creation/createUserForm');
                 }
             } catch (Exception $e) {
                 logError("Erreur lors de la création du compte : " . $e->getMessage());

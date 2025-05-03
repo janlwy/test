@@ -287,6 +287,39 @@ class Manager {
                 throw new DatabaseException("Erreur lors de la vérification de l'existence de la table", 0, $e);
             }
         }
+        
+        /**
+         * Vérifie si la table users a la structure requise
+         * @return bool True si la structure est correcte
+         */
+        public function checkUsersTableStructure(): bool {
+            try {
+                $connexion = $this->getConnexion();
+                
+                // Vérifier si la table existe
+                if (!$this->tableExists('users')) {
+                    logError("La table users n'existe pas");
+                    return false;
+                }
+                
+                // Vérifier les colonnes requises
+                $requiredColumns = ['id', 'pseudo', 'email', 'mdp', 'role'];
+                $stmt = $connexion->query("DESCRIBE users");
+                $columns = $stmt->fetchAll(PDO::FETCH_COLUMN);
+                
+                foreach ($requiredColumns as $column) {
+                    if (!in_array($column, $columns)) {
+                        logError("La colonne $column est manquante dans la table users");
+                        return false;
+                    }
+                }
+                
+                return true;
+            } catch (PDOException $e) {
+                logError("Erreur lors de la vérification de la structure de la table users: " . $e->getMessage());
+                return false;
+            }
+        }
 		
 		public function insertTable($table, $data){
 			if (empty($table) || empty($data) || !is_array($data)) {
