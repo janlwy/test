@@ -52,13 +52,16 @@ class CreationController extends BaseController implements IController
         }
 
         // Debug log
-        error_log('CreateUser method called with POST data: ' . print_r($_POST, true));
+        logInfo('CreateUser method called with POST data: ' . print_r($_POST, true));
 
         try {
-            // Désactiver temporairement la validation CSRF pour déboguer
-            // if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
-            //     throw new Exception('Token CSRF invalide');
-            // }
+            // Activer la validation CSRF
+            if (!isset($_POST['csrf_token']) || !$this->session->validateToken($_POST['csrf_token'])) {
+                logError("Erreur CSRF : jeton invalide lors de la création de compte");
+                $this->session->set('erreur', 'Erreur de sécurité. Veuillez réessayer.');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
 
             $validator = new \Fonctions\Validator();
             $rules = [
@@ -137,9 +140,12 @@ class CreationController extends BaseController implements IController
                 if ($req->execute()) {
                     // Stocker un message de succès
                     $_SESSION['message'] = 'Compte créé avec succès. Vous pouvez maintenant vous connecter.';
+                    logInfo("Compte créé avec succès pour l'utilisateur: " . $_POST['pseudo']);
                     $this->redirect('connexion/index');
                 } else {
-                    throw new Exception('Erreur lors de la création du compte');
+                    $errorInfo = $req->errorInfo();
+                    logError("Erreur SQL lors de la création du compte: " . json_encode($errorInfo));
+                    throw new Exception('Erreur lors de la création du compte: ' . $errorInfo[2]);
                 }
             } catch (Exception $e) {
                 logError("Erreur lors de la création du compte : " . $e->getMessage());

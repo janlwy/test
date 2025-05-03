@@ -63,6 +63,10 @@ class Router
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $currentAction = $actionName ?? '';
             
+            // Log pour déboguer les requêtes POST
+            logInfo("Requête POST reçue pour l'action: $currentAction");
+            logInfo("Données POST: " . print_r($_POST, true));
+            
             // Vérifier si l'action nécessite une protection CSRF
             if (in_array($currentAction, $csrfProtectedActions) && !in_array($currentAction, $csrfExemptActions)) {
                 // Pour les requêtes AJAX

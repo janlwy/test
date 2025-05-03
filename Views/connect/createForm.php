@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=creation/createUser" enctype="multipart/form-data" id="createForm">
+	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=creation/createUser" enctype="multipart/form-data" id="createForm">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -68,6 +68,7 @@
 			<hr>
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
+			<input type="hidden" name="submitted" value="1">
 			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
 
 			<script>
@@ -166,9 +167,30 @@
 					
 					if (validateForm()) {
 						console.log('Form is valid, submitting...');
+						
+						// Vérifier que le token CSRF est présent
+						const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+						if (!csrfToken) {
+							console.error('Token CSRF manquant');
+							alert('Erreur de sécurité: token CSRF manquant');
+							return false;
+						}
+						
+						// Désactiver le bouton et changer son texte
 						submitBtn.disabled = true;
 						submitBtn.textContent = 'Création en cours...';
-						form.submit(); // Soumettre explicitement le formulaire
+						
+						// Ajouter un log pour déboguer
+						console.log('Soumission du formulaire vers: ' + form.action);
+						console.log('Méthode: ' + form.method);
+						console.log('Données: ', {
+							pseudo: document.getElementById('pseudo').value,
+							email: document.getElementById('email').value,
+							csrf_token: csrfToken
+						});
+						
+						// Soumettre le formulaire
+						form.submit();
 					} else {
 						console.log('Form validation failed');
 					}
