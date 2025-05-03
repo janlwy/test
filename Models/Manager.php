@@ -102,40 +102,77 @@ class Manager {
             return '`' . str_replace('`', '``', $identifier) . '`';
         }
 		
-		public function readTableOne($table,$id,$type="array"){
-			$connexion=$this->getConnexion();
-			$sql="select * from $table where id=$id";
-			$query=$connexion->query($sql);
-			$result=$query->fetch();
-			if($type=='array'){
-				return $result;
-			}else{
-				$class=ucfirst($table);
-				$obj=new $class($result);
-				return $obj;
+		public function readTableOne($table, $id, $type="array"){
+			if (empty($table) || !is_numeric($id)) {
+				throw new DatabaseException("Paramètres invalides pour la lecture");
+			}
+			
+			try {
+				$connexion = $this->getConnexion();
+				$sql = "SELECT * FROM " . $this->escapeIdentifier($table) . " WHERE id = :id";
+				$statement = $connexion->prepare($sql);
+				$statement->bindValue(':id', $id, PDO::PARAM_INT);
+				$statement->execute();
+				$result = $statement->fetch();
+				
+				if (!$result) {
+					return null;
+				}
+				
+				if ($type == 'array') {
+					return $result;
+				} else {
+					$class = ucfirst($table);
+					if (!class_exists($class)) {
+						throw new DatabaseException("La classe '$class' n'existe pas");
+					}
+					$obj = new $class($result);
+					return $obj;
+				}
+			} catch (PDOException $e) {
+				logError("Erreur lors de la lecture de l'enregistrement $id dans la table $table: " . $e->getMessage());
+				throw new DatabaseException("Erreur lors de la lecture des données", 0, $e);
 			}
 		}
 		
 		public function readTableFirst($table){
-			$connexion=$this->getConnexion();
-			$sql="select * from $table order by id asc";
-			$statement=$connexion->prepare($sql);
-			$statement->execute();
-			$resultat=$statement->fetch();
-			return $resultat;
+			if (empty($table)) {
+				throw new DatabaseException("Le nom de la table est requis");
+			}
+			
+			try {
+				$connexion = $this->getConnexion();
+				$sql = "SELECT * FROM " . $this->escapeIdentifier($table) . " ORDER BY id ASC LIMIT 1";
+				$statement = $connexion->prepare($sql);
+				$statement->execute();
+				$resultat = $statement->fetch();
+				return $resultat ?: null;
+			} catch (PDOException $e) {
+				logError("Erreur lors de la lecture du premier enregistrement de la table $table: " . $e->getMessage());
+				throw new DatabaseException("Erreur lors de la lecture des données", 0, $e);
+			}
 		}
 		
 		public function readTableLast($table){
-			$connexion=$this->getConnexion();
-			$sql="select * from $table order by id desc";
-			$statement=$connexion->prepare($sql);
-			$statement->execute();
-			$resultat=$statement->fetch();
-			return $resultat;
+			if (empty($table)) {
+				throw new DatabaseException("Le nom de la table est requis");
+			}
+			
+			try {
+				$connexion = $this->getConnexion();
+				$sql = "SELECT * FROM " . $this->escapeIdentifier($table) . " ORDER BY id DESC LIMIT 1";
+				$statement = $connexion->prepare($sql);
+				$statement->execute();
+				$resultat = $statement->fetch();
+				return $resultat ?: null;
+			} catch (PDOException $e) {
+				logError("Erreur lors de la lecture du dernier enregistrement de la table $table: " . $e->getMessage());
+				throw new DatabaseException("Erreur lors de la lecture des données", 0, $e);
+			}
 		}
 		
         public function updateTable($table, $data, $id) {
-            if (empty($table) || empty($data) || !is_array($data)) {
+            if (empty($table) || empty($data) || !is_array($data) || !is_numeric($id)) {
                 throw new DatabaseException("Paramètres invalides pour la mise à jour");
             }
 
@@ -143,12 +180,28 @@ class Manager {
                 $this->beginTransaction();
                 $connexion = $this->getConnexion();
                 
+                // Vérifier si l'enregistrement existe
+                $checkSql = "SELECT id FROM " . $this->escapeIdentifier($table) . " WHERE id = :id";
+                $checkStmt = $connexion->prepare($checkSql);
+                $checkStmt->bindValue(':id', $id, PDO::PARAM_INT);
+                $checkStmt->execute();
+                
+                if ($checkStmt->rowCount() === 0) {
+                    throw new DatabaseException("L'enregistrement avec l'ID $id n'existe pas dans la table $table");
+                }
+                
                 $updates = [];
                 $params = [];
                 
                 foreach ($data as $column => $value) {
-                    $updates[] = $this->escapeIdentifier($column) . " = :$column";
-                    $params[$column] = $value;
+                    if ($column !== 'id') { // Ignorer la colonne id dans les données à mettre à jour
+                        $updates[] = $this->escapeIdentifier($column) . " = :$column";
+                        $params[$column] = $value;
+                    }
+                }
+                
+                if (empty($updates)) {
+                    throw new DatabaseException("Aucune donnée valide à mettre à jour");
                 }
                 
                 $sql = "UPDATE " . $this->escapeIdentifier($table) . 
@@ -156,7 +209,7 @@ class Manager {
                        " WHERE id = :id";
                 
                 $statement = $connexion->prepare($sql);
-                $params['id'] = $id;
+                $statement->bindValue(":id", $id, PDO::PARAM_INT);
                 
                 foreach ($params as $key => $value) {
                     $statement->bindValue(":$key", $value, $this->getParamType($value));
@@ -166,16 +219,16 @@ class Manager {
                     throw new DatabaseException("Erreur lors de la mise à jour");
                 }
                 
-                if ($statement->rowCount() === 0) {
-                    throw new DatabaseException("Aucune ligne mise à jour");
-                }
-                
                 $this->commit();
                 return $this->readTableOne($table, $id);
                 
-            } catch (Exception $e) {
+            } catch (PDOException $e) {
                 $this->rollback();
                 logError("Erreur lors de la mise à jour de la table $table: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de la mise à jour des données", 0, $e);
+            } catch (\Exception $e) {
+                $this->rollback();
+                logError("Exception générique lors de la mise à jour de la table $table: " . $e->getMessage());
                 throw new DatabaseException("Erreur lors de la mise à jour des données", 0, $e);
             }
         }
@@ -186,36 +239,113 @@ class Manager {
             if (is_null($value)) return PDO::PARAM_NULL;
             return PDO::PARAM_STR;
         }
+        
+        /**
+         * Vérifie si une table existe dans la base de données
+         * @param string $tableName Nom de la table à vérifier
+         * @return bool True si la table existe, false sinon
+         */
+        public function tableExists(string $tableName): bool {
+            try {
+                $connexion = $this->getConnexion();
+                $stmt = $connexion->prepare("SHOW TABLES LIKE :table");
+                $stmt->execute(['table' => $tableName]);
+                return $stmt->rowCount() > 0;
+            } catch (PDOException $e) {
+                logError("Erreur lors de la vérification de l'existence de la table $tableName: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de la vérification de l'existence de la table", 0, $e);
+            }
+        }
 		
-		public function insertTable($table,$data){
-			$connexion=$this->getConnexion();
-			$columns="";
-			$values="";
-			foreach($data as $key=>$valeur){
-				if($key!='id'){
-					if($columns==""){
-						$columns=$key;
-						$values="'$valeur'";
-					}else{
-					$columns=$columns.",$key";
-					$values=$values.",'$valeur'";
+		public function insertTable($table, $data){
+			if (empty($table) || empty($data) || !is_array($data)) {
+				throw new DatabaseException("Paramètres invalides pour l'insertion");
+			}
+			
+			try {
+				$this->beginTransaction();
+				$connexion = $this->getConnexion();
+				
+				$columns = [];
+				$placeholders = [];
+				$values = [];
+				
+				foreach ($data as $key => $value) {
+					if ($key != 'id') {
+						$columns[] = $this->escapeIdentifier($key);
+						$placeholders[] = ":$key";
+						$values[$key] = $value;
 					}
 				}
+				
+				if (empty($columns)) {
+					throw new DatabaseException("Aucune donnée valide à insérer");
+				}
+				
+				$sql = "INSERT INTO " . $this->escapeIdentifier($table) . 
+					   " (" . implode(", ", $columns) . ") VALUES (" . implode(", ", $placeholders) . ")";
+				
+				$statement = $connexion->prepare($sql);
+				
+				foreach ($values as $key => $value) {
+					$statement->bindValue(":$key", $value, $this->getParamType($value));
+				}
+				
+				if (!$statement->execute()) {
+					throw new DatabaseException("Erreur lors de l'insertion");
+				}
+				
+				$lastId = $connexion->lastInsertId();
+				$this->commit();
+				
+				return $this->readTableOne($table, $lastId);
+			} catch (PDOException $e) {
+				$this->rollback();
+				logError("Erreur lors de l'insertion dans la table $table: " . $e->getMessage());
+				throw new DatabaseException("Erreur lors de l'insertion des données", 0, $e);
+			} catch (\Exception $e) {
+				$this->rollback();
+				throw new DatabaseException("Erreur lors de l'insertion: " . $e->getMessage(), 0, $e);
 			}
-			$sql="insert into $table ($columns) values ($values) ";
-			$statement=$connexion->prepare($sql);
-			$statement->execute();
-			$resultat=$this->readTableLast($table);
-			return $resultat;
 		}
 		
-		public function deleteTable($table,$id){
-			$connexion=$this->getConnexion();
-			$sql="delete from $table where id=?";
-			$statement=$connexion->prepare($sql);
-			$statement->execute(array($id));
-			$resultat=array("Suppression okay");
-			return $resultat;
+		public function deleteTable($table, $id){
+			if (empty($table) || !is_numeric($id)) {
+				throw new DatabaseException("Paramètres invalides pour la suppression");
+			}
+			
+			try {
+				$this->beginTransaction();
+				$connexion = $this->getConnexion();
+				
+				// Vérifier si l'enregistrement existe
+				$checkSql = "SELECT id FROM " . $this->escapeIdentifier($table) . " WHERE id = :id";
+				$checkStmt = $connexion->prepare($checkSql);
+				$checkStmt->bindValue(':id', $id, PDO::PARAM_INT);
+				$checkStmt->execute();
+				
+				if ($checkStmt->rowCount() === 0) {
+					throw new DatabaseException("L'enregistrement avec l'ID $id n'existe pas dans la table $table");
+				}
+				
+				$sql = "DELETE FROM " . $this->escapeIdentifier($table) . " WHERE id = :id";
+				$statement = $connexion->prepare($sql);
+				$statement->bindValue(':id', $id, PDO::PARAM_INT);
+				
+				if (!$statement->execute()) {
+					throw new DatabaseException("Erreur lors de la suppression");
+				}
+				
+				$this->commit();
+				return ["status" => "success", "message" => "Suppression réussie"];
+			} catch (PDOException $e) {
+				$this->rollback();
+				logError("Erreur lors de la suppression de l'enregistrement $id dans la table $table: " . $e->getMessage());
+				throw new DatabaseException("Erreur lors de la suppression des données", 0, $e);
+			} catch (\Exception $e) {
+				$this->rollback();
+				throw new DatabaseException("Erreur lors de la suppression: " . $e->getMessage(), 0, $e);
+			}
 		}
 	
         /**
