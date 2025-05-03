@@ -12,15 +12,46 @@ class Manager {
         private $connexion = null;
         private $inTransaction = false;
 
+        /**
+         * Obtient une connexion à la base de données
+         * 
+         * @return PDO Instance de PDO
+         * @throws DatabaseException Si la connexion échoue
+         */
         public function getConnexion() {
             try {
                 if ($this->connexion === null) {
                     $this->connexion = Bdd::getConnexion();
+                    
+                    // Vérifier que la connexion est active
+                    if (!$this->testConnection()) {
+                        $this->connexion = null;
+                        throw new DatabaseException("La connexion à la base de données n'est pas active");
+                    }
                 }
                 return $this->connexion;
             } catch (PDOException $e) {
                 logError("Erreur de connexion à la base de données: " . $e->getMessage());
                 throw new DatabaseException("Impossible de se connecter à la base de données", 0, $e);
+            }
+        }
+        
+        /**
+         * Teste si la connexion à la base de données est active
+         * 
+         * @return bool True si la connexion est active
+         */
+        private function testConnection(): bool {
+            try {
+                if ($this->connexion === null) {
+                    return false;
+                }
+                
+                // Exécuter une requête simple pour vérifier la connexion
+                $this->connexion->query("SELECT 1");
+                return true;
+            } catch (PDOException $e) {
+                return false;
             }
         }
 
@@ -460,20 +491,80 @@ class Manager {
             }
         }
 
+        /**
+         * Trouve un utilisateur par son pseudo
+         * 
+         * @param string $pseudo Pseudo de l'utilisateur
+         * @return array|null Données de l'utilisateur ou null si non trouvé
+         * @throws DatabaseException En cas d'erreur de base de données
+         */
         public function findUserByPseudo(string $pseudo) {
+            if (empty($pseudo)) {
+                throw new DatabaseException("Le pseudo ne peut pas être vide");
+            }
+            
             try {
                 $connexion = $this->getConnexion();
-                $sql = "SELECT id, pseudo, mdp, role FROM users WHERE pseudo = :pseudo";
+                $sql = "SELECT id, pseudo, mdp, role, last_login, active FROM users WHERE pseudo = :pseudo";
                 $stmt = $connexion->prepare($sql);
                 $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
                 $stmt->execute();
                 $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                
                 if ($result) {
-                    logInfo("Utilisateur trouvé: " . $pseudo . " avec le rôle: " . ($result['role'] ?? 'non défini'));
+                    // Ne pas logger le mot de passe dans les logs
+                    $logInfo = "Utilisateur trouvé: " . $pseudo . " avec le rôle: " . ($result['role'] ?? 'non défini');
+                    if (isset($result['active']) && $result['active'] == 0) {
+                        $logInfo .= " (compte inactif)";
+                    }
+                    logInfo($logInfo);
+                } else {
+                    logInfo("Tentative de connexion avec un pseudo inexistant: " . $pseudo);
                 }
+                
                 return $result;
             } catch (PDOException $e) {
-                throw new DatabaseException("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
+                logError("Erreur lors de la recherche de l'utilisateur: " . $e->getMessage());
+                throw new DatabaseException("Erreur lors de la recherche de l'utilisateur", 0, $e);
+            }
+        }
+        
+        /**
+         * Met à jour la date de dernière connexion d'un utilisateur
+         * 
+         * @param int $userId ID de l'utilisateur
+         * @return bool True si la mise à jour a réussi
+         */
+        public function updateLastLogin(int $userId): bool {
+            try {
+                $connexion = $this->getConnexion();
+                $sql = "UPDATE users SET last_login = NOW() WHERE id = :id";
+                $stmt = $connexion->prepare($sql);
+                $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+                return $stmt->execute();
+            } catch (PDOException $e) {
+                logError("Erreur lors de la mise à jour de la dernière connexion: " . $e->getMessage());
+                return false;
+            }
+        }
+        
+        /**
+         * Vérifie si un utilisateur existe
+         * 
+         * @param string $pseudo Pseudo de l'utilisateur
+         * @return bool True si l'utilisateur existe
+         */
+        public function userExists(string $pseudo): bool {
+            try {
+                $connexion = $this->getConnexion();
+                $sql = "SELECT COUNT(*) FROM users WHERE pseudo = :pseudo";
+                $stmt = $connexion->prepare($sql);
+                $stmt->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
+                $stmt->execute();
+                return (int)$stmt->fetchColumn() > 0;
+            } catch (PDOException $e) {
+                logError("Erreur lors de la vérification de l'existence de l'utilisateur: " . $e->getMessage());
+                return false;
             }
         }
     }
