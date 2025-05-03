@@ -53,12 +53,29 @@ class CreationController extends BaseController implements IController
 
         // Debug log
         logInfo('CreateUser method called with POST data: ' . print_r($_POST, true));
+        logInfo('Méthode de requête: ' . $_SERVER['REQUEST_METHOD']);
+        logInfo('Content-Type: ' . ($_SERVER['CONTENT_TYPE'] ?? 'Non défini'));
 
         try {
+            // Vérifier si les données POST sont vides
+            if (empty($_POST)) {
+                logError("Aucune donnée POST reçue");
+                $this->session->set('erreur', 'Aucune donnée reçue. Veuillez réessayer.');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+
             // Activer la validation CSRF
-            if (!isset($_POST['csrf_token']) || !$this->session->validateToken($_POST['csrf_token'])) {
+            if (!isset($_POST['csrf_token'])) {
+                logError("Erreur CSRF : jeton manquant lors de la création de compte");
+                $this->session->set('erreur', 'Erreur de sécurité (jeton manquant). Veuillez réessayer.');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+            
+            if (!$this->session->validateToken($_POST['csrf_token'])) {
                 logError("Erreur CSRF : jeton invalide lors de la création de compte");
-                $this->session->set('erreur', 'Erreur de sécurité. Veuillez réessayer.');
+                $this->session->set('erreur', 'Erreur de sécurité (jeton invalide). Veuillez réessayer.');
                 $this->redirect('creation/createUserForm');
                 return;
             }

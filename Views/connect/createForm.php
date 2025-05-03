@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=creation/createUser" enctype="multipart/form-data" id="createForm">
+	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=creation/createUser" id="createForm">
 
 		<div class="formContainer">
 			<h2>Création de votre compte</h2>
@@ -69,7 +69,8 @@
 
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
 			<input type="hidden" name="submitted" value="1">
-			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn" disabled>Création de compte</button>
+			<input type="hidden" name="debug_info" value="form_submitted_from_browser">
+			<button type="submit" class="validButton modalButton" name="creation" value="Creation" id="submitBtn">Création de compte</button>
 
 			<script>
 			document.addEventListener('DOMContentLoaded', function() {
@@ -163,7 +164,10 @@
 				
 				// Ajouter les event listeners
 				form.addEventListener('submit', function(e) {
-					e.preventDefault(); // Toujours prévenir la soumission par défaut
+					console.log('Formulaire soumis');
+					
+					// Ne pas empêcher la soumission par défaut immédiatement
+					// Vérifier d'abord la validité
 					
 					if (validateForm()) {
 						console.log('Form is valid, submitting...');
@@ -173,6 +177,7 @@
 						if (!csrfToken) {
 							console.error('Token CSRF manquant');
 							alert('Erreur de sécurité: token CSRF manquant');
+							e.preventDefault();
 							return false;
 						}
 						
@@ -189,10 +194,12 @@
 							csrf_token: csrfToken
 						});
 						
-						// Soumettre le formulaire
-						form.submit();
+						// Laisser le formulaire se soumettre naturellement
+						return true;
 					} else {
 						console.log('Form validation failed');
+						e.preventDefault();
+						return false;
 					}
 				});
 
