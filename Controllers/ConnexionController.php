@@ -40,19 +40,31 @@ class ConnexionController extends BaseController
             isset($_POST['connexion']) && 
             $_POST['connexion'] == 'Connexion') {
 
+            // Vérification CSRF
+            if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
+                logError("Erreur CSRF : jeton invalide lors de la tentative de connexion");
+                $this->session->set('erreur', 'Erreur de sécurité. Veuillez réessayer.');
+                $this->redirect('connexion/index');
+                return;
+            }
+
             if (!isset($_POST['pseudo']) || empty($_POST['pseudo']) || 
                 !isset($_POST['mdp']) || empty($_POST['mdp'])) {
                 $this->session->set('erreur', 'Tous les champs sont requis');
                 $this->redirect('connexion/index');
+                return;
             }
 
-            $pseudo = $_POST['pseudo'];
+            $pseudo = trim($_POST['pseudo']);
             $ip = $_SERVER['REMOTE_ADDR'];
+            $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? 'Unknown';
 
             // Vérifier si l'utilisateur ou l'IP est bloqué
             if (isset($this->loginAttemptManager) && $this->loginAttemptManager->isLockedOut($pseudo, $ip)) {
+                logError("Tentative de connexion sur un compte bloqué: $pseudo depuis $ip");
                 $this->session->set('erreur', 'Compte temporairement bloqué. Veuillez réessayer dans 15 minutes.');
                 $this->redirect('connexion/index');
+                return;
             }
 
             try {
@@ -61,22 +73,32 @@ class ConnexionController extends BaseController
 
                 $sql = 'SELECT * FROM users WHERE pseudo=:pseudo';
                 $req = $connexion->prepare($sql);
-                $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
+                $req->bindValue(':pseudo', $pseudo, PDO::PARAM_STR);
                 $req->execute();
                 $user = $req->fetch(PDO::FETCH_ASSOC);
 
-                // Désactiver temporairement la vérification du format du mot de passe
-                // if (!preg_match('/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$/', $_POST['mdp'])) {
-                //     $this->session->set('erreur', 'Format du mot de passe invalide');
-                //     $this->redirect('connexion/index');
-                // }
-
                 if ($user && password_verify($_POST['mdp'], $user['mdp'])) {
+                    // Vérifier si le compte est actif
+                    if (isset($user['active']) && $user['active'] == 0) {
+                        logError("Tentative de connexion sur un compte désactivé: $pseudo depuis $ip");
+                        $this->session->set('erreur', 'Ce compte a été désactivé. Veuillez contacter l\'administrateur.');
+                        $this->redirect('connexion/index');
+                        return;
+                    }
+                    
                     // Nettoyer les anciennes tentatives avant de connecter
                     if (isset($this->loginAttemptManager)) {
                         $this->loginAttemptManager->cleanupOldAttempts();
                     }
-                    $this->session->setAuthenticated($_POST['pseudo'], $user['id'], $user['role']);
+                    
+                    // Mettre à jour la dernière connexion
+                    $manager->updateLastLogin($user['id']);
+                    
+                    // Journaliser la connexion réussie
+                    logInfo("Connexion réussie pour l'utilisateur $pseudo depuis $ip avec $userAgent");
+                    
+                    // Authentifier l'utilisateur
+                    $this->session->setAuthenticated($pseudo, $user['id'], $user['role']);
                     
                     // Vérifier si l'utilisateur est un admin
                     if ($user['role'] === 'admin') {
@@ -95,15 +117,22 @@ class ConnexionController extends BaseController
                         $remainingAttempts = $this->loginAttemptManager->getRemainingAttempts($pseudo, $ip);
                     }
                     
-                    logError("Erreur de connexion : identifiants invalides pour l'utilisateur $pseudo depuis $ip");
+                    logError("Erreur de connexion : identifiants invalides pour l'utilisateur $pseudo depuis $ip avec $userAgent");
                     $this->session->set('erreur', "Login ou mot de passe non reconnu ! Il vous reste $remainingAttempts tentatives avant le blocage temporaire.");
                     $this->redirect('connexion/index');
                 }
             } catch (\PDOException $e) {
-                logError("Erreur PDO : " . $e->getMessage());
+                logError("Erreur PDO lors de la connexion : " . $e->getMessage());
                 $this->session->set('erreur', "Une erreur est survenue lors de la connexion.");
                 $this->redirect('connexion/index');
+            } catch (\Exception $e) {
+                logError("Exception lors de la connexion : " . $e->getMessage());
+                $this->session->set('erreur', "Une erreur inattendue est survenue. Veuillez réessayer ultérieurement.");
+                $this->redirect('connexion/index');
             }
+        } else {
+            // Si ce n'est pas une requête POST valide, rediriger vers la page de connexion
+            $this->redirect('connexion/index');
         }
     }
 }

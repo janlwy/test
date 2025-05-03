@@ -47,14 +47,22 @@
                    title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial"
                    maxlength="72"
                    autocomplete="new-password">
+			<div class="password-strength-meter">
+				<div class="strength-bar"></div>
+				<div class="strength-text">Force du mot de passe: <span>Faible</span></div>
+			</div>
 
 			<label for="mdp2"><b>Répéter le mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Répétez le mot de passe" name="mdp2" id="mdp2" value="" required
-                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,72}$"
-                   title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial"
                    maxlength="72"
                    autocomplete="new-password"
                    oninput="validatePasswordMatch()">
+			<div class="password-match-indicator"></div>
+			
+			<div class="password-toggle">
+				<input type="checkbox" id="showPasswords" class="show-password">
+				<label for="showPasswords">Afficher les mots de passe</label>
+			</div>
 
 			<br>
 			<hr>
@@ -70,16 +78,85 @@
 				const submitBtn = document.getElementById('submitBtn');
 				const pseudo = document.getElementById('pseudo');
 				const email = document.getElementById('email');
+				const showPasswordsCheckbox = document.getElementById('showPasswords');
+				const passwordStrengthBar = document.querySelector('.strength-bar');
+				const passwordStrengthText = document.querySelector('.strength-text span');
+				const passwordMatchIndicator = document.querySelector('.password-match-indicator');
 				
 				// Activer le bouton submit par défaut
 				submitBtn.disabled = false;
 				
+				// Afficher/masquer les mots de passe
+				if (showPasswordsCheckbox) {
+					showPasswordsCheckbox.addEventListener('change', function() {
+						const type = this.checked ? 'text' : 'password';
+						password1.type = type;
+						password2.type = type;
+					});
+				}
+				
+				// Fonction pour évaluer la force du mot de passe
+				function checkPasswordStrength(password) {
+					let strength = 0;
+					
+					// Longueur
+					if (password.length >= 8) strength += 1;
+					if (password.length >= 12) strength += 1;
+					
+					// Complexité
+					if (/[a-z]/.test(password)) strength += 1;
+					if (/[A-Z]/.test(password)) strength += 1;
+					if (/[0-9]/.test(password)) strength += 1;
+					if (/[^a-zA-Z0-9]/.test(password)) strength += 1;
+					
+					// Variété
+					const uniqueChars = new Set(password).size;
+					if (uniqueChars > 5) strength += 1;
+					if (uniqueChars > 10) strength += 1;
+					
+					return strength;
+				}
+				
+				// Mettre à jour l'indicateur de force du mot de passe
+				function updatePasswordStrength() {
+					const password = password1.value;
+					const strength = checkPasswordStrength(password);
+					
+					let strengthText = 'Faible';
+					let strengthColor = '#ff4d4d';
+					let strengthWidth = '25%';
+					
+					if (strength >= 4 && strength < 6) {
+						strengthText = 'Moyen';
+						strengthColor = '#ffaa00';
+						strengthWidth = '50%';
+					} else if (strength >= 6 && strength < 8) {
+						strengthText = 'Fort';
+						strengthColor = '#2db300';
+						strengthWidth = '75%';
+					} else if (strength >= 8) {
+						strengthText = 'Très fort';
+						strengthColor = '#00b33c';
+						strengthWidth = '100%';
+					}
+					
+					passwordStrengthBar.style.width = strengthWidth;
+					passwordStrengthBar.style.backgroundColor = strengthColor;
+					passwordStrengthText.textContent = strengthText;
+				}
+				
 				// Fonction pour valider la correspondance des mots de passe
 				function validatePasswordMatch() {
-					if (password1.value !== password2.value) {
-						password2.setCustomValidity('Les mots de passe ne correspondent pas');
-					} else {
+					if (password1.value === password2.value && password2.value !== '') {
 						password2.setCustomValidity('');
+						passwordMatchIndicator.textContent = '✓ Les mots de passe correspondent';
+						passwordMatchIndicator.style.color = '#00b33c';
+					} else if (password2.value !== '') {
+						password2.setCustomValidity('Les mots de passe ne correspondent pas');
+						passwordMatchIndicator.textContent = '✗ Les mots de passe ne correspondent pas';
+						passwordMatchIndicator.style.color = '#ff4d4d';
+					} else {
+						passwordMatchIndicator.textContent = '';
 					}
 				}
 				
@@ -89,19 +166,29 @@
 					
 					if (validateForm()) {
 						console.log('Form is valid, submitting...');
+						submitBtn.disabled = true;
+						submitBtn.textContent = 'Création en cours...';
 						form.submit(); // Soumettre explicitement le formulaire
 					} else {
 						console.log('Form validation failed');
 					}
 				});
 
-				[password1, password2, pseudo, email].forEach(input => {
+				password1.addEventListener('input', function() {
+					updatePasswordStrength();
+					validatePasswordMatch();
+					validateForm();
+				});
+				
+				password2.addEventListener('input', function() {
+					validatePasswordMatch();
+					validateForm();
+				});
+				
+				[pseudo, email].forEach(input => {
 					input.addEventListener('input', validateForm);
 					input.addEventListener('change', validateForm);
 				});
-				
-				// Ajouter un événement spécifique pour la validation des mots de passe
-				password2.addEventListener('input', validatePasswordMatch);
 
 				validateForm(); // Validation initiale
 			});
@@ -155,8 +242,6 @@
 
                 return isPasswordValid && isPseudoValid && isEmailValid;
             }
-
-
 			</script>
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>

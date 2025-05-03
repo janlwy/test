@@ -209,6 +209,56 @@ input::placeholder { /*police pesudo-element*/
     font-weight: bold;
     font-size: 2rem;
 }
+
+.success-message {
+    color: green;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* Styles pour l'indicateur de force du mot de passe */
+.password-strength-meter {
+    width: 80%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    margin: 5px auto 15px;
+    position: relative;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0;
+    border-radius: 5px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-text {
+    font-size: 14px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Styles pour l'affichage du mot de passe */
+.password-toggle {
+    width: 80%;
+    margin: 5px auto 15px;
+    display: flex;
+    align-items: center;
+}
+
+.show-password {
+    margin-right: 10px;
+}
+
+/* Styles pour l'indicateur de correspondance des mots de passe */
+.password-match-indicator {
+    width: 80%;
+    margin: 5px auto 15px;
+    font-size: 14px;
+    text-align: center;
+}
 /************************************ bouton accueil 3D *********************************/
 
 .logo {
