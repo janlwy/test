@@ -1,6 +1,6 @@
 
 <div>
-	<form class="modalContenu Anime formFont" method="POST" action="?url=connexion/connect" id="loginForm">
+	<form class="modalContenu Anime formFont" method="POST" action="index.php?url=connexion/connect" id="loginForm">
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
@@ -39,6 +39,7 @@
 			<p>En créant un compte vous acceptez de vous soumettre à nos <a href="#">conditions</a>.</p>
 			<input type="hidden" name="role_redirect" value="1">
 			<button type="submit" class="validButton modalButton" name="connexion" value="Connexion" id="loginButton">Connexion</button>
+			<input type="hidden" name="submitted" value="1">
 
 			<a href="?url=accueil/index" class="cancelButton modalButton"><span>Annuler</span></a>
 
@@ -61,12 +62,35 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Désactiver temporairement le bouton lors de la soumission pour éviter les doubles soumissions
+    // Gestion de la soumission du formulaire
     const loginForm = document.getElementById('loginForm');
     const loginButton = document.getElementById('loginButton');
     
     if (loginForm && loginButton) {
-        loginForm.addEventListener('submit', function() {
+        console.log('Formulaire et bouton trouvés');
+        
+        loginForm.addEventListener('submit', function(e) {
+            console.log('Formulaire soumis');
+            
+            // Vérifier les données du formulaire
+            const pseudo = document.getElementById('pseudo').value;
+            const mdp = document.getElementById('mdp').value;
+            const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+            
+            console.log('Données du formulaire:', {
+                pseudo: pseudo ? 'Rempli' : 'Vide',
+                mdp: mdp ? 'Rempli' : 'Vide',
+                csrfToken: csrfToken ? 'Présent' : 'Manquant'
+            });
+            
+            if (!pseudo || !mdp || !csrfToken) {
+                console.error('Formulaire incomplet');
+                alert('Veuillez remplir tous les champs');
+                e.preventDefault();
+                return false;
+            }
+            
+            // Désactiver le bouton pour éviter les doubles soumissions
             loginButton.disabled = true;
             loginButton.textContent = 'Connexion en cours...';
             
@@ -75,7 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 loginButton.disabled = false;
                 loginButton.textContent = 'Connexion';
             }, 5000);
+            
+            // Laisser le formulaire se soumettre normalement
+            return true;
         });
+    } else {
+        console.error('Formulaire ou bouton non trouvé');
     }
 });
 </script>

@@ -36,12 +36,19 @@ class ConnexionController extends BaseController
 
     public function connect()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && 
-            isset($_POST['connexion']) && 
-            $_POST['connexion'] == 'Connexion') {
+        logInfo("Méthode connect appelée. Méthode: " . $_SERVER['REQUEST_METHOD']);
+        logInfo("Données POST: " . print_r($_POST, true));
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['connexion']) || $_POST['connexion'] != 'Connexion') {
+                logError("Paramètre 'connexion' manquant ou invalide");
+                $this->session->set('erreur', 'Requête invalide');
+                $this->redirect('connexion/index');
+                return;
+            }
 
             // Vérification CSRF
-            if (!$this->session->validateToken($_POST['csrf_token'] ?? null)) {
+            if (!isset($_POST['csrf_token']) || !$this->session->validateToken($_POST['csrf_token'])) {
                 logError("Erreur CSRF : jeton invalide lors de la tentative de connexion");
                 $this->session->set('erreur', 'Erreur de sécurité. Veuillez réessayer.');
                 $this->redirect('connexion/index');
