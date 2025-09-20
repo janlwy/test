@@ -49,7 +49,11 @@ class CreationController extends BaseController implements IController
     }
 
     public function createUser() {
+        logInfo('=== DEBUT DE LA METHODE createUser ===');
+        logInfo('REQUEST_METHOD: ' . ($_SERVER['REQUEST_METHOD'] ?? 'NON_DEFINI'));
+        
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            logInfo('Redirection car méthode n\'est pas POST');
             $this->redirect('creation/createUserForm');
             return;
         }
@@ -64,6 +68,7 @@ class CreationController extends BaseController implements IController
             if (empty($_POST)) {
                 logError("Aucune donnée POST reçue");
                 $this->session->set('erreur', 'Aucune donnée reçue. Veuillez réessayer.');
+                logInfo('REDIRECTION: Données POST vides');
                 $this->redirect('creation/createUserForm');
                 return;
             }
@@ -72,6 +77,7 @@ class CreationController extends BaseController implements IController
             if (!isset($_POST['csrf_token'])) {
                 logError("Erreur CSRF : jeton manquant lors de la création de compte");
                 $this->session->set('erreur', 'Erreur de sécurité (jeton manquant). Veuillez réessayer.');
+                logInfo('REDIRECTION: Token CSRF manquant');
                 $this->redirect('creation/createUserForm');
                 return;
             }
@@ -79,9 +85,12 @@ class CreationController extends BaseController implements IController
             if (!$this->session->validateToken($_POST['csrf_token'])) {
                 logError("Erreur CSRF : jeton invalide lors de la création de compte");
                 $this->session->set('erreur', 'Erreur de sécurité (jeton invalide). Veuillez réessayer.');
+                logInfo('REDIRECTION: Token CSRF invalide');
                 $this->redirect('creation/createUserForm');
                 return;
             }
+            
+            logInfo('Token CSRF validé avec succès');
 
             // Validation manuelle des données au lieu d'utiliser le validateur
             $errors = [];
