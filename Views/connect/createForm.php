@@ -88,6 +88,12 @@
 				// Activer le bouton submit par défaut
 				submitBtn.disabled = false;
 				
+				console.log('Formulaire initialisé:', {
+					form: !!form,
+					action: form ? form.action : 'non défini',
+					method: form ? form.method : 'non défini'
+				});
+				
 				// Afficher/masquer les mots de passe
 				if (showPasswordsCheckbox) {
 					showPasswordsCheckbox.addEventListener('change', function() {
@@ -166,41 +172,40 @@
 				form.addEventListener('submit', function(e) {
 					console.log('Formulaire soumis');
 					
-					// Ne pas empêcher la soumission par défaut immédiatement
 					// Vérifier d'abord la validité
-					
-					if (validateForm()) {
-						console.log('Form is valid, submitting...');
-						
-						// Vérifier que le token CSRF est présent
-						const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-						if (!csrfToken) {
-							console.error('Token CSRF manquant');
-							alert('Erreur de sécurité: token CSRF manquant');
-							e.preventDefault();
-							return false;
-						}
-						
-						// Désactiver le bouton et changer son texte
-						submitBtn.disabled = true;
-						submitBtn.textContent = 'Création en cours...';
-						
-						// Ajouter un log pour déboguer
-						console.log('Soumission du formulaire vers: ' + form.action);
-						console.log('Méthode: ' + form.method);
-						console.log('Données: ', {
-							pseudo: document.getElementById('pseudo').value,
-							email: document.getElementById('email').value,
-							csrf_token: csrfToken
-						});
-						
-						// Laisser le formulaire se soumettre naturellement
-						return true;
-					} else {
+					if (!validateForm()) {
 						console.log('Form validation failed');
 						e.preventDefault();
 						return false;
 					}
+					
+					console.log('Form is valid, submitting...');
+					
+					// Vérifier que le token CSRF est présent
+					const csrfToken = document.querySelector('input[name="csrf_token"]').value;
+					if (!csrfToken) {
+						console.error('Token CSRF manquant');
+						alert('Erreur de sécurité: token CSRF manquant');
+						e.preventDefault();
+						return false;
+					}
+					
+					// Désactiver le bouton et changer son texte
+					submitBtn.disabled = true;
+					submitBtn.textContent = 'Création en cours...';
+					
+					// Ajouter un log pour déboguer
+					console.log('Soumission du formulaire vers: ' + form.action);
+					console.log('Méthode: ' + form.method);
+					console.log('Données: ', {
+						pseudo: document.getElementById('pseudo').value,
+						email: document.getElementById('email').value,
+						mdp: '***masqué***',
+						csrf_token: csrfToken.substring(0, 8) + '...'
+					});
+					
+					// Laisser le formulaire se soumettre naturellement
+					return true;
 				});
 
 				password1.addEventListener('input', function() {
@@ -243,15 +248,20 @@
                 console.log('Validation:', {
                     password: isPasswordValid,
                     pseudo: isPseudoValid,
-                    email: isEmailValid
+                    email: isEmailValid,
+                    pseudoValue: pseudo.value,
+                    emailValue: email.value,
+                    passwordLength: password1.value.length
                 });
 
                 // Réinitialiser tous les messages d'erreur
-                [password1, password2, pseudo, email].forEach(input => input.setCustomValidity(''));
+                [password1, password2, pseudo, email].forEach(input => {
+                    if (input) input.setCustomValidity('');
+                });
 
                 // Vérifier le token CSRF
-                const csrfToken = document.querySelector('input[name="csrf_token"]').value;
-                if (!csrfToken) {
+                const csrfToken = document.querySelector('input[name="csrf_token"]');
+                if (!csrfToken || !csrfToken.value) {
                     console.error('Token CSRF manquant');
                     alert('Erreur de sécurité: token CSRF manquant');
                     return false;
@@ -261,23 +271,28 @@
                 if (!isPasswordValid) {
                     if (password1.value !== password2.value) {
                         password2.setCustomValidity('Les mots de passe ne correspondent pas');
+                        console.log('Erreur: mots de passe différents');
                     } else {
                         password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial');
+                        console.log('Erreur: mot de passe faible');
                     }
                 }
 
                 if (!isPseudoValid) {
                     pseudo.setCustomValidity('Le nom d\'utilisateur doit contenir entre 3 et 20 caractères alphanumériques, tirets ou underscores');
+                    console.log('Erreur: pseudo invalide');
                 }
 
                 if (!isEmailValid) {
                     email.setCustomValidity('Veuillez entrer une adresse email valide');
+                    console.log('Erreur: email invalide');
                 }
 
-                // Activer/désactiver le bouton submit
-                submitBtn.disabled = !(isPasswordValid && isPseudoValid && isEmailValid);
+                const isValid = isPasswordValid && isPseudoValid && isEmailValid;
+                console.log('Résultat validation:', isValid);
 
-                return isPasswordValid && isPseudoValid && isEmailValid;
+                // Ne pas désactiver le bouton ici, laisser la soumission se faire
+                return isValid;
             }
 			</script>
 
