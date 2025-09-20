@@ -43,8 +43,8 @@
 
 			<label for="mdp1"><b>Mot de passe</b></label>
 			<input class="inputModal" type="password" placeholder="Entrez votre mot de passe" name="mdp" id="mdp1" value="" required
-                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,72}$"
-                   title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)"
+                   pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,72}$"
+                   title="Au moins 8 caractères, incluant au moins une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&.)"
                    maxlength="72"
                    autocomplete="new-password">
 			<div class="password-strength-meter">
@@ -236,7 +236,7 @@
                 const submitBtn = document.getElementById('submitBtn');
 
                 // Validation du mot de passe
-                const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,72}$/;
+                const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,72}$/;
                 const isPasswordValid = password1.value === password2.value && passwordPattern.test(password1.value);
 
                 // Validation du pseudo
@@ -273,7 +273,7 @@
                         password2.setCustomValidity('Les mots de passe ne correspondent pas');
                         console.log('Erreur: mots de passe différents');
                     } else {
-                        password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)');
+                        password1.setCustomValidity('Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&.)');
                         console.log('Erreur: mot de passe faible');
                     }
                 }

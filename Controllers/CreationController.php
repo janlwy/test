@@ -107,8 +107,8 @@ class CreationController extends BaseController implements IController
                 $errors['mdp'][] = 'Le mot de passe est requis';
             } elseif (strlen($_POST['mdp']) < 8) {
                 $errors['mdp'][] = 'Le mot de passe doit faire au moins 8 caractères';
-            } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,72}$/', $_POST['mdp'])) {
-                $errors['mdp'][] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&)';
+            } elseif (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,72}$/', $_POST['mdp'])) {
+                $errors['mdp'][] = 'Le mot de passe doit contenir au moins une majuscule, une minuscule, un chiffre et un caractère spécial (@$!%*?&.)';
             }
             
             // Validation de la confirmation du mot de passe
