@@ -130,9 +130,21 @@ class CreationController extends BaseController implements IController
             logInfo("Validation réussie pour la création de compte: " . $_POST['pseudo']);
             logInfo("Début de la création en base de données pour: " . $_POST['pseudo']);
 
+            // Vérifier que la classe Manager existe
+            if (!class_exists('Models\Manager')) {
+                logError("La classe Models\Manager n'existe pas");
+                $this->session->set('erreur', 'Erreur de configuration. Veuillez contacter l\'administrateur.');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+            logInfo("Classe Manager trouvée");
+
             try {
+                logInfo("Tentative de création du Manager");
                 $manager = new Manager();
                 logInfo("Manager créé avec succès");
+                
+                logInfo("Tentative d'obtention de la connexion");
                 $connexion = $manager->getConnexion();
                 logInfo("Connexion à la base de données obtenue");
                 
