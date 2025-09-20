@@ -2,7 +2,7 @@
 namespace Controllers;
 
 require_once __DIR__ . '/BaseController.php';
-require_once __DIR__ . '/../Fonctions/SessionManager.php';
+require_once __DIR__ . '/../Session/SessionManager.php';
 use Session\SessionManager;
 use PDO;
 use Models\Manager;

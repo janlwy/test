@@ -3,6 +3,7 @@ namespace Controllers;
 
 require_once __DIR__ . '/BaseController.php';
 require_once __DIR__ . '/../Fonctions/RoleManager.php';
+use Fonctions\RoleManager;
 use Models\Manager;
 use PDO;
 use Exception;

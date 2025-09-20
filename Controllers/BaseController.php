@@ -2,8 +2,8 @@
 namespace Controllers;
 
 require_once __DIR__ . '/IBaseController.php';
-require_once __DIR__ . '/../Fonctions/SessionManager.php';
-use Fonctions\SessionManager;
+require_once __DIR__ . '/../Session/SessionManager.php';
+use Session\SessionManager;
 
 abstract class BaseController implements IBaseController {
     protected $repository;

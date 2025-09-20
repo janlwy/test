@@ -4,7 +4,7 @@
 		<div class="formContainer ">
 			<h2>Connexion à votre compte</h2>
 			<h3>Veuillez remplir ce formulaire pour vous connecter à votre compte.</h3>
-			<?php $token = \Fonctions\SessionManager::getInstance()->regenerateToken(); ?>
+			<?php $token = \Session\SessionManager::getInstance()->regenerateToken(); ?>
 			<input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($token, ENT_QUOTES, 'UTF-8'); ?>">
 			<hr>
 			<?php if (isset($_SESSION['erreur'])): ?>

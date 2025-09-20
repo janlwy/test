@@ -1,4 +1,9 @@
 <?php
+namespace Models;
+
+use PDO;
+use Exception;
+use InvalidArgumentException;
 
 class VideoRepository implements IRepository {
     private $manager;
@@ -7,7 +12,7 @@ class VideoRepository implements IRepository {
         $this->manager = new Manager();
     }
     
-    public function findById(int $id) {
+    public function findById(int $id): ?Video {
         $data = $this->manager->readTableOne('video', $id);
         return $data ? new Video($data) : null;
     }

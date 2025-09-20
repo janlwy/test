@@ -1,4 +1,9 @@
 <?php
+namespace Models;
+
+use PDO;
+use Exception;
+use InvalidArgumentException;
 
 class PhotoRepository implements IRepository {
     private $manager;
@@ -7,8 +12,9 @@ class PhotoRepository implements IRepository {
         $this->manager = new Manager();
     }
     
-    public function findById(int $id) {
-        return $this->manager->readTableOne('photo', $id);
+    public function findById(int $id): ?Photo {
+        $data = $this->manager->readTableOne('photo', $id);
+        return $data ? new Photo($data) : null;
     }
     
     public function findAll(): array {

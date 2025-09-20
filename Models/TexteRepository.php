@@ -1,7 +1,9 @@
 <?php
-namespace App\Models;
+namespace Models;
 
-use App\Models\Manager;
+use PDO;
+use Exception;
+use InvalidArgumentException;
 
 class TexteRepository implements IRepository {
     private $manager;
@@ -10,8 +12,9 @@ class TexteRepository implements IRepository {
         $this->manager = new Manager();
     }
     
-    public function findById(int $id) {
-        return $this->manager->readTableOne('texte', $id);
+    public function findById(int $id): ?Texte {
+        $data = $this->manager->readTableOne('texte', $id);
+        return $data ? new Texte($data) : null;
     }
     
     public function findAll(): array {
