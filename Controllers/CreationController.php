@@ -175,49 +175,49 @@ class CreationController extends BaseController implements IController
                 
                 logInfo("Tentative d'insertion d'un nouvel utilisateur: " . $_POST['pseudo']);
                 
-                try {
-                    $connexion->beginTransaction();
-                    
-                    if ($req->execute()) {
-                        $connexion->commit();
-                        // Stocker un message de succès
-                        $_SESSION['message'] = 'Compte créé avec succès. Vous pouvez maintenant vous connecter.';
-                        logInfo("Compte créé avec succès pour l'utilisateur: " . $_POST['pseudo']);
-                        $this->redirect('connexion/index');
-                    } else {
-                        $connexion->rollBack();
-                        $errorInfo = $req->errorInfo();
-                        logError("Erreur SQL lors de la création du compte: " . json_encode($errorInfo));
-                        throw new Exception('Erreur lors de la création du compte: ' . $errorInfo[2]);
-                    }
-                } catch (PDOException $e) {
+                $connexion->beginTransaction();
+                
+                if ($req->execute()) {
+                    $connexion->commit();
+                    // Stocker un message de succès
+                    $this->session->set('message', 'Compte créé avec succès. Vous pouvez maintenant vous connecter.');
+                    logInfo("Compte créé avec succès pour l'utilisateur: " . $_POST['pseudo']);
+                    $this->redirect('connexion/index');
+                    return; // Important : arrêter l'exécution ici
+                } else {
                     $connexion->rollBack();
-                    logError("Exception PDO lors de la création du compte: " . $e->getMessage());
-                    
-                    // Vérifier si c'est une erreur de clé dupliquée
-                    if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
-                        if (strpos($e->getMessage(), 'pseudo') !== false) {
-                            $this->session->set('erreur', 'Ce nom d\'utilisateur est déjà utilisé');
-                        } elseif (strpos($e->getMessage(), 'email') !== false) {
-                            $this->session->set('erreur', 'Cette adresse email est déjà utilisée');
-                        } else {
-                            $this->session->set('erreur', 'Un compte avec ces informations existe déjà');
-                        }
-                    } else {
-                        $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
-                    }
-                    
+                    $errorInfo = $req->errorInfo();
+                    logError("Erreur SQL lors de la création du compte: " . json_encode($errorInfo));
+                    $this->session->set('erreur', 'Erreur lors de la création du compte: ' . $errorInfo[2]);
                     $this->redirect('creation/createUserForm');
+                    return;
                 }
             } catch (Exception $e) {
+                if (isset($connexion) && $connexion->inTransaction()) {
+                    $connexion->rollBack();
+                }
                 logError("Erreur lors de la création du compte : " . $e->getMessage());
-                $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
+                
+                // Vérifier si c'est une erreur de clé dupliquée
+                if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
+                    if (strpos($e->getMessage(), 'pseudo') !== false) {
+                        $this->session->set('erreur', 'Ce nom d\'utilisateur est déjà utilisé');
+                    } elseif (strpos($e->getMessage(), 'email') !== false) {
+                        $this->session->set('erreur', 'Cette adresse email est déjà utilisée');
+                    } else {
+                        $this->session->set('erreur', 'Un compte avec ces informations existe déjà');
+                    }
+                } else {
+                    $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
+                }
                 $this->redirect('creation/createUserForm');
+                return;
             }
         } catch (Exception $e) {
-            logError("Erreur lors de la création du compte : " . $e->getMessage());
+            logError("Erreur générale lors de la création du compte : " . $e->getMessage());
             $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
             $this->redirect('creation/createUserForm');
+            return;
         }
     }
 }
