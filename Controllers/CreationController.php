@@ -3,10 +3,12 @@ namespace Controllers;
 
 require_once __DIR__ . '/BaseController.php';
 require_once __DIR__ . '/../Fonctions/RoleManager.php';
+require_once __DIR__ . '/../Models/Manager.php';
 use Fonctions\RoleManager;
 use Models\Manager;
 use PDO;
 use Exception;
+use PDOException;
 
 class CreationController extends BaseController implements IController
 {
@@ -139,6 +141,9 @@ class CreationController extends BaseController implements IController
             }
             logInfo("Classe Manager trouvée");
 
+            $manager = null;
+            $connexion = null;
+            
             try {
                 logInfo("Tentative de création du Manager");
                 $manager = new Manager();
@@ -147,6 +152,10 @@ class CreationController extends BaseController implements IController
                 logInfo("Tentative d'obtention de la connexion");
                 $connexion = $manager->getConnexion();
                 logInfo("Connexion à la base de données obtenue");
+                
+                if (!$connexion) {
+                    throw new Exception("Connexion à la base de données échouée");
+                }
                 
                 // Vérifier si la table users existe et a la structure requise
                 logInfo("Vérification de la structure de la table users");
@@ -219,11 +228,12 @@ class CreationController extends BaseController implements IController
                     $this->redirect('creation/createUserForm');
                     return;
                 }
-            } catch (Exception $e) {
+            } catch (PDOException $e) {
                 if (isset($connexion) && $connexion->inTransaction()) {
                     $connexion->rollBack();
                 }
-                logError("Erreur lors de la création du compte : " . $e->getMessage());
+                logError("Erreur PDO lors de la création du compte : " . $e->getMessage());
+                logError("Code d'erreur PDO : " . $e->getCode());
                 
                 // Vérifier si c'est une erreur de clé dupliquée
                 if (strpos($e->getMessage(), 'Duplicate entry') !== false) {
@@ -235,8 +245,18 @@ class CreationController extends BaseController implements IController
                         $this->session->set('erreur', 'Un compte avec ces informations existe déjà');
                     }
                 } else {
-                    $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
+                    $this->session->set('erreur', 'Erreur de base de données lors de la création du compte');
                 }
+                $this->redirect('creation/createUserForm');
+                return;
+            } catch (Exception $e) {
+                if (isset($connexion) && $connexion && $connexion->inTransaction()) {
+                    $connexion->rollBack();
+                }
+                logError("Erreur générale lors de la création du compte : " . $e->getMessage());
+                logError("Trace de l'erreur : " . $e->getTraceAsString());
+                
+                $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
                 $this->redirect('creation/createUserForm');
                 return;
             }
