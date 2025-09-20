@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 
 class Video extends AbstractModel {
     private $title;

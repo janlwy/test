@@ -54,7 +54,7 @@
                     <div class="video-info">
                         <h4><?php echo htmlspecialchars($video->getTitle()); ?></h4>
                         <p><?php echo htmlspecialchars($video->getDescription()); ?></p>
-                        <span class="video-date">Ajoutée le <?php echo date('d/m/Y', strtotime($video->getCreatedAt())); ?></span>
+                        <span class="video-date">Ajoutée le <?php echo $video->getCreatedAt() ? date('d/m/Y', strtotime($video->getCreatedAt())) : 'Date inconnue'; ?></span>
                     </div>
                     <div class="video-controls">
                         <button class="play-single btnBase vert" onclick="window.location='?url=video/player&id=<?php echo $video->getId(); ?>'">

@@ -1,5 +1,5 @@
 <?php
-namespace App\Models;
+namespace Models;
 
 class Texte extends AbstractModel {
     private $title;

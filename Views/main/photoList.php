@@ -29,7 +29,7 @@
         <?php if (!empty($photos)): ?>
             <?php foreach ($photos as $photo): ?>
                 <div class="photo-item" data-photo-id="<?php echo $photo->getId(); ?>">
-                    <img src="<?php echo $photo->getFullPath(); ?>" alt="<?php echo htmlspecialchars($photo->getTitle()); ?>" class="photo-thumbnail">
+                    <img src="<?php echo htmlspecialchars($photo->getFullPath()); ?>" alt="<?php echo htmlspecialchars($photo->getTitle()); ?>" class="photo-thumbnail">
                     <div class="photo-info">
                         <h4><?php echo htmlspecialchars($photo->getTitle()); ?></h4>
                         <p><?php echo htmlspecialchars($photo->getDescription()); ?></p>

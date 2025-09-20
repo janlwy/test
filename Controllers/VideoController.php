@@ -2,6 +2,7 @@
 namespace Controllers;
 
 use Models\VideoRepository;
+use Models\Video;
 use Fonctions\Validator;
 use Exception;
 

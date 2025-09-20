@@ -34,7 +34,7 @@
                     </div>
                     <div class="texte-info">
                         <h4><?php echo htmlspecialchars($texte->getTitle()); ?></h4>
-                        <p>Créé le : <?php echo date('d/m/Y', strtotime($texte->getCreatedAt())); ?></p>
+                        <p>Créé le : <?php echo $texte->getCreatedAt() ? date('d/m/Y', strtotime($texte->getCreatedAt())) : 'Date inconnue'; ?></p>
                     </div>
                     <div class="texte-controls">
                         <a href="?url=texte/viewer&id=<?php echo $texte->getId(); ?>" class="btnBase vert">

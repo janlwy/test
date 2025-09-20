@@ -1,4 +1,5 @@
 <?php
+namespace Models;
 
 class Photo extends AbstractModel {
     private $title;
@@ -27,6 +28,10 @@ class Photo extends AbstractModel {
     
     public function getPath() {
         return $this->path;
+    }
+    
+    public function getFullPath() {
+        return 'Ressources/images/photos/' . $this->path;
     }
     
     public function validate(): array {

@@ -3,6 +3,7 @@ namespace Controllers;
 
 use Models\TexteRepository;
 use Models\Texte;
+use Fonctions\Validator;
 use Exception;
 
 class TexteController extends BaseController implements IController

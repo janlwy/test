@@ -2,6 +2,7 @@
 namespace Controllers;
 
 use Models\PhotoRepository;
+use Models\Photo;
 use Fonctions\Validator;
 use Exception;
 
