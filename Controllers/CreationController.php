@@ -49,21 +49,22 @@ class CreationController extends BaseController implements IController
     }
 
     public function createUser() {
-        logInfo('=== DEBUT DE LA METHODE createUser ===');
-        logInfo('REQUEST_METHOD: ' . ($_SERVER['REQUEST_METHOD'] ?? 'NON_DEFINI'));
-        
-        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            logInfo('Redirection car méthode n\'est pas POST');
-            $this->redirect('creation/createUserForm');
-            return;
-        }
-
-        // Debug log
-        logInfo('CreateUser method called with POST data: ' . print_r($_POST, true));
-        logInfo('Méthode de requête: ' . $_SERVER['REQUEST_METHOD']);
-        logInfo('Content-Type: ' . ($_SERVER['CONTENT_TYPE'] ?? 'Non défini'));
-
         try {
+            logInfo('=== DEBUT DE LA METHODE createUser ===');
+            logInfo('REQUEST_METHOD: ' . ($_SERVER['REQUEST_METHOD'] ?? 'NON_DEFINI'));
+            
+            if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+                logInfo('Redirection car méthode n\'est pas POST');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+
+            // Debug log
+            logInfo('CreateUser method called with POST data: ' . print_r($_POST, true));
+            logInfo('Méthode de requête: ' . $_SERVER['REQUEST_METHOD']);
+            logInfo('Content-Type: ' . ($_SERVER['CONTENT_TYPE'] ?? 'Non défini'));
+
+            try {
             // Vérifier si les données POST sont vides
             if (empty($_POST)) {
                 logError("Aucune donnée POST reçue");
@@ -269,10 +270,30 @@ class CreationController extends BaseController implements IController
                 $this->redirect('creation/createUserForm');
                 return;
             }
-        } catch (Exception $e) {
-            logError("Erreur générale lors de la création du compte : " . $e->getMessage());
-            $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
-            $this->redirect('creation/createUserForm');
+            } catch (Exception $e) {
+                logError("Erreur générale lors de la création du compte : " . $e->getMessage());
+                $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
+                $this->redirect('creation/createUserForm');
+                return;
+            }
+        } catch (Throwable $e) {
+            logError("ERREUR FATALE dans createUser : " . $e->getMessage());
+            logError("Fichier : " . $e->getFile() . " ligne " . $e->getLine());
+            logError("Trace : " . $e->getTraceAsString());
+            
+            if (function_exists('logError')) {
+                logError("Type d'erreur : " . get_class($e));
+            }
+            
+            try {
+                $this->session->set('erreur', 'Une erreur critique est survenue lors de la création du compte');
+                $this->redirect('creation/createUserForm');
+            } catch (Throwable $redirectError) {
+                logError("Erreur lors de la redirection : " . $redirectError->getMessage());
+                // Fallback si même la redirection échoue
+                header('Location: /creation/createUserForm');
+                exit;
+            }
             return;
         }
     }
