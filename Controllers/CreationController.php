@@ -128,38 +128,53 @@ class CreationController extends BaseController implements IController
             
             // Les données sont valides, on peut continuer
             logInfo("Validation réussie pour la création de compte: " . $_POST['pseudo']);
+            logInfo("Début de la création en base de données pour: " . $_POST['pseudo']);
 
             try {
                 $manager = new Manager();
+                logInfo("Manager créé avec succès");
                 $connexion = $manager->getConnexion();
+                logInfo("Connexion à la base de données obtenue");
                 
                 // Vérifier si la table users existe et a la structure requise
+                logInfo("Vérification de la structure de la table users");
                 if (!$manager->checkUsersTableStructure()) {
                     logError("Structure de la table users incorrecte ou manquante");
                     $this->session->set('erreur', 'Erreur de configuration de la base de données. Veuillez contacter l\'administrateur.');
                     $this->redirect('creation/createUserForm');
                     return;
                 }
+                logInfo("Structure de la table users validée");
 
                 // Vérifier si le pseudo existe déjà
+                logInfo("Vérification de l'unicité du pseudo: " . $_POST['pseudo']);
                 $sql = 'SELECT COUNT(*) FROM users WHERE pseudo = :pseudo';
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':pseudo', $_POST['pseudo'], PDO::PARAM_STR);
                 $req->execute();
                 
-                if ($req->fetchColumn() > 0) {
+                $pseudoCount = $req->fetchColumn();
+                logInfo("Nombre de pseudos existants: " . $pseudoCount);
+                
+                if ($pseudoCount > 0) {
+                    logInfo("Pseudo déjà existant, redirection vers le formulaire");
                     $this->session->set('erreur', 'Ce nom d\'utilisateur existe déjà');
                     $this->redirect('creation/createUserForm');
                     return;
                 }
 
                 // Vérifier si l'email existe déjà
+                logInfo("Vérification de l'unicité de l'email: " . $_POST['email']);
                 $sql = 'SELECT COUNT(*) FROM users WHERE email = :email';
                 $req = $connexion->prepare($sql);
                 $req->bindValue(':email', $_POST['email'], PDO::PARAM_STR);
                 $req->execute();
                 
-                if ($req->fetchColumn() > 0) {
+                $emailCount = $req->fetchColumn();
+                logInfo("Nombre d'emails existants: " . $emailCount);
+                
+                if ($emailCount > 0) {
+                    logInfo("Email déjà existant, redirection vers le formulaire");
                     $this->session->set('erreur', 'Cet email est déjà utilisé');
                     $this->redirect('creation/createUserForm');
                     return;
