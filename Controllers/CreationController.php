@@ -64,7 +64,6 @@ class CreationController extends BaseController implements IController
             logInfo('Méthode de requête: ' . $_SERVER['REQUEST_METHOD']);
             logInfo('Content-Type: ' . ($_SERVER['CONTENT_TYPE'] ?? 'Non défini'));
 
-            try {
             // Vérifier si les données POST sont vides
             if (empty($_POST)) {
                 logError("Aucune donnée POST reçue");
@@ -266,12 +265,6 @@ class CreationController extends BaseController implements IController
                 logError("Erreur générale lors de la création du compte : " . $e->getMessage());
                 logError("Trace de l'erreur : " . $e->getTraceAsString());
                 
-                $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
-                $this->redirect('creation/createUserForm');
-                return;
-            }
-            } catch (Exception $e) {
-                logError("Erreur générale lors de la création du compte : " . $e->getMessage());
                 $this->session->set('erreur', 'Une erreur est survenue lors de la création du compte');
                 $this->redirect('creation/createUserForm');
                 return;
