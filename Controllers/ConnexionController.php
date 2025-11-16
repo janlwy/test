@@ -41,8 +41,8 @@ class ConnexionController extends BaseController
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Vérification du paramètre de connexion
-            if (!isset($_POST['connexion']) || $_POST['connexion'] != 'Connexion') {
-                logError("Paramètre 'connexion' manquant ou invalide");
+            if (!isset($_POST['connexion'])) {
+                logError("Paramètre 'connexion' manquant");
                 $this->session->set('erreur', 'Requête invalide');
                 $this->redirect('connexion/index');
                 return;
