@@ -261,17 +261,53 @@ input::placeholder { /*police pesudo-element*/
 }
 /************************************ bouton accueil 3D *********************************/
 
-.logo {
-    display: block;
-    margin: 0 auto;
-    width: 48%;
-}
-
-.sectionBouton3d {
-    margin-top: 3%;
+/* Conteneur principal pour la page d'accueil */
+.accueil-container {
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+}
+
+.accueil-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    gap: 5vh;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3vh;
+}
+
+.logo {
+    display: block;
+    width: min(60vw, 400px);
+    height: auto;
+    max-width: 100%;
+}
+
+.app-title {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    margin: 0;
+    color: var(--colorH2H5);
+    font-family: 'Noto Sans Display', sans-serif;
+}
+
+.sectionBouton3d {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .clic3d {
@@ -315,15 +351,16 @@ input::placeholder { /*police pesudo-element*/
 .bouton3d {
     display: block;
     position: relative;
-    padding: 18px 50px;
+    padding: clamp(12px, 2vh, 18px) clamp(30px, 6vw, 50px);
     border-radius: 12px;
-    font-size: 3rem;
+    font-size: clamp(1.8rem, 4vw, 3rem);
     color: #ffffff;
     background: #f0003c;
     will-change: transform;
     transform: translateY(-4px);
     transition:
         transform 600ms cubic-bezier(.3, .7, .4, 1);
+    white-space: nowrap;
 }
 
 .clic3d:hover {
@@ -875,6 +912,32 @@ footer {
         width: 98%;
         margin: 0 0 220px 0;
     }
+    
+    .accueil-container {
+        min-height: calc(100vh - 220px);
+        padding: 2vh 4vw;
+    }
+    
+    .accueil-content {
+        gap: 4vh;
+    }
+    
+    .logo-section {
+        gap: 2vh;
+    }
+    
+    .logo {
+        width: min(80vw, 300px);
+    }
+    
+    .app-title {
+        font-size: clamp(1.2rem, 5vw, 2rem);
+    }
+    
+    .bouton3d {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+        padding: clamp(10px, 1.5vh, 15px) clamp(25px, 8vw, 40px);
+    }
     .searchBox {
         width: 90%;
         margin: 10px auto;
@@ -993,6 +1056,23 @@ footer {
     body {
         margin-bottom: 0;
     }
+    
+    .accueil-container {
+        min-height: 100vh;
+        padding: 3vh 5vw;
+    }
+    
+    .accueil-content {
+        gap: 6vh;
+    }
+    
+    .logo {
+        width: min(50vw, 350px);
+    }
+    
+    .app-title {
+        font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
     .menunav a:not(:first-child) {
         display: none;
     }
@@ -1056,6 +1136,19 @@ footer {
         flex: 1;
         margin-bottom: 0;
     }
+    
+    .accueil-container {
+        min-height: 100vh;
+        padding: 4vh 6vw;
+    }
+    
+    .accueil-content {
+        gap: 8vh;
+    }
+    
+    .logo {
+        width: min(40vw, 400px);
+    }
     .column {
         width: 22%;
         display: block;
@@ -1081,6 +1174,29 @@ footer {
         width: 95%;
         max-width: 2400px;
         margin: 0 auto;
+    }
+    
+    .accueil-container {
+        min-height: 100vh;
+        padding: 5vh 8vw;
+    }
+    
+    .accueil-content {
+        gap: 10vh;
+        max-width: 1000px;
+    }
+    
+    .logo {
+        width: min(35vw, 500px);
+    }
+    
+    .app-title {
+        font-size: clamp(2.5rem, 3vw, 4rem);
+    }
+    
+    .bouton3d {
+        font-size: clamp(2.5rem, 3vw, 3.5rem);
+        padding: clamp(18px, 2.5vh, 25px) clamp(50px, 5vw, 70px);
     }
     
     .row {
