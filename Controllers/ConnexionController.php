@@ -41,12 +41,14 @@ class ConnexionController extends BaseController
         
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Vérification du paramètre de connexion
-            if (!isset($_POST['connexion'])) {
-                logError("Paramètre 'connexion' manquant");
+            if (!isset($_POST['connexion']) || empty($_POST['connexion'])) {
+                logError("Paramètre 'connexion' manquant ou vide");
                 $this->session->set('erreur', 'Requête invalide');
                 $this->redirect('connexion/index');
                 return;
             }
+            
+            logInfo("Paramètre connexion reçu: " . $_POST['connexion']);
 
             // Vérification CSRF - Séparation des vérifications pour un meilleur diagnostic
             if (!isset($_POST['csrf_token'])) {
