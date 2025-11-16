@@ -69,7 +69,7 @@ try {
         }
     } else {
         // Créer le nouvel utilisateur
-        $insertSql = "INSERT INTO users (pseudo, email, mdp, role, created_at, active) VALUES (:pseudo, :email, :password, :role, NOW(), 1)";
+        $insertSql = "INSERT INTO users (pseudo, email, mdp, role, created_at) VALUES (:pseudo, :email, :password, :role, NOW())";
         $insertStmt = $connexion->prepare($insertSql);
         $insertStmt->bindValue(':pseudo', $userData['pseudo'], PDO::PARAM_STR);
         $insertStmt->bindValue(':email', $userData['email'], PDO::PARAM_STR);
