@@ -1171,8 +1171,50 @@ footer {
         margin: 0;
     }
     .collabel, .colinput { /* Formulaire Mon Espace -Responsive- passage de 2 colonnes à width:100% */
-        width: 93%;
+        width: 100%;
         margin-top: 0;
+        margin-left: 0;
+        float: none;
+    }
+    
+    .rowEspace {
+        margin-bottom: 15px;
+    }
+    
+    .rowEspace:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    /* Amélioration des formulaires responsive */
+    .form-responsive-container {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+    
+    .form-responsive {
+        width: 100%;
+    }
+    
+    .form-responsive .inputMonEspace {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+    
+    .form-responsive label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    
+    .form-responsive .btnBase {
+        width: 100%;
+        margin: 10px 0 5px 0;
+        padding: 12px;
+        font-size: 14px;
     }
     .socle {
         background-color: #919094;
