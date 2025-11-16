@@ -41,15 +41,16 @@
 
 /* Using flex with the column direction to align items in a vertical direction */
 .player-audio {
-    /* height: 70vh; */
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    /* background-color: #b8191e; */
-    /* border: 5px solid #b8242469; */
     border-radius: 3%;
     margin: auto 0 auto 7px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 800px;
 }
 
 .details-audio {

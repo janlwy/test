@@ -1,12 +1,12 @@
 <h2><?php echo $pageTitle; ?></h2>
 
 <section class="monEspace">
-
-    <button type="button" class="collapsible">Audio</button>
-    <div class="contentCollapse">
-        <button type="button" class="btnBase invisible" id="form-add">
-        </button>
-        <form id="formCrud" class="formFont" method="POST" action="<?php echo $formAction ?? '?url=audio/create'; ?>" enctype="multipart/form-data">
+    <div class="form-responsive-container">
+        <button type="button" class="collapsible">Audio</button>
+        <div class="contentCollapse">
+            <button type="button" class="btnBase invisible" id="form-add">
+            </button>
+            <form id="formCrud" class="formFont form-responsive" method="POST" action="<?php echo $formAction ?? '?url=audio/create'; ?>" enctype="multipart/form-data">
             <div class="rowEspace">
                 <div class="collabel">
                     <label for="title">Titre</label>

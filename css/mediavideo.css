@@ -226,13 +226,69 @@ video {
 @media (max-width: 768px) {
     .video-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+    
+    .video-item {
+        margin-bottom: 15px;
     }
     
     .video-controls {
         flex-wrap: wrap;
+        gap: 8px;
+        padding: 10px;
+    }
+    
+    .video-controls button,
+    .video-controls a {
+        min-width: 44px;
+        min-height: 44px;
     }
     
     .searchBox {
-        width: 90%;
+        width: 95%;
+        padding: 0 10px;
+    }
+    
+    .player-video {
+        margin: 10px;
+    }
+    
+    .controls-video {
+        flex-wrap: wrap;
+        gap: 5px;
+        padding: 15px 10px;
+    }
+    
+    .controls-video button {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .timer {
+        order: -1;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        padding: 10px 5px;
+    }
+    
+    .video-info {
+        padding: 10px;
+    }
+    
+    .video-info h4 {
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+    }
+    
+    .video-info p {
+        font-size: 0.85rem;
+        line-height: 1.4;
     }
 }

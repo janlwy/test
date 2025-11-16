@@ -780,27 +780,97 @@ button.btnBase.blue, button.btnBase.vert {
     justify-content: space-between;
     margin-bottom: 20px;
     border-bottom: 1px solid var(--silver);
-    padding: 10px 0;
+    padding: 15px 10px;
     transition: background-color 0.3s ease;
+    border-radius: 8px;
+    background: var(--btnBackGround);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Grille responsive pour les éléments audio */
+.audio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 10px;
+}
+
+@media (max-width: 600px) {
+    .audio-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px 5px;
+    }
+    
+    .audio-item {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .audio-info {
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .audio-controls {
+        width: 100%;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
 }
 
 .audio-item.selected {
     background-color: rgba(var(--btntheme), 0.1);
+    border: 2px solid var(--btntheme);
 }
 
-.select-audio {
-    margin-right: 10px;
+.audio-media {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.select-track {
+    position: absolute;
+    top: 5px;
+    right: 5px;
     width: 20px;
     height: 20px;
     cursor: pointer;
+    z-index: 2;
 }
 
-.photoAudio {
-    width: 100px;
-    height: 100px;
+.audio-cover, .photoAudio {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-right: 20px;
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .audio-cover, .photoAudio {
+        width: 100%;
+        max-width: 120px;
+        height: 120px;
+    }
+    
+    .audio-media {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    
+    .select-track {
+        position: static;
+        margin-left: 10px;
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .audio-details {
@@ -938,21 +1008,111 @@ footer {
         font-size: clamp(1.5rem, 5vw, 2.2rem);
         padding: clamp(10px, 1.5vh, 15px) clamp(25px, 8vw, 40px);
     }
-    .searchBox {
+    
+    /* Amélioration des formulaires sur mobile */
+    .modalContenu {
+        width: 95%;
+        margin: 2px auto;
+        padding: 10px;
+    }
+    
+    .inputModal {
         width: 90%;
+        font-size: 16px; /* Évite le zoom sur iOS */
+    }
+    
+    .validButton, .cancelButton {
+        width: 80%;
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+    
+    /* Amélioration des listes audio/vidéo sur mobile */
+    .audio-item, .video-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 10px;
+    }
+    
+    .photoAudio {
+        width: 80px;
+        height: 80px;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .audio-details, .video-info {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .button-group, .video-controls {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .btnBase {
+        padding: 8px 12px;
+        font-size: 12px;
+        min-width: 44px; /* Taille minimale pour le touch */
+    }
+    
+    /* Amélioration du lecteur audio sur mobile */
+    .player-audio {
+        padding: 15px 10px;
+    }
+    
+    .track-art {
+        width: 200px;
+        height: 200px;
+        margin: 15px auto;
+    }
+    
+    .track-name {
+        font-size: 1.8rem;
+    }
+    
+    .track-artist {
+        font-size: 1.5rem;
+    }
+    
+    .buttons-audio {
+        gap: 15px;
+        margin: 20px 0;
+    }
+    
+    .slider_container-audio {
+        width: 90%;
+        margin: 10px 0;
+    }
+    .searchBox {
+        width: 95%;
         margin: 10px auto;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
+        padding: 0 10px;
+        box-sizing: border-box;
     }
     .search-form {
         flex-direction: row;
-        flex-wrap: wrap;
-        gap: 5px;
+        flex-wrap: nowrap;
+        gap: 8px;
+        align-items: center;
     }
     .searchInput {
-        width: calc(100% - 100px);
-        min-width: 150px;
+        flex: 1;
+        min-width: 120px;
+        font-size: 16px; /* Évite le zoom sur iOS */
+        padding: 12px 15px;
+    }
+    
+    .searchButton, .clearButton {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
     }
     .boutonTheme {
         display: none !important;
@@ -985,23 +1145,30 @@ footer {
         padding: 0 6px;
     }
     .column {
-        width: 43%;
+        width: 45%;
         display: block;
-        margin-bottom: 20px;
+        margin: 8px 2.5%;
+        box-sizing: border-box;
     }
     .card {
-        height: 160px;
+        height: 140px;
         border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        box-sizing: border-box;
     }
     .card i {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 100px;
+        font-size: 60px;
+        margin-bottom: 8px;
     }
     .titrecarte {
-        display: none;
+        display: block;
+        font-size: 1.2rem;
+        text-align: center;
+        margin: 0;
     }
     .collabel, .colinput { /* Formulaire Mon Espace -Responsive- passage de 2 colonnes à width:100% */
         width: 93%;
@@ -1055,6 +1222,7 @@ footer {
 @media (min-width: 601px) and (max-width: 999px) {
     body {
         margin-bottom: 0;
+        width: 95%;
     }
     
     .accueil-container {
@@ -1072,6 +1240,38 @@ footer {
     
     .app-title {
         font-size: clamp(2rem, 3.5vw, 2.8rem);
+    }
+    
+    /* Amélioration des formulaires sur tablette */
+    .modalContenu {
+        width: 85%;
+        max-width: 600px;
+    }
+    
+    .collabel {
+        width: 30%;
+    }
+    
+    .colinput {
+        width: 65%;
+    }
+    
+    /* Grilles adaptées pour tablette */
+    .audio-grid, .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 20px 15px;
+    }
+    
+    /* Lecteur audio/vidéo sur tablette */
+    .player-audio, .player-video {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+    
+    .track-art {
+        width: 220px;
+        height: 220px;
     }
     .menunav a:not(:first-child) {
         display: none;

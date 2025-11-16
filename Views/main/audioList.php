@@ -36,23 +36,25 @@
     <div class="audio-grid">
         <?php foreach ($audios as $audio): ?>
             <div class="audio-item" data-audio-id="<?php echo $audio->getId(); ?>">
-                <img src="<?php echo $audio->getFullImagePath(); ?>" alt="Pochette" class="audio-cover" style="max-width: 150px; height: auto;">
+                <div class="audio-media">
+                    <img src="<?php echo $audio->getFullImagePath(); ?>" alt="Pochette" class="audio-cover">
+                    <input type="checkbox" class="select-track" data-id="<?php echo $audio->getId(); ?>">
+                </div>
                 <div class="audio-info">
                     <h4><?php echo htmlspecialchars($audio->getTitle()); ?></h4>
                     <p><?php echo htmlspecialchars($audio->getArtist()); ?></p>
                 </div>
                 <div class="audio-controls">
-                    <button class="play-single btnBase vert" onclick="window.location='?url=audio/player&id=<?php echo $audio->getId(); ?>'">
+                    <button class="play-single btnBase vert" onclick="window.location='?url=audio/player&id=<?php echo $audio->getId(); ?>'" title="Lire">
                         <i class="material-icons">play_arrow</i>
                     </button>
-                    <a href="?url=audio/update/<?php echo $audio->getId(); ?>#form-add" class="btnBase orange">
+                    <a href="?url=audio/update/<?php echo $audio->getId(); ?>#form-add" class="btnBase orange" title="Modifier">
                         <i class="material-icons">edit</i>
                     </a>
-                    <a href="?url=audio/delete/<?php echo $audio->getId(); ?>" class="btnBase rouge" 
+                    <a href="?url=audio/delete/<?php echo $audio->getId(); ?>" class="btnBase rouge" title="Supprimer"
                        onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet audio ?');">
                         <i class="material-icons">delete</i>
                     </a>
-                    <input type="checkbox" class="select-track" data-id="<?php echo $audio->getId(); ?>">
                 </div>
             </div>
         <?php endforeach; ?>
