@@ -1,168 +1,210 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const playlistForm = document.getElementById('playlist-form');
+    // =========================================================
+    // 1. GESTION DES PANNEAUX (Import Fichier & Dictaphone)
+    // =========================================================
+    const uploadBox = document.getElementById('audio-upload-box');
+    const recorderBox = document.getElementById('voice-recorder-box');
+    const btnToggleUpload = document.getElementById('btnToggleUpload');
+    const btnToggleRecorder = document.getElementById('btnToggleRecorder');
+    const btnCancelUpload = document.getElementById('btnCancelUpload');
+    const btnCancelRecorder = document.getElementById('btnCancelRecorder');
+
+    function openUploadPanel() {
+        if (recorderBox) recorderBox.classList.add('is-hidden');
+        if (uploadBox) {
+            uploadBox.classList.toggle('is-hidden');
+            const titleInput = document.getElementById('audio-title');
+            if (!uploadBox.classList.contains('is-hidden') && titleInput) {
+                titleInput.focus();
+            }
+        }
+    }
+
+    function openRecorderPanel() {
+        if (uploadBox) uploadBox.classList.add('is-hidden');
+        if (recorderBox) {
+            recorderBox.classList.toggle('is-hidden');
+            const voiceTitle = document.getElementById('voice-title');
+            if (!recorderBox.classList.contains('is-hidden') && voiceTitle) {
+                if (!voiceTitle.value) {
+                    const now = new Date();
+                    voiceTitle.value = `Note vocale du ${now.toLocaleDateString('fr-FR')} à ${now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}`;
+                }
+                voiceTitle.focus();
+            }
+        }
+    }
+
+    if (btnToggleUpload) btnToggleUpload.addEventListener('click', openUploadPanel);
+    if (btnToggleRecorder) btnToggleRecorder.addEventListener('click', openRecorderPanel);
+    if (btnCancelUpload && uploadBox) {
+        btnCancelUpload.addEventListener('click', () => uploadBox.classList.add('is-hidden'));
+    }
+    if (btnCancelRecorder && recorderBox) {
+        btnCancelRecorder.addEventListener('click', () => recorderBox.classList.add('is-hidden'));
+    }
+
+    // Ouverture automatique via le hash URL (#record ou #upload depuis le lecteur)
+    if (window.location.hash === '#record') openRecorderPanel();
+    if (window.location.hash === '#upload') openUploadPanel();
+
+    // =========================================================
+    // 2. DICTAPHONE WEB (MediaRecorder API)
+    // =========================================================
+    const btnStartRecord = document.getElementById('btnStartRecord');
+    const btnStopRecord = document.getElementById('btnStopRecord');
+    const btnSaveVoiceNote = document.getElementById('btnSaveVoiceNote');
+    const recordingTimer = document.getElementById('recording-timer');
+    const recordingStatus = document.getElementById('recording-status');
+    const recordedAudioPreview = document.getElementById('recordedAudioPreview');
+    const recordedAudioFile = document.getElementById('recordedAudioFile');
+
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let timerInterval = null;
+    let secondsElapsed = 0;
+
+    function formatTimer(sec) {
+        const m = Math.floor(sec / 60).toString().padStart(2, '0');
+        const s = (sec % 60).toString().padStart(2, '0');
+        return `${m}:${s}`;
+    }
+
+    if (btnStartRecord && btnStopRecord) {
+        btnStartRecord.addEventListener('click', async () => {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert("Votre navigateur ne supporte pas l'enregistrement vocal par microphone.");
+                return;
+            }
+
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                const mimeType = MediaRecorder.isTypeSupported('audio/webm')
+                    ? 'audio/webm'
+                    : (MediaRecorder.isTypeSupported('audio/ogg') ? 'audio/ogg' : '');
+
+                mediaRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+                audioChunks = [];
+
+                mediaRecorder.addEventListener('dataavailable', event => {
+                    if (event.data && event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                });
+
+                mediaRecorder.addEventListener('stop', () => {
+                    stream.getTracks().forEach(track => track.stop());
+                    clearInterval(timerInterval);
+                    recordingTimer.classList.remove('is-recording');
+
+                    const finalMime = mediaRecorder.mimeType || 'audio/webm';
+                    const ext = finalMime.includes('ogg') ? 'ogg' : 'webm';
+                    const audioBlob = new Blob(audioChunks, { type: finalMime });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+
+                    if (recordedAudioPreview) {
+                        recordedAudioPreview.src = audioUrl;
+                        recordedAudioPreview.classList.remove('is-hidden');
+                    }
+
+                    // Injecter le Blob dans le champ <input type="file"> pour l'envoi standard POST
+                    const file = new File([audioBlob], `note_vocale_${Date.now()}.${ext}`, { type: finalMime });
+                    const dataTransfer = new DataTransfer();
+                    dataTransfer.items.add(file);
+                    recordedAudioFile.files = dataTransfer.files;
+
+                    if (btnSaveVoiceNote) btnSaveVoiceNote.disabled = false;
+                    if (recordingStatus) recordingStatus.textContent = "Enregistrement terminé. Vous pouvez l'écouter ou le sauvegarder.";
+                });
+
+                mediaRecorder.start();
+                secondsElapsed = 0;
+                recordingTimer.textContent = "00:00";
+                recordingTimer.classList.add('is-recording');
+                recordingStatus.textContent = "Enregistrement en cours... Parlez dans votre micro.";
+
+                timerInterval = setInterval(() => {
+                    secondsElapsed++;
+                    recordingTimer.textContent = formatTimer(secondsElapsed);
+                }, 1000);
+
+                btnStartRecord.classList.add('is-hidden');
+                btnStopRecord.classList.remove('is-hidden');
+                btnStopRecord.disabled = false;
+                if (btnSaveVoiceNote) btnSaveVoiceNote.disabled = true;
+                if (recordedAudioPreview) recordedAudioPreview.classList.add('is-hidden');
+            } catch (err) {
+                console.error("Erreur d'accès au microphone :", err);
+                alert("Impossible d'accéder au microphone. Vérifiez les permissions de votre navigateur.");
+            }
+        });
+
+        btnStopRecord.addEventListener('click', () => {
+            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+                mediaRecorder.stop();
+                btnStopRecord.classList.add('is-hidden');
+                btnStopRecord.disabled = true;
+                btnStartRecord.classList.remove('is-hidden');
+            }
+        });
+    }
+
+    // =========================================================
+    // 3. RECHERCHE INSTANTANÉE & SÉLECTION DE PLAYLIST
+    // =========================================================
+    const searchInput = document.getElementById('searchAudioInput');
+    const audioItems = document.querySelectorAll('#audioGrid .audio-item');
+    if (searchInput && audioItems.length > 0) {
+        searchInput.addEventListener('input', function () {
+            const term = this.value.toLowerCase();
+            audioItems.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(term) ? '' : 'none';
+            });
+        });
+    }
+
+    const checkboxes = document.querySelectorAll('.select-track');
     const playSelectedBtn = document.getElementById('play-selected');
-    
-    // Gérer la sélection des pistes
-    document.querySelectorAll('.select-track').forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-            const selectedCount = document.querySelectorAll('.select-track:checked').length;
-            playSelectedBtn.style.display = selectedCount > 0 ? 'block' : 'none';
-            
-            // Mettre à jour le formulaire
-            if (selectedCount > 0) {
-                const selectedIds = Array.from(document.querySelectorAll('.select-track:checked'))
-                    .map(cb => cb.dataset.id);
-                
-                // Supprimer les anciens inputs
-                playlistForm.querySelectorAll('input[name="ids[]"]').forEach(input => input.remove());
-                
-                // Ajouter les nouveaux inputs
-                selectedIds.forEach(id => {
+    const selectedContainer = document.getElementById('selected-tracks-container');
+
+    if (checkboxes.length > 0 && playSelectedBtn && selectedContainer) {
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', function () {
+                const card = this.closest('.audio-item');
+                if (card) card.classList.toggle('selected', this.checked);
+
+                selectedContainer.innerHTML = '';
+                const checked = document.querySelectorAll('.select-track:checked');
+                checked.forEach(c => {
                     const input = document.createElement('input');
                     input.type = 'hidden';
                     input.name = 'ids[]';
-                    input.value = id;
-                    playlistForm.appendChild(input);
+                    input.value = c.dataset.id;
+                    selectedContainer.appendChild(input);
                 });
-            }
-        });
-    });
 
-    setTimeout(() => {
-        const playerData = document.getElementById('player-data');
-        if (playerData && playerData.dataset.tracks) {
-            try {
-                const tracks = JSON.parse(playerData.dataset.tracks);
-                if (Array.isArray(tracks) && tracks.length > 0) {
-                    console.log('Initializing audio player with tracks:', tracks);
-                    initializeAudioPlayer(tracks);
-                } else {
-                    console.warn('No audio tracks available');
-                }
-            } catch (error) {
-                console.error('Error parsing audio data:', error);
+                playSelectedBtn.classList.toggle('is-hidden', checked.length === 0);
+            });
+        });
+    }
+
+    // =========================================================
+    // 4. INITIALISATION DU LECTEUR AUDIO (audio.php)
+    // =========================================================
+    const playerData = document.getElementById('player-data');
+    if (playerData && playerData.dataset.tracks) {
+        try {
+            const tracks = JSON.parse(playerData.dataset.tracks);
+            if (Array.isArray(tracks) && tracks.length > 0) {
+                const player = new AudioPlayer();
+                player.initialize(tracks);
             }
+        } catch (error) {
+            console.error('Erreur lors du décodage des pistes audio :', error);
         }
-    }, 100);
-});
-
-
-let player;
-
-function initializeAudioPlayer(tracks) {
-    if (!player) {
-        player = new AudioPlayer();
-    }
-    player.initialize(tracks.map(track => ({
-        ...track,
-        fullPath: track.fullPath || track.path,
-        fullImage: track.fullImage || track.image
-    })));
-}
-
-// Fonction pour ajouter les champs cachés au formulaire
-function addSelectedTracksToForm() {
-    const form = document.getElementById('playlist-form');
-    if (!form) {
-        console.error('Formulaire de playlist non trouvé');
-        return false;
-    }
-
-    const selectedCheckboxes = document.querySelectorAll('.select-track:checked');
-    console.log('Checkboxes sélectionnées:', selectedCheckboxes.length);
-    
-    // Supprimer les anciens champs cachés s'il y en a
-    const oldInputs = form.querySelectorAll('input[name="tracks[]"]');
-    oldInputs.forEach(input => input.remove());
-    
-    // Ajouter les nouveaux champs cachés
-    selectedCheckboxes.forEach(checkbox => {
-        const audioId = checkbox.getAttribute('data-audio-id');
-        console.log('Ajout de la piste:', audioId);
-        
-        const input = document.createElement('input');
-        input.type = 'hidden';
-        input.name = 'tracks[]';
-        input.value = audioId;
-        form.appendChild(input);
-    });
-    
-    const hasSelectedTracks = selectedCheckboxes.length > 0;
-    console.log('Nombre total de pistes sélectionnées:', selectedCheckboxes.length);
-    return hasSelectedTracks;
-}
-
-function showMessage(message, isError = false) {
-    const messageDiv = document.createElement('div');
-    messageDiv.className = isError ? 'error-message' : 'success-message';
-    messageDiv.textContent = message;
-    document.querySelector('section').insertBefore(messageDiv, document.querySelector('section').firstChild);
-    setTimeout(() => messageDiv.remove(), 5000);
-}
-
-// Initialisation au chargement de la page
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM chargé, initialisation...');
-
-    // Gestionnaire pour les checkboxes
-    const checkboxes = document.querySelectorAll('.select-track');
-    console.log('Nombre de checkboxes trouvées:', checkboxes.length);
-    
-    checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', (e) => {
-            console.log('Checkbox changée:', e.target.checked);
-            const audioItem = e.target.closest('.audio-item');
-            if (audioItem) {
-                if (e.target.checked) {
-                    audioItem.classList.add('selected');
-                } else {
-                    audioItem.classList.remove('selected');
-                }
-            }
-            
-            // Mettre à jour l'affichage du bouton de lecture
-            const selectedCount = document.querySelectorAll('.select-track:checked').length;
-            const playSelectedBtn = document.getElementById('play-selected');
-            if (playSelectedBtn) {
-                playSelectedBtn.style.display = selectedCount > 0 ? 'block' : 'none';
-            }
-        });
-
-        checkbox.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    });
-
-    // Gestionnaire pour le bouton de lecture
-    const playSelectedButton = document.getElementById('play-selected');
-    const form = document.getElementById('playlist-form');
-    
-    if (playSelectedButton && form) {
-        console.log('Bouton de lecture et formulaire trouvés');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault(); // Empêcher la soumission par défaut
-            
-            const hasSelectedTracks = addSelectedTracksToForm();
-            console.log('Pistes sélectionnées:', hasSelectedTracks);
-            
-            if (!hasSelectedTracks) {
-                showMessage('Veuillez sélectionner au moins une piste audio.', true);
-                return;
-            }
-            
-            // Debug des données du formulaire avant soumission
-            const formData = new FormData(form);
-            for (let pair of formData.entries()) {
-                console.log(pair[0] + ': ' + pair[1]);
-            }
-            
-            // Soumettre le formulaire
-            form.submit();
-        });
-    } else {
-        console.error('Bouton de lecture non trouvé');
     }
 });
 
@@ -172,91 +214,41 @@ class AudioPlayer {
         this.currentIndex = 0;
         this.tracks = [];
         this.isPlaying = false;
-        this.initializeElements();
-        this.setupEventListeners();
-    }
 
-    initializeElements() {
-        // Vérifier si nous sommes sur la page du lecteur audio
-        if (!window.location.href.includes('audio/player')) {
-            console.log('Page non-lecteur, initialisation annulée');
-            return;
-        }
-
-        // Attendre que le DOM soit complètement chargé
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => this.initializeElements());
-            return;
-        }
-
-        const playerContainer = document.querySelector('#player-container');
-        if (!playerContainer) {
-            console.error('Container du lecteur non trouvé');
-            return;
-        }
-
-        // Créer les éléments s'ils n'existent pas
-        if (!document.getElementById('now-playing')) {
-            const nowPlaying = document.createElement('div');
-            nowPlaying.id = 'now-playing';
-            nowPlaying.className = 'now-playing';
-            playerContainer.appendChild(nowPlaying);
-        }
-
-        if (!document.getElementById('track-art')) {
-            const trackArt = document.createElement('div');
-            trackArt.id = 'track-art';
-            trackArt.className = 'track-art';
-            playerContainer.appendChild(trackArt);
-        }
-
-        if (!document.getElementById('track-name')) {
-            const trackName = document.createElement('div');
-            trackName.id = 'track-name';
-            trackName.className = 'track-name';
-            playerContainer.appendChild(trackName);
-        }
-
-        if (!document.getElementById('track-artist')) {
-            const trackArtist = document.createElement('div');
-            trackArtist.id = 'track-artist';
-            trackArtist.className = 'track-artist';
-            playerContainer.appendChild(trackArtist);
-        }
-
-        // Initialiser les références aux éléments
         this.elements = {
             nowPlaying: document.getElementById("now-playing"),
             trackArt: document.getElementById("track-art"),
             trackName: document.getElementById("track-name"),
             trackArtist: document.getElementById("track-artist"),
-            playButton: document.querySelector(".playpause-track i"),
-            nextButton: document.querySelector(".next-track i"),
-            prevButton: document.querySelector(".prev-track i"),
+            playButtonIcon: document.querySelector(".playpause-track i"),
+            playButtonWrapper: document.querySelector(".playpause-track"),
+            nextButton: document.querySelector(".next-track"),
+            prevButton: document.querySelector(".prev-track"),
             seekSlider: document.querySelector(".seek_slider"),
             volumeSlider: document.querySelector(".volume_slider"),
             currentTime: document.querySelector(".current-time"),
             totalDuration: document.querySelector(".total-duration")
         };
 
-        // Vérifier que tous les éléments ont été créés
-        Object.entries(this.elements).forEach(([key, element]) => {
-            if (!element) {
-                console.error(`Élément ${key} non trouvé ou non créé`);
-            }
-        });
+        this.setupEventListeners();
     }
 
     setupEventListeners() {
-        this.audio.addEventListener('ended', () => this.playNext());
-        this.audio.addEventListener('timeupdate', () => this.updateProgress());
-        this.audio.addEventListener('error', (e) => {
-            console.error('Erreur audio:', e);
-            showMessage('Erreur de lecture audio: ' + (e.message || 'Erreur inconnue'));
+        // À la fin d'une piste, on arrête la lecture sans enchaîner automatiquement
+        this.audio.addEventListener('ended', () => {
+            this.isPlaying = false;
+            this.audio.currentTime = 0;
+            if (this.elements.seekSlider) this.elements.seekSlider.value = 0;
+            if (this.elements.currentTime) this.elements.currentTime.textContent = "00:00";
+            if (this.elements.playButtonIcon) {
+                this.elements.playButtonIcon.textContent = 'play_circle';
+            }
         });
-        
-        if (this.elements.playButton) {
-            this.elements.playButton.addEventListener('click', () => this.togglePlay());
+        this.audio.addEventListener('timeupdate', () => this.updateProgress());
+        this.audio.addEventListener('loadedmetadata', () => this.updateProgress());
+
+        if (this.elements.playButtonWrapper) {
+            this.elements.playButtonWrapper.addEventListener('click', () => this.togglePlay());
         }
         if (this.elements.nextButton) {
             this.elements.nextButton.addEventListener('click', () => this.playNext());
@@ -265,133 +257,50 @@ class AudioPlayer {
             this.elements.prevButton.addEventListener('click', () => this.playPrevious());
         }
         if (this.elements.seekSlider) {
-            this.elements.seekSlider.addEventListener('change', () => this.seekTo());
+            this.elements.seekSlider.addEventListener('input', () => this.seekTo());
         }
         if (this.elements.volumeSlider) {
-            this.elements.volumeSlider.addEventListener('change', () => this.updateVolume());
+            this.elements.volumeSlider.addEventListener('input', () => this.updateVolume());
         }
     }
 
     initialize(tracks) {
-        if (!tracks?.length) {
-            console.warn('Aucune piste à initialiser');
-            return;
-        }
-
         this.tracks = tracks;
-        this.currentIndex = 0;
-        this.isPlaying = false;
-
-        // Initialiser le volume
         if (this.elements.volumeSlider) {
             this.audio.volume = this.elements.volumeSlider.value / 100;
         }
-
-        // Charger la première piste
-        this.loadTrack(0);
-        
-        // Réinitialiser les éléments pour s'assurer qu'ils sont à jour
-        this.initializeElements();
-        
-        // Vérification plus détaillée des éléments
-        const elementCheck = {
-            trackName: this.elements.trackName,
-            trackArtist: this.elements.trackArtist,
-            trackArt: this.elements.trackArt,
-            nowPlaying: this.elements.nowPlaying
-        };
-        
-        const missingElements = Object.entries(elementCheck)
-            .filter(([key, element]) => !element)
-            .map(([key]) => key);
-        
-        if (missingElements.length > 0) {
-            console.error('Éléments manquants dans le DOM:', missingElements);
-            console.log('État actuel des éléments:', elementCheck);
-            return;
-        }
-        
-        console.log('Initialisation avec les pistes:', tracks);
-        this.tracks = tracks;
-        
-        try {
-            this.loadTrack(0);
-            
-            const audioData = document.getElementById('audioData');
-            if (audioData?.dataset.autoplay === 'true') {
-                this.playTrack();
-            }
-        } catch (error) {
-            console.error('Erreur lors de l\'initialisation:', error);
-        }
+        this.loadTrack(0, false);
     }
 
-    loadTrack(index) {
-        try {
-            const track = this.tracks[index];
-            if (!track || !track.fullPath) {
-                throw new Error('Piste invalide ou chemin manquant');
-            }
+    loadTrack(index, autoPlay = false) {
+        const track = this.tracks[index];
+        if (!track) return;
 
-            // Réinitialiser l'audio
-            this.audio.pause();
-            this.isPlaying = false;
-            
-            // Mettre à jour l'index et la source
-            this.currentIndex = index;
-            this.audio.src = track.fullPath;
-            
-            // Charger et préparer l'audio
-            this.audio.load();
-            this.updateInterface(track, index);
-
-            // Lecture automatique si nécessaire
-            const audioData = document.getElementById('audioData');
-            if (audioData?.dataset.autoplay === 'true') {
-                this.playTrack();
-            }
-        } catch (error) {
-            console.error('Erreur de chargement:', error);
-            showMessage('Erreur lors du chargement de la piste: ' + error.message, true);
-        }
-
-        console.log('Chargement de la piste:', {
-            index: index,
-            track: track,
-            src: this.audio.src
-        });
+        this.audio.pause();
+        this.isPlaying = false;
+        this.currentIndex = index;
+        this.audio.src = track.fullPath;
+        this.audio.load();
 
         this.updateInterface(track, index);
-        this.playTrack();
+        if (autoPlay) {
+            this.playTrack();
+        }
     }
 
     updateInterface(track, index) {
-        // Vérifier que tous les éléments existent avant de les mettre à jour
-        if (this.elements.trackName) {
-            this.elements.trackName.textContent = track.title || 'Sans titre';
-        }
-        if (this.elements.trackArtist) {
-            this.elements.trackArtist.textContent = track.artist || 'Artiste inconnu';
-        }
+        if (this.elements.trackName) this.elements.trackName.textContent = track.title || 'Sans titre';
+        if (this.elements.trackArtist) this.elements.trackArtist.textContent = track.artist || 'Note vocale';
         if (this.elements.trackArt) {
-            this.elements.trackArt.style.backgroundImage = track.fullImage ? 
-                `url('${track.fullImage}')` : 
-                "url('./Ressources/images/default-cover.png')";
+            this.elements.trackArt.style.backgroundImage = `url("${track.fullImage}")`;
         }
         if (this.elements.nowPlaying) {
             this.elements.nowPlaying.textContent = `Piste ${index + 1} sur ${this.tracks.length}`;
         }
-        
-        console.log('Mise à jour interface:', {
-            title: track.title,
-            artist: track.artist,
-            image: track.fullImage,
-            index: index
-        });
-        
-        this.elements.seekSlider.value = 0;
-        this.elements.currentTime.textContent = "00:00";
-        this.elements.totalDuration.textContent = "00:00";
+        if (this.elements.seekSlider) this.elements.seekSlider.value = 0;
+        if (this.elements.currentTime) this.elements.currentTime.textContent = "00:00";
+        if (this.elements.totalDuration) this.elements.totalDuration.textContent = "00:00";
+        if (this.elements.playButtonIcon) this.elements.playButtonIcon.textContent = 'play_circle';
     }
 
     togglePlay() {
@@ -399,99 +308,58 @@ class AudioPlayer {
     }
 
     async playTrack() {
-        if (!this.audio.src) {
-            showMessage('Aucune piste sélectionnée', true);
-            return;
-        }
-
         try {
             await this.audio.play();
             this.isPlaying = true;
-            this.elements.playButton.innerHTML = '<i class="material-icons md-48">pause_circle</i>';
-            
-            // Sauvegarder l'état de lecture
-            const state = {
-                currentTrack: this.currentIndex,
-                isPlaying: true,
-                volume: this.audio.volume,
-                position: this.audio.currentTime
-            };
-            localStorage.setItem('audioPlayerState', JSON.stringify(state));
-            
-        } catch (error) {
-            console.error('Erreur de lecture:', error);
+            if (this.elements.playButtonIcon) {
+                this.elements.playButtonIcon.textContent = 'pause_circle';
+            }
+        } catch (err) {
+            console.warn("Lecture automatique en attente d'interaction :", err);
             this.isPlaying = false;
-            this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
-            showMessage('Erreur de lecture: ' + error.message, true);
+            if (this.elements.playButtonIcon) {
+                this.elements.playButtonIcon.textContent = 'play_circle';
+            }
         }
     }
 
     pauseTrack() {
         this.audio.pause();
         this.isPlaying = false;
-        this.elements.playButton.innerHTML = '<i class="material-icons md-48">play_circle</i>';
+        if (this.elements.playButtonIcon) {
+            this.elements.playButtonIcon.textContent = 'play_circle';
+        }
     }
 
     playNext() {
-        this.loadTrack((this.currentIndex + 1) % this.tracks.length);
+        this.loadTrack((this.currentIndex + 1) % this.tracks.length, false);
     }
 
     playPrevious() {
-        this.loadTrack(this.currentIndex > 0 ? this.currentIndex - 1 : this.tracks.length - 1);
+        const prevIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.tracks.length - 1;
+        this.loadTrack(prevIndex, false);
     }
 
     updateProgress() {
-        if (isNaN(this.audio.duration)) return;
-
-        const seekPosition = this.audio.currentTime * (100 / this.audio.duration);
-        this.elements.seekSlider.value = seekPosition;
-        this.elements.currentTime.textContent = this.formatTime(this.audio.currentTime);
-        this.elements.totalDuration.textContent = this.formatTime(this.audio.duration);
+        if (!isFinite(this.audio.duration) || this.audio.duration <= 0) return;
+        const seekPosition = (this.audio.currentTime / this.audio.duration) * 100;
+        if (this.elements.seekSlider) this.elements.seekSlider.value = seekPosition;
+        if (this.elements.currentTime) this.elements.currentTime.textContent = this.formatTime(this.audio.currentTime);
+        if (this.elements.totalDuration) this.elements.totalDuration.textContent = this.formatTime(this.audio.duration);
     }
 
     formatTime(time) {
-        const minutes = Math.floor(time / 60);
-        const seconds = Math.floor(time % 60);
-        return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        const minutes = Math.floor(time / 60).toString().padStart(2, '0');
+        const seconds = Math.floor(time % 60).toString().padStart(2, '0');
+        return `${minutes}:${seconds}`;
     }
 
     seekTo() {
-        const time = this.audio.duration * (this.elements.seekSlider.value / 100);
-        if (!isNaN(time)) {
-            this.audio.currentTime = time;
-        }
+        if (!isFinite(this.audio.duration)) return;
+        this.audio.currentTime = this.audio.duration * (this.elements.seekSlider.value / 100);
     }
 
     updateVolume() {
         this.audio.volume = this.elements.volumeSlider.value / 100;
-    }
-}
-
-// Initialisation au chargement de la page
-document.addEventListener('DOMContentLoaded', initializeAudioContent);
-
-function initializeAudioContent() {
-    const isPlayerPage = window.location.href.includes('audio/player');
-    const audioListData = document.getElementById('audioList-data');
-    const audioData = document.getElementById('audioData');
-    
-    try {
-        if (isPlayerPage && audioData?.dataset.audios) {
-            const tracks = JSON.parse(audioData.dataset.audios);
-            if (!tracks?.length) {
-                showMessage('Aucune piste disponible');
-                return;
-            }
-            console.log('Initialisation du lecteur avec', tracks.length, 'pistes');
-            initializeAudioPlayer(tracks);
-        } else if (audioListData?.dataset.audios) {
-            const tracks = JSON.parse(audioListData.dataset.audios);
-            if (!tracks?.length) {
-                showMessage('Aucune piste disponible');
-            }
-        }
-    } catch (error) {
-        console.error('Erreur de chargement des pistes:', error);
-        showMessage('Erreur de chargement des pistes');
     }
 }

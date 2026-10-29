@@ -1,194 +1,71 @@
 <?php
-namespace Models;
 
-use Models\AbstractModel;
-use Models\Manager;
+namespace Models;
 
 class Audio extends AbstractModel
 {
-    private $title;
-    private $artist;
-    private $image;
-    private $path;
+    private ?string $title = null;
+    private ?string $artist = null;
+    private ?string $image = null;
+    private ?string $path = null;
 
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
 
-    public function setArtist($artist)
+    public function setArtist($artist): void
     {
         $this->artist = $artist;
     }
 
-    public function setImage($image)
+    public function setImage($image): void
     {
         $this->image = $image;
     }
 
-    public function setPath($path)
+    public function setPath($path): void
     {
         $this->path = $path;
     }
 
-    public function setCreatedAt($created_at): void
-    {
-        $this->created_at = $created_at;
-    }
-
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
-
-    public function getTitle()
+    public function getTitle(): ?string
     {
         return $this->title;
     }
 
-    public function getArtist()
+    public function getArtist(): ?string
     {
         return $this->artist;
     }
 
-    public function getImage()
+    public function getImage(): ?string
     {
         return $this->image;
     }
 
-    public function getPath()
+    public function getPath(): ?string
     {
         return $this->path;
     }
 
-    public function getCreatedAt(): ?string
-    {
-        return $this->created_at;
-    }
-
-    protected $user_id;
-    protected $created_at;
-
-    public function setUserId($user_id): void
-    {
-        $this->user_id = $user_id;
-    }
-
-    public function getUserId(): ?int
-    {
-        // Validation plus stricte de l'ID utilisateur
-        if ($this->user_id === null || $this->user_id === '' || $this->user_id === 0) {
-            error_log("getUserId: ID utilisateur invalide - Valeur brute: " . var_export($this->user_id, true));
-            return null;
-        }
-        
-        $userId = intval($this->user_id);
-        if ($userId <= 0) {
-            error_log("getUserId: ID utilisateur invalide après conversion - Valeur: $userId");
-            return null;
-        }
-        
-        return $userId;
-    }
-
-    public function save()
-    {
-        $manager = new Manager();
-        try {
-            $data = [
-                'title' => $this->title,
-                'artist' => $this->artist,
-                'image' => $this->image,
-                'path' => $this->path,
-                'user_id' => $this->user_id
-            ];
-
-            if ($this->id) {
-                $manager->updateTable('audio', $data, $this->id);
-            } else {
-                $data['created_at'] = date('Y-m-d H:i:s');
-                $result = $manager->insertTable('audio', $data);
-                $this->id = $result['id'];
-            }
-
-            return true;
-        } catch (Exception $e) {
-            logError("Erreur lors de la sauvegarde audio: " . $e->getMessage());
-            return false;
-        }
-    }
-
-    public function validateAudioFile($file)
-    {
-        $allowedTypes = [
-            'audio/mpeg' => 'mp3',
-            'audio/mp4' => 'm4a',
-            'audio/wav' => 'wav',
-            'audio/x-m4a' => 'm4a',
-            'audio/aac' => 'aac',
-            'audio/ogg' => 'ogg'
-        ];
-
-        $errors = [];
-        
-        if (!isset($file['tmp_name']) || empty($file['tmp_name'])) {
-            $errors[] = "Aucun fichier audio n'a été uploadé";
-            return $errors;
-        }
-
-        $finfo = new \finfo(\FILEINFO_MIME_TYPE);
-        $mimeType = $finfo->file($file['tmp_name']);
-
-        if (!array_key_exists($mimeType, $allowedTypes)) {
-            $errors[] = "Type de fichier non autorisé. Types acceptés: MP3, M4A, WAV, AAC, OGG";
-        }
-
-        if ($file['size'] > 50 * 1024 * 1024) { // 50MB
-            $errors[] = "Le fichier est trop volumineux (max 50MB)";
-        }
-
-        return $errors;
-    }
-
-    public function getFullPath()
+    public function getFullPath(): string
     {
         return 'Ressources/audio/' . $this->path;
     }
 
-    public function getFullImagePath()
+    public function getFullImagePath(): string
     {
-        return 'Ressources/images/pochettes/' . $this->image;
-    }
-
-    public function delete()
-    {
-        try {
-            // Supprimer les fichiers physiques
-            $audioPath = $this->getFullPath();
-            $imagePath = $this->getFullImagePath();
-
-            if (file_exists($audioPath)) {
-                unlink($audioPath);
+        if (!empty($this->image) && $this->image !== 'default_cover.png') {
+            $candidate = 'Ressources/images/pochettes/' . $this->image;
+            if (file_exists($candidate)) {
+                return $candidate;
             }
-            if (file_exists($imagePath)) {
-                unlink($imagePath);
-            }
-
-            // Supprimer l'enregistrement de la base de données
-            $manager = new Manager();
-            return $manager->deleteTable('audio', $this->id);
-        } catch (Exception $e) {
-            logError("Erreur lors de la suppression audio: " . $e->getMessage());
-            return false;
         }
-    }
-
-    public static function find($id)
-    {
-        $manager = new Manager();
-        $data = $manager->readTableOne('audio', $id);
-        return $data ? new self($data) : null;
+        // Fallback sur l'image de démarrage si présente, sinon SVG data URI
+        if (file_exists('Ressources/images/startPic.png')) {
+            return 'Ressources/images/startPic.png';
+        }
+        return "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 24 24' fill='%23747492'><path d='M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.49 6-3.31 6-6.72h-1.7z'/></svg>";
     }
 }
-
-?>
