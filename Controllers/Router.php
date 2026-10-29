@@ -1,127 +1,94 @@
 <?php
+
 namespace Controllers;
 
-require_once __DIR__ . '/../Fonctions/XssProtection.php';
 use Session\SessionManager;
-use Fonctions\XssProtection;
 
 class Router
 {
     public function __construct()
     {
-        // Nettoyer les entrées GET et POST
-        XssProtection::cleanGet();
-        XssProtection::cleanPost();
-        
-        $url = isset($_GET['url']) ? $_GET['url'] : 'accueil/index';
-        $url = XssProtection::clean($url);
+        $rawUrl = $_GET['url'] ?? 'accueil/index';
+        // Nettoyage strict de l'URL de routage uniquement (sans altérer $_POST)
+        $url = trim(filter_var($rawUrl, FILTER_SANITIZE_URL), '/');
+        if (empty($url)) {
+            $url = 'accueil/index';
+        }
+
         $urls = explode('/', $url);
-        // Gestion des sous-dossiers de contrôleurs (ex: Admin/)
+        $params = [];
+
         if (count($urls) >= 2 && strtolower($urls[0]) === 'admin') {
             $controllerName = ucfirst($urls[1]) . "Controller";
             $controllerPath = __DIR__ . "/Admin/" . $controllerName . ".php";
-            $actionName = isset($urls[2]) ? $urls[2] : 'index';
-            array_splice($urls, 0, 2); // Retire 'admin' et le nom du contrôleur
-            
-            // Vérifier si le fichier existe dans le dossier Admin, sinon utiliser le contrôleur standard
+            $actionName = $urls[2] ?? 'index';
+            $params = array_slice($urls, 3);
+
             if (!file_exists($controllerPath)) {
                 $controllerPath = __DIR__ . "/" . $controllerName . ".php";
             }
         } else {
             $controllerName = ucfirst($urls[0]) . "Controller";
             $controllerPath = __DIR__ . "/" . $controllerName . ".php";
-            $actionName = isset($urls[1]) ? $urls[1] : 'index';
-            $params = array_slice($urls, 2); // Récupère tous les paramètres après le contrôleur et l'action
-            array_splice($urls, 0, 1); // Retire le nom du contrôleur
+            $actionName = $urls[1] ?? 'index';
+            $params = array_slice($urls, 2);
         }
 
-
-        try {
-            $session = SessionManager::getInstance();
-            $session->startSession();
-            
-            // Vérifier que la session est active avant d'essayer d'utiliser ensureCsrfToken
-            if (session_status() === PHP_SESSION_ACTIVE) {
-                $session->ensureCsrfToken();
-            } else {
-                logError("Impossible de démarrer la session dans le Router");
-            }
-        } catch (\Exception $e) {
-            logError("Erreur lors de l'initialisation de la session: " . $e->getMessage());
+        $session = SessionManager::getInstance();
+        $session->startSession();
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            $session->ensureCsrfToken();
         }
-        
-        // Vérifier si c'est une requête AJAX
-        $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) && 
-                  strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
-                  
-        // Liste des actions qui nécessitent une vérification CSRF
+
+        $isAjax = isset($_SERVER['HTTP_X_REQUESTED_WITH']) &&
+            strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
         $csrfProtectedActions = ['create', 'update', 'delete', 'save', 'connect', 'createUser'];
-        
-        // Liste des actions exemptées de vérification CSRF
-        $csrfExemptActions = ['player', 'list', 'index'];
-        
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $currentAction = $actionName ?? '';
-            
-            // Log pour déboguer les requêtes POST
-            logInfo("Requête POST reçue pour l'action: $currentAction");
-            logInfo("Données POST: " . print_r($_POST, true));
-            
-            // Vérifier si l'action nécessite une protection CSRF
-            if (in_array($currentAction, $csrfProtectedActions) && !in_array($currentAction, $csrfExemptActions)) {
-                // Pour les requêtes AJAX
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && in_array($actionName, $csrfProtectedActions, true)) {
+            $token = $isAjax
+                ? ($_SERVER['HTTP_X_CSRF_TOKEN'] ?? ($_POST['csrf_token'] ?? null))
+                : ($_POST['csrf_token'] ?? null);
+
+            if (!$session->validateToken($token)) {
+                logError("Erreur CSRF : jeton invalide pour l'action $actionName");
                 if ($isAjax) {
-                    if (!$session->validateToken($_SERVER['HTTP_X_CSRF_TOKEN'] ?? null)) {
-                        header('Content-Type: application/json');
-                        http_response_code(403);
-                        echo json_encode(['error' => true, 'message' => 'Token CSRF invalide']);
-                        exit();
-                    }
-                } else {
-                    // Pour les requêtes normales
-                    if (!$session->validateToken($_POST['csrf_token'] ?? null)) {
-                        logError("Erreur CSRF : jeton invalide pour l'action $currentAction");
-                        $_SESSION['erreur'] = "Erreur de sécurité. Veuillez réessayer. Token manquant ou invalide.";
-                        
-                        // Rediriger vers une page appropriée en fonction du contexte
-                        if (strpos($url, 'creation') !== false) {
-                            header('Location: ?url=creation/createUserForm');
-                        } elseif (strpos($url, 'connexion') !== false) {
-                            header('Location: ?url=connexion/index');
-                        } else {
-                            header('Location: ?url=accueil/index');
-                        }
-                        exit();
-                    }
+                    header('Content-Type: application/json');
+                    http_response_code(403);
+                    echo json_encode(['error' => true, 'message' => 'Token CSRF invalide']);
+                    exit();
                 }
+
+                $_SESSION['erreur'] = "Erreur de sécurité (jeton expiré ou invalide). Veuillez réessayer.";
+                if (strpos($url, 'creation') !== false) {
+                    header('Location: ?url=creation/createUserForm');
+                } elseif (strpos($url, 'connexion') !== false) {
+                    header('Location: ?url=connexion/index');
+                } else {
+                    header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '?url=accueil/index'));
+                }
+                exit();
             }
         }
-            
-        if (function_exists('logInfo')) {
-            logInfo("Tentative de chargement du contrôleur : $controllerName et de la méthode : $actionName");
-        }
+
         if (file_exists($controllerPath)) {
             require_once $controllerPath;
             $fullClassName = "Controllers\\$controllerName";
             if (class_exists($fullClassName)) {
                 $controller = new $fullClassName();
                 if (method_exists($controller, $actionName)) {
-                    logInfo("Appel de la méthode $actionName dans le contrôleur $controllerName");
-                    // Pass any additional URL parameters to the method
-                    call_user_func_array([$controller, $actionName], $params ?? []);
+                    call_user_func_array([$controller, $actionName], $params);
                 } else {
-                    header("HTTP/1.0 404 Not Found");
+                    http_response_code(404);
                     echo "La méthode $actionName n'existe pas dans le contrôleur $controllerName.";
                 }
             } else {
-                header("HTTP/1.0 404 Not Found");
+                http_response_code(404);
                 echo "Le contrôleur $controllerName n'existe pas.";
             }
         } else {
-            header("HTTP/1.0 404 Not Found");
+            http_response_code(404);
             echo "Le fichier du contrôleur $controllerName n'existe pas.";
         }
     }
 }
-
-?>

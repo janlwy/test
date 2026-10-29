@@ -1,12 +1,12 @@
 {
-    "name": "janlwy/test",
-    "description": "Application de gestion de médias",
+    "name": "janlwy/calepin",
+    "description": "Application de prise de notes multimédia",
     "license": "proprietary",
     "autoload": {
         "psr-4": {
             "Models\\": "Models/",
             "Controllers\\": "Controllers/",
-            "Session\\": "Fonctions/",
+            "Session\\": "Session/",
             "Fonctions\\": "Fonctions/"
         }
     },

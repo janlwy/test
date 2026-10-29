@@ -102,10 +102,8 @@ class Manager {
                 $sql = "SELECT * FROM " . $this->escapeIdentifier($table);
                 
                 // Vérification de l'existence de la table
-                $stmt = $connexion->prepare("SHOW TABLES LIKE :table");
-                $stmt->execute(['table' => $table]);
-                if ($stmt->rowCount() === 0) {
-                    throw new DatabaseException("La table '$table' n'existe pas");
+                if (!$this->tableExists($table)) { 
+                    throw new DatabaseException("La table '$table' n'existe pas"); 
                 }
                 
                 if ($userId !== null) {
@@ -279,9 +277,8 @@ class Manager {
         public function tableExists(string $tableName): bool {
             try {
                 $connexion = $this->getConnexion();
-                $stmt = $connexion->prepare("SHOW TABLES LIKE :table");
-                $stmt->execute(['table' => $tableName]);
-                return $stmt->rowCount() > 0;
+                $stmt = $connexion->query("SHOW TABLES LIKE " . $connexion->quote($tableName));
+                return $stmt !== false && $stmt->fetchColumn() !== false;
             } catch (PDOException $e) {
                 logError("Erreur lors de la vérification de l'existence de la table $tableName: " . $e->getMessage());
                 throw new DatabaseException("Erreur lors de la vérification de l'existence de la table", 0, $e);
@@ -295,25 +292,20 @@ class Manager {
         public function checkUsersTableStructure(): bool {
             try {
                 $connexion = $this->getConnexion();
-                
-                // Vérifier si la table existe
                 if (!$this->tableExists('users')) {
                     logError("La table users n'existe pas");
                     return false;
                 }
-                
-                // Vérifier les colonnes requises
                 $requiredColumns = ['id', 'pseudo', 'email', 'mdp', 'role'];
-                $stmt = $connexion->query("DESCRIBE users");
+                $stmt = $connexion->query("DESCRIBE `users`");
                 $columns = $stmt->fetchAll(PDO::FETCH_COLUMN);
-                
+
                 foreach ($requiredColumns as $column) {
                     if (!in_array($column, $columns)) {
                         logError("La colonne $column est manquante dans la table users");
                         return false;
                     }
                 }
-                
                 return true;
             } catch (PDOException $e) {
                 logError("Erreur lors de la vérification de la structure de la table users: " . $e->getMessage());
@@ -462,18 +454,17 @@ class Manager {
                 $connexion = $this->getConnexion();
                 
                 // Vérifier si la table existe
-                $stmt = $connexion->prepare("SHOW TABLES LIKE :tableName");
-                $stmt->execute(['tableName' => $tableName]);
-                if ($stmt->rowCount() === 0) {
+                if (!$this->tableExists($tableName)) {
                     throw new DatabaseException("La table '$tableName' n'existe pas");
                 }
                 
-                // Vérifier si la colonne existe déjà
-                $stmt = $connexion->prepare("SHOW COLUMNS FROM " . $this->escapeIdentifier($tableName) . 
-                                          " LIKE :columnName");
-                $stmt->execute(['columnName' => $columnName]);
+                // Vérifier si la colonne existe déjà (avec quote() au lieu de prepare)
+                $stmt = $connexion->query(
+                    "SHOW COLUMNS FROM " . $this->escapeIdentifier($tableName) . 
+                    " LIKE " . $connexion->quote($columnName)
+                );
                 
-                if ($stmt->rowCount() > 0) {
+                if ($stmt !== false && $stmt->fetchColumn() !== false) {
                     throw new DatabaseException("La colonne '$columnName' existe déjà dans la table '$tableName'");
                 }
                 
