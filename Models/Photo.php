@@ -1,46 +1,67 @@
 <?php
+
 namespace Models;
 
-class Photo extends AbstractModel {
-    private $title;
-    private $description;
-    private $path;
-    
-    public function setTitle($title) {
+class Photo extends AbstractModel
+{
+    private ?string $title = null;
+    private ?string $description = null;
+    private ?string $ocr_text = null;
+    private ?string $path = null;
+
+    public function setTitle($title): void
+    {
         $this->title = $title;
     }
-    
-    public function setDescription($description) {
+
+    public function setDescription($description): void
+    {
         $this->description = $description;
     }
-    
-    public function setPath($path) {
+
+    public function setOcrText($ocr_text): void
+    {
+        $this->ocr_text = $ocr_text;
+    }
+
+    public function setPath($path): void
+    {
         $this->path = $path;
     }
-    
-    public function getTitle() {
+
+    public function getTitle(): ?string
+    {
         return $this->title;
     }
-    
-    public function getDescription() {
+
+    public function getDescription(): ?string
+    {
         return $this->description;
     }
-    
-    public function getPath() {
+
+    public function getOcrText(): ?string
+    {
+        return $this->ocr_text;
+    }
+
+    public function getPath(): ?string
+    {
         return $this->path;
     }
-    
-    public function getFullPath() {
+
+    public function getFullPath(): string
+    {
         return 'Ressources/images/photos/' . $this->path;
     }
-    
-    public function validate(): array {
+
+    public function validate(): array
+    {
         $errors = [];
         if (empty($this->title)) {
             $errors[] = "Le titre est requis";
         }
         if (empty($this->path)) {
-            $errors[] = "Le chemin de l'image est requis";
+            $errors[] = "Le fichier image est requis";
         }
         return $errors;
     }

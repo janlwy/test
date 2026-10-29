@@ -6732,3 +6732,4 @@
 [2026-10-29 05:36:37] INFO: Début de la méthode addMusic
 [2026-10-29 05:39:07] INFO: Début de la méthode addMusic
 [2026-10-29 10:36:37] ERROR: Erreur CSRF : jeton invalide pour l'action create
+[2026-10-29 15:14:12] ERROR: Erreur CSRF : jeton invalide pour l'action create
