@@ -5211,3 +5211,1199 @@
 [2025-02-25 21:56:01] INFO: Début de la méthode index dans AccueilController
 [2025-02-25 21:56:01] INFO: Utilisateur non connecté, affichage de l'accueil
 [2025-02-25 21:56:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 21:59:50] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:59:50] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:59:50] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:59:50] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:59:52] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:59:52] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:59:52] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:59:52] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 21:59:53] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 21:59:53] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 21:59:53] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 21:59:53] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:00:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:00:18] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:00:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 22:00:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 22:00:21] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 22:00:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:00:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 22:00:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 22:00:27] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 22:00:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:00:31] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 22:00:31] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 22:00:31] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 22:00:31] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:00:33] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:10:04] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:10:08] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 22:10:08] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 22:10:08] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 22:10:08] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:10:12] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-02-25 22:10:12] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-02-25 22:10:12] INFO: Début de la méthode index dans AccueilController
+[2025-02-25 22:10:12] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-02-25 22:10:15] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:25:11] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:25:12] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:25:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-02-25 22:25:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 04:28:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 04:28:20] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 04:28:20] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 04:28:20] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 04:28:20] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 04:28:24] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 04:53:42] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 04:53:42] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 04:53:42] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 04:53:42] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 04:53:45] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 04:53:45] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 04:53:45] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 04:53:45] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 04:53:49] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 04:53:49] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 04:53:49] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 04:53:49] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 04:53:53] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 04:53:53] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 04:53:53] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 04:53:53] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 04:53:57] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 04:54:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 04:54:26] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:26:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:27] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:28] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:28] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:28] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:28] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:26:31] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:31] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:31] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:31] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:35] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:35] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:35] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:35] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:42] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:42] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:42] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:42] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:44] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:44] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:44] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:44] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:45] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:45] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:45] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:45] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:46] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:26:46] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:26:46] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:26:46] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:26:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:27:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 05:27:00] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 05:27:08] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:27:10] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:27:10] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:27:10] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:27:10] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:27:12] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:27:31] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 05:27:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:28:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 05:28:00] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 05:29:35] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 05:29:35] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 05:29:42] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:29:44] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:29:44] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:29:44] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:29:44] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:29:46] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:03] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:04] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:06] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:08] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:32:24] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:32:24] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:32:24] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:32:24] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:32:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:32:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:32:27] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:32:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:32:30] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:32:30] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:32:30] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:32:30] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:32:31] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:32:31] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:32:31] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:32:31] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:32:35] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:33:08] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 05:33:19] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:33:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:33:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:33:21] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:33:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:36:04] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:36:04] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:36:04] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:36:04] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:36:05] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:36:05] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:36:05] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:36:05] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:36:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:40:16] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:16] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:16] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:16] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:20] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:20] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:20] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:20] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:23] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:23] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:23] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:23] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:25] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:25] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:25] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:25] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:26] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:26] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:26] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:26] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:27] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:27] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:40:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:40:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:40:27] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:40:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:41:19] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:41:43] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 05:41:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:42:02] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 05:42:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:42:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:42:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:42:21] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:42:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:42:25] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:42:40] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 05:42:40] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 05:44:16] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-03-01 05:44:16] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-03-01 05:44:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 05:44:52] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 05:44:58] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:45:00] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:45:00] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:45:00] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:45:00] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:45:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:45:22] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 05:45:28] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 05:45:31] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:45:31] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:45:31] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:45:31] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 05:45:36] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 05:45:36] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 05:45:36] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 05:45:36] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:30:19] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:30:19] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:30:19] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:30:19] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:30:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:30:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:30:21] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:30:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:30:25] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:30:47] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:32:43] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:32:47] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:33:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:33:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:33:31] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:33:37] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:46:21] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:46:24] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:46:27] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:47:37] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:47:47] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:47:57] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:47:58] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:47:58] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:47:58] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:47:58] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:48:01] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:48:01] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:48:01] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:48:01] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:48:01] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:48:01] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:48:01] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:48:01] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:48:01] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:48:01] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:48:01] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:48:01] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:48:11] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:48:28] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 07:48:28] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 07:56:41] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 07:56:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:56:53] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:56:53] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:56:53] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:56:53] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:56:55] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 07:56:55] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 07:56:55] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 07:56:55] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 07:56:58] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:57:15] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 07:57:20] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 07:57:25] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:02:10] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:02:15] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:02:18] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:02:20] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:02:20] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:02:20] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:02:20] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:02:22] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:02:22] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:02:22] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:02:22] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:02:25] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:02:25] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:02:25] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:02:25] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:02:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:02:47] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:02:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:03:04] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:03:08] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:03:09] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:03:09] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:03:09] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:03:09] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:03:14] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:03:14] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:03:14] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:03:14] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:03:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:03:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:10:13] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:10:13] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:10:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:10:19] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:10:19] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:10:19] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:10:19] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:10:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:10:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:10:21] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:10:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:10:25] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:10:39] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:10:44] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:10:46] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:10:46] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:10:46] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:10:46] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:10:48] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:10:51] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:10:51] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:11:36] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:11:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:11:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:11:55] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:11:55] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:11:56] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:11:56] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:11:56] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:11:56] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:11:56] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:21:06] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:21:06] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:21:06] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:21:06] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:21:07] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:21:07] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:21:07] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:21:07] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:21:11] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:22:25] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:22:31] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:22:31] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:22:35] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:22:48] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:22:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:23:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-03-01 08:23:18] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:23:23] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:23:23] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:23:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:23:29] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-03-01 08:23:29] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-03-01 08:23:30] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:23:30] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-03-01 08:23:30] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:23:30] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:23:30] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:23:30] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:23:30] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:23:30] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:23:30] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:23:30] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-01 08:23:34] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-01 08:23:34] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-01 08:23:34] INFO: Début de la méthode index dans AccueilController
+[2025-03-01 08:23:34] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-03-06 22:31:04] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-03-06 22:31:04] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-03-06 22:31:04] INFO: Début de la méthode index dans AccueilController
+[2025-03-06 22:31:04] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:45:22] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 13:45:22] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 13:45:22] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 13:45:22] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:45:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 13:46:53] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:47:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:47:45] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:47:52] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:49:40] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 13:49:40] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 13:49:40] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 13:49:40] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:49:46] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 13:49:46] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 13:49:46] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 13:49:46] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:49:49] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 13:50:01] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:54:43] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 13:54:44] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 13:54:44] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 13:54:44] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 13:54:44] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:54:48] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 13:54:48] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 13:54:48] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 13:54:48] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 13:55:10] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 13:55:28] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 13:55:28] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 13:55:41] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 13:55:41] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:00:32] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:00:32] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:00:39] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 14:00:54] INFO: Token CSRF validé avec succès
+[2025-05-03 14:00:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 14:00:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 14:01:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:01:00] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:06:36] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:06:36] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:12:51] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:12:51] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:13:43] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 14:13:48] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:13:48] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:13:59] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 14:13:59] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 14:13:59] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 14:13:59] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 14:14:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 14:14:10] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:14:10] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:17:31] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:17:31] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:17:40] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:17:40] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:21:10] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-05-03 14:21:10] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-05-03 14:22:16] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-05-03 14:22:16] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-05-03 14:22:16] INFO: Début de la méthode index dans AccueilController
+[2025-05-03 14:22:16] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-05-03 14:22:19] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-05-03 14:22:31] INFO: Requête POST reçue pour l'action: connect
+[2025-05-03 14:22:31] INFO: Données POST: Array
+(
+    [csrf_token] => 36cc088d9743576fba45fc4cf9bd0bad989bb30bd06c6c9f864e7295713b847e
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-05-03 14:22:31] INFO: Token CSRF validé avec succès
+[2025-05-03 14:22:31] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-05-03 14:22:31] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:38:45] ERROR: Cookie de session manquant
+[2025-09-20 09:38:46] ERROR: La session n'a pas pu être démarrée dans index.php
+[2025-09-20 09:38:46] ERROR: Cookie de session manquant
+[2025-09-20 09:38:46] ERROR: Impossible de démarrer la session dans le Router
+[2025-09-20 09:38:46] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:41:05] INFO: Nouveau token CSRF généré: 8a6e13b2...
+[2025-09-20 09:41:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:41:10] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 09:41:10] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 09:41:10] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 09:41:10] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 09:44:57] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:45:22] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 09:45:22] INFO: Données POST: Array
+(
+    [csrf_token] => 8b02ac8e7d942ff5f505eb8ce3e3413c0714386151dc4dd6c9ba2ad122b48d5a
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 09:45:22] INFO: Token CSRF validé avec succès
+[2025-09-20 09:45:22] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 09:45:22] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:45:29] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:45:41] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:45:42] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:45:44] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:45:45] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:45:49] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:45:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:45:52] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:45:55] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 09:45:55] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 09:45:55] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 09:45:55] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 09:45:58] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:46:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:51:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:51:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 09:51:19] INFO: Nouveau token CSRF généré: 32b0db08...
+[2025-09-20 09:51:24] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 09:51:24] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 09:51:24] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 09:51:24] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 09:51:26] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:51:29] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 09:51:29] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 09:51:29] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 09:51:29] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 09:51:32] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:51:34] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:51:34] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 09:51:34] INFO: Nouveau token CSRF généré: da4a8191...
+[2025-09-20 09:51:39] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 09:51:41] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 09:51:41] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 09:51:41] INFO: Nouveau token CSRF généré: 382f85a7...
+[2025-09-20 09:58:18] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 09:58:18] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 09:58:18] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 09:58:18] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:01:35] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:01:38] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:01:38] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:01:38] INFO: Nouveau token CSRF généré: e036146f...
+[2025-09-20 10:05:02] ERROR: Cookie de session manquant
+[2025-09-20 10:05:02] INFO: Nouveau token CSRF généré: 39e4ee72...
+[2025-09-20 10:05:02] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:05:13] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 10:05:13] INFO: Données POST: Array
+(
+    [csrf_token] => 3a203938b024d51358dc2cab05350eb753e77a687c4e8241346a29655d7520b6
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 10:05:13] INFO: Token CSRF validé avec succès
+[2025-09-20 10:05:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 10:05:13] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:05:16] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 10:05:16] INFO: Données POST: Array
+(
+    [csrf_token] => c61c0578c15796085a7d1a7868631f986ad442f29c40733034ff7273b0b04269
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 10:05:16] INFO: Token CSRF validé avec succès
+[2025-09-20 10:05:16] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 10:05:16] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:05:17] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 10:05:17] INFO: Données POST: Array
+(
+    [csrf_token] => dc8e4ed3f2606d2810e4953056fa6d519a0b6031df163ecb541f7bd5b1b6dd04
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 10:05:17] INFO: Token CSRF validé avec succès
+[2025-09-20 10:05:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 10:05:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:05:21] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:05:21] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:05:21] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:05:21] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:05:24] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:05:27] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:05:27] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:05:27] INFO: Nouveau token CSRF généré: c60e1ddd...
+[2025-09-20 10:09:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:09:20] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:09:20] INFO: Nouveau token CSRF généré: 4cffc9a3...
+[2025-09-20 10:09:23] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:09:23] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:09:23] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:09:23] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:10:02] ERROR: Cookie de session manquant
+[2025-09-20 10:10:02] INFO: Nouveau token CSRF généré: 10effc14...
+[2025-09-20 10:10:02] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:10:06] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 10:10:06] INFO: Données POST: Array
+(
+    [csrf_token] => a5e5fd847b32a14b58841cf746cf70d14c1f5be5dc53f16a4a34be90ad476fdb
+    [pseudo] => jean
+    [mdp] => aze123***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 10:10:06] INFO: Token CSRF validé avec succès
+[2025-09-20 10:10:06] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 10:10:06] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:10:09] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:10:09] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:10:09] INFO: Nouveau token CSRF généré: 7fdfee0b...
+[2025-09-20 10:12:47] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:12:47] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:12:47] INFO: Nouveau token CSRF généré: b45fec66...
+[2025-09-20 10:13:23] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:13:23] INFO: Données POST: Array
+(
+    [csrf_token] => b45fec666b71d3dc3292aa8219ec2c0e16be00062f57cb3da52f58e87938a8c6
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:13:23] INFO: Token CSRF validé avec succès
+[2025-09-20 10:13:23] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:13:23] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-09-20 10:13:23] INFO: CreateUser method called with POST data: Array
+(
+    [csrf_token] => b45fec666b71d3dc3292aa8219ec2c0e16be00062f57cb3da52f58e87938a8c6
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:13:23] INFO: Méthode de requête: POST
+[2025-09-20 10:13:23] INFO: Content-Type: application/x-www-form-urlencoded
+[2025-09-20 10:13:23] INFO: Token CSRF validé avec succès
+[2025-09-20 10:13:23] INFO: Validation réussie pour la création de compte: Treza
+[2025-09-20 10:13:23] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:13:23] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:13:23] INFO: Nouveau token CSRF généré: f1e37341...
+[2025-09-20 10:14:16] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:14:16] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:14:16] INFO: Nouveau token CSRF généré: 39d15d1c...
+[2025-09-20 10:17:29] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:17:29] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:17:29] INFO: Nouveau token CSRF généré: d8c0fef3...
+[2025-09-20 10:18:07] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:18:07] INFO: Données POST: Array
+(
+    [csrf_token] => d8c0fef34a0fdcfa02d6597b35d662b972b3c9021bce87fe17a21cb44cb0d506
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:18:07] INFO: Token CSRF validé avec succès
+[2025-09-20 10:18:07] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:18:07] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-09-20 10:18:07] INFO: CreateUser method called with POST data: Array
+(
+    [csrf_token] => d8c0fef34a0fdcfa02d6597b35d662b972b3c9021bce87fe17a21cb44cb0d506
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:18:07] INFO: Méthode de requête: POST
+[2025-09-20 10:18:07] INFO: Content-Type: application/x-www-form-urlencoded
+[2025-09-20 10:18:07] INFO: Token CSRF validé avec succès
+[2025-09-20 10:18:07] INFO: Validation réussie pour la création de compte: Treza
+[2025-09-20 10:18:07] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:18:07] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:18:07] INFO: Nouveau token CSRF généré: 0be759d2...
+[2025-09-20 10:26:15] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:26:15] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:26:15] INFO: Nouveau token CSRF généré: 8de6bf61...
+[2025-09-20 10:26:30] ERROR: Cookie de session manquant
+[2025-09-20 10:26:30] INFO: Nouveau token CSRF généré: 716160ac...
+[2025-09-20 10:26:30] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:26:34] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:26:34] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:26:34] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:26:34] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:26:36] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:26:39] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:26:39] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:26:39] INFO: Nouveau token CSRF généré: 4641a7dd...
+[2025-09-20 10:27:00] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:27:00] INFO: Données POST: Array
+(
+    [csrf_token] => 4641a7dd1d0882b7b2a6802cf3a5424e059264459fbfb7f1f063413d396fcd07
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:27:00] INFO: Token CSRF validé avec succès
+[2025-09-20 10:27:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:27:00] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-09-20 10:27:00] INFO: CreateUser method called with POST data: Array
+(
+    [csrf_token] => 4641a7dd1d0882b7b2a6802cf3a5424e059264459fbfb7f1f063413d396fcd07
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:27:00] INFO: Méthode de requête: POST
+[2025-09-20 10:27:00] INFO: Content-Type: application/x-www-form-urlencoded
+[2025-09-20 10:27:00] INFO: Token CSRF validé avec succès
+[2025-09-20 10:27:00] INFO: Validation réussie pour la création de compte: Treza
+[2025-09-20 10:27:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:27:00] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:27:00] INFO: Nouveau token CSRF généré: 3dbad3d4...
+[2025-09-20 10:29:29] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:29:29] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:29:29] INFO: Nouveau token CSRF généré: 4176578a...
+[2025-09-20 10:29:31] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:29:31] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:29:31] INFO: Nouveau token CSRF généré: 3068130c...
+[2025-09-20 10:29:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:29:52] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:29:52] INFO: Nouveau token CSRF généré: 3105dccc...
+[2025-09-20 10:30:13] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:30:13] INFO: Données POST: Array
+(
+    [csrf_token] => 3105dccc0014d72cf52bd8bcdf03b8c01cb4e595c1bb0b584daeedb9bb901cd1
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:30:13] INFO: Token CSRF validé avec succès
+[2025-09-20 10:30:13] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:30:13] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-09-20 10:30:13] INFO: CreateUser method called with POST data: Array
+(
+    [csrf_token] => 3105dccc0014d72cf52bd8bcdf03b8c01cb4e595c1bb0b584daeedb9bb901cd1
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:30:13] INFO: Méthode de requête: POST
+[2025-09-20 10:30:13] INFO: Content-Type: application/x-www-form-urlencoded
+[2025-09-20 10:30:13] INFO: Token CSRF validé avec succès
+[2025-09-20 10:30:13] INFO: Validation réussie pour la création de compte: Treza
+[2025-09-20 10:30:13] INFO: Début de la création en base de données pour: Treza
+[2025-09-20 10:30:13] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:30:13] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:30:13] INFO: Nouveau token CSRF généré: 31de3645...
+[2025-09-20 10:33:17] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:17] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:17] INFO: Nouveau token CSRF généré: 521e4538...
+[2025-09-20 10:33:17] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:17] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:17] INFO: Nouveau token CSRF généré: 3baf8d62...
+[2025-09-20 10:33:18] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:18] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:18] INFO: Nouveau token CSRF généré: 62670f10...
+[2025-09-20 10:33:18] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:18] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:18] INFO: Nouveau token CSRF généré: f204d594...
+[2025-09-20 10:33:18] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:18] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:18] INFO: Nouveau token CSRF généré: 40afda1c...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: d2ce8ede...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: 097d5d71...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: 505120e7...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: bcd438dc...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: 9eda4cb2...
+[2025-09-20 10:33:19] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:19] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:19] INFO: Nouveau token CSRF généré: 579acb29...
+[2025-09-20 10:33:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:20] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:20] INFO: Nouveau token CSRF généré: dac7106f...
+[2025-09-20 10:33:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:20] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:20] INFO: Nouveau token CSRF généré: 23c2c9b4...
+[2025-09-20 10:33:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:20] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:20] INFO: Nouveau token CSRF généré: 380eb623...
+[2025-09-20 10:33:20] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:20] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:20] INFO: Nouveau token CSRF généré: 70d2c521...
+[2025-09-20 10:33:42] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:33:42] INFO: Données POST: Array
+(
+    [csrf_token] => 70d2c5217a9dddb1c0ea0a495296fd1b80bcbc2b498b34b7f91fd5d26fb37913
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:33:42] INFO: Token CSRF validé avec succès
+[2025-09-20 10:33:42] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:33:42] INFO: Appel de la méthode createUser dans le contrôleur CreationController
+[2025-09-20 10:33:42] INFO: CreateUser method called with POST data: Array
+(
+    [csrf_token] => 70d2c5217a9dddb1c0ea0a495296fd1b80bcbc2b498b34b7f91fd5d26fb37913
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:33:42] INFO: Méthode de requête: POST
+[2025-09-20 10:33:42] INFO: Content-Type: application/x-www-form-urlencoded
+[2025-09-20 10:33:42] INFO: Token CSRF validé avec succès
+[2025-09-20 10:33:42] INFO: Validation réussie pour la création de compte: Treza
+[2025-09-20 10:33:42] INFO: Début de la création en base de données pour: Treza
+[2025-09-20 10:33:42] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:33:42] INFO: Appel de la méthode createUserForm dans le contrôleur CreationController
+[2025-09-20 10:33:42] INFO: Nouveau token CSRF généré: 669c2238...
+[2025-09-20 10:36:21] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:37:02] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:37:02] INFO: Données POST: Array
+(
+    [csrf_token] => 9a673773764c8962fe63083f08f6d6799618bcae0cc1a53044933d6a39eb5c55
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:37:02] INFO: Token CSRF validé avec succès
+[2025-09-20 10:37:02] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:37:02] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:51] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:53] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:39:53] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:40:45] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:40:45] INFO: Données POST: Array
+(
+    [csrf_token] => f9eca0044c53d1b96e0ae1ba6a38c26854186b16fee4fc431965c17adea15389
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:40:45] INFO: Token CSRF validé avec succès
+[2025-09-20 10:40:45] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:40:45] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:42:28] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:42:28] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:42:28] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:42:28] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:42:30] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:42:32] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:43:36] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:43:36] INFO: Données POST: Array
+(
+    [csrf_token] => 74073e2a4b4ab556c313fda7779fec70bb4f50946010db1eefad7dac5c459f1c
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:43:36] INFO: Token CSRF validé avec succès
+[2025-09-20 10:43:36] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:43:36] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:44:41] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:44:42] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:44:44] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:44:48] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:44:48] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:44:48] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:44:48] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:44:50] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:44:52] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:47:58] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:47:59] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:47:59] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:47:59] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:47:59] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:48:00] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:48:02] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:48:02] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:48:02] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:48:02] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:48:04] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:48:07] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:49:54] ERROR: Cookie de session manquant
+[2025-09-20 10:49:54] INFO: Nouveau token CSRF généré: 95940280...
+[2025-09-20 10:49:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:49:58] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:50:05] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:50:08] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:51:01] INFO: Requête POST reçue pour l'action: createUser
+[2025-09-20 10:51:01] INFO: Données POST: Array
+(
+    [csrf_token] => e3f4f21cd71a5f51a7e7bf1f10ccdfec37ce1408e31d0fd045e1bf6d178218a6
+    [email] => jlbin@mail.fr
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [mdp2] => Aze123.***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-09-20 10:51:01] INFO: Token CSRF validé avec succès
+[2025-09-20 10:51:01] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-09-20 10:51:01] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-09-20 10:51:27] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:51:27] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:51:27] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:51:27] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:51:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:51:46] INFO: Requête POST reçue pour l'action: connect
+[2025-09-20 10:51:46] INFO: Données POST: Array
+(
+    [csrf_token] => 9d7c5f5f0e5032fc042b561a3e77a8774cb27558a8c1abac2d0a8784050b42de
+    [pseudo] => Treza
+    [mdp] => Aze123.***
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-09-20 10:51:46] INFO: Token CSRF validé avec succès
+[2025-09-20 10:51:46] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-09-20 10:51:46] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:51:52] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-09-20 10:51:52] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-09-20 10:51:52] INFO: Début de la méthode index dans AccueilController
+[2025-09-20 10:51:52] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-09-20 10:51:54] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-09-20 10:51:55] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 13:46:09] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 13:46:33] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 13:46:39] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 13:46:39] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 13:46:39] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 13:46:39] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 13:48:43] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 13:49:16] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 13:49:16] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 13:49:16] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 13:49:16] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:02:41] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:02:41] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:02:41] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:02:41] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:02:46] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:02:46] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:02:46] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:02:46] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:02:55] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:02:55] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:02:55] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:02:55] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:03:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:03:11] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:03:19] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:03:19] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:03:19] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:03:19] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:15:43] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:15:43] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:15:43] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:15:43] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:15:49] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:16:14] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:16:14] INFO: Données POST: Array
+(
+    [csrf_token] => acfa7c3f1e1a6d0b33a5bac75777fea0eb8116fa1d037631ff486a3e41e38d8a
+    [pseudo] => jean
+    [mdp] => aze123---
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-11-16 14:16:14] INFO: Token CSRF validé avec succès
+[2025-11-16 14:16:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:16:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:16:21] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:18:28] INFO: Requête POST reçue pour l'action: createUser
+[2025-11-16 14:18:28] INFO: Données POST: Array
+(
+    [csrf_token] => 81c4615672cfe4d30731ce347340614ded1b05642c3d743f0558118f449b8ba6
+    [email] => jlbin@out.fr
+    [pseudo] => jlbin
+    [mdp] => Aze123***
+    [mdp2] => Aze123***
+    [submitted] => 1
+    [debug_info] => form_submitted_from_browser
+)
+
+[2025-11-16 14:18:28] INFO: Token CSRF validé avec succès
+[2025-11-16 14:18:28] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUser
+[2025-11-16 14:18:28] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:18:34] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:18:39] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:18:44] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:19:58] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:19:58] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:19:58] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:19:58] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:20:00] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:20:04] INFO: Tentative de chargement du contrôleur : CreationController et de la méthode : createUserForm
+[2025-11-16 14:20:53] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:20:58] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:20:58] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:20:58] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:20:58] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:38:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:38:34] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:38:34] INFO: Données POST: Array
+(
+    [csrf_token] => 7f6b87ee2adbe1b0208a537e93b493391cc944ae78e2873b962874780e1d6564
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-11-16 14:38:34] INFO: Token CSRF validé avec succès
+[2025-11-16 14:38:34] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:38:34] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:38:47] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:39:14] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:39:14] INFO: Données POST: Array
+(
+    [csrf_token] => 731706565a2d7a5f4f934d89c8fd0d5eb9944f97239d79e08c83bbf5b7d0dbde
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-11-16 14:39:14] INFO: Token CSRF validé avec succès
+[2025-11-16 14:39:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:39:14] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:40:49] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:41:09] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:41:09] INFO: Données POST: Array
+(
+    [csrf_token] => 809c1184656d64c88a0cddb3592a5fef4e7e32e02437a33adef14752b7c32cc3
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-11-16 14:41:09] INFO: Token CSRF validé avec succès
+[2025-11-16 14:41:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:41:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:41:17] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:41:29] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:41:29] INFO: Données POST: Array
+(
+    [csrf_token] => f3b47d33d6cfa9a802c1604c23a5fd6517bd868a21d0b34cc1f6058ca23cbdb1
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [submitted] => 1
+)
+
+[2025-11-16 14:41:29] INFO: Token CSRF validé avec succès
+[2025-11-16 14:41:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:41:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:44:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:44:38] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:44:44] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:45:12] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:45:12] INFO: Données POST: Array
+(
+    [csrf_token] => bb546fb784601e61ff0b767089547c5c2a60c8eba08a82c143efe0114d23dd38
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 14:45:12] INFO: Token CSRF validé avec succès
+[2025-11-16 14:45:12] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:50:02] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:50:02] INFO: Données POST: Array
+(
+    [csrf_token] => bb546fb784601e61ff0b767089547c5c2a60c8eba08a82c143efe0114d23dd38
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 14:50:02] INFO: Token CSRF validé avec succès
+[2025-11-16 14:50:02] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:50:06] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:50:06] INFO: Données POST: Array
+(
+    [csrf_token] => bb546fb784601e61ff0b767089547c5c2a60c8eba08a82c143efe0114d23dd38
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 14:50:06] INFO: Token CSRF validé avec succès
+[2025-11-16 14:50:06] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:50:09] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:50:11] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:50:27] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:50:49] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:50:49] INFO: Données POST: Array
+(
+    [csrf_token] => b426e474d6eb12165bfaffedb5f53885bc82e93d0ee545e756cbbfb3b8c9db3d
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 14:50:49] INFO: Token CSRF validé avec succès
+[2025-11-16 14:50:49] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 14:51:02] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:04] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:05] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:07] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:10] INFO: Tentative de chargement du contrôleur : AccueilController et de la méthode : index
+[2025-11-16 14:51:10] INFO: Appel de la méthode index dans le contrôleur AccueilController
+[2025-11-16 14:51:10] INFO: Début de la méthode index dans AccueilController
+[2025-11-16 14:51:10] INFO: Utilisateur non connecté, affichage de l'accueil
+[2025-11-16 14:51:12] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:15] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : index
+[2025-11-16 14:51:29] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 14:51:29] INFO: Données POST: Array
+(
+    [csrf_token] => cd83f5e424db11b5db6185c637092c4b7d7fcdec568c9567038ebd2f5bdb473c
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 14:51:29] INFO: Token CSRF validé avec succès
+[2025-11-16 14:51:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
+[2025-11-16 15:02:29] INFO: Requête POST reçue pour l'action: connect
+[2025-11-16 15:02:29] INFO: Données POST: Array
+(
+    [csrf_token] => cd83f5e424db11b5db6185c637092c4b7d7fcdec568c9567038ebd2f5bdb473c
+    [pseudo] => testuser
+    [mdp] => TestPassword123!
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2025-11-16 15:02:29] INFO: Token CSRF validé avec succès
+[2025-11-16 15:02:29] INFO: Tentative de chargement du contrôleur : ConnexionController et de la méthode : connect
