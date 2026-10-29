@@ -1,110 +1,133 @@
 <?php
+
 namespace Controllers;
 
-require_once __DIR__ . '/BaseController.php';
-require_once __DIR__ . '/../Session/SessionManager.php';
-use Session\SessionManager;
-use PDO;
 use Models\Manager;
+use Models\TexteRepository;
+use Models\AudioRepository;
+use Models\PhotoRepository;
+use Models\VideoRepository;
+use PDO;
+use Exception;
 
 class CompteController extends BaseController implements IController
 {
-    public function __construct() {
+    private Manager $manager;
+
+    public function __construct()
+    {
         parent::__construct();
+        $this->manager = new Manager();
     }
 
-    public function list()
+    public function index()
     {
         $this->checkAuth();
-        // Pour l'instant, redirige vers index car la liste n'est pas implémentée
-        header('Location: ?url=compte/index');
-        exit();
-    }
+        $userId = (int)$this->session->get('user_id');
 
-    public function create()
-    {
-        $this->checkAuth();
-        // Pour l'instant, redirige vers index car la création n'est pas implémentée
-        header('Location: ?url=compte/index');
-        exit();
+        $connexion = $this->manager->getConnexion();
+        $stmt = $connexion->prepare("SELECT id, pseudo, email, role, created_at, last_login FROM users WHERE id = :id");
+        $stmt->bindValue(':id', $userId, PDO::PARAM_INT);
+        $stmt->execute();
+        $userInfo = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
+
+        $texteRepo = new TexteRepository();
+        $audioRepo = new AudioRepository();
+        $photoRepo = new PhotoRepository();
+        $videoRepo = new VideoRepository();
+
+        $stats = [
+            'textes' => count($texteRepo->findAllByUser($userId)),
+            'audios' => count($audioRepo->findAllByUser($userId)),
+            'photos' => count($photoRepo->findAllByUser($userId)),
+            'videos' => count($videoRepo->findAllByUser($userId))
+        ];
+
+        $datas = [
+            'session' => $this->session,
+            'userInfo' => $userInfo,
+            'stats' => $stats,
+            'pageTitle' => "Mon Espace Personnel"
+        ];
+        generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon Espace Personnel", false);
     }
 
     public function update($id = null)
     {
         $this->checkAuth();
-        // Pour l'instant, redirige vers index car la mise à jour n'est pas implémentée
-        header('Location: ?url=compte/index');
-        exit();
+        if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+            $this->redirect('compte/index');
+        }
+
+        $this->checkCSRF();
+        $userId = (int)$this->session->get('user_id');
+        $actionType = $_POST['update_type'] ?? '';
+
+        try {
+            $connexion = $this->manager->getConnexion();
+
+            if ($actionType === 'email') {
+                $newEmail = trim($_POST['email'] ?? '');
+                if (!filter_var($newEmail, FILTER_VALIDATE_EMAIL)) {
+                    throw new Exception("Veuillez saisir une adresse email valide.");
+                }
+
+                $check = $connexion->prepare("SELECT COUNT(*) FROM users WHERE email = :email AND id != :id");
+                $check->execute([':email' => $newEmail, ':id' => $userId]);
+                if ((int)$check->fetchColumn() > 0) {
+                    throw new Exception("Cette adresse email est déjà utilisée par un autre compte.");
+                }
+
+                $upd = $connexion->prepare("UPDATE users SET email = :email WHERE id = :id");
+                $upd->execute([':email' => $newEmail, ':id' => $userId]);
+                $_SESSION['message'] = "Votre adresse email a été mise à jour avec succès.";
+            } elseif ($actionType === 'password') {
+                $currentMdp = $_POST['current_mdp'] ?? '';
+                $newMdp = $_POST['new_mdp'] ?? '';
+                $confirmMdp = $_POST['confirm_mdp'] ?? '';
+
+                $stmt = $connexion->prepare("SELECT mdp FROM users WHERE id = :id");
+                $stmt->execute([':id' => $userId]);
+                $hash = $stmt->fetchColumn();
+
+                if (!$hash || !password_verify($currentMdp, $hash)) {
+                    throw new Exception("Votre mot de passe actuel est incorrect.");
+                }
+
+                if ($newMdp !== $confirmMdp) {
+                    throw new Exception("Les nouveaux mots de passe ne correspondent pas.");
+                }
+
+                if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,72}$/', $newMdp)) {
+                    throw new Exception("Le nouveau mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.");
+                }
+
+                $upd = $connexion->prepare("UPDATE users SET mdp = :mdp WHERE id = :id");
+                $upd->execute([
+                    ':mdp' => password_hash($newMdp, PASSWORD_DEFAULT),
+                    ':id'  => $userId
+                ]);
+                $_SESSION['message'] = "Votre mot de passe a été modifié avec succès.";
+            }
+        } catch (Exception $e) {
+            $_SESSION['erreur'] = $e->getMessage();
+        }
+
+        $this->redirect('compte/index');
+    }
+
+    public function list()
+    {
+        $this->redirect('compte/index');
+    }
+
+    public function create()
+    {
+        $this->redirect('compte/index');
     }
 
     public function delete($id = null)
     {
-        $this->checkAuth();
-        // Pour l'instant, redirige vers index car la suppression n'est pas implémentée
-        header('Location: ?url=compte/index');
-        exit();
-    }
-    public function index()
-    {
-        $this->checkAuth();
-        
-        $datas = [
-            'session' => $this->session,
-            'pageTitle' => "Gestion des notes"
-        ];
-        generate("Views/main/compte.php", $datas, "Views/base.html.php", "Mon compte", false);
-    }
-
-    public function addMusic()
-    {
-        $this->checkAuth();
-        $this->checkCSRF();
-
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            if ($this->isFormDataValid()) {
-                logInfo("Données du formulaire reçues : " . json_encode($_POST));
-                $title = $_POST['title'];
-                $artist = $_POST['artiste'];
-                $image = $_POST['image'];
-                $path = $_POST['path'];
-
-                $manager = new Manager();
-                $connexion = $manager->getConnexion();
-
-                try {
-                    $this->insertMusicData($connexion, $title, $artist, $image, $path);
-                    $this->redirect('compte/index');
-                } catch (Exception $e) {
-                    logError("Erreur lors de l'insertion : " . $e->getMessage());
-                    $this->session->set('erreur', "Erreur lors de l'ajout du média");
-                    $this->redirect('compte/index');
-                }
-            } else {
-                logError("Données du formulaire manquantes");
-                $this->session->set('erreur', "Tous les champs sont requis");
-                $this->redirect('compte/index');
-            }
-        }
-    }
-
-    private function isFormDataValid()
-    {
-        return isset($_POST['title'], $_POST['artiste'], $_POST['image'], $_POST['path']);
-    }
-
-    private function insertMusicData($connexion, $title, $artist, $image, $path)
-    {
-        $sql = 'INSERT INTO audio (title, artist, image, path, user_id) VALUES (:title, :artist, :image, :path, :user_id)';
-        $req = $connexion->prepare($sql);
-        $req->bindValue(':title', $title, PDO::PARAM_STR);
-        $req->bindValue(':artist', $artist, PDO::PARAM_STR);
-        $req->bindValue(':image', $image, PDO::PARAM_STR);
-        $req->bindValue(':path', $path, PDO::PARAM_STR);
-        $req->bindValue(':user_id', $this->session->get('user_id'), PDO::PARAM_INT);
-        if ($req->execute()) {
-            logInfo("Données insérées avec succès dans la base de données.");
-        } else {
-            logError("Échec de l'insertion des données dans la base de données.");
-        }
+        $this->redirect('compte/index');
     }
 }

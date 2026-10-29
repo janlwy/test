@@ -6733,3 +6733,28 @@
 [2026-10-29 05:39:07] INFO: Début de la méthode addMusic
 [2026-10-29 10:36:37] ERROR: Erreur CSRF : jeton invalide pour l'action create
 [2026-10-29 15:14:12] ERROR: Erreur CSRF : jeton invalide pour l'action create
+[2026-10-29 16:03:56] INFO: Début de la déconnexion
+[2026-10-29 16:03:56] INFO: URL de redirection prévue: index.php?url=connexion/index
+[2026-10-29 16:03:56] INFO: Destruction de la session active
+[2026-10-29 16:03:56] INFO: Cookie de session supprimé
+[2026-10-29 16:03:56] INFO: Session détruite
+[2026-10-29 16:03:56] INFO: Nouvelle session démarrée pour la redirection
+[2026-10-29 16:03:56] INFO: Tentative de redirection vers: index.php?url=connexion/index
+[2026-10-29 16:03:56] INFO: Début de la méthode index dans ConnexionController
+[2026-10-29 16:04:19] INFO: Début de la méthode index dans AccueilController
+[2026-10-29 16:04:19] INFO: Utilisateur non connecté, affichage de l'accueil
+[2026-10-29 16:04:56] INFO: Début de la méthode index dans ConnexionController
+[2026-10-29 16:05:20] INFO: Méthode connect appelée. Méthode: POST
+[2026-10-29 16:05:20] INFO: Données POST: Array
+(
+    [csrf_token] => 258cdef271e021444261e501dfa60c0f8f2db786fb06abaab02152f31f9e22ad
+    [pseudo] => Marsy
+    [mdp] => Azerty123456******
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2026-10-29 16:05:20] INFO: Paramètre connexion reçu: Connexion
+[2026-10-29 16:05:20] ERROR: Erreur isLockedOut : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+[2026-10-29 16:05:20] INFO: Connexion réussie pour l'utilisateur Marsy depuis ::1 avec Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
