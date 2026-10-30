@@ -47,7 +47,10 @@ class VideoRepository implements IRepository
         }
     }
 
-    public function save($entity): void
+    /**
+     * @param Video $entity
+     */
+    public function save(object $entity): void
     {
         if (!$entity instanceof Video) {
             throw new InvalidArgumentException("L'entité doit être de type Video");

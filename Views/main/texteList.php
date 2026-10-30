@@ -1,7 +1,17 @@
 <?php
+
+/**
+ * @var \Session\SessionManager $session
+ * @var \Models\Texte[] $textes
+ * @var \Models\Texte|null $editTexte
+ */
+$session = $session ?? \Session\SessionManager::getInstance();
+$textes = $textes ?? [];
+$editTexte = $editTexte ?? null;
+
 $session->ensureCsrfToken();
 $csrfToken = $session->get('csrf_token');
-$isEditing = isset($editTexte) && $editTexte !== null;
+$isEditing = ($editTexte !== null);
 $formAction = $isEditing ? "?url=texte/update/" . $editTexte->getId() : "?url=texte/create";
 ?>
 

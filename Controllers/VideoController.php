@@ -9,6 +9,7 @@ use finfo;
 
 class VideoController extends BaseController implements IController
 {
+    /** @var VideoRepository */
     protected $repository;
 
     public function __construct()

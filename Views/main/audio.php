@@ -1,3 +1,13 @@
+<?php
+
+/**
+ * @var \Models\Audio[] $audios
+ * @var array $formattedAudios
+ */
+$audios = $audios ?? [];
+$formattedAudios = $formattedAudios ?? [];
+?>
+
 <section>
     <?php if (empty($formattedAudios)): ?>
         <div class="info-message">

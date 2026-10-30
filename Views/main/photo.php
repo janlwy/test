@@ -1,3 +1,9 @@
+<?php
+
+/** @var \Models\Photo[] $photos */
+$photos = $photos ?? [];
+?>
+
 <section>
     <?php if (empty($photos)): ?>
         <div class="info-message">

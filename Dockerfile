@@ -1,23 +1,20 @@
 # syntax=docker/dockerfile:1
 
-FROM composer:lts AS deps
-WORKDIR /app
-RUN --mount=type=bind,source=composer.json,target=composer.json \
-    --mount=type=bind,source=composer.lock,target=composer.lock \
-    --mount=type=cache,target=/tmp/cache \
-    composer install --no-dev --no-interaction
+FROM php:8.4-apache-trixie AS final
 
-FROM php:8.2-apache AS final
+# Mise à jour de sécurité et installation de l'extension PDO MySQL
+RUN apt-get update && apt-get upgrade -y \
+    && docker-php-ext-install pdo pdo_mysql \
+    && a2enmod rewrite \
+    && rm -rf /var/lib/apt/lists/*
 
-# Activation des extensions PDO MySQL et Apache Rewrite
-RUN docker-php-ext-install pdo pdo_mysql && a2enmod rewrite
+# Configuration PHP de production + augmentation de la taille d'upload (Audio/Vidéo/Photos)
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+    && printf "upload_max_filesize = 100M\npost_max_size = 105M\nmemory_limit = 256M\n" > "$PHP_INI_DIR/conf.d/uploads.ini"
 
-RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
-
-COPY --from=deps /app/vendor/ /var/www/html/vendor
+WORKDIR /var/www/html
 COPY . /var/www/html
 
-# Création et droits d'écriture pour les dossiers d'upload et de logs
 RUN mkdir -p /var/www/html/logs \
     /var/www/html/Ressources/audio \
     /var/www/html/Ressources/videos \

@@ -1,7 +1,17 @@
 <?php
+
+/**
+ * @var \Session\SessionManager $session
+ * @var \Models\Video[] $videos
+ * @var \Models\Video|null $editVideo
+ */
+$session = $session ?? \Session\SessionManager::getInstance();
+$videos = $videos ?? [];
+$editVideo = $editVideo ?? null;
+
 $session->ensureCsrfToken();
 $csrfToken = $session->get('csrf_token');
-$isEditing = isset($editVideo) && $editVideo !== null;
+$isEditing = ($editVideo !== null);
 $formAction = $isEditing ? "?url=video/update/" . $editVideo->getId() : "?url=video/create";
 ?>
 

@@ -1,4 +1,13 @@
 <?php
+
+/**
+ * @var \Session\SessionManager $session
+ * @var array $userInfo
+ * @var array $stats
+ */
+$session = $session ?? \Session\SessionManager::getInstance();
+$userInfo = $userInfo ?? [];
+$stats = $stats ?? [];
 $session->ensureCsrfToken();
 $csrfToken = $session->get('csrf_token');
 ?>

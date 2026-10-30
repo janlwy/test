@@ -1,7 +1,17 @@
 <?php
+
+/**
+ * @var \Session\SessionManager $session
+ * @var \Models\Photo[] $photos
+ * @var \Models\Photo|null $editPhoto
+ */
+$session = $session ?? \Session\SessionManager::getInstance();
+$photos = $photos ?? [];
+$editPhoto = $editPhoto ?? null;
+
 $session->ensureCsrfToken();
 $csrfToken = $session->get('csrf_token');
-$isEditing = isset($editPhoto) && $editPhoto !== null;
+$isEditing = ($editPhoto !== null);
 $formAction = $isEditing ? "?url=photo/update/" . $editPhoto->getId() : "?url=photo/create";
 ?>
 

@@ -1,7 +1,17 @@
 <?php
+
+/**
+ * @var \Session\SessionManager $session
+ * @var \Models\Audio[] $audios
+ * @var \Models\Audio|null $editAudio
+ */
+$session = $session ?? \Session\SessionManager::getInstance();
+$audios = $audios ?? [];
+$editAudio = $editAudio ?? null;
+
 $session->ensureCsrfToken();
 $csrfToken = $session->get('csrf_token');
-$isEditing = isset($editAudio) && $editAudio !== null;
+$isEditing = ($editAudio !== null);
 $formAction = $isEditing ? "?url=audio/update/" . $editAudio->getId() : "?url=audio/create";
 ?>
 

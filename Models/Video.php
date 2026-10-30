@@ -9,22 +9,22 @@ class Video extends AbstractModel
     private ?string $thumbnail = null;
     private ?string $path = null;
 
-    public function setTitle($title): void
+    public function setTitle(?string $title): void
     {
         $this->title = $title;
     }
 
-    public function setDescription($description): void
+    public function setDescription(?string $description): void
     {
         $this->description = $description;
     }
 
-    public function setThumbnail($thumbnail): void
+    public function setThumbnail(?string $thumbnail): void
     {
         $this->thumbnail = $thumbnail;
     }
 
-    public function setPath($path): void
+    public function setPath(?string $path): void
     {
         $this->path = $path;
     }

@@ -1,3 +1,9 @@
+<?php
+
+/** @var \Models\Texte[] $textes */
+$textes = $textes ?? [];
+?>
+
 <section>
     <?php if (empty($textes)): ?>
         <div class="info-message" style="text-align: center; margin: 30px 0;">
