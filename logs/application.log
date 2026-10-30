@@ -6758,3 +6758,31 @@
 [2026-10-29 16:05:20] INFO: Paramètre connexion reçu: Connexion
 [2026-10-29 16:05:20] ERROR: Erreur isLockedOut : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
 [2026-10-29 16:05:20] INFO: Connexion réussie pour l'utilisateur Marsy depuis ::1 avec Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+[2026-10-30 08:31:53] ERROR: Erreur CSRF : jeton invalide pour l'action create
+[2026-10-30 08:51:32] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:40] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:41] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:45] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:47] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:48] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:48] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:48] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:49] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:49] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:49] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:49] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:51:49] INFO: Début de la méthode index dans ConnexionController
+[2026-10-30 08:52:16] INFO: Méthode connect appelée. Méthode: POST
+[2026-10-30 08:52:16] INFO: Données POST: Array
+(
+    [csrf_token] => 580c7e75478491f2a91bcb1e3f3c0a3273b347fd6aefc2f1031bc617b45c12bf
+    [pseudo] => Marsy
+    [mdp] => Azerty123456******
+    [role_redirect] => 1
+    [connexion] => Connexion
+    [submitted] => 1
+)
+
+[2026-10-30 08:52:16] INFO: Paramètre connexion reçu: Connexion
+[2026-10-30 08:52:16] ERROR: Erreur isLockedOut : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
+[2026-10-30 08:52:16] INFO: Connexion réussie pour l'utilisateur Marsy depuis ::1 avec Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0

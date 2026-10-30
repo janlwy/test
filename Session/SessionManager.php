@@ -57,7 +57,7 @@ class SessionManager
             !isset($_SESSION['last_regeneration']) ||
             (time() - $_SESSION['last_regeneration']) > self::SESSION_LIFETIME
         ) {
-            if (!headers_sent() && session_regenerate_id(true)) {
+            if (!headers_sent() && session_regenerate_id(false)) {
                 $_SESSION['last_regeneration'] = time();
             }
         }

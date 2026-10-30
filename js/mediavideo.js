@@ -1,114 +1,241 @@
 'use strict';
-// Lecteur video -----------------------------------------------------------------
 
-const media = document.querySelector('video');
-if (!media) {
-    console.log('Aucun élément vidéo trouvé sur cette page');
-} else {
-    const controls = document.querySelector('.controls-video');
-    const play = document.querySelector('.play');
-    const stop = document.querySelector('.stop');
-    const rwd = document.querySelector('.rwd');
-    const fwd = document.querySelector('.fwd');
+document.addEventListener('DOMContentLoaded', () => {
+    // =========================================================
+    // 1. PANNEAUX IMPORT & WEBCAM (videoList.php)
+    // =========================================================
+    const uploadBox = document.getElementById('video-upload-box');
+    const recorderBox = document.getElementById('video-recorder-box');
+    const btnToggleUpload = document.getElementById('btnToggleVideoUpload');
+    const btnToggleRecorder = document.getElementById('btnToggleVideoRecorder');
+    const btnCancelUpload = document.getElementById('btnCancelVideoUpload');
+    const btnCancelRecorder = document.getElementById('btnCancelVideoRecorder');
 
-    const timerWrapper = document.querySelector('.timer');
-    const timer = document.querySelector('.timer span');
-    const timerBar = document.querySelector('.timer div');
+    let webcamStream = null;
 
-    media.removeAttribute('controls');
-controls.style.visibility = 'visible';
-
-play.addEventListener('click', playPauseMedia);
-stop.addEventListener('click', stopMedia);
-media.addEventListener('ended', stopMedia);
-rwd.addEventListener('click', mediaBackward);
-fwd.addEventListener('click', mediaForward);
-media.addEventListener('timeupdate', setTime);
-}
-
-function playPauseMedia() {
-    rwd.classList.remove('active');
-    fwd.classList.remove('active');
-    clearInterval(intervalRwd);
-    clearInterval(intervalFwd);
-    if (media.paused) {
-        play.setAttribute('data-icon', 'u');
-        media.play();
-    } else {
-        play.setAttribute('data-icon', 'P');
-        media.pause();
+    function stopWebcamStream() {
+        if (webcamStream) {
+            webcamStream.getTracks().forEach(track => track.stop());
+            webcamStream = null;
+        }
     }
-}
 
-function stopMedia() {
-    media.pause();
-    media.currentTime = 0;
-    rwd.classList.remove('active');
-    fwd.classList.remove('active');
-    clearInterval(intervalRwd);
-    clearInterval(intervalFwd);
-    play.setAttribute('data-icon', 'P');
-}
-
-let intervalFwd;
-let intervalRwd;
-
-function mediaBackward() {
-    clearInterval(intervalFwd);
-    fwd.classList.remove('active');
-
-    if (rwd.classList.contains('active')) {
-        rwd.classList.remove('active');
-        clearInterval(intervalRwd);
-        media.play();
-    } else {
-        rwd.classList.add('active');
-        media.pause();
-        intervalRwd = setInterval(windBackward, 200);
+    function openVideoUpload() {
+        stopWebcamStream();
+        if (recorderBox) recorderBox.classList.add('is-hidden');
+        if (uploadBox) {
+            uploadBox.classList.toggle('is-hidden');
+            const input = document.getElementById('video-title-input');
+            if (!uploadBox.classList.contains('is-hidden') && input) input.focus();
+        }
     }
-}
 
-function mediaForward() {
-    clearInterval(intervalRwd);
-    rwd.classList.remove('active');
-
-    if (fwd.classList.contains('active')) {
-        fwd.classList.remove('active');
-        clearInterval(intervalFwd);
-        media.play();
-    } else {
-        fwd.classList.add('active');
-        media.pause();
-        intervalFwd = setInterval(windForward, 200);
+    function openVideoRecorder() {
+        if (uploadBox) uploadBox.classList.add('is-hidden');
+        if (recorderBox) {
+            const willOpen = recorderBox.classList.contains('is-hidden');
+            recorderBox.classList.toggle('is-hidden');
+            if (willOpen) {
+                const titleInput = document.getElementById('webcam-title');
+                if (titleInput && !titleInput.value) {
+                    const now = new Date();
+                    titleInput.value = `Note vidéo du ${now.toLocaleDateString('fr-FR')} à ${now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' })}`;
+                }
+            } else {
+                stopWebcamStream();
+            }
+        }
     }
-}
 
-function windBackward() {
-    if (media.currentTime <= 3) {
-        stopMedia();
-    } else {
-        media.currentTime -= 3;
+    if (btnToggleUpload) btnToggleUpload.addEventListener('click', openVideoUpload);
+    if (btnToggleRecorder) btnToggleRecorder.addEventListener('click', openVideoRecorder);
+    if (btnCancelUpload && uploadBox) {
+        btnCancelUpload.addEventListener('click', () => uploadBox.classList.add('is-hidden'));
     }
-}
-
-function windForward() {
-    if (media.currentTime >= media.duration - 3) {
-        stopMedia();
-    } else {
-        media.currentTime += 3;
+    if (btnCancelRecorder && recorderBox) {
+        btnCancelRecorder.addEventListener('click', () => {
+            stopWebcamStream();
+            recorderBox.classList.add('is-hidden');
+        });
     }
-}
 
-    function setTime() {
-        const minutes = Math.floor(media.currentTime / 60);
-        const seconds = Math.floor(media.currentTime - minutes * 60);
+    if (window.location.hash === '#record') openVideoRecorder();
+    if (window.location.hash === '#upload') openVideoUpload();
 
-        const minuteValue = minutes.toString().padStart(2, '0');
-        const secondValue = seconds.toString().padStart(2, '0');
+    // =========================================================
+    // 2. ENREGISTREMENT WEBCAM (MediaRecorder)
+    // =========================================================
+    const btnStart = document.getElementById('btnStartVideoRecord');
+    const btnStop = document.getElementById('btnStopVideoRecord');
+    const btnSave = document.getElementById('btnSaveVideoNote');
+    const webcamPreview = document.getElementById('webcamPreview');
+    const timerDisplay = document.getElementById('video-recording-timer');
+    const recordedVideoFile = document.getElementById('recordedVideoFile');
 
-        const mediaTime = `${minuteValue}:${secondValue}`;
-        timer.textContent = mediaTime;
+    let videoRecorder = null;
+    let videoChunks = [];
+    let timerInterval = null;
+    let seconds = 0;
 
-        const barLength = timerWrapper.clientWidth * (media.currentTime / media.duration);
-        timerBar.style.width = `${barLength}px`;
+    if (btnStart && btnStop && webcamPreview) {
+        btnStart.addEventListener('click', async () => {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert("Votre navigateur ne supporte pas la capture vidéo.");
+                return;
+            }
+            try {
+                webcamStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+                webcamPreview.srcObject = webcamStream;
+                webcamPreview.muted = true;
+                webcamPreview.play();
+
+                const mimeType = MediaRecorder.isTypeSupported('video/webm') ? 'video/webm' : '';
+                videoRecorder = mimeType ? new MediaRecorder(webcamStream, { mimeType }) : new MediaRecorder(webcamStream);
+                videoChunks = [];
+
+                videoRecorder.addEventListener('dataavailable', e => {
+                    if (e.data && e.data.size > 0) videoChunks.push(e.data);
+                });
+
+                videoRecorder.addEventListener('stop', () => {
+                    stopWebcamStream();
+                    clearInterval(timerInterval);
+                    if (timerDisplay) timerDisplay.classList.remove('is-recording');
+
+                    const finalMime = videoRecorder.mimeType || 'video/webm';
+                    const blob = new Blob(videoChunks, { type: finalMime });
+                    webcamPreview.srcObject = null;
+                    webcamPreview.src = URL.createObjectURL(blob);
+                    webcamPreview.muted = false;
+                    webcamPreview.controls = true;
+
+                    const file = new File([blob], `webcam_${Date.now()}.webm`, { type: 'video/webm' });
+                    const dt = new DataTransfer();
+                    dt.items.add(file);
+                    recordedVideoFile.files = dt.files;
+
+                    if (btnSave) btnSave.disabled = false;
+                });
+
+                videoRecorder.start();
+                seconds = 0;
+                if (timerDisplay) {
+                    timerDisplay.textContent = "00:00";
+                    timerDisplay.classList.add('is-recording');
+                }
+                timerInterval = setInterval(() => {
+                    seconds++;
+                    const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+                    const s = (seconds % 60).toString().padStart(2, '0');
+                    if (timerDisplay) timerDisplay.textContent = `${m}:${s}`;
+                }, 1000);
+
+                btnStart.classList.add('is-hidden');
+                btnStop.classList.remove('is-hidden');
+                btnStop.disabled = false;
+                if (btnSave) btnSave.disabled = true;
+            } catch (err) {
+                console.error("Erreur caméra :", err);
+                alert("Impossible d'accéder à la caméra ou au microphone.");
+            }
+        });
+
+        btnStop.addEventListener('click', () => {
+            if (videoRecorder && videoRecorder.state !== 'inactive') {
+                videoRecorder.stop();
+                btnStop.classList.add('is-hidden');
+                btnStop.disabled = true;
+                btnStart.classList.remove('is-hidden');
+            }
+        });
     }
+
+    // =========================================================
+    // 3. RECHERCHE, DURÉE & SÉLECTION (videoList.php)
+    // =========================================================
+    const searchInput = document.getElementById('searchVideoInput');
+    const videoItems = document.querySelectorAll('#videoGrid .video-item');
+    if (searchInput && videoItems.length > 0) {
+        searchInput.addEventListener('input', function () {
+            const term = this.value.toLowerCase();
+            videoItems.forEach(item => {
+                item.style.display = item.textContent.toLowerCase().includes(term) ? '' : 'none';
+            });
+        });
+    }
+
+    document.querySelectorAll('.video-thumbnail').forEach(vid => {
+        vid.addEventListener('loadedmetadata', function () {
+            if (!isFinite(this.duration)) return;
+            const d = Math.round(this.duration);
+            const m = Math.floor(d / 60);
+            const s = (d % 60).toString().padStart(2, '0');
+            const badge = this.parentElement.querySelector('.video-duration');
+            if (badge) badge.textContent = `${m}:${s}`;
+        });
+    });
+
+    const checkboxes = document.querySelectorAll('.select-video');
+    const playSelectedBtn = document.getElementById('play-selected-videos');
+    const selectedContainer = document.getElementById('selected-videos-container');
+
+    if (checkboxes.length > 0 && playSelectedBtn && selectedContainer) {
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', function () {
+                const card = this.closest('.video-item');
+                if (card) card.classList.toggle('selected', this.checked);
+
+                selectedContainer.innerHTML = '';
+                const checked = document.querySelectorAll('.select-video:checked');
+                checked.forEach(c => {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'ids[]';
+                    input.value = c.dataset.id;
+                    selectedContainer.appendChild(input);
+                });
+
+                playSelectedBtn.classList.toggle('is-hidden', checked.length === 0);
+            });
+        });
+    }
+
+    // =========================================================
+    // 4. LECTEUR VIDÉO & PLAYLIST (video.php)
+    // =========================================================
+    const playerData = document.getElementById('video-player-data');
+    const videoPlayer = document.getElementById('video-player');
+    const videoTitle = document.getElementById('video-title');
+    const videoDesc = document.getElementById('video-description');
+    const playlistItems = document.querySelectorAll('.playlist-item');
+
+    if (playerData && videoPlayer && playerData.dataset.videos) {
+        try {
+            const videos = JSON.parse(playerData.dataset.videos);
+            if (Array.isArray(videos) && videos.length > 0) {
+                function loadVideoItem(index) {
+                    const v = videos[index];
+                    if (!v) return;
+                    videoPlayer.pause();
+                    videoPlayer.src = v.path;
+                    if (v.thumbnail) videoPlayer.poster = v.thumbnail;
+                    videoPlayer.load();
+                    if (videoTitle) videoTitle.textContent = v.title || '';
+                    if (videoDesc) videoDesc.textContent = v.description || '';
+
+                    playlistItems.forEach((item, idx) => {
+                        item.classList.toggle('active', idx === index);
+                    });
+                }
+
+                loadVideoItem(0);
+
+                playlistItems.forEach((item, index) => {
+                    item.addEventListener('click', () => loadVideoItem(index));
+                });
+            }
+        } catch (e) {
+            console.error("Erreur d'initialisation du lecteur vidéo :", e);
+        }
+    }
+});

@@ -46,6 +46,15 @@ class Router
         $csrfProtectedActions = ['create', 'update', 'delete', 'save', 'connect', 'createUser'];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && in_array($actionName, $csrfProtectedActions, true)) {
+            // Détection d'un dépassement de post_max_size (PHP vide $_POST et $_FILES)
+            if (empty($_POST) && empty($_FILES) && isset($_SERVER['CONTENT_LENGTH']) && (int)$_SERVER['CONTENT_LENGTH'] > 0) {
+                $maxPost = ini_get('post_max_size');
+                logError("Fichier rejeté : taille de la requête (" . $_SERVER['CONTENT_LENGTH'] . " octets) supérieure à post_max_size ($maxPost)");
+                $_SESSION['erreur'] = "Le fichier envoyé dépasse la limite autorisée par le serveur ($maxPost).";
+                header('Location: ' . ($_SERVER['HTTP_REFERER'] ?? '?url=mediabox/index'));
+                exit();
+            }
+
             $token = $isAjax
                 ? ($_SERVER['HTTP_X_CSRF_TOKEN'] ?? ($_POST['csrf_token'] ?? null))
                 : ($_POST['csrf_token'] ?? null);
