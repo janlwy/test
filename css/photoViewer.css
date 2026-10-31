@@ -1,40 +1,4 @@
-.photo-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.is-hidden {
-    display: none !important;
-}
-
-.photo-panel {
-    max-width: 750px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 12px;
-    background: var(--collapsForm);
-    color: var(--fontcolor);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.photo-field {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.photo-textarea {
-    width: 80%;
-    padding: 12px;
-    margin: 8px auto;
-    display: block;
-    border: 1px solid #a8a4a4;
-    border-radius: 13px;
-    font-family: inherit;
-    font-size: 1.4rem;
-    resize: vertical;
-    box-sizing: border-box;
-}
+/**************************************** Spécifique Module Photo & OCR ****************************/
 
 .ocr-preview-zone {
     display: flex;
@@ -43,7 +7,7 @@
     gap: 12px;
     margin: 15px auto;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     background: rgba(0, 0, 0, 0.08);
     max-width: 550px;
 }
@@ -51,7 +15,7 @@
 .photo-preview-img {
     max-width: 100%;
     max-height: 280px;
-    border-radius: 8px;
+    border-radius: 10px;
     object-fit: contain;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
@@ -75,58 +39,16 @@
     height: 12px;
 }
 
-/* Grille de cartes Photos */
-.photo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
-    padding: 20px 10px;
-}
-
-.photo-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    background: var(--collapsForm);
-    color: var(--fontcolor);
-    padding: 16px;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-    gap: 12px;
-    transition: transform 0.2s;
-}
-
-.photo-item:hover {
-    transform: translateY(-3px);
-}
-
-.photo-item.selected {
-    border: 2px solid var(--btntheme);
-}
-
 .photo-media {
-    position: relative;
     width: 100%;
-    height: 180px;
+    height: 160px;
 }
 
 .photo-thumbnail {
     width: 100%;
-    height: 180px;
+    height: 160px;
     object-fit: cover;
-    border-radius: 8px;
-}
-
-.select-photo {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    accent-color: var(--btntheme);
+    border-radius: 12px;
 }
 
 .photo-info {
@@ -135,7 +57,7 @@
 
 .photo-info h4 {
     margin: 4px 0;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     color: var(--fontcolor);
 }
 
@@ -148,7 +70,7 @@
 .ocr-badge {
     margin-top: 8px;
     padding: 6px 10px;
-    border-radius: 6px;
+    border-radius: 8px;
     background: rgba(0, 0, 0, 0.1);
     font-size: 1.15rem;
     display: flex;
@@ -156,21 +78,6 @@
     justify-content: center;
     gap: 5px;
     color: var(--fontcolor);
-}
-
-.photo-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    padding-top: 10px;
-    border-top: 1px solid rgba(128, 128, 128, 0.25);
-}
-
-.slideshow-controls {
-    text-align: center;
-    margin: 20px auto;
 }
 
 /* Visionneuse (photo.php) */
@@ -188,8 +95,8 @@
     width: 100%;
     background: var(--collapsForm);
     padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: var(--cardRadius);
+    box-shadow: var(--cardShadow);
     text-align: center;
 }
 
@@ -198,7 +105,7 @@
     max-height: 550px;
     width: auto;
     height: auto;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -210,7 +117,7 @@
 .photo-ocr-box {
     margin: 15px auto;
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 12px;
     background: rgba(0, 0, 0, 0.1);
     text-align: left;
     max-width: 700px;
@@ -256,7 +163,7 @@
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     opacity: 0.7;
     transition: transform 0.2s, opacity 0.2s;
@@ -269,5 +176,13 @@
 
 .thumbnail.active {
     opacity: 1;
-    border: 3px solid var(--btntheme);
+    border: 3px solid var(--orange);
+}
+
+@media (max-width: 600px) {
+
+    .photo-media,
+    .photo-thumbnail {
+        height: 115px;
+    }
 }

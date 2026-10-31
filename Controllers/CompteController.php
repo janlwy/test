@@ -43,6 +43,20 @@ class CompteController extends BaseController implements IController
             'videos' => count($videoRepo->findAllByUser($userId))
         ];
 
+        $totalBytes = 0;
+        $dirs = ['Ressources/audio', 'Ressources/videos', 'Ressources/images/photos', 'Ressources/images/pochettes', 'Ressources/images/thumbnails'];
+        foreach ($dirs as $dir) {
+            if (is_dir($dir)) {
+                foreach (glob($dir . '/*') ?: [] as $file) {
+                    if (is_file($file)) {
+                        $totalBytes += filesize($file);
+                    }
+                }
+            }
+        }
+        $stats['storage_mb'] = round($totalBytes / (1024 * 1024), 2);
+        $stats['total_items'] = $stats['textes'] + $stats['audios'] + $stats['photos'] + $stats['videos'];
+
         $datas = [
             'session' => $this->session,
             'userInfo' => $userInfo,

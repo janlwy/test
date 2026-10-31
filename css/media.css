@@ -3,31 +3,25 @@
     --clair: #F5F5F5;
     --silver: #cccccc;
     --gris: #808080;
-    --grisDark: #2b2d31;
+    --grisDark: #464242;
     --sombre: #182020;
     --vertSombre: #2f4f4f;
-    --bleuArgent: #5c6274;
-    --orange: #e09f5a;
-    --marine: #1f3a52;
+    --bleuArgent: #747492;
+    --orange: #ffb764;
+    --marine: #000080;
     --violet: #942494;
-    --gainsboro: #e4e7eb;
-    --dimGray: #383b42;
-
-    /* Palette unifiée des boutons d'action (harmonisées avec le thème) */
-    --accent-success: #2e7d5b;
-    --accent-success-hover: #236347;
-    --accent-info: #3a6b88;
-    --accent-info-hover: #2c536a;
-    --accent-warning: #d9822b;
-    --accent-warning-hover: #b86b1f;
-    --accent-danger: #c94a4a;
-    --accent-danger-hover: #a63636;
-    --accent-neutral: #6c757d;
-    --accent-neutral-hover: #565e64;
+    --gainsboro: #dcdcdcce;
+    --dimGray: #696969;
+    --bordeaux: #910332;
+    --cardRadius: 20px;
 }
 
 .hide-menunav .menunav {
     display: none;
+}
+
+.is-hidden {
+    display: none !important;
 }
 
 /************************* Mise en forme globale du fond *********************************/
@@ -56,53 +50,50 @@ main {
 }
 
 header h1 {
-    margin: 10px 0 8px;
+    margin: 6px 0 8px;
 }
 
+/* Dégradés --navBg recalibrés pour un contraste optimal du texte blanc au centre */
 .clair-theme {
     --bodyBg: var(--clair);
     --fontcolor: var(--sombre);
-    --btnBackGround: #ffffff;
+    --btnBackGround: var(--clair);
     --btnFontColor: var(--sombre);
-    --cardShadow: 0 6px 16px rgba(24, 32, 32, 0.14);
-    --titreColor: var(--vertSombre);
-    --titreShadow: 1px 2px 6px rgba(0, 0, 0, 0.15);
+    --cardShadow: 0 6px 16px rgba(24, 32, 32, 0.16);
+    --titreColor: var(--clair);
+    --titreShadow: 2px 2px 10px var(--sombre);
     --colorH2H5: var(--sombre);
-    --pShadow: rgba(24, 32, 32, 0.2);
-    --footerShadow: 0 -2px 6px rgba(0, 0, 0, 0.15);
+    --pShadow: var(--sombre);
+    --footerShadow: 0 -2px 4px 1px var(--sombre);
     --cardIcons: var(--clair);
     --globale: var(--vertSombre);
-    --navBg: linear-gradient(90deg, #264040 0%, #3b5c5c 50%, #264040 100%);
-    --active: #1d3333;
+    --navBg: linear-gradient(90deg, #243d3d 0%, #3a5e5e 30%, #466d6d 50%, #3a5e5e 70%, #243d3d 100%);
+    --active: #1b2e2e;
     --collapsForm: var(--gainsboro);
     --btntheme: var(--vertSombre);
-    --btnthemeHover: #3e6565;
     --inputBg: #ffffff;
-    --inputBorder: #b0b8bf;
-    --borderSubtle: rgba(47, 79, 79, 0.2);
+    --inputBorder: #808080;
 }
 
 .sombre-theme {
     --bodyBg: var(--grisDark);
     --fontcolor: var(--clair);
-    --btnBackGround: var(--dimGray);
+    --btnBackGround: var(--grisDark);
     --btnFontColor: var(--orange);
-    --cardShadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-    --titreColor: var(--clair);
-    --titreShadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+    --cardShadow: 0 6px 16px rgba(0, 0, 0, 0.42);
+    --titreColor: var(--grisDark);
+    --titreShadow: 2px 2px 10px var(--silver);
     --colorH2H5: var(--clair);
-    --pShadow: rgba(0, 0, 0, 0.4);
-    --footerShadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+    --pShadow: #f5f5f593;
+    --footerShadow: 0 -2px 7px 2px var(--sombre);
     --cardIcons: var(--clair);
-    --globale: var(--bleuArgent);
-    --navBg: linear-gradient(90deg, #3d414d 0%, #5c6274 50%, #3d414d 100%);
-    --active: #2b2e38;
+    --globale: #bd2121;
+    --navBg: linear-gradient(90deg, #4b4f66 0%, #636782 30%, #707591 50%, #636782 70%, #4b4f66 100%);
+    --active: #383b4d;
     --collapsForm: var(--dimGray);
     --btntheme: var(--bleuArgent);
-    --btnthemeHover: #70778c;
-    --inputBg: #26282e;
-    --inputBorder: #555966;
-    --borderSubtle: rgba(255, 255, 255, 0.14);
+    --inputBg: #333030;
+    --inputBorder: #999999;
 }
 
 article,
@@ -123,16 +114,12 @@ i {
     color: var(--collapsForm);
 }
 
-.is-hidden {
-    display: none !important;
-}
-
 .material-icons.md-48 {
     font-size: 48px;
 }
 
 .material-icons.md-36 {
-    font-size: 36px;
+    font-size: 28px;
 }
 
 .material-icons.md-24 {
@@ -143,28 +130,29 @@ i {
     font-size: 16px;
 }
 
-/************************* Boutons Unifiés *********************************/
+/************************* Boutons alignés sur ta charte *********************************/
 
 .btnBase {
-    border: none;
-    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
     padding: 10px 16px;
     font-size: 1.35rem;
     font-family: 'Noto Sans Display', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     cursor: pointer;
-    color: #F5F5F5;
+    color: var(--clair);
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    gap: 8px;
+    transition: filter 0.2s ease, transform 0.15s ease, background-color 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.22);
+    box-sizing: border-box;
 }
 
 .btnBase:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.22);
+    filter: brightness(1.15);
+    transform: translateY(-2px);
 }
 
 .btnBase:active {
@@ -172,86 +160,102 @@ i {
 }
 
 .btnBase:disabled {
-    opacity: 0.55;
+    opacity: 0.5;
     cursor: not-allowed;
     transform: none;
 }
 
 .vert {
-    background-color: var(--accent-success);
+    background-color: var(--vertSombre);
+    color: var(--clair);
 }
 
 .vert:hover {
-    background-color: var(--accent-success-hover);
+    background-color: #3d6666;
 }
 
 .blue {
-    background-color: var(--accent-info);
+    background-color: var(--bleuArgent);
+    color: var(--clair);
 }
 
 .blue:hover {
-    background-color: var(--accent-info-hover);
+    background-color: var(--marine);
 }
 
 .orange {
-    background-color: var(--accent-warning);
+    background-color: var(--orange);
+    color: var(--sombre);
+}
+
+.orange i,
+.orange .spanIconText {
+    color: var(--sombre);
 }
 
 .orange:hover {
-    background-color: var(--accent-warning-hover);
+    background-color: #e69a45;
 }
 
 .rouge {
-    background-color: var(--accent-danger);
+    background-color: var(--bordeaux);
+    color: var(--clair);
 }
 
 .rouge:hover {
-    background-color: var(--accent-danger-hover);
+    background-color: #b80440;
 }
 
 .gris {
-    background-color: var(--accent-neutral);
-    color: #ffffff;
+    background-color: var(--dimGray);
+    color: var(--clair);
 }
 
 .gris:hover {
-    background-color: var(--accent-neutral-hover);
+    background-color: var(--gris);
 }
 
 .theme {
     background-color: var(--btntheme);
+    color: var(--clair);
 }
 
 .theme:hover {
-    background-color: var(--btnthemeHover);
+    background-color: var(--active);
 }
 
 .invisible {
-    background-color: transparent;
+    background-color: var(--collapsForm);
     box-shadow: none;
     outline: none;
 }
 
-.boutonTheme {
+/* Pastille du thème ronde et centrée sur Desktop/Tablette */
+#boutonTheme.boutonTheme {
     cursor: pointer;
     position: absolute;
     top: 18px;
-    right: 2%;
-    height: 44px;
-    width: 44px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    margin: 0;
     border-radius: 50%;
-    border: 1px solid var(--borderSubtle);
-    background-color: var(--btnBackGround);
+    border: 2px solid rgba(128, 128, 128, 0.25);
+    background-color: var(--collapsForm);
     color: var(--btnFontColor);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+    line-height: 1;
+    font-size: 26px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
     z-index: 1000;
     transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.boutonTheme:hover {
+#boutonTheme.boutonTheme:hover {
     transform: scale(1.08);
 }
 
@@ -263,7 +267,34 @@ header .material-icons {
     color: var(--btnFontColor);
 }
 
-/***************************** Typographie & Messages ****************************/
+/************************* Case à cocher unifiée & haute visibilité *************************/
+
+.select-track,
+.select-photo,
+.select-video,
+.select-texte {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    margin: 0 !important;
+    width: 22px !important;
+    height: 22px !important;
+    cursor: pointer;
+    z-index: 10;
+    accent-color: var(--orange) !important;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.45);
+    transition: transform 0.15s ease;
+}
+
+.select-track:hover,
+.select-photo:hover,
+.select-video:hover,
+.select-texte:hover {
+    transform: scale(1.15);
+}
+
+/***************************** Police de caractère & Messages ****************************/
 
 h1,
 h2,
@@ -276,18 +307,20 @@ h5 {
 }
 
 h1 {
-    font-size: clamp(2.8rem, 4vw, 4.2rem);
+    font-size: clamp(2.6rem, 4.5vw, 4.8rem);
     color: var(--titreColor);
     text-shadow: var(--titreShadow);
 }
 
 h2,
 h5 {
-    font-size: 2.4rem;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--colorH2H5);
 }
 
 h3 {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    color: var(--colorH2H5);
 }
 
 p {
@@ -298,14 +331,16 @@ p {
 
 input::placeholder,
 textarea::placeholder {
-    color: #88929a;
+    color: #7f8f83;
+    text-align: center;
 }
 
 .txtfootr {
     padding: 20px 20px 0 0;
     text-align: right;
-    font-size: 1.2rem;
-    opacity: 0.75;
+    text-shadow: 2px 5px 5px var(--pShadow);
+    font-size: 1.25rem;
+    font-weight: 100;
 }
 
 .error-message,
@@ -313,29 +348,33 @@ textarea::placeholder {
 .info-message {
     max-width: 750px;
     margin: 15px auto;
-    padding: 12px 20px;
+    padding: 12px 18px;
     border-radius: 10px;
     text-align: center;
-    font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: bold;
+    font-size: 1.6rem;
 }
 
 .error-message {
-    background-color: rgba(201, 74, 74, 0.15);
-    border: 1px solid var(--accent-danger);
-    color: var(--accent-danger);
+    color: #ffffff;
+    background-color: var(--bordeaux);
 }
 
 .success-message {
-    background-color: rgba(46, 125, 91, 0.15);
-    border: 1px solid var(--accent-success);
-    color: var(--accent-success);
+    color: var(--clair);
+    background-color: var(--vertSombre);
+    border: 2px solid var(--orange);
 }
 
 .info-message {
-    background-color: var(--collapsForm);
-    border: 1px solid var(--borderSubtle);
     color: var(--fontcolor);
+    background-color: var(--collapsForm);
+}
+
+.no-content {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin: 30px 0;
 }
 
 /* Indicateurs mot de passe */
@@ -379,10 +418,10 @@ textarea::placeholder {
     text-align: center;
 }
 
-/************************************ Bouton Accueil 3D *********************************/
+/************************************ Bouton accueil 3D *********************************/
 
 .accueil-container {
-    min-height: 75vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -398,25 +437,25 @@ textarea::placeholder {
     text-align: center;
     width: 100%;
     max-width: 800px;
-    gap: 4vh;
+    gap: 5vh;
 }
 
 .logo-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2vh;
+    gap: 3vh;
 }
 
 .logo {
     display: block;
-    width: min(55vw, 340px);
+    width: min(60vw, 380px);
     height: auto;
     max-width: 100%;
 }
 
 .app-title {
-    font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+    font-size: clamp(1.5rem, 4vw, 3rem);
     margin: 0;
     color: var(--colorH2H5);
 }
@@ -445,9 +484,9 @@ textarea::placeholder {
     width: 101%;
     height: 103%;
     border-radius: 12px;
-    background: rgba(0, 0, 0, 0.28);
-    transform: translateY(3px);
-    transition: transform 300ms ease;
+    background: #00000035;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
 }
 
 .bord3d {
@@ -457,20 +496,19 @@ textarea::placeholder {
     width: 100%;
     height: 100%;
     border-radius: 12px;
-    background: var(--active);
+    background: linear-gradient(to left, #52001b 0%, #910332 15%, #910332 90%, #52001b 100%);
 }
 
 .bouton3d {
     display: block;
     position: relative;
-    padding: clamp(12px, 2vh, 16px) clamp(30px, 5vw, 48px);
+    padding: clamp(12px, 2vh, 18px) clamp(30px, 6vw, 50px);
     border-radius: 12px;
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
-    font-weight: 600;
+    font-size: clamp(1.8rem, 4vw, 3rem);
     color: #ffffff;
-    background: var(--btntheme);
+    background: #f0003c;
     transform: translateY(-4px);
-    transition: transform 250ms ease;
+    transition: transform 600ms cubic-bezier(.3, .7, .4, 1);
     white-space: nowrap;
 }
 
@@ -486,173 +524,208 @@ textarea::placeholder {
     transform: translateY(-2px);
 }
 
-/************************************ Formulaires & Modales *********************************/
+/************************************ Formulaires, Panneaux & Modales Communs *********************************/
 
 .inputModal,
-.inputMonEspace {
+.inputMonEspace,
+.note-textarea,
+.photo-textarea,
+.video-textarea {
     width: 80%;
-    padding: 12px 14px;
+    padding: 12px;
     margin: 8px auto;
     display: block;
     border: 1px solid var(--inputBorder);
-    border-radius: 10px;
+    border-radius: 12px;
     background-color: var(--inputBg);
     color: var(--fontcolor);
-    font-size: 1.4rem;
     font-family: inherit;
+    font-size: 1.4rem;
     box-sizing: border-box;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.inputModal:focus,
-.inputMonEspace:focus {
-    outline: none;
-    border-color: var(--btntheme);
-    box-shadow: 0 0 0 3px rgba(47, 79, 79, 0.2);
+    resize: vertical;
 }
 
 .validButton {
-    background-color: var(--accent-success);
-    color: #f5f5f5;
-    padding: 13px 20px;
-    margin: 10px auto;
+    background-color: var(--vertSombre);
+    color: var(--clair);
+    padding: 14px 20px;
+    margin: 8px auto;
     border: none;
-    border-radius: 10px;
+    border-radius: 13px;
     cursor: pointer;
     width: 45%;
     display: block;
     font-size: 1.5rem;
     font-weight: 600;
-    transition: background-color 0.2s ease;
-}
-
-.validButton:hover {
-    background-color: var(--accent-success-hover);
 }
 
 .cancelButton {
-    background-color: var(--accent-danger);
+    background-color: var(--bordeaux);
     align-items: center;
     justify-content: center;
-    color: #f5f5f5;
-    padding: 12px 20px;
+    color: var(--clair);
+    padding: 14px 20px;
     margin: 8px auto;
     border: none;
-    border-radius: 10px;
+    border-radius: 13px;
     cursor: pointer;
     width: 40%;
     display: flex;
     text-align: center;
-    font-size: 1.4rem;
-    transition: background-color 0.2s ease;
+    font-size: 1.5rem;
 }
 
-.cancelButton:hover {
-    background-color: var(--accent-danger-hover);
-}
-
-.formContainer {
+.formContainer,
+.audio-panel,
+.photo-panel,
+.video-panel,
+.note-editor-box {
+    max-width: 750px;
+    margin: 20px auto 25px;
     padding: 20px;
-    margin-bottom: 25px;
     background-color: var(--collapsForm);
-    border-radius: 14px;
+    color: var(--fontcolor);
+    border-radius: var(--cardRadius);
     box-shadow: var(--cardShadow);
 }
 
 .formContainer h3 {
-    margin-top: 0;
-    padding: 12px 15px;
-    background-color: var(--btntheme);
-    color: #f5f5f5;
-    border-radius: 8px;
+    margin-top: 5px;
+    padding: 10px 14px;
+    background-color: var(--active);
+    color: var(--clair);
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
 }
 
+.audio-field,
+.photo-field,
+.video-field,
+.note-field {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.panel-actions,
+.editor-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.playlist-controls,
+.slideshow-controls,
+.reader-controls {
+    text-align: center;
+    margin: 20px auto;
+}
+
 .modalContenu {
     background-color: var(--bodyBg);
-    margin: 10px auto;
+    margin: 5px auto;
     border: none;
     width: 80%;
     max-width: 650px;
 }
 
 label {
-    padding: 6px 0;
+    padding: 8px 0;
     display: block;
     font-size: 1.45rem;
-    color: var(--fontcolor);
 }
 
 /**************************************** Barre de Navigation *************************************/
 
 nav {
     background: var(--navBg);
-    border-radius: 14px;
+    border-radius: var(--cardRadius);
     margin: 10px auto 20px;
     width: 95%;
-    max-width: 1400px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    max-width: 1800px;
+    box-shadow: var(--cardShadow);
 }
 
 .menunav {
     overflow: hidden;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 0 8px;
+    padding: 0 6px;
 }
 
 .menunav a {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: 500;
+    justify-content: center;
+    height: 52px;
+    padding: 0 18px;
+    font-size: clamp(1.5rem, 2vw, 2.1rem);
+    font-weight: 600;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: var(--cardIcons);
-    padding: 12px 18px;
-    border-radius: 8px;
-    margin: 4px 2px;
+    color: #ffffff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    box-sizing: border-box;
+    gap: 6px;
+    border-radius: 12px;
     transition: background-color 0.2s ease;
 }
 
 .menunav a:hover {
-    background-color: rgba(255, 255, 255, 0.16);
+    background-color: rgba(255, 255, 255, 0.18);
     color: #ffffff;
-}
-
-.menunav a.active {
-    background-color: var(--active);
 }
 
 .menunav a.sortie {
     margin-left: auto;
 }
 
-.menunav .material-icons {
-    color: var(--cardIcons);
+.menunav a.active {
+    background-color: var(--active);
 }
 
-.menunav .menuicon {
+.menunav a .material-icons {
+    font-size: 2.7rem !important;
+    line-height: 1 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+.menunav a.menuicon {
     display: none;
+    margin-left: auto;
 }
 
-/***************************************** Barre de Recherche ***************************/
+/***************************************** Sections, Recherche & Grilles Communes ***************************/
+
+.audio-section,
+.photo-section,
+.video-section,
+.texte-section {
+    max-width: 1200px;
+    margin: 0 auto !important;
+    padding: 10px !important;
+}
 
 .searchBox {
-    position: relative;
-    display: flex;
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    display: flex !important;
     justify-content: center;
     align-items: center;
-    margin: 20px auto;
-    max-width: 620px;
+    margin: 16px auto 18px auto !important;
+    max-width: 600px;
     width: 100%;
-    gap: 10px;
-    padding: 0 15px;
+    height: auto !important;
+    padding: 0 12px !important;
+    gap: 8px;
     box-sizing: border-box;
 }
 
@@ -660,16 +733,16 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
 }
 
 .searchInput {
     flex: 1;
-    height: 44px;
-    padding: 0 18px;
+    height: 42px;
+    padding: 0 15px;
     border: 2px solid var(--btntheme);
-    border-radius: 22px;
+    border-radius: 21px;
     outline: none;
     color: var(--fontcolor);
     font-size: 1.45rem;
@@ -678,112 +751,174 @@ nav {
 }
 
 .searchInput:focus {
-    border-color: var(--accent-info);
-    box-shadow: 0 0 0 3px rgba(58, 107, 136, 0.2);
+    border-color: var(--orange);
 }
 
 .searchButton,
 .clearButton {
-    height: 44px;
-    width: 44px;
+    height: 42px;
+    width: 42px;
     border: none;
     border-radius: 50%;
     background: var(--btntheme);
-    color: white;
+    color: var(--clair);
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background-color 0.2s ease, transform 0.2s ease;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
 }
 
-.searchButton:hover {
-    background: var(--btnthemeHover);
-    transform: scale(1.06);
+.searchButton:hover,
+.clearButton:hover {
+    transform: scale(1.08);
 }
 
 .clearButton {
-    background: var(--accent-danger);
+    background: var(--bordeaux);
 }
 
-.clearButton:hover {
-    background: var(--accent-danger-hover);
-    transform: scale(1.06);
+/* Grilles de contenus unifiées (Audio, Photo, Vidéo, Texte) */
+.audio-grid,
+.photo-grid,
+.video-grid,
+.texte-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+    gap: 20px;
+    padding: 15px 8px;
 }
 
-/************************************ Accueil MediaBox : Cartes **********************************/
+/* Cartes de contenus unifiées */
+.audio-item,
+.photo-item,
+.video-item,
+.texte-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 18px 12px 14px;
+    border-radius: var(--cardRadius) !important;
+    background: var(--collapsForm);
+    color: var(--fontcolor);
+    box-shadow: var(--cardShadow) !important;
+    gap: 10px;
+    margin: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease, border 0.2s ease;
+}
+
+.audio-item:hover,
+.photo-item:hover,
+.video-item:hover,
+.texte-item:hover {
+    transform: translateY(-3px);
+}
+
+.audio-item.selected,
+.photo-item.selected,
+.video-item.selected,
+.texte-item.selected,
+.texte-item.active {
+    border: 2px solid var(--orange);
+}
+
+/* Barre d'actions au bas de chaque carte média */
+.audio-controls,
+.photo-controls,
+.video-controls,
+.texte-controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+}
+
+/************************************ Cartes Accueil MediaBox **********************************/
 
 .row {
-    display: flex;
-    align-items: stretch;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 270px));
     justify-content: center;
-    flex-wrap: wrap;
     gap: 24px;
     padding: 15px 10px;
-    max-width: 1250px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 .column {
-    flex: 1 1 230px;
-    max-width: 270px;
+    width: 100%;
+    margin: 0;
 }
 
 .card {
     box-shadow: var(--cardShadow);
-    padding: 25px 15px;
-    height: 260px;
+    padding: 24px 16px;
+    height: 250px;
+    width: 100%;
     background-color: var(--btntheme);
-    border-radius: 28px;
+    border-radius: var(--cardRadius) !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    gap: 12px;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
-    background-color: var(--btnthemeHover);
-    transform: translateY(-6px);
+    filter: brightness(1.12);
+    transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .card i {
-    font-size: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(80px, 8vw, 120px);
     color: var(--cardIcons);
 }
 
 .titrecarte {
     color: var(--cardIcons);
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 2.2vw, 2.4rem);
     margin: 0;
 }
 
-/************************************ Recherche Globale & Dashboard Profil **********************************/
+/************************************ Recherche Globale & Profil **********************************/
 
 .global-search-results {
-    max-width: 1100px;
-    margin: 15px auto 30px;
-    padding: 20px;
-    border-radius: 14px;
+    max-width: 1150px;
+    margin: 15px auto 25px;
+    padding: 18px;
+    border-radius: var(--cardRadius);
     background: var(--collapsForm);
     box-shadow: var(--cardShadow);
 }
 
 .search-results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 16px;
     margin-top: 15px;
 }
 
 .search-result-card {
-    background: var(--btnBackGround);
-    border: 1px solid var(--borderSubtle);
-    border-radius: 10px;
-    padding: 15px;
+    background: var(--bodyBg);
+    border: 1px solid var(--silver);
+    border-radius: 14px;
+    padding: 14px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -794,86 +929,123 @@ nav {
     display: flex;
     align-items: center;
     gap: 8px;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 1.5rem;
     color: var(--fontcolor);
 }
 
 .profile-dashboard {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 0 auto;
-    padding: 10px 15px;
+    padding: 10px;
 }
 
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 18px;
-    margin: 20px 0 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin: 18px 0 28px;
 }
 
 .stat-card {
-    background: var(--collapsForm);
-    border: 1px solid var(--borderSubtle);
-    border-radius: 14px;
-    padding: 20px;
-    text-align: center;
     box-shadow: var(--cardShadow);
-    display: flex;
-    flex-direction: column;
+    background-color: var(--btntheme);
+    border-radius: var(--cardRadius) !important;
+    padding: 16px 18px;
+    height: auto;
+    min-height: 92px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    row-gap: 2px;
     align-items: center;
-    gap: 8px;
-    transition: transform 0.2s ease;
+    text-align: left;
+    box-sizing: border-box;
+    transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
 }
 
 .stat-card:hover {
-    transform: translateY(-3px);
+    filter: brightness(1.12);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.22);
 }
 
 .stat-card i {
-    font-size: 42px;
-    color: var(--btntheme);
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    font-size: 32px;
+    color: var(--cardIcons);
+    background: rgba(255, 255, 255, 0.14);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-number {
-    font-size: 2.8rem;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 2.3rem;
     font-weight: 700;
-    color: var(--fontcolor);
+    line-height: 1.1;
+    color: var(--cardIcons);
 }
 
 .stat-label {
-    font-size: 1.4rem;
-    color: var(--fontcolor);
-    opacity: 0.85;
+    grid-column: 2;
+    grid-row: 2;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    color: var(--cardIcons);
+    opacity: 0.9;
 }
 
 .profile-forms-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: stretch;
 }
 
-/************************************ Utilitaires & Boutons Alignés ***************************************/
+.profile-forms-grid .formContainer {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/************************************ Barre de boutons d'action (.boutonAligne) ***************************************/
 
 .boutonAligne {
-    gap: 16px;
+    gap: 14px;
     display: flex;
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 15px 0;
+    margin: 18px auto !important;
+    max-width: 800px;
+}
+
+.boutonAligne .btnBase {
+    min-height: 44px;
 }
 
 .spanIconText {
     font-size: 1.45rem;
     line-height: 1.2;
-    color: var(--cardIcons);
+    color: inherit;
+    white-space: nowrap;
 }
 
 .collabel {
     float: left;
-    width: 28%;
+    width: 25%;
     margin-top: 10px;
     margin-left: 10px;
 }
@@ -893,7 +1065,7 @@ nav {
 /************************************ Footer ***************************************/
 
 footer {
-    height: 70px;
+    height: 75px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -910,20 +1082,15 @@ footer {
     display: none;
 }
 
-/******************************* Responsive Mobile & Tablette ***************************/
+/******************************* RESPONSIVE : MOBILE, TABLETTE, DESKTOP & XL ***************************/
 
-@media (max-width: 768px) {
-    body {
-        width: 96%;
-        margin-bottom: 80px;
-    }
-
-    .boutonTheme {
-        display: none !important;
-    }
-
+/* Menu déroulant compact en Grille 2 colonnes (commun Mobile & Tablette <= 999px) */
+@media (max-width: 999px) {
     .menunav {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 4px 8px;
     }
 
     .menunav a:not(:first-child) {
@@ -931,29 +1098,199 @@ footer {
     }
 
     .menunav a.menuicon {
-        float: right;
-        display: block;
+        display: inline-flex;
+        margin-left: auto;
     }
 
+    /* Menu ouvert (.break) : Grille compacte 2x2 au lieu d'une longue liste verticale */
     .menunav.break {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        padding: 8px 10px 10px;
         position: relative;
     }
 
-    .menunav.break .menuicon {
-        position: absolute;
-        right: 8px;
-        top: 4px;
+    .menunav.break a {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        padding: 0 10px;
+        font-size: 1.45rem;
+        background: rgba(0, 0, 0, 0.18);
+        border-radius: 10px;
+        width: 100%;
     }
 
-    .menunav.break a {
-        float: none;
-        display: flex;
-        text-align: left;
+    .menunav.break a.active {
+        background-color: var(--active);
+        border: 1px solid var(--orange);
+    }
+
+    /* La barre du haut (Home à gauche + Hamburger à droite) occupe la 1ère ligne */
+    .menunav.break a:first-child {
+        grid-column: 1 / -1;
+        justify-content: flex-start;
+        width: fit-content;
+        background: transparent;
+        height: 44px;
+    }
+
+    .menunav.break a.menuicon {
+        position: absolute;
+        right: 8px;
+        top: 6px;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        margin: 0;
+    }
+}
+
+/* 1. Petit écran / Smartphone (<= 600px) */
+@media (max-width: 600px) {
+    body {
+        width: 96%;
+        margin: 0 auto 90px auto;
+    }
+
+    /* Masquer la pastille thème du haut sur mobile */
+    #boutonTheme,
+    #boutonTheme.boutonTheme,
+    .boutonTheme {
+        display: none !important;
+    }
+
+    /* Sur mobile, Profil et Quitter sont déjà dans la barre fixe du bas : on les masque du menu déroulant pour gagner de la place */
+    .menunav.break a[href*="compte"],
+    .menunav.break a.sortie {
+        display: none !important;
+    }
+
+    /* Barre d'actions mobile en tuiles (Icône au-dessus + Texte en dessous) */
+    .boutonAligne {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin: 14px 0 18px 0 !important;
+        padding: 0 4px;
+        box-sizing: border-box;
+    }
+
+    .boutonAligne .btnBase {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 64px;
+        padding: 10px 6px;
+        gap: 6px;
+        border-radius: 14px;
+        text-align: center;
+    }
+
+    .boutonAligne .material-icons,
+    .boutonAligne .material-icons.md-36 {
+        font-size: 24px !important;
+        margin: 0 !important;
+    }
+
+    .boutonAligne .spanIconText {
+        font-size: 1.15rem;
+        line-height: 1.2;
+        margin: 0 !important;
+        white-space: normal;
+    }
+
+    /* Grille MediaBox : 2 colonnes côte à côte */
+    .row {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        padding: 10px 4px;
+    }
+
+    .card {
+        height: 155px;
+        padding: 16px 10px;
+    }
+
+    .card i {
+        font-size: 60px;
+    }
+
+    .titrecarte {
+        font-size: 1.65rem;
+    }
+
+    /* Grilles des listes (Audio, Photo, Vidéo, Texte) : 2 colonnes sur mobile */
+    .audio-grid,
+    .photo-grid,
+    .video-grid,
+    .texte-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px;
+        padding: 10px 2px;
+    }
+
+    .audio-item,
+    .photo-item,
+    .video-item,
+    .texte-item {
+        padding: 12px 8px;
+    }
+
+    .audio-controls,
+    .photo-controls,
+    .video-controls,
+    .texte-controls {
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .audio-controls .btnBase,
+    .photo-controls .btnBase,
+    .video-controls .btnBase,
+    .texte-controls .btnBase {
+        padding: 6px 8px;
+        min-width: 34px;
+    }
+
+    /* Cartes de statistiques du profil sur mobile */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 12px 10px;
+        min-height: 78px;
+        grid-template-columns: 38px 1fr;
+        column-gap: 10px;
+    }
+
+    .stat-card i {
+        width: 38px;
+        height: 38px;
+        font-size: 24px;
+        border-radius: 10px;
+    }
+
+    .stat-number {
+        font-size: 1.9rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
     }
 
     .inputModal,
-    .inputMonEspace {
-        width: 95%;
+    .inputMonEspace,
+    .note-textarea,
+    .photo-textarea,
+    .video-textarea {
+        width: 94%;
+        font-size: 16px;
     }
 
     .validButton,
@@ -973,10 +1310,14 @@ footer {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 65px;
-        background: var(--navBg);
-        box-shadow: var(--footerShadow);
+        height: 68px;
         z-index: 999;
+    }
+
+    .socle {
+        background-color: #919094;
+        height: 68px;
+        box-shadow: var(--footerShadow);
     }
 
     .txtfootr {
@@ -988,6 +1329,7 @@ footer {
         justify-content: space-around;
         align-items: center;
         height: 100%;
+        padding: 0 5px;
     }
 
     .navlabel {
@@ -995,7 +1337,81 @@ footer {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        color: var(--cardIcons);
-        font-size: 1.1rem;
+        color: #000000;
+        font-size: 1.2rem;
+        flex-grow: 1;
     }
+
+    .icon-bar .material-icons {
+        font-size: 26px;
+    }
+
+    .iconeTheme {
+        color: var(--btnFontColor);
+    }
+}
+
+/* 2. Tablette (601px à 999px) */
+@media (min-width: 601px) and (max-width: 999px) {
+    body {
+        width: 94%;
+    }
+
+    .row {
+        grid-template-columns: repeat(2, minmax(210px, 280px));
+        gap: 20px;
+    }
+
+    .card {
+        height: 220px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3. Très grand écran (>= 1900px) */
+@media (min-width: 1900px) {
+    body {
+        width: 92%;
+        max-width: 2200px;
+    }
+
+    .row {
+        grid-template-columns: repeat(4, minmax(280px, 360px));
+        gap: 32px;
+    }
+
+    .card {
+        height: 320px;
+    }
+
+    .card i {
+        font-size: 150px;
+    }
+
+    .titrecarte {
+        font-size: 3rem;
+    }
+}
+
+/* Grille du profil : chaque carte prend sa hauteur naturelle sans s'étirer de force */
+.profile-forms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    align-items: start;
+    /* Empêche l'étirement vertical des cartes */
+}
+
+.profile-card-box {
+    display: flex;
+    flex-direction: column;
+    height: auto !important;
+    /* Hauteur naturelle selon le contenu */
+}
+
+.profile-card-box form {
+    margin-top: 15px;
 }
