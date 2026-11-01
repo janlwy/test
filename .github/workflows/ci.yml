@@ -36,4 +36,4 @@ jobs:
       run: php -v && php -m && composer show
 
     - name: Run test suite
-      run: vendor/bin/phpunit --configuration vendor/sebastian/object-enumerator/phpunit.xml --verbose
+      run: vendor/bin/phpunit --configuration phpunit.xml --verbose
