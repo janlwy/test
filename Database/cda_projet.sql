@@ -31,7 +31,7 @@ CREATE TABLE `audio` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `artist` varchar(255) NOT NULL,
-  `image` blob DEFAULT NULL,
+  `image` varchar(255) DEFAULT 'default_cover.png',
   `path` varchar(255) NOT NULL,
   `user_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -195,7 +195,7 @@ ALTER TABLE `video`
 -- Contraintes pour la table `audio`
 --
 ALTER TABLE `audio`
-  ADD CONSTRAINT `audio_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `audio_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE;
 
 --
 -- Contraintes pour la table `photo`

@@ -26,7 +26,7 @@ services:
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD:-root}
     volumes:
       - mysql_data:/var/lib/mysql
-      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./Database/cda_projet.sql:/docker-entrypoint-initdb.d/cda_projet.sql
 
 volumes:
   mysql_data:

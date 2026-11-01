@@ -1,2 +1,19 @@
-.aider*
+# Dépendances
+/vendor/
+
+# Fichiers environnementaux et de configuration locale
 .env
+
+# Logs et caches PHPUnit
+.phpunit.result.cache
+phpunit*.log
+phpunit_details.txt
+
+# Journaux d'assistants IA / éditeurs
+.aider*
+.vscode/
+.idea/
+
+# Fichiers OS
+.DS_Store
+Thumbs.db
