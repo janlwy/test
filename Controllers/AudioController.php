@@ -9,7 +9,7 @@ use finfo;
 
 class AudioController extends BaseController implements IController
 {
-    private AudioRepository $audioRepository;
+    public AudioRepository $audioRepository;
 
     public function __construct()
     {
@@ -329,5 +329,10 @@ class AudioController extends BaseController implements IController
             $_SESSION['erreur'] = $e->getMessage();
         }
         $this->redirect('audio/list');
+    }
+
+    public function listeAudio(): void
+    {
+        $this->list();
     }
 }

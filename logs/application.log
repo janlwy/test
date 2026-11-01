@@ -6786,3 +6786,6 @@
 [2026-10-30 08:52:16] INFO: Paramètre connexion reçu: Connexion
 [2026-10-30 08:52:16] ERROR: Erreur isLockedOut : SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pseudo' in 'where clause'
 [2026-10-30 08:52:16] INFO: Connexion réussie pour l'utilisateur Marsy depuis ::1 avec Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0
+[2026-11-01 15:57:40] ERROR: Erreur dans AudioController::list(): Utilisateur non identifié
+[2026-11-01 15:57:40] ERROR: Erreur dans addMusic: Veuillez sélectionner ou enregistrer un fichier audio valide.
+[2026-11-01 16:20:14] ERROR: Erreur dans addMusic: Veuillez sélectionner ou enregistrer un fichier audio valide.

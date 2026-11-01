@@ -7,7 +7,7 @@ use Session\SessionManager;
 
 abstract class BaseController implements IBaseController {
     protected $repository;
-    protected $session;
+    public $session;
     
     public function __construct() {
         $this->session = SessionManager::getInstance();
@@ -30,9 +30,14 @@ abstract class BaseController implements IBaseController {
         }
     }
 
-    protected function redirect($url) {
-        header("Location: ?url=$url");
-        exit();
+    public function redirect(string $url): void
+    {
+        $target = (strpos($url, '?url=') === 0 || strpos($url, 'http') === 0) ? $url : '?url=' . $url;
+        if (PHP_SAPI !== 'cli') {
+            header("Location: " . $target);
+            exit;
+        }
+        echo "Location: " . $target;
     }
 }
 ?>

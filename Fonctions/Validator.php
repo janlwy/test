@@ -4,35 +4,46 @@ namespace Fonctions;
 class Validator {
     private $errors = [];
     private $data = [];
-    
-    public function validate($data, $rules) {
+
+    public function validate($data, $rules)
+    {
         $this->data = $data;
         $this->errors = [];
-        
+
         foreach ($rules as $field => $fieldRules) {
             $value = $data[$field] ?? null;
-            
-            foreach ($fieldRules as $ruleData) {
+
+            foreach ($fieldRules as $ruleKey => $ruleData) {
+                $message = null;
                 if (is_array($ruleData)) {
-                    // Format avec message: ['rule' => 'required', 'message' => 'Ce champ est requis']
-                    $rule = $ruleData['rule'] ?? $ruleData[0];
-                    $message = $ruleData['message'] ?? null;
+                    if (isset($ruleData['rule'])) {
+                        $rule = $ruleData['rule'];
+                        $message = $ruleData['message'] ?? null;
+                        if (!is_array($rule) && isset($ruleData['parameter'])) {
+                            $rule = [$rule, $ruleData['parameter']];
+                        } elseif (!is_array($rule) && isset($ruleData['pattern'])) {
+                            $rule = [$rule, $ruleData['pattern']];
+                        } elseif (!is_array($rule) && isset($ruleData['value'])) {
+                            $rule = [$rule, $ruleData['value']];
+                        }
+                    } else {
+                        $rule = $ruleData;
+                        $message = $ruleData[2] ?? ($ruleData['message'] ?? null);
+                    }
+                } elseif (is_string($ruleKey) && $ruleKey === 'pattern') {
+                    $rule = ['pattern', $ruleData];
                 } else {
-                    // Format simple: 'required'
                     $rule = $ruleData;
-                    $message = null;
                 }
-                
+
                 if (is_array($rule)) {
-                    // Règle avec paramètres : ['min', 3]
                     $this->validateParameterizedRule($field, $value, $rule[0], $rule[1], $message);
                 } else {
-                    // Règle simple : 'required'
                     $this->validateRule($field, $value, $rule, $message);
                 }
             }
         }
-        
+
         return empty($this->errors);
     }
     

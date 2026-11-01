@@ -8,7 +8,7 @@ use Exception;
 
 class TexteController extends BaseController implements IController
 {
-    protected $repository;
+    public $repository;
 
     public function __construct()
     {

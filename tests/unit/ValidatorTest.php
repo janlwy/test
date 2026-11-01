@@ -50,13 +50,13 @@ class ValidatorTest extends TestCase
 
     public function testPatternRule()
     {
-        $data = ['username' => 'user@123'];
+        $data = ['username' => 'user_123'];
         $rules = ['username' => [
             ['rule' => ['pattern', '/^[a-zA-Z0-9_-]{3,20}$/']]
         ]];
-        
+
         $this->assertTrue($this->validator->validate($data, $rules));
-        
+
         $data['username'] = 'invalid@username';
         $this->assertFalse($this->validator->validate($data, $rules));
     }

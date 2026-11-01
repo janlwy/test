@@ -8,7 +8,7 @@ use InvalidArgumentException;
 
 class TexteRepository implements IRepository
 {
-    private Manager $manager;
+    public Manager $manager;
     private const TABLE = 'text';
 
     public function __construct()
@@ -16,7 +16,7 @@ class TexteRepository implements IRepository
         $this->manager = new Manager();
     }
 
-    public function findById(int $id): ?Texte
+    public function findById(int $id)
     {
         $data = $this->manager->readTableOne(self::TABLE, $id);
         return $data ? new Texte($data) : null;
