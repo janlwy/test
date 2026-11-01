@@ -42,18 +42,20 @@ $csrfToken = $session->get('csrf_token');
     <div class="profile-forms-grid">
         <!-- Carte 1 : Informations du profil -->
         <div class="formContainer profile-card-box">
-            <div>
+            <div class="profile-card-top">
                 <h3><i class="material-icons">person</i> Informations du profil</h3>
-                <p>
+                <p class="profile-meta">
                     <b>Identifiant :</b> <?php echo htmlspecialchars($userInfo['username'] ?? 'Marsy', ENT_QUOTES, 'UTF-8'); ?><br>
                     <b>Rôle :</b> <?php echo htmlspecialchars($userInfo['role'] ?? 'user', ENT_QUOTES, 'UTF-8'); ?><br>
-                    <b>Membre depuis :</b> <?php echo htmlspecialchars($userInfo['created_at'] ?? '29/10/2026', ENT_QUOTES, 'UTF-8'); ?>
+                    <b>Membre depuis :</b> <?php echo !empty($userInfo['created_at']) ? date('d/m/Y à H:i', strtotime($userInfo['created_at'])) : 'N/A'; ?>
                 </p>
             </div>
-            <form method="POST" action="?url=compte/updateEmail">
+            <form method="POST" action="?url=compte/update" class="profile-card-bottom">
                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
-                <label for="email"><b>Adresse Email</b></label>
-                <input type="email" id="email" name="email" class="inputMonEspace" required
+                <input type="hidden" name="update_type" value="email">
+
+                <label for="profile-email"><b>Adresse Email</b></label>
+                <input type="email" id="profile-email" name="email" class="inputMonEspace" required
                     value="<?php echo htmlspecialchars($userInfo['email'] ?? '', ENT_QUOTES, 'UTF-8'); ?>">
                 <div class="boutonAligne">
                     <button type="submit" class="btnBase vert">
@@ -66,17 +68,17 @@ $csrfToken = $session->get('csrf_token');
 
         <!-- Carte 2 : Activité & Stockage Multimédia -->
         <div class="formContainer profile-card-box">
-            <div>
+            <div class="profile-card-top">
                 <h3><i class="material-icons">analytics</i> Activité & Stockage</h3>
-                <p>
+                <p class="profile-meta">
                     <b>Total des éléments :</b> <?php echo (int)($stats['total_items'] ?? 0); ?> média(s)<br>
                     <b>Espace multimédia occupé :</b> <?php echo number_format((float)($stats['storage_mb'] ?? 0), 2, ',', ' '); ?> Mo<br>
                     <b>Dernière connexion :</b> <?php echo !empty($userInfo['last_login']) ? date('d/m/Y à H:i', strtotime($userInfo['last_login'])) : 'Session en cours'; ?>
                 </p>
             </div>
-            <div>
-                <p><b>Accès rapide à la création :</b></p>
-                <div class="boutonAligne">
+            <div class="profile-card-bottom">
+                <label><b>Accès rapide à la création</b></label>
+                <div class="boutonAligne quick-actions">
                     <a href="?url=texte/list" class="btnBase theme" title="Nouvelle note texte">
                         <i class="material-icons">note_add</i>
                         <span class="spanIconText">Note</span>
@@ -92,15 +94,16 @@ $csrfToken = $session->get('csrf_token');
                 </div>
             </div>
         </div>
-
         <!-- Carte 3 : Sécurité & Mot de passe -->
         <div class="formContainer profile-card-box">
-            <div>
+            <div class="profile-card-top">
                 <h3><i class="material-icons">lock</i> Sécurité & Mot de passe</h3>
             </div>
-            <form method="POST" action="?url=compte/updatePassword">
+            <form method="POST" action="?url=compte/update" style="margin: 0;">
                 <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($csrfToken, ENT_QUOTES, 'UTF-8'); ?>">
-                <label for="current_password"><b>Mot de passe actuel</b></label>
+                <input type="hidden" name="update_type" value="password">
+
+                <label for="current_password" style="padding-top: 0;"><b>Mot de passe actuel</b></label>
                 <input type="password" id="current_password" name="current_password" class="inputMonEspace" required>
 
                 <label for="new_password"><b>Nouveau mot de passe</b></label>

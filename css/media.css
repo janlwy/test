@@ -1003,21 +1003,57 @@ nav {
     opacity: 0.9;
 }
 
+/* Grille du profil : alignement par le haut et espacement interne symétrique */
 .profile-forms-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    align-items: stretch;
+    align-items: start;
 }
 
-.profile-forms-grid .formContainer {
+.profile-forms-grid .formContainer.profile-card-box {
     width: 100%;
     max-width: none;
     margin: 0;
+    padding: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 18px;
+}
+
+.profile-card-top h3:only-child {
+    margin-bottom: 0;
+}
+
+.profile-meta {
+    margin: 0;
+    line-height: 1.65;
+    text-align: left;
+}
+
+.profile-card-bottom {
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+    padding-top: 14px;
+    margin: 0;
+}
+
+.profile-card-bottom label {
+    padding: 0 0 8px 0;
+    margin: 0;
+    text-align: left;
+}
+
+/* Force les 3 boutons d'accès rapide (Note, Vocal, OCR) à tenir sur 1 seule ligne */
+.quick-actions {
+    flex-wrap: nowrap;
+    gap: 8px;
+}
+
+.quick-actions .btnBase {
+    flex: 1;
+    padding: 10px 8px;
 }
 
 /************************************ Barre de boutons d'action (.boutonAligne) ***************************************/
@@ -1394,24 +1430,4 @@ footer {
     .titrecarte {
         font-size: 3rem;
     }
-}
-
-/* Grille du profil : chaque carte prend sa hauteur naturelle sans s'étirer de force */
-.profile-forms-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    align-items: start;
-    /* Empêche l'étirement vertical des cartes */
-}
-
-.profile-card-box {
-    display: flex;
-    flex-direction: column;
-    height: auto !important;
-    /* Hauteur naturelle selon le contenu */
-}
-
-.profile-card-box form {
-    margin-top: 15px;
 }

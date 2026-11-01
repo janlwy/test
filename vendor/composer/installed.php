@@ -5,8 +5,8 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '661609dec42315c6652f999bfaea7f746e190df9',
-        'name' => 'janlwy/test',
+        'reference' => 'c93ed14fe04bbbdf1f458a51e19904b00439bd51',
+        'name' => 'janlwy/calepin',
         'dev' => true,
     ),
     'versions' => array(
@@ -19,13 +19,13 @@
             'reference' => 'c6222283fa3f4ac679f8b9ced9a4e23f163e80d0',
             'dev_requirement' => true,
         ),
-        'janlwy/test' => array(
+        'janlwy/calepin' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '661609dec42315c6652f999bfaea7f746e190df9',
+            'reference' => 'c93ed14fe04bbbdf1f458a51e19904b00439bd51',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(

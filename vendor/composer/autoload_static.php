@@ -42,7 +42,7 @@ class ComposerStaticInitf0bb306b92929fa3e249c70b04a83c85
     public static $prefixDirsPsr4 = array (
         'Session\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Fonctions',
+            0 => __DIR__ . '/../..' . '/Session',
         ),
         'PhpParser\\' => 
         array (

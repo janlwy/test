@@ -6,7 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Session\\' => array($baseDir . '/Fonctions'),
+    'Session\\' => array($baseDir . '/Session'),
     'PhpParser\\' => array($vendorDir . '/nikic/php-parser/lib/PhpParser'),
     'Models\\' => array($baseDir . '/Models'),
     'Fonctions\\' => array($baseDir . '/Fonctions'),
