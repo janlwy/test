@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'c93ed14fe04bbbdf1f458a51e19904b00439bd51',
+        'reference' => '2ff0585c1a7f35ac21b1b179f432be7a9b40e776',
         'name' => 'janlwy/calepin',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'c93ed14fe04bbbdf1f458a51e19904b00439bd51',
+            'reference' => '2ff0585c1a7f35ac21b1b179f432be7a9b40e776',
             'dev_requirement' => false,
         ),
         'myclabs/deep-copy' => array(
